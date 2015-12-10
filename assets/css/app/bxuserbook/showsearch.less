@@ -1,0 +1,172 @@
+.levelbackground{
+		background: url("http://category.dangdang.com/Standard/Search/Extend/hosts/images/model/category/icon_star.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+	    display: inline-block;
+	    font-size: 0;
+	    height: 12px;
+	    line-height: 12px;
+	    overflow: hidden;
+	    vertical-align: middle;
+	    width: 60px;
+	    margin: -2px 6px 0 0;
+}
+.levelshow{
+		background: url("http://category.dangdang.com/Standard/Search/Extend/hosts/images/model/category/icon_star.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+	    display: inline-block;
+	    font-size: 0;
+	    height: 12px;
+	    line-height: 12px;
+	    overflow: hidden;
+	    vertical-align: middle;
+	    background-position: left bottom;
+		vertical-align: top;
+}
+#showsearch  .booklist
+{
+	&:extend(.panel all);
+	 .box-shadow(0 5px 5px rgba(0,0,0,.05));
+    >  .bookitem
+	{
+		.clearfix();
+		&:hover{
+			background:lighten(@panel-bg, 10%);
+		}
+		border-top:1px solid darken(@panel-bg, 10%);
+		padding-top:10px;
+		padding-bottom:10px;
+		> .pic {
+			&:extend(.thumbnail);
+			margin-right:10px;
+			margin-left:10px;
+			float:left;
+		}
+		> .name {
+			color: #1a66b3;
+    		font-size: 14px;
+		}
+		> .detail {
+			 color: #878787;
+		     /*display: inline-block;
+		     width: 100%;
+		     */
+		     height: 40px;
+		     line-height: 20px;
+		     overflow: hidden;
+		}
+		> .price {
+		    float:right;
+		    margin-right:20px;
+			> .nowprice
+			{
+				color: #c00;
+			    font-weight: bold;
+			    padding-right: 10px;
+			}
+			> .preprice
+			{
+				color: #878787;
+			    padding-right: 10px;
+			    text-decoration: line-through;
+			}
+			> .discount
+			{
+				 color: #c30;
+    			 font-family: simsun;
+			}
+		}
+		> .star {
+			> .level-background
+			{
+				.levelbackground();
+				> .level-showone
+				{
+					.levelshow();
+				    width: 12px;
+				}
+				> .level-showtwo
+				{
+					.levelshow();
+					width: 24px;
+				}
+				> .level-showthree
+				{
+					.levelshow();
+					width: 36px;
+				}
+				> .level-showfour
+				{
+					.levelshow();
+					width: 48px;
+				}
+				> .level-showfive
+				{
+					.levelshow();
+					width: 60px;
+				}
+			}
+		}
+		> .action {
+		    float:right;
+		    margin-right:20px;
+			> .buy{
+			    .btn();
+			    .btn-primary();
+			}
+			> .save
+			{
+			    .btn();
+			    .btn-info();
+			}
+		}
+	}
+}
+
+#showsearch .searchconditon
+{
+	margin-bottom: @line-height-computed;
+	background-color: @panel-bg;
+	border: 1px solid transparent;
+	border-radius: @panel-border-radius;
+	.box-shadow(0 1px 1px rgba(0,0,0,.05));
+	padding: @panel-body-padding;
+	
+	
+	> .searchitem
+	{
+		.make-row();
+		position:relative;
+		padding:10px 10px 10px 7em;
+		line-height:2.5em;
+		> .filter-name
+		{
+			color:#1a66b3;
+			position:absolute;
+			top:0px;
+			left:0px;
+			padding:10px 10px;
+		}
+		> .filter-item
+		{
+			display:inline-block;
+			padding:0px 10px;
+			color:#666;
+			cursor: pointer;
+		    white-space: nowrap;
+		}
+	}
+	> .searchfooter
+	{
+	  .make-row();
+	  padding:10px  0px;  
+	  background-color: @panel-footer-bg;
+	  border-top: 1px solid @panel-inner-border;
+	  .border-bottom-radius((@panel-border-radius - 1));
+	  
+	  >.sort-item
+	  {
+	  	  display:inline-block;
+	  	  cursor: pointer;
+	  	  padding:0px 10px;
+	  }
+	}
+	
+}

@@ -1,0 +1,6 @@
+#showadd .form-horizontal .form-group {
+  border-bottom: 1px solid #DDDDDD;
+}
+#showadd .form-horizontal .form-group:nth-child(odd) {
+  background: #fcf8e3;
+}
