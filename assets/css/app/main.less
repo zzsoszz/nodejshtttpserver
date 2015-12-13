@@ -134,7 +134,13 @@
 
 /*添加书籍*/
 .file-box{
+	/* Positioning */
 	position:relative;
+	float:left;
+	
+	/*box model*/
+	margin-left:1em;
+	
 	.file{
 		position:absolute;
 		width:60px;
@@ -142,3 +148,41 @@
 		opacity:0;
 	}
 }
+
+
+.pay-box{
+	/* Positioning */
+	position:relative;
+	float:left;
+	
+	/*box model*/
+	margin-left:1em;
+	
+}
+
+.alipay{
+	display:block;
+	border:1px solid #336699;
+	width:100%;
+	height:60px;
+	background: url(../images/092.png) no-repeat 18% 5%;
+    background-size: 150px 40px;
+	margin-top:10px;
+}
+.microsmspay{
+	display:block;
+	border:1px solid #336699;
+	width:100%;
+	height:60px;
+	background: url("../images/microsmspay.png") no-repeat 8% 15%  ;
+	background-size: 50px 40px;
+	line-height:60px;
+	margin-top:10px;
+}
+.money
+{
+	color:red;
+	font-size:18px;
+	font-weight:bold;
+}
+
