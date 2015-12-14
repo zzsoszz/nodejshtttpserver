@@ -7518,6 +7518,9 @@ button.close {
   font-size: 24px;
   text-align: center;
 }
+.badge-danger {
+  background-color: red;
+}
 .header {
   /* Positioning */
   position: fixed;
