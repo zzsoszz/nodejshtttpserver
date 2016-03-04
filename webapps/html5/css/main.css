@@ -265,6 +265,13 @@ http://m.ly.com/selftrip/line/82866/
 }
 
 
+
+.content{
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+
 .footer{
 	/*
 	position:fixed;
@@ -280,11 +287,6 @@ http://m.ly.com/selftrip/line/82866/
 	*/
 
 	
-	
-
-
-
-
 
 .global-toolbar{
 	width:100%;
@@ -339,4 +341,35 @@ http://m.ly.com/selftrip/line/82866/
 	background-image: url('../images/global/01_10.png');
 }
 
+.icon-detail-tringle{
+	display:inline-block;
+	width:11px;
+	height:20px;
+	background: url('../images/global/detail-tringle.png') no-repeat;
+	vertical-align: baseline;
+}
 
+/*
+.form-box{
+	display: flex;
+  	flex-flow: row;
+  	justify-content:center;
+  	border-top:1px solid #d5d5d5;
+  	border-bottom:1px solid #d5d5d5;
+  	background: #ffffff;
+  	height:105px;
+}
+*/
+.input-row{
+	background: #ffffff;
+	height:108px;
+  	border-bottom:1px solid #d5d5d5;
+ 	padding-left: 10px;
+}
+.row-title{
+	vertical-align: baseline;
+	line-height:108px;
+	font-size:14px;
+	color:#333333;
+	font-weight:bold;
+}
