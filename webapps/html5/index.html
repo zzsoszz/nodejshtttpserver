@@ -10,10 +10,13 @@
 <head>
 <meta charset="utf-8"/>
 <title>Metronic | Dashboard</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="" name="description"/>
-<meta content="" name="author"/>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
 
 <link rel="shortcut icon" href="favicon.ico"/>
 
@@ -34,6 +37,27 @@
 <!-- BEGIN THEME STYLES -->
 <!-- END THEME STYLES -->
 
+<script>
+(function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+
+
 </head>
 
 
@@ -43,31 +67,224 @@
 	<div class="global-topbar">
 		<span class="icon-back">
 		</span>
-		<h3>酒店预定</h3>
+		<span class="titile">酒店预定</span>
 		<span class="icon-home">
 		</span>
 	</div>
 </div>
 
-
 <div class="content">
-	<form>
-		<div class="input-row">
-			<span class="row-title">
-				入住时间
-			</span>
-			<input type="date" >
-			<span class="detail-tringle"></span>
+	<div class="metro-nav">
+		<div class="row">
+			<a class="col-xs-12">
+				<div class="qcarrousel .clearfix">
+					<ul class="imglist .clearfix">
+						<li>
+							<img src="images/index/banner.png">
+						</li>
+						<li>
+							<img src="images/index/banner2.png">
+						</li>
+						<li>
+							<img src="images/index/banner3.png">
+						</li>
+					</ul>
+					<div class="dotsbox">
+						<div class="dotslist">
+							<div class="dot">
+							
+							</div>
+							<div class="dot active">
+								
+							</div>
+							<div class="dot">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
 		</div>
-		<div class="input-row">
-			<span class="row-title">
-				入住时间
-			</span>
-			<input type="date" />
-			<span class="icon-detail-tringle"></span>
+		<div class="row">
+			<a class="col-xs-6">
+				<img src="images/index/1.png" style="width:100%">
+			</a>
+			<a class="col-xs-6">
+				<img src="images/index/2.png" style="width:100%">
+			</a>
 		</div>
-	</form>
+		<div class="row threebox">
+			<a class="first">
+				<img src="images/index/3.png" style="width:100%">
+			</a>
+			<div class="second">
+				<a class="one">
+					<img src="images/index/4.png" style="width:100%">
+				</a>
+				<a class="two">
+					<img src="images/index/5.png" style="width:100%">
+				</a>
+			</div>
+			<a class="third">
+				<img src="images/index/6.png" style="width:100%">
+			</a>
+		</div>
+	</div>
+
+	<div class="switchtab row">
+		<a class="active col-xs-6">限时抢购</a>
+		<a class="col-xs-6">今日新品</a>
+	</div>
+
+	<div class="futuresale">
+		<p class="title">即将开始抢购</p>
+		<div class="goodlist">
+			<div class="good">
+				<img src="images/index/6.png">
+				<p class="desc">
+						<span class="money">
+							45.1折
+						</span>
+						四平市的方式答复时代发生地方上帝发誓
+						四平市的方式答复时代发生地方上帝发誓
+						四平市的方式答复时代发生地方上帝发誓
+
+				</p>
+				<div class="buybox clearfix">
+					<div class="left">
+						<div>
+							<span class="price">90</span>
+							<span class="baseprice">216</span>
+						</div>
+						<div>
+							<span class="returnimage"></span>
+							<span class="returnrate">返利比率60%</span>
+						</div>
+					</div>
+					<a href="#" class="buy">
+						立即购买
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div class="saling">
+		<div class="timebox">
+			距离抢购结束:
+			<div class="timewrap">
+				<span class="days">
+					00
+				</span>
+			</div>
+			天
+
+			<div class="timewrap">
+				<span class="hours">
+					12
+				</span>
+			</div>
+			时
+			
+			<div class="timewrap">
+				<span class="hours">
+					12
+				</span>
+			</div>
+			分
+		</div>
+		<div class="goodlist">
+			<div class="good">
+				<img src="images/index/6.png">
+				<p class="desc">
+						<span class="money">
+							45.1折
+						</span>
+						四平市的方式答复时代发生地方上帝发誓
+						四平市的方式答复时代发生地方上帝发誓
+						四平市的方式答复时代发生地方上帝发誓
+						
+				</p>
+				<div class="buybox clearfix">
+					<div class="left">
+						<div>
+							<span class="price">90</span>
+							<span class="baseprice">216</span>
+						</div>
+						<div>
+							<span class="returnimage"></span>
+							<span class="returnrate">返利比率60%</span>
+						</div>
+					</div>
+					<a href="#" class="buy">
+						立即购买
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="overtime">
+		<div class="timebox">
+			活动已经结束:
+			<div class="timewrap">
+				<span class="days">
+					00
+				</span>
+			</div>
+			天
+
+			<div class="timewrap">
+				<span class="hours">
+					12
+				</span>
+			</div>
+			时
+			
+			<div class="timewrap">
+				<span class="hours">
+					12
+				</span>
+			</div>
+			分
+		</div>
+		<div class="goodlist">
+			<div class="good">
+				<img src="images/index/6.png">
+				<p class="desc">
+						<span class="money">
+							45.1折
+						</span>
+						四平市的方式答复时代发生地方上帝发誓
+						四平市的方式答复时代发生地方上帝发誓
+						四平市的方式答复时代发生地方上帝发誓
+						
+				</p>
+				<div class="buybox clearfix">
+					<div class="left">
+						<div>
+							<span class="price">90</span>
+							<span class="baseprice">216</span>
+						</div>
+						<div>
+							<span class="returnimage"></span>
+							<span class="returnrate">返利比率60%</span>
+						</div>
+					</div>
+					<a href="#" class="buy">
+						立即购买
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
 </div>
+
 
 
 
