@@ -394,7 +394,7 @@ th {
 
 body{
 	font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:0.14rem;
+	font-size:0.16rem;
 	line-height: 1.42857143;
 	background:#ebebeb;
 	color:black;
@@ -464,8 +464,8 @@ http://m.ly.com/selftrip/line/82866/
 }
 
 .global-topbar  .titile{
-	font-weight:700;
-	font-size: 0.18rem;
+	font-weight:400;
+	font-size:0.25rem;
 	line-height: 0.42rem;
 }
 
@@ -515,10 +515,11 @@ http://m.ly.com/selftrip/line/82866/
 	width:100%;
 	height:0.86rem;
 	display: inline-block;
-	background-position:center 40%;
+	background-position:center 30%;
 	background-size:0.41rem 0.41rem;
 	background-repeat:no-repeat;
-	padding-top:50%;
+	padding-top:45%;
+	font-size:0.20rem;
 }
 .icon-home{
 	background-image: url('../images/global/01_01.png');
@@ -714,7 +715,7 @@ http://m.ly.com/selftrip/line/82866/
 
 
 .timebox{
-	font-size: 0.16rem;
+	font-size: 0.18rem;
 	text-align: center;
 	height:0.60rem;
 	line-height:0.60rem;
