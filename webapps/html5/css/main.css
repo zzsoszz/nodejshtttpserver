@@ -473,7 +473,7 @@ http://m.ly.com/selftrip/line/82866/
 .content{
 	z-index: 1;
 	padding-top:0.86rem;
-	padding-bottom:0.86rem;
+	padding-bottom:1.5rem;
 }
 
 
@@ -624,7 +624,9 @@ http://m.ly.com/selftrip/line/82866/
 	text-align: center;
 	line-height: 0.76rem;
 }
-
+.switchtab .active{
+	color:red;
+}
 
 
 
@@ -790,4 +792,193 @@ http://m.ly.com/selftrip/line/82866/
 }
 .qcarrousel .dotslist .dot.active{
 	background-image:url("../images/index/circle-visiable.png");
+}
+
+
+
+
+
+
+.saletodaybox{
+	display:-webkit-flex;
+  	display:flex;
+  	flex-direction:row;
+  	flex-wrap:wrap;
+  	justify-content:flex-start;
+	margin:0.10rem;
+}
+.saletodaybox  .item{
+	position:relative;
+	background-clip:content-box;
+	background-color:#ffffff;
+	width:3.10rem;
+	padding:0.10rem;
+	overflow:hidden;
+}
+.saletodaybox .item img{
+	height:2.9rem;
+	width:100%;
+}
+.saletodaybox .item .title{
+	padding-left: 0.10rem;
+	padding-right: 0.10rem;
+}
+.saletodaybox .item .pricewrap{
+	padding-left: 0.10rem;
+	padding-right: 0.10rem;
+}
+.saletodaybox .item .price{
+	font-size:0.22rem;
+}
+.saletodaybox .item .baseprice{
+	font-size:0.20rem;
+	color:#b0b0b0;
+	text-decoration:line-through;
+}
+.saletodaybox .item .returnwrap{
+	padding-bottom: 0.10rem;
+	padding-left: 0.10rem;
+	padding-right: 0.10rem;
+}
+.saletodaybox .item .returnimage{
+	display:inline-block;
+	line-height: 0.26rem;
+	width: 0.26rem;
+	height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_10.png');
+	background-repeat: no-repeat;
+	background-size: 0.26rem 0.26rem;
+}
+.saletodaybox .item .more{
+	display:inline-block;
+	line-height: 0.26rem;
+	width: 0.26rem;
+	height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_13.png');
+	background-repeat: no-repeat;
+	background-size: 0.26rem 0.26rem;
+	margin-left:0.05rem;
+}
+.saletodaybox .item  .moreinfo{
+	position:absolute;
+	left:0.10rem;
+	width:2.9rem;
+	height:70%;
+	top:100%;
+	opacity:0.9;
+	background-color:#e6e3e3;
+	padding:20px;
+	word-wrap : break-word ;
+}
+.saletodaybox .item  .moreinfo.up{
+	top:30%;
+}
+
+
+
+
+/*hotel  showsearch*/
+.searchbox
+{
+	background:#ffffff;
+	margin-top:0.40rem;
+	border-top:2px solid #d5d5d5;
+}
+.searchbox .searchrow{
+	border-bottom:2px solid #d5d5d5;
+	width:100%;
+	padding-left:0.20rem;
+	padding-right:0.20rem;
+}
+.searchbox .detail{
+	background-image:url("../images/hotel/jiudian_03.png");
+	background-repeat:no-repeat;
+	background-position:90% 50%;
+}
+.searchbox  .dest{
+	position:relative;
+	height:0.90rem;
+	line-height:0.90rem;
+}
+.searchbox  .dest .left{
+	width:80%;
+	float:left;
+}
+.searchbox  .dest .right{
+	width:19%;
+	float:right;
+}
+.searchbox  .dest .location{
+	position:absolute;
+	right:0px;
+	top:0px
+	display:block;
+	width:0.9rem;
+	background-image:url("../images/hotel/jiudian_01.png");
+	background-position:center 15%;
+	background-repeat:no-repeat;
+	padding-top: 0.30rem;
+	text-align:center;
+}
+.searchbox   .datevalue{
+	margin-left:0.05rem;
+	margin-right:0.05rem;
+	font-size:0.22rem;
+}
+.searchbox label {
+	text-align:right;
+	display:inline-block;
+	width:1.00rem;
+	letter-spacing:0.02rem;
+	margin-right:0.05rem;
+}
+
+
+.searchbox  .time{
+	height:auto;
+	line-height:0.90rem;
+}
+.searchbox  .time .left{
+	width:70%;
+	float:left;
+}
+.searchbox  .time .left .timerow{
+	width:100%;
+	border-bottom:1px solid #d5d5d5;
+}
+.searchbox  .time .right{
+	float:right;
+	width:29%;
+	height:1.8rem;
+	line-height:1.8rem;
+	text-align: center;
+	font-size:0.22rem;
+}
+.searchbox  .time .notice{
+	color:#666666;
+}
+.searchbox span{
+	height:0.9rem;
+	line-height:0.9rem;
+}
+
+
+
+
+.actionbox{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0.9rem;
+}
+.actionbox .actionbtn{
+	color:#ffffff;
+	font-size:0.22rem;
+	border-radius:0.10rem;
+	background:#e7313d;
+	height:0.80rem;
+	width:100%;
+	margin-top:0.02rem;
 }
