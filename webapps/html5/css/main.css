@@ -963,17 +963,14 @@ http://m.ly.com/selftrip/line/82866/
 	height:0.9rem;
 	line-height:0.9rem;
 }
-
-
-
-
 .actionbox{
 	width:80%;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:0.9rem;
+	margin-top:0.2rem;
+	margin-bottom:0.20rem;
 }
-.actionbox .actionbtn{
+.actionbtn{
 	color:#ffffff;
 	font-size:0.22rem;
 	border-radius:0.10rem;
@@ -981,4 +978,76 @@ http://m.ly.com/selftrip/line/82866/
 	height:0.80rem;
 	width:100%;
 	margin-top:0.02rem;
+}
+
+
+.popbox{
+	position:fixed;
+	top:0rem;
+	bottom:0rem;
+	z-index:3;
+	height:auto;
+	width:6.4rem;
+}
+.popbox .popmask{
+	position:absolute;
+	bottom:0rem;
+	top:0rem;
+	width:6.4rem;
+	background:#000000;
+	opacity:0.4;
+}
+.popbox .popcontent{
+	width:6.4rem;
+	opacity:1;
+	position:absolute;
+	bottom:0rem;
+	background:#ebebeb;
+}
+.popbox .popcontent > .title{
+	text-align:center;
+	font-size:0.32rem;
+	line-height:0.90rem;
+	word-wrap : break-word ;
+	border-bottom:2px solid #d5d5d5;
+}
+
+
+.popbox .popcontent .conditionbox{
+	padding-top:0.05rem;
+	padding-bottom:0.05em;
+	padding-right:0.20rem;
+	padding-left:0.20rem;
+}
+.popbox .popcontent .conditionbox .name{
+	font-size:0.24rem;
+}
+.popbox .popcontent .conditionbox .valuebox{
+	display:flex;
+	flex-direction:row;
+  	flex-wrap:wrap;
+  	justify-content:flex-start;
+	margin:0.10rem;
+}
+.popbox .popcontent .conditionbox .valuebox .valueitem{
+	padding:0.05rem;
+	background:#ffffff;
+	background-clip:content-box;
+	line-height:0.65rem;
+	text-align:center;
+	width:1.9rem;
+}
+.popbox .popcontent .conditionbox .valuebox .valueitem.active{
+	background:#f97817;
+	background-clip:content-box;
+	color:#ffffff;
+}
+
+.popbox .popcontent .conditionbox.price .valuebox .valueitem{
+	padding:0.05rem 0.02rem;
+	width:1.4rem;
+}
+.popbox .popcontent .conditionbox.price .valuebox .valueitem.active{
+	padding:0.05rem 0.02rem;
+	width:1.4rem;
 }
