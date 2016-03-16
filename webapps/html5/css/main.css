@@ -420,59 +420,98 @@ http://m.ly.com/selftrip/line/82866/
 }
 
 
+/*display:-moz-box; display:-webkit-box; display:-o-box; display:box;
+	-moz-box-align:stretch; -webkit-box-align:stretch; -o-box-align:stretch; box-align:stretch; 
+	http://m.ly.com/selftrip/list.html?recomTagId=685,696,700,802
+	*/
 
-.header{
+
+body >  .header{
 	position:fixed;
 	top:0rem;
 	z-index:2;
 	background:#ffffff;
 	width:6.4rem;
-	height:0.86rem;
+	height:0.96rem;
 }
+
+
+.keywordbox{
+	display:-webkit-flex;
+  	display:flex;
+  	flex-direction:row;
+  	flex-wrap:wrap;
+  	align-items:center;
+  	justify-content:space-between;
+  	height:0.96rem;
+  	padding:0.20rem;
+}
+.keywordbox .back{
+	display:block;
+	height:0.50rem;
+	width:0.23rem;
+	background-image:url("../images/global/back.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:0.23rem 0.50rem;
+}
+.keywordbox .keyword{
+	height:0.60rem;
+	width:4.80rem;
+	background-color:#ebebeb;
+	background-image:url("../images/global/search.png");
+	background-repeat:no-repeat;
+	background-position:0.25rem 0.12rem;
+	background-size:0.35rem 0.35rem;
+	border:none;
+	padding-left:0.70rem;
+	font-size:0.22rem;
+}
+.keywordbox  .dosearch{
+	font-size:0.24rem;
+}
+
+
 
 .global-topbar{
-	position:relative;
-	height:0.86rem;;
-	padding-top:0.22rem;;
-	padding-bottom:0.22rem;;
-	padding-left:0.22rem;;
-	padding-right:0.22rem;;
-	text-align:center;
+	display:-webkit-flex;
+  	display:flex;
+  	flex-direction:row;
+  	flex-wrap:wrap;
+  	align-items:center;
+  	justify-content:space-between;
+  	height:0.96rem;
+  	padding:0.20rem;
 }
-
-
 .global-topbar  > .icon-back {
-	position:absolute;
-	left:0.22rem;;
-	top:0.24rem;
-	vertical-align:middle;
-	display:inline-block;
-	width:0.42rem;
+	background:url('../images/global/back.png') no-repeat;
+	background-size:0.23rem 0.42rem;
+	width:0.23rem;
 	height:0.42rem;
-	background:url('../images/global/back.png') no-repeat ;
-	background-size:0.42rem 0.42rem;
 }
 .global-topbar  > .icon-home {
-	position:absolute;
-	vertical-align:middle;
-	display: inline-block;
-	right:0.22rem;;
-	top:0.24rem;
+	background:url('../images/global/01_01.png') no-repeat;
+	background-size:0.46rem 0.46rem;
 	width:0.42rem;
 	height:0.42rem;
-	padding-top:0rem;
 }
-
 .global-topbar  .titile{
-	font-weight:400;
+	font-weight:300;
 	font-size:0.25rem;
+	line-height: 0.42rem;
+}
+.global-topbar  .other{
+	color:#666666;
+	font-weight:400;
+	font-size:0.22rem;
 	line-height: 0.42rem;
 }
 
 
+
 .content{
 	z-index: 1;
-	padding-top:0.86rem;
+	padding-top:0.96rem;
 	padding-bottom:1.5rem;
 }
 
@@ -489,14 +528,7 @@ http://m.ly.com/selftrip/line/82866/
 	width:6.4rem;
 }
 
-/*display:-moz-box; display:-webkit-box; display:-o-box; display:box;
-	-moz-box-align:stretch; -webkit-box-align:stretch; -o-box-align:stretch; box-align:stretch; 
-	http://m.ly.com/selftrip/list.html?recomTagId=685,696,700,802
-	*/
-
-	
-
-.global-toolbar{
+.footer .global-toolbar{
 	width:100%;
 	height:0.86rem;
 	margin:0rem;
@@ -504,13 +536,13 @@ http://m.ly.com/selftrip/line/82866/
 	list-style:none;
 	background:#fefefe;
 }
-.global-toolbar li{
+.footer .global-toolbar li{
 	display:block;
 	float:left;
 	width:20%;
 	text-align:center;
 }
-.icon-home,.icon-history,.icon-specialthing,.icon-my,.icon-more
+.footer .icon-home,.footer .icon-history,.footer .icon-specialthing,.footer .icon-my,.footer .icon-more
 {
 	width:100%;
 	height:0.86rem;
@@ -521,38 +553,38 @@ http://m.ly.com/selftrip/line/82866/
 	padding-top:45%;
 	font-size:0.20rem;
 }
-.icon-home{
+.footer .icon-home{
 	background-image: url('../images/global/01_01.png');
 }
-.icon-home.active{
+.footer .icon-home.active{
 	background-image: url('../images/global/01_02.png');
 }
-.icon-history {
+.footer .icon-history {
 	background-image: url('../images/global/01_03.png');
 }
-.icon-history.active{
+.footer .icon-history.active{
 	background-image: url('../images/global/01_04.png');
 }
-.icon-specialthing {
+.footer .icon-specialthing {
 	background-image: url('../images/global/01_05.png');
 }
-.icon-specialthing.active{
+.footer  .icon-specialthing.active{
 	background-image: url('../images/global/01_06.png');
 }
-.icon-my{
+.footer  .icon-my{
 	background-image: url('../images/global/01_07.png');
 }
-.icon-my.active{
+.footer  .icon-my.active{
 	background-image: url('../images/global/01_08.png');
 }
-.icon-more {
+.footer  .icon-more {
 	background-image: url('../images/global/01_09.png');
 }
-.icon-more.active{
+.footer  .icon-more.active{
 	background-image: url('../images/global/01_10.png');
 }
 
-.icon-detail-tringle{
+.footer  .icon-detail-tringle{
 	display:inline-block;
 	width:0.11rem;
 	height:0.20rem;
@@ -565,12 +597,10 @@ http://m.ly.com/selftrip/line/82866/
 
 /*index*/
 
-
-
 .money{
 	color: red;
+	font-size:0.24rem;
 }
-
 
 
 .threebox .first
@@ -1050,4 +1080,193 @@ http://m.ly.com/selftrip/line/82866/
 .popbox .popcontent .conditionbox.price .valuebox .valueitem.active{
 	padding:0.05rem 0.02rem;
 	width:1.4rem;
+}
+
+
+.popdownpanel{
+	background-clip:content-box;
+	background-color:#ffffff;
+	padding:0.20rem;
+}
+.popdownpanel .popdownpanel-header{
+	background:
+	url("../images/hotel/jiudian_04.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+	height:0.80rem;
+	line-height:0.80rem;
+	padding-left:15%;
+	font-size:0.25rem;
+	border-bottom:0.02rem solid #ebebeb;
+}
+.popdownpanel .popdownpanel-body{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:flex-start;
+	background-color:#ebebeb;
+}
+.popdownpanel .popdownpanel-body.show{
+	display:flex;
+}
+.popdownpanel .popdownpanel-body.hidden{
+	display:none;
+}
+.popdownpanel .popdownpanel-body .popdownpanel-item{
+	width:1.50rem;
+	height:0.90rem;
+	line-height:0.90rem;
+	text-align: center;
+	padding:0.01rem;
+	background-color:#ffffff;
+	background-clip:content-box;
+}
+.popdownpanel .popdownpanel-header.area{
+	background:
+	url("../images/hotel/jiudian_04.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+}
+.popdownpanel .popdownpanel-header.brand{
+	background:
+	url("../images/hotel/jiudian_05.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+}
+.popdownpanel .popdownpanel-header.district{
+	background:
+	url("../images/hotel/jiudian_06.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+}
+
+
+
+
+/*hotellist*/
+.hotellist .header{
+	height:0.70rem;
+	line-height:0.70rem;
+	background:url("../images/hotel/jiudian_13.png") no-repeat 95% center;
+	padding-left:0.20rem;
+	font-size:0.22rem;
+}
+.hotellist .listbox{
+
+}
+.hotellist .listbox .item{
+	position:relative;
+	background-color:#ffffff;
+	padding:0.10rem 0.20rem;
+	margin-bottom:0.02rem;
+}
+.hotellist .listbox .item  img{
+	float:left;
+	width:1.9rem;
+	height:1.9rem;
+}
+.hotellist .listbox .item  .info{
+	position:absolute;
+	left:2.2rem;
+	font-size:0.24rem;
+}
+ .hotellist .listbox .item  .service{
+ 	position:absolute;
+	left:2.2rem;
+	top:0.40rem;
+	width:2.5rem;
+	font-size:0.24rem;
+ }
+.hotellist .listbox .item  .service .first .score{
+	display:inline-block;
+  	height:0.30rem;
+  	vertical-align:middle;
+  	line-height:0.30rem;
+  	color:#fd7004;
+  	font-size:0.22rem;
+  }
+.hotellist .listbox .item  .service .first .ico_park {
+    background: rgba(0, 0, 0, 0) url("../images/hotel/p.png") no-repeat scroll center center / contain ;
+    height:0.30rem;
+    width:0.30rem;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:0.30rem;
+}
+.hotellist .listbox .item  .service .first  .ico_wifi {
+    background: rgba(0, 0, 0, 0) url("../images/hotel/wifi.png") no-repeat scroll center center / contain ;
+    height:0.30rem;
+    width:0.30rem;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:0.30rem;
+}
+ .hotellist .listbox .item  .service .first  .ico_mc {
+    background-repeat:no-repeat;
+    background-image:url("../images/hotel/mc.png");
+    background-position:center center;
+    background-size:0.30rem 0.30rem;
+    height:0.30rem;
+    width:0.30rem;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:0.30rem;
+}
+ .hotellist .listbox .item  .service  .star {
+    color:#a9a9a9;
+}
+
+.hotellist .listbox .item  .price {
+	position:absolute;
+	left:4.80rem;
+	top:0.5rem;
+	width:1.4rem;
+
+	background-image:url("../images/hotel/jiudian_03.png");
+	background-repeat:no-repeat;
+	background-position:90% 50%;
+}
+.hotellist .listbox .item  .price .baseprice{
+	font-size:0.30rem;
+}
+.hotellist .listbox .item  .returnrate{
+	position:absolute;
+	top:0.9rem;
+	left:4.80rem;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	flex-wrap:wrap;
+}
+.hotellist .listbox .item  .highest{
+	background-image:url("../images/hotel/jiudian_14.png");
+	background-repeat:no-repeat;
+	background-position:left top;
+	background-size:0.80rem 0.35rem  ;
+	height:0.35rem;
+	width:0.80rem;
+	line-height:0.35rem;
+	font-size:0.20rem;
+	color:#ffffff;
+	padding-left:0.05rem;
+}
+
+
+.hotellist .listbox .item  .address{
+	position:absolute;
+	bottom:0.20rem;
+	left:2.2rem;
+	width:3.1rem;
+	text-overflow:ellipsis;
+	white-space:nowrap
+	overflow:hidden;
+
+	  text-overflow:ellipsis;  
+	  white-space:nowrap;  
+	  overflow:hidden;  
+}
+.hotellist .listbox .item  .distance{
+	position:absolute;
+	bottom:0.20rem;
+	right:0.20rem;
 }
