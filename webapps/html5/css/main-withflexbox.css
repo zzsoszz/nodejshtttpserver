@@ -481,15 +481,13 @@ body >  .header{
   	align-items:center;
   	justify-content:space-between;
   	height:0.96rem;
+  	padding:0.20rem;
 }
 .global-topbar  > .icon-back {
 	background:url('../images/global/back.png') no-repeat;
-	background-position:center center;
 	background-size:0.23rem 0.42rem;
 	width:0.23rem;
-	height:0.96rem;
-	line-height:0.96rem;
-	margin-left:0.20rem;
+	height:0.42rem;
 }
 .global-topbar  > .icon-home {
 	background:url('../images/global/01_01.png') no-repeat;
@@ -498,22 +496,15 @@ body >  .header{
 	height:0.42rem;
 }
 .global-topbar  .titile{
-	position:absolute;
-	left:0;
-	top:0;
-	height:100%;
-	width:100%;
 	font-weight:300;
 	font-size:0.32rem;
-	line-height: 0.96rem;
-	text-align:center;
+	line-height: 0.42rem;
 }
 .global-topbar  .other{
 	color:#666666;
 	font-weight:400;
 	font-size:0.22rem;
 	line-height: 0.42rem;
-	margin-right:0.20rem;
 }
 
 
@@ -839,10 +830,39 @@ body >  .header{
 
 
 .saletodaybox{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	
+	/*是否换行*/
+    -webkit-box-lines:multiple;
+    -webkit-box-pack: start; 
+	-webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+	
+    /*子元素交叉轴对齐方式*/
+    -webkit-box-align: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	align-items: center;
+	
+	/*子元素的显示方向*/
+	-webkit-box-direction: normal;
+	-webkit-box-orient: horizontal;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	
+	/*允许收缩*/
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 	margin:0.10rem;
 }
 .saletodaybox  .item{
-	float:left;
 	position:relative;
 	background-clip:content-box;
 	background-color:#ffffff;
