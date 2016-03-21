@@ -437,70 +437,80 @@ body >  .header{
 
 
 .keywordbox{
-	display:-webkit-flex;
-  	display:flex;
-  	flex-direction:row;
-  	flex-wrap:wrap;
-  	align-items:center;
-  	justify-content:space-between;
   	height:0.96rem;
-  	padding:0.20rem;
 }
 .keywordbox .back{
-	display:block;
-	height:0.50rem;
-	width:0.23rem;
+	display:inline-block;
+	height:100%;
+	width:0.96rem;
 	background-image:url("../images/global/back.png");
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:0.23rem 0.50rem;
 }
-.keywordbox .keyword{
+.keywordbox  .keywordwrap{
+	position:absolute;
+	left:0.96rem;
+	top:0;
+	width:4.4rem;
+  	height:0.96rem;
+  	text-align:center;
+  	vertical-align:middle;
+  	line-height:0.96rem;
+}
+.keywordbox  .keywordwrap .keyword{
 	height:0.60rem;
-	width:4.80rem;
+	width:4.40rem;
 	background-color:#ebebeb;
 	background-image:url("../images/global/search.png");
 	background-repeat:no-repeat;
-	background-position:0.25rem 0.12rem;
+	background-position:0.20rem 0.12rem;
 	background-size:0.35rem 0.35rem;
 	border:none;
 	padding-left:0.70rem;
 	font-size:0.22rem;
+	line-height:0.96rem;
 }
 .keywordbox  .dosearch{
+	position:absolute;
+	right:0rem;
 	font-size:0.24rem;
+	line-height: 0.96rem;
+	text-align:center;
+	width:0.96rem;
 }
 
 
 
 .global-topbar{
-	display:-webkit-flex;
-  	display:flex;
-  	flex-direction:row;
-  	flex-wrap:wrap;
-  	align-items:center;
-  	justify-content:space-between;
+	position:relative;
   	height:0.96rem;
 }
 .global-topbar  > .icon-back {
+	position:absolute;
+	left:0;
+	top:0;
 	background:url('../images/global/back.png') no-repeat;
 	background-position:center center;
 	background-size:0.23rem 0.42rem;
-	width:0.23rem;
+	width:1rem;
 	height:0.96rem;
 	line-height:0.96rem;
-	margin-left:0.20rem;
 }
 .global-topbar  > .icon-home {
+	position:absolute;
+	right:0rem;
 	background:url('../images/global/01_01.png') no-repeat;
 	background-size:0.46rem 0.46rem;
-	width:0.42rem;
-	height:0.42rem;
+	background-position:center center;
+	width:1rem;
+	height:0.96rem;
+	line-height: 0.96rem;
 }
 .global-topbar  .titile{
 	position:absolute;
 	left:0;
-	top:0;
+	right:0;
 	height:100%;
 	width:100%;
 	font-weight:300;
@@ -509,10 +519,12 @@ body >  .header{
 	text-align:center;
 }
 .global-topbar  .other{
+	position:absolute;
+	right:0.20rem;
 	color:#666666;
 	font-weight:400;
 	font-size:0.22rem;
-	line-height: 0.42rem;
+	line-height: 0.96rem;
 	margin-right:0.20rem;
 }
 
@@ -814,14 +826,14 @@ body >  .header{
 .qcarrousel .dotsbox{
 	position:absolute;
 	top:80%;
-	width: 100%;
+	width:100%;
+	text-align:center;
 }
 .qcarrousel .dotslist{
-	display: -webkit-flex;
-  	display: flex;
-  	justify-content:center;
+	display:inline-block;
 }
 .qcarrousel .dotslist .dot{
+	float:left;
 	margin:0.05rem;
 	background-size:0.13rem 0.13rem;
 	background-repeat: no-repeat;;
@@ -1058,13 +1070,10 @@ body >  .header{
 	font-size:0.24rem;
 }
 .popbox .popcontent .conditionbox .valuebox{
-	display:flex;
-	flex-direction:row;
-  	flex-wrap:wrap;
-  	justify-content:flex-start;
 	margin:0.10rem;
 }
 .popbox .popcontent .conditionbox .valuebox .valueitem{
+	float:left;
 	padding:0.05rem;
 	background:#ffffff;
 	background-clip:content-box;
@@ -1105,19 +1114,18 @@ body >  .header{
 	border-bottom:0.02rem solid #ebebeb;
 }
 .popdownpanel .popdownpanel-body{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	justify-content:flex-start;
 	background-color:#ebebeb;
 }
 .popdownpanel .popdownpanel-body.show{
-	display:flex;
+	display:block;
+	float:left;
 }
 .popdownpanel .popdownpanel-body.hidden{
 	display:none;
 }
 .popdownpanel .popdownpanel-body .popdownpanel-item{
+	display:block;
+	float:left;
 	width:1.50rem;
 	height:0.90rem;
 	line-height:0.90rem;
@@ -1238,12 +1246,9 @@ body >  .header{
 	position:absolute;
 	top:0.9rem;
 	left:4.80rem;
-	display:flex;
-	flex-direction:row;
-	align-items:center;
-	flex-wrap:wrap;
+	
 }
-.hotel .showlist .listbox .item  .highest{
+.hotel .showlist .listbox .item   .returnrate .highest{
 	background-image:url("../images/hotel/jiudian_14.png");
 	background-repeat:no-repeat;
 	background-position:left top;
@@ -1254,7 +1259,12 @@ body >  .header{
 	font-size:0.20rem;
 	color:#ffffff;
 	padding-left:0.05rem;
+	float:left;
 }
+.hotel .showlist .listbox .item   .returnrate .money{
+	float:right;
+}
+
 
 .hotel .showlist .listbox .item  .address{
 	position:absolute;
@@ -1313,6 +1323,12 @@ body >  .header{
 	color:#999999;
 }
 
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
 
 
 
@@ -1321,51 +1337,57 @@ body >  .header{
 }
 .hotel .showdetail .basicinfo{
 	height:auto;
+	text-align:justify;
 }
 .hotel .showdetail .basicinfo .leftbox{
 	display:inline-block;
 	width:4.60rem;
 	height:1.75rem;
+	text-align:center; 
+	vertical-align:top;
 }
 .hotel .showdetail .basicinfo  .leftbox .item{
 	cursor:pointer;
 	height:50%;
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	justify-content:space-between;
-	align-items:center;
 	background-color:#ffffff;
 	padding-left:0.20rem;
 	border-bottom:0.02rem solid #ebebeb;
+	text-align:justify;
+}
+.hotel .showdetail .basicinfo  .leftbox span{
+	height:100%;
+	line-height:0.85rem;
+	display:inline-block;
+	vertical-align:top;
+	text-align:center;
 }
 .hotel .showdetail .basicinfo  .leftbox  .item .detail{
 	width:1.00rem;
 	background-image:url("../images/hotel/jiudian_03.png");
 	background-repeat:no-repeat;
-	background-position:60% 50%;
+	background-position:right center;
 }
 .hotel .showdetail .basicinfo .rightbox{
 	display:inline-block;
 	width:1.75rem;
 	height:1.75rem;
 }
-.hotel .showdetail .addressinfo{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	justify-content:space-between;
-	align-items:center;
-	padding:0.20rem;
 
+
+.hotel .showdetail .addressinfo{
+	position:relative;
+	padding:0.20rem;
 	min-height:1.10rem;
 	background-color:#ffffff;
-
 }
 .hotel .showdetail .addressinfo .address{
+	float:left;
 	width:3.40rem;
 }
 .hotel .showdetail .addressinfo .distance{
+	position:absolute;
+	right:0.2rem;
+	top:45%;
 	background-image:url("../images/hotel/distance.png");
 	background-repeat:no-repeat;
 	background-position:left 50%;
@@ -1375,13 +1397,8 @@ body >  .header{
 .hotel .showdetail .roominfo{
 	margin-top:0.40rem;
 }
-.hotel .showdetail .roominfo .dateinfo{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	justify-content:space-between;
-	align-items:center;
 
+.hotel .showdetail .roominfo .dateinfo{
 	background-color:#ffffff;
 	padding:0.20rem;
 	height:0.80rem;
