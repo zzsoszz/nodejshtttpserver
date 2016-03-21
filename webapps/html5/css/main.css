@@ -1351,6 +1351,7 @@ body >  .header{
 	height:50%;
 	background-color:#ffffff;
 	padding-left:0.20rem;
+	padding-right:0.20rem;
 	border-bottom:0.02rem solid #ebebeb;
 	text-align:justify;
 }
@@ -1400,13 +1401,17 @@ body >  .header{
 
 .hotel .showdetail .roominfo .dateinfo{
 	background-color:#ffffff;
-	padding:0.20rem;
+	padding:0rem 0.20rem;
 	height:0.80rem;
 	border-top:2px solid #d5d5d5;
 	border-bottom:2px solid #d5d5d5;
 }
 .hotel .showdetail .roominfo .dateinfo > .item{
+	display:inline;
+	vertical-align:middle;
 	width:1.80rem;
+	height:100%;
+	line-height:0.80rem;
 }
 
 
