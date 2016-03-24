@@ -1628,3 +1628,155 @@ body >  .header{
 	height:0.70rem;
 	width:2.22rem;
 }
+
+
+/*
+ * helpcenter
+*/
+.listgroup {
+	position:relative;
+	padding-left:0.20rem;
+	background-color:#ffffff;
+	border-top:2px solid #ebebeb;
+	border-bottom:2px solid #ebebeb;
+	margin-bottom:0.40rem;
+}
+.listgroup .listrow{
+	line-height:0.96rem;
+	border-bottom:1px solid #ebebeb;
+}
+.listgroup .listrow:last-child{
+	border-bottom:none;
+}
+.heart-bg{
+	background-image:url("../images/setting/other_01.png"),url("../images/global/detail-tringle.png");
+	background-size:0.50rem 0.50rem,0.11rem 0.20rem;
+	background-position:left center,90% 50%;
+	background-repeat:no-repeat;
+	padding-left:0.60rem;
+}
+.about-bg{
+	background-image:url("../images/setting/other_02.png"),url("../images/global/detail-tringle.png");
+	background-size:0.50rem 0.50rem,0.11rem 0.20rem;
+	background-position:left center,90% 50%;
+	background-repeat:no-repeat;
+	padding-left:0.60rem;
+}
+.update-bg{
+	background-image:url("../images/setting/other_03.png"),url("../images/global/detail-tringle.png");
+	background-size:0.50rem 0.50rem,0.11rem 0.20rem;
+	background-position:left center,90% 50%;
+	background-repeat:no-repeat;
+	padding-left:0.60rem;
+}
+.setting-bg{
+	background-image:url("../images/setting/other_04.png"),url("../images/global/detail-tringle.png");
+	background-size:0.50rem 0.50rem,0.11rem 0.20rem;
+	background-position:left center,90% 50%;
+	background-repeat:no-repeat;
+	padding-left:0.60rem;
+}
+.accordion{
+	border-top:2px solid #ebebeb;
+	border-bottom:2px solid #ebebeb;
+}
+.accordion > .header{
+	background-position:90% center;
+	background-repeat:no-repeat;
+	background-size: 0.20rem 0.11rem;
+	background-color:#ffffff;
+	line-height:1.12rem;
+	padding-left:0.20rem;
+}
+.accordion.up > .header{
+	background-image:url('../images/global/detail-up.png');
+	border:none;
+}
+.accordion.up > .body{
+	display:block;
+}
+.accordion.down > .header{
+	background-image:url('../images/global/detail-down.png');
+	border-bottom:1px solid #ebebeb;
+}
+.accordion.down > .body{
+	display:none;
+}
+.accordion .body{
+	padding:0.20rem;
+	background-color:#ffffff;
+}
+.helpcenter .thirdstep{
+	background:#ffffff;
+}
+
+
+
+/*
+ *团购首页
+*/
+.menu-box{
+	padding:0.20rem 0.20rem;
+	background-color:#ffffff;
+}
+.menu-box .item{
+	display:block;
+	float:left;
+	height:1.2rem;
+	width:1.5rem;
+	text-align:center;
+	padding-top:0.75rem;
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:0.75rem 0.75rem;
+}
+.menu-box .item.tuangou_01{
+	background-image:url("../images/groupbuying/tuangou_01.png");
+}
+.menu-box .item.tuangou_02{
+	background-image:url("../images/groupbuying/tuangou_02.png");
+}
+.menu-box .item.tuangou_03{
+	background-image:url("../images/groupbuying/tuangou_03.png");
+}
+.menu-box .item.tuangou_04{
+	background-image:url("../images/groupbuying/tuangou_04.png");
+}
+.menu-box .item.tuangou_05{
+	background-image:url("../images/groupbuying/tuangou_05.png");
+}
+.menu-box .item.tuangou_06{
+	background-image:url("../images/groupbuying/tuangou_06.png");
+}
+.menu-box .item.tuangou_07{
+	background-image:url("../images/groupbuying/tuangou_07.png");
+}
+.menu-box .item.tuangou_08{
+	background-image:url("../images/groupbuying/tuangou_08.png");
+}
+.menu-box .item.tuangou_09{
+	background-image:url("../images/groupbuying/tuangou_09.png");
+}
+.menu-box .item.tuangou_10{
+	background-image:url("../images/groupbuying/tuangou_10.png");
+}
+
+.productlist{
+	border-top:4px solid #ebebeb;
+	border-bottom:4px solid #ebebeb;
+	background:#ffffff;
+}
+.productlist .item{
+	display:block;;
+}
+.productlist .item .header{
+	padding:0.20rem;
+	float:left;
+}
+.productlist .item .header img{
+	width:1.4rem;
+	height:1.4rem;
+}
+.productlist .item .body{
+	
+}
