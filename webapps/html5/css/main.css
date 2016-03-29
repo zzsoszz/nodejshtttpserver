@@ -1158,6 +1158,7 @@ body >  .header{
 
 
 /*hotel showlist*/
+
 .hotel .showlist .header{
 	height:0.70rem;
 	line-height:0.70rem;
@@ -1715,6 +1716,32 @@ body >  .header{
 /*
  *团购首页
 */
+.refresh{
+	height:0.70rem;
+	line-height:0.70rem;
+	background:url("../images/hotel/jiudian_13.png") no-repeat 95% center;
+	padding-left:0.20rem;
+	font-size:0.22rem;
+}
+.basicmoney{
+	text-decoration:line-through;
+	color:#a1a1a1;
+}
+.justify-box{
+	display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+}
+.justify-item{
+	display:block;
+	text-align:center;
+}
+
 .menu-box{
 	padding:0.20rem 0.20rem;
 	background-color:#ffffff;
@@ -1760,23 +1787,264 @@ body >  .header{
 .menu-box .item.tuangou_10{
 	background-image:url("../images/groupbuying/tuangou_10.png");
 }
-
 .productlist{
 	border-top:4px solid #ebebeb;
 	border-bottom:4px solid #ebebeb;
 	background:#ffffff;
 }
 .productlist .item{
+	border-top:3px solid #ebebeb;
+	border-top:3px solid #ebebeb;
 	display:block;;
 }
 .productlist .item .header{
 	padding:0.20rem;
 	float:left;
+	width:1.80rem;
+	height:1.80rem;
 }
 .productlist .item .header img{
-	width:1.4rem;
-	height:1.4rem;
+	width:100%;
+	height:100%;
 }
 .productlist .item .body{
+	float:right;
+	width:4.60rem;
+	padding:0rem 0.20rem;
+}
+.productlist .item .body .justify-item{
+		line-height:0.6rem;
+		vertical-align:middle;
+}
+.productlist .item .body .justify-box.second{
+		border-bottom:3px solid #ebebeb;
+}
+
+.groupbuying .qcarrousel{
+	margin-top:0.1rem;
+}
+
+
+
+/*
+ *团购-美食
+*/
+.inline-list{
+	list-style:none;
+}
+.inline-list li{
+	text-align:center;
+	float:left;
+}
+
+.list{
+	list-style:none;
+}
+.list li{
+	text-align:center;
+}
+
+
+
+
+
+.groupbuying-good .filterbox{
+	position:fixed;
+	width:6.4rem;
+}
+.groupbuying-good .filterbox.show{
+	height:100%;
+}
+.groupbuying-good .filterbox.show .maskbox{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom: 0px;
+	background-color:#000000;
+	opacity:0.5;
+	z-index:0;
+}
+.groupbuying-good .filterbox .filterandorderbox{
+	position:absolute;
+	top:0px;
+	width:100%;
+	background-color:#ffffff;
+	z-index:3;
+}
+.groupbuying-good .filterbox .filterbody{
+	display:none;
+}
+.groupbuying-good .filterbox.show .filterbody{
+	display:block;
+}
+.groupbuying-good .filterbox .filterandorderbox .inline-list{
+	padding-top:0.20rem;
+	padding-bottom:0.20rem;
+	border-top:2px solid #ebebeb;
+	border-bottom:2px solid #ebebeb;
+}
+.groupbuying-good .filterbox .filterandorderbox .inline-list li{
+	cursor:pointer;
+	border-right:2px solid #a1a1a1;
+	width:33.3333333333%;
+}
+.groupbuying-good .filterbox .filterandorderbox .inline-list li.up{
+	background-repeat:no-repeat;
+	background-position:90% center;
+	background-image:url("../images/groupbuying/tuangou_12.png");
+}
+.groupbuying-good .filterbox .filterandorderbox .inline-list li.down{
+	color:red;
+	background-repeat:no-repeat;
+	background-position:90% center;
+	background-image:url("../images/groupbuying/tuangou_13.png");
+}
+.groupbuying-good .filterbox .filterandorderbox .inline-list li:last-child{
+	border-right:none;
+}
+.groupbuying-good .listgroup{
+	border-top:2px solid #d5d5d5;
+	border-bottom:none;
+	padding-left:0rem;
+	margin-bottom:0rem;
+	background-color:#ededed;
+}
+.groupbuying-good .listgroup  .listrow{
+	border-bottom:2px solid #d5d5d5;
+	padding-left:0.60rem;
+}
+.groupbuying-good .listgroup  .listrow.select{
+	background-image:url("../images/groupbuying/tuangou_14.png");
+	background-size:0.27rem 0.18rem;
+	background-position:0.2rem center;
+	background-repeat:no-repeat;
+}
+.groupbuying-good  .list{
+	width:2.40rem;
+	background-color:#ededed;
+	position:relative;
+}
+.groupbuying-good  .list li{
+	width:2.40rem;
+	line-height:0.80rem;
+	background-color:#ffffff;
+	border-bottom:2px solid #d5d5d5;
+	border-right:2px solid #d5d5d5;
+}
+.groupbuying-good  .list li.active{
+	border-right:none;
+	background-color:#ededed;
+	color: red;
+}
+.groupbuying-good  .selectbox{
+	position:relative;
+	height:5.0rem;
+	overflow:scroll;
+}
+.groupbuying-good .selectbox .list{
+	border-top:2px solid #e7313d;
+}
+.groupbuying-good .selectbox .justify-box .justify-item{
+	text-align:left;
+}
+.groupbuying-good .selectbox .listgroup{
+	position:absolute;
+	top:0rem;
+	left:2.4rem;
+	width:4rem;
+}
+.groupbuying-good .selectbox .listgroup .listrow{
+	line-height:0.80rem;
+}
+.groupbuying-good .selectbox.category .listgroup .listrow span{
+	width:50%;
+}
+.groupbuying-good .selectbox.location .listgroup .listrow span{
+	width:100%;
+}
+
+
+
+
+/*
+	01_04_01首页_商城.psd
+*/
+.shop .hmenu {
+	position:relative;
+	height:1rem;
+	overflow:hidden;
+}
+.shop .hmenu .inline-list{
+	border-top:0.02rem solid #ebebeb;
+	width:100rem;
+	height:100%;
+	line-height:1rem;
+}
+.shop .hmenu .inline-list.moveonestep{
+	margin-left:-1.6rem;
+}
+.shop .hmenu .inline-list li{
+	height:1rem;
+	width:1.6rem;
+	background:#ffffff;
+	border-bottom:0.05rem solid #cccccc;
+}
+.shop .hmenu .inline-list li.active{
+	color:#e7313d;
+	border-bottom:0.05rem solid #e7313d;
+}
+.shop .hmenu .next{
+	width:0.35rem;
+	height:0.60rem;
+	position:absolute;
+	top:50%;
+	right:0;
+	transform: translate(0, -50%);
+	background-image:url("../images/shop/shangcheng_022.png");
+	background-position:center;
+	background-size:0.35rem 0.60rem;
+	background-repeat:no-repeat;
+}
+.shop .hmenu .prev{
+	width:0.35rem;
+	height:0.60rem;
+	position:absolute;
+	top:50%;
+	left:0;
+	transform: translate(0, -50%);
+	background-image:url("../images/shop/shangcheng_021.png");
+	background-position:center;
+	background-size:0.35rem 0.60rem;
+	background-repeat:no-repeat;
+}
+.rtbox{
+	width:100%;
+	height:6rem;
+}
+.rtbox .item{
+	float:left;
+	background:#ffffff;
+	margin-right:0.08rem;
+	margin-bottom:0.08rem;
+	width:2.08rem;
+	height:2.08rem;
+	position: relative;
+}
+.rtbox .item img{
+	position:absolute;
+	top:40%;
+	left:50%;
+	transform: translate(-50%, -50%);
 	
+}
+.rtbox .item:nth-child(3n) {
+	margin-right:0;
+}
+.rtbox .item p{ 
+	position:absolute;
+	top:70%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	text-align:center;
 }

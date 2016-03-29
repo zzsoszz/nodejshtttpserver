@@ -1,78 +1,53 @@
-<style>
-
-
-
-.fieldgroup .fieldrow{
-	padding:0.20rem;
-	border-bottom:1px solid #d5d5d5;
-	background-color:#ffffff;
-	width:100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.fieldgroup .fieldrow .first{
-   width:200px;
-	display:block;
-   -webkit-box-flex: 0;
-   -webkit-flex:0;
-      -ms-flex: 0;
-          flex: none;
-	word-wrap:break-word;
-}
-
-.fieldgroup .fieldrow .second{
-  padding:20px;
-  display:block;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="monicaqin">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>cssÃŠÂµÃÃ–ÃÂ½Â¶Ã‹Â¶Ã”Ã†Ã«</title>
+  <style>
+  *{margin:0;padding:0;}
   
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  
+.demo{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
 }
-.fieldgroup .fieldrow .second .center{
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-}
-.fieldgroup .fieldrow .second .right{
-	display:block;
-	margin-left:auto;
-}
-.fieldgroup .fieldrow .second .left{
-	display:block;
-	margin-right:auto;
-}
-</style>
 
+.demo a{
+     width:20%;
+     display:block;
+     height:44px;
+     line-height:44px;
+     text-align:center;
+     border:1px solid #428cc8;
+     color:#666;
+     font-size:16px;
+     margin-bottom:5px;
+     border-radius:3px;
+     background-color:#fefefe;
+     background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fefefe),color-stop(1,#eee));
+     color:#666;
+     text-decoration:none;
+}
+
+  </style>
+</head>
 <body>
-	<div class="fieldgroup ">
-			<div class="fieldrow detail" >
-				<div  class="first">
-					´ó´²·¿²»ºÃÕ¦Åª°®°®°®°¡°¡°¡°¡
-					´ó´²·¿²»ºÃÕ¦Åª°®°®°®°¡°¡°¡°¡
-				</div>
-				<div class="second" >
-					<span class="left" >
-						1¼ä
-					</span>
-				</div>
-				<div class="third" >
-				</div>
-			</div>
-			
-	</div>
-
+ <p>ÃŠÂ¹Ã“Ãƒbox-pack:justify</p>
+<div class="demo">
+	<a class="link" href="#none">10Ã”Âª</a>
+	<a class="link" href="#none">20Ã”Âª</a>
+	<a class="link" href="#none">30Ã”Âª</a>
+</div>
 </body>
+</html>
