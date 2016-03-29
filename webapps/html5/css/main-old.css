@@ -100,7 +100,9 @@ figure {
 }
 hr {
   height: 0;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
 pre {
   overflow: auto;
@@ -149,7 +151,9 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -157,7 +161,9 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 input[type="search"] {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
   -webkit-appearance: textfield;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -402,11 +408,15 @@ body{
 http://m.ly.com/selftrip/line/82866/
 */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 *:before,
 *:after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 
@@ -951,7 +961,7 @@ body >  .header{
 .searchbox  .dest .location{
 	position:absolute;
 	right:0px;
-	top:0px;
+	top:0px
 	display:block;
 	width:0.9rem;
 	background-image:url("../images/hotel/jiudian_01.png");
@@ -1264,7 +1274,7 @@ body >  .header{
 	left:2.2rem;
 	width:3.1rem;
 	text-overflow:ellipsis;
-	white-space:nowrap;
+	white-space:nowrap
 	overflow:hidden;
 
 	  text-overflow:ellipsis;  
@@ -1489,6 +1499,7 @@ body >  .header{
 	border-bottom:1px solid #d5d5d5;
 	background-color:#ffffff;
 	width:100%;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -1496,32 +1507,38 @@ body >  .header{
 .fieldgroup .fieldrow .first{
    width:200px;
 	display:block;
+   -webkit-box-flex: 0;
    -webkit-flex:0;
-   -ms-flex: 0;
-       flex: none;
+      -ms-flex: 0;
+          flex: none;
 	word-wrap:break-word;
 }
 
 .fieldgroup .fieldrow .second{
   padding-left:20px;
   display:block;
+  -webkit-box-flex: 3;
   -webkit-flex: 3;
-  -ms-flex: 3;
-      flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   
   display: flex;
+  -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-      align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fieldgroup .fieldrow .third{ 
   display:block;
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
-  -ms-flex: 1;
-      flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 
@@ -1605,8 +1622,7 @@ body >  .header{
 	position:absolute;
 	right:0.20rem;
 	top:50%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
     
 	background:#e7313d;
 	border:none;
@@ -1712,9 +1728,11 @@ body >  .header{
 	color:#a1a1a1;
 }
 .justify-box{
+	display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+    -webkit-box-pack:justify;
     -ms-flex-pack:justify;
     -webkit-justify-content:space-between;
     justify-content:space-between;
@@ -1982,8 +2000,7 @@ body >  .header{
 	position:absolute;
 	top:50%;
 	right:0;
-	-webkit-transform: translate(0, -50%);
-	        transform: translate(0, -50%);
+	transform: translate(0, -50%);
 	background-image:url("../images/shop/shangcheng_022.png");
 	background-position:center;
 	background-size:0.35rem 0.60rem;
@@ -1995,8 +2012,7 @@ body >  .header{
 	position:absolute;
 	top:50%;
 	left:0;
-	-webkit-transform: translate(0, -50%);
-	        transform: translate(0, -50%);
+	transform: translate(0, -50%);
 	background-image:url("../images/shop/shangcheng_021.png");
 	background-position:center;
 	background-size:0.35rem 0.60rem;
@@ -2016,13 +2032,10 @@ body >  .header{
 	position: relative;
 }
 .rtbox .item img{
-	width:1.2rem;
-	height:0.6rem;
 	position:absolute;
 	top:40%;
 	left:50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	
 }
 .rtbox .item:nth-child(3n) {
@@ -2032,7 +2045,6 @@ body >  .header{
 	position:absolute;
 	top:70%;
 	left:50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	text-align:center;
 }
