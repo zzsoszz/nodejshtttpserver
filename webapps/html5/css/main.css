@@ -750,6 +750,8 @@ body >  .header{
 	width:20%;
 	text-align:center;
 }
+
+/*
 .footer .icon-home,.footer .icon-history,.footer .icon-specialthing,.footer .icon-my,.footer .icon-more
 {
 	width:100%;
@@ -768,30 +770,29 @@ body >  .header{
 	background-image: url('../images/global/home-show.png');
 }
 .footer .icon-history {
-	background-image: url('../images/global/01_03.png');
+	background-image: url('../images/global/time-hiden.png');
 }
 .footer .icon-history.active{
-	background-image: url('../images/global/01_04.png');
+	background-image: url('../images/global/time-show.png');
 }
 .footer .icon-specialthing {
-	background-image: url('../images/global/01_05.png');
+	background-image: url('../images/global/star-hiden.png');
 }
 .footer  .icon-specialthing.active{
-	background-image: url('../images/global/01_06.png');
+	background-image: url('../images/global/star-show.png');
 }
 .footer  .icon-my{
-	background-image: url('../images/global/01_07.png');
+	background-image: url('../images/global/user-hiden.png');
 }
 .footer  .icon-my.active{
-	background-image: url('../images/global/01_08.png');
+	background-image: url('../images/global/user-show.png');
 }
 .footer  .icon-more {
-	background-image: url('../images/global/01_09.png');
+	background-image: url('../images/global/more-hiden.png');
 }
 .footer  .icon-more.active{
-	background-image: url('../images/global/01_10.png');
+	background-image: url('../images/global/more-show.png');
 }
-
 .footer  .icon-detail-tringle{
 	display:inline-block;
 	width:0.11rem;
@@ -799,8 +800,18 @@ body >  .header{
 	background: url('../images/global/detail-tringle.png') no-repeat;
 	vertical-align: baseline;
 }
+*/
 
-
+.footer .iconfont{
+	font-size:0.46rem;
+	color:#000000;
+}
+.footer .iconfont.home::before{
+	content:"\e61a";
+}
+.footer .iconfont.home::before{
+	content:"\e61a";
+}
 
 
 /*index*/
