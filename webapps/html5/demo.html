@@ -8,46 +8,46 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<title>cssÊµÏÖÁ½¶Ë¶ÔÆë</title>
-  <style>
-  *{margin:0;padding:0;}
-  
-.demo{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-pack:justify;
-    -ms-flex-pack:justify;
-    -webkit-justify-content:space-between;
-    justify-content:space-between;
+<link href="fonts/iconfont.css" rel="stylesheet" type="text/css"/>
+<title>aaaa</title>
+<style>
+:after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.demo a{
-     width:20%;
-     display:block;
-     height:44px;
-     line-height:44px;
-     text-align:center;
-     border:1px solid #428cc8;
-     color:#666;
-     font-size:16px;
-     margin-bottom:5px;
-     border-radius:3px;
-     background-color:#fefefe;
-     background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fefefe),color-stop(1,#eee));
-     color:#666;
-     text-decoration:none;
+
+
+
+.iconfont{
+    display: inline-block;
+    line-height: 1;
+	color:#aaaaaa;
+}
+.iconfont.active{
+	color:#e7313d;
 }
 
-  </style>
+.iconfont.home::before{
+	content:"\e606";
+}
+.iconfont.home.active::before{
+	content:"\e600";
+}
+</style>
 </head>
 <body>
- <p>Ê¹ÓÃbox-pack:justify</p>
-<div class="demo">
-	<a class="link" href="#none">10Ôª</a>
-	<a class="link" href="#none">20Ôª</a>
-	<a class="link" href="#none">30Ôª</a>
+<div>
+	<i class="icon iconfont"></i>
 </div>
+
+<div>
+	<span class="icon iconfont home active" >
+	</span>
+	<span>aaaa
+	</span>
+</div>
+
 </body>
 </html>

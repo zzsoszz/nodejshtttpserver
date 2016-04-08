@@ -74,7 +74,8 @@ a:hover {
 .block-hcenter-container > .center{
 	position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform:translateX(-50%);
+    -webkit-transform:translateX(-50%);
 }
 
 
@@ -170,6 +171,78 @@ a:hover {
 
 
 
+:after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.iconfont{
+/*
+	  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+*/
+    display: inline-block;
+    line-height: 1;
+	font-size:0.46rem;
+	color:#aaaaaa;
+}
+.iconfont.active{
+	color:#e7313d;
+}
+
+.iconfont.home::before{
+	content:"\e606";
+}
+.iconfont.home.active::before{
+	content:"\e600";
+}
+
+.iconfont.time::before{
+	content:"\e608";
+}
+.iconfont.time.active::before{
+	content:"\e604";
+}
+
+.iconfont.star::before{
+	content:"\e607";
+}
+.iconfont.star.active::before{
+	content:"\e605";
+}
+
+.iconfont.user::before{
+	content:"\e609";
+}
+.iconfont.user.active::before{
+	content:"\e601";
+}
+
+.iconfont.more::before{
+	content:"\e602";
+}
+.iconfont.more.active::before{
+	content:"\e603";
+}
+
+.iconfont.arrow-left::before{
+	content:"\e60d";
+}
+.iconfont.arrow-left::before{
+	content:"\e60d";
+}
+
+
+/*
 .sprite{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url("../images/global/all.png");}
 .home-hiden {width:46px; height:46px; background-position: -1px -1px}
 .home-show {width:46px; height:46px; background-position: -49px -1px}
@@ -186,7 +259,7 @@ a:hover {
 .detail-tringle {width:11px; height:20px; background-position: -554px -27px}
 .detail-up {width:20px; height:11px; background-position: -554px -14px}
 .search {width:46px; height:46px; background-position: -481px -1px}
-
+*/
 
 
 
@@ -607,6 +680,16 @@ body >  .header{
 	height:0.96rem;
 	border-bottom:2px solid #ebebeb;
 }
+body >  .header .iconfont{
+	line-height:0.96rem;
+}
+body >  .header .iconfont.arrow-left{
+	
+}
+body >  .header .iconfont.home{
+	position: absolute;
+	right:0;
+}
 
 
 .keywordbox{
@@ -734,15 +817,16 @@ body >  .header{
 	height:0.86rem;
 	width:6.4rem;
 	border-top:2px solid #ebebeb;
+	background:#fefefe;
 }
 
 .footer .global-toolbar{
+	margin-top:auto;
+	margin-bottom:auto;
 	width:100%;
-	height:0.86rem;
 	margin:0rem;
 	padding:0px;
 	list-style:none;
-	background:#fefefe;
 }
 .footer .global-toolbar li{
 	display:block;
@@ -802,16 +886,7 @@ body >  .header{
 }
 */
 
-.footer .iconfont{
-	font-size:0.46rem;
-	color:#000000;
-}
-.footer .iconfont.home::before{
-	content:"\e61a";
-}
-.footer .iconfont.home::before{
-	content:"\e61a";
-}
+
 
 
 /*index*/
