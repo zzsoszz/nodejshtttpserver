@@ -19,6 +19,11 @@ a:hover {
 }
 
 
+
+
+
+
+
 .block-vhcenter-container{
  -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -2472,7 +2477,7 @@ body >  .header .right{
 .personal_22 {width:28px; height:28px; background-position: -421px -215px}
 .personal_23 {width:28px; height:28px; background-position: -451px -185px}
 
-
+/*
 .input-group {
 	display:table;
 }
@@ -2487,6 +2492,19 @@ body >  .header .right{
 	display:table-cell;
 	vertical-align:middle;
 	padding:0.15rem;
+}
+*/
+.input-group {
+	display:inline-block;
+	height:0.86rem;
+}
+.input-group  .input-group-addons{
+	vertical-align:middle;
+	font-size: 0.40rem;
+}
+.input-group  .formcontrol{
+	vertical-align:middle;
+	height:0.40rem;
 }
 
 
