@@ -76,7 +76,6 @@ a:hover {
 
 .block-vhcenter-container{
  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 .block-vhcenter-container > .center{
@@ -84,14 +83,22 @@ a:hover {
     top: 50%;
     left: 50%;
     
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    
+            transform: translate(-50%,-50%);
 }
 
 
 .block-vhcenter2-container{
+	 display: -webkit-flex;
+	 display: -ms-flexbox;
 	 display: flex;
-	 justify-content: center;
-	 align-items: center;
+	 -webkit-justify-content: center;
+	     -ms-flex-pack: center;
+	         justify-content: center;
+	 -webkit-align-items: center;
+	     -ms-flex-align: center;
+	         align-items: center;
 }
 
 
@@ -107,7 +114,6 @@ a:hover {
 
 .block-vcenter-container{
  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 .block-vcenter-container > .center{
@@ -126,7 +132,6 @@ a:hover {
 
 .block-hcenter-container{
  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 .block-hcenter-container > .center{
@@ -177,6 +182,16 @@ a:hover {
 }
 
 
+.inline-vcenter2-container{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.inline-vcenter2-container > .item{
+	
+}
+
+
 .inline-block-container{
   letter-spacing: -4px;/*根据不同字体字号或许需要做一定的调整*/
   word-spacing: -4px;
@@ -208,23 +223,17 @@ a:hover {
   两端对齐
 */
 .justify-box{
+	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
-	justify-content:space-between;
-	
-	
-    display: -moz-box; 
-    display:-webkit-flex;
-   
-    -webkit-justify-content:space-between;
+	-webkit-justify-content:space-between;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+
     
-     display:-ms-flexbox;
-     -ms-flex-pack:justify;
-     
     display:-webkit-box;
     -webkit-box-pack:justify;
     
-    display:-ms-flexbox;
-    -ms-flex-pack:justify;
 }
 .justify-box > .justify-item{
 	display:block;
@@ -235,8 +244,6 @@ a:hover {
 
 
 :after, :before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -2217,7 +2224,7 @@ body >  .header .right{
 }
 .groupbuying-good .filterbox .filterandorderbox .inline-list li{
 	cursor:pointer;
-	border-right:2px solid #a1a1a1;
+	border-right:0.01rem solid #a1a1a1;
 	width:33.3333333333%;
 }
 .groupbuying-good .filterbox .filterandorderbox .inline-list li.up{
@@ -2235,14 +2242,14 @@ body >  .header .right{
 	border-right:none;
 }
 .groupbuying-good .listgroup{
-	border-top:2px solid #d5d5d5;
+	border-top:0.04rem solid #d5d5d5;
 	border-bottom:none;
 	padding-left:0rem;
 	margin-bottom:0rem;
 	background-color:#ededed;
 }
 .groupbuying-good .listgroup  .listrow{
-	border-bottom:2px solid #d5d5d5;
+	border-bottom:0.02rem solid #d5d5d5;
 	padding-left:0.60rem;
 }
 .groupbuying-good .listgroup  .listrow.select{
@@ -2260,8 +2267,8 @@ body >  .header .right{
 	width:2.40rem;
 	line-height:0.80rem;
 	background-color:#ffffff;
-	border-bottom:2px solid #d5d5d5;
-	border-right:2px solid #d5d5d5;
+	border-bottom:0.02rem solid #d5d5d5;
+	border-right:0.02rem solid #d5d5d5;
 }
 .groupbuying-good  .list li.active{
 	border-right:none;
@@ -2274,7 +2281,7 @@ body >  .header .right{
 	overflow:scroll;
 }
 .groupbuying-good .selectbox .list{
-	border-top:2px solid #e7313d;
+	border-top:0.04rem solid #e7313d;
 }
 .groupbuying-good .selectbox .justify-box .justify-item{
 	text-align:left;
@@ -2286,6 +2293,7 @@ body >  .header .right{
 	width:4rem;
 }
 .groupbuying-good .selectbox .listgroup .listrow{
+	display:flex;
 	line-height:0.80rem;
 }
 .groupbuying-good .selectbox.category .listgroup .listrow span{
