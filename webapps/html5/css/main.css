@@ -2033,8 +2033,7 @@ body >  .header .right{
 	background-repeat:no-repeat;
 	background-size: 0.11rem 0.2rem;
 	background-color:#ffffff;
-	line-height:1.12rem;
-	padding-left:0.40rem;
+	padding: 0.3rem 20% 0.3rem 0.3rem;
 }
 .accordion.up > .header{
 	background-image:url('../images/global/detail-up.png');
