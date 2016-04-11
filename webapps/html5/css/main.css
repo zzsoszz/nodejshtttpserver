@@ -208,16 +208,21 @@ a:hover {
   两端对齐
 */
 .justify-box{
+	display:flex;
+	justify-content:space-between;
+	
+	
+    display: -moz-box; 
     display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -ms-flex-pack:justify;
+   
     -webkit-justify-content:space-between;
-    justify-content:space-between;
-
+    
+     display:-ms-flexbox;
+     -ms-flex-pack:justify;
+     
     display:-webkit-box;
     -webkit-box-pack:justify;
-
+    
     display:-ms-flexbox;
     -ms-flex-pack:justify;
 }
