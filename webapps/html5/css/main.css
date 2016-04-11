@@ -1,4 +1,6 @@
 
+
+
 /*
 *
 *main
@@ -6,6 +8,54 @@
 		font-size:62.5%;
 	}
 */
+
+
+/*icon font*/
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot?t=1460102414'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1460102414#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff?t=1460102414') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf?t=1460102414') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1460102414#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before { content: "\e617"; }
+.icon-home-show:before { content: "\e600"; }
+.icon-user-show:before { content: "\e601"; }
+.icon-more-hiden:before { content: "\e602"; }
+.icon-more-show:before { content: "\e603"; }
+.icon-time-show:before { content: "\e604"; }
+.icon-star-show:before { content: "\e605"; }
+.icon-home-hiden:before { content: "\e606"; }
+.icon-star-hiden:before { content: "\e607"; }
+.icon-time-hiden:before { content: "\e608"; }
+.icon-user-hiden:before { content: "\e609"; }
+.icon-arrow-right:before { content: "\e60a"; }
+.icon-lock:before { content: "\e60b"; }
+.icon-arrow-down:before { content: "\e60c"; }
+.icon-arrow-left:before { content: "\e60d"; }
+.icon-arrow-top:before { content: "\e60e"; }
+.icon-iconfontlocation:before { content: "\e60f"; }
+.icon-wifi:before { content: "\e610"; }
+.icon-park:before { content: "\e611"; }
+.icon-phone:before { content: "\e612"; }
+.icon-iconfontjianshenfang:before { content: "\e613"; }
+.icon-iconfontcanting:before { content: "\e614"; }
+.icon-iconfontshezhi:before { content: "\e615"; }
+.icon-iconfonthuilvhuiyishi-copy:before { content: "\e616"; }
+
+
+
+
+
 
 a {
     color: #333;
@@ -1963,8 +2013,8 @@ body >  .header .right{
 }
 .accordion{
 	display: block;
-	border-top:2px solid #ebebeb;
-	border-bottom:2px solid #ebebeb;
+	border-top:0.01rem solid #ebebeb;
+	border-bottom:0.01rem solid #ebebeb;
 }
 .accordion > .header{
 	background-position:90% center;
