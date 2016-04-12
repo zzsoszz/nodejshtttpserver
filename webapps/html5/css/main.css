@@ -1681,7 +1681,7 @@ body >  .header .right{
 }
 .font32
 {
-	font-size:0.2489rem;
+	font-size:0.3200rem;
 }
 
 .color1{
@@ -2597,16 +2597,24 @@ body >  .header .right{
 }
 */
 .input-group {
-	display:inline-block;
-	height:0.86rem;
+  background-color:#ffffff;
+  margin:0.05rem;
 }
+
 .input-group  .input-group-addons{
+  display:inline-block;
 	vertical-align:middle;
-	font-size: 0.40rem;
+  padding:0.25rem 0.1rem;
+  height:0.86rem;
+  width:10%;
 }
 .input-group  .formcontrol{
+  display:inline-block;
 	vertical-align:middle;
-	height:0.40rem;
+  height:0.86rem;
+  padding:0.25rem 0.1rem;
+  border:none;
+  width:78%;
 }
 
 
