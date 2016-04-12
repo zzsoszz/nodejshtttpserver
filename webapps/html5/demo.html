@@ -1,53 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
-<meta charset="utf-8">
-<meta name="author" content="monicaqin">
-<meta name="format-detection" content="telephone=no" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link href="fonts/iconfont.css" rel="stylesheet" type="text/css"/>
-<title>aaaa</title>
+<meta charset="utf-8" />
+<title>box-flex_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
 <style>
-:after, :before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-
-
-
-.iconfont{
-    display: inline-block;
-    line-height: 1;
-	color:#aaaaaa;
-}
-.iconfont.active{
-	color:#e7313d;
-}
-
-.iconfont.home::before{
-	content:"\e606";
-}
-.iconfont.home.active::before{
-	content:"\e600";
-}
+h1{font:bold 20px/1.5 georgia,simsun,sans-serif;}
+.box{display:-webkit-box;display:-moz-box;display:-ms-box;background:#000;width:240px;height:100px;margin:0;padding:10px;list-style:none;vertical-align:top;}
+#box span:nth-child(1){-webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1;background:#666;}
+#box li:nth-child(2){-webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1;background:#999;}
+#box li:nth-child(3){-webkit-box-flex:2;-moz-box-flex:2;-ms-box-flex:2;background:#ccc;}
 </style>
 </head>
 <body>
-<div>
-	<i class="icon iconfont"></i>
+<h1>box-flex示例：</h1>
+<div id="box" class="box">
+	<span>a</span>
+	<span>b</span>
+	<span>c</span>
 </div>
-
-<div>
-	<span class="icon iconfont home active" >
-	</span>
-	<span>aaaa
-	</span>
-</div>
-
 </body>
 </html>
+			
