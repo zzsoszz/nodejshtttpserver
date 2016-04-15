@@ -71,9 +71,32 @@ a:hover {
 
 
 
+/*
+ *文本对齐
+*/
+.textjustify {
+  text-align:justify;
+  text-justify:distribute-all-lines;/*ie6-8*/
+  text-align-last:justify;/* ie9*/
+  -moz-text-align-last:justify;/*ff*/
+  -webkit-text-align-last:justify;/*chrome 20+*/
+}
 
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0){
+  .textjustify:after{
+    content:".";
+    display: inline-block;
+    width:100%;
+    overflow:hidden;
+    height:0px;
+  }
+}
+*/
 
-
+/*
+ *块对齐
+*/
 .block-vhcenter-container{
  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -2628,12 +2651,8 @@ body >  .header .right{
  http://weui.github.io/weui/#/cell
 */
 .input-group {
-  margin:0.05rem 0;
-  padding:0.2rem 0.2rem;
+  margin:0.10rem 0;
   background-color:#ffffff;
-
- 
-
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2648,7 +2667,8 @@ body >  .header .right{
 
 .input-group  .input-group-addons{
   text-align:center;
-  
+  padding:0.2rem;
+  color:#666666;
   display:block;
   -webkit-flex:0 0 auto;/*相当于none*/
       -ms-flex:0 0 auto;/*相当于none*/
@@ -2656,8 +2676,8 @@ body >  .header .right{
 }
 
 .input-group  .formcontrol{
+  padding:0.2rem;
   border:none;
-  margin:0 0.2rem;
   width: 100%;
   font-size:0.20rem;
   display:block;
@@ -2668,11 +2688,11 @@ body >  .header .right{
           flex: 1;
 }
 
-.login
+.user > .login
 {
   padding:0.20rem;
 }
-.login > input{
+.user  > .login > input{
   margin-top:0.05rem;
   height:0.8rem;
   width:100%;
@@ -2680,6 +2700,10 @@ body >  .header .right{
   border-style:solid;
   border-radius:2px;
 }
+.user > .login  > .registerlink{
+  width:100%;
+}
+
 .icon-user{
   background-image:url("../images/my/denglu_01.png");
   background-position:0.10rem center;
@@ -2698,6 +2722,54 @@ body >  .header .right{
   background-repeat:no-repeat;
   padding-left:0.6rem;
 }
-.login  > .register{
+
+/*
+ *用户模块通用
+*/
+.user  > div{
+  /*
+  padding:0.2rem;
+  */
+}
+.user  .actionbtn{
+  margin-top:0.2rem;
+}
+.user  .input-group > .input-group-addons{
+   text-align:justify;
+}
+
+/*
+ *注册页面
+*/
+.user > .register {
+   padding:0.2rem;
+}
+
+.user > .register  > .contractlink{
   width:100%;
+}
+
+/*
+ *忘记密码页面
+*/
+.user > .forgetpassword-second  .input-group > .input-group-addons.resend{
+  word-wrap:nowrap;
+  background-color:#d6d6d6;
+  padding:0.1rem ;
+  margin-right:0.1rem;
+}
+.user > .forgetpassword-second  .input-group > .input-group-addons.resend.error{
+  background-color:#ffffff;
+  border:1px solid #e7313d;
+  color:#e7313d;
+}
+
+
+.user > .me{
+
+}
+.user > .me > .head{
+  height:1.90rem;
+  width:100%;
+  display:block;
 }
