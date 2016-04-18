@@ -754,7 +754,7 @@ body{
   font-size:0.16rem;
   line-height: 1.42857143;
   background:#ebebeb;
-  color:black;
+  color:#333;
   margin: 0 auto;
   width:6.4rem;
   min-height:6rem;
@@ -1711,6 +1711,7 @@ body >  .header .right{
   font-size:0.3200rem;
 }
 
+
 .color1{
   color:#666666;
 }
@@ -2204,8 +2205,8 @@ body >  .header .right{
 .productlist .item .header{
   padding:0.20rem;
   float:left;
-  width:1.80rem;
-  height:1.80rem;
+  width:1.8rem;
+  height:1.8rem;
 }
 .productlist .item .header img{
   width:100%;
@@ -2214,15 +2215,23 @@ body >  .header .right{
 .productlist .item .body{
   float:right;
   width:4.60rem;
-  padding:0rem 0.20rem;
+  padding:0.15rem 0.15rem 0.15rem 0;
 }
 .productlist .item .body .justify-item{
-    line-height:0.6rem;
+    line-height:0.4rem;
     vertical-align:middle;
 }
-.productlist .item .body .justify-box.second{
-    border-bottom:3px solid #ebebeb;
+.productlist .item .body .brand{
+   padding:0.1rem 0 0 0;
 }
+.productlist .item .body .justify-box.second{
+    padding:0.10rem 0 0 0;
+    border-bottom:0.03rem solid #ebebeb;
+}
+.productlist .item .body .intro{
+     padding:0.15rem 0 0 0;
+}
+
 
 .groupbuying .qcarrousel{
   margin-top:0.1rem;
@@ -2325,12 +2334,12 @@ body >  .header .right{
   background-repeat:no-repeat;
 }
 .groupbuying-good  .list{
-  width:2.40rem;
+  width:2.13rem;
   background-color:#ededed;
   position:relative;
 }
 .groupbuying-good  .list li{
-  width:2.40rem;
+  width:100%;
   line-height:0.80rem;
   background-color:#ffffff;
   border-bottom:0.02rem solid #d5d5d5;
@@ -2355,8 +2364,8 @@ body >  .header .right{
 .groupbuying-good .selectbox .listgroup{
   position:absolute;
   top:0rem;
-  left:2.4rem;
-  width:4rem;
+  left:2.13rem;
+  width:4.27rem;
 }
 .groupbuying-good .selectbox .listgroup .listrow{
   display:-webkit-flex;
