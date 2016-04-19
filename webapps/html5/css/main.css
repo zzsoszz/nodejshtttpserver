@@ -826,6 +826,12 @@ body >  .header .input-group{
 body >  .header .input-group-addons{
   background-color:#ffffff;
 }
+body >  .header .sidearea{
+  padding:0 0.15rem;
+  font-size:0.46rem;
+}
+
+
 
 
 .keywordbox{
@@ -1767,7 +1773,10 @@ body >  .header .input-group-addons{
 {
   font-size:0.3200rem;
 }
-
+.font46
+{
+  font-size:0.4600rem;
+}
 
 .color1{
   color:#666666;
