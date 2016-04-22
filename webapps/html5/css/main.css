@@ -139,7 +139,9 @@ a:hover {
 .fr{
   float:right;
 }
-
+.center-box{
+  margin:0.3rem 0.2rem;
+}
 
 
 
@@ -249,8 +251,8 @@ a:hover {
      display:inline-block;
      line-height: 0.8rem;
      white-space: nowrap;
-    
      vertical-align:middle;
+     text-align:center;
 }
 
 
@@ -1590,6 +1592,7 @@ body >  .header .sidearea{
   color:#ffffff;
   font-size:0.22rem;
   border-radius:0.10rem;
+  border-color:#e7313d;
   background:#e7313d;
   height:0.80rem;
   width:100%;
@@ -2971,8 +2974,8 @@ body >  .header .sidearea{
   margin:0.10rem 0;
   background-color:#ffffff;
   position: relative;
-
-
+  height:0.86rem;
+  font-size:0.24rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2981,14 +2984,17 @@ body >  .header .sidearea{
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  
 }
 
+
+.input-group > * 
+{
+   height:0.86rem;
+   line-height:0.86rem;
+}
 .input-group  .input-group-addons{
   text-align:center;
-  height:0.6rem;
-  padding:0 0.15rem;
-  line-height:0.6rem;
+  padding:0 0.20rem;
   color:#666666;
   display:block;
   -webkit-flex:0 0 auto;/*相当于none*/
@@ -3002,25 +3008,26 @@ body >  .header .sidearea{
 
 
 .input-group  .formcontrol{
-  padding:0.2rem 0;
   border:none;
   width: 100%;
-  font-size:0.20rem;
+  padding:0.20rem;
   display:block;
-  height: 0.6rem;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-
+.input-group  * + .formcontrol{
+    padding:0.20rem 0;
+}
 
 
 /* user module*/
+/*
 .user   .input-group
 {
   height:0.8rem;
-}
+}*/
 
 /*login page*/
 .user > .login
@@ -3087,13 +3094,19 @@ body >  .header .sidearea{
 /*
  *忘记密码页面
 */
-.user > .forgetpassword-second  .input-group > .input-group-addons.resend{
+
+
+ 
+.user > .forgetpassword-second{
+   margin-top:0.4rem;
+}
+.user > .forgetpassword-second   .resend{
   word-wrap:nowrap;
   background-color:#d6d6d6;
   padding:0.1rem ;
   margin-right:0.1rem;
 }
-.user > .forgetpassword-second  .input-group > .input-group-addons.resend.error{
+.user > .forgetpassword-second  .resend.error{
   background-color:#ffffff;
   border:1px solid #e7313d;
   color:#e7313d;
@@ -3191,10 +3204,12 @@ body >  .header .sidearea{
   width:3.1rem;
 }
 .user .input-group{
-  margin:0 0;
+  margin:0.02rem 0;
 }
 .user .input-group{
+  /*
    border-bottom:0.01rem solid #d9d9d9;
+  */
 }
 .user .input-group:last-child{
    border-bottom:none;
