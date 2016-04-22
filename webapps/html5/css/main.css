@@ -2122,6 +2122,7 @@ body >  .header .sidearea{
 }
 
 .infobox{
+  font-size:0.23rem;
   position:relative;
   margin:0.20rem 0;
   padding:0.20rem;
@@ -3034,9 +3035,11 @@ body >  .header .sidearea{
 {
   padding:0.20rem;
 }
+.user .input-group{
+  margin:0.15rem 0;
+}
 .user  > .login > input{
   margin-top:0.05rem;
-  height:0.8rem;
   width:100%;
   border-color:#d5d5d5;
   border-style:solid;
@@ -3045,7 +3048,6 @@ body >  .header .sidearea{
 .user > .login  > .registerlink{
   width:100%;
 }
-
 .icon-user{
   background-image:url("../images/my/denglu_01.png");
   background-position:0.10rem center;
@@ -3178,6 +3180,13 @@ body >  .header .sidearea{
   padding:0.05rem;
   background-color:#11891f;
 }
+.user > .aboutme > .head > .info .gold{
+  color:green;
+  line-height:0.19rem;
+  font-size:0.19rem;
+  padding:0.05rem;
+  background-color:gold;
+}
 
 .user  .showedit {
   margin-top:0.40rem;
@@ -3203,9 +3212,7 @@ body >  .header .sidearea{
 .user  .choosebox .sidearea{
   width:3.1rem;
 }
-.user .input-group{
-  margin:0.02rem 0;
-}
+
 .user .input-group{
   /*
    border-bottom:0.01rem solid #d9d9d9;
