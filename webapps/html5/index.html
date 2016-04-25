@@ -105,10 +105,92 @@
 </div>
 
 
-<!--
-账户安全
+<!--账户安全--首页
+	CSS巧妙实现分隔线的几种方法
+	http://www.daqianduan.com/4258.html
+
 <div class="content user">
-	<div class="showorderlist">
+	<div class="center-box">
+		<div class="security-modifyloginpassword">
+			<div class="input-group">
+				<input class="formcontrol" placeholder="当前密码" type="password">
+			</div>
+			<div class="input-group">
+				<input class="formcontrol" placeholder="新密码(6-14位字母、数字)" type="password">
+			</div>
+			<div class="input-group">
+				<input class="formcontrol" placeholder="确认新密码" type="password">
+			</div>
+			<div class="label-group">
+				<span class="label">
+					验证码将发送至137306666347
+				</span>
+			</div>
+			<div class="input-group">
+				<input class="formcontrol"   placeholder="验证码" type="text">
+				<span class="input-group-addons">
+					<span class="vline">
+					</span>
+				</span>
+				<span class="input-group-addons">
+					<span class="resend" style="display:none">
+						<span class="seconds">11</span>秒后重发
+					</span>
+					<a class="getverifycode" href="#" >
+						获取验证码
+					</a>
+				</span>
+			</div>
+			<input class="actionbtn" type="button" value="确认"></input>
+		</div>
+	</div>
+</div>
+-->
+
+
+<!--
+账户安全-支付密码
+<div class="content user">
+	<div class="center-box">
+		<div class="security-modifypaypassword">
+			<div class="input-group">
+				<input class="formcontrol" placeholder="新密码(6-14位字母、数字)" type="password">
+			</div>
+			<div class="input-group">
+				<input class="formcontrol" placeholder="确认新密码" type="password">
+			</div>
+			<div class="label-group">
+				<span class="label">
+					验证码将发送至137306666347
+				</span>
+			</div>
+			<div class="input-group">
+				<input class="formcontrol"   placeholder="验证码" type="text">
+				<span class="input-group-addons">
+					<span class="vline">
+					</span>
+				</span>
+				<span class="input-group-addons">
+					<span class="resend" style="display:none">
+						<span class="seconds">11</span>秒后重发
+					</span>
+					<a class="getverifycode" href="#" >
+						获取验证码
+					</a>
+				</span>
+			</div>
+			<input class="actionbtn" type="button" value="确认"></input>
+		</div>
+	</div>
+</div>
+-->
+
+
+<!--
+账户安全--首页
+
+<div class="content user">
+	<div class="security-index">
 		<div class="listgroup">
 				<div class="listrow  clearfix" >
 						<span class="fl">
@@ -117,7 +199,7 @@
 						<span class="fr onlydetail">
 							
 						</span>
-						<span class="fr">
+						<span class="fr color-error">
 							0元
 						</span>
 				</div>
@@ -128,7 +210,7 @@
 						<span class="fr onlydetail">
 							
 						</span>
-						<span class="fr">
+						<span class="fr color-error">
 							0元
 						</span>
 				</div>
@@ -140,7 +222,177 @@
 
 
 <!--
-	我的订单-列表
+	我的订单-团购订单
+
+<div class="content user">
+  	<div class="showorderlist">
+  		<a class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left">
+					淘宝
+				</div>
+				<div class="right">
+					已跟单
+				</div>
+			</div>
+			<hr class="small">
+			<p class="margin15">
+				你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？
+			</p>
+			<div class="justify-box2 small">
+				<div class="left">
+					￥30
+				</div>
+				<div class="right">
+					x&nbsp;<span>1</span>
+				</div>
+			</div>
+			<hr>
+			<div class="justify-box2 small">
+				<div class="left">
+					总价:<span class="money">11.3</span>
+				</div>
+			</div>
+		</a>
+		<a class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left">
+					淘宝
+				</div>
+				<div class="right">
+					已跟单
+				</div>
+			</div>
+			<hr class="small">
+			<p class="margin15">
+				你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？
+			</p>
+			<div class="justify-box2 small">
+				<div class="left">
+					￥30
+				</div>
+				<div class="right">
+					x&nbsp;<span>1</span>
+				</div>
+			</div>
+			<hr>
+			<div class="justify-box2 small">
+				<div class="left">
+					总价:<span class="money">11.3</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+-->
+
+
+
+
+
+<!--
+	我的订单-机票订单
+
+<div class="content user">
+  	<div class="showorderlist">
+
+
+  		<div class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left">
+					<span>成都人-珠海</span>
+					 | 
+					<span>已经出票</span>
+				</div>
+				<div class="right money">
+					￥12.5
+				</div>
+			</div>
+			<hr class="small">
+			<div class="justify-box2 clearfix">
+				<div class="left">
+					03-03 17:10至19:20 CA4391
+				</div>
+			</div>
+		</div>
+
+
+		<div class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left">
+					<span>成都人-珠海</span>
+					 | 
+					<span>已经出票</span>
+				</div>
+				<div class="right money">
+					￥12.5
+				</div>
+			</div>
+			<hr class="small">
+			<div class="justify-box2 clearfix">
+				<div class="left">
+					03-03 17:10至19:20 CA4391
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+-->
+
+
+
+<!--
+	我的订单-酒店订单
+
+<div class="content user">
+  	<div class="showorderlist">
+  		<div class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left">
+					成都人哼会酒店
+				</div>
+				<div class="right">
+					客人入住
+				</div>
+			</div>
+			<hr class="small">
+			<p class="margin15">
+				豪华单间公寓
+			</p>
+			<p class="margin5">
+				2011-01-19 至 2011-10-10  1晚1间
+			</p>
+			<p class="margin5">
+				房型
+			</p>
+			<p class="margin5">
+				付款方式:到点付款
+			</p>
+			<p class="textright">
+				已返回积分:1.2
+			</p>
+			<div class="justify-box2 clearfix">
+				<div class="left">
+					总价:<span class="money">11.3</span>
+				</div>
+				<div class="right">
+					<a  class="btn">支付</a>
+					<a  class="btn">带我过去</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+-->
+
+
+
+<!--
+	我的订单-商品订单
 
 <div class="content user">
   	<div class="showorderlist">
@@ -204,8 +456,6 @@
 	</div>
 </div>
 -->
-
-
 
 <!--
 	我的订单-主页
@@ -407,13 +657,20 @@
 <!--
 	提现到支付宝或者银行卡
 
+	      <div class="switchtab row block-vhcenter-container">
+				<a class="active col-xs-6" href="#aaaa">提现到支付宝</a>
+				<a class="col-xs-6" href="#cccc">提现到银行卡</a>
+				<span class="center font24 color2">|</span>
+		  </div>
+
+-->
 <div class="content user">
   <div class="withdraw">
     <img class="hcenter margin30" src="images/my/personal_13.png" />
     <p class="textcenter margin20">支持提现到支付宝.银行卡</p>
     <p class="textcenter margin30">可用返利:0</p>
     <div class="center-box">
-    	  <div class="switchtab row block-vhcenter-container">
+ 		  <div class="switchtab">
 				<a class="active col-xs-6" href="#aaaa">提现到支付宝</a>
 				<a class="col-xs-6" href="#cccc">提现到银行卡</a>
 				<span class="center font24 color2">|</span>
@@ -459,7 +716,7 @@
 
   </div>
 </div>
--->
+
 
 
 
@@ -605,7 +862,7 @@
 
 <!--
 个人中心-首页
--->
+
 <div class="content user">
 	<div class="aboutme">
 		<a class="head" href="#">
@@ -689,6 +946,7 @@
 		</div>
 	</div>
 </div>
+-->
 
 
 <!--
@@ -1778,6 +2036,7 @@
 		<a class="col-xs-6">今日新品</a>
 	</div>
 	
+
 	<div class="futuresale">
 		<p class="title">即将开始抢购</p>
 		<div class="goodlist">
@@ -2070,7 +2329,9 @@
 -->
 
 
-<!--酒店搜索
+<!--酒店查询
+
+
 <div class="content">
 	<div class="searchbox  clearfix">
 		<div class="searchrow dest">
@@ -2118,6 +2379,7 @@
 	</div>
 </div>
 -->
+
 
 
 <!-- 关键字

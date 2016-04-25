@@ -119,6 +119,9 @@ a:hover {
   color:#e7313d;
 }
 
+.margin5{
+  margin-top:0.05rem;
+}
 .margin10{
   margin-top:0.10rem;
 }
@@ -133,6 +136,14 @@ a:hover {
 }
 
 
+.btn{
+  display:inline-block;
+  line-height: 0.50rem;
+  height:0.50rem;
+  padding:0 0.2rem;
+  border:0.01rem solid #c9c9c9; 
+}
+
 .fl{
   float:left;
 }
@@ -143,6 +154,15 @@ a:hover {
   margin:0.3rem 0.2rem;
 }
 
+.vline{
+  height:60%;
+  border-left:0.011px solid #B7D0E4;
+  width:0.01rem;
+  display: inline-block;
+  margin-left: -1px;
+  vertical-align:middle;
+  padding: 0px 0px 0px 3px;
+}
 
 
 
@@ -155,6 +175,11 @@ a:hover {
   text-align-last:justify;/* ie9*/
   -moz-text-align-last:justify;/*ff*/
   -webkit-text-align-last:justify;/*chrome 20+*/
+}
+
+
+.textright {
+  text-align:right;
 }
 
 /*
@@ -1087,6 +1112,37 @@ body >  .header .sidearea{
 
 
 
+.threecloumn2
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.threecloumn2 > .fixiedarea{
+  display:block;
+  -webkit-box-flex:none;
+  -webkit-flex:none;/*相当于none*/
+      -ms-flex:none;/*相当于none*/
+          flex:none;/*相当于none*/
+}
+.threecloumn2 > .equalarea{
+   display:block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+
+
+
+
+
 
 
 
@@ -1590,7 +1646,7 @@ body >  .header .sidearea{
 }
 .actionbtn{
   color:#ffffff;
-  font-size:0.22rem;
+  font-size:0.24rem;
   border-radius:0.10rem;
   border-color:#e7313d;
   background:#e7313d;
@@ -2971,6 +3027,16 @@ body >  .header .sidearea{
  * http://css.doyoe.com/
  http://weui.github.io/weui/#/cell
 */
+
+.label-group {
+  padding:0 0.20rem;
+  height:0.86rem;
+  line-height:0.86rem;
+  font-size:0.24rem;
+}
+
+
+
 .input-group {
   margin:0.10rem 0;
   background-color:#ffffff;
@@ -3102,18 +3168,23 @@ body >  .header .sidearea{
 .user > .forgetpassword-second{
    margin-top:0.4rem;
 }
-.user > .forgetpassword-second   .resend{
+.resend{
   word-wrap:nowrap;
   background-color:#d6d6d6;
   padding:0.1rem ;
   margin-right:0.1rem;
 }
-.user > .forgetpassword-second  .resend.error{
+.resend.error{
   background-color:#ffffff;
   border:1px solid #e7313d;
   color:#e7313d;
 }
-
+.getverifycode{
+  padding:0.1rem ;
+  margin-right:0.1rem;
+  word-wrap:nowrap;
+  color:#e7313d;
+}
 
 .user > .aboutme{
 
