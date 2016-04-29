@@ -29,7 +29,7 @@
 -->
 
 
-<link href="css/main.css?v=87" rel="stylesheet" type="text/css"/>
+<link href="css/main.css?v=80" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 
@@ -135,7 +135,7 @@
 
 
 
-<!--账户安全--登录密码
+<!--账户安全--首页
 	CSS巧妙实现分隔线的几种方法
 	http://www.daqianduan.com/4258.html
 
@@ -1307,6 +1307,7 @@
 <!--
 	01_03_02团购-列表
 
+
 <div class="content groupbuying-good">
 	<div class="filterbox  font21">
 		<div class="maskbox">
@@ -1469,8 +1470,6 @@
 			</div>
 		</div>
 	</div>
-	
-
 	<div class="productlist clearfix" style="margin-top:0.7rem">
 		
 		<div class="item clearfix">
@@ -1973,7 +1972,7 @@
 
 <!--
 	主页
-
+-->
 <div class="content index">
 	<div class="index">
 
@@ -2017,6 +2016,29 @@
 
 		</div>
 
+		<!--	flexbox version
+
+		<div class="myflexbox mythreebox">
+			<a class="fixiedarea first">
+				<img src="images/index/3.png"   width="100%" height="100%">
+			</a>
+			<div class="justify-box-v equalarea  mysecond">
+				<div class="justify-item">
+					<img src="images/index/4.png" width="100%" height="100%">
+				</div>
+				<div class="justify-item">
+					<img src="images/index/5.png" width="100%" height="100%">
+				</div>
+			</div>
+			<a class="fixiedarea textright third">
+				<img src="images/index/6.png"   width="100%" height="100%" >
+			</a>
+		</div>
+		-->
+
+		<!--
+			padding-bottom version
+		-->
 		<ul class="metrobox clearfix">
 		    <li>
 			    <div class="inner">
@@ -2048,7 +2070,9 @@
 			</div>
 		</div>
 
-	
+		<!--
+		今日推荐
+		-->
 		<div class="saletodaybox clearfix">
 
 			<div class="item">
@@ -2101,6 +2125,11 @@
 
 
 
+
+
+		<!--
+			限时抢购-即将开始抢购
+		-->
 		<div class="futuresale">
 			<p class="title">即将开始抢购</p>
 			<div class="goodlist">
@@ -2135,6 +2164,9 @@
 		</div>
 		
 
+		<!--
+			限时抢购-正在抢购
+		-->
 		<div class="saling">
 			<div class="timebox">
 				<span>
@@ -2197,6 +2229,9 @@
 			</div>
 		</div>
 		
+		<!--
+			限时抢购-抢购结束
+		-->
 		<div class="overtime">
 			<div class="timebox">
 				<span>
@@ -2262,78 +2297,56 @@
 
 	</div>
 </div>
--->
+
 
 
 <!--酒店查询
 
-<div class="content  hotel">
 
-	<div class="showsearch">
-
-		<div class="searchbox  clearfix">
-
-			<div class="input-group">
-				<span class="input-group-addons">
-					<lable>&ensp;目的地</span>
-				</span>
-				<input class="formcontrol" placeholder="成都"></input>
-				<span class="input-group-addons">
-					<i  class="iconfont font24">&#xe60a;</i>
-				</span>
-				<span class="input-group-addons">
-					<span class="vline"></span>
-				</span>
-				<span class="input-group-addons">
-					<i  class="iconfont font46 location">&#xe60f;</i>
-					<p class="location">我的位置</p>
-				</span>
+<div class="content">
+	<div class="searchbox  clearfix">
+		<div class="searchrow dest">
+			<div class="left detail">
+				<label>目的地</label>
+				<span class="datevalue">成都</span>
 			</div>
-			
-			<div class="searchrow time  clearfix detail">
-				<div class="left"> 
-					<div class="timerow">
-						<label>入住时间</label>
-							<span class="datevalue">11月27日</span>
-							<span class="notice">今日
-							<input type="hidden">
-						</span>
-					</div>
-					<div class="timerow">
-						<label>离店时间</label>
-							<span class="datevalue">11月28日</span>
-							<span class="notice">明日
-							<input type="hidden">
-						</span>
-					</div>
+			<span class="right location">
+				我的位置
+			</span>
+		</div>
+		<div class="searchrow time  clearfix detail">
+			<div class="left"> 
+				<div class="timerow">
+					<label>入住时间</label>
+					<span class="datevalue">11月27日</span>
+					<span class="notice">今日
+					</span>
 				</div>
-				<div class="right"> 
-					<span>1晚</span>
-					<input type="hidden">
+				<div class="timerow">
+					<label>离店时间</label>
+					<span class="datevalue">11月28日</span>
+					<span class="notice">明日
+					</span>
 				</div>
 			</div>
-
-			<div class="input-group">
-				<span class="input-group-addons">&ensp;关键字</span>
-				<input class="formcontrol" placeholder="aaaaaa"></input>
-				<span class="input-group-addons">
-					<a  class="iconfont font24">&#xe60a;</a>
-				</span>
+			<div class="right"> 
+				<span>1晚</span>
 			</div>
-			
-			<div class="input-group">
-				<span class="input-group-addons">星级酒店</span>
-				<input class="formcontrol" placeholder="aaaa"></input>
-				<span class="input-group-addons">
-					<a  class="iconfont font24">&#xe60a;</a>
-				</span>
-			</div>
-			
 		</div>
-		<div class="actionbox">
-			<input class="actionbtn" type="button" value="查询"></input>
+		<div class="searchrow keyword detail">
+			<label>入住时间</label>
+			<span class="datevalue">11月27日</span>
 		</div>
+		<div class="searchrow starlevel detail">
+			<label>入住时间</label>
+			<span class="datevalue">11月27日</span>
+		</div>
+		
 
+	</div>
+
+	<div class="actionbox">
+		<input class="actionbtn" type="button" value="查询"></input>
 	</div>
 </div>
 -->
@@ -2342,11 +2355,11 @@
 
 <!-- 关键字
 <div class="content">
-	<div class="popdownpanel show clearfix">
+	<div class="popdownpanel clearfix">
 		<div class="popdownpanel-header area">
 			商圈
 		</div>
-		<div class="popdownpanel-body">
+		<div class="popdownpanel-body show">
 			<div class="popdownpanel-item">
 				天府广场
 			</div>
@@ -2377,7 +2390,7 @@
 		</div>
 	</div>
 
-	<div class="popdownpanel hidden clearfix">
+	<div class="popdownpanel clearfix">
 		<div class="popdownpanel-header brand">
 			商圈
 		</div>
@@ -2412,7 +2425,7 @@
 		</div>
 	</div>
 
-	<div class="popdownpanel hidden clearfix">
+	<div class="popdownpanel clearfix">
 		<div class="popdownpanel-header district">
 			商圈
 		</div>
@@ -2450,17 +2463,11 @@
 -->
 
 
-<!--酒店列表-->
+<!--酒店列表
 <div class="content hotel">
 	<div class="showlist">
-		<div class="justify-box2 header">
-				<div class="left">
-					距离：成都市中心
-				</div>
-				<div class="right">
-					<i class="iconfont icon-refresh refreshing font32 ">
-					</i>
-				</div>
+		<div class="header">
+			距离：成都市中心
 		</div>
 		<div class="listbox">
 			<div class="item clearfix  ">
@@ -2480,9 +2487,8 @@
 						五星级
 					</p>
 				</div>
-
 				<div class="price">
-					￥<span class="baseprice">58888888.8</span>起
+					￥<span class="baseprice">58.8</span>起
 				</div>
 				<div class="returnrate">
 					<span class="highest">最高返</span>
@@ -2494,7 +2500,6 @@
 				<div class="distance">
 					800米
 				</div>
-
 			</div>
 
 			<div class="item clearfix  ">
@@ -2515,7 +2520,7 @@
 					</p>
 				</div>
 				<div class="price">
-					￥<span class="baseprice">58888888.8</span>起
+					￥<span class="baseprice">58.8</span>起
 				</div>
 				<div class="returnrate">
 					<span class="highest">最高返</span>
@@ -2533,221 +2538,153 @@
 		</div>
 	</div>
 </div>
+-->
 
 
 
-<!--
-	弹出层
 
-<div class="popbox">
+
+<!--星级
+
+<div id="starlevel" class="popbox">
 	<div class="popmask">
 	</div>
 	<div class="popcontent">
-		
 
-
-		<div class="loginbox round small">
-			<i class="close iconfont icon-wrong" >
-
-			</i>
-			<p class="title">
-				用户登录
-			</p>
-			<div class="input-group small">
-				<input class="formcontrol"  placeholder="手机号" type="text">
-			</div>
-			<div class="input-group small">
-				<input class="formcontrol"  placeholder="密码"  type="password">
-			</div>
-			<div class="enableAutologin  clearfix">
-				<div class="fl">
-					<span class="inline-vhcenter  denglu_03 active "  >
-					</span>
-					<span class="inline-vhcenter font19">自动登录
-					</span>
-				</div>
-				<div  class="fr">
-					<a class="inline-vhcenter color-error font19" href="#">
-						忘记密码？
-					</a>
-				</div>
-			</div>
-			<div class="justify-box2 margin20">
-				<div class="left">
-					<a class="btn large">注册</a>
-				</div>
-				<div class="right">
-					<a class="btn large">登录</a>
-				</div>
+		<p class="title">星级价格</p>
+		<div class="conditionbox">
+			<p class="name">星级</p>
+			<div class="valuebox clearfix" >
+				<span class="valueitem active">
+					不限制
+				</span>
+				<span class="valueitem">
+					快捷连锁
+				</span>
+				<span class="valueitem">
+					二星级
+				</span>
+				<span class="valueitem active">
+					三星级
+				</span>
+				<span class="valueitem">
+					四星级
+				</span>
 			</div>
 		</div>
 
-
-		<div class="sortbox">
-					<div class="listgroup order"  >
-							<div class="listrow select" >
-								<span  class="first">
-									帮助
-								</span>
-							</div>
-							<div class="listrow select" >
-								<span  class="first">
-									帮助
-								</span>
-							</div>
-							<div class="listrow" >
-								<span  class="first">
-									帮助
-								</span>
-							</div>
-					</div>
-					<ul class="inline-list withline withstar clearfix">
-						<li class="active" >
-							筛选
-						</li>
-						<li>
-							星级价格
-						</li>
-						<li>
-							综合排序
-						</li>
-						<li>
-							返利优先
-						</li>
-					</ul>
-		</div>
-		
-
-
-		
-		<div class="checkpanel panel info round">
-				<div class="header">
-					请选择银行卡
-				</div>
-				<div class="body">
-					<div class="checkboxlist">
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio active">
-
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-						<div class="item">
-							<span class="fl">
-								中国银行
-							</span>
-							<span class="fr checkradio">
-								
-							</span>
-						</div>
-					</div>
-				</div>
-		</div>
-		
-
-	
-		<div class="multiselectbox">
-			<p class="title">星级价格</p>
-			<div class="conditionbox">
-				<p class="name">星级</p>
-				<div class="valuebox clearfix" >
-					<span class="valueitem active">
-						不限制
-					</span>
-					<span class="valueitem">
-						快捷连锁
-					</span>
-					<span class="valueitem">
-						二星级
-					</span>
-					<span class="valueitem active">
-						三星级
-					</span>
-					<span class="valueitem">
-						四星级
-					</span>
-				</div>
-			</div>
-
-			<div class="conditionbox  price">
-				<p class="name">星级</p>
-				<div class="valuebox clearfix" >
-					<span class="valueitem active">
-						不限制
-					</span>
-					<span class="valueitem">
-						快捷连锁
-					</span>
-					<span class="valueitem">
-						二星级
-					</span>
-					<span class="valueitem active">
-						三星级
-					</span>
-					<span class="valueitem">
-						四星级
-					</span>
-				</div>
-			</div>
-			<div class="actionbox">
-				<input class="actionbtn" type="button" value="查询"></input>
+		<div class="conditionbox  price">
+			<p class="name">星级</p>
+			<div class="valuebox clearfix" >
+				<span class="valueitem active">
+					不限制
+				</span>
+				<span class="valueitem">
+					快捷连锁
+				</span>
+				<span class="valueitem">
+					二星级
+				</span>
+				<span class="valueitem active">
+					三星级
+				</span>
+				<span class="valueitem">
+					四星级
+				</span>
 			</div>
 		</div>
-
-
+		<div class="actionbox">
+			<input class="actionbtn" type="button" value="查询"></input>
+		</div>
 	</div>
 </div>
 -->
+
+
+<!--
+	单选
+
+<div class="popbox checkpanel">
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+			<div class="panel info round">
+					<div class="header">
+						请选择银行卡
+					</div>
+					<div class="body">
+						<div class="checkboxlist">
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio active">
+
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+							<div class="item">
+								<span class="fl">
+									中国银行
+								</span>
+								<span class="fr checkradio">
+									
+								</span>
+							</div>
+						</div>
+					</div>
+			</div>
+	</div>
+</div>
+-->
+
 
 
 <div class="footer block-vcenter-container">
@@ -2832,6 +2769,7 @@
 
 
 
+
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <!-- END PAGE LEVEL PLUGINS -->
 
@@ -2842,9 +2780,6 @@
 jQuery(document).ready(function() {
 	
 });
-function test(){
-	alert("test");
-}
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
