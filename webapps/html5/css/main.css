@@ -8,12 +8,13 @@
 
 /*icon font*/
 
+
 @font-face {font-family: "iconfont";
-  src: url('../fonts/iconfont.eot?t=1461916449'); /* IE9*/
-  src: url('../fonts/iconfont.eot?t=1461916449#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../fonts/iconfont.woff?t=1461916449') format('woff'), /* chrome, firefox */
-  url('../fonts/iconfont.ttf?t=1461916449') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../fonts/iconfont.svg?t=1461916449#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('../fonts/iconfont.eot?t=1462267962'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1462267962#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff?t=1462267962') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf?t=1462267962') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1462267962#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -25,6 +26,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-search:before { content: "\e617"; }
+.icon-plus:before { content: "\e61e"; }
+.icon-plus1:before { content: "\e61f"; }
 .icon-refresh:before { content: "\e61d"; }
 .icon-right:before { content: "\e61a"; }
 .icon-right1:before { content: "\e61b"; }
@@ -54,8 +57,6 @@
 .icon-restaurant:before { content: "\e614"; }
 .icon-setting:before { content: "\e615"; }
 .icon-boardroom:before { content: "\e616"; }
-
-
 
 
 
@@ -221,7 +222,9 @@ a:hover {
 .textright {
   text-align:right;
 }
-
+.textright {
+  text-align:right;
+}
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0){
   .textjustify:after{
@@ -463,7 +466,6 @@ a:hover {
   line-height:0.60rem;
   height: 0.60rem;
 }
-}
 .justify-box2 > *{
   display:block;
   height: 100%;
@@ -481,7 +483,32 @@ a:hover {
 
 
 
+.line-box{
+  display:block;
+  line-height:0.70rem;
+  height: 0.70rem;
+  letter-spacing: -3px;
+}
+.line-box.small{
+  display:block;
+  line-height:0.40rem;
+  height: 0.40rem;
+}
+.line-box.large{
+  display:block;
+  line-height:0.85rem;
+  height: 0.85rem;
+}
 
+.line-box > * {
+  display:inline-block;
+  vertical-align:middle;
+  letter-spacing: 0;
+}
+.line-box > *.sub{
+  display:inline-block;
+  vertical-align:sub;
+}
 
 
 :after, :before {
@@ -576,7 +603,6 @@ a:hover {
 .panel > .header{
   font-size:0.2667rem;
   padding: 0.20rem;
-  
 }
 .panel > .body{
   padding: 0.20rem;
@@ -588,6 +614,17 @@ a:hover {
 .panel.info > .body{
   background:#d5d5d5;
 }
+
+.panel.transparent{
+  background-color:transparent;
+}
+.panel.transparent > .header{
+  background-color:transparent;
+}
+.panel.transparent > .body{
+  background-color:transparent;
+}
+
 
 .round {
   border:0.10rem solid;
@@ -1580,14 +1617,21 @@ body >  .header .sidearea{
 .qcarrousel .imglist li{
   float:left;
   width:6.4rem;
-  height:2.64rem;
+  height:100%;
 }
+.qcarrousel .imglist li{
+  float:left;
+  width:6.4rem;
+  height:100%;
+}
+/*
 .qcarrousel .imglist{
   margin-left:-200%;
 }
+*/
 .qcarrousel .dotsbox{
   position:absolute;
-  top:80%;
+  bottom:10%;
   width:100%;
   text-align:center;
 }
@@ -1606,8 +1650,15 @@ body >  .header .sidearea{
 .qcarrousel .dotslist .dot.active{
   background-image:url("../images/index/circle-visiable.png");
 }
-
-
+.qcarrousel  .myactions{
+  position:absolute;
+  top:0px;
+  padding:0.10rem;
+}
+.qcarrousel  .myactions .arrow-left{
+  font-size:0.46rem;
+  color:#ffffff;
+}
 
 
 
@@ -1926,111 +1977,66 @@ body >  .header .sidearea{
   width:1.9rem;
   height:1.9rem;
 }
-.hotel .showlist .listbox .item  .info{
+.hotel .showlist .listbox .item  .textleft{
   position:absolute;
   left:2.2rem;
-  font-size:0.24rem;
+  font-size:0.21rem;
 }
- .hotel .showlist .listbox .item  .service{
-  position:absolute;
-  left:2.2rem;
-  top:0.40rem;
-  width:2.5rem;
-  font-size:0.24rem;
- }
-.hotel .showlist .listbox .item  .service .first .score{
-  display:inline-block;
-    height:0.30rem;
-    vertical-align:middle;
-    line-height:0.30rem;
-    color:#fd7004;
-    font-size:0.22rem;
-  }
-.hotel .showlist .listbox .item  .service .first .ico_park {
-    background: rgba(0, 0, 0, 0) url("../images/hotel/p.png") no-repeat scroll center center / contain ;
-    height:0.30rem;
-    width:0.30rem;
-    display:inline-block;
-    vertical-align:middle;
-    line-height:0.30rem;
+.hotel .showlist .listbox .item  .textright {
+   margin-top:0.3rem;
 }
-.hotel .showlist .listbox .item  .service .first  .ico_wifi {
-    background: rgba(0, 0, 0, 0) url("../images/hotel/wifi.png") no-repeat scroll center center / contain ;
-    height:0.30rem;
-    width:0.30rem;
-    display:inline-block;
-    vertical-align:middle;
-    line-height:0.30rem;
+.hotel .showlist .listbox .item  .score{
+  padding-right:0.10rem;
+  color:#fd7004;
+  font-size:0.22rem;
 }
- .hotel .showlist .listbox .item  .service .first  .ico_mc {
-    background-repeat:no-repeat;
-    background-image:url("../images/hotel/mc.png");
-    background-position:center center;
-    background-size:0.30rem 0.30rem;
-    height:0.30rem;
-    width:0.30rem;
-    display:inline-block;
-    vertical-align:middle;
-    line-height:0.30rem;
+.hotel .showlist .listbox .item  .star{
+  color:#b0b0b0;
 }
- .hotel .showlist .listbox .item  .service  .star {
-    color:#a9a9a9;
-}
-
 .hotel .showlist .listbox .item  .price {
     background-image: url("../images/hotel/jiudian_03.png");
     background-position: 95% 50%;
+    background-size:0.11rem 0.20rem;
     background-repeat: no-repeat;
     padding-right: 0.3rem;
-    position: absolute;
-    right: 0.2rem;
-    top: 0.5rem;
 }
-.hotel .showlist .listbox .item  .price .baseprice{
-  font-size:0.30rem;
-}
-.hotel .showlist .listbox .item  .returnrate{
-  position:absolute;
-  top:0.9rem;
-  left:4.80rem;
-  
-}
-.hotel .showlist .listbox .item   .returnrate .highest{
+.hotel .showlist .listbox .item  .highest{
   background-image:url("../images/hotel/jiudian_14.png");
   background-repeat:no-repeat;
-  background-position:left top;
-  background-size:0.80rem 0.35rem  ;
-  height:0.35rem;
-  width:0.80rem;
-  line-height:0.35rem;
-  font-size:0.20rem;
+  background-position:center center;
+  background-size:0.80rem 0.30rem ;
+  font-size:0.19rem;
   color:#ffffff;
-  padding-left:0.05rem;
-  float:left;
+  width:0.80rem;
+  text-align:center;
+  padding-right:0.05rem;
 }
-.hotel .showlist .listbox .item   .returnrate .money{
-  float:right;
-}
-
-
 .hotel .showlist .listbox .item  .address{
   position:absolute;
   bottom:0.20rem;
   left:2.2rem;
   width:3.1rem;
+  font-size:0.17rem;
+  color:#b0b0b0;
   text-overflow:ellipsis;
   white-space:nowrap;
   overflow:hidden;
-
-    text-overflow:ellipsis;  
-    white-space:nowrap;  
-    overflow:hidden;  
+  text-overflow:ellipsis;  
+  white-space:nowrap;  
+  overflow:hidden;  
 }
 .hotel .showlist .listbox .item  .distance{
+  font-size:0.17rem;
+  color:#b0b0b0;
   position:absolute;
   bottom:0.20rem;
   right:0.20rem;
 }
+.hotel .showlist .listbox .item  .icon-arrow-right{
+  padding-left:0.10rem;
+}
+
+
 
 
 
@@ -2039,6 +2045,7 @@ body >  .header .sidearea{
  */
 .detail{
   background-image:url("../images/hotel/jiudian_03.png");
+  background-size:0.11rem 0.20rem;
   background-repeat:no-repeat;
   background-position:95% 50%;
 }
@@ -2094,6 +2101,7 @@ body >  .header .sidearea{
 .hotel .showdetail .basicinfo  .leftbox  .item .detail{
   width:1.00rem;
   background-image:url("../images/hotel/jiudian_03.png");
+  background-size:0.11rem 0.20rem;
   background-repeat:no-repeat;
   background-position:right center;
 }
@@ -2102,6 +2110,11 @@ body >  .header .sidearea{
   width:1.75rem;
   height:1.75rem;
 }
+.hotel .showdetail .basicinfo .pictotal{
+  position:absolute;
+  bottom:0px;
+ }
+
 
 
 .hotel .showdetail .addressinfo{
@@ -2398,39 +2411,24 @@ body >  .header .sidearea{
   background-image:url('../images/index/home_10.png');
   background-position:center left;
   background-repeat:no-repeat;
-  background-size: 0.26rem 0.26rem;
+  background-size:0.25rem 0.23rem;
   padding-left:0.26rem;
 }
-.bottomactions{
+
+
+.footer  .line-box {
   padding:0 0.20rem;
-  background:#ffffff;
-  height:100%;
 }
-.bottomactions .actionitem{
-  display:inline-block;
-  line-height:0.85rem;
-  margin-left:0.05rem;
+.footer  .line-box  > * {
+  margin-right:0.10rem;
 }
-.bottomactions .actionitem{
-  display:inline-block;
-  line-height:0.85rem;
-  margin-left:0.05rem;
-}
-.bottomactions .submit{
+.footer  .line-box  .submit{
   color:#ffffff;
-
-  /*
-  position:absolute;
-  right:0.20rem;
-  top:0.075rem;
-  */
-
   position:absolute;
   right:0.20rem;
   top:50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    
   background:#e7313d;
   border:none;
   height:0.70rem;
@@ -3042,6 +3040,10 @@ body >  .header .sidearea{
   color:#b0b0b0;
   text-decoration:line-through;
 }
+.saleprice{
+  font-size:0.28rem;
+  color:#000000;
+}
 .special-detail  .detailbox{
   background-color:#ffffff;
   margin:0.20rem;
@@ -3498,11 +3500,37 @@ body >  .header .sidearea{
   background-image:url("../images/my/personal_19.png");
 }
 .icon-backcard{
-  background-image:url("../images/my/personal_14.png");
-  background-repeat: no-repeat;
-  background-position:center;
-  margin-right:0.20rem;
+    background-image: url("../images/my/personal_14.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 0.35rem 0.25rem;
+    display: block;
+    height: 0.25rem;
+    margin-right: 0.2rem;
+    width: 0.35rem;
 }
+.icon-creditcard-back{
+    background-image: url("../images/hotel/creditcard-back.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 0.83rem 0.82rem;
+    display: block;
+    height: 0.52rem;
+    margin-right: 0.2rem;
+    width: 0.83rem;
+}
+.icon-creditcard-front{
+    background-image: url("../images/hotel/creditcard-front.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 0.83rem 0.82rem;
+    display: block;
+    height: 0.52rem;
+    margin-right: 0.2rem;
+    width: 0.83rem;
+}
+
+
 
 
 .user .showorderlist{
@@ -3778,4 +3806,92 @@ hr{
 .multiselectbox .conditionbox.price .valuebox .valueitem.active{
   padding:0.05rem 0.02rem;
   width:1.4rem;
+}
+
+
+
+
+/*
+ *机票
+*/
+.airticket .qcarrousel{
+  margin:0px;
+  height:2.13rem;
+}
+.airticket .qcarrousel{
+  height:2.13rem;
+}
+
+.airticket .destnation{
+  background:#ffffff;
+  padding:0.20rem;
+}
+.airticket .destnation .imgcenter{
+  width:0.84rem;
+  height:0.84rem;
+}
+.airticket .destnation .sidearea{
+  width:30%;
+}
+.airticket .takeaparttime {
+  padding:0.20rem;
+  margin-top:0.05rem;
+  overflow: hidden;
+  background:#ffffff;
+}
+
+
+
+
+.hotel .showdanbao .listgroup {
+  padding:0px;
+}
+.hotel .showdanbao .listgroup .listrow{
+  padding:0 0.70rem;
+}
+.hotel .showdanbao .listgroup .listrow.select{
+  color:#1c6bbc;
+}
+.hotel .showdanbao .listgroup .listrow.select:after{
+  color:#e7313d;
+  position:absolute;
+  left:0.2rem;
+  height:100%;
+  line-height:0.86rem;
+  font-family:"iconfont" !important;
+  font-size:32px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  content:"\e61b";
+}
+.hotel .showdanbao .listgroup .listrow.add{
+
+}
+.hotel .showdanbao .listgroup .listrow.add:after{
+  color:#606060;
+  position:absolute;
+  left:0.2rem;
+  height:100%;
+  line-height:0.86rem;
+  font-family:"iconfont" !important;
+  font-size:32px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  content:"\e61e";
+}
+
+.panel.input-panel > .body{
+  padding:0 0 0 0.20rem;
+  border-top:0.03rem solid #d5d5d5;
+  border-bottom:0.03rem solid #d5d5d5;
+}
+.panel.input-panel  > .body .input-group{
+  margin:0;
+}
+.panel.input-panel  > .body .input-group:not(:last-child) {
+  border-bottom:0.02rem  solid #d5d5d5;
 }
