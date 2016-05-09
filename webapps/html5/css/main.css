@@ -160,6 +160,72 @@ a:hover {
 }
 
 
+.mr10{
+  margin-right:0.10rem;
+}
+.mr20{
+  margin-right:0.20rem;
+}
+.mr30{
+  margin-right:0.30rem;
+}
+.mr40{
+  margin-right:0.40rem;
+}
+
+.ml10{
+  margin-left:0.10rem;
+}
+.ml20{
+  margin-left:0.20rem;
+}
+.ml30{
+  margin-left:0.30rem;
+}
+.ml40{
+  margin-left:0.40rem;
+}
+
+
+
+
+.justifyline{
+  font-size:0.21rem;
+  display:table;
+  width:100%;
+}
+.justifyline.large{
+  line-height:0.8rem;
+}
+.justifyline.mid{
+  line-height:0.6rem;
+}
+.justifyline.small{
+  line-height:0.4rem;
+}
+.justifyline > *:first-chld{
+   display:table-cell;
+}
+.justifyline > *:last-child{
+   display:table-cell;
+   text-align:right;
+}
+
+
+.justifyline2{
+  display:block;
+}
+.justifyline2 > *:first-chld{
+    text-align:left;
+    float:left;
+}
+.justifyline2 > *:first-chld{
+    display:block;
+    overflow:hidden;
+    text-align:right;
+}
+
+
 .btn{
   text-align:center;
   display:inline-block;
@@ -169,10 +235,35 @@ a:hover {
   border:0.02rem solid #c9c9c9; 
   cursor: pointer;
 }
+.btn.white{
+  border:0.02rem solid #c9c9c9; 
+  background:white;
+  color:#e7313d;
+}
+.btn.red{
+ border:0.02rem solid #e7313d; 
+ background:#e7313d;
+ color:#ffffff;
+}
+.btn.gray{
+ border:0.02rem solid #e7313d; 
+ background:#e7313d;
+ color:#ffffff;
+}
 .btn.large{
   line-height: 0.70rem;
   height:0.70rem;
 }
+.circle-btn{
+  border-radius:50%;
+  border-color:#e7313d;
+  border-width:0.10rem;
+  border-style: solid;
+  background:white;
+  width:2rem;
+  height:2rem;
+}
+
 
 .fl{
   float:left;
@@ -194,6 +285,9 @@ a:hover {
   padding: 0px 0px 0px 3px;
 }
 
+label{
+  padding-right:0.20rem;
+}
 
 
 .metrobox {list-style-type:none;display:block;}
@@ -265,6 +359,9 @@ a:hover {
        -ms-flex-align: center;
            align-items: center;
 }
+
+
+
 .block-vhcenter3-container{
     display: table;
     text-align: center;
@@ -272,6 +369,22 @@ a:hover {
 .block-vhcenter3-container > .center{
     display: table-cell;
     vertical-align: middle;
+}
+
+
+ /*
+  *子元素必须有高度和宽度
+ */
+.block-vhcenter4-container {
+  position:relative;
+}
+.block-vhcenter4-container .center{
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    margin: auto;
 }
 
 
@@ -340,10 +453,25 @@ a:hover {
   vertical-align: middle;
 }
 
+.inline-vhcenter3-container{
+  display:table-cell;
+}
+.inline-vhcenter3-container .center{
+  vertical-align:middle;
+}
+
+.inline-vhcenter4-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+}
+
+
 
 
 .inline-vcenter{
-   height: 0.8rem;
+     height: 0.8rem;
      line-height: 0.8rem;
      white-space: nowrap;
 }
@@ -446,7 +574,15 @@ a:hover {
   text-align:center;
 }
 
-
+.justify-box2-group{
+  background:#ffffff;
+  padding-left:0.2rem;
+  border-top:0.03rem solid #d5d5d5;
+  border-bottom:0.03rem solid #d5d5d5;
+}
+.justify-box2-group > *:not(:last-child){
+  border-bottom:0.03rem solid #d5d5d5;
+}
 .justify-box2{
   display:block;
   line-height:0.70rem;
@@ -457,6 +593,7 @@ a:hover {
   height: 0.86rem;
 }
 .justify-box2.mid{
+  font-size:0.21rem;
   display:block;
   line-height:0.70rem;
   height: 0.70rem;
@@ -465,6 +602,11 @@ a:hover {
   display:block;
   line-height:0.60rem;
   height: 0.60rem;
+}
+.justify-box2.verysmall{
+  display:block;
+  line-height:0.40rem;
+  height: 0.40rem;
 }
 .justify-box2 > *{
   display:block;
@@ -476,10 +618,17 @@ a:hover {
 .justify-box2 > .right{
   float:right;
 }
+.justify-box2 > .left > *{
+  display: inline-block;
+  vertical-align:middle;
+}
 .justify-box2 > .right > *{
   display: inline-block;
   vertical-align:middle;
 }
+
+
+
 
 
 
@@ -1207,6 +1356,13 @@ body >  .header .sidearea{
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.threecloumn.stretch
+{
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 .sidearea{
   display:block;
@@ -2448,6 +2604,9 @@ body >  .header .sidearea{
   border-bottom:0.03rem solid #d5d5d5;
   margin:0.40rem 0;
 }
+.listgroup.withoutpadding{
+  padding-left:0;
+}
 .listgroup .listrow{
   position:relative;
   padding-right:0.2rem;
@@ -2456,7 +2615,6 @@ body >  .header .sidearea{
   line-height:0.86rem;
   margin:0.02rem 0;
   border-bottom:0.02rem solid #d5d5d5;
-  
 }
 .listgroup .listrow > * {
     display:inline-block;
@@ -2482,6 +2640,24 @@ body >  .header .sidearea{
   -moz-osx-font-smoothing: grayscale;
   content:"\e61b";
 }
+.listgroup .listrow.add{
+  padding-left:0.7rem;
+}
+.listgroup .listrow.add:after{
+  color:#606060;
+  position:absolute;
+  left:0.2rem;
+  height:100%;
+  line-height:0.86rem;
+  font-family:"iconfont" !important;
+  font-size:32px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  content:"\e61e";
+}
+
 
 
 
@@ -2570,6 +2746,23 @@ body >  .header .sidearea{
   background-repeat:no-repeat;
   padding-left:0.60rem;
 }
+
+.alipay-bg{
+  background-image:url("../images/global/alipay.png");
+  background-size:0.27rem 0.27rem;
+  background-position:left;
+  background-repeat:no-repeat;
+  padding-left:0.60rem;
+}
+.unipay-bg{
+  background-image:url("../images/global/unipay.png");
+  background-size:0.38rem 0.23rem;
+  background-position:left;
+  background-repeat:no-repeat;
+  padding-left:0.60rem;
+}
+
+
 
 .accordion{
   display: block;
@@ -3532,18 +3725,16 @@ body >  .header .sidearea{
 
 
 
-
-.user .showorderlist{
-  
-}
 hr{
   color:#d5d5d5;
   background-color: #d5d5d5;
   height:0.02rem;
   border:none;
 }
-
-.user .showorderlist .orderitem{
+.showorderlist{
+  
+}
+.showorderlist .orderitem{
   display:block;
   background-color:#ffffff;
   margin:0.20rem 0;
@@ -3718,7 +3909,7 @@ hr{
 }
 
 
-.loginbox{
+.msgbox{
   position:absolute;
   background:#ffffff;
   width:5.2rem;
@@ -3729,25 +3920,32 @@ hr{
   padding:0.40rem;
   background:#ebebeb;
 }
-.loginbox  .btn{
-  color:#e7313d;
+.msgbox  .btn{
   width:2rem;
   font-size:0.26rem;
 }
-.loginbox .title{
+.msgbox .title{
   height: 0.64rem;
   line-height: 0.64rem;
   font-size: 0.28rem;
 }
-.loginbox .close{
+.msgbox .close{
   position:absolute;
   right:0.20rem;
   top:0.20rem;
   font-size:0.40rem;
 }
-.loginbox .input-group{
+.msgbox .input-group{
   margin:0.2rem 0;
 }
+
+.redirectbox .redbox{
+    margin:1rem 0;
+    height:0.86rem;
+    background:#e7313d;
+    width:100%;
+}
+
 
 .checkpanel {
   position:absolute;
@@ -3866,23 +4064,6 @@ hr{
   -moz-osx-font-smoothing: grayscale;
   content:"\e61b";
 }
-.hotel .showdanbao .listgroup .listrow.add{
-
-}
-.hotel .showdanbao .listgroup .listrow.add:after{
-  color:#606060;
-  position:absolute;
-  left:0.2rem;
-  height:100%;
-  line-height:0.86rem;
-  font-family:"iconfont" !important;
-  font-size:32px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-  content:"\e61e";
-}
 
 .panel.input-panel > .body{
   padding:0 0 0 0.20rem;
@@ -3894,4 +4075,44 @@ hr{
 }
 .panel.input-panel  > .body .input-group:not(:last-child) {
   border-bottom:0.02rem  solid #d5d5d5;
+}
+
+
+
+.hotel  .choosepay .orderitem{
+  display:block;
+  background-color:#ffffff;
+  margin:0.20rem 0;
+  padding:0 0.20rem;
+}
+.hotel  .choosepay .hotelimg{
+  width:1.65rem;
+  height:2.05rem;
+  padding:0.20rem 0;
+}
+
+.hotel  .choosepay  .roominfo .centerarea{
+  position: relative;
+  padding:0.20rem;
+}
+.hotel  .choosepay  .roominfo .bottombox{
+    position: absolute;
+    bottom:0.2rem;
+    left: 0.2rem;
+    right: 0.2rem;
+}
+
+
+.user .hotelorder-detail .orderdetail{
+
+}
+.user .hotelorder-detail .orderdetail .justify-box2{
+  background:#ffffff;
+}
+.user .hotelorder-detail .orderdetail .roominfo{
+    padding:0.20rem;
+    background:#ffffff;
+}
+.user .hotelorder-detail .orderdetail i{
+    padding-right:0.20rem;
 }
