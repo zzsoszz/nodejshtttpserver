@@ -44,59 +44,73 @@
 
 <body>
 
-<div class="header">
-	<div class="global-topbar">
-		<span class="icon-back">
-		</span>
-		<span class="titile">酒店查询</span>
-		<span class="icon-home">
-		</span>
-	</div>
-</div>
-<div class="content">
-	<div class="searchbox  clearfix">
-		<div class="searchrow dest">
-			<div class="left detail">
-				<label>目的地</label>
-				<span class="datevalue">成都</span>
-			</div>
-			<span class="right location">
-				我的位置
-			</span>
-		</div>
-		<div class="searchrow time  clearfix detail">
-			<div class="left"> 
-				<div class="timerow">
-					<label>入住时间</label>
-					<span class="datevalue">11月27日</span>
-					<span class="notice">今日
-					</span>
-				</div>
-				<div class="timerow">
-					<label>离店时间</label>
-					<span class="datevalue">11月28日</span>
-					<span class="notice">明日
-					</span>
-				</div>
-			</div>
-			<div class="right"> 
-				<span>1晚</span>
-			</div>
-		</div>
-		<div class="searchrow keyword detail">
-			<label>入住时间</label>
-			<span class="datevalue">11月27日</span>
-		</div>
-		<div class="searchrow starlevel detail">
-			<label>入住时间</label>
-			<span class="datevalue">11月27日</span>
-		</div>
-		
+<div class="content  hotel">
 
-	</div>
+	<div class="showsearch">
 
-	<div class="actionbox">
-		<input class="actionbtn" type="button" value="查询"></input>
+		<div class="searchbox  clearfix">
+
+			<div class="input-group">
+				<span class="input-group-addons">
+					<lable>&ensp;目的地</span>
+				</span>
+				<input class="formcontrol" placeholder="成都"></input>
+				<span class="input-group-addons">
+					<i  class="iconfont font24">&#xe60a;</i>
+				</span>
+				<span class="input-group-addons">
+					<span class="vline"></span>
+				</span>
+				<span class="input-group-addons">
+					<i  class="iconfont font46 location">&#xe60f;</i>
+					<p class="location">我的位置</p>
+				</span>
+			</div>
+			
+			<div class="searchrow time  clearfix detail">
+				<div class="left"> 
+					<div class="timerow">
+						<label>入住时间</label>
+							<span class="datevalue">11月27日</span>
+							<span class="notice">今日
+							<input type="hidden">
+						</span>
+					</div>
+					<div class="timerow">
+						<label>离店时间</label>
+							<span class="datevalue">11月28日</span>
+							<span class="notice">明日
+							<input type="hidden">
+						</span>
+					</div>
+				</div>
+				<div class="right"> 
+					<span>1晚</span>
+					<input type="hidden">
+				</div>
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addons">&ensp;关键字</span>
+				<input class="formcontrol" placeholder="aaaaaa"></input>
+				<span class="input-group-addons">
+					<a  class="iconfont font24">&#xe60a;</a>
+				</span>
+			</div>
+			
+			<div class="input-group">
+				<span class="input-group-addons">星级酒店</span>
+				<input class="formcontrol" placeholder="aaaa"></input>
+				<span class="input-group-addons">
+					<a  class="iconfont font24">&#xe60a;</a>
+				</span>
+			</div>
+			
+		</div>
+		<div class="actionbox">
+			<input class="actionbtn" type="button" value="查询"></input>
+		</div>
+
 	</div>
 </div>
 
