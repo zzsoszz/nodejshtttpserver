@@ -3446,23 +3446,39 @@ webkit-overflow-scrolling:touch
 }
 */
 
-
+.groupbuying-good{
+  padding-top:0.05rem;
+}
 .groupbuying-good .listgroup{
   border-top:0.04rem solid #d5d5d5;
   border-bottom:none;
   padding-left:0rem;
-  margin-bottom:0rem;
+  margin:0;
   background-color:#ededed;
 }
 .groupbuying-good .listgroup  .listrow{
   border-bottom:2px solid #d5d5d5;
   padding-left:0.60rem;
 }
-.groupbuying-good .listgroup  .listrow.select{
+.groupbuying-good .listgroup  .listrow.select:after{
+  /*
   background-image:url("../images/groupbuying/tuangou_14.png");
   background-size:0.27rem 0.18rem;
   background-position:0.2rem center;
   background-repeat:no-repeat;
+  */
+  color:#e7313d;
+  position:absolute;
+  left:0.2rem;
+  height:100%;
+  line-height:0.86rem;
+  font-family:"iconfont" !important;
+  font-size:0.32rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.002rem;
+  -moz-osx-font-smoothing: grayscale;
+  content:"\e61a";
 }
 .groupbuying-good  .list{
   width:2.13rem;
