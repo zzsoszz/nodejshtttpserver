@@ -1170,19 +1170,27 @@ label{
   color:#e7313d;
 }
 
+
 .switchtab2{
   background:#ffffff;
   font-size:0rem;
+}
+.switchtab2.big{
   height: 0.76rem;
+}
+.switchtab2.small{
+  padding:0 0.6rem;
 }
 .switchtab2 > * {
   display:inline-block;
   vertical-align:middle;
-  font-size:0rem;
-  font-size: 0.26rem;
+  font-size:0.26rem;
   text-align: center;
   line-height: 0.76rem;
   width:50%;
+}
+.switchtab2.small > * {
+  line-height:0.5rem;
 }
 .switchtab2 > *:first-child{
   background:#e7313d;
