@@ -1315,11 +1315,16 @@ label{
 
 
 .picturebox {display:block;}
-.picturebox .item{position:relative; float:left; padding-bottom:25%;}
-.picturebox .item{width:25%;}
-.picturebox .inner{
+.picturebox .item{
+  position:relative; 
+  float:left; 
+  padding-bottom:25%;
+  width:25%;
+}
+.picturebox .item .inner{
   position:absolute; top:0; right:0; bottom:0; left:0; 
   background:#f60; 
+  margin:0.05rem;
 }
 
 
