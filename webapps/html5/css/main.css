@@ -3319,11 +3319,15 @@ webkit-overflow-scrolling:touch
 
 .productlist{
   border-top:0.04rem solid #d5d5d5;
+  /*
   border-bottom:0.04rem solid #d5d5d5;
-  background:#ffffff;
+  */
+  background:#ebebeb;
 }
 .productlist .item{
   border-bottom:3px solid #ebebeb;
+  margin-bottom:0.20rem;
+  background:#ffffff;
   display:block;;
 }
 .productlist .item:last-child{
@@ -3353,7 +3357,7 @@ webkit-overflow-scrolling:touch
 }
 .productlist .item .body .justify-box.second{
     padding:0.10rem 0 0 0;
-    border-bottom:3px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
 }
 .productlist .item .body .intro{
      padding:0.15rem 0 0 0;
