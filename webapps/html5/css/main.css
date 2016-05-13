@@ -2525,7 +2525,11 @@ webkit-overflow-scrolling:touch
 
 /*hotel  showsearch*/
 
-
+.qdate{
+  border:none;
+  outline: none;
+  width:1.8rem;
+}
 /*
 
 */
