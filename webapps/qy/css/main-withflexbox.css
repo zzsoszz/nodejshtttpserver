@@ -1,0 +1,1478 @@
+
+/*
+*
+*main
+*	html{
+		font-size:62.5%;
+	}
+*/
+
+
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body{
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  margin: .67em 0;
+  font-size: 2em;
+}
+mark {
+  color: #000;
+  background: #ff0;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -.5em;
+}
+sub {
+  bottom: -.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  height: 0;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  padding: .35em .625em .75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
+}
+legend {
+  padding: 0;
+  border: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 0;
+}
+
+
+
+* {
+	margin:0rem;
+	padding:0rem;
+}
+
+
+
+
+/*
+ *
+ *grid 
+*/
+
+.row {
+  margin-right: -0.05rem;
+  margin-left: -0.05rem;
+}
+.clearfix:before,.clearfix:after,
+.row:before,
+.row:after{
+	display: table;
+  	content: " ";
+}
+.clearfix:after,
+.row:after{
+	clear: both;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 0.01rem;
+  padding-right: 0.05rem;
+  padding-left:0.05rem;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+.col-xs-12 {
+  width: 100%;
+}
+.col-xs-11 {
+  width: 91.66666667%;
+}
+.col-xs-10 {
+  width: 83.33333333%;
+}
+.col-xs-9 {
+  width: 75%;
+}
+.col-xs-8 {
+  width: 66.66666667%;
+}
+.col-xs-7 {
+  width: 58.33333333%;
+}
+.col-xs-6 {
+  width: 50%;
+}
+.col-xs-5 {
+  width: 41.66666667%;
+}
+.col-xs-4 {
+  width: 33.33333333%;
+}
+.col-xs-3 {
+  width: 25%;
+}
+.col-xs-2 {
+  width: 16.66666667%;
+}
+.col-xs-1 {
+  width: 8.33333333%;
+}
+.col-xs-pull-12 {
+  right: 100%;
+}
+.col-xs-pull-11 {
+  right: 91.66666667%;
+}
+.col-xs-pull-10 {
+  right: 83.33333333%;
+}
+.col-xs-pull-9 {
+  right: 75%;
+}
+.col-xs-pull-8 {
+  right: 66.66666667%;
+}
+.col-xs-pull-7 {
+  right: 58.33333333%;
+}
+.col-xs-pull-6 {
+  right: 50%;
+}
+.col-xs-pull-5 {
+  right: 41.66666667%;
+}
+.col-xs-pull-4 {
+  right: 33.33333333%;
+}
+.col-xs-pull-3 {
+  right: 25%;
+}
+.col-xs-pull-2 {
+  right: 16.66666667%;
+}
+.col-xs-pull-1 {
+  right: 8.33333333%;
+}
+.col-xs-pull-0 {
+  right: auto;
+}
+.col-xs-push-12 {
+  left: 100%;
+}
+.col-xs-push-11 {
+  left: 91.66666667%;
+}
+.col-xs-push-10 {
+  left: 83.33333333%;
+}
+.col-xs-push-9 {
+  left: 75%;
+}
+.col-xs-push-8 {
+  left: 66.66666667%;
+}
+.col-xs-push-7 {
+  left: 58.33333333%;
+}
+.col-xs-push-6 {
+  left: 50%;
+}
+.col-xs-push-5 {
+  left: 41.66666667%;
+}
+.col-xs-push-4 {
+  left: 33.33333333%;
+}
+.col-xs-push-3 {
+  left: 25%;
+}
+.col-xs-push-2 {
+  left: 16.66666667%;
+}
+.col-xs-push-1 {
+  left: 8.33333333%;
+}
+.col-xs-push-0 {
+  left: auto;
+}
+.col-xs-offset-12 {
+  margin-left: 100%;
+}
+.col-xs-offset-11 {
+  margin-left: 91.66666667%;
+}
+.col-xs-offset-10 {
+  margin-left: 83.33333333%;
+}
+.col-xs-offset-9 {
+  margin-left: 75%;
+}
+.col-xs-offset-8 {
+  margin-left: 66.66666667%;
+}
+.col-xs-offset-7 {
+  margin-left: 58.33333333%;
+}
+.col-xs-offset-6 {
+  margin-left: 50%;
+}
+.col-xs-offset-5 {
+  margin-left: 41.66666667%;
+}
+.col-xs-offset-4 {
+  margin-left: 33.33333333%;
+}
+.col-xs-offset-3 {
+  margin-left: 25%;
+}
+.col-xs-offset-2 {
+  margin-left: 16.66666667%;
+}
+.col-xs-offset-1 {
+  margin-left: 8.33333333%;
+}
+.col-xs-offset-0 {
+  margin-left: 0;
+}
+
+
+
+
+
+
+
+body{
+	font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:0.16rem;
+	line-height: 1.42857143;
+	background:#ebebeb;
+	color:black;
+	margin: 0 auto;
+	width:6.4rem;
+	min-height:6rem;
+}
+
+
+/*
+http://m.ly.com/selftrip/line/82866/
+*/
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/*display:-moz-box; display:-webkit-box; display:-o-box; display:box;
+	-moz-box-align:stretch; -webkit-box-align:stretch; -o-box-align:stretch; box-align:stretch; 
+	http://m.ly.com/selftrip/list.html?recomTagId=685,696,700,802
+	*/
+
+
+body >  .header{
+	position:fixed;
+	top:0rem;
+	z-index:2;
+	background:#ffffff;
+	width:6.4rem;
+	height:0.96rem;
+}
+
+
+.keywordbox{
+	display:-webkit-flex;
+  	display:flex;
+  	flex-direction:row;
+  	flex-wrap:wrap;
+  	align-items:center;
+  	justify-content:space-between;
+  	height:0.96rem;
+  	padding:0.20rem;
+}
+.keywordbox .back{
+	display:block;
+	height:0.50rem;
+	width:0.23rem;
+	background-image:url("../images/global/back.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:0.23rem 0.50rem;
+}
+.keywordbox .keyword{
+	height:0.60rem;
+	width:4.80rem;
+	background-color:#ebebeb;
+	background-image:url("../images/global/search.png");
+	background-repeat:no-repeat;
+	background-position:0.25rem 0.12rem;
+	background-size:0.35rem 0.35rem;
+	border:none;
+	padding-left:0.70rem;
+	font-size:0.22rem;
+}
+.keywordbox  .dosearch{
+	font-size:0.24rem;
+}
+
+
+
+.global-topbar{
+	display:-webkit-flex;
+  	display:flex;
+  	flex-direction:row;
+  	flex-wrap:wrap;
+  	align-items:center;
+  	justify-content:space-between;
+  	height:0.96rem;
+  	padding:0.20rem;
+}
+.global-topbar  > .icon-back {
+	background:url('../images/global/back.png') no-repeat;
+	background-size:0.23rem 0.42rem;
+	width:0.23rem;
+	height:0.42rem;
+}
+.global-topbar  > .icon-home {
+	background:url('../images/global/01_01.png') no-repeat;
+	background-size:0.46rem 0.46rem;
+	width:0.42rem;
+	height:0.42rem;
+}
+.global-topbar  .titile{
+	font-weight:300;
+	font-size:0.32rem;
+	line-height: 0.42rem;
+}
+.global-topbar  .other{
+	color:#666666;
+	font-weight:400;
+	font-size:0.22rem;
+	line-height: 0.42rem;
+}
+
+
+
+.content{
+	z-index: 1;
+	padding-top:0.96rem;
+	padding-bottom:1.5rem;
+}
+
+
+
+
+
+
+.footer{
+	position:fixed;
+	bottom:0rem;
+	z-index:2;
+	height:0.86rem;
+	width:6.4rem;
+}
+
+.footer .global-toolbar{
+	width:100%;
+	height:0.86rem;
+	margin:0rem;
+	padding:0px;
+	list-style:none;
+	background:#fefefe;
+}
+.footer .global-toolbar li{
+	display:block;
+	float:left;
+	width:20%;
+	text-align:center;
+}
+.footer .icon-home,.footer .icon-history,.footer .icon-specialthing,.footer .icon-my,.footer .icon-more
+{
+	width:100%;
+	height:0.86rem;
+	display: inline-block;
+	background-position:center 30%;
+	background-size:0.41rem 0.41rem;
+	background-repeat:no-repeat;
+	padding-top:45%;
+	font-size:0.20rem;
+}
+.footer .icon-home{
+	background-image: url('../images/global/01_01.png');
+}
+.footer .icon-home.active{
+	background-image: url('../images/global/01_02.png');
+}
+.footer .icon-history {
+	background-image: url('../images/global/01_03.png');
+}
+.footer .icon-history.active{
+	background-image: url('../images/global/01_04.png');
+}
+.footer .icon-specialthing {
+	background-image: url('../images/global/01_05.png');
+}
+.footer  .icon-specialthing.active{
+	background-image: url('../images/global/01_06.png');
+}
+.footer  .icon-my{
+	background-image: url('../images/global/01_07.png');
+}
+.footer  .icon-my.active{
+	background-image: url('../images/global/01_08.png');
+}
+.footer  .icon-more {
+	background-image: url('../images/global/01_09.png');
+}
+.footer  .icon-more.active{
+	background-image: url('../images/global/01_10.png');
+}
+
+.footer  .icon-detail-tringle{
+	display:inline-block;
+	width:0.11rem;
+	height:0.20rem;
+	background: url('../images/global/detail-tringle.png') no-repeat;
+	vertical-align: baseline;
+}
+
+
+
+
+/*index*/
+
+.money{
+	color: red;
+	font-size:0.24rem;
+}
+
+
+.threebox .first
+{	
+	float:left;
+	padding-top: 0.05rem;
+	padding-bottom: 0.05rem;
+	padding-left: 0.05rem;
+	padding-right: 0.05rem;
+	width:2.14rem;
+}
+.threebox .second
+{	
+	float:left;
+	padding-top: 0.06rem;
+	padding-bottom: 0.06rem;
+	padding-left: 0.06rem;
+	padding-right: 0.06rem;
+	width:2.61rem;
+}
+.threebox .second .one
+{	
+	display:block;
+	height: 1.39rem;
+}
+.threebox .second .two
+{
+	display:block;
+	height: 1.44rem;
+	padding-top: 0.05rem;
+	padding-bottom: 0.05rem;
+}
+.threebox .third
+{	
+	float:left;
+	padding-top: 0.05rem;
+	padding-bottom: 0.05rem;
+	padding-left: 0.06rem;
+	padding-right: 0.05rem;
+	width:1.72rem;
+}
+
+.switchtab{
+	border: 0.01rem solid #d5d5d5;
+	background: #ffffff;
+	height: 0.76rem;
+	margin:0.20rem;
+}
+.switchtab a {
+	font-size: 0.17rem;
+	text-align: center;
+	line-height: 0.76rem;
+}
+.switchtab .active{
+	color:red;
+}
+
+
+
+.goodlist{
+	margin-bottom:0.15rem;
+	margin-right:0.20rem;
+	margin-left:0.20rem;
+	background: #ffffff;
+}
+.goodlist > .good{
+	position:relative;
+}
+.goodlist > .good > img{
+	margin:0.10rem;
+	width:5.8rem;
+	height:2.80rem;
+}
+.goodlist > .good > .desc{
+	font-size: 0.21rem;
+	margin:0rem 0.20rem;
+}
+
+.goodlist > .good > .buybox{
+	padding:0.20rem;
+}
+
+.goodlist > .good > .buybox .left{
+	display:block;
+	float: left;
+	width:50%;
+}
+.goodlist > .good > .buybox .left .price{
+	font-size:0.27rem;
+}
+.goodlist > .good > .buybox .left .baseprice{
+	font-size:0.20rem;
+	color:#b0b0b0;
+	text-decoration:line-through;
+}
+.goodlist > .good > .buybox .left .returnimage{
+	display:inline-block;
+	line-height: 0.26rem;
+	width: 0.26rem;
+	height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_10.png');
+	background-repeat: no-repeat;
+	background-size: 0.26rem 0.26rem;
+}
+.goodlist > .good > .buybox .left .returnrate{
+	display:inline-block;
+	width: 1.29rem;
+	height: 0.26rem;
+	padding-left:0.1rem;
+	line-height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_12.png');
+	background-repeat: no-repeat;
+	background-size: 1.29rem  0.25rem ;
+}
+.goodlist > .good > .buybox  .buy{
+	position:absolute;
+	right:0rem;
+	bottom:0.20rem;
+
+	padding-left: 0.46rem;
+	line-height: 0.60rem;
+
+	color:#ffffff;
+	font-size: 0.25rem;
+	text-decoration: none;
+
+	background-image:url('../images/index/home_09.png');
+	background-repeat: no-repeat;
+	background-size: 1.91rem  0.60rem ;
+	width: 1.91rem;
+	height: 0.60rem;
+
+}
+
+.futuresale  .title{
+	height: 0.64rem;
+	line-height: 0.64rem;
+	font-size: 0.16rem;
+	text-align: center;
+}
+
+
+
+.timebox{
+	font-size: 0.18rem;
+	text-align: center;
+	height:0.60rem;
+	line-height:0.60rem;
+}
+.timebox .timewrap{
+	background-image: url("../images/index/home_08.png");/*default*/
+	vertical-align:middle;
+	display:inline-block;
+	background-size:0.36rem 0.36rem;
+	height:0.36rem;
+	width:0.36rem; 
+	line-height: 0.36rem;
+	position: relative;
+}
+.timebox .days,
+.timebox .hours,
+.timebox .minutes{
+	color:#ffffff;
+	font-size:0.20rem;
+}
+
+
+.saling  .timebox .timewrap
+{
+	background-image: url("../images/index/home_08.png");
+}
+
+.overtime  .timebox .timewrap{
+	background-image: url("../images/index/home_11.png");
+}
+
+
+
+.qcarrousel{
+	position:relative;
+	width:100%;
+	height:2.64rem;
+	margin-bottom:0.10rem;
+	overflow: hidden;
+}
+.qcarrousel .imglist{
+	display: block;
+	width:300%;
+	height:100%;
+	list-style: none;
+}
+.qcarrousel .imglist li{
+	float:left;
+	width:6.4rem;
+	height:2.64rem;
+}
+.qcarrousel .imglist{
+	margin-left:-200%;
+}
+.qcarrousel .dotsbox{
+	position:absolute;
+	top:80%;
+	width: 100%;
+}
+.qcarrousel .dotslist{
+	display: -webkit-flex;
+  	display: flex;
+  	justify-content:center;
+}
+.qcarrousel .dotslist .dot{
+	margin:0.05rem;
+	background-size:0.13rem 0.13rem;
+	background-repeat: no-repeat;;
+	background-image:url("../images/index/circle-hiden.png");
+	height:0.13rem;
+	width:0.13rem;
+}
+.qcarrousel .dotslist .dot.active{
+	background-image:url("../images/index/circle-visiable.png");
+}
+
+
+
+
+
+
+.saletodaybox{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	
+	/*是否换行*/
+    -webkit-box-lines:multiple;
+    -webkit-box-pack: start; 
+	-webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+	
+    /*子元素交叉轴对齐方式*/
+    -webkit-box-align: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	align-items: center;
+	
+	/*子元素的显示方向*/
+	-webkit-box-direction: normal;
+	-webkit-box-orient: horizontal;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	
+	/*允许收缩*/
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+	margin:0.10rem;
+}
+.saletodaybox  .item{
+	position:relative;
+	background-clip:content-box;
+	background-color:#ffffff;
+	width:3.10rem;
+	padding:0.10rem;
+	overflow:hidden;
+}
+.saletodaybox .item img{
+	height:2.9rem;
+	width:100%;
+}
+.saletodaybox .item .title{
+	padding-left: 0.10rem;
+	padding-right: 0.10rem;
+}
+.saletodaybox .item .pricewrap{
+	padding-left: 0.10rem;
+	padding-right: 0.10rem;
+}
+.saletodaybox .item .price{
+	font-size:0.22rem;
+}
+.saletodaybox .item .baseprice{
+	font-size:0.20rem;
+	color:#b0b0b0;
+	text-decoration:line-through;
+}
+.saletodaybox .item .returnwrap{
+	padding-bottom: 0.10rem;
+	padding-left: 0.10rem;
+	padding-right: 0.10rem;
+}
+.saletodaybox .item .returnimage{
+	display:inline-block;
+	line-height: 0.26rem;
+	width: 0.26rem;
+	height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_10.png');
+	background-repeat: no-repeat;
+	background-size: 0.26rem 0.26rem;
+}
+.saletodaybox .item .more{
+	display:inline-block;
+	line-height: 0.26rem;
+	width: 0.26rem;
+	height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_13.png');
+	background-repeat: no-repeat;
+	background-size: 0.26rem 0.26rem;
+	margin-left:0.05rem;
+}
+.saletodaybox .item  .moreinfo{
+	position:absolute;
+	left:0.10rem;
+	width:2.9rem;
+	height:70%;
+	top:100%;
+	opacity:0.9;
+	background-color:#e6e3e3;
+	padding:20px;
+	word-wrap : break-word ;
+}
+.saletodaybox .item  .moreinfo.up{
+	top:30%;
+}
+
+
+
+
+/*hotel  showsearch*/
+.searchbox
+{
+	background:#ffffff;
+	margin-top:0.40rem;
+	border-top:2px solid #d5d5d5;
+}
+.searchbox .searchrow{
+	border-bottom:2px solid #d5d5d5;
+	width:100%;
+	padding-left:0.20rem;
+	padding-right:0.20rem;
+}
+.searchbox .detail{
+	background-image:url("../images/hotel/jiudian_03.png");
+	background-repeat:no-repeat;
+	background-position:90% 50%;
+}
+.searchbox  .dest{
+	position:relative;
+	height:0.90rem;
+	line-height:0.90rem;
+}
+.searchbox  .dest .left{
+	width:80%;
+	float:left;
+}
+.searchbox  .dest .right{
+	width:19%;
+	float:right;
+}
+.searchbox  .dest .location{
+	position:absolute;
+	right:0px;
+	top:0px
+	display:block;
+	width:0.9rem;
+	background-image:url("../images/hotel/jiudian_01.png");
+	background-position:center 15%;
+	background-repeat:no-repeat;
+	padding-top: 0.30rem;
+	text-align:center;
+}
+.searchbox   .datevalue{
+	margin-left:0.05rem;
+	margin-right:0.05rem;
+	font-size:0.22rem;
+}
+.searchbox label {
+	text-align:right;
+	display:inline-block;
+	width:1.00rem;
+	letter-spacing:0.02rem;
+	margin-right:0.05rem;
+}
+
+
+.searchbox  .time{
+	height:auto;
+	line-height:0.90rem;
+}
+.searchbox  .time .left{
+	width:70%;
+	float:left;
+}
+.searchbox  .time .left .timerow{
+	width:100%;
+	border-bottom:1px solid #d5d5d5;
+}
+.searchbox  .time .right{
+	float:right;
+	width:29%;
+	height:1.8rem;
+	line-height:1.8rem;
+	text-align: center;
+	font-size:0.22rem;
+}
+.searchbox  .time .notice{
+	color:#666666;
+}
+.searchbox span{
+	height:0.9rem;
+	line-height:0.9rem;
+}
+.actionbox{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0.2rem;
+	margin-bottom:0.20rem;
+}
+.actionbtn{
+	color:#ffffff;
+	font-size:0.22rem;
+	border-radius:0.10rem;
+	background:#e7313d;
+	height:0.80rem;
+	width:100%;
+	margin-top:0.02rem;
+}
+
+
+.popbox{
+	position:fixed;
+	top:0rem;
+	bottom:0rem;
+	z-index:3;
+	height:auto;
+	width:6.4rem;
+}
+.popbox .popmask{
+	position:absolute;
+	bottom:0rem;
+	top:0rem;
+	width:6.4rem;
+	background:#000000;
+	opacity:0.4;
+}
+.popbox .popcontent{
+	width:6.4rem;
+	opacity:1;
+	position:absolute;
+	bottom:0rem;
+	background:#ebebeb;
+}
+.popbox .popcontent > .title{
+	text-align:center;
+	font-size:0.32rem;
+	line-height:0.90rem;
+	word-wrap : break-word ;
+	border-bottom:2px solid #d5d5d5;
+}
+
+
+.popbox .popcontent .conditionbox{
+	padding-top:0.05rem;
+	padding-bottom:0.05em;
+	padding-right:0.20rem;
+	padding-left:0.20rem;
+}
+.popbox .popcontent .conditionbox .name{
+	font-size:0.24rem;
+}
+.popbox .popcontent .conditionbox .valuebox{
+	display:flex;
+	flex-direction:row;
+  	flex-wrap:wrap;
+  	justify-content:flex-start;
+	margin:0.10rem;
+}
+.popbox .popcontent .conditionbox .valuebox .valueitem{
+	padding:0.05rem;
+	background:#ffffff;
+	background-clip:content-box;
+	line-height:0.65rem;
+	text-align:center;
+	width:1.9rem;
+}
+.popbox .popcontent .conditionbox .valuebox .valueitem.active{
+	background:#f97817;
+	background-clip:content-box;
+	color:#ffffff;
+}
+
+.popbox .popcontent .conditionbox.price .valuebox .valueitem{
+	padding:0.05rem 0.02rem;
+	width:1.4rem;
+}
+.popbox .popcontent .conditionbox.price .valuebox .valueitem.active{
+	padding:0.05rem 0.02rem;
+	width:1.4rem;
+}
+
+
+.popdownpanel{
+	background-clip:content-box;
+	background-color:#ffffff;
+	padding:0.20rem;
+}
+.popdownpanel .popdownpanel-header{
+	background:
+	url("../images/hotel/jiudian_04.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+	height:0.80rem;
+	line-height:0.80rem;
+	padding-left:15%;
+	font-size:0.25rem;
+	border-bottom:0.02rem solid #ebebeb;
+}
+.popdownpanel .popdownpanel-body{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:flex-start;
+	background-color:#ebebeb;
+}
+.popdownpanel .popdownpanel-body.show{
+	display:flex;
+}
+.popdownpanel .popdownpanel-body.hidden{
+	display:none;
+}
+.popdownpanel .popdownpanel-body .popdownpanel-item{
+	width:1.50rem;
+	height:0.90rem;
+	line-height:0.90rem;
+	text-align: center;
+	padding:0.01rem;
+	background-color:#ffffff;
+	background-clip:content-box;
+}
+.popdownpanel .popdownpanel-header.area{
+	background:
+	url("../images/hotel/jiudian_04.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+}
+.popdownpanel .popdownpanel-header.brand{
+	background:
+	url("../images/hotel/jiudian_05.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+}
+.popdownpanel .popdownpanel-header.district{
+	background:
+	url("../images/hotel/jiudian_06.png") no-repeat 5% center,
+	url("../images/hotel/jiudian_10.png") no-repeat 95% center
+	;
+}
+
+
+
+
+/*hotel showlist*/
+.hotel .showlist.header{
+	height:0.70rem;
+	line-height:0.70rem;
+	background:url("../images/hotel/jiudian_13.png") no-repeat 95% center;
+	padding-left:0.20rem;
+	font-size:0.22rem;
+}
+.hotel .showlist .listbox{
+
+}
+.hotel .showlist .listbox .item{
+	position:relative;
+	background-color:#ffffff;
+	padding:0.10rem 0.20rem;
+	margin-bottom:0.02rem;
+}
+.hotel .showlist .listbox .item  img{
+	float:left;
+	width:1.9rem;
+	height:1.9rem;
+}
+.hotel .showlist .listbox .item  .info{
+	position:absolute;
+	left:2.2rem;
+	font-size:0.24rem;
+}
+ .hotel .showlist .listbox .item  .service{
+ 	position:absolute;
+	left:2.2rem;
+	top:0.40rem;
+	width:2.5rem;
+	font-size:0.24rem;
+ }
+.hotel .showlist .listbox .item  .service .first .score{
+	display:inline-block;
+  	height:0.30rem;
+  	vertical-align:middle;
+  	line-height:0.30rem;
+  	color:#fd7004;
+  	font-size:0.22rem;
+  }
+.hotel .showlist .listbox .item  .service .first .ico_park {
+    background: rgba(0, 0, 0, 0) url("../images/hotel/p.png") no-repeat scroll center center / contain ;
+    height:0.30rem;
+    width:0.30rem;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:0.30rem;
+}
+.hotel .showlist .listbox .item  .service .first  .ico_wifi {
+    background: rgba(0, 0, 0, 0) url("../images/hotel/wifi.png") no-repeat scroll center center / contain ;
+    height:0.30rem;
+    width:0.30rem;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:0.30rem;
+}
+ .hotel .showlist .listbox .item  .service .first  .ico_mc {
+    background-repeat:no-repeat;
+    background-image:url("../images/hotel/mc.png");
+    background-position:center center;
+    background-size:0.30rem 0.30rem;
+    height:0.30rem;
+    width:0.30rem;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:0.30rem;
+}
+ .hotel .showlist .listbox .item  .service  .star {
+    color:#a9a9a9;
+}
+
+.hotel .showlist .listbox .item  .price {
+	position:absolute;
+	left:4.80rem;
+	top:0.5rem;
+	width:1.4rem;
+
+	background-image:url("../images/hotel/jiudian_03.png");
+	background-repeat:no-repeat;
+	background-position:90% 50%;
+}
+.hotel .showlist .listbox .item  .price .baseprice{
+	font-size:0.30rem;
+}
+.hotel .showlist .listbox .item  .returnrate{
+	position:absolute;
+	top:0.9rem;
+	left:4.80rem;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	flex-wrap:wrap;
+}
+.hotel .showlist .listbox .item  .highest{
+	background-image:url("../images/hotel/jiudian_14.png");
+	background-repeat:no-repeat;
+	background-position:left top;
+	background-size:0.80rem 0.35rem  ;
+	height:0.35rem;
+	width:0.80rem;
+	line-height:0.35rem;
+	font-size:0.20rem;
+	color:#ffffff;
+	padding-left:0.05rem;
+}
+
+.hotel .showlist .listbox .item  .address{
+	position:absolute;
+	bottom:0.20rem;
+	left:2.2rem;
+	width:3.1rem;
+	text-overflow:ellipsis;
+	white-space:nowrap
+	overflow:hidden;
+
+	  text-overflow:ellipsis;  
+	  white-space:nowrap;  
+	  overflow:hidden;  
+}
+.hotel .showlist .listbox .item  .distance{
+	position:absolute;
+	bottom:0.20rem;
+	right:0.20rem;
+}
+
+
+
+/*
+ * showdetail
+ */
+.detail{
+	background-image:url("../images/hotel/jiudian_03.png");
+	background-repeat:no-repeat;
+	background-position:90% 50%;
+}
+.font17
+{
+	font-size:0.1778rem;
+}
+.font21
+{
+	font-size:0.2134rem;
+}
+.font23
+{
+	font-size:0.2312rem;
+}
+.font24
+{
+	font-size:0.2489rem;
+}
+.font32
+{
+	font-size:0.2489rem;
+}
+
+.color1{
+	color:#666666;
+}
+.color2{
+	color:#999999;
+}
+
+
+
+
+.hotel .showdetail .header{
+	padding:0.20rem;
+}
+.hotel .showdetail .basicinfo{
+	height:auto;
+}
+.hotel .showdetail .basicinfo .leftbox{
+	display:inline-block;
+	width:4.60rem;
+	height:1.75rem;
+}
+.hotel .showdetail .basicinfo  .leftbox .item{
+	cursor:pointer;
+	height:50%;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items:center;
+	background-color:#ffffff;
+	padding-left:0.20rem;
+	border-bottom:0.02rem solid #ebebeb;
+}
+.hotel .showdetail .basicinfo  .leftbox  .item .detail{
+	width:1.00rem;
+	background-image:url("../images/hotel/jiudian_03.png");
+	background-repeat:no-repeat;
+	background-position:60% 50%;
+}
+.hotel .showdetail .basicinfo .rightbox{
+	display:inline-block;
+	width:1.75rem;
+	height:1.75rem;
+}
+.hotel .showdetail .addressinfo{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items:center;
+	padding:0.20rem;
+
+	min-height:1.10rem;
+	background-color:#ffffff;
+
+}
+.hotel .showdetail .addressinfo .address{
+	width:3.40rem;
+}
+.hotel .showdetail .addressinfo .distance{
+	background-image:url("../images/hotel/distance.png");
+	background-repeat:no-repeat;
+	background-position:left 50%;
+	width:1.8rem;
+	padding-left:0.50rem;
+}
+.hotel .showdetail .roominfo{
+	margin-top:0.40rem;
+}
+.hotel .showdetail .roominfo .dateinfo{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items:center;
+
+	background-color:#ffffff;
+	padding:0.20rem;
+	height:0.80rem;
+	border-top:2px solid #d5d5d5;
+	border-bottom:2px solid #d5d5d5;
+}
+.hotel .showdetail .roominfo .dateinfo > .item{
+	width:1.80rem;
+}
+
+
+.hotel .showdetail .roominfo .roomlist > .item{
+	position:relative;
+	background:#ffffff;
+	padding:0.20rem;
+	height:1.76rem;
+	border-top:1px solid #d5d5d5;
+	border-bottom:1px solid #d5d5d5;
+}
+.hotel .showdetail .roominfo .roomlist > .item > img{
+	height:100%;
+}
+
+.returnimage{
+	display:inline-block;
+	line-height: 0.26rem;
+	width: 0.26rem;
+	height: 0.26rem;
+	vertical-align: middle;
+	background-image:url('../images/index/home_10.png');
+	background-repeat: no-repeat;
+	background-size: 0.26rem 0.26rem;
+}
+
+.hotel .showdetail .roominfo .roomlist > .item > .basicinfo{
+	position:absolute;
+	left:1.70rem;
+	top:0.20rem;
+}
+
+.hotel .showdetail .roominfo .roomlist > .item > .returnimage{
+	position:absolute;
+	left:4.40rem;
+	top:1.0rem;
+	width:0.80rem;
+	padding-left:0.30rem;
+}
+.hotel .showdetail .roominfo .roomlist > .item > .price{
+	position:absolute;
+	left:4.40rem;
+	top:0.60rem;
+}
+.hotel .showdetail .roominfo .roomlist > .item > .roomtype{
+	position:absolute;
+	left:1.70rem;
+	bottom:0.20rem;
+}
+.hotel .showdetail .roominfo .roomlist > .item > .action{
+	position:absolute;
+	left:5.40rem;
+	top:0.60rem;
+	height:0.55rem;
+	width:0.80rem;
+	border-radius:2px;
+	background:#999999;
+	line-height:0.55rem;
+	text-align:center;
+	color:#ffffff;
+	cursor:none;
+}
+.hotel .showdetail .roominfo .roomlist > .item > .action.active{
+	cursor:pointer;
+	background:#e7313d;
+}
