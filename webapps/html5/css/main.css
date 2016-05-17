@@ -1202,7 +1202,7 @@ label{
 .switchtab2 > *:first-child > i{
   color:#ffffff;
 }
-.switchtab2 > *:last-child{
+.switchtab2 > * {
   background:#ffffff;
   border: 1px solid #e7313d;
   border-top-right-radius:0.1rem;
@@ -1724,7 +1724,9 @@ body{
   color:#333;
   margin: 0 auto;
   width:6.4rem;
-  min-height:6rem;
+  /*
+  height:100%;
+  */
 }
 
 
@@ -1935,6 +1937,13 @@ body >  .header .sidearea{
       -ms-flex-align: center;
           align-items: center;
 }
+.myflexbox.stretch
+{
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
 .myflexbox > .fixiedarea{
   display:block;
   -webkit-box-flex:none;
@@ -1955,7 +1964,11 @@ body >  .header .sidearea{
 
 
 
-
+html{
+  /*
+  height:100%;
+  */
+}
 .content{
   /*version 1
   position:relative;
@@ -2002,6 +2015,12 @@ webkit-overflow-scrolling:touch
   -webkit-overflow-scrolling: touch;
   */
   padding-bottom:0.3rem;
+  /*
+  position:relative;
+  */
+  /*
+  height:100%;
+  */
 }
 
 .header ~ .content {
@@ -2516,6 +2535,18 @@ webkit-overflow-scrolling:touch
   padding:0.20rem;
   word-wrap : break-word ;
 }
+.saletodaybox .item  .tag{
+  display:block;
+  position:absolute;
+  left:0.1rem;
+  top:0.1rem;
+  background-image:url("../images/shop/shangcheng_04.png");
+  background-size:0.68rem 0.70rem;
+  background-position:center center;
+  width:0.68rem;
+  height:0.70rem;
+  z-index:2;
+}
 .saletodaybox .item  .moreinfo.up{
   top:30%;
 }
@@ -2526,9 +2557,22 @@ webkit-overflow-scrolling:touch
 /*hotel  showsearch*/
 
 .qdate{
+  text-align: center;
   border:none;
   outline: none;
-  width:1.8rem;
+  width:7em;
+  word-wrap:no-wrap;
+  text-decoration: none;
+  box-shadow: none !important;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+.qdatetime{
+  text-align: center;
+  border:none;
+  outline: none;
+  width:10em;
 }
 /*
 
@@ -2743,8 +2787,11 @@ webkit-overflow-scrolling:touch
 }
 .hotel .showdetail .basicinfo{
   height:auto;
+  width:100%;
   text-align:justify;
 }
+
+/*
 .hotel .showdetail .basicinfo .leftbox{
   display:inline-block;
   width:4.60rem;
@@ -2776,13 +2823,35 @@ webkit-overflow-scrolling:touch
   background-position:right center;
 }
 .hotel .showdetail .basicinfo .rightbox{
+  position:relative;
   display:inline-block;
   width:1.75rem;
   height:1.75rem;
 }
+*/
+
+.hotel .showdetail .fieldrow{
+  padding:0.2rem;
+}
+.hotel .showdetail .basicinfo  .imgbox{
+  position: relative;
+  overflow: hidden;
+  height:1.55rem;
+  width:1.55rem;
+}
+.hotel .showdetail .basicinfo  img{
+  height:100%;
+  width:100%;
+}
 .hotel .showdetail .basicinfo .pictotal{
+  display:block;
+  width:100%;
   position:absolute;
   bottom:0rem;
+  background-color:rgba(0,0,0,0.6);
+  color:#ffffff;
+  font-weight:600;
+  text-align: center;
  }
 
 
@@ -2823,11 +2892,18 @@ webkit-overflow-scrolling:touch
 .hotel .showdetail .roominfo .dateinfo > .item{
   display:inline;
   vertical-align:middle;
-  width:1.80rem;
-  height:100%;
+  height:0.8rem;
   line-height:0.80rem;
 }
-
+.hotel .showdetail .roominfo .dateinfo .detail{
+  display: block;
+  background-image:url("../images/hotel/jiudian_03.png");
+  background-size:0.11rem 0.20rem;
+  background-repeat:no-repeat;
+  background-position:95% 50%;
+  height:0.8rem;
+  width:0.26rem;
+}
 
 .hotel .showdetail .roominfo .roomlist > .item{
   position:relative;
@@ -4461,6 +4537,7 @@ hr{
   width: 100%;
   top: 0rem;
   bottom: 0;
+  height:100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
