@@ -1,0 +1,128 @@
+<style>
+   h1 {
+  font: bold 20px/1.5 georgia, simsun, sans-serif;
+}
+
+.box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+  -webkit-flex-direction:row;
+      -ms-flex-direction:row;
+          flex-direction:row;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  list-style: none;
+  background-color: #eee;
+}
+
+.box div {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #aaa;
+  text-align: center;
+}
+
+#box {
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+#box2 {
+  -webkit-align-content: flex-end;
+      -ms-flex-line-pack: end;
+          align-content: flex-end;
+}
+
+#box3 {
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+}
+
+#box4 {
+  -webkit-align-content: space-between;
+      -ms-flex-line-pack: justify;
+          align-content: space-between;
+}
+
+#box5 {
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around;
+}
+
+#box6 {
+  -webkit-align-content: strecth;
+      -ms-flex-line-pack: strecth;
+          align-content: strecth;
+	}
+  </style>
+
+  
+<h1>adivgn-content示例：</h1>
+<h2>adivgn-content:flex-start</h2>
+<div id="box" class="box">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+	<div>e</div>
+	<div>f</div>
+</div>
+<h2>adivgn-content:flex-end</h2>
+<div id="box2" class="box">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+	<div>e</div>
+	<div>f</div>
+</div>
+<h2>adivgn-content:center</h2>
+<div id="box3" class="box">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+	<div>e</div>
+	<div>f</div>
+</div>
+<h2>adivgn-content:space-between</h2>
+<div id="box4" class="box">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+	<div>e</div>
+	<div>f</div>
+</div>
+<h2>adivgn-content:space-around</h2>
+<div id="box5" class="box">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+	<div>e</div>
+	<div>f</div>
+</div>
+<h2>adivgn-content:strecth</h2>
+<div id="box6" class="box">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+	<div>e</div>
+	<div>f</div>
+</div>
