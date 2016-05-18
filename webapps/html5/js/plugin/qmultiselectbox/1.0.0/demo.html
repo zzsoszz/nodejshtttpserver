@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+
+<link rel="stylesheet" href="jquery.qmultiplyfilter.css"   media="all"    type="text/css" />
+
+<script type="text/javascript"  src="jquery-1.10.2.js" ></script>
+<script type="text/javascript"  src="jquery.json-2.4.js" ></script>
+<script type="text/javascript"  src="jquery.qmultiplyfilter.js" ></script>
+
+<script>
+	$(document).ready(
+		function()
+		{
+			var json=[
+				{type:"single",name:"product",values:["iphone"]},
+				{type:"multiple",name:"version",values:["1.0","1.2"]}
+			];
+			$("#filterset").qmultiplyfilter({
+				val:json,
+				onchanged:function(result)
+				{
+					console.log("onchanged:"+$.toJSON(result));
+				}
+			});
+		}
+	);
+</script>
+
+
+</head>
+
+
+<body>
+	
+	
+	<div  id="filterset" class="filterset">
+		<div  id="111" class="filteritem" data-type="single" data-itemname="product">
+			<div>产品</div>
+			<div id="1" class="itemval"  data-itemval="iphone">iphone</div>
+			<div id="2" class="itemval" data-itemval="htc">htc</div>
+			<div id="3" class="itemval" data-itemval="华为1">华为1</div>
+		</div>
+		<div  id="222"  class="filteritem" data-type="multiple" data-itemname="version">
+			<div>版本好</div>
+			<div id="4" class="itemval"  data-itemval="1.0">1.0</div>
+			<div id="5" class="itemval"  data-itemval="1.2">2.0</div>
+			<div id="6" class="itemval"  data-itemval="1.3">3.0</div>
+		</div>
+	</div>
+	
+	
+</body>
+
+</html>
