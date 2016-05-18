@@ -835,11 +835,8 @@ label{
 
 
 
-.fieldgroup{
-  position: relative;
-  font-size:0.24rem;
-}
-.fieldgroup .fieldrow
+
+.fieldrow
 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -853,36 +850,45 @@ label{
   background:#ffffff;
   border:1px solid #ebebeb;
 }
-.fieldgroup .fieldrow:first-child
-{
-  border-top:1px solid #d5d5d5;
-}
-.fieldgroup .fieldrow
-{
-  border-bottom:1px solid #d5d5d5;
-}
-.fieldgroup .fieldrow.stretch
+.fieldrow.stretch
 {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
-.fieldgroup .fieldrow .fixedfield{
+.fieldrow .fixedfield
+{
   display:block;
   -webkit-box-flex:none;
   -webkit-flex:none;/*相当于none*/
       -ms-flex:none;/*相当于none*/
           flex:none;/*相当于none*/
 }
-.fieldgroup .fieldrow .dynamicfield{
+.fieldrow .dynamicfield
+{
    display:block;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-.fieldgroup .fieldicon{
+
+
+.fieldgroup{
+  position: relative;
+  font-size:0.24rem;
+}
+.fieldgroup .fieldrow
+{
+  border-bottom:1px solid #d5d5d5;
+}
+.fieldgroup .fieldrow:first-child
+{
+  border-top:1px solid #d5d5d5;
+}
+.fieldgroup .fieldicon
+{
   position:absolute;
   right:0.2rem;
   top:0;
@@ -1813,94 +1819,22 @@ body >  .header .fixiedarea{
 }
 
 
+.global-topbar{
+    position:relative;
+    height:0.96rem;
+}
+.global-topbar  .titile{
+  font-weight:300;
+  font-size:0.32rem;
+  line-height: 0.96rem;
+}
+
+
 /*
-.global-topbar{
-    position:relative;
-    height:0.96rem;
-}
-.global-topbar  > .icon-back {
-  position:absolute;
-  left:0;
-  top:0;
-  width:1rem;
-  height:0.96rem;
-}
-.global-topbar  > .icon-home {
-  position:absolute;
-  right:0rem;
-  width:1rem;
-  height:0.96rem;
-}
-.global-topbar  .titile{
-  position:absolute;
-  left:0;
-  right:0;
-  height:100%;
-  width:100%;
-  font-weight:300;
-  font-size:0.32rem;
-  line-height: 0.96rem;
-  text-align:center;
-  z-index:-1;
-}
-.global-topbar  .other{
-  position:absolute;
-  right:0.20rem;
-  color:#666666;
-  font-weight:400;
-  font-size:0.22rem;
-  line-height: 0.96rem;
-  margin-right:0.20rem;
-}
+ *justify-content 主轴
+ *align-items: center;交叉轴
+ *
 */
-
-.global-topbar{
-    position:relative;
-    height:0.96rem;
-}
-.global-topbar  .titile{
-  font-weight:300;
-  font-size:0.32rem;
-  line-height: 0.96rem;
-}
-
-
-.threecloumn
-{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.threecloumn.stretch
-{
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-.fixiedarea{
-  display:block;
-  -webkit-box-flex:none;
-  -webkit-flex:none;/*相当于none*/
-      -ms-flex:none;/*相当于none*/
-          flex:none;/*相当于none*/
-}
-.dynamicarea{
-   display:block;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-
-
-
 .qflexbox
 {
   display: -webkit-box;
@@ -1919,12 +1853,33 @@ body >  .header .fixiedarea{
       -ms-flex-align: stretch;
           align-items: stretch;
 }
+.qflexbox.vertical
+{
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.qflexbox.center
+{
+  justify-content:center;
+}
+
 .qflexbox > .fixiedarea{
   display:block;
   -webkit-box-flex:none;
   -webkit-flex:none;/*相当于none*/
       -ms-flex:none;/*相当于none*/
           flex:none;/*相当于none*/
+}
+.qflexbox > .fixiedarea.qflexbox{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .qflexbox > .dynamicarea{
    display:block;
@@ -1933,8 +1888,16 @@ body >  .header .fixiedarea{
       -ms-flex: 1;
           flex: 1;
 }
-
-
+.qflexbox > .dynamicarea.qflexbox{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 
 
@@ -1945,57 +1908,7 @@ html{
   */
 }
 .content{
-  /*version 1
-  position:relative;
-  */
-
-
-  /*version 2
-  position:fixed;
-  top:0rem;
-  bottom:0rem;
-  */
-
-
-/*
-*
-webkit-overflow-scrolling:touch
-*/
-
-
-/*
-  position:absolute;
-  top:0rem;
-  bottom:0rem;
-  z-index: 1;
-  width: 6.4rem;
-  overflow: auto;
-  -webkit-overflow-scrolling:touch;
-*/
-
-
-  /*
-  overflow:auto;
-  */
-  /*
-  overflow-y: scroll;
-  -webkit-overflow-scrolling:touch;
-  overflow-x: hidden; overflow-y: auto; 
-  overflow-y: scroll;
-  -webkit-overflow-scrolling:touch;
-  */
-  /*
-  padding-top:0.96rem;
-  padding-bottom:1.5rem;
-  -webkit-overflow-scrolling: touch;
-  */
   padding-bottom:0.3rem;
-  /*
-  position:relative;
-  */
-  /*
-  height:100%;
-  */
 }
 
 .header ~ .content {
@@ -2004,8 +1917,6 @@ webkit-overflow-scrolling:touch
 .footer ~ .content {
   margin-bottom:0.96rem;
 }
-
-
 
 
 .footer{
@@ -2017,7 +1928,6 @@ webkit-overflow-scrolling:touch
   border-top:2px solid #d5d5d5;
   background:#fefefe;
 }
-
 .footer .global-toolbar{
   margin-top:auto;
   margin-bottom:auto;
@@ -2948,70 +2858,6 @@ webkit-overflow-scrolling:touch
 *酒店订单
 */
 /*
-.fieldgroup{
-  position: relative;
-  margin-bottom:0.2rem;
-
-  font-size:0.21rem;
-}
-.fieldgroup .fieldrow{
-  padding:0.20rem;
-  border-bottom:1px solid #d5d5d5;
-  background-color:#ffffff;
-  width:100%;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-.fieldgroup .fieldrow .first{
-  width:2rem;
-  display:block;
-   -webkit-flex:0;
-   -ms-flex: 0;
-       flex: none;
-  word-wrap:break-word;
-}
-.fieldgroup .fieldrow .second{
-  padding-left:0.20rem;
-  display:block;
-  -webkit-flex: 3;
-  -ms-flex: 3;
-      flex: 3;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-      align-items: center;
-}
-
-.fieldgroup .fieldrow .third{ 
-  display:block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-      flex: 1;
-}
-.fieldgroup .fieldrow .second .center{
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
-.fieldgroup .fieldrow .second .right{
-  display:block;
-  margin-left:auto;
-}
-.fieldgroup .fieldrow .second .left{
-  display:block;
-  margin-right:auto;
-}
-
-.fieldgroup .fieldicon{
-  position:absolute;
-  right:0;
-  top:0;
-  height:100%;
-  width:1rem;
-}
 */
 
 
