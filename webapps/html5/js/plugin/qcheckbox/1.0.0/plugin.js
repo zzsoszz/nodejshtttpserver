@@ -4,7 +4,7 @@
 			  selector      : this.selector
 		};
 		
-		var plugname="qmultiselectbox";
+		var plugname="qcheckbox";
 		
 		$.fn[plugname]=function()
 		{
@@ -53,21 +53,30 @@
 		{
 				var self=this;
 				self.popbox;
-				self.qmultiselectbox;
+				self.qcheckboxele;
+
+				self.setValue=function()
+				{
+					var values= self.qcheckboxele.find(".qitem.active").map(function(){
+						return $(this).data("qvalue").trim();
+					}).get().concat();
+					target.val(values);
+					self.popbox.removeClass("show");
+				};
 				self.init=function(initoptions)
 				{
-					self.qmultiselectbox=initoptions.qmultiselectboxele;
-					self.qcomfirm=initoptions.qmultiselectboxele.find(".qcomfirm");
-					self.qcancel=initoptions.qmultiselectboxele.find(".qcancel");
-					self.popbox=initoptions.qmultiselectboxele.closest(".popbox");
+					self.qcheckboxele=initoptions.qcheckboxele;
+					self.qcomfirm=self.qcheckboxele.find(".qcomfirm");
+					self.qcancel=self.qcheckboxele.find(".qcancel");
+					self.popbox=self.qcheckboxele.closest(".popbox");
 					target.on("focus",function()
 						{
 							self.popbox.addClass("show");
 						}
 					);
 					var initvalues=target.val()==null?[]:target.val().split(",");
-					self.qmultiselectbox.find(".qitem").each(function(){
-						var itemvalue=$(this).data("qvalue");
+					self.qcheckboxele.find(".qitem").each(function(){
+						var itemvalue=$(this).data("qvalue").trim();
 						if(itemvalue!=""){
 							if($.inArray(itemvalue,initvalues)>-1){
 								$(this).addClass("active");
@@ -77,13 +86,15 @@
 						$(this).removeClass("active");
 					});
 					self.popbox.on("click",function(ele){
-						if($(ele.target).closest(".qmultiselectbox").get().length==0)
+						if($(ele.target).closest(".qcheckbox").get().length==0)
 						{
 							self.popbox.removeClass("show");
 						}
 						if($(ele.target).hasClass("qitem"))
 						{
-							$(ele.target).toggleClass("active");
+							self.qcheckboxele.find(".qitem.active").removeClass("active");
+							$(ele.target).addClass("active");
+							self.setValue();
 						}
 					});
 					self.qcancel.on("click",function()
@@ -91,27 +102,8 @@
 							self.popbox.removeClass("show");
 						}
 					);
-					self.qcomfirm.on("click",function()
-						{
-							var values= self.qmultiselectbox.find(".qitem.active").map(function(){
-								return $(this).data("qvalue");
-							}).get().concat();
-							target.val(values);
-							self.popbox.removeClass("show");
-						}
-					);
+					self.qcomfirm.on("click",self.setValue);
 				};
 		}
 
-
-})(jQuery)
-
-
-/*
-模拟hashmap操作
-var map = {}; // Map map = new HashMap();
-map[key] = value; // map.put(key, value);
-var value = map[key]; // Object value = map.get(key);
-var has = key in map; // boolean has = map.containsKey(key);
-delete map[key]; // map.remove(key); 
-*/
+})(jQuery);
