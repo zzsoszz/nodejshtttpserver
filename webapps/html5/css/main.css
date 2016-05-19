@@ -332,6 +332,7 @@ a:hover {
  color:#ffffff;
 }
 .btn.large{
+  font-size:0.21rem;
   line-height: 0.70rem;
   height:0.70rem;
 }
@@ -4044,16 +4045,19 @@ webkit-overflow-scrolling:touch
 .checkboxlist > .item span{
   line-height:0.6rem;
 }
-.checkradio{
+
+.checkboxlist > .item  .checkradio{
   background-image:url("../images/my/personal_18.png");
   background-position:center;
   background-repeat:no-repeat;
   width: 0.6rem;
   height: 0.6rem;
 }
-.checkradio.active{
+.checkboxlist > .item.active .checkradio{
   background-image:url("../images/my/personal_19.png");
 }
+
+
 .icon-backcard{
     background-image: url("../images/my/personal_14.png");
     background-position: center center;
@@ -4140,6 +4144,7 @@ hr{
   z-index:3;
   height:auto;
   width:6.4rem;
+  display:none;
 }
 .popbox.show{
   display:block;
@@ -4165,6 +4170,7 @@ hr{
   bottom:0rem;
   background:transparent;
 }
+
 
 .popdownpanel{
   background-clip:content-box;

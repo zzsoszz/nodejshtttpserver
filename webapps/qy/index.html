@@ -48,13 +48,12 @@
 
 
 <body>
-
-
+<!--
 
 <div class="header">
-	<!--
+	
 
-	-->
+	
 	<div class="qflexbox global-topbar ">
 		<a class="fixiedarea iconfont arrow-left" href="#aaa">
 		</a>
@@ -66,8 +65,6 @@
 	</div>
 	
 
-	<!--搜索输入
-
 	<div class="input-group">
 			<span class="input-group-addons">
 				<a  class="iconfont font32">&#xe618;</a>
@@ -77,11 +74,8 @@
 				<a  class="iconfont font32">&#xe617;</a>
 			</span>
 	</div>
-	-->
+	
 
-
-	<!--
-		聚返利
 	
 	<div class="global-topbar qflexbox">
 		<a class="fixiedarea iconfont arrow-left" href="#aaa">
@@ -99,9 +93,12 @@
 		<a class="fixiedarea iconfont icon-search"  href="#bbb">
 		</a>
 	</div>
-	-->
+	
 
 </div>
+-->
+
+
 
 <!--
 	页脚
@@ -3857,6 +3854,10 @@
 
 
 <div class="content index">
+    <div id="version">
+
+    </div>
+
 	<div class="qflexbox stretch">
 		<div class="fixiedarea qflexbox vertical center">
 			<div class="dynamicarea">
@@ -3918,11 +3919,8 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-	
+	$("#version").text(navigator.userAgent);
 });
-function test(){
-	alert("test");
-}
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
