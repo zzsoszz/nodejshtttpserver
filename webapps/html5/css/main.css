@@ -111,9 +111,8 @@ a:hover {
 }
 .font21
 {
-  font-size:0.2134rem;
+  font-size:0.2134rem !important;
 }
-
 .font23
 {
   font-size:0.2312rem;
@@ -788,7 +787,11 @@ label{
 }
 
 
-
+.textoverflow{
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
 
 .round {
   border:0.10rem solid;
@@ -939,10 +942,12 @@ label{
 .listgroup .listrow:last-child{
   border-bottom:none;
 }
-.listgroup .listrow.select{
+.listgroup .listrow.select
+,.listgroup .listrow.active{
   color:#e7313d;
 }
-.listgroup .listrow.select:after{
+.listgroup .listrow.select:after,
+.listgroup .listrow.active:after{
   position:absolute;
   right:0.2rem;
   height:100%;
@@ -1721,10 +1726,10 @@ body{
   font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:0.16rem;
   line-height: 1.42857143;
-  background:#ebebeb;
   color:#333;
   margin: 0 auto;
   width:6.4rem;
+  background: #ebebeb;
   /*
   height:100%;
   */
@@ -2561,13 +2566,13 @@ webkit-overflow-scrolling:touch
   text-align: center;
   border:none;
   outline: none;
-  width:7em;
   word-wrap:no-wrap;
   text-decoration: none;
   box-shadow: none !important;
   -webkit-appearance:none;
   -moz-appearance:none;
   appearance:none;
+  width: 7em;
 }
 .qdatetime{
   text-align: center;
@@ -4200,6 +4205,7 @@ hr{
   display:none;
 }
 .popdownpanel .popdownpanel-body .popdownpanel-item{
+  /*
   display:block;
   float:left;
   width:1.50rem;
@@ -4209,6 +4215,21 @@ hr{
   padding:2px;
   background-color:#ffffff;
   background-clip:content-box;
+  */
+  
+
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  background-color: #ffffff;
+  border: 3px solid #ebebeb;
+  display: block;
+  height: 0.9rem;
+  line-height: 0.5rem;
+  padding: 0.2rem;
+  text-align: center;
+  float: left;
+  width: 1.5rem;
 }
 .popdownpanel.show .popdownpanel-header.area{
   background-image:url("../images/hotel/jiudian_04.png"),url("../images/hotel/jiudian_08.png");
@@ -4375,16 +4396,18 @@ hr{
 
 
 
-.hotel .showdanbao .listgroup {
+.listgroup.withiconbefore {
   padding:0rem;
 }
-.hotel .showdanbao .listgroup .listrow{
+.listgroup.withiconbefore .listrow{
   padding:0 0.70rem;
 }
-.hotel .showdanbao .listgroup .listrow.select{
+.listgroup.withiconbefore .listrow.select,
+.listgroup.withiconbefore .listrow.active{
   color:#1c6bbc;
 }
-.hotel .showdanbao .listgroup .listrow.select:after{
+.listgroup.withiconbefore .listrow.select:after,
+.listgroup.withiconbefore .listrow.active:after{
   color:#e7313d;
   position:absolute;
   left:0.2rem;
