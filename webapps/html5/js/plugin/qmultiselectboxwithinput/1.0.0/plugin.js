@@ -49,14 +49,35 @@
 			};
 		}
 
+		function InputItem(target,pluginobject)
+		{
+			self=this;
+			self.init=function()
+			{
+				self.qinputvalue=target.find(".qinputvalue");
+				self.qinputcomfirm=target.find(".qinputcomfirm");
+				self.qinputcancel=target.find(".qinputcancel");
+				self.qinputcomfirm.click(function(e){
+					e.stopPropagation();
+					var inputval=$(e.target).closest(".input-panel").find(".qinputvalue").val();
+					$("<div>").addClass("qitem listrow").data("qvalue",inputval).text(inputval).insertBefore(pluginobject.qadd);
+				});
+				self.qinputcancel.click(function(e){
+					e.stopPropagation();
+					var inputpanel=$(e.target).closest(".input-panel");
+					inputpanel.remove();
+				});
+			}
+			self.init();
+		}
+
+
 		function PluginObject(target)
 		{
 				var self=this;
 				self.popbox;
 				self.qmultiselectbox;
 
-				
-				
 				self.init=function(initoptions)
 				{
 					self.qmultiselectbox=initoptions.qmultiselectboxele;
@@ -64,6 +85,7 @@
 					self.qadd=initoptions.qmultiselectboxele.find(".qadd");
 					self.qcancel=initoptions.qmultiselectboxele.find(".qcancel");
 					self.popbox=initoptions.qmultiselectboxele.closest(".popbox");
+					self.qlistgroup=initoptions.qmultiselectboxele.find(".qlistgroup");
 					target.on("focus",function()
 						{
 							self.popbox.addClass("show");
@@ -89,8 +111,6 @@
 						{
 							$(ele.target).toggleClass("active");
 						}
-
-
 					});
 					self.qcancel.on("click",function()
 						{
@@ -106,9 +126,14 @@
 							self.popbox.removeClass("show");
 						}
 					);
+					self.qadd.on("click",function(){
+						var inputitem=$("#temp1").clone().attr("id","").insertAfter(self.qlistgroup).show();
+						new InputItem(inputitem,self);
+					});
+					
+					
 				};
 		}
-
 
 })(jQuery)
 

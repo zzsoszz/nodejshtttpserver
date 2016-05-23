@@ -24,18 +24,10 @@
 			$(".mutivalue").qmultiselectbox({
 				qmultiselectboxele:$("#qmultiselectbox1")
 			});
-			$(".listrow.add").click(function(){
-				$("#temp1").clone().insertAfter($("#listgroup1")).show();
 
-				$(".qinputcomfirm").click(function(e){
-				var inputval=$(e.target).closest(".input-panel").find(".qinputvalue").val();
-				$("<div>").addClass("qitem listrow").data("qvalue",inputval).text(inputval).insertBefore(".listrow.add");
-				});
-				$(".qinputcancel").click(function(e){
-					e.stopPropagation();
-					var aaa=$(e.target).closest(".input-panel");
-					aaa.remove();
-				});
+			$(".listrow.add").click(function(){
+
+
 
 			});
 			
@@ -65,7 +57,8 @@
 		<div id="qmultiselectbox1"  class="qmultiselectbox multiselectbox">
 			<p class="title">联系人</p>
 			
-			<div id="listgroup1" class="listgroup withiconbefore">
+
+			<div  class="qlistgroup listgroup withiconbefore">
 				<div class="qitem  listrow"  data-qvalue="3221">
 					交通银行信用卡(尾号<span>3221</span>)
 				</div>
@@ -77,6 +70,7 @@
 				</div>
 			</div>
 			
+
 			<div id="temp1" style="display:none" class="panel input-panel">
 					<div class="body">
 							<div class="input-group">
