@@ -54,10 +54,17 @@
 				var self=this;
 				self.popbox;
 				self.qmultiselectbox;
+
+
+				self.refresh=function(){
+
+				};
+				
 				self.init=function(initoptions)
 				{
 					self.qmultiselectbox=initoptions.qmultiselectboxele;
 					self.qcomfirm=initoptions.qmultiselectboxele.find(".qcomfirm");
+					self.qadd=initoptions.qmultiselectboxele.find(".qadd");
 					self.qcancel=initoptions.qmultiselectboxele.find(".qcancel");
 					self.popbox=initoptions.qmultiselectboxele.closest(".popbox");
 					target.on("focus",function()
@@ -85,6 +92,8 @@
 						{
 							$(ele.target).toggleClass("active");
 						}
+
+
 					});
 					self.qcancel.on("click",function()
 						{
