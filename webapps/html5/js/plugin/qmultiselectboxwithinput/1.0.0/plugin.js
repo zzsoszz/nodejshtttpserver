@@ -55,10 +55,7 @@
 				self.popbox;
 				self.qmultiselectbox;
 
-
-				self.refresh=function(){
-
-				};
+				
 				
 				self.init=function(initoptions)
 				{
