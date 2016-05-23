@@ -111,8 +111,9 @@ a:hover {
 }
 .font21
 {
-  font-size:0.2134rem !important;
+  font-size:0.2134rem;
 }
+
 .font23
 {
   font-size:0.2312rem;
@@ -787,11 +788,7 @@ label{
 }
 
 
-.textoverflow{
-  overflow: hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-}
+
 
 .round {
   border:0.10rem solid;
@@ -942,12 +939,10 @@ label{
 .listgroup .listrow:last-child{
   border-bottom:none;
 }
-.listgroup .listrow.select
-,.listgroup .listrow.active{
+.listgroup .listrow.select{
   color:#e7313d;
 }
-.listgroup .listrow.select:after,
-.listgroup .listrow.active:after{
+.listgroup .listrow.select:after{
   position:absolute;
   right:0.2rem;
   height:100%;
@@ -1726,10 +1721,10 @@ body{
   font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:0.16rem;
   line-height: 1.42857143;
+  background:#ebebeb;
   color:#333;
   margin: 0 auto;
   width:6.4rem;
-  background: #ebebeb;
   /*
   height:100%;
   */
@@ -2566,13 +2561,13 @@ webkit-overflow-scrolling:touch
   text-align: center;
   border:none;
   outline: none;
+  width:7em;
   word-wrap:no-wrap;
   text-decoration: none;
   box-shadow: none !important;
   -webkit-appearance:none;
   -moz-appearance:none;
   appearance:none;
-  width: 7em;
 }
 .qdatetime{
   text-align: center;
@@ -4050,19 +4045,16 @@ webkit-overflow-scrolling:touch
 .checkboxlist > .item span{
   line-height:0.6rem;
 }
-
-.checkboxlist > .item  .checkradio{
+.checkradio{
   background-image:url("../images/my/personal_18.png");
   background-position:center;
   background-repeat:no-repeat;
   width: 0.6rem;
   height: 0.6rem;
 }
-.checkboxlist > .item.active .checkradio{
+.checkradio.active{
   background-image:url("../images/my/personal_19.png");
 }
-
-
 .icon-backcard{
     background-image: url("../images/my/personal_14.png");
     background-position: center center;
@@ -4205,7 +4197,6 @@ hr{
   display:none;
 }
 .popdownpanel .popdownpanel-body .popdownpanel-item{
-  /*
   display:block;
   float:left;
   width:1.50rem;
@@ -4215,21 +4206,6 @@ hr{
   padding:2px;
   background-color:#ffffff;
   background-clip:content-box;
-  */
-  
-
-  overflow: hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  background-color: #ffffff;
-  border: 3px solid #ebebeb;
-  display: block;
-  height: 0.9rem;
-  line-height: 0.5rem;
-  padding: 0.2rem;
-  text-align: center;
-  float: left;
-  width: 1.5rem;
 }
 .popdownpanel.show .popdownpanel-header.area{
   background-image:url("../images/hotel/jiudian_04.png"),url("../images/hotel/jiudian_08.png");
@@ -4396,18 +4372,16 @@ hr{
 
 
 
-.listgroup.withiconbefore {
+.hotel .showdanbao .listgroup {
   padding:0rem;
 }
-.listgroup.withiconbefore .listrow{
+.hotel .showdanbao .listgroup .listrow{
   padding:0 0.70rem;
 }
-.listgroup.withiconbefore .listrow.select,
-.listgroup.withiconbefore .listrow.active{
+.hotel .showdanbao .listgroup .listrow.select{
   color:#1c6bbc;
 }
-.listgroup.withiconbefore .listrow.select:after,
-.listgroup.withiconbefore .listrow.active:after{
+.hotel .showdanbao .listgroup .listrow.select:after{
   color:#e7313d;
   position:absolute;
   left:0.2rem;
