@@ -19,9 +19,27 @@
 	$(document).ready(
 		function()
 		{
+
+
 			$(".mutivalue").qmultiselectbox({
 				qmultiselectboxele:$("#qmultiselectbox1")
 			});
+			$(".listrow.add").click(function(){
+				$("#temp1").clone().insertAfter($("#listgroup1")).show();
+
+				$(".qinputcomfirm").click(function(e){
+				var inputval=$(e.target).closest(".input-panel").find(".qinputvalue").val();
+				$("<div>").addClass("qitem listrow").data("qvalue",inputval).text(inputval).insertBefore(".listrow.add");
+				});
+				$(".qinputcancel").click(function(e){
+					e.stopPropagation();
+					var aaa=$(e.target).closest(".input-panel");
+					aaa.remove();
+				});
+
+			});
+			
+
 		}
 	);
 </script>
@@ -45,47 +63,32 @@
 		
 		
 		<div id="qmultiselectbox1"  class="qmultiselectbox multiselectbox">
-			<p class="title">星级价格</p>
-			<div class="conditionbox">
-				<p class="name">星级</p>
-				<div class="valuebox clearfix" >
-					<span class="qitem  valueitem active" data-qvalue="不限制">
-						不限制
-					</span>
-					<span class="qitem valueitem"  data-qvalue="快捷连锁">
-						快捷连锁
-					</span>
-					<span class="qitem valueitem"  data-qvalue="二星级">
-						二星级
-					</span>
-					<span class="qitem valueitem active"  data-qvalue="三星级">
-						三星级
-					</span>
-					<span class="qitem valueitem"  data-qvalue="四星级">
-						四星级
-					</span>
+			<p class="title">联系人</p>
+			
+			<div id="listgroup1" class="listgroup withiconbefore">
+				<div class="qitem  listrow"  data-qvalue="3221">
+					交通银行信用卡(尾号<span>3221</span>)
+				</div>
+				<div class="qitem listrow" data-qvalue="4567">
+					交通银行信用卡(尾号<span>4567</span>)
+				</div>
+				<div class="listrow add">
+					添加新信用卡
 				</div>
 			</div>
 			
-			<div class="conditionbox  price">
-				<p class="name">星级</p>
-				<div class="valuebox clearfix" >
-					<span class="qitem valueitem active" data-qvalue="100">
-						100
-					</span>
-					<span class="qitem valueitem" data-qvalue="200">
-						200
-					</span>
-					<span class="qitem valueitem" data-qvalue="300">
-						300
-					</span>
-					<span class="qitem valueitem active" data-qvalue="400">
-						400
-					</span>
-					<span class="qitem valueitem" data-qvalue="500">
-						500
-					</span>
-				</div>
+			<div id="temp1" style="display:none" class="panel input-panel">
+					<div class="body">
+							<div class="input-group">
+						          <input class="qinputvalue formcontrol"   placeholder="联系人" type="text">
+						          <span class="qinputcomfirm input-group-addons textjustify">
+						            <span class="color-red iconfont icon-right font21 " ></span>
+						          </span>
+						          <span class="qinputcancel input-group-addons textjustify">
+						            <span class="color-red iconfont icon-wrong color-red font21" ></span>
+						          </span>
+					        </div>
+			        </div>
 			</div>
 			
 			<div class="actionbox">
@@ -95,6 +98,8 @@
 					<a class="qcancel col-xs-5 btn large red">取消</a>
 				</div>
 			</div>
+
+
 		</div>
 		
 	</div>
@@ -102,6 +107,7 @@
 
 
 
+			
 
 
 
