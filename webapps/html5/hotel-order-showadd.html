@@ -48,6 +48,8 @@
 
 <body>
 
+<p class="qalert hidden">
+</p>
 
 
 <div class="popbox">
@@ -57,19 +59,19 @@
 	<div class="popcontent">
 		
 		
-		<div id="qmultiselectbox1"  class="qmultiselectbox multiselectbox">
-			<p class="title">联系人</p>
+		<div id="checkinperson_qmultiselectbox"  class="qmultiselectbox multiselectbox">
+			<p class="title">入住人</p>
 			
 			
 			<div  class="qlistgroup listgroup">
-				<div class="qitem  listrow"  data-qvalue="3221">
-					交通银行信用卡(尾号<span>3221</span>)
+				<div class="qitem  listrow"  data-qvalue="张三">
+					张三
 				</div>
-				<div class="qitem listrow" data-qvalue="4567">
-					交通银行信用卡(尾号<span>4567</span>)
+				<div class="qitem listrow" data-qvalue="李四">
+					李四
 				</div>
 				<div class="qadd listrow add">
-					添加新信用卡
+					添加
 				</div>
 			</div>
 			
@@ -102,6 +104,116 @@
 
 	</div>
 </div>
+
+
+<div class="popbox">
+	
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+		
+		<div id="checkinperson_qmultiselectbox"  class="qmultiselectbox multiselectbox">
+			<p class="title">电话号码</p>
+			
+			
+			<div  class="qlistgroup listgroup">
+				<div class="qitem  listrow"  data-qvalue="张三">
+					13730666347
+				</div>
+				<div class="qitem listrow" data-qvalue="李四">
+					13730666347
+				</div>
+				<div class="qadd listrow add">
+					13730666347
+				</div>
+			</div>
+			
+			
+			<div id="temp1" style="display:none" class="panel input-panel">
+					<div class="body">
+							<div class="input-group">
+						          <input class="qinputvalue formcontrol"   placeholder="联系人" type="text">
+						          <span class="qinputcomfirm input-group-addons textjustify">
+						            <span class="color-red iconfont icon-right font21 " ></span>
+						          </span>
+						          <span class="qinputcancel input-group-addons textjustify">
+						            <span class="color-red iconfont icon-wrong color-red font21" ></span>
+						          </span>
+					        </div>
+			        </div>
+			</div>
+			
+			<div class="actionbox">
+				<div class="row">
+					<a class="qcomfirm col-xs-5 btn large white">确认</a>
+					<span class="col-xs-2"></span>
+					<a class="qcancel col-xs-5 btn large red">取消</a>
+				</div>
+			</div>
+
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+
+<div class="popbox">
+	
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+		
+		<div id="contanctperson_qmultiselectbox"  class="qmultiselectbox multiselectbox">
+			<p class="title">联系人</p>
+			
+			
+			<div  class="qlistgroup listgroup">
+				<div class="qitem  listrow"  data-qvalue="张三">
+					张三
+				</div>
+				<div class="qitem listrow" data-qvalue="李四">
+					李四
+				</div>
+				<div class="qadd listrow add">
+					添加
+				</div>
+			</div>
+			
+			
+			<div id="temp1" style="display:none" class="panel input-panel">
+					<div class="body">
+							<div class="input-group">
+						          <input class="qinputvalue formcontrol"   placeholder="联系人" type="text">
+						          <span class="qinputcomfirm input-group-addons textjustify">
+						            <span class="color-red iconfont icon-right font21 " ></span>
+						          </span>
+						          <span class="qinputcancel input-group-addons textjustify">
+						            <span class="color-red iconfont icon-wrong color-red font21" ></span>
+						          </span>
+					        </div>
+			        </div>
+			</div>
+			
+			<div class="actionbox">
+				<div class="row">
+					<a class="qcomfirm col-xs-5 btn large white">确认</a>
+					<span class="col-xs-2"></span>
+					<a class="qcancel col-xs-5 btn large red">取消</a>
+				</div>
+			</div>
+
+
+		</div>
+		
+
+	</div>
+</div>
+
 
 
 
@@ -154,7 +266,7 @@
 					联系人&ensp;&ensp;&ensp;&ensp;
 				</label>
 				<span class="dynamicfield">
-					<input  placeholder="张三"  >
+					<input  placeholder="张三" id="contanctperson" >
 				</span>
 			</div>
 			<div class="fieldrow" >
@@ -232,8 +344,14 @@
 <script>
 jQuery(document).ready(function() {
 	$(".mutivalue").qmultiselectbox({
-			qmultiselectboxele:$("#qmultiselectbox1")
+			qmultiselectboxele:$("#checkinperson_qmultiselectbox")
 	});
+
+	$("#contanctperson").qmultiselectbox({
+			qmultiselectboxele:$("#contanctperson_qmultiselectbox"),
+			maxSelect:1
+	});
+
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->

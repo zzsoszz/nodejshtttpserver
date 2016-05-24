@@ -85,6 +85,10 @@
 				self.popbox;
 				self.qmultiselectbox;
 				self.maxSelect;
+
+				self.removeAll=function(){
+
+				};
 				self.init=function(initoptions)
 				{
 
@@ -118,7 +122,14 @@
 						}
 						if($(ele.target).hasClass("qitem"))
 						{
-							$(ele.target).toggleClass("active");
+							if(self.maxSelect==1)
+							{//单选的情况
+								self.qmultiselectbox.find(".qitem").removeClass("active");
+								$(ele.target).addClass("active");
+							}else
+							{
+								$(ele.target).toggleClass("active");
+							}
 						}
 					});
 					self.qcancel.on("click",function()
