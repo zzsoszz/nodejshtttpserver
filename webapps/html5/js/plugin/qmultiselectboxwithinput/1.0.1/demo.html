@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="plugin.css"   media="all"    type="text/css" />
 <script type="text/javascript"  src="rem.js" ></script>
 <script type="text/javascript"  src="jquery-1.10.2.js" ></script>
+
+<link rel="stylesheet" href="../../qalert/1.0.0/plugin.css"   media="all"    type="text/css" />
+<script type="text/javascript"  src="../../qalert/1.0.0/plugin.js" ></script>
+
 <script type="text/javascript"  src="plugin.js" ></script>
 
 
@@ -18,12 +22,9 @@
 	$(document).ready(
 		function()
 		{
-
-
 			$(".mutivalue").qmultiselectbox({
 				qmultiselectboxele:$("#qmultiselectbox1")
 			});
-
 		}
 	);
 </script>
@@ -34,11 +35,10 @@
 
 <body>
 
-
+<p class="qalert hidden">
+</p>
 
 <input class="mutivalue" type="text"  />
-
-
 
 
 <div class="popbox">
@@ -51,8 +51,8 @@
 		<div id="qmultiselectbox1"  class="qmultiselectbox multiselectbox">
 			<p class="title">联系人</p>
 			
-
-			<div  class="qlistgroup listgroup withiconbefore">
+			
+			<div  class="qlistgroup listgroup">
 				<div class="qitem  listrow"  data-qvalue="3221">
 					交通银行信用卡(尾号<span>3221</span>)
 				</div>
@@ -64,7 +64,7 @@
 				</div>
 			</div>
 			
-
+			
 			<div id="temp1" style="display:none" class="panel input-panel">
 					<div class="body">
 							<div class="input-group">
