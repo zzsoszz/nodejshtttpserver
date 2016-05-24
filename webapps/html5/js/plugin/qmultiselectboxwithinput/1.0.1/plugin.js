@@ -84,10 +84,12 @@
 				var self=this;
 				self.popbox;
 				self.qmultiselectbox;
-
+				self.maxSelect;
 				self.init=function(initoptions)
 				{
+
 					self.qmultiselectbox=initoptions.qmultiselectboxele;
+					self.maxSelect=initoptions.maxSelect;
 					self.qcomfirm=initoptions.qmultiselectboxele.find(".qcomfirm");
 					self.qadd=initoptions.qmultiselectboxele.find(".qadd");
 					self.qcancel=initoptions.qmultiselectboxele.find(".qcancel");
@@ -126,9 +128,16 @@
 					);
 					self.qcomfirm.on("click",function()
 						{
-							var values= self.qmultiselectbox.find(".qitem.active").map(function(){
+							var valuesArray= self.qmultiselectbox.find(".qitem.active").map(function(){
 								return $(this).data("qvalue");
-							}).get().concat();
+							}).get();
+							if(self.maxSelect!=null && valuesArray.length>self.maxSelect)
+							{
+								$(".qalert").text("最多只能选择:"+self.maxSelect+"个");
+								$.fn.qalert();
+								return;
+							}
+							var values=valuesArray.concat();
 							target.val(values);
 							self.popbox.removeClass("show");
 						}
