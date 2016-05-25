@@ -67,7 +67,11 @@
 						$.fn.qalert();
 						return;
 					}
-					$("<div>").addClass("qitem listrow").data("qvalue",inputval).text(inputval).insertBefore(pluginobject.qadd);
+					var qitemnew=pluginobject.qitemtemplate.clone();
+					qitemnew.removeClass("qitemtemplate hidden").data("qvalue",inputval).insertBefore(pluginobject.qadd);
+					qitemnew.find(".qdesc").text(inputval);
+					var inputpanel=$(e.target).closest(".input-panel");
+					inputpanel.remove();
 				});
 				self.qinputcancel.click(function(e){
 					e.stopPropagation();
@@ -99,6 +103,8 @@
 					self.qcancel=initoptions.qmultiselectboxele.find(".qcancel");
 					self.popbox=initoptions.qmultiselectboxele.closest(".popbox");
 					self.qlistgroup=initoptions.qmultiselectboxele.find(".qlistgroup");
+					self.qinputpaneltemplate=initoptions.qmultiselectboxele.find(".qinputpaneltemplate");
+					self.qitemtemplate=initoptions.qmultiselectboxele.find(".qitemtemplate");
 					target.on("focus",function()
 						{
 							self.popbox.addClass("show");
@@ -119,17 +125,23 @@
 						if($(ele.target).closest(".qmultiselectbox").get().length==0)
 						{
 							self.popbox.removeClass("show");
-						}
-						if($(ele.target).hasClass("qitem"))
+						}else if( $(ele.target).hasClass("qselect") )
 						{
-							if(self.maxSelect==1)
-							{//单选的情况
-								self.qmultiselectbox.find(".qitem").removeClass("active");
-								$(ele.target).addClass("active");
-							}else
+							var closestqitem=$(ele.target).closest(".qitem").get();
+							if(closestqitem.length==1)
 							{
-								$(ele.target).toggleClass("active");
+								if(self.maxSelect==1)
+								{//单选的情况,重置所有其他选项
+									self.qmultiselectbox.find(".qitem").removeClass("active");
+									$(closestqitem[0]).addClass("active");
+								}else
+								{
+									$(closestqitem[0]).toggleClass("active");
+								}
 							}
+						}else if( $(ele.target).hasClass("qdelete") )
+						{
+							$(ele.target).closest(".qitem").remove();
 						}
 					});
 					self.qcancel.on("click",function()
@@ -154,10 +166,9 @@
 						}
 					);
 					self.qadd.on("click",function(){
-						var inputitem=$("#temp1").clone().attr("id","").insertAfter(self.qlistgroup).show();
+						var inputitem=self.qinputpaneltemplate.clone().insertAfter(self.qlistgroup).removeClass("qinputpaneltemplate hidden");
 						new InputItem(inputitem,self);
 					});
-					
 					
 				};
 		}

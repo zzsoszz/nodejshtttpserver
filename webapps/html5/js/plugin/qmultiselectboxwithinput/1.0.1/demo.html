@@ -23,8 +23,8 @@
 		function()
 		{
 			$(".mutivalue").qmultiselectbox({
-				qmultiselectboxele:$("#qmultiselectbox1"),
-				maxSelect:1
+				qmultiselectboxele:$("#checkinperson_qmultiselectbox"),
+				maxSelect:2
 			});
 		}
 	);
@@ -42,31 +42,45 @@
 <input class="mutivalue" type="text"  />
 
 
-<div class="popbox">
+
+<div class="popbox show">
 	
 	<div class="popmask">
 	</div>
 	<div class="popcontent">
 		
 		
-		<div id="qmultiselectbox1"  class="qmultiselectbox multiselectbox">
-			<p class="title">联系人</p>
+		<div id="checkinperson_qmultiselectbox"  class="qmultiselectbox multiselectbox">
+			<p class="title">入住人</p>
 			
 			
-			<div  class="qlistgroup listgroup">
-				<div class="qitem  listrow"  data-qvalue="3221">
-					交通银行信用卡(尾号<span>3221</span>)
+			<div  class="qlistgroup listgroup-dynamic">
+				<div class="qitemtemplate qitem listrow myflexbox hidden"  data-qvalue="">
+					<span class="fixiedarea iconfont icon-right1">
+					</span>
+					<span class="qdesc qselect equalarea">
+						
+					</span>
+					<span class="qdelete fixiedarea iconfont icon-wrong">
+					</span>
 				</div>
-				<div class="qitem listrow" data-qvalue="4567">
-					交通银行信用卡(尾号<span>4567</span>)
+				<div class="qitem  listrow myflexbox"  data-qvalue="张三">
+					<span class="fixiedarea iconfont icon-right1">
+					</span>
+					<span class="qselect qdesc equalarea">
+						张三
+					</span>
+					<span class="qdelete fixiedarea iconfont icon-wrong">
+					</span>
 				</div>
-				<div class="qadd listrow add">
-					添加新信用卡
+				<div class="qadd  listrow myflexbox">
+					<span class="fixiedarea iconfont icon-plus">
+					</span>
 				</div>
 			</div>
 			
-			
-			<div id="temp1" style="display:none" class="panel input-panel">
+
+			<div  class="qinputpaneltemplate hidden panel input-panel ">
 					<div class="body">
 							<div class="input-group">
 						          <input class="qinputvalue formcontrol"   placeholder="联系人" type="text">
@@ -87,12 +101,13 @@
 					<a class="qcancel col-xs-5 btn large red">取消</a>
 				</div>
 			</div>
-			
+
+
 		</div>
 		
+
 	</div>
 </div>
-
 
 
 			
