@@ -478,11 +478,11 @@ label{
 .justify-box2-group{
   background:#ffffff;
   padding-left:0.2rem;
-  border-top:3px solid #d5d5d5;
-  border-bottom:3px solid #d5d5d5;
+  border-top:1px solid #d5d5d5;
+  border-bottom:1px solid #d5d5d5;
 }
 .justify-box2-group > *:not(:last-child){
-  border-bottom:3px solid #d5d5d5;
+  border-bottom:1px solid #d5d5d5;
 }
 .justify-box2{
   display:block;
@@ -748,8 +748,8 @@ label{
   padding-left:0.20rem;
   background-color:#ffffff;
   border-top:2px solid #d5d5d5;
-  border-bottom:3px solid #d5d5d5;
-  margin:0.40rem 0;
+  border-bottom:2px solid #d5d5d5;
+  margin:0.30rem 0;
 }
 .listgroup.withoutpadding{
   padding-left:0;
@@ -893,6 +893,7 @@ label{
       -ms-flex-align: center;
           align-items: center;
 }
+/*
 .input-group > *:not(.input-group-addons)
 {
    height:0.86rem;
@@ -903,6 +904,7 @@ label{
    height:0.60rem;
    line-height:0.60rem;
 }
+*/
 .input-group  .input-group-addons{
   word-wrap:nowrap;
   text-align:center;
@@ -916,6 +918,7 @@ label{
 .input-group  .input-group-addons > * {
   
 }
+/*
 .input-group  .input-group-addons > *:nth-child(1):nth-last-child(1){
    line-height:0.86rem;
 }
@@ -926,11 +929,12 @@ label{
    line-height:0.30rem;
    font-size:0.17rem;
 }
+*/
 .input-group  .textmsg{
    line-height:0.86rem;
    height:0.86rem;
    vertical-align: middle;
-  display:block;
+   display:block;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -944,7 +948,7 @@ label{
   /*
   width: 100%;
   */
-  padding:0.20rem;
+  padding:0.30rem 0.2rem;
   display:block;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -965,7 +969,7 @@ label{
           flex:0 0 auto;/*相当于none*/
 }
 * + .formcontrol{
-    padding:0.20rem 0;
+    padding:0.30rem 0;
 }
 
 .input-group.small > .formcontrol{
@@ -1606,6 +1610,15 @@ body{
   */
 }
 
+select, option {
+  -webkit-appearance : none; /* To gain control over the appearance on WebKit */
+  -moz-appearance : none; /* To gain control over the appearance on Gecko */
+
+  /* To gain control over the appearance on Presto (Opera) and Trident (IE)
+     Note that it also work on Gecko and has partial effects on WebKit */  
+  background : none;
+}
+
 
 /*
 http://m.ly.com/selftrip/line/82866/
@@ -1920,7 +1933,7 @@ webkit-overflow-scrolling:touch
   z-index:2;
   height:0.86rem;
   width:6.4rem;
-  border-top:2px solid #d5d5d5;
+  border-top:1px solid #d5d5d5;
   background:#fefefe;
 }
 
@@ -2350,10 +2363,9 @@ webkit-overflow-scrolling:touch
 .saletodaybox  .item{
   float:left;
   position:relative;
-  background-clip:content-box;
   background-color:#ffffff;
-  width:3.10rem;
-  padding:0.10rem;
+  width:2.9rem;
+  margin:0.10rem;
   overflow:hidden;
 }
 .saletodaybox .item img{
@@ -2407,14 +2419,14 @@ webkit-overflow-scrolling:touch
 }
 .saletodaybox .item  .moreinfo{
   position:absolute;
-  left:0.10rem;
-  width:2.9rem;
-  height:70%;
   top:100%;
+  left:-1px;
+  right:-1px;
+  height:70%;
   opacity:0.93;
   background-color:#e6e3e3;
   padding:0.20rem;
-  word-wrap : break-word ;
+  word-wrap:break-word ;
 }
 .saletodaybox .item  .tag{
   display:block;
@@ -2438,7 +2450,7 @@ webkit-overflow-scrolling:touch
 /*hotel  showsearch*/
 
 .qdate{
-  text-align: center;
+  background:none;
   border:none;
   outline: none;
   word-wrap:no-wrap;
@@ -2447,7 +2459,7 @@ webkit-overflow-scrolling:touch
   -webkit-appearance:none;
   -moz-appearance:none;
   appearance:none;
-  width: 7em;
+  width:8em;
 }
 .qdatetime{
   text-align: center;
@@ -2459,7 +2471,7 @@ webkit-overflow-scrolling:touch
 
 */
 .showsearch .searchbox  .input-group{
-  margin:3px 0;
+  margin:1px 0;
 }
 .searchbox
 {
@@ -2487,6 +2499,7 @@ webkit-overflow-scrolling:touch
 .searchbox  .time{
   height:auto;
   line-height:0.90rem;
+  margin:2px 0;
 }
 .searchbox  .time .left{
   width:70%;
@@ -2494,7 +2507,7 @@ webkit-overflow-scrolling:touch
 }
 .searchbox  .time .left .timerow:not(:last-child){
   width:100%;
-  border-bottom:2px solid #d5d5d5;
+  border-bottom:1px solid #d5d5d5;
 }
 .searchbox  .time .right{
   float:right;
@@ -2833,6 +2846,7 @@ webkit-overflow-scrolling:touch
   position:absolute;
   left:1.70rem;
   bottom:0.20rem;
+  white-space: nowrap;
 }
 .hotel .showdetail .roominfo .roomlist > .item > .action{
   font-size:0.2312rem;
@@ -3201,6 +3215,13 @@ webkit-overflow-scrolling:touch
   background:#ffffff;
 }
 
+.helpcenter .contactinfo{
+  color:#666;
+  font-size:0.21rem;
+  position:absolute;
+  bottom:1rem;
+  width:6.4rem;
+}
 
 
 /*
@@ -3219,7 +3240,7 @@ webkit-overflow-scrolling:touch
 }
 
 .menu-box{
-  font-size:0.2134rem;
+  font-size:0.20rem;
   background-color:#ffffff;
 }
 .menu-box .item{
@@ -3964,12 +3985,23 @@ webkit-overflow-scrolling:touch
     width: 0.83rem;
 }
 
+/*
+  http://www.zhihu.com/question/20041793
+  浏览器焦点在文本输入框时不自动放大页面
+ */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px !important;
+  }
+}
 
 
 hr{
   color:#d5d5d5;
   background-color: #d5d5d5;
-  height:2px;
+  height:1px;
   border:none;
 }
 .showorderlist{
@@ -3985,7 +4017,10 @@ hr{
   height:50%;
   margin:0 0.10rem;
 }
-
+.showorderlist .btn{
+  padding:0rem 0.6rem; 
+  border:1px solid #ebebeb;
+}
 
 .sortbox {
   position: absolute;
@@ -4087,19 +4122,27 @@ hr{
   background-clip:content-box;
   */
   
-
+  font-size:0.21rem;
   overflow: hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
   background-color: #ffffff;
   border: 3px solid #ebebeb;
   display: block;
-  height: 0.9rem;
+  
   line-height: 0.5rem;
-  padding: 0.2rem;
+  padding:0.2rem 0.1rem;
   text-align: center;
   float: left;
-  width: 1.5rem;
+
+  width: 2rem;
+  height: 0.9rem;
+}
+.popdownpanel .popdownpanel-body .popdownpanel-item:hover{
+  white-space:normal;
+  height:1.8rem;
+  z-index: 99;
+  position: relative;
 }
 .popdownpanel.show .popdownpanel-header.area{
   background-image:url("../images/hotel/jiudian_04.png"),url("../images/hotel/jiudian_08.png");
@@ -4504,6 +4547,10 @@ hr{
 {
   font-size:0.3200rem;
 }
+.font36
+{
+  font-size:0.3600rem;
+}
 .font42
 {
   font-size:0.4268rem;
@@ -4637,6 +4684,25 @@ hr{
 }
 
 
+
+.pt10{
+  padding-top:0.10rem;
+}
+.pt20{
+  padding-top:0.20rem;
+}
+.pt30{
+  padding-top:0.30rem;
+}
+.pt40{
+  padding-top:0.40rem;
+}
+.pt50{
+  padding-top:0.50rem;
+}
+.pt60{
+  padding-top:0.60rem;
+}
 
 .hidden{
   display:none;

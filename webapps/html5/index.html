@@ -14,6 +14,12 @@
 
 <!--
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
+
 -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -67,7 +73,7 @@
 -->
 
 
-<!--酒店预定-->
+<!--酒店预定-->q
 <!--
 <div class="header">
 	<div class="global-topbar">
@@ -432,7 +438,7 @@
 
 <!--
 
-<div class="popbox hide">
+<div class="popbox show">
 	
 	<div class="popmask">
 	</div>
@@ -491,10 +497,10 @@
 
 	</div>
 </div>
+-->
 
 
-
-
+<!--
 <div class="popbox hide">
 
 	<div class="popmask">
@@ -896,6 +902,7 @@
 
 <!--
 用户中心-酒店订单-订单详情
+
 <div class="content user">
 	<div class="hotelorder-detail">
 		<div class="panel transparent clearfix">
@@ -1019,6 +1026,7 @@
 <!--
 	机票首页
 
+
 <div class="content airticket">
 	<div class="index">
 
@@ -1047,12 +1055,13 @@
 				<p class="font42">北京</p>
 			</div>
 		</div>
+
 		<div class="takeaparttime">
 			<p class="textcenter font23 color1">
 				出发时间
 			</p>
 			<p class="textcenter margin20">
-				<span class="font32">11月27日</span>
+				<input class="qdate font32" type="date" value="2016-05-17"></input>
 				<span class="notice color1 font23 color1">周一</span>
 			</p>
 		</div>
@@ -1063,7 +1072,11 @@
 	</div>
 </div>
 
+
+
 -->	
+
+
 
 
 <!--
@@ -1487,6 +1500,9 @@
 				<div class="right">
 					已跟单
 				</div>
+				<div class="right font21 color-yellow">
+					已经返积分:21
+				</div>
 			</div>
 			<hr class="small">
 			<p class="margin15 font24">
@@ -1519,7 +1535,6 @@
 
 <!--
 	我的订单-机票订单
-
 <div class="content user">
   	<div class="showorderlist">
 
@@ -1539,9 +1554,6 @@
 			<div class="justify-box2 clearfix">
 				<div class="left font21">
 					03-03 17:10至19:20 CA4391
-				</div>
-				<div class="right font21 color-yellow">
-					已经返积分:21
 				</div>
 			</div>
 		</div>
@@ -1614,11 +1626,9 @@
 				<div class="right color-yellow">
 					已返积分:21
 				</div>
-				
 				<div class="right color1">
 					已跟单
 				</div>
-
 			</div>
 			<hr class="small">
 			<p class="margin15 font24 bold">
@@ -2165,21 +2175,25 @@
 
 			<div class="input-group">
 				<span class="input-group-addons textjustify">
-					姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名
+					姓&ensp;&ensp;&ensp;&ensp;名
 				</span>
 				<input class="formcontrol"   placeholder="请输入11位手机号"  value="bbbb" type="text" >
 			</div>
 			<div class="input-group">
 				<span class="input-group-addons textjustify">
-					性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别
+					性&ensp;&ensp;&ensp;&ensp;别
 				</span>
-				<input class="formcontrol"   placeholder="请输入11位手机号"  value="111" type="text" >
+				<select class="formcontrol"  name="" id="">
+					<option value="">请选择</option>
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select>
 			</div>
 			<div class="input-group">
 				<span class="input-group-addons textjustify">
 					出生日期
 				</span>
-				<input class="formcontrol"   placeholder="YYYY-MM-DD"  value="111" type="text" >
+				<input class="formcontrol qdate"    placeholder="2010-01-01"  type="date"  value="2010-01-01" >
 			</div>
 			<div class="input-group">
 				<span class="input-group-addons textjustify">
@@ -2194,8 +2208,8 @@
 		</div>
 	</div>
 </div>
--->
 
+-->
 
 
 
@@ -2702,8 +2716,8 @@
 
 
 </div>
-
 -->
+
 
 
 <!--团购首页
@@ -2852,6 +2866,7 @@
 
 <!--
 帮组中心-首页
+
 <div class="content helpcenter">
 	<div class="firststep">
 		<div class="listgroup">
@@ -2878,9 +2893,17 @@
 				</span>
 			</div>
 		</div>
+
+		<div class="contactinfo">
+			<p class="textcenter">
+			客服电话:13730666347
+			</p>
+			<p class="textcenter mt10">
+			官方网址:www.eehui.cn
+			</p>
+		</div>
 	</div>
 </div>
-
 -->
 
 
@@ -3146,7 +3169,8 @@
 
 
 <!--酒店详情
--->
+
+
 <div class="content hotel">
 	<div class="showdetail">
 		<div class="header">
@@ -3287,8 +3311,7 @@
 
 	</div>
 </div>
-
-
+-->
 
 
 <!--
@@ -3588,7 +3611,7 @@
 
 <div class="content  hotel">
 
-	<div class="showsearch">
+	<div class="showsearch pt10">
 
 		<div class="searchbox  clearfix">
 
@@ -3604,8 +3627,8 @@
 					<span class="vline"></span>
 				</span>
 				<span class="input-group-addons">
-					<i  class="iconfont font46 location">&#xe60f;</i>
-					<p class="location">我的位置</p>
+					<i  class="iconfont font36 location">&#xe60f;</i>
+					<p class="location font17">我的位置</p>
 				</span>
 			</div>
 			
@@ -3614,13 +3637,13 @@
 					<div class="timerow">
 							<label>入住时间</label>
 							<input class="qdate" type="date" value="2012-12-12"/>
-							<span class="notice">今日
+							<span class="notice">今日</span>
 						</span>
 					</div>
 					<div class="timerow">
 							<label>离店时间</label>
 							<input class="qdate" type="date" value="2012-12-12"/>
-							<span class="notice">明日
+							<span class="notice">明日</span>
 							<input type="hidden">
 						</span>
 					</div>
@@ -3668,7 +3691,7 @@
 		</div>
 		<div class="popdownpanel-body">
 			<div class="popdownpanel-item">
-				天府广场
+				天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场
 			</div>
 			<div class="popdownpanel-item">
 				春熙路
