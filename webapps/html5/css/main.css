@@ -2974,14 +2974,15 @@ webkit-overflow-scrolling:touch
 .arrow{
   content:"";
   position:absolute;
-  bottom:-0.20rem;
+  bottom:-20px;
   width:0rem;
   height:0rem;
-  border:0.10rem solid transparent;
+  border:11px solid transparent;
   border-top-color:green;
 }
 
 .arrowinter{
+  display:none;
   content:"";
   position:absolute;
   bottom:0;
