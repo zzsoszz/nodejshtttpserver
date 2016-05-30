@@ -11,7 +11,6 @@
 			var isMethodCall=arguments.length>0 && typeof arguments[0] === "string";
 			if(isMethodCall)
 			{
-				
 				var methodname=arguments[0];
 				var args = Array.prototype.slice.call(arguments,1);
 				this.each(function() {

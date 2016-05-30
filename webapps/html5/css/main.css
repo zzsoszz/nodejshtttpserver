@@ -2471,6 +2471,12 @@ webkit-overflow-scrolling:touch
 /*
 
 */
+.showsearch{
+  padding-top:0.20rem;
+}
+.showsearch .location{
+  color:#e7313d;
+}
 .showsearch .searchbox  .input-group{
   margin:1px 0;
 }
@@ -2524,10 +2530,9 @@ webkit-overflow-scrolling:touch
 
 
 
-.showsearch .location{
-  color:#e7313d;
-}
+
 .actionbox{
+
   width:80%;
   margin-left:auto;
   margin-right:auto;
@@ -2535,14 +2540,20 @@ webkit-overflow-scrolling:touch
   margin-bottom:0.20rem;
 }
 .actionbtn{
+  text-align:center;
   color:#ffffff;
   font-size:0.24rem;
   border-radius:0.10rem;
   border-color:#e7313d;
   background:#e7313d;
   height:0.80rem;
+
   width:100%;
   margin-top:2px;
+
+
+  display:block;
+  line-height:0.8rem;
 }
 .actionbtn.notimportant{
   border-radius:0.10rem;
@@ -3924,7 +3935,9 @@ webkit-overflow-scrolling:touch
    border-bottom:none;
 }
 
-
+.user .security-index {
+  padding-top:0.20rem;
+}
 .user .security-index .listgroup{
 
 }
@@ -3932,7 +3945,16 @@ webkit-overflow-scrolling:touch
   background:#ffffff;
 }
 
-
+.user .orderindex
+,.user .security-modifyloginpassword
+,.user .security-modifypaypassword
+,.user .withdraw
+,.user .forgetpassword-first
+,.user .forgetpassword-second
+,.user .forgetpassword-third
+{
+  padding-top:0.20rem;
+}
 
 
 
