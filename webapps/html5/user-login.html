@@ -2,7 +2,7 @@
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" ng-app="myApp">
 <!--<![endif]-->
 
 
@@ -12,19 +12,15 @@
 <title>Metronic | Dashboard</title>
 
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 
 
-<link rel="shortcut icon" href="favicon.ico"/>
-
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<!--
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
--->
+<link rel="shortcut icon" href="favicon.ico"/>
 <link href="css/main.css?v=16" rel="stylesheet" type="text/css"/>
+<script src="js/angular.min.js" type="text/javascript"></script>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 
@@ -33,62 +29,85 @@
 <!-- END PAGE LEVEL PLUGIN STYLES -->
 
 
+<!-- BEGIN PAGE LEVEL  STYLES -->
+<script src="js/main.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL STYLES -->
+
+
+
 
 <!-- BEGIN THEME STYLES -->
 <!-- END THEME STYLES -->
 
 
 
+
+<!--
+<script src="js/angular.min.js" type="text/javascript"></script>
+<script>
+	var App = angular.module('myApp', []);
+	App.directive('myheader', function() {
+	    return {
+	        replace: true,
+	        restrict: 'E',  
+	        templateUrl: "header.html"
+	    };
+	});
+</script>
+-->
 </head>
 
 
 <body>
 
+<div ng-include src="'header.html'" include-replace></div>
 
+<div ng-include src="'footer.html'" include-replace></div>
 
 
 <div class="content user">
-	<div class="login">
-		<div class="infobox error hide">
-			密码错误
-		</div>
-		<div class="input-group">
-			<span class="input-group-addons">
-				<i  class=" iconfont font32">&#xe601;</i>
-			</span>
-			<input class="formcontrol"  placeholder="用户名/手机号" type="text">
-			<span class="input-group-addons">
-				<i  class=" iconfont font32">&#xe619;</i>
-			</span>
-		</div>
-		<div class="input-group">
-			<span class="input-group-addons">
-				<i  class=" iconfont font32">&#xe60b;</i>
-			</span>
-			<input class="formcontrol" placeholder="密码" type="password">
-			<span class="input-group-addons">
-				<i  class=" iconfont font32">&#xe619;</i>
-			</span>
-		</div>
-		<div class="enableAutologin  clearfix">
-			<div class="fl">
-				<span class="inline-vhcenter  denglu_03 active "  >
+		<form class="login">
+			<div class="infobox error hide">
+				密码错误
+			</div>
+			<div class="input-group">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe601;</i>
 				</span>
-				<span class="inline-vhcenter">自动登录
+				<input class="formcontrol"  placeholder="用户名/手机号" type="text">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe619;</i>
 				</span>
 			</div>
-			<div  class="fr">
-				<a class="inline-vhcenter color-error" href="#">
-					忘记密码？
-				</a>
+			<div class="input-group">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe60b;</i>
+				</span>
+				<input class="formcontrol" placeholder="密码" type="password">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe619;</i>
+				</span>
 			</div>
-		</div>
-		<input class="actionbtn" type="button" value="查询"></input>
-		<a class="inline-vhcenter registerlink color-error" href="#">
-			还不是会员立即注册>>
-		</a>
-	</div>
+			<div class="enableAutologin font19 clearfix">
+				<div class="fl">
+					<span class="inline-vhcenter  denglu_03 active "  >
+					</span>
+					<span class="inline-vhcenter">自动登录
+					</span>
+				</div>
+				<div  class="fr">
+					<a class="inline-vhcenter color-error" href="#">
+						忘记密码？
+					</a>
+				</div>
+			</div>
+			<input class="actionbtn" type="button" value="查询"></input>
+			<a class="inline-vhcenter registerlink color-error" href="user-register.html">
+				还不是会员立即注册>>
+			</a>
+		</form>
 </div>
+
 
 
 <!-- BEGIN CORE PLUGINS -->
@@ -112,6 +131,7 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
+	
 	
 });
 </script>

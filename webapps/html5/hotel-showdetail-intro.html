@@ -2,7 +2,7 @@
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" ng-app="myApp">
 <!--<![endif]-->
 
 
@@ -18,19 +18,22 @@
 
 
 
-<link rel="shortcut icon" href="favicon.ico"/>
-
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<!--
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
--->
+<link rel="shortcut icon" href="favicon.ico"/>
 <link href="css/main.css?v=16" rel="stylesheet" type="text/css"/>
+<script src="js/angular.min.js" type="text/javascript"></script>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 
 
 <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
 <!-- END PAGE LEVEL PLUGIN STYLES -->
+
+
+<!-- BEGIN PAGE LEVEL  STYLES -->
+<script src="js/main.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL STYLES -->
+
 
 
 
@@ -43,6 +46,11 @@
 
 
 <body>
+
+<div ng-include src="'header.html'" include-replace></div>
+
+<div ng-include src="'footer.html'" include-replace></div>
+
 
 	
 <div class="content hotel">
