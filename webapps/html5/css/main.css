@@ -3562,6 +3562,7 @@ webkit-overflow-scrolling:touch
  *03_专题活动.psd
 */
 .special .specialbox{
+  display: block;
   background-color:#ffffff;
   margin-top:0.20rem;
   padding-left:0.20rem;
