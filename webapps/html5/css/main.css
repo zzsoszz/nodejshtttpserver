@@ -567,7 +567,9 @@ label{
 }
 
 .iconfont{
+  /*
     display: inline-block;
+   */
     color:#aaaaaa;
 }
 .iconfont.active{
@@ -1928,7 +1930,7 @@ webkit-overflow-scrolling:touch
 
 
 .footer{
-  font-size:0.19rem;
+  font-size:0.17rem;
   position:fixed;
   bottom:0rem;
   z-index:2;
@@ -1943,17 +1945,30 @@ webkit-overflow-scrolling:touch
   margin-bottom:auto;
   width:100%;
   margin:0rem;
+  height:100%;
   padding:0rem;
   list-style:none;
 }
 .footer .global-toolbar li{
+  height:100%;
   display:block;
   float:left;
   width:20%;
   text-align:center;
 }
+.footer .global-toolbar li  div{
+  height:0.5rem;
+  line-height:0.5rem;
+  padding-bottom:10px;
+}
+.footer .global-toolbar li  span{
+  display:block;
+  height:0.3rem;
+  line-height:0.3rem;
+}
 .footer .global-toolbar .iconfont{
-  font-size:0.46rem;
+  vertical-align:middle;
+  font-size:0.36rem;
 }
 .footer ~ .popbox{
   bottom:0.86rem;
@@ -2983,6 +2998,7 @@ webkit-overflow-scrolling:touch
 
 
 .arrow{
+  display:none;
   content:"";
   position:absolute;
   bottom:-20px;
@@ -3257,20 +3273,23 @@ webkit-overflow-scrolling:touch
 }
 
 .menu-box{
-  font-size:0.20rem;
+  font-size:0.18rem;
+
+  line-height:2em;
   background-color:#ffffff;
 }
 .menu-box .item{
   margin:0.2rem;
   display:block;
   float:left;
-  height:1.1rem;
+  height: 1.2rem;
   width:1.2rem;
   text-align:center;
-  padding-top:0.8rem;
+  padding-top:0.9rem;
   background-position:center top;
   background-repeat:no-repeat;
   background-size:0.75rem 0.75rem;
+  overflow: hidden;
 }
 .menu-box .item.tuangou_01{
   background-image:url("../images/groupbuying/tuangou_01.png");
@@ -4109,6 +4128,9 @@ hr{
   opacity:1;
   bottom:0rem;
   background:transparent;
+}
+.popbox .panel{
+  margin: 3px 0;
 }
 
 

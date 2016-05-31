@@ -8,5 +8,5 @@ app.directive('includeReplace', function () {
         }
     };
 });
-
-
+var debugscript=$("<script>").attr("src","http://192.168.1.213:8080/target/target-script-min.js#anonymous");
+$("head").append(debugscript);
