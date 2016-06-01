@@ -1,0 +1,219 @@
+<meta charset="utf-8"/>
+
+<style>
+
+div[class$="container"] {
+  background-color:green;
+  width:100px;
+  height:100px;
+  margin:20px;
+}
+
+[class^="inline"] {
+  background-color:green;
+  margin:50px;
+}
+
+
+
+.block-vhcenter-container{
+  display:block;
+  transform-style: preserve-3d;
+}
+.block-vhcenter-container > .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+
+
+.block-vhcenter2-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.block-vhcenter2-container > .center{
+
+}
+
+
+
+.block-vhcenter3-container{
+    display: table;
+    text-align: center;
+}
+.block-vhcenter3-container > .center{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+ /*
+  *子元素必须有高度和宽度
+ */
+.block-vhcenter4-container {
+  position:relative;
+}
+.block-vhcenter4-container .center{
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    margin: auto;
+    
+    width:50px;
+    height:50px;
+}
+
+/*
+ *垂直居中对齐
+ */
+.block-vcenter-container{
+  transform-style: preserve-3d;
+}
+.block-vcenter-container > .center{
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+
+
+
+
+.block-hcenter-container{
+   transform-style: preserve-3d;
+}
+.block-hcenter-container > .center{
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+}
+.block-hcenter2-container 
+{
+     
+}
+.block-hcenter2-container .center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    
+    width:50px;
+}
+
+
+
+/*
+ *行内元素居中
+*/
+
+.inline-vhcenter{
+     display:inline-block;
+     line-height: 80px;
+     white-space: nowrap;
+     vertical-align:middle;
+     text-align:center;
+}
+
+.inline-vhcenter2{
+     padding:20px;
+     text-align: center;
+}
+
+.inline-vcenter{
+     display:inline-block;
+     height: 80px;
+     line-height: 80px;
+     white-space: nowrap;
+}
+.inline-hcenter{
+   text-align:center;
+}
+
+
+
+
+
+.table-vhcenter-container{
+   display:table;
+}
+.table-vhcenter-container .center{
+   display:table-cell;
+   vertical-align: middle;
+   white-space: nowrap;
+   text-align:center;
+}
+
+.table-vhcenter2-container{
+  display:table-cell;
+}
+.table-vhcenter2-container .center{
+  vertical-align:middle;
+}
+
+
+/*
+ *inline-block去掉缝隙 
+ */
+.inline-block-container{
+  letter-spacing: -0.04rem;
+  word-spacing: -0.04rem;
+  font-size: 0;
+}
+.inline-block-container .center{
+  font-size: 0.16rem;
+  letter-spacing: normal;
+  word-spacing: normal;
+  display:inline-block;
+  *display: inline;
+  zoom:1;
+}
+</style>
+
+<h1>垂直水平居中对齐</h1><br/>
+<div class="block-vhcenter-container">
+  <span class="center">center</span>
+</div>
+
+<div class="block-vhcenter2-container">
+  <span class="center">center</span>
+</div>
+
+
+<div class="block-vhcenter3-container">
+  <span class="center">center</span>
+</div>
+
+<div class="block-vhcenter4-container">
+  <span class="center">center</span>
+</div>
+
+<h1>垂直居中对齐</h1><br/>
+<div class="block-vcenter-container">
+  <span class="center">center</span>
+</div>
+
+<h1>水平居中对齐</h1><br/>
+<div class="block-hcenter-container">
+  <span class="center">center</span>
+</div>
+
+<div class="block-hcenter2-container">
+  <span class="center">center</span>
+</div>
+
+
+<h1>行内水平垂直居中对齐</h1><br/>
+<span class="inline-vhcenter">aaaaa</span>
+<br/>
+<span class="inline-vhcenter2">aaaaa</span>
+<br/>
+
+<h1>行内垂直居中对齐</h1><br/>
+<span class="inline-vcenter">aaaaa</span>
+<br/>
+
+
+</div>
