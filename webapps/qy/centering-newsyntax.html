@@ -2,7 +2,7 @@
 
 <style>
 
-div[class$="container"] {
+div[class^="block"] {
   background-color:green;
   width:100px;
   height:100px;
@@ -109,7 +109,7 @@ div[class$="container"] {
  *行内元素居中
 */
 
-.inline-vhcenter{
+.inline-vhcenter-container{
      display:inline-block;
      line-height: 80px;
      white-space: nowrap;
@@ -117,10 +117,33 @@ div[class$="container"] {
      text-align:center;
 }
 
-.inline-vhcenter2{
+
+.inline-vhcenter2-container{
      padding:20px;
      text-align: center;
 }
+
+
+.inline-vhcenter3-container {
+   width:200px;
+   height:200px;
+   background: #eee;
+   text-align:center;
+}
+.inline-vhcenter3-container .center,
+.inline-vhcenter3-container .virtual {
+   display: inline-block;
+   *display: inline;
+   *zoom: 1;
+   vertical-align: middle;
+   font-size: 12px;
+   background: #ccc;
+}
+.inline-vhcenter3-container  .virtual {
+   height: 100%;
+ }
+
+
 
 .inline-vcenter{
      display:inline-block;
@@ -128,9 +151,16 @@ div[class$="container"] {
      line-height: 80px;
      white-space: nowrap;
 }
+
+
+
+ 
+
+
 .inline-hcenter{
    text-align:center;
 }
+
 
 
 
@@ -206,14 +236,23 @@ div[class$="container"] {
 
 
 <h1>行内水平垂直居中对齐</h1><br/>
-<span class="inline-vhcenter">aaaaa</span>
+<span class="inline-vhcenter-container">aaaaa</span>
 <br/>
-<span class="inline-vhcenter2">aaaaa</span>
+<span class="inline-vhcenter2-container">aaaaa</span>
 <br/>
+<div class="inline-vhcenter3-container">
+  <div class="center">
+    <p>aaaaaaa</p>
+    <p>fffffff</p>
+  </div>
+  <div class="virtual"></div>
+</div>
+
 
 <h1>行内垂直居中对齐</h1><br/>
 <span class="inline-vcenter">aaaaa</span>
 <br/>
+
 
 
 </div>
