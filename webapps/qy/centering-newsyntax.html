@@ -202,6 +202,38 @@ div[class^="block"] {
    text-align:right;
 }
 
+
+.justify2-h{
+     display:block;
+     text-align:justify;
+     text-align-last:justify;
+}
+.justify2-h:after{
+     display:inline-block;
+     width:100%;
+     height:0;
+     content:' ';
+}
+/*
+.justify2-h > a:after{
+    content: "\A";
+    white-space: pre;
+}*/
+.justify_fix{
+  display:inline-block; 
+  width:100%; 
+  height:0; 
+  overflow:hidden;
+}
+.left_fix{
+  height:0; 
+  padding:0; 
+  overflow:hidden;
+}
+
+
+
+
 .justify-v{
     writing-mode: vertical-lr;
     display:table;
@@ -258,6 +290,9 @@ div[class^="block"] {
     height:50%;
     background:green;
 }
+
+
+
 
 </style>
 
@@ -331,6 +366,13 @@ div[class^="block"] {
                     X2(晚)
                   </span>
 </div>
+
+<span class="justify2-h">
+    <a class="link" href="#none">10元</a>
+    <a class="link" href="#none">20元</a>
+    <a class="link" href="#none">50元</a>
+</span>
+aaaaaaaaaaaaaaaaa
 <br/>
 
 
