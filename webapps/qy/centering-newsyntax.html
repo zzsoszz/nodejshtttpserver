@@ -184,6 +184,46 @@ div[class^="block"] {
 }
 
 
+
+
+/*
+ *两端对齐
+ */
+.justify-h{
+  display:table;
+  width:100%;
+}
+.justify-h > *:first-chld{
+   display:table-cell;
+   text-align:left;
+}
+.justify-h > *:last-child{
+   display:table-cell;
+   text-align:right;
+}
+
+.justify-v{
+    writing-mode: vertical-lr;
+    display:table;
+    height:200px;
+}
+.justify-v > *:first-child{
+   background:blue;
+   writing-mode: horizontal-tb;
+   display:table-cell;
+   text-align:left;
+}
+.justify-v > *:last-child{
+   background:green;
+   writing-mode: horizontal-tb;
+   display:table-cell;
+   text-align:right;
+}
+
+
+
+
+
 /*
  *inline-block去掉缝隙 
  */
@@ -200,6 +240,25 @@ div[class^="block"] {
   *display: inline;
   zoom:1;
 }
+
+.block-vhcenter5-container {
+    background-color: #f0f3f9;
+    width: 400px; 
+    height: 300px;
+    writing-mode: tb-rl; 
+    writing-mode: vertical-lr;
+    overflow: hidden;
+}
+.block-vhcenter5-container > .center {
+    writing-mode: horizontal-tb;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    width:50%;
+    height:50%;
+    background:green;
+}
+
 </style>
 
 <h1>垂直水平居中对齐</h1><br/>
@@ -219,6 +278,14 @@ div[class^="block"] {
 <div class="block-vhcenter4-container">
   <span class="center">center</span>
 </div>
+
+
+<div class="block-vhcenter5-container">
+  <div class="center">
+    垂直居中对齐
+  </div>
+</div>
+
 
 <h1>垂直居中对齐</h1><br/>
 <div class="block-vcenter-container">
@@ -251,6 +318,32 @@ div[class^="block"] {
 
 <h1>行内垂直居中对齐</h1><br/>
 <span class="inline-vcenter">aaaaa</span>
+<br/>
+
+
+<h1>两端对齐</h1>
+<br/>
+<div class="justify-h">
+                  <span>
+                    2016-03-16-2016-03-18
+                  </span>
+                  <span>
+                    X2(晚)
+                  </span>
+</div>
+<br/>
+
+
+<h1>垂直两端对齐</h1>
+<br/>
+<div class="justify-v">
+                  <span>
+                    2016-03-16-2016-03-18
+                  </span>
+                  <span>
+                    X2(晚)
+                  </span>
+</div>
 <br/>
 
 
