@@ -31,12 +31,10 @@
     background-color:green;
     width:100px;
     height:100px;
-    margin:20px;
   }
 
   [class^="inline"] {
     background-color:green;
-    margin:50px;
   }
 
 
@@ -93,6 +91,9 @@
       height:50px;
   }
 
+
+
+
   /*
    *垂直居中对齐
    */
@@ -107,7 +108,7 @@
 
 
 
-
+  /*水平居中*/
   .block-hcenter-container{
      transform-style: preserve-3d;
   }
@@ -124,11 +125,22 @@
       display:block;
       margin-left:auto;
       margin-right:auto;
-      
       width:50px;
   }
 
 
+  .block-hcenter3-container{
+  	 background:green;
+	 display:block;
+  }
+  .block-hcenter3-container .center{
+  	 display:block;
+	 width: -moz-fit-content;
+	 width: -webkit-fit-content;
+	 width: fit-content;
+	 margin: auto;
+  }
+  
 
   /*
    *行内元素居中
@@ -150,9 +162,9 @@
 
 
   .inline-vhcenter3-container {
+  	 background:green;
      width:200px;
      height:200px;
-     background: #eee;
      text-align:center;
   }
   .inline-vhcenter3-container .center,
@@ -169,7 +181,6 @@
    }
 
 
-
   .inline-vcenter{
        display:inline-block;
        height: 5em;
@@ -178,20 +189,16 @@
   }
 
 
-
-   
-
-
   .inline-hcenter{
      text-align:center;
   }
 
 
-
-
-
-
   .table-vhcenter-container{
+  	 height:100px;
+     width:100px;
+     background:green;
+
      display:table;
   }
   .table-vhcenter-container .center{
@@ -210,6 +217,7 @@
       text-align:center;
   }
   
+
   /*
    *inline-block去掉缝隙 
    */
@@ -226,6 +234,95 @@
     *display: inline;
     zoom:1;
   }
+
+
+
+
+	/*
+	 *两端对齐
+	 */
+	.justify-h{
+	  background:green;
+	  display:table;
+	  width:100%;
+	}
+	.justify-h > *{
+	    display:table-cell;
+	}
+	.justify-h > *:first-chld{
+	   text-align:left;
+	}
+	.justify-h > *:last-child{
+	   text-align:right;
+	}
+	
+
+	.justify2-h{
+		 line-height:0px;
+	     display:block;
+	     text-align:justify;
+	     text-align-last:justify;
+	}
+	.justify2-h:after{
+	     display:inline-block;
+	     width:100%;
+	     height:0;
+	     content:'';
+	     overflow:hidden;
+	     vertical-align:top;
+	}
+	.justify2-h > *{
+		 line-height:1.4em;
+		 background:green;
+	     width:20%;
+	     display:inline-block;
+	     text-decoration:none;
+	}
+
+	/*
+	.justify2-h > a:after{
+	    content: "\A";
+	    white-space: pre;
+	}*/
+	.justify_fix{
+	  display:inline-block; 
+	  width:100%; 
+	  height:0; 
+	  overflow:hidden;
+	}
+	.left_fix{
+	  height:0; 
+	  padding:0; 
+	  overflow:hidden;
+	}
+
+
+
+
+	
+	.justify-v{
+		 line-height:0;
+		 height:300px;
+		 width:-moz-min-content;
+		 writing-mode: vertical-lr;
+	     display:block;
+	     text-align:justify;
+	     text-align-last:justify;
+	}
+	.justify-v:after{
+	     display:inline-block;
+	     width:0;
+	     height:100%;
+	     content:' ';
+	}
+	.justify-v > *{
+		 line-height:1.4em;
+		 background:green;
+	     display:inline-block;
+	     text-decoration:none;
+	}
+	
+
   </style>
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -239,64 +336,123 @@
 
 
 
-<h1>垂直水平居中对齐</h1><br/>
+<h1>垂直水平居中对齐</h1>
+<br/>
 <div class="block-vhcenter-container">
   <span class="center">center</span>
 </div>
-
+<br/>
 <div class="block-vhcenter2-container">
   <span class="center">center</span>
 </div>
 
-
+<br/>
 <div class="block-vhcenter3-container">
   <span class="center">center</span>
 </div>
 
+<br/>
 <div class="block-vhcenter4-container">
   <span class="center">center</span>
 </div>
 
-<h1>垂直居中对齐</h1><br/>
+
+
+<h1>垂直居中对齐</h1>
+<br/>
 <div class="block-vcenter-container">
   <span class="center">center</span>
 </div>
 
-<h1>水平居中对齐</h1><br/>
+
+<h1>水平居中对齐</h1>
+<br/>
 <div class="block-hcenter-container">
   <span class="center">center</span>
 </div>
 
+<br/>
 <div class="block-hcenter2-container">
+  <span class="center">center</span>
+</div>
+<br/>
+<div class="block-hcenter3-container">
   <span class="center">center</span>
 </div>
 
 
-<h1>行内水平垂直居中对齐</h1><br/>
-<span class="inline-vhcenter-container">aaaaa</span>
+
+<h1>行内水平垂直居中对齐</h1>
 <br/>
-<span class="inline-vhcenter2-container">aaaaa</span>
+<br/>
+<span class="inline-vhcenter-container">
+	center
+</span>
+
+<br/>
+<br/>
+<span class="inline-vhcenter2-container">
+	center
+</span>
+
+<br/>
 <br/>
 <div class="inline-vhcenter3-container">
   <div class="center">
-    <p>aaaaaaa</p>
-    <p>fffffff</p>
+    <p>inline-block</p>
+    <p>suported multipyline</p>
   </div>
   <div class="virtual"></div>
 </div>
+
 <br/>
 <span class="table-vhcenter2-container">table-cell</span>
+
 <br/>
-
-
-
-<h1>行内垂直居中对齐</h1><br/>
-<span class="inline-vcenter">aaaaa</span>
-<br/>
-
-
-
+<div class="table-vhcenter-container">
+	<div class="center">table-cell</div>
 </div>
+
+
+
+
+
+<h1>行内垂直居中对齐</h1>
+<br/>
+<span class="inline-vcenter">
+	line-height center
+</span>
+
+
+
+<br/>
+<h1>两端对齐</h1>
+<br/>
+<div class="justify-h">
+                  <span>
+                    2016-03-16-2016-03-18
+                  </span>
+                  <span>
+                    X2(晚)
+                  </span>
+</div>
+
+
+<br/>
+<span class="justify2-h">
+    <a class="link" href="#none">10元</a>
+    <a class="link" href="#none">20元</a>
+    <a class="link" href="#none">50元</a>
+</span>
+
+<br/>
+<span class="justify-v">
+    <a class="link" href="#none">10元</a>
+    <a class="link" href="#none">20元</a>
+    <a class="link" href="#none">50元</a>
+</span>
+<br/>
+
 
 
 </body>
