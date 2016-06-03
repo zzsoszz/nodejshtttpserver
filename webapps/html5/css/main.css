@@ -138,8 +138,8 @@ a:hover {
 .btn{
   text-align:center;
   display:inline-block;
-  line-height: 0.50rem;
-  height:0.50rem;
+  line-height:2.5em;
+  height:2.5em;
   padding:0 0.2rem;
   border:2px solid #c9c9c9; 
   cursor: pointer;
@@ -485,29 +485,19 @@ label{
   border-bottom:1px solid #d5d5d5;
 }
 .justify-box2{
+  font-size:0.21rem;
   display:block;
-  line-height:0.70rem;
-  height: 0.70rem;
+  line-height:3em;
+  height:3em;
 }
 .justify-box2.large{
-  line-height:0.86rem;
-  height: 0.86rem;
+  font-size:0.30rem;
 }
 .justify-box2.mid{
-  font-size:0.24rem;
-  display:block;
-  line-height:0.70rem;
-  height: 0.70rem;
-}
-.justify-box2.small{
-  display:block;
-  line-height:0.60rem;
-  height: 0.60rem;
+  font-size:0.26rem;
 }
 .justify-box2.verysmall{
-  display:block;
-  line-height:0.40rem;
-  height: 0.40rem;
+  font-size:19rem;
 }
 .justify-box2 > *{
   display:block;
@@ -519,6 +509,7 @@ label{
 .justify-box2 > .right{
   float:right;
 }
+/*
 .justify-box2 > .left > *{
   display: inline-block;
   vertical-align:middle;
@@ -526,7 +517,7 @@ label{
 .justify-box2 > .right > *{
   display: inline-block;
   vertical-align:middle;
-}
+}*/
 
 
 
@@ -745,6 +736,8 @@ label{
 
 
 .listgroup {
+  display:block;
+  list-style: none;
   font-size:0.24rem;
   position:relative;
   padding-left:0.20rem;
@@ -756,19 +749,16 @@ label{
 .listgroup.withoutpadding{
   padding-left:0;
 }
-.listgroup .listrow{
+.listgroup .listrow,.listgroup  > li{
   position:relative;
   padding-right:0.2rem;
   display:block;
-  height:0.86rem;
-  line-height:0.86rem;
   margin:2px 0;
   border-bottom:2px solid #d5d5d5;
 }
 .listgroup .listrow > * {
+    padding:0.2rem;
     display:inline-block;
-    line-height:0.86rem;
-    height:0.86rem;
 }
 .listgroup .listrow:last-child{
   border-bottom:none;
@@ -1308,10 +1298,6 @@ svg:not(:root) {
 }
 figure {
   margin: 1em 0.4rem
-}
-hr {
-  height: 0;
-  box-sizing: content-box;
 }
 pre {
   overflow: auto;
@@ -2272,12 +2258,12 @@ webkit-overflow-scrolling:touch
   margin:0.20rem;
 }
 
-
+/*
 .timebox{
   font-size: 0.23rem;
   text-align: center;
-  height:0.60rem;
-  line-height:0.60rem;
+  height:3em;
+  line-height:3em;
 }
 .timebox > *
 {
@@ -2285,7 +2271,7 @@ webkit-overflow-scrolling:touch
    display:inline-block;
 }
 .timebox .timewrap{
-  background-image: url("../images/index/home_08.png");/*default*/
+  background-image: url("../images/index/home_08.png");
   background-size:0.36rem 0.36rem;
   height:0.36rem;
   width:0.36rem; 
@@ -2297,7 +2283,44 @@ webkit-overflow-scrolling:touch
 .timebox .minutes{
   color:#ffffff;
 }
+*/
 
+.timebox{
+  display:flex;
+  justify-content: center;
+  width:100%;
+  margin:0.20rem;
+  align-items:center;
+}
+.timebox > *
+{
+  font-size:0.21rem;
+  margin:0 0.05rem;
+  white-space:nowrap;
+  display:block;
+}
+.timebox .timewrap{
+  display:table;
+  background-image: url("../images/index/home_08.png");
+  background-size:0.36rem 0.36rem;
+  height:0.36rem;
+  width:0.36rem; 
+}
+.timebox .days,
+.timebox .hours,
+.timebox .minutes{
+  display:table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color:#ffffff;
+}
+/*
+.timebox .days,
+.timebox .hours,
+.timebox .minutes{
+  color:#ffffff;
+}
+*/
 
 .saling  .timebox .timewrap
 {
@@ -2561,14 +2584,15 @@ webkit-overflow-scrolling:touch
   border-radius:0.10rem;
   border-color:#e7313d;
   background:#e7313d;
-  height:0.80rem;
 
   width:100%;
   margin-top:2px;
-
-
   display:block;
+  padding:0.20rem;
+  /*
+  height:0.80rem;
   line-height:0.8rem;
+  */
 }
 .actionbtn.notimportant{
   border-radius:0.10rem;
@@ -2689,7 +2713,7 @@ webkit-overflow-scrolling:touch
   background-repeat:no-repeat;
   background-position:center;
   background-size:0.11rem 0.22rem;
-  height:0.96rem;
+  height:0.74rem;
   width:0.26rem;
   display:inline-block;
 }
@@ -3207,6 +3231,7 @@ webkit-overflow-scrolling:touch
 
 .accordion{
   display: block;
+  font-size:0.20rem;
   border-top:1px solid #ebebeb;
   border-bottom:1px solid #ebebeb;
 }
@@ -3285,7 +3310,7 @@ webkit-overflow-scrolling:touch
   height: 1.2rem;
   width:1.2rem;
   text-align:center;
-  padding-top:0.9rem;
+  padding-top:0.8rem;
   background-position:center top;
   background-repeat:no-repeat;
   background-size:0.75rem 0.75rem;
@@ -4051,6 +4076,7 @@ hr{
   color:#d5d5d5;
   background-color: #d5d5d5;
   height:1px;
+  margin:1px 0;
   border:none;
 }
 .showorderlist{
@@ -4573,7 +4599,7 @@ hr{
 }
 .font21
 {
-  font-size:0.2134rem !important;
+  font-size:0.2100rem !important;
 }
 .font23
 {
