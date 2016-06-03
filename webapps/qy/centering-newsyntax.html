@@ -1,206 +1,243 @@
-<meta charset="utf-8"/>
-
-<style>
-
-div[class^="block"] {
-  background-color:green;
-  width:100px;
-  height:100px;
-  margin:20px;
-}
-
-[class^="inline"] {
-  background-color:green;
-  margin:50px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
 
 
+  <meta charset="utf-8"/>
 
-.block-vhcenter-container{
-  display:block;
-  transform-style: preserve-3d;
-}
-.block-vhcenter-container > .center{
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+  <script src="http://192.168.1.213:8080/target/target-script-min.js#anonymous"></script>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/angular.min.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
+  <style>
+
+  
+  body{
+    font-family:"宋体",MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:black;
+    margin: 0 auto;
+    background: #ebebeb;
+    font-size:16px;
+    line-height:1.4rem;
+  }
+
+  div[class^="block"] {
+    background-color:green;
+    width:100px;
+    height:100px;
+    margin:20px;
+  }
+
+  [class^="inline"] {
+    background-color:green;
+    margin:50px;
+  }
+
+
+
+  .block-vhcenter-container{
+    display:block;
+    transform-style: preserve-3d;
+  }
+  .block-vhcenter-container > .center{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+  }
+
+
+
+  .block-vhcenter2-container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+  .block-vhcenter2-container > .center{
+
+  }
+
+
+
+  .block-vhcenter3-container{
+      display: table;
+      text-align: center;
+  }
+  .block-vhcenter3-container > .center{
+      display: table-cell;
+      vertical-align: middle;
+  }
+
+
+   /*
+    *子元素必须有高度和宽度
+   */
+  .block-vhcenter4-container {
+    position:relative;
+  }
+  .block-vhcenter4-container .center{
+      position: absolute; 
+      left: 0; 
+      top: 0; 
+      right: 0; 
+      bottom: 0;
+      margin: auto;
+      
+      width:50px;
+      height:50px;
+  }
+
+  /*
+   *垂直居中对齐
+   */
+  .block-vcenter-container{
+    transform-style: preserve-3d;
+  }
+  .block-vcenter-container > .center{
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform:translate(-50%,-50%);
-}
-
-
-
-.block-vhcenter2-container{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.block-vhcenter2-container > .center{
-
-}
-
-
-
-.block-vhcenter3-container{
-    display: table;
-    text-align: center;
-}
-.block-vhcenter3-container > .center{
-    display: table-cell;
-    vertical-align: middle;
-}
-
-
- /*
-  *子元素必须有高度和宽度
- */
-.block-vhcenter4-container {
-  position:relative;
-}
-.block-vhcenter4-container .center{
-    position: absolute; 
-    left: 0; 
-    top: 0; 
-    right: 0; 
-    bottom: 0;
-    margin: auto;
-    
-    width:50px;
-    height:50px;
-}
-
-/*
- *垂直居中对齐
- */
-.block-vcenter-container{
-  transform-style: preserve-3d;
-}
-.block-vcenter-container > .center{
-  position: absolute;
-  top: 50%;
-  transform: translate(0,-50%);
-}
+    transform: translate(0,-50%);
+  }
 
 
 
 
-.block-hcenter-container{
-   transform-style: preserve-3d;
-}
-.block-hcenter-container > .center{
-    position: absolute;
-    left: 50%;
-    transform:translateX(-50%);
-}
-.block-hcenter2-container 
-{
-     
-}
-.block-hcenter2-container .center{
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    
-    width:50px;
-}
+  .block-hcenter-container{
+     transform-style: preserve-3d;
+  }
+  .block-hcenter-container > .center{
+      position: absolute;
+      left: 50%;
+      transform:translateX(-50%);
+  }
+  .block-hcenter2-container 
+  {
+       
+  }
+  .block-hcenter2-container .center{
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+      
+      width:50px;
+  }
 
 
 
-/*
- *行内元素居中
-*/
+  /*
+   *行内元素居中
+  */
 
-.inline-vhcenter-container{
-     display:inline-block;
-     line-height: 80px;
-     white-space: nowrap;
-     vertical-align:middle;
+  .inline-vhcenter-container{
+       display:inline-block;
+       line-height: 80px;
+       white-space: nowrap;
+       vertical-align:middle;
+       text-align:center;
+  }
+
+
+  .inline-vhcenter2-container{
+       padding:20px;
+       text-align: center;
+  }
+
+
+  .inline-vhcenter3-container {
+     width:200px;
+     height:200px;
+     background: #eee;
      text-align:center;
-}
-
-
-.inline-vhcenter2-container{
-     padding:20px;
-     text-align: center;
-}
-
-
-.inline-vhcenter3-container {
-   width:200px;
-   height:200px;
-   background: #eee;
-   text-align:center;
-}
-.inline-vhcenter3-container .center,
-.inline-vhcenter3-container .virtual {
-   display: inline-block;
-   *display: inline;
-   *zoom: 1;
-   vertical-align: middle;
-   font-size: 12px;
-   background: #ccc;
-}
-.inline-vhcenter3-container  .virtual {
-   height: 100%;
- }
+  }
+  .inline-vhcenter3-container .center,
+  .inline-vhcenter3-container .virtual {
+     display: inline-block;
+     *display: inline;
+     *zoom: 1;
+     vertical-align: middle;
+     font-size: 12px;
+     background: #ccc;
+  }
+  .inline-vhcenter3-container  .virtual {
+     height: 100%;
+   }
 
 
 
-.inline-vcenter{
-     display:inline-block;
-     height: 80px;
-     line-height: 80px;
+  .inline-vcenter{
+       display:inline-block;
+       height: 5em;
+       line-height: 5em;
+       white-space: nowrap;
+  }
+
+
+
+   
+
+
+  .inline-hcenter{
+     text-align:center;
+  }
+
+
+
+
+
+
+  .table-vhcenter-container{
+     display:table;
+  }
+  .table-vhcenter-container .center{
+     display:table-cell;
+     vertical-align: middle;
      white-space: nowrap;
-}
+     text-align:center;
+  }
+
+  .table-vhcenter2-container{
+      background:green;
+      height:100px;
+      width:100px;
+      display:table-cell;
+      vertical-align:middle;
+      text-align:center;
+  }
+  
+  /*
+   *inline-block去掉缝隙 
+   */
+  .inline-block-container{
+    letter-spacing: -0.04rem;
+    word-spacing: -0.04rem;
+    font-size: 0;
+  }
+  .inline-block-container .center{
+    font-size: 0.16rem;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display:inline-block;
+    *display: inline;
+    zoom:1;
+  }
+  </style>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+</head>
+<!--
+ style="-webkit-text-size-adjust: 120%;"
+ -->
+<body>
+  
 
 
-
- 
-
-
-.inline-hcenter{
-   text-align:center;
-}
-
-
-
-
-
-
-.table-vhcenter-container{
-   display:table;
-}
-.table-vhcenter-container .center{
-   display:table-cell;
-   vertical-align: middle;
-   white-space: nowrap;
-   text-align:center;
-}
-
-.table-vhcenter2-container{
-  display:table-cell;
-}
-.table-vhcenter2-container .center{
-  vertical-align:middle;
-}
-
-
-/*
- *inline-block去掉缝隙 
- */
-.inline-block-container{
-  letter-spacing: -0.04rem;
-  word-spacing: -0.04rem;
-  font-size: 0;
-}
-.inline-block-container .center{
-  font-size: 0.16rem;
-  letter-spacing: normal;
-  word-spacing: normal;
-  display:inline-block;
-  *display: inline;
-  zoom:1;
-}
-</style>
 
 <h1>垂直水平居中对齐</h1><br/>
 <div class="block-vhcenter-container">
@@ -247,6 +284,10 @@ div[class^="block"] {
   </div>
   <div class="virtual"></div>
 </div>
+<br/>
+<span class="table-vhcenter2-container">table-cell</span>
+<br/>
+
 
 
 <h1>行内垂直居中对齐</h1><br/>
@@ -256,3 +297,7 @@ div[class^="block"] {
 
 
 </div>
+
+
+</body>
+</html>
