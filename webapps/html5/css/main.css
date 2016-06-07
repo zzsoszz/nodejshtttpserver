@@ -84,18 +84,6 @@ a:hover {
   from{-webkit-transform:rotate(0deg)}
   to{-webkit-transform:rotate(360deg)}
 }
-@-moz-keyframes rotate{
-  from{-moz-transform:rotate(0deg)}
-  to{-moz-transform:rotate(360deg)}
-}
-@-ms-keyframes rotate{
-  from{-ms-transform:rotate(0deg)}
-  to{-ms-transform:rotate(360deg)}
-}
-@-o-keyframes rotate{
-  from{-o-transform:rotate(0deg)}
-  to{-o-transform:rotate(360deg)}
-}
 
 
 .justifyline{
@@ -244,7 +232,6 @@ label{
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(50%, -50%);
             transform: translate(-50%,-50%);
 }
 
@@ -252,12 +239,15 @@ label{
 .block-vhcenter2-container{
    display: -webkit-flex;
    display: -ms-flexbox;
+   display: -webkit-box;
    display: flex;
    -webkit-justify-content: center;
        -ms-flex-pack: center;
+           -webkit-box-pack: center;
            justify-content: center;
    -webkit-align-items: center;
        -ms-flex-align: center;
+           -webkit-box-align: center;
            align-items: center;
 }
 
@@ -362,9 +352,19 @@ label{
 }
 
 .inline-vhcenter4-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 4rem;
 }
 
@@ -384,12 +384,16 @@ label{
 .inline-vcenter2-container{
   display: -webkit-flex;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
+          -webkit-box-pack: center;
           justify-content: center;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
           flex-direction: column;
 }
 .inline-vcenter2-container > .item{
@@ -439,6 +443,7 @@ label{
   display:flex;
   -webkit-justify-content:space-between;
       -ms-flex-pack:justify;
+          -webkit-box-pack:justify;
           justify-content:space-between;
 
     
@@ -460,6 +465,7 @@ label{
   
   -webkit-justify-content:space-between;
       -ms-flex-pack:justify;
+          -webkit-box-pack:justify;
           justify-content:space-between;
    
 
@@ -467,8 +473,9 @@ label{
     -webkit-box-pack:justify;
     box-orient:vertical;
     -webkit-box-orient:vertical;
-    -moz-box-orient:vertical;
-    flex-direction:column;
+    -webkit-flex-direction:column;
+        -ms-flex-direction:column;
+            flex-direction:column;
 }
 .justify-box-v > .justify-item{
   display:block;
@@ -905,6 +912,7 @@ label{
   display:block;
   -webkit-flex:0 0 auto;/*相当于none*/
       -ms-flex:0 0 auto;/*相当于none*/
+          -webkit-box-flex:0;
           flex:0 0 auto;/*相当于none*/
 }
 .input-group  .input-group-addons > * {
@@ -952,12 +960,14 @@ label{
   display:block;
   -webkit-flex:0 0 auto;/*相当于none*/
       -ms-flex:0 0 auto;/*相当于none*/
+          -webkit-box-flex:0;
           flex:0 0 auto;/*相当于none*/
 }
 .formcontrol.fixeddatetime{
   display:block;
   -webkit-flex:0 0 auto;/*相当于none*/
       -ms-flex:0 0 auto;/*相当于none*/
+          -webkit-box-flex:0;
           flex:0 0 auto;/*相当于none*/
 }
 * + .formcontrol{
@@ -1984,7 +1994,6 @@ webkit-overflow-scrolling:touch
   background-size:2px 0.5rem;
   background-repeat: no-repeat;
   -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0, -50%);
         transform: translate(0,-50%);
 }
 .sortnav.inline-list li.up:before{
@@ -2286,11 +2295,20 @@ webkit-overflow-scrolling:touch
 */
 
 .timebox{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width:100%;
   margin:0.20rem;
-  align-items:center;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
 }
 .timebox > *
 {
@@ -3563,6 +3581,7 @@ webkit-overflow-scrolling:touch
 .selectbox .listgroup .listrow{
   display:-webkit-flex;
   display:-ms-flexbox;
+  display:-webkit-box;
   display:flex;
   line-height:0.80rem;
 }
