@@ -1074,24 +1074,24 @@ label{
 }
 .switchtab2.small > * {
   line-height:0.5rem;
+  border:1px solid #e7313d;
 }
-.switchtab2 > *:first-child{
-  background:#e7313d;
-  color:#ffffff;
-  border: 1px solid #e7313d;
+.switchtab2 > *:first-child  {
   border-top-left-radius:0.1rem;
   border-bottom-left-radius:0.1rem;
 }
-.switchtab2 > *:first-child > i{
-  color:#ffffff;
-}
-.switchtab2 > * {
-  background:#ffffff;
-  border: 1px solid #e7313d;
+.switchtab2 > *:last-child {
   border-top-right-radius:0.1rem;
   border-bottom-right-radius:0.1rem;
 }
-.switchtab2 > *:last-child > i{
+.switchtab2 > * > i{
+  color:#ffffff;
+}
+.switchtab2 > *.active{
+  background:#e7313d;
+  color:#ffffff;
+}
+.switchtab2 > *.active > i{
   color:#e7313d;
 }
 
