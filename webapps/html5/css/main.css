@@ -3619,9 +3619,11 @@ webkit-overflow-scrolling:touch
 
 }
 .shop  .jufanlibox .item{
+  position: relative;
   background-color:#ffffff;
   margin:0.20rem;
   height:2rem;
+  overflow:hidden;
 }
 .shop  .jufanlibox .item img{
   width:3.6rem;
@@ -3645,7 +3647,18 @@ webkit-overflow-scrolling:touch
 .shop  .jufanlibox .item .info  .style{
   line-height:0.5rem;
 }
-
+.shop  .jufanlibox .item .mewest{
+  color:white;
+  position:absolute;
+  top:0.8485rem;
+  left:-0.21rem;
+  background:#85b716;
+  height:0.30rem;
+  line-height:0.30rem;
+  width:1.5rem;
+  transform:rotate(-45deg);
+  transform-origin:top left;
+}
 
 
 /*
