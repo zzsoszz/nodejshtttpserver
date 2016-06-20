@@ -2529,6 +2529,18 @@ webkit-overflow-scrolling:touch
   outline: none;
   width:10em;
 }
+.qselect{
+  background:none;
+  border:none;
+  outline: none;
+  word-wrap:no-wrap;
+  text-decoration: none;
+  box-shadow: none !important;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  width:100%;
+}
 /*
 
 */
