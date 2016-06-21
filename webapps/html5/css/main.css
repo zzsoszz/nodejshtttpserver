@@ -2500,7 +2500,7 @@ webkit-overflow-scrolling:touch
   background-position:center center;
   width:0.68rem;
   height:0.70rem;
-  z-index:2;
+  z-index:1;
 }
 .saletodaybox .item  .moreinfo.up{
   top:30%;
@@ -4616,6 +4616,24 @@ hr{
  color:#999999;
 }
 
+.shop .jd , .shop .tb , .shop .tm {
+    background-repeat: no-repeat;
+    background-size:16px 16px;
+    background-origin:center center;
+    height:0.16rem;
+    width:0.16rem;
+    display:inline-block;
+}
+.shop .jd{
+    background: url("../images/shop/dp_logo.jpg") ;
+}
+.shop .tb 
+{
+    background: url("../images/shop/dp_logo2.jpg") ;
+}
+.shop .tm {
+    background: url("../images/shop/dp_logo3.jpg") ;
+}
 
 
 
@@ -4887,3 +4905,4 @@ hr{
 .col1 {
   width: 8.33333333%;
 }
+
