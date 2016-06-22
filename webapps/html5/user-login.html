@@ -27,7 +27,7 @@
 
 
 <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-<script src="js/cryptico.min.js" type="text/javascript"></script>
+<script src="js/jsencrypt.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGIN STYLES -->
 
 
@@ -109,6 +109,34 @@
 				还不是会员立即注册>>
 			</a>
 		</form>
+
+<textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQC8ekxSOtslkAVksT7h1KXW325aI43OgN2TAAq9iHKSQClm/J6D
+Ns6/Jt/rgHmWkRNHwyjV1twcNgIDhvfBF553olLQ5DraNDjLMdXnYBSkUDIdNvui
+yQ3wipjj9ZgTu11dItz+rpmnX+XrhOseH+8C4IGaTzsGYZWKpn610lCmdQIDAQAB
+AoGAItds0mqk5k24YYPOfwrDWXRWPv2BkmIKE8mXMrBNlbGctbgPSWxRTc7O6AcI
+8weAi+yM2PLuH5zwRFyn4h8OoPdbeWPah8UsjY9wniGxDaPaePj9SB1CF+Rf9kUl
+3iWFKeG0qpd8kd2C6iV0jHFb4HEkk//LUljMLnYi0Z32MoECQQDySC2cA+geJijD
+meovqleMFvcVC+H2mePVIrh2KjOztbHMpvYELyTVu3bYMluDN/kJH3fx6GWJa+pG
+l2kCs2eVAkEAxyY9chj9dfqSdLJUqgpWd5FbxiOK7VPNArgQNy4TLe/92vxRu5z2
+gQVWDF3F46/LdnSvIVjA1X0sGyi0hpcLYQJAFp8EmyeGOaJodfLd+btW1z6hrTZh
+z6uIqTLHtEi2cRYK1sfT+ooIT2hkbUUuZC8Ksn5crZp8OHt58UNby6PCjQJAG8F6
+ouJUwRKxQs5v+lsCfhumPNFLVZRuaEibCfXD+o0ORm0QPyO7P3Qs8ABJylf/9XyB
+xBYImjid4xMjRfbbQQJBAN0M1xT2b3XKrvlv9DmK6syw6J0v2O8rpjWj/0H0Eluv
+2dmmn59Di4VBCYKle6s9ZUkNvTjikwzw61MEaqCf1ts=
+-----END RSA PRIVATE KEY-----</textarea><br/>
+    <label for="pubkey">Public Key</label><br/>
+<textarea id="pubkey" rows="15" cols="65">-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8ekxSOtslkAVksT7h1KXW325a
+I43OgN2TAAq9iHKSQClm/J6DNs6/Jt/rgHmWkRNHwyjV1twcNgIDhvfBF553olLQ
+5DraNDjLMdXnYBSkUDIdNvuiyQ3wipjj9ZgTu11dItz+rpmnX+XrhOseH+8C4IGa
+TzsGYZWKpn610lCmdQIDAQAB
+-----END PUBLIC KEY-----</textarea><br/>
+
+
+
+<textarea id="result" rows="15" cols="65"></textarea><br/>
+
 </div>
 
 
@@ -133,16 +161,19 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-	 // The passphrase used to repeatably generate this RSA key.
-	var PassPhrase = "bx123456"; 
-	// The length of the RSA key, in bits.
-	var Bits = 1024; 
-	var MattsRSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
-	alert(MattsRSAkey);
-	var MattsPublicKeyString = cryptico.publicKeyString(MattsRSAkey);       
-	//to4mQgpZssBPqRqg1vFG2eyc/Nx1a42b47EaDKtJmzng9dhJh05Tc+sM3fzi5TikqT9nzMeeY/ef8vUHuS0O01S8xZ0gWe0Ouv9go4EMXwV6jWtazPojJa0bK0yt1Tlq7O9XWEIC4snCwub2O4GHQfLjda3NFMhQQ2xxU82/22E=	
-
-	alert(MattsPublicKeyString);
+	
+	var crypt = new JSEncrypt();
+	crypt.setPrivateKey($("#privkey").val());
+	var text = 'hello';
+	var enc = crypt.encrypt(text);
+	var dec = crypt.decrypt(enc);
+	if (dec === text){
+    	alert('It works!!!');
+	} else {
+	    alert('Something went wrong....');
+	}
+	$("#result").val(enc);
+	
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
