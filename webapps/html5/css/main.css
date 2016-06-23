@@ -4285,24 +4285,25 @@ hr{
   color:white;
 }
 
-.popdownpanel.show .popdownpanel-header.area{
+.popdownpanel .popdownpanel-header.area{
   background-image:url("../images/hotel/jiudian_04.png"),url("../images/hotel/jiudian_08.png");
   background-size:0.40rem 0.40rem,0.22rem 0.14rem;
   background-position:5%  center,95% center;
   background-repeat:no-repeat;
 }
-.popdownpanel.show .popdownpanel-header.brand{
+.popdownpanel .popdownpanel-header.brand{
   background-image:url("../images/hotel/jiudian_05.png"),url("../images/hotel/jiudian_09.png");
   background-size:0.40rem 0.40rem,0.22rem 0.14rem;
   background-position:5%  center,95% center;
   background-repeat:no-repeat;
 }
-.popdownpanel.show .popdownpanel-header.district{
+.popdownpanel .popdownpanel-header.district{
   background-image:url("../images/hotel/jiudian_06.png"),url("../images/hotel/jiudian_11.png");
   background-size:0.40rem 0.40rem,0.22rem 0.14rem;
   background-position:5%  center,95% center;
   background-repeat:no-repeat;
 }
+
 .popdownpanel.hidden .popdownpanel-header.area{
   background-image:url("../images/hotel/jiudian_04.png"),url("../images/hotel/jiudian_07.png");
   background-size:0.40rem 0.40rem,0.22rem 0.14rem;
@@ -4617,22 +4618,28 @@ hr{
 }
 
 .shop .jd , .shop .tb , .shop .tm {
-    background-repeat: no-repeat;
-    background-size:16px 16px;
-    background-origin:center center;
-    height:0.16rem;
-    width:0.16rem;
+    height:0.20rem;
+    width:0.20rem;
     display:inline-block;
 }
 .shop .jd{
-    background: url("../images/shop/dp_logo.jpg") ;
+    background-image:url("../images/shop/dp_logo.jpg") ;
+    background-repeat: no-repeat;
+    background-size:0.20rem 0.20rem;
+    background-origin:center center;
 }
 .shop .tb 
 {
-    background: url("../images/shop/dp_logo2.jpg") ;
+    background-image: url("../images/shop/dp_logo2.jpg") ;
+    background-repeat: no-repeat;
+    background-size:0.20rem 0.20rem;
+    background-origin:center center;
 }
 .shop .tm {
-    background: url("../images/shop/dp_logo3.jpg") ;
+    background-image: url("../images/shop/dp_logo3.jpg") ;
+    background-repeat: no-repeat;
+    background-size:0.20rem 0.20rem;
+    background-origin:center center;
 }
 
 
@@ -4863,7 +4870,8 @@ hr{
   padding-top:0.60rem;
 }
 
-.hidden{
+
+.thishidden{
   display:none;
 }
 
