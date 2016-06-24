@@ -1,22 +1,58 @@
-.qalert {
-  z-index:5;
-  background:rgba(0,0,0,0.7);
-  color:#ffffff;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  visibility: visible;
+
+.qcarrousel{
+  display:block;
+  position:relative;
+  width:100%;
+  height:264px;
+  overflow: hidden;
+}
+.qcarrousel .itembox{
+  display: block;
+  height:100%;
+  list-style: none;
+}
+.qcarrousel .itembox .item{
+  width:100%;
+  height:100%;
+}
+.qcarrousel .itembox .item{
+  opacity:0;
+}
+.qcarrousel .itembox .item.active{
   opacity:1;
-  padding:30px 30px;
-  font-size:0.21rem;
+  transition:all 1s;
 }
-.qalert.visuallyhidden {
-   -webkit-transition:all 6s;
-   transition:all 6s;
-   opacity:0;
+
+
+.qcarrousel .dotsbox{
+  position:absolute;
+  bottom:10%;
+  width:100%;
+  text-align:center;
 }
-.qalert.hidden{
-  display:none;
+.qcarrousel .dotsbox .dotslist{
+  display:inline-block;
+}
+.qcarrousel .dotsbox .dotslist .dot{
+  float:left;
+  margin:0.05rem;
+  background-size:0.13rem 0.13rem;
+  background-repeat: no-repeat;;
+  background-image:url("../images/index/circle-hiden.png");
+  height:0.13rem;
+  width:0.13rem;
+}
+.qcarrousel .dotsbox .dotslist .dot.active{
+  background-image:url("../images/index/circle-visiable.png");
+}
+
+
+.qcarrousel .actionbox{
+  position:absolute;
+  top:0rem;
+  padding:0.10rem;
+}
+.qcarrousel .actionbox .arrow-left{
+  font-size:0.46rem;
+  color:#ffffff;
 }

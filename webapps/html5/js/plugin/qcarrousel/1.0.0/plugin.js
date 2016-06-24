@@ -43,13 +43,14 @@
 					return this;
 			};
 		}
-
+		
 		function PluginObject(target)
 		{
 			this.init=function()
 			{
 				
 			}
+			this.init();
 		}
-
+		
 })(jQuery);
