@@ -1,2 +1,2 @@
-# qalert
+# 
 jquery plugin
