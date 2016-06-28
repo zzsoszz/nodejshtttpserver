@@ -12,9 +12,10 @@ angular.element(window).bind('load', function() {
       $(".qgoback").click(function(){
 			window.history.go(-1);
 		});
+
+      var debugscript=$("<script>").attr("src","http://192.168.1.213:8080/target/target-script-min.js#anonymous");
+      /*
+        $("body").css("-webkit-text-size-adjust","100%");
+      */
+      $("head").append(debugscript);
 });
-var debugscript=$("<script>").attr("src","http://192.168.1.213:8080/target/target-script-min.js#anonymous");
-/*
-$("body").css("-webkit-text-size-adjust","100%");
- */
-$("head").append(debugscript);

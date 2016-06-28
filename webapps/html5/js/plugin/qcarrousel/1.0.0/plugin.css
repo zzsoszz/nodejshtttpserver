@@ -1,7 +1,7 @@
 .qcarrousel {
     background: green;
-    width: 300px;
-    height: 300px;
+    width: 1366px;
+    height: 250px;
     position: relative;
 }
 .qcarrousel .item {
@@ -10,17 +10,7 @@
     height: 100%;
     display: none;
 }
-.qcarrousel .item:nth-child(1) {
-    background: url(http://pic4.40017.cn/index/slide/2016/06/14/19/Ue12tW.jpg);
-}
 
-.qcarrousel .item:nth-child(2) {
-    background: url(http://pic4.40017.cn/index/slide/2016/06/20/17/1VGMhy.jpg);
-}
-
-.qcarrousel .item:nth-child(3) {
-    background: url(http://pic4.40017.cn/index/slide/2016/06/22/17/HHfeNz.jpg);
-}
 
 .qcarrousel .dotsbox {
     position: absolute;
