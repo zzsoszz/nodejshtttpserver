@@ -4219,7 +4219,7 @@ hr{
   float:left;
 }
 .popdownpanel.hidden .popdownpanel-body{
-  display:none;
+  /*display:none;*/
 }
 .popdownpanel .popdownpanel-body .popdownpanel-item{
   /*
