@@ -2262,13 +2262,17 @@ webkit-overflow-scrolling:touch
 
 
 .qcarrousel {
+    position: relative;
     background: green;
     width: 6.4rem;
     height:2.30rem;
     position: relative;
     margin-bottom:0.10rem;
 }
-.qcarrousel .item {
+.qcarrousel .itembox{
+
+}
+.qcarrousel .itembox .item {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2282,10 +2286,10 @@ webkit-overflow-scrolling:touch
     width: 100%;
     text-align: center;
 }
-.qcarrousel .dotslist {
+.qcarrousel .dotsbox .dotslist {
     display: inline-block;
 }
-.qcarrousel .dotslist .dot {
+.qcarrousel .dotsbox .dotslist .dot {
     float: left;
     margin: 0.05rem;
     background-size:0.14rem 0.14rem;
@@ -2294,9 +2298,17 @@ webkit-overflow-scrolling:touch
     height: 0.14rem;
     width: 0.14rem;
 }
-.qcarrousel .dotslist .dot.active {
+.qcarrousel .dotsbox .dotslist .dot.active {
     background-color: #ffffff;
 }
+
+.qcarrousel .myactions
+{
+    position:absolute;
+    top:20%;
+    transform: translate(0,-50%);
+}
+
 
 
 .saletodaybox{
