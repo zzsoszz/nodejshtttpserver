@@ -1,0 +1,1 @@
+weinre --httpPort 8080 --boundHost 192.168.1.213
