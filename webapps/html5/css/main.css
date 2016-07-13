@@ -94,7 +94,7 @@ a:hover {
 .justifyline.small{
   line-height:0.4rem;
 }
-.justifyline > *:first-chld{
+.justifyline > *:first-child{
    display:table-cell;
 }
 .justifyline > *:last-child{
@@ -465,7 +465,7 @@ label{
   font-size:0.26rem;
 }
 .justify-box2.verysmall{
-  font-size:19rem;
+  font-size:0.19rem;
 }
 .justify-box2 > *{
   display:block;
@@ -504,6 +504,12 @@ label{
   line-height:0.40rem;
   height: 0.40rem;
 }
+.line-box.mid{
+  font-size: 0.26rem;
+  display:block;
+  line-height:0.60rem;
+  height: 0.60rem;
+}
 .line-box.large{
   display:block;
   line-height:0.85rem;
@@ -517,8 +523,23 @@ label{
 }
 .line-box > *.sub{
   display:inline-block;
-  vertical-align:sub;
+  vertical-align:bottom;
 }
+
+.line-box2 {
+  display:block;
+}
+.line-box2 > * {
+  display:inline-block;
+  vertical-align:middle;
+  letter-spacing: 0;
+}
+.line-box2 > *.sub{
+  display:inline-block;
+  margin-bottom:-0.20rem;
+}
+
+
 
 
 :after, :before {
@@ -3230,6 +3251,7 @@ webkit-overflow-scrolling:touch
 .basicmoney{
   text-decoration:line-through;
   color:#a1a1a1;
+  vertical-align:sub;
 }
 
 .menu-box{
@@ -3907,6 +3929,28 @@ webkit-overflow-scrolling:touch
 .user  .showedit  .input-group:nth-child(1){
   margin:0;
   border-top:1px solid #d5d5d5;
+}
+
+
+.user > .history{
+  position:relative;
+}
+.user > .history > .orderitem{
+  position:relative;
+}
+.user > .history > .orderitem{
+  display:block;
+  background-color:#ffffff;
+  margin:0.20rem 0;
+  padding:0 0.20rem;
+}
+.user > .history >.orderitem  .hotelimg{
+  width:1.65rem;
+  height:2.05rem;
+  padding:0.20rem 0;
+}
+.user > .history  .orderitem  .centerarea{
+  position:relative;
 }
 
 
@@ -4802,3 +4846,6 @@ hr{
   width: 8.33333333%;
 }
 
+.sub{
+  vertical-align: text-bottom;
+}
