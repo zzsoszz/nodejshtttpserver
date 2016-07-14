@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js" ng-app="myApp">
+<!--<![endif]-->
+
+
+
+<head>
+<meta charset="utf-8"/>
+<title>Metronic | Dashboard</title>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+<link href="css/main.css?v=155" rel="stylesheet" type="text/css"/>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/angular.min.js" type="text/javascript"></script>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<!-- END PAGE LEVEL PLUGIN STYLES -->
+
+
+<!-- BEGIN PAGE LEVEL  STYLES -->
+<script src="js/main.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL STYLES -->
+
+
+
+
+<!-- BEGIN THEME STYLES -->
+<!-- END THEME STYLES -->
+
+
+
+</head>
+
+
+<body>
+
+
+<div ng-include src="'header.html'" include-replace></div>
+
+<div ng-include src="'footer.html'" include-replace></div>
+
+
+
+<div class="content  hotel">
+
+	<div class="showsearch">
+
+		<div class="searchbox  clearfix">
+
+			<div class="input-group">
+				<span class="input-group-addons">
+					<lable>当前城市</span>
+				</span>
+				<span class="dynamicfield">
+					<input  placeholder="成都"></input>
+				</span>
+				<span class="input-group-addons">
+					<i  class="iconfont font24">&#xe60a;</i>
+				</span>
+				<span class="input-group-addons">
+					<span class="vline"></span>
+				</span>
+				<span class="input-group-addons">
+					<i  class="iconfont font46 location">&#xe60f;</i>
+					<p class="location">我的位置</p>
+				</span>
+			</div>
+			
+			<div class="searchrow time  clearfix detail">
+				<div class="left"> 
+					<div class="timerow">
+							<label>入住时间</label>
+							<input class="qdate" type="date" value="2012-12-12"/>
+							<span class="notice">今日
+						</span>
+					</div>
+					<div class="timerow">
+							<label>离店时间</label>
+							<input class="qdate" type="date" value="2012-12-12"/>
+							<span class="notice">明日
+							<input type="hidden">
+						</span>
+					</div>
+				</div>
+				<div class="right"> 
+					<span>1晚</span>
+					<input type="hidden">
+				</div>
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addons">&ensp;&ensp;关键字</span>
+				<input class="formcontrol" placeholder="aaaaaa"></input>
+				<span class="input-group-addons">
+					<a  class="iconfont font24">&#xe60a;</a>
+				</span>
+			</div>
+			
+			<div class="input-group">
+				<span class="input-group-addons">星级酒店</span>
+				<input class="formcontrol" placeholder="aaaa"></input>
+				<span class="input-group-addons">
+					<a  class="iconfont font24">&#xe60a;</a>
+				</span>
+			</div>
+			
+		</div>
+		<div class="actionbox">
+			<a class="actionbtn" href="hotel-showlist.html" >查询</a>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="content">
+    <ul id="autocompletebox" class="listgroup">
+        <li><a type="1" id="undefined">成都天仁大酒店</a></li>
+        <li><a type="1" id="undefined">成都西藏饭店</a></li>
+        <li><a type="1" id="undefined">锦江之星(成都文殊院地铁站店)</a></li>
+        <li><a type="1" id="undefined">成都金玉阳光酒店</a></li>
+        <li><a type="1" id="undefined">成都总府皇冠假日酒店</a></li>
+        <li><a type="1" id="undefined">成都写庭阁圣马罗酒店</a></li>
+        <li><a type="1" id="undefined">成都天府阳光酒店</a></li>
+        <li><a type="2" pointx="104.025532" pointy="30.651306" id="null">A+</a></li>
+        <li><a type="2" pointx="104.039241" pointy="30.645925" id="null">A+</a></li>
+        <li><a type="2" pointx="104.088673" pointy="30.677212" id="null">A+</a></li>
+        <li><a type="2" pointx="104.085791" pointy="30.62977" id="null">A+</a></li>
+        <li><a type="2" pointx="104.089892" pointy="30.655555" id="null">成都A精品公寓（喜年店）</a></li>
+        <li><a type="2" pointx="104.072209" pointy="30.663524" id="null">C&amp;A</a></li>
+        <li><a type="2" pointx="103.677787" pointy="30.636875" id="null">a+教育</a></li>
+    </ul>
+</div>
+
+
+
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/excanvas.min.js"></script> 
+<![endif]-->
+<script src="js/rem.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+
+
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+	
+});
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+</body>
+</html>

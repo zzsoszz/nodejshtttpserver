@@ -1,0 +1,3905 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js" >
+<!--<![endif]-->
+
+
+
+<head>
+<meta charset="utf-8"/>
+<title>Metronic | Dashboard</title>
+
+
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=2.0,user-scalable=yes;">
+
+
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+-->
+
+
+<link href="css/main.css?v=155" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<!-- END PAGE LEVEL PLUGIN STYLES -->
+
+
+
+<!-- BEGIN THEME STYLES -->
+<!-- END THEME STYLES -->
+
+
+
+</head>
+
+
+<body>
+
+
+
+<!--
+<div class="header">
+
+	<div class="global-topbar threecloumn">
+		<a class="sidearea iconfont arrow-left" href="#aaa">
+		</a>
+		<a class="centerarea titile textcenter" href="#cccc">
+			酒店预定<span  class="iconfont icon-arrow-down font26 ml10"></span>
+		</a>
+		<a class="sidearea iconfont icon-search"  href="#bbb">
+		</a>
+	</div>
+	
+</div>
+-->
+
+<!--
+-->
+<div class="header">
+
+	<div class="global-topbar threecloumn">
+		<a class="sidearea iconfont arrow-left" id="indexback">
+		</a>
+		<a class="centerarea titile textcenter">
+			<input id="fromcitysearch" class="keyword">
+		</a>
+		<a class="sidearea iconfont icon-search" style="visibility: hidden;"></a>
+	</div>
+
+</div>
+
+
+<!--
+<div class="header">
+	<div class="global-topbar threecloumn">
+		<a class="sidearea iconfont arrow-left" href="#aaa">
+		</a>
+		<div class="centerarea titile textcenter" href="#cccc">
+			<div class="switchtab2 small">
+					<a href="#">
+						巨返利
+					</a>
+					<a href="#">
+						聚便宜
+					</a>
+			</div>
+		</div>
+		<a class="sidearea iconfont icon-search"  href="#bbb">
+		</a>
+	</div>
+
+</div>
+-->
+
+
+
+
+
+
+<!--
+	页脚
+-->
+
+
+<!--
+<div class="footer block-vcenter-container">
+	
+	<ul class="sortnav inline-list withline  clearfix">
+						<li class="up active" >
+							筛选
+						</li>
+						<li class="down active" >
+							星级价格
+						</li>
+						<li>
+							综合排序
+						</li>
+						<li>
+							返利优先
+						</li>
+	</ul>
+
+</div>
+-->
+
+
+
+<!--
+-->
+
+<div class="footer block-vcenter-container">
+	
+	<ul class="center global-toolbar clearfix">
+		<li>
+			<div>
+				<i class="iconfont home active" >
+				</i>
+			</div>
+			<span>
+				首页
+			</span>
+		</li>
+		<li>
+			<div>
+				<i class="iconfont time active" >
+				</i>
+			</div>
+			<span>
+				足迹
+			</span>
+		</li>
+		<li>
+			<div>
+				<i class="iconfont star active" >
+				</i>
+			</div>
+			<span>
+				专题活动
+			</span>
+		</li>
+		<li>
+			<div>
+				<i class="iconfont user active" >
+				</i>
+			</div>
+			<span>
+				我的返利宝
+			</span>
+		</li>
+		<li>
+			<div>
+				<i class="iconfont more active" >
+				</i>
+			</div>
+			<span>
+				更多
+			</span>
+		</li>
+	</ul>
+	
+</div>
+
+
+
+
+<!--酒店订单
+<div class="footer">
+	<div class="line-box large">
+		<span class="">
+			金额
+		</span>
+		<span class=" money">
+			￥681.0
+		</span>
+		<span class="returnimage2">
+			48.5
+		</span>
+		<input class="submit" type="button" value="提交">
+		</input>
+	</div>
+</div>
+
+
+<div class="footer">
+	<div class="line-box large">
+		<span class="font21">
+			担保金额
+		</span>
+		<span class="font26 color-error">
+			<span class="font19">￥</span>681.0
+		</span>
+		<span class="returnimage2 font21">
+			48.5
+		</span>
+		<input class="submit font21" type="button" value="提交">
+		</input>
+	</div>
+</div>
+-->
+
+
+
+
+<!--
+<div class="popbox show">
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+			<div class="redirectbox msgbox">
+				<p class="textcenter font21">
+					即将前往
+				</p>
+				<p class="textcenter mt10">
+					<img src="images/shop/logo.jpg">
+					</img>
+				</p>
+				<div class="redbox block-vhcenter-container">
+					<div class="circle-btn center block-vhcenter-container center">
+						<div class="center color-error">
+							 <p class="textcenter font21">最高返利</p>
+						 	 <p class="textcenter font46">78%</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+-->
+
+
+<!--
+<div class="popbox show">
+
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+			<div class="msgbox round small">
+				<p class="font21 textcenter">
+					用户登录用户登录用户登录用户登录用户登录用户登录用户登录用户登录
+				</p>
+				<div class="justify-box2 margin20">
+					<div class="left">
+						<a class="btn large white">注册</a>
+					</div>
+					<div class="right">
+						<a class="btn large red">登录</a>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+-->
+
+
+
+<!--
+<div class="popbox show">
+
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+			<div class="msgbox round small">
+				<i class="close iconfont icon-wrong" >
+					
+				</i>
+				<p class="title">
+					用户登录
+				</p>
+				<div class="input-group small">
+					<input class="formcontrol"  placeholder="手机号" type="text">
+				</div>
+				<div class="input-group small">
+					<input class="formcontrol"  placeholder="密码"  type="password">
+				</div>
+				<div class="enableAutologin  clearfix">
+					<div class="fl">
+						<span class="inline-vhcenter  denglu_03 active "  >
+						</span>
+						<span class="inline-vhcenter font19">自动登录
+						</span>
+					</div>
+					<div  class="fr">
+						<a class="inline-vhcenter color-error font19" href="#">
+							忘记密码？
+						</a>
+					</div>
+				</div>
+				<div class="justify-box2 margin20">
+					<div class="left">
+						<a class="btn large white">注册</a>
+					</div>
+					<div class="right">
+						<a class="btn large red">登录</a>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+-->
+
+
+<!--
+<div class="popbox show">
+
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+		<div class="checkpanel panel info round">
+				<div class="header">
+					请选择银行卡
+				</div>
+				<div class="body">
+					<div class="checkboxlist">
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio active">
+
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+						<div class="item">
+							<span class="fl">
+								中国银行
+							</span>
+							<span class="fr checkradio">
+								
+							</span>
+						</div>
+					</div>
+				</div>
+		</div>
+	
+
+	</div>
+</div>
+-->
+
+
+
+
+<!--
+
+<div class="popbox show">
+	
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+		<div class="multiselectbox">
+			<p class="title">星级价格</p>
+			<div class="conditionbox">
+				<p class="name">星级</p>
+				<div class="valuebox clearfix" >
+					<span class="valueitem active">
+						不限制
+					</span>
+					<span class="valueitem">
+						快捷连锁
+					</span>
+					<span class="valueitem">
+						二星级
+					</span>
+					<span class="valueitem active">
+						三星级
+					</span>
+					<span class="valueitem">
+						四星级
+					</span>
+				</div>
+			</div>
+
+			<div class="conditionbox  price">
+				<p class="name">星级</p>
+				<div class="valuebox clearfix" >
+					<span class="valueitem active">
+						不限制
+					</span>
+					<span class="valueitem">
+						快捷连锁
+					</span>
+					<span class="valueitem">
+						二星级
+					</span>
+					<span class="valueitem active">
+						三星级
+					</span>
+					<span class="valueitem">
+						四星级
+					</span>
+				</div>
+			</div>
+			<div class="actionbox">
+				<input class="actionbtn" type="button" value="查询"></input>
+			</div>
+		</div>
+
+
+
+	</div>
+</div>
+-->
+
+
+<!--
+<div class="popbox hide">
+
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+
+		<div class="sortbox">
+					<div class="listgroup order"  >
+							<div class="listrow select" >
+								<span  class="first">
+									帮助
+								</span>
+							</div>
+							<div class="listrow select" >
+								<span  class="first">
+									帮助
+								</span>
+							</div>
+							<div class="listrow" >
+								<span  class="first">
+									帮助
+								</span>
+							</div>
+					</div>
+					
+		</div>
+		
+
+	</div>
+</div>
+-->
+
+
+
+
+<!--
+	酒店详情-评论
+
+<div class="content hotel">
+	<div class="showhotel-comments">
+	
+		<div class="hd">
+			<div class="leftbottom">
+				<span class="color-error font70 mr10">64%</span>
+				客户好评
+			</div>
+			<div class="righttop myflexbox">
+				<span class="fixiedarea mr20">
+					好评
+				</span>
+				<div class="equalarea processbar">
+					<div class="curstatus" style="width:70%">
+					</div>
+				</div>
+			</div>
+			<div class="rightbottom myflexbox">
+				<span class="fixiedarea mr20">
+					好评
+				</span>
+				<div class="equalarea processbar">
+					<div class="curstatus bad" style="width:70%">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="switchtab2 big mt10 center-box">
+			<div>
+				<i class="iconfont icon-heart font26 mr10"></i>
+				好评(18)条
+			</div>
+			<div href="">
+				<i class="iconfont icon-heart-broken font26 mr10"></i>
+				差评(1)条
+			</div>
+		</div>
+
+		<div class="messagelist mt10">
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+-->
+
+
+<!--
+	酒店详情-图片
+
+<div class="content hotel">
+	<div class="showhotel-picture">
+		<div class="picturebox clearfix">
+			<div class="item">
+				<div class="inner">
+					<img src="images/airticket/jipiao_02.png" width="100%" height="100%">
+					</img>
+				</div>
+			</div>
+			<div class="item">
+				<div class="inner">
+					<img src="images/airticket/jipiao_02.png" width="100%" height="100%">
+					</img>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+-->	
+
+
+<!--
+	多页导航--现在没用
+
+
+<div class="content hotel">
+	
+	<div class="page page-active showhotel-comments">
+		<div class="hd">
+			<div class="leftbottom">
+				<span class="color-error font70 mr10">64%</span>
+				客户好评
+			</div>
+			<div class="righttop myflexbox">
+				<span class="fixiedarea mr20">
+					好评
+				</span>
+				<div class="equalarea processbar">
+					<div class="curstatus" style="width:70%">
+					</div>
+				</div>
+			</div>
+			<div class="rightbottom myflexbox">
+				<span class="fixiedarea mr20">
+					好评
+				</span>
+				<div class="equalarea processbar">
+					<div class="curstatus bad" style="width:70%">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="switchtab2 mt10 center-box">
+			<div>
+				<i class="iconfont icon-heart font24 mr10"></i>
+				好评(18)条
+			</div>
+			<div href="">
+				<i class="iconfont icon-heart-broken font24 mr10"></i>
+				差评(1)条
+			</div>
+		</div>
+
+		<div class="messagelist mt10">
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+			<div class="item">
+				<p>
+				狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的狗日的
+				</p>
+				<div class="date">
+					2012-10-10
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	
+	<div class="page page-prev showhotel-intro">
+		<div class="mulrowlistgroup">
+			<div class="item">
+				<div>
+					<i class="iconfont icon-building font24"></i>
+				</div>
+				<div>
+					成都喜来登酒店
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-calendar font24"></i>
+				</div>
+				<div>
+					2000年开业
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-calendar font24"></i>
+				</div>
+				<div>
+					2013年装修
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-location2 font24"></i>
+				</div>
+				<div>
+					二环路东三段1-1-22
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-umbrella font24"></i>
+				</div>
+				<div>
+					商务中心服务   大堂吧  桑拿房 商务中心服务   大堂吧  桑拿房 商务中心服务   大堂吧  桑拿房
+					商务中心服务   大堂吧  桑拿房 商务中心服务   大堂吧  桑拿房
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-walk font24">
+					</i>
+				</div>
+				<div>
+					<p>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</div>
+-->
+
+
+
+
+<!--
+酒店-详情-酒店介绍
+
+<div class="content hotel">
+	<div class="showhotel-intro">
+		<div class="mulrowlistgroup">
+			<div class="item">
+				<div>
+					<i class="iconfont icon-building font24"></i>
+				</div>
+				<div class="color-black">
+					成都喜来登酒店
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-calendar font24"></i>
+				</div>
+				<div>
+					2000年开业
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-calendar font24"></i>
+				</div>
+				<div>
+					2013年装修
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-location2 font24"></i>
+				</div>
+				<div>
+					二环路东三段1-1-22
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-umbrella font24"></i>
+				</div>
+				<div>
+					商务中心服务   大堂吧  桑拿房 商务中心服务   大堂吧  桑拿房 商务中心服务   大堂吧  桑拿房
+					商务中心服务   大堂吧  桑拿房 商务中心服务   大堂吧  桑拿房
+				</div>
+			</div>
+			<div class="item">
+				<div>
+					<i class="iconfont icon-walk font24">
+					</i>
+				</div>
+				<div>
+					<p>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+						-从听泉到 可到酒店<br>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+-->
+
+
+
+<!--
+用户中心-酒店订单-订单详情
+
+<div class="content user">
+	<div class="hotelorder-detail">
+		<div class="panel transparent clearfix">
+			<div class="body clearfix">
+				<span class="font24">订单金额：</span>
+				<span class="font24 color-error">￥140</span>
+			</div>
+		</div>
+
+		<div class="justify-box2-group">
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<label>订单状态</label>
+						<span class="color2">暂存</span>
+					</div>
+				</div>
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<label>订单编号</label>
+						<span class="color2">12375</span>
+					</div>
+				</div>
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<label>预定日期</label>
+						<span class="color2">2016-13-16</span>
+					</div>
+				</div>
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<label>支付方式</label>
+						<span class="color2">担保冻结</span>
+					</div>
+				</div>
+		</div>
+
+	   	<div class="panel transparent clearfix">
+			<div class="body clearfix">
+				<span class="font24">酒店信息</span>
+			</div>
+		</div>
+
+		<div class="orderdetail">
+			<div class="justify-box2-group">
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						四川名山饭店
+					</div>
+					<div class="right">
+						￥<span class="mr20 font24">460</span>
+					</div>
+				</div>
+			</div>
+			<div class="roominfo font24 color2">
+				<p>豪华大床房(不含早)（1间）</p>
+				<p>
+					入住/离店时间  2010-12-10/2010-12-12
+					
+				</p>
+				<p>
+				最晚到店时间爱 2010-12-10/22:00:00
+				</p>
+				<p>豪华大床房(不含早)（1间）</p>
+			</div>
+
+			<div class="justify-box2-group">
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<i class="iconfont icon-location2 font32">
+						</i>
+						<span>
+							锦江区人宾馆
+						</span>
+					</div>
+					<a href="#" class="right color2">
+						<span>
+							查看地图
+						</span>
+						<i class="iconfont icon-arrow-right font24">
+						</i>
+					</a>
+				</div>
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<i class="iconfont icon-phone font32">
+						</i>
+						<span class="color-error">
+							13730666347
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel transparent clearfix">
+			<div class="body clearfix">
+				<span class="font24">其他信息</span>
+			</div>
+		</div>
+
+		<div class="justify-box2-group">
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<label>入住人</label>
+						<span class="color2">张珊</span>
+					</div>
+				</div>
+				<div class="justify-box2 mid">
+					<div class="left font23">
+						<label>联系人</label>
+						<span class="color2">186000000</span>
+					</div>
+				</div>
+		</div>
+		
+	</div>
+</div>
+-->	
+
+
+<!--
+	机票首页
+
+
+<div class="content airticket">
+	<div class="index">
+
+		<div class="qcarrousel .clearfix">
+					<ul class="imglist .clearfix">
+						<li>
+							<img src="images/airticket/jipiao_02.png" style="width:100%">
+						</li>
+					</ul>
+					<div class="myactions">
+						<a class="iconfont arrow-left font46" href="#aaa">
+						</a>
+					</div>
+		</div>
+		
+		<div class="destnation threecloumn">
+			<div class="sidearea textcenter">
+				<span class="font21 color1">出发</span>
+				<p  class="font42">成都</p>
+			</div>
+			<div class="centerarea textcenter">
+				<img class="imgcenter" src="images/airticket/jipiao_03.png" >
+			</div>
+			<div class="sidearea textcenter"  href="#bbb">
+				<span class="font21 color1">到达</span>
+				<p class="font42">北京</p>
+			</div>
+		</div>
+
+		<div class="takeaparttime">
+			<p class="textcenter font23 color1">
+				出发时间
+			</p>
+			<p class="textcenter margin20">
+				<input class="qdate font32" type="date" value="2016-05-17"></input>
+				<span class="notice color1 font23 color1">周一</span>
+			</p>
+		</div>
+		<div class="center-box">
+			<input class="actionbtn" type="button" value="确认"></input>
+		</div>
+		
+	</div>
+</div>
+
+
+
+-->	
+
+
+
+
+<!--
+酒店-下单-支付
+<div class="content hotel">
+		<div class="choosepay">
+
+			<div class="orderitem" >
+				<div class="justify-box2 small">
+					<div class="left font24">
+						订单号:13730666633
+					</div>
+				</div>
+				<hr class="small">
+				<div class="roominfo threecloumn stretch  clearfix">
+					<img   class="sidearea hotelimg" src="images/hotel/hotel3.jpg">
+					<div class="centerarea">
+						<div class="absolutebox">
+							<div class="justify-box2 verysmall">
+							<div class="left font23">
+								四川名山饭店
+							</div>
+							<div class="right">
+								￥<span class="font24">460</span>
+							</div>
+							</div>
+							<div class="bottombox">
+								<div class="justifyline small">
+									<span>
+										大床房
+									</span>
+									<span>
+										X2(间)
+									</span>
+								</div>
+								<div class="justifyline">
+									<span>
+										2016-03-16-2016-03-18
+									</span>
+									<span>
+										X2(晚)
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="small">
+				<div class="justify-box2 small">
+					<div class="left">
+						<span class="font23">预付金额:</span>
+						<span class="money">￥11.3</span>
+						<span class="returnimage2 font23">
+							48.5
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="listgroup ">
+				<a href="#" class="listrow alipay-bg">
+					支付宝支付
+				</a>
+			</div>
+
+			<div class="listgroup ">
+				<div class="listrow unipay-bg">
+					银联支付
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+-->
+
+
+<!--
+酒店-下单-担保
+
+<div class="content hotel">
+	<div class="showdanbao">
+		<div class="listgroup withiconbefore">
+			<div class="listrow select">
+				交通银行信用卡(尾号<span>3221</span>)
+			</div>
+			<div class="listrow">
+				交通银行信用卡(尾号<span>3221</span>)
+			</div>
+			<div class="listrow add">
+				添加新信用卡
+			</div>
+		</div>
+
+
+		<div class="panel input-panel">
+			<div class="body">
+					<div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            发卡银行
+				          </span>
+				          <input class="formcontrol"   placeholder="请选择银行卡" type="text">
+			        </div>
+			        <div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            卡号&ensp;&ensp;&ensp;&ensp;
+				          </span>
+				          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+			        </div>
+			        <div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            CVV2&ensp;&ensp;&ensp;
+				          </span>
+				          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+				         <span class="iconfont icon-arrow-right font32">
+				          </span>
+				          <span class="input-group-addons">
+				          	<span class="icon-creditcard-back"></span>
+				          </span>
+			        </div>
+			        <div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            有效期&ensp;&ensp;
+				          </span>
+				          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+				          <span class="iconfont icon-arrow-right font32">
+				          </span>
+				          <span class="input-group-addons">
+				          	<span class="icon-creditcard-front"></span>
+				          </span>
+			        </div>
+	        </div>
+	   </div>
+
+
+	 <div class="panel input-panel mt30">
+			<div class="body">
+					<div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            持卡人姓名
+				          </span>
+				          <input class="formcontrol"   placeholder="请选择银行卡" type="text">
+			        </div>
+			        <div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            持卡人手机
+				          </span>
+				          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+			        </div>
+			        <div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            证件类型&ensp;&ensp;
+				          </span>
+				          <span class="textmsg">
+				          	请选择证件类型
+				          </span>
+				         <span class="iconfont icon-arrow-right font32 mr10">
+				          </span>
+			        </div>
+			        <div class="input-group">
+				          <span class="input-group-addons textjustify">
+				            证件号码&ensp;&ensp;
+				          </span>
+				          <input class="formcontrol"   placeholder="请输入证件号码" type="text">
+				          <span class="iconfont icon-arrow-right font32 mr10">
+				          </span>
+			        </div>
+	        </div>
+	   </div>
+
+
+		<div class="panel transparent clearfix">
+			<div class="body clearfix">
+				<div class="line-box small">
+					<span class="denglu_03 active "  >
+					</span>
+					<span >保存常用信用卡信息
+					</span>
+				</div>
+				<div class="line-box small">
+					<span class="color1 font24">
+						如需发票请前台索取
+					</span>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+-->	
+
+
+
+
+
+
+<!--
+	03_专题活动.psd
+
+<div class="content special">
+	
+	<div class="specialbox">
+		<div class="justify-box header">
+			<span class="justify-item font21">高反再收</span>
+			<span class="justify-item color-error font17">进行中.....</span>
+		</div>
+		<img src="images/index/banner.png">
+	</div>
+	
+	<div class="specialbox">
+		<div class="justify-box header">
+			<span class="justify-item font21">高反再收</span>
+			<span class="justify-item color1 font17">已经结束</span>
+		</div>
+		<img src="images/index/banner.png">
+	</div>
+
+</div>
+
+-->	
+
+
+
+<!--
+	03_专题活动_detail.psd
+
+<div class="content special-detail">
+
+	<div class="hmenu">
+		<ul class="inline-list moveonestep">
+			<li >
+				人气商城
+			</li>
+			<li class="active">
+				综合商城
+			</li>
+			<li>
+				名品特卖
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+		</ul>
+		<div class="next">
+
+		</div>
+		<div class="prev">
+		</div>
+	</div>
+
+
+	<div class="detailbox">
+		<img class="left" src="images/special/one.jpg">
+		<div class="right">
+			<p class="name">
+				[包邮]朱博士专用按摩器.[包邮]朱博士专用按摩器[包邮]朱博士专用按摩器
+			</p>
+			<p class="price">
+				<span class="font30 color-red">￥14.5</span>
+				<span class="font17 color1">原价:<span>￥14</span></span>
+				
+			</p>
+			<p class="returnprice">
+				<span class="font17 color-red">购买后再返:146</span>
+			</p>
+			<input class="action font26" type="button"  value="马上抢" >
+		</div>
+	</div>
+
+
+</div>
+-->	
+
+
+<!--
+
+	CSS巧妙实现分隔线的几种方法
+	http://www.daqianduan.com/4258.html
+个人中心-账户安全-设置新密码
+
+
+<div class="content user">
+	<div class="center-box">
+		<div class="security-modifyloginpassword">
+			<div class="input-group">
+				<input class="formcontrol" placeholder="当前密码" type="password">
+			</div>
+			<div class="input-group">
+				<input class="formcontrol" placeholder="新密码(6-14位字母、数字)" type="password">
+			</div>
+			<div class="input-group">
+				<input class="formcontrol" placeholder="确认新密码" type="password">
+			</div>
+			<div class="label-group">
+				<span class="label">
+					验证码将发送至137306666347
+				</span>
+			</div>
+			<div class="input-group">
+				<input class="formcontrol"   placeholder="验证码" type="text">
+				<span class="input-group-addons">
+					<span class="vline">
+					</span>
+				</span>
+				<span class="input-group-addons">
+					<span class="resend" style="display:none">
+						<span class="seconds">11</span>秒后重发
+					</span>
+					<a class="getverifycode" href="#" >
+						获取验证码
+					</a>
+				</span>
+			</div>
+			<input class="actionbtn" type="button" value="确认"></input>
+		</div>
+	</div>
+</div>
+
+
+-->
+
+
+<!--
+个人中心-账户安全-支付密码
+
+<div class="content user">
+	<div class="center-box">
+		<div class="security-modifypaypassword">
+			<div class="input-group">
+				<input class="formcontrol" placeholder="新密码(6-14位字母、数字)" type="password">
+			</div>
+			<div class="input-group">
+				<input class="formcontrol" placeholder="确认新密码" type="password">
+			</div>
+			<div class="label-group">
+				<span class="label">
+					验证码将发送至137306666347
+				</span>
+			</div>
+			<div class="input-group">
+				<input class="formcontrol"   placeholder="验证码" type="text">
+				<span class="input-group-addons">
+					<span class="vline">
+					</span>
+				</span>
+				<span class="input-group-addons">
+					<span class="resend" style="display:none">
+						<span class="seconds">11</span>秒后重发
+					</span>
+					<a class="getverifycode" href="#" >
+						获取验证码
+					</a>
+				</span>
+			</div>
+			<input class="actionbtn" type="button" value="确认"></input>
+		</div>
+	</div>
+</div>
+-->
+
+
+
+<!--
+账户安全--首页
+
+
+<div class="content user">
+	<div class="security-index">
+		<div class="listgroup">
+				<div class="listrow  clearfix" >
+						<span class="fl">
+							商品订单
+						</span>
+						<span class="fr onlydetail">
+							
+						</span>
+						<span class="fr color-error">
+							0元
+						</span>
+				</div>
+				<div class="listrow  clearfix" >
+						<span class="fl">
+							商品订单
+						</span>
+						<span class="fr onlydetail">
+							
+						</span>
+						<span class="fr color-error">
+							0元
+						</span>
+				</div>
+		</div>
+	</div>
+</div>
+-->
+
+
+<!--
+个人中心-我的订单-团购订单
+
+<div class="content user">
+  	<div class="showorderlist">
+  		<a class="orderitem" href="#">
+			<div class="justify-box2 small font21 color1">
+				<div class="left">
+					淘宝
+				</div>
+				<div class="right">
+					已跟单
+				</div>
+				<div class="right font21 color-yellow">
+					已经返积分:21
+				</div>
+			</div>
+			<hr class="small">
+			<p class="margin15 font24">
+				你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？
+			</p>
+			<div class="justify-box2 small font21">
+				<div class="left color1">
+					￥30
+				</div>
+				<div class="right color1">
+					x&nbsp;<span>1</span>
+				</div>
+			</div>
+			<hr>
+			<div class="justify-box2 small font21">
+				<div class="left">
+					总价:<span class="money">11.3</span>
+				</div>
+			</div>
+		</a>
+	
+
+	</div>
+</div>
+-->
+
+
+
+
+
+<!--
+	我的订单-机票订单
+<div class="content user">
+  	<div class="showorderlist">
+
+
+  		<div class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left">
+					<span class="bold font26">成都人-珠海</span>
+					 <span class="vline"></span> 
+					<span class="font21">已经出票</span>
+				</div>
+				<div class="right money">
+					￥12.5
+				</div>
+			</div>
+			<hr class="small">
+			<div class="justify-box2 clearfix">
+				<div class="left font21">
+					03-03 17:10至19:20 CA4391
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+-->
+
+
+
+
+<!--
+	我的订单-酒店订单
+
+<div class="content user">
+  	<div class="showorderlist">
+  		<div class="orderitem" href="#">
+			<div class="justify-box2 small">
+				<div class="left font24">
+					成都人哼会酒店
+				</div>
+				<div class="right font21 color1">
+					客人入住
+				</div>
+			</div>
+			<hr class="small">
+			<p class="margin15 font19">
+				豪华单间公寓
+			</p>
+			<p class="margin5 font19 ">
+				2011-01-19 至 2011-10-10  1晚1间
+			</p>
+			<p class="margin5 font19">
+				房型
+			</p>
+			<p class="margin5 font19">
+				付款方式:到点付款
+			</p>
+			<p class="textright color-yellow mb10">
+				已返回积分:1.2
+			</p>
+			<div class="justify-box2 clearfix">
+				<div class="left font21">
+					<span>总价:</span>
+					<span class="money">11.3</span>
+				</div>
+				<div class="right">
+					<a  class="btn mr10">支付</a>
+					<a  class="btn">带我过去</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+-->
+
+
+
+<!--
+	我的订单-商品订单
+
+<div class="content user">
+  	<div class="showorderlist">
+  		<a class="orderitem" href="#">
+			<div class="justify-box2 small font21 ">
+				<div class="left color1">
+					淘宝
+				</div>
+				<div class="right color-yellow">
+					已返积分:21
+				</div>
+				<div class="right color1">
+					已跟单
+				</div>
+			</div>
+			<hr class="small">
+			<p class="margin15 font24 bold">
+				你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？	你说的是什么意思呢？
+			</p>
+			<div class="justify-box2 small font21">
+				<div class="left">
+					￥30
+				</div>
+				<div class="right">
+					x&nbsp;<span>1</span>
+				</div>
+			</div>
+			<hr>
+			<div class="justify-box2 font21">
+				<div class="left">
+					<span>总价:</span>
+					<span class="money">11.3</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+-->
+
+<!--
+	我的订单-主页
+
+<div class="content user">
+  	<div class="orderindex">
+		<div class="listgroup">
+					<div class="listrow personal_10-bg detail clearfix" >
+						<span class="fl">
+							商品订单
+						</span>
+						<span class="fr onlydetail">
+							
+						</span>
+						<span class="fr">
+							0元
+						</span>
+					</div>
+					<div class="listrow personal_21-bg detail clearfix" >
+						<span class="fl">
+							酒店订单
+						</span>
+						<span class="fr onlydetail">
+							
+						</span>
+						<span class="fr">
+							0元
+						</span>
+					</div>
+					<div class="listrow personal_22-bg detail clearfix" >
+						<span class="fl">
+							机票订单
+						</span>
+						<span class="fr onlydetail">
+							
+						</span>
+						<span class="fr">
+							0元
+						</span>
+					</div>
+					<div class="listrow personal_23-bg detail clearfix" >
+						<span class="fl">
+							团购订单
+						</span>
+						<span class="fr onlydetail">
+							
+						</span>
+						<span class="fr">
+							0元
+						</span>
+					</div>
+		</div>
+	</div>
+</div>
+-->
+
+
+
+<!--
+	提现到手机充值
+
+
+<div class="content user">
+  <div class="withdraw">
+    <img class="hcenter margin30" src="images/my/personal_16.png" />
+    <p class="textcenter margin20 font21">支持移动、联通、电信号码</p>
+    <p class="textcenter margin30 font24 color-red">可用余额：0 返利：0，积分：0个</p>
+    <div class="center-box">
+		  <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		            充值金额:
+		          </span>
+		          <input class="formcontrol"   placeholder="请选择" type="text">
+		          <span class="input-group-addons textjustify">
+		            <i  class=" iconfont font32">&#xe60a;</i>
+		          </span>
+		  </div>
+    	  <div class="infobox info mt30">
+	        <div class="arrow">
+	        	<div class="arrowinter">
+	          </div>
+			</div>
+	        <p>转账日期:</p>
+	        <p>转账日期:</p>
+	      </div>
+	      <div class="input-box">
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		          	充值号码
+		          </span>
+		          <input class="formcontrol"   placeholder="充值金额" type="text">
+		        </div>
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		            提现密码
+		          </span>
+		          <input class="formcontrol"   placeholder="QQ帐号" type="text">
+		        </div>
+	       </div>
+	       <input class="actionbtn" type="button" value="确认"></input>
+    </div>
+
+  </div>
+</div>
+-->
+
+
+<!--
+	提现到QQ
+
+<div class="content user">
+  <div class="withdraw">
+    <img class="hcenter margin30" src="images/my/personal_17.png" />
+    <p class="textcenter margin20 font21">1Q币=1返利</p>
+    <p class="textcenter margin30  font24 color-red">可用返利:0</p>
+    <div class="center-box">
+		  
+    	  <div class="infobox info">
+	        <div class="arrow">
+	        	<div class="arrowinter">
+	          </div>
+			</div>
+	        <p>转账日期:</p>
+	        <p>转账日期:</p>
+	      </div>
+ 		  
+	      <div class="input-box">
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		            充值金额
+		          </span>
+		          <input class="formcontrol"   placeholder="充值金额" type="text">
+		        </div>
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		           QQ帐号&ensp;
+		          </span>
+		          <input class="formcontrol"   placeholder="QQ帐号" type="text">
+		        </div>
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		          提现密码
+		          </span>
+		          <input class="formcontrol"   placeholder="提现密码" type="text">
+		        </div>
+	       </div>
+	       <input class="actionbtn" type="button" value="确认"></input>
+    </div>
+
+  </div>
+</div>
+-->
+
+
+<!--
+	提现到集分宝
+
+<div class="content user">
+  <div class="withdraw">
+    <img class="hcenter margin30" src="images/my/personal_05.png" />
+    <p class="textcenter margin20 font21">
+    	什么是积分宝？<br/>
+    	淘宝购物，还信用卡，交水电费<br/>
+    </p>
+    <p class="textcenter margin30  font24 color-red">可用返利:0</p>
+    <div class="center-box">
+			<div class="input-group">
+	          <span class="input-group-addons textjustify">
+	            兑换积分数量
+	          </span>
+	          <input class="formcontrol"   placeholder="为100的整数值" type="text">
+	      </div>
+
+    	  <div class="infobox info">
+	        <div class="arrow">
+	        	<div class="arrowinter">
+	          </div>
+			</div>
+	        <p>到账日期:申请3个工作日</p>
+	      </div>
+ 		  
+	      <div class="input-box">
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		           支付宝帐号
+		          </span>
+		          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+		        </div>
+		        <div class="input-group">
+		          <span class="input-group-addons textjustify">
+		           提现密码&ensp;&ensp;
+		          </span>
+		          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+		        </div>
+	       </div>
+	       <input class="actionbtn" type="button" value="确认"></input>
+    </div>
+
+  </div>
+</div>
+-->
+
+
+
+
+
+<!--
+	提现到支付宝或者银行卡
+
+<div class="content user">
+  <div class="withdraw">
+    <img class="hcenter margin30" src="images/my/personal_13.png" />
+    <p class="textcenter margin20 font21">支持提现到支付宝.银行卡</p>
+    <p class="textcenter margin30  font24 color-red">可用返利:0</p>
+    <div class="center-box">
+ 		  <div class="switchtab myflexbox">
+				<a class="equalarea textcenter  active" href="#aaaa">提现到支付宝</a>
+				<span class="fixiedarea vline"></span>
+				<a class="equalarea textcenter" href="#cccc">提现到银行卡</a>
+		  </div>
+	      <div class="infobox info mt20">
+	        <div class="arrow">
+	        	<div class="arrowinter">
+	          </div>
+			</div>
+	        <p>转账日期:</p>
+	        <p>转账日期:</p>
+	      </div>
+	      <div class="input-box">
+	        <div class="input-group">
+	          <span class="input-group-addons textjustify">
+	            提现金额&ensp;&ensp;
+	          </span>
+	          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+	        </div>
+	        <div class="input-group">
+	          <span class="input-group-addons textjustify">
+	           提现金额&ensp;&ensp;
+	          </span>
+	          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+	        </div>
+	        <div class="input-group">
+	          <span class="input-group-addons textjustify">
+	            支付宝帐号
+	          </span>
+	          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+	        </div>
+	        <div class="input-group">
+	          <span class="input-group-addons textjustify">
+	           用户姓名&ensp;&ensp;
+	          </span>
+	          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+	          <span class="input-group-addons icon-backcard">
+	          </span>
+	        </div>
+	        <div class="input-group">
+	          <span class="input-group-addons textjustify">
+	           提现密码&ensp;&ensp;
+	          </span>
+	          <input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+	          <span class="input-group-addons icon-backcard">
+	          </span>
+	        </div>
+
+	       </div>
+	       <input class="actionbtn" type="button" value="确认"></input>
+    </div>
+
+  </div>
+</div>
+-->
+
+
+
+
+<!--
+	04_01我的返利宝_登录.psd
+	用户模块-登录页面
+
+<div class="content user">
+		<form class="login">
+			<div class="infobox error hide">
+				密码错误
+			</div>
+			<div class="input-group">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe601;</i>
+				</span>
+				<input class="formcontrol"  placeholder="用户名/手机号" type="text">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe619;</i>
+				</span>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe60b;</i>
+				</span>
+				<input class="formcontrol" placeholder="密码" type="password">
+				<span class="input-group-addons">
+					<i  class=" iconfont font32">&#xe619;</i>
+				</span>
+			</div>
+			<div class="enableAutologin font19 clearfix">
+				<div class="fl">
+					<span class="inline-vhcenter  denglu_03 active "  >
+					</span>
+					<span class="inline-vhcenter">自动登录
+					</span>
+				</div>
+				<div  class="fr">
+					<a class="inline-vhcenter color-error" href="#">
+						忘记密码？
+					</a>
+				</div>
+			</div>
+			<input class="actionbtn" type="button" value="查询"></input>
+			<a class="inline-vhcenter registerlink color-error" href="user-register.html">
+				还不是会员立即注册>>
+			</a>
+		</form>
+</div>
+-->
+
+
+<!--注册
+
+<div class="content user">
+	<div class="register">
+		<div class="input-group">
+			<span class="input-group-addons textjustify">
+				账&ensp;&ensp;&ensp;&ensp;户
+			</span>
+			<input class="formcontrol"   placeholder="请输入11位手机号" type="text">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addons textjustify">
+				密&ensp;&ensp;&ensp;&ensp;码
+			</span>
+			<input class="formcontrol" placeholder="6-14位字母、数字" type="text">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addons textjustify">
+				确认密码
+			</span>
+			<input class="formcontrol"  placeholder="6-14位字母、数字" type="text">
+		</div>
+		<input class="actionbtn" type="button" value="立即注册"></input>
+		<p class="textcenter font21 mt30 color1" href="#">
+			点击注册表示已阅并同意
+		</p>
+		<p class="textcenter font21" href="#">
+			<a class="color-error" href="#">
+			《返利宝服务协议》
+			</a>
+		</p>
+	</div>
+</div>
+-->
+
+
+
+
+<!-- 
+忘记密码-第一步
+
+<div class="content user">
+	<div class="forgetpassword-first center-box">
+		<div class="input-group">
+			<input class="formcontrol"   placeholder="请填写注册手机号码" type="text">
+		</div>
+		<input class="actionbtn" type="button" value="下一步"></input>
+	</div>
+</div>
+-->
+
+
+<!--
+忘记密码-第二步
+
+<div class="content user">
+	<div class="forgetpassword-second">
+
+		<div class="center-box">
+			<div class="input-group">
+				<span class="input-group-addons">
+					验证码将发送至
+				</span>
+				<span class="textmsg">
+					137306666347
+				</span>
+			</div>
+			<div class="input-group">
+				<input class="formcontrol"   placeholder="验证码" type="text">
+				<span class="input-group-addons">
+					<span class=" resend error">
+						25秒后重发
+					</span>
+				</span>
+			</div>
+			<input class="actionbtn" type="button" value="验证"></input>
+		</div>
+
+	</div>
+</div>
+-->
+
+<!--
+忘记密码-第三步
+
+
+<div class="content user">
+	<div class="forgetpassword-first">
+		<div class="input-group">
+			<input class="formcontrol"   placeholder="新密码(6-14位字母或数字)" type="text">
+		</div>
+		<div class="input-group">
+			<input class="formcontrol"   placeholder="确认密码" type="text">
+		</div>
+		<input class="actionbtn" type="button" value="下一步"></input>
+	</div>
+</div>
+-->
+
+<!--
+个人中心-首页
+
+<div class="content user">
+	<div class="aboutme">
+		<a class="head" href="#">
+			<img class="bg" src="images/my/bg.png">
+			</img>
+			<img class="photo"  src="images/my/personal_01.png">
+			</img>
+			<i class="right iconfont icon-arrow-right" ></i>
+			<div class="info">
+				<p class="number">13730666347</p>
+				<span class="gold">金卡会员</span>
+				<span class="normal">普通会员</span>
+			</div>
+		</a>
+
+		<div class="menu-box clearfix">
+			<div class="item personal_04">
+				兑换现金
+			</div>
+			<div class="item personal_05">
+				兑换积分宝
+			</div>
+			<div class="item personal_06">
+				手机充值
+			</div>
+			<div class="item personal_07">
+				兑换Q币
+			</div>
+		</div>
+
+		<div class="listgroup">
+			<div class="listrow personal_08-bg clearfix" >
+				<span class="fl">
+					我的返利
+				</span>
+				<span class="fr">
+					0元
+				</span>
+			</div>
+			<div class="listrow personal_09-bg clearfix" >
+				<span class="fl">
+					我的积分
+				</span>
+				<span class="fr">
+					0元
+				</span>
+			</div>
+			
+		</div>
+
+		<div class="listgroup">
+			<div class="listrow personal_10-bg clearfix" >
+				<span class="fl">
+					我的订单
+				</span>
+				<span class="fr onlydetail">
+					
+				</span>
+				<span class="fr">
+					0元
+				</span>
+			</div>
+		</div>
+
+		<div class="listgroup">
+			<div class="listrow personal_11-bg detail clearfix" >
+				<span class="fl">
+					账户安全
+				</span>
+				<span class="fr onlydetail">
+					
+				</span>
+				<span class="fr">
+					0元
+				</span>
+			</div>
+		</div>
+		
+		<div class="actionbox">
+			<input class="actionbtn notimportant" type="button" value="退出帐号"></input>
+		</div>
+	</div>
+</div>
+-->
+
+
+<!--
+个人中心-编辑个人资料
+
+<div class="content user">
+	<div class="showedit">
+		<div class="input-box">
+
+			<div class="input-group">
+				<span class="input-group-addons textjustify">
+					姓&ensp;&ensp;&ensp;&ensp;名
+				</span>
+				<input class="formcontrol"   placeholder="请输入11位手机号"  value="bbbb" type="text" >
+			</div>
+			<div class="input-group">
+				<span class="input-group-addons textjustify">
+					性&ensp;&ensp;&ensp;&ensp;别
+				</span>
+				<select class="formcontrol"  name="" id="">
+					<option value="">请选择</option>
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addons textjustify">
+					出生日期
+				</span>
+				<input class="formcontrol qdate"    placeholder="2010-01-01"  type="date"  value="2010-01-01" >
+			</div>
+			<div class="input-group">
+				<span class="input-group-addons textjustify">
+					手机号码
+				</span>
+				<input class="formcontrol"   placeholder="请输入11位手机号"  value="111" type="text" >
+			</div>
+			<div class="actionbox">
+				<input class="actionbtn notimportant color-error" type="button" value="确定"></input>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+-->
+
+
+
+<!--
+01_04_01首页_商城.psd
+
+<div class="content shop">
+
+	<div class="hmenu">
+		<ul class="inline-list moveonestep">
+			<li >
+				人气商城
+			</li>
+			<li class="active">
+				综合商城
+			</li>
+			<li>
+				名品特卖
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+		</ul>
+		<div class="next">
+
+		</div>
+		<div class="prev">
+		</div>
+	</div>
+
+
+	<div class="rtbox clearfix">
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/31/63/1364886745838.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+		<div class="item">
+			<img src="http://image.yiqifa.com/ad_images/reguser/24/62/62/1401279562966.jpg">
+			<p>
+				最高返利
+			</p>
+		</div>
+	</div>
+
+
+</div>
+-->
+
+
+
+<!--
+	聚便宜
+
+<div class="content shop">
+
+	<div class="hmenu">
+		<ul class="inline-list moveonestep">
+			<li >
+				人气商城
+			</li>
+			<li class="active">
+				综合商城
+			</li>
+			<li>
+				名品特卖
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+		</ul>
+		<div class="next">
+
+		</div>
+		<div class="prev">
+		</div>
+	</div>
+
+
+	<div class="saletodaybox clearfix">
+
+		<div class="item">
+			<img src="images/index/1.png" />
+			<p class="title">
+				标题标题标题标题标题标题标题标题标题标题标题标题
+			</p>
+			<div class="pricewrap">
+				<span class="price">90</span>
+				<span class="baseprice">216</span>
+			</div>
+			<div class="returnwrap">
+				<span class="returnimage "></span>
+				<span class="returnrate money">60%</span>
+				<span class="more"></span>
+			</div>
+			<span class="tag">
+			</span>
+			<div class="moreinfo up">
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+			</div>
+		</div>
+		
+		<div class="item">
+			<img src="images/index/1.png" />
+			<p class="title">
+				标题标题标题标题标题标题标题标题标题标题标题标题
+			</p>
+			<div class="pricewrap">
+				<span class="price">90</span>
+				<span class="baseprice">216</span>
+			</div>
+			<div class="returnwrap">
+				<span class="returnimage"></span>
+				<span class="returnrate money">60%</span>
+				<span class="more"></span>
+			</div>
+
+			<div class="moreinfo ">
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+			</div>
+		</div>
+		
+	</div>
+
+
+
+</div>
+-->
+
+
+
+
+<!--
+	01_05_01首页_商品_巨返利.psd
+
+<div class="content shop">
+
+	<div class="hmenu">
+		<ul class="inline-list moveonestep">
+			<li >
+				人气商城
+			</li>
+			<li class="active">
+				综合商城
+			</li>
+			<li>
+				名品特卖
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+			<li>
+				美妆配饰
+			</li>
+		</ul>
+		<div class="next">
+
+		</div>
+		<div class="prev">
+		</div>
+	</div>
+
+
+	<div class="jufanlibox">
+		<div class="item">
+			<img class="fl"  src="images/shop/shop1.jpg" >
+
+			</img>
+			<div class="fr info">
+				<p class="brand">
+					<img   src="images/shop/shop1.jpg" />
+				</p>
+				<p class="style font19 color1">都市轻易品牌</p>
+				<p>
+					<span class="font28 color-red">5.5</span>
+					<span class="font17">折扣</span>
+				</p>
+				<p class="font21">超级返利：25%</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+-->
+
+
+
+
+<!--
+	01_03_02团购-列表
+
+<div class="content groupbuying-good">
+	<div class="filterbox  show font21">
+		<div class="maskbox">
+		</div>
+		<div  class="filterandorderbox">
+
+			<ul class="sortnav inline-list withline  clearfix">
+								<li class="up active" >
+									筛选
+								</li>
+								<li class="down active" >
+									星级价格
+								</li>
+								<li>
+									综合排序
+								</li>
+			</ul>
+			
+			<div class="filterbody">
+
+				<div class="listgroup order"  >
+					<div class="listrow select" >
+						<span  class="first">
+							帮助
+						</span>
+					</div>
+					<div class="listrow select" >
+						<span  class="first">
+							帮助
+						</span>
+					</div>
+					<div class="listrow select" >
+						<span  class="first">
+							帮助
+						</span>
+					</div>
+				</div>
+				
+				<div class="selectbox  category" style="display:none">
+					<ul class="list">
+						<li id="category00">
+							全城
+						</li>
+						<li id="category01" class="active">
+							美食
+						</li>
+						<li id="category02">
+							亲子
+						</li>
+					</ul>
+					<div class="listgroup" id="sub_category01" >
+							<div class="listrow select justify-box" >
+								<span class="justify-item">
+									美食1
+								</span>
+								<span class="justify-item">
+									111
+								</span>
+							</div>
+							<div class="listrow select justify-box" >
+								<span class="justify-item">
+									美食2
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							<div class="listrow  justify-box" >
+								<span class="justify-item">
+									美食3
+								</span>
+							</div>
+							
+					</div>
+				</div>
+				
+
+				<div class="selectbox  location" style="display:none">
+						<ul class="list">
+							<li >
+								全城
+							</li>
+							<li class="active">
+								高新区
+							</li>
+							<li>
+								青羊区
+							</li>
+						</ul>
+						<div class="listgroup" >
+								<div class="listrow select justify-box" >
+									<span class="justify-item">
+										高新区1
+									</span>
+								</div>
+								<div class="listrow select justify-box" >
+									<span class="justify-item">
+										高新区2
+									</span>
+								</div>
+								<div class="listrow  justify-box" >
+									<span class="justify-item">
+										高新区3
+									</span>
+								</div>
+								<div class="listrow  justify-box" >
+									<span class="justify-item">
+										高新区4
+									</span>
+								</div>
+								<div class="listrow  justify-box" >
+									<span class="justify-item">
+										高新区5
+									</span>
+								</div>
+						</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="productlist clearfix" style="padding-top:0.96rem">
+		
+		<div class="item clearfix">
+			<div class="header">
+				<img src="images/groupbuying/product.jpg" 
+				>
+			</div>
+			<div class="body">
+				<div class="justify-box">
+					<span class="justify-item font24">滋味大排档</span>
+					<span class="justify-item font21 color2">距离118</span>
+				</div>
+				<p class="brand font17 color1">
+					大众点评
+				</p>
+				<div class="justify-box second">
+					<span class="justify-item">
+					<span class="money font26">￥318.0</span>
+					<span class="basicmoney font19">￥318.0</span>
+					</span>
+					<span class="justify-item returnimage2 font17">
+						48.5
+					</span>
+				</div>
+				<p class="intro font17 color1">
+					大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评
+				</p>
+			</div>
+		</div>
+
+		
+		<div class="item clearfix">
+			<div class="header">
+				<img src="images/groupbuying/product.jpg" 
+				>
+			</div>
+			<div class="body">
+				<div class="justify-box">
+					<span class="justify-item font24">滋味大排档</span>
+					<span class="justify-item font21 color2">距离118</span>
+				</div>
+				<p class="brand font17 color1">
+					大众点评
+				</p>
+				<div class="justify-box second">
+					<span class="justify-item">
+					<span class="money font26">￥318.0</span>
+					<span class="basicmoney font19">￥318.0</span>
+					</span>
+					<span class="justify-item returnimage2 font17">
+						48.5
+					</span>
+				</div>
+				<p class="intro font17 color1">
+					大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评
+				</p>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+
+</div>
+-->
+
+
+
+<!--团购首页
+
+
+<div class="content groupbuying">
+	<div class="refresh">
+		距离:成都市锦江区锦东路568号
+	</div>
+	<div class="menu-box clearfix">
+		<div class="item tuangou_01">
+			附近团购
+		</div>
+		<div class="item tuangou_02">
+			酒店
+		</div>
+		<div class="item tuangou_03">
+			娱乐
+		</div>
+		<div class="item tuangou_04">
+			电影
+		</div>
+		<div class="item tuangou_05">
+			美食
+		</div>
+		<div class="item tuangou_06">
+			丽人
+		</div>
+		<div class="item tuangou_07">
+			旅游
+		</div>
+		<div class="item tuangou_08">
+			结婚亲子
+		</div>
+		<div class="item tuangou_09">
+			生活
+		</div>
+		<div class="item tuangou_10">
+			抽奖
+		</div>
+	</div>
+
+
+	<div class="qcarrousel .clearfix">
+					<ul class="imglist .clearfix">
+						<li>
+							<img src="images/index/banner.png" style="width:100%">
+						</li>
+						<li>
+							<img src="images/index/banner2.png" style="width:100%">
+						</li>
+						<li>
+							<img src="images/index/banner3.png" style="width:100%">
+						</li>
+					</ul>
+					<div class="dotsbox">
+						<div class="dotslist">
+							<div class="dot">
+							
+							</div>
+							<div class="dot active">
+								
+							</div>
+							<div class="dot">
+								
+							</div>
+						</div>
+					</div>
+	</div>
+
+	<div class="panel">
+		<div class="header">
+			猜你喜欢的
+		</div>
+	</div>
+
+	
+	<div class="productlist clearfix">
+		
+		<div class="item clearfix">
+			<div class="header">
+				<img src="images/groupbuying/product.jpg" 
+				>
+			</div>
+			<div class="body">
+				<div class="justify-box">
+					<span class="justify-item font24">滋味大排档</span>
+					<span class="justify-item font21 color2">距离118</span>
+				</div>
+				<p class="brand font17 color1">
+					大众点评
+				</p>
+				<div class="justify-box second">
+					<span class="justify-item">
+					<span class="money font26">￥318.0</span>
+					<span class="basicmoney font19">￥318.0</span>
+					</span>
+					<span class="justify-item returnimage2 font17">
+						48.5
+					</span>
+				</div>
+				<p class="intro font17 color1">
+					大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评
+				</p>
+			</div>
+		</div>
+
+		
+		<div class="item clearfix">
+			<div class="header">
+				<img src="images/groupbuying/product.jpg" 
+				>
+			</div>
+			<div class="body">
+				<div class="justify-box">
+					<span class="justify-item font24">滋味大排档</span>
+					<span class="justify-item font21 color2">距离118</span>
+				</div>
+				<p class="brand font17 color1">
+					大众点评
+				</p>
+				<div class="justify-box second">
+					<span class="justify-item">
+					<span class="money font26">￥318.0</span>
+					<span class="basicmoney font19">￥318.0</span>
+					</span>
+					<span class="justify-item returnimage2 font17">
+						48.5
+					</span>
+				</div>
+				<p class="intro font17 color1">
+					大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评大众点评
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+-->
+
+
+
+
+
+<!--
+帮组中心-首页
+-->
+
+<div class="content helpcenter">
+	<div class="firststep">
+		<div class="listgroup">
+			<div class="listrow heart-bg" >
+				<span  class="first">
+					帮助
+				</span>
+			</div>
+			<div class="listrow about-bg" >
+				<span  class="first">
+					关于会员
+				</span>
+			</div>
+		</div>
+		<div class="listgroup">
+			<div class="listrow update-bg" >
+				<span  class="first">
+					检查更新
+				</span>
+			</div>
+			<div class="listrow setting-bg" >
+				<span  class="first">
+					设置
+				</span>
+			</div>
+		</div>
+
+		<div class="contactinfo">
+			<p class="textcenter">
+			客服电话:13730666347
+			</p>
+			<p class="textcenter mt10">
+			官方网址:www.eehui.cn
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+<!--
+帮助中心-目录页
+<div class="content helpcenter">
+	<div class="secondstep">
+		<div class="accordion  right">
+			<div class="header">
+				1.乘客请注意乘客请注意乘客请注意乘客请注意乘客请注意乘客请注意乘客请注意乘客请注意乘客请注意
+			</div>
+			<div class="body">
+				你说的是什么意思呢?
+			</div>
+		</div>
+		<div class="accordion  right">
+			<div class="header">
+				1.乘客请注意
+			</div>
+			<div class="body">
+				你说的是什么意思呢?
+			</div>
+		</div>
+		<div class="accordion  right">
+			<div class="header">
+				1.乘客请注意
+			</div>
+			<div class="body">
+				你说的是什么意思呢?
+			</div>
+		</div>
+	</div>
+</div>
+-->	
+
+<!--
+	帮助中心-详情页面
+
+<div class="content helpcenter">
+	<div class="thirdstep">
+	当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧
+	</div>
+</div>
+	-->
+
+
+
+
+<!--
+酒店-下单
+
+<div class="content hotelorder">
+	<div class="showadd">
+		
+		<div class="header">
+			<p class="hotelname font24">
+				成都市花园酒店
+			</p>
+			<p class="daterange font23 mt10">
+				<span>入住：2016-04-11</span>
+				&nbsp;&nbsp;
+				<span>离店：2016-04-12</span>
+			</p>
+		</div>
+
+
+		<div class="fieldgroup">
+			<div class="fieldrow" >
+				<label  class="fixedfield">
+					大床房不好咋弄爱爱爱啊啊啊啊
+				</label>
+				<span class="dynamicfield textright mr10" >
+					1间
+				</span>
+				<span class="fixedfield" >
+					<span class="iconfont icon-arrow-right">
+					</span>
+				</span>
+			</div>
+			<div class="fieldrow" >
+				<label  class="fixedfield">
+					入住人&ensp;&ensp;&ensp;
+				</label>
+				<span class="dynamicfield textright mr10" >
+						朱博士，陈博士，张博士
+				</span>
+				<span class="fixedfield">
+					<span class="iconfont icon-arrow-right">
+					</span>
+				</span>
+			</div>
+		</div>
+		
+
+		<div class="fieldgroup mt30">
+			<div class="fieldrow" >
+				<label  class="fixedfield">
+					联系人&ensp;&ensp;&ensp;&ensp;
+				</label>
+				<span class="dynamicfield">
+					<input  placeholder="张三" >
+				</span>
+			</div>
+			<div class="fieldrow" >
+				<label  class="fixedfield">
+					联系人电话
+				</label>
+				<span class="dynamicfield" >
+					<span class="left" >
+						<input placeholder="13730666347" >
+					</span>
+				</span>
+			</div>
+			<div class="fieldicon contanctperson">
+			</div>
+		</div>
+		<div class="fieldgroup">
+			<div class="fieldrow " >
+				<label  class="fixedfield">
+					到店时间&ensp;&ensp;
+				</label>
+				<span class="dynamicfield">
+					<input  type="datetime-local" placeholder="YYYY-MM-DD HH:MM"/>
+				</span>
+			</div>
+		</div>
+
+		
+		<div class="infobox warning mt30">
+			当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张
+		</div>
+
+		<div class="fieldgroup mt20 mb50">
+			<div class="fieldrow" >
+				<label  class="fixedfield">
+					备注&ensp;&ensp;&ensp;&ensp;
+				</label>
+				<span class="dynamicfield">
+				</span>
+				<span class="fixedfield">
+					<span class="iconfont icon-arrow-right">
+					</span>
+				</span>
+			</div>
+		</div>
+		
+
+	</div>
+</div>
+	-->
+
+
+
+<!--酒店订单-老版本-弃用
+
+<div class="content hotelorder">
+	<div class="showadd">
+
+		<div class="header">
+			<p class="hotelname">
+				成都市花园酒店
+			</p>
+			<p class="daterange">
+				<span>入住：2016-04-11</span>
+				&nbsp;&nbsp;
+				<span>离店：2016-04-12</span>
+			</p>
+		</div>
+
+
+		<div class="fieldgroup">
+			<div class="fieldrow" >
+				<span  class="first">
+					大床房不好咋弄爱爱爱啊啊啊啊
+				</span>
+				<span class="second" >
+					<span class="right" >
+						1间
+					</span>
+				</span>
+				<span class="third detail" >
+				</span>
+			</div>
+			<div class="fieldrow" >
+				<span  class="first">
+					入住人
+				</span>
+				<span class="second" >
+					<span class="right" >
+						朱博士，陈博士，张博士
+					</span>
+				</span>
+				<span class="third detail">
+				</span>
+			</div>
+		</div>
+
+
+		<div class="fieldgroup">
+			<div class="fieldrow" >
+				<span  class="first">
+					联系人
+				</span>
+				<span class="second">
+					<input  class="left" style="width:2rem" >
+				</span>
+			</div>
+			<div class="fieldrow" >
+				<span  class="first">
+					联系人电话
+				</span>
+				<span class="second" >
+					<span class="left" >
+						<input  class="left" style="width:2rem" >
+					</span>
+				</span>
+			</div>
+
+			<div class="fieldicon contanctperson">
+			</div>
+		</div>
+
+
+		<div class="fieldgroup">
+			<div class="fieldrow " >
+				<span  class="first">
+					到店时间
+				</span>
+				<span class="second">
+					<input class="left" type="datetime-local" placeholder="YYYY-MM-DD HH:MM"/>
+				</span>
+			</div>
+		</div>
+
+		<div class="infobox warning">
+			当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张当前房源紧张
+		</div>
+
+		<div class="fieldgroup">
+			<div class="fieldrow " >
+				<span  class="first">
+					备注
+				</span>
+				<span class="second">
+					<span class="left" >
+						请务必加床
+					</span>
+				</span>
+				<span class="third detail">
+				</span>
+			</div>
+		</div>
+
+
+
+	</div>
+</div>
+
+
+-->
+
+
+
+<!--酒店详情
+
+
+<div class="content hotel">
+	<div class="showdetail">
+		<div class="header">
+			<p class="hotelname">
+				成都城市名人酒店
+			</p>
+			<p class="roomname">
+				豪华型
+			</p>
+		</div>
+		<div class="basicinfo myflexbox stretch">
+			<div class="equalarea fieldgroup">
+				<div class="fieldrow" >
+					<label  class="fixedfield">
+
+						<span>2008年开业</span>
+						<span class="iconfont icon-wifi"></span>
+						<span class="iconfont icon-park"></span>
+						<span class="iconfont icon-gym"></span>
+						
+					</label>
+					<a href="#" class="dynamicfield textright mr10 color2" >
+						详情
+					</a>
+					<span class="fixedfield" >
+						<span class="iconfont icon-arrow-right">
+						</span>
+					</span>
+				</div>
+				<div class="fieldrow" >
+					<label  class="fixedfield">
+						72%好评
+					</label>
+					<a href="#" class="dynamicfield textright mr10 color2" >
+						44条
+					</a>
+					<span class="fixedfield">
+						<span class="iconfont icon-arrow-right">
+						</span>
+					</span>
+				</div>
+			</div>
+			<div class="fixiedarea">
+				<div class="imgbox">
+					<img  src="images/hotel/hotel3.jpg">
+					</img>
+					<span  class="pictotal font21">
+						2张
+					</span>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="addressinfo clearfix mt30">
+			<span class="address font23">
+				成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号成都市春熙路22号
+			</span>
+			<span class="distance color1 font21">
+				点点滴滴
+			</span>
+		</div>
+
+		<div class="roominfo">
+			<div class="dateinfo font21">
+				<div class="fl item">
+					入住时间
+				</div>
+				<div class="fl item">
+					<input class="qdate"  type="date"  value="2015-01-02">
+				</div>
+				<div class="fl item">
+					<span class="detail"></span>
+				</div>
+
+				<div class="fr item">
+					<span class="detail"></span>
+				</div>
+				<div class="fr item">
+					<input class="qdate" type="date" value="2015-01-02">
+				</div>
+				<div class="fr item">
+					离店时间
+				</div>
+			</div>
+			<div class="roomlist">
+				<div class="item">
+					<img src="images/hotel/hotel3.jpg">
+					<div class="basicinfo">
+						<p class="font23">
+							高级大床房
+						</p>
+						<p class="font17 mt5">
+							含双早
+						</p>
+					</div>
+					<div class="roomtype font17 color2">
+						大床房
+					</div>
+					<div class="price font24">
+						￥60.11
+					</div>
+					<div class="returnimage font21 color-red">
+						19.20
+					</div>
+					<div class="action active font23">
+						预定
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="images/hotel/hotel3.jpg">
+					<div class="basicinfo">
+						<p class="font23">
+							高级大床房
+						</p>
+						<p class="font17 mt5">
+							含双早
+						</p>
+					</div>
+					<div class="roomtype font17 color2">
+						大床房
+					</div>
+					<div class="price font24">
+						￥60.11
+					</div>
+					<div class="returnimage font21  color-red">
+						19.20
+					</div>
+					<div class="action active font23">
+						预定
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+</div>
+-->
+
+
+<!--
+	主页
+
+<div class="content index">
+	<div class="index">
+
+		
+		<a  href="#" class="qcarrousel .clearfix">
+					<ul class="imglist .clearfix">
+						<li>
+							<img src="images/index/banner.png" style="width:100%">
+						</li>
+						<li>
+							<img src="images/index/banner2.png" style="width:100%">
+						</li>
+						<li>
+							<img src="images/index/banner3.png" style="width:100%">
+						</li>
+					</ul>
+					<div class="dotsbox">
+						<div class="dotslist">
+							<div class="dot">
+							
+							</div>
+							<div class="dot active">
+								
+							</div>
+							<div class="dot">
+								
+							</div>
+						</div>
+					</div>
+		</a>
+		
+
+		<div class="justify-box">
+
+			<a class="justify-item" >
+				<img src="images/index/1.png"  width="100%" height="100%">
+			</a>
+			<a class="justify-item" >
+				<img src="images/index/2.png"   width="100%" height="100%">
+			</a>
+
+		</div>
+
+		<ul class="metrobox clearfix">
+		    <li>
+			    <div class="inner">
+					<img src="images/index/3.png" style="width:100%;height:100%" >
+			    </div>
+			</li>
+			<li>
+				<div class="inner">
+					<img src="images/index/4.png" style="width:100%;height:100%">
+				</div>
+		    </li>
+			<li>
+				<div class="inner">
+				<img src="images/index/5.png" style="width:100%;height:100%">
+				</div>
+		    </li>
+		    <li>
+		    	<div class="inner">
+		    		<img src="images/index/6.png" style="width:100%;height:100%">
+		   		</div>
+			</li>
+		</ul>
+
+		<div class="center-box">
+			<div class="switchtabnew myflexbox margin10">
+						<a class="equalarea textcenter active" href="#aaaa">限时抢购</a>
+						<span class="fixiedarea vline"></span>
+						<a class="equalarea textcenter" href="#cccc">今日新品</a>
+			</div>
+		</div>
+
+	
+		<div class="saletodaybox clearfix">
+
+			<div class="item">
+				<img src="images/index/1.png" />
+				<p class="title">
+					标题标题标题标题标题标题标题标题标题标题标题标题
+				</p>
+				<div class="pricewrap">
+					<span class="price">90</span>
+					<span class="baseprice">216</span>
+				</div>
+				<div class="returnwrap">
+					<span class="returnimage "></span>
+					<span class="returnrate money">60%</span>
+					<span class="more"></span>
+				</div>
+
+				<div class="moreinfo up">
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+				</div>
+			</div>
+			
+			<div class="item">
+				<img src="images/index/1.png" />
+				<p class="title">
+					标题标题标题标题标题标题标题标题标题标题标题标题
+				</p>
+				<div class="pricewrap">
+					<span class="price">90</span>
+					<span class="baseprice">216</span>
+				</div>
+				<div class="returnwrap">
+					<span class="returnimage"></span>
+					<span class="returnrate money">60%</span>
+					<span class="more"></span>
+				</div>
+
+				<div class="moreinfo ">
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+				</div>
+			</div>
+			
+		</div>
+
+
+
+		<div class="futuresale">
+			<p class="title">即将开始抢购</p>
+			<div class="goodlist">
+				<div class="good">
+					<img src="images/index/qianggou.jpg">
+					<p class="desc">
+							<span class="money">
+								45.1折
+							</span>
+							四平市的方式答复时代发生地方上帝发誓
+							四平市的方式答复时代发生地方上帝发誓
+							四平市的方式答复时代发生地方上帝发誓
+
+					</p>
+					<div class="buybox clearfix">
+						<div class="left">
+							<div>
+								<span class="price">￥90</span>
+								<span class="baseprice">￥216</span>
+							</div>
+							<div>
+								<span class="returnimage money">50</span>
+								<span class="returnrate">返利比率60%</span>
+							</div>
+						</div>
+						<a href="#" class="buy">
+							立即购买
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="saling">
+			<div class="timebox">
+				<span>
+					距离抢购结束:
+				</span>
+				
+				<div class="timewrap">
+					<span class="days">
+						00
+					</span>
+				</div>
+				<span>
+					天
+				</span>
+				<div class="timewrap">
+					<span class="hours">
+						12
+					</span>
+				</div>
+				<span>
+					时
+				</span>
+				<div class="timewrap">
+					<span class="hours">
+						12
+					</span>
+				</div>
+				<span>
+					分
+				</span>
+			</div>
+			<div class="goodlist">
+				<div class="good">
+					<img src="images/index/qianggou.jpg">
+					<p class="desc">
+							<span class="money">
+								45.1折
+							</span>
+							四平市的方式答复时代发生地方上帝发誓
+							四平市的方式答复时代发生地方上帝发誓
+							四平市的方式答复时代发生地方上帝发誓
+							
+					</p>
+					<div class="buybox clearfix">
+						<div class="left">
+							<div>
+								<span class="price">￥90</span>
+								<span class="baseprice">￥216</span>
+							</div>
+							<div>
+								<span class="returnimage money">50</span>
+								<span class="returnrate">返利比率60%</span>
+							</div>
+						</div>
+						<a href="#" class="buy">
+							立即购买
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="overtime">
+			<div class="timebox">
+				<span>
+				活动已经结束:
+				</span>
+				<div class="timewrap">
+					<span class="days">
+						00
+					</span>
+				</div>
+				<span>
+				天
+				</span>
+				<div class="timewrap">
+					<span class="hours">
+						12
+					</span>
+				</div>
+				<span>
+				时
+				</span>
+				<div class="timewrap">
+					<span class="hours">
+						12
+					</span>
+				</div>
+				<span>
+				分
+				</span>
+			</div>
+			
+			<div class="goodlist">
+				<div class="good">
+					<img src="images/index/qianggou.jpg">
+					<p class="desc">
+							<span class="money">
+								45.1折
+							</span>
+							四平市的方式答复时代发生地方上帝发誓
+							四平市的方式答复时代发生地方上帝发誓
+							四平市的方式答复时代发生地方上帝发誓
+							
+					</p>
+					<div class="buybox clearfix">
+						<div class="left">
+							<div>
+								<span class="price">￥90</span>
+								<span class="baseprice">￥216</span>
+							</div>
+							<div>
+								<span class="returnimage money">50</span>
+								<span class="returnrate">返利比率60%</span>
+							</div>
+						</div>
+						<a href="#" class="buy">
+							立即购买
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+-->
+
+<!--酒店查询
+
+<div class="content  hotel">
+
+	<div class="showsearch pt10">
+
+		<div class="searchbox  clearfix">
+
+			<div class="input-group">
+				<span class="input-group-addons">
+					<lable>&ensp;目的地</span>
+				</span>
+				<input class="formcontrol" placeholder="成都"></input>
+				<span class="input-group-addons">
+					<i  class="iconfont font24">&#xe60a;</i>
+				</span>
+				<span class="input-group-addons">
+					<span class="vline"></span>
+				</span>
+				<span class="input-group-addons">
+					<i  class="iconfont font36 location">&#xe60f;</i>
+					<p class="location font17">我的位置</p>
+				</span>
+			</div>
+			
+			<div class="searchrow time  clearfix detail">
+				<div class="left"> 
+					<div class="timerow">
+							<label>入住时间</label>
+							<input class="qdate" type="date" value="2012-12-12"/>
+							<span class="notice">今日</span>
+						</span>
+					</div>
+					<div class="timerow">
+							<label>离店时间</label>
+							<input class="qdate" type="date" value="2012-12-12"/>
+							<span class="notice">明日</span>
+							<input type="hidden">
+						</span>
+					</div>
+				</div>
+				<div class="right"> 
+					<span>1晚</span>
+					<input type="hidden">
+				</div>
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addons">&ensp;&ensp;关键字</span>
+				<input class="formcontrol" placeholder="aaaaaa"></input>
+				<span class="input-group-addons">
+					<a  class="iconfont font24">&#xe60a;</a>
+				</span>
+			</div>
+			
+			<div class="input-group">
+				<span class="input-group-addons">星级酒店</span>
+				<input class="formcontrol" placeholder="aaaa"></input>
+				<span class="input-group-addons">
+					<a  class="iconfont font24">&#xe60a;</a>
+				</span>
+			</div>
+			
+		</div>
+		<div class="actionbox">
+			<input class="actionbtn" type="button" value="查询"></input>
+		</div>
+
+	</div>
+</div>
+ -->
+
+
+
+<!-- 
+关键字
+
+<div class="content">
+	<div class="popdownpanel show clearfix">
+		<div class="popdownpanel-header area">
+			商圈
+		</div>
+		<div class="popdownpanel-body">
+			<div class="popdownpanel-item">
+				天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场天府广场
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+		</div>
+	</div>
+
+	<div class="popdownpanel hidden clearfix">
+		<div class="popdownpanel-header brand">
+			商圈
+		</div>
+		<div class="popdownpanel-body">
+			<div class="popdownpanel-item">
+				天府广场
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+		</div>
+	</div>
+
+	<div class="popdownpanel hidden clearfix">
+		<div class="popdownpanel-header district">
+			商圈
+		</div>
+		<div class="popdownpanel-body">
+			<div class="popdownpanel-item">
+				天府广场
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+			<div class="popdownpanel-item">
+				春熙路
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+
+<!--酒店列表
+
+<div class="content hotel">
+	<div class="showlist">
+		<div class="justify-box2 header">
+				<div class="left font21">
+					距离：成都市中心
+				</div>
+				<div class="right">
+					<i class="iconfont icon-refresh refreshing font32 ">
+					</i>
+				</div>
+		</div>
+		<div class="listbox">
+
+			<div class="item clearfix  ">
+				<img src="images/hotel/hotel1.jpg">
+				</img>
+				
+				<div class="textleft">
+					<div class="info">
+						成都天赋喜来乐大酒店
+					</div>
+					<div class="line-box small">
+						<span class="score">10.0分</span>
+						<span class="iconfont icon-wifi"></span>
+						<span class="iconfont icon-park"></span>
+						<span class="iconfont icon-gym"></span>
+						<span class="iconfont icon-phone"></span>
+						<span class="iconfont icon-gym"></span>
+						<span class="iconfont icon-restaurant"></span>
+						<span class="iconfont icon-boardroom"></span>
+					</div>
+					<p class="star font17">
+						五星级
+					</p>
+				</div>
+				<div class="textright">
+					<div class="line-box small">
+						<span class="sub">￥</span>
+						<span class="saleprice">58888.8</span>
+						<span class="sub">起</span>
+						<span class="iconfont icon-arrow-right"></span>
+					</div>
+					<div class="line-box small">
+						<span class="highest">最高返</span>
+						<span class="money">288.8</span>
+						<span style="visibility:hidden" class="iconfont icon-arrow-right"></span>
+					</div>
+				</div>
+
+				<div class="address">
+					成都市春熙路附近454号,成都市春熙路附近454号,成都市春熙路附近454号
+				</div>
+				<div class="distance">
+					800米
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+	-->
+
+
+<!--
+酒店搜索-自动完成
+<div class="content">
+    <ul class="listgroup">
+        <li><a type="1" id="undefined">成都天仁大酒店</a></li>
+        <li><a type="1" id="undefined">成都西藏饭店</a></li>
+        <li><a type="1" id="undefined">锦江之星(成都文殊院地铁站店)</a></li>
+        <li><a type="1" id="undefined">成都金玉阳光酒店</a></li>
+        <li><a type="1" id="undefined">成都总府皇冠假日酒店</a></li>
+        <li><a type="1" id="undefined">成都写庭阁圣马罗酒店</a></li>
+        <li><a type="1" id="undefined">成都天府阳光酒店</a></li>
+        <li><a type="2" pointx="104.025532" pointy="30.651306" id="null">A+</a></li>
+        <li><a type="2" pointx="104.039241" pointy="30.645925" id="null">A+</a></li>
+        <li><a type="2" pointx="104.088673" pointy="30.677212" id="null">A+</a></li>
+        <li><a type="2" pointx="104.085791" pointy="30.62977" id="null">A+</a></li>
+        <li><a type="2" pointx="104.089892" pointy="30.655555" id="null">成都A精品公寓（喜年店）</a></li>
+        <li><a type="2" pointx="104.072209" pointy="30.663524" id="null">C&amp;A</a></li>
+        <li><a type="2" pointx="103.677787" pointy="30.636875" id="null">a+教育</a></li>
+    </ul>
+</div>
+-->
+
+
+
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/excanvas.min.js"></script> 
+<![endif]-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/rem.js?curversion=5" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+
+
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+	
+});
+function test(){
+	alert("test");
+}
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+</body>
+</html>

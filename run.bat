@@ -1,3 +1,3 @@
 d:
-cd D:\bxdev\github\nodejshtttpserver
+cd %~dp0
 node http.js
