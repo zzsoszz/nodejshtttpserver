@@ -20,8 +20,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 
-
+<!--
 <link rel="shortcut icon" href="favicon.ico"/>
+-->
+
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <!--
@@ -47,9 +49,9 @@
 </head>
 <body>
 
-<div  ng-controller="parentController">
+<div  ng-controller="ParentController">
     <input ng-model="name" />
-	<div  ng-controller="childController">
+	<div  ng-controller="ChildController">
 			<input ng-model="childname" />
 	</div>
 </div>

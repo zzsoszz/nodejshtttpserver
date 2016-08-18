@@ -6,16 +6,26 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
         templateUrl:"/homepage/index.html"
     });
 });
-mainApp.controller("parentController", function ($scope,$rootScope,$location) {
+mainApp.controller("ParentController", function ($scope,$rootScope,$location) {
 	$scope.name="i am parent!!";
 	$scope.$on('transfername', function(event, data) {  
          $scope.name = data;
          console.log($scope.name);
      });
+    $scope.$watch("name",function(newValue, oldValue)
+    {
+        $scope.$broadcast("transfernameToChild",newValue);
+    });
 });
-mainApp.controller("childController", function ($scope,$rootScope,$location) {
-	$watch();
-	$scope.$emit("transfername",$scope.childname);
+mainApp.controller("ChildController", function ($scope,$rootScope,$location) {
+    $scope.$watch("childname",function(newValue, oldValue)
+    {
+        $scope.$emit("transfername",newValue);
+    });
+
+    $scope.$on('transfernameToChild', function(event, data) {  
+         $scope.childname = data;
+     });
 });
 
 
