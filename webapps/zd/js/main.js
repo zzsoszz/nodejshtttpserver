@@ -1,13 +1,65 @@
-var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad"]);
+var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad",'ui.date','daterangepicker']);
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
     $urlRouterProvider.when("","/index");
     $stateProvider.state("index",{
         url:"/index",
-        templateUrl:"/homepage/index.html"
+        templateUrl:"child.html"
     });
 });
+
+mainApp.config(function($provide){
+    $provide.decorator('ngShowDirective', ['$delegate', function($delegate) {
+        $delegate.shift();
+        return $delegate;
+    }]);
+});
+
+mainApp.directive('pwCheck', [function () {
+    return {
+      require: 'ngModel',
+      link: function (scope, elem, attrs, ctrl) {
+        console.log(ctrl);
+        var firstPassword = '#' + attrs.pwCheck;
+        elem.add(firstPassword).on('keyup', function () {
+          scope.$apply(function () {
+            var v = elem.val()===$(firstPassword).val();
+            ctrl.$setValidity('pwmatch', v);
+          });
+        });
+      }
+    }
+}]);
+
+
+var NG_HIDE_CLASS = 'ng-hide';
+var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
+mainApp.directive('ngShow',['$animate', function($animate) {
+  return {
+    restrict: 'A',
+    multiElement: true,
+    priority: 100,
+    link: function(scope, element, attr) {
+      scope.$watch(attr.ngShow, function ngShowWatchAction(value) {
+        if(value=="true")
+        {
+            value=true;
+        }
+         if(value=="false")
+        {
+            value=false;
+        }
+        $animate[value ? 'removeClass' : 'addClass'](element, NG_HIDE_CLASS, {
+          tempClasses: NG_HIDE_IN_PROGRESS_CLASS
+        });
+      });
+    }
+  };
+}]);
+
 mainApp.controller("ParentController", function ($scope,$rootScope,$location) {
 	$scope.name="i am parent!!";
+    $scope.ishow="true";
+    $scope.datePicker = {startDate: null, endDate: null};
 	$scope.$on('transfername', function(event, data) {  
          $scope.name = data;
          console.log($scope.name);
@@ -16,13 +68,16 @@ mainApp.controller("ParentController", function ($scope,$rootScope,$location) {
     {
         $scope.$broadcast("transfernameToChild",newValue);
     });
+    $scope.submitForm=function(flag)
+    {
+        console.log("submit",flag);
+    };
 });
 mainApp.controller("ChildController", function ($scope,$rootScope,$location) {
     $scope.$watch("childname",function(newValue, oldValue)
     {
         $scope.$emit("transfername",newValue);
     });
-
     $scope.$on('transfernameToChild', function(event, data) {  
          $scope.childname = data;
      });

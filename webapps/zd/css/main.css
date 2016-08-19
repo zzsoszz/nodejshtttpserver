@@ -2399,3 +2399,22 @@ body >  .header{
   padding:0.1rem 0.2rem;
   background:#ffffff;
 }
+
+
+
+.ng-valid{
+  border:1px solid blue;
+}
+.ng-invalid{
+  border:1px solid red;
+}
+
+
+.success{
+  border:1px solid blue;
+}
+.danger{
+  border:1px solid red;
+}
+
+

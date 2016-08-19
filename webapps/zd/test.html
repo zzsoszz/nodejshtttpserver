@@ -32,11 +32,17 @@
 
 
 <link href="css/main.css?v=154" rel="stylesheet" type="text/css"/>
+
+
+<link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.css"/>
+<link rel="stylesheet" href="js/bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+<link rel="stylesheet" href="js/bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 
 
 <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+
 <!-- END PAGE LEVEL PLUGIN STYLES -->
 
 
@@ -46,16 +52,36 @@
 
 
 
+
 </head>
 <body>
 
-<div  ng-controller="ParentController">
-    <input ng-model="name" />
-	<div  ng-controller="ChildController">
-			<input ng-model="childname" />
-	</div>
-</div>
 
+<div  ng-controller="ParentController">
+  <form name="userForm" ng-submit="submitForm(userForm)" novalidate>
+    <div ng-class="{ 'success':userForm.name.$valid, 'danger': userForm.name.$invalid }"  >
+    	{{userForm}}
+    </div>
+    <!--
+    <input type="checkbox" ng-checked="ishow" ng-model="ishow" >
+    -->
+    <input ng-model="name" name="name" ng-required="true" />
+	<div  ng-controller="ChildController"  id="abcd"  ng-show="ishow">
+			<input ng-model="childname" />
+			<input ng-model="password" id="password"  ng-required="password" />
+			<input ng-model="repassword"  pw-check="password" />
+	</div>
+	时间范围
+	<input date-range-picker class="form-control date-picker" type="text"  ng-model="datePicker" />
+	<!--
+	<input ng-model="createdate" ui-date ng-required="name=='1'"  />
+	-->
+	<input type="submit" value="提交"/>
+  </form>
+
+   子页面
+   <div class="mainContent" ui-view></div>
+</div>
 
 
 
@@ -66,15 +92,25 @@
 <script src="js/excanvas.min.js"></script> 
 <![endif]-->
 
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<script src="js/rem.js?curversion=5" type="text/javascript"></script>
 
+<script src="js/rem.js?curversion=5" type="text/javascript"></script>
+<!--
 <script src="js/angular.min.js" type="text/javascript"></script>
 <script src="js/angular-ui-router.min.js"></script>
-<script src="js/ocLazyLoad.min.js"></script><!--angularjs按需加载-->
 
+-->
+
+<script type="text/javascript" src="js/bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="js/bower_components/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/bower_components/angular-ui-date/dist/date.js"></script>
+<script type="text/javascript" src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="js/bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+
+<script src="js/bower_components/moment/moment.js"></script>
+<script src="js/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="js/bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
 <!-- END CORE PLUGINS -->
-
 
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
