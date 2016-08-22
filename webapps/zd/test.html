@@ -62,6 +62,7 @@
     <div ng-class="{ 'success':userForm.name.$valid, 'danger': userForm.name.$invalid }"  >
     	{{userForm}}
     </div>
+	<input type="text" ng-model="ishow2" >
     <input type="checkbox" ng-checked="ishow" ng-model="ishow" >
     <input ng-model="name" name="name" ng-required="true" />
 	<div  ng-controller="ChildController"  id="abcd"  ng-show="ishow">
@@ -74,9 +75,14 @@
 	<!--
 	<input ng-model="createdate" ui-date ng-required="name=='1'"  />
 	-->
+	<br/>
+	姓<input  type="text" ng-model="firstname"   />
+	名<input  type="text" ng-model="lastname"   />
+	全名<input  type="text" ng-model="fullname"   />
+	
 	<input type="submit" value="提交"/>
   </form>
-
+	
    子页面
    <div class="mainContent" ui-view></div>
 </div>

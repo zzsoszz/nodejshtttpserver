@@ -56,9 +56,35 @@ mainApp.directive('ngShow',['$animate', function($animate) {
   };
 }]);
 
-mainApp.controller("ParentController", function ($scope,$rootScope,$location) {
+mainApp.controller("ParentController", function ($scope,$rootScope,$location,$timeout) {
 	$scope.name="i am parent!!";
-    $scope.ishow="true";
+    $scope.ishow=true;
+	$scope.ishow2;
+	$scope.$watch("ishow",function(oldval,newval)
+	{
+		console.log("oldval",oldval);
+		console.log("newval",newval);
+		$scope.ishow2=newval;
+	});
+	
+	$scope.fullname;
+	$scope.firstname;
+	$scope.lastname;
+	$scope.$watch(
+		function (scope){
+			return {firstname:scope.firstname,lastname:scope.lastname};
+		}
+		,function(obj, oldObj)
+		{
+			$timeout(function () {
+				//$timeout used to safely include the asignation inside the angular digest processs
+				console.log(obj);
+				$scope.fullname = obj.firstname + obj.lastname;
+			});
+		}
+		,true
+	);
+	
     $scope.datePicker = {startDate: null, endDate: null};
 	$scope.$on('transfername', function(event, data) {  
          $scope.name = data;
