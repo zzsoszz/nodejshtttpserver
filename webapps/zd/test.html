@@ -62,9 +62,7 @@
     <div ng-class="{ 'success':userForm.name.$valid, 'danger': userForm.name.$invalid }"  >
     	{{userForm}}
     </div>
-    <!--
     <input type="checkbox" ng-checked="ishow" ng-model="ishow" >
-    -->
     <input ng-model="name" name="name" ng-required="true" />
 	<div  ng-controller="ChildController"  id="abcd"  ng-show="ishow">
 			<input ng-model="childname" />
