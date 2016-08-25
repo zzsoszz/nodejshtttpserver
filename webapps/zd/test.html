@@ -58,13 +58,18 @@
 
 
 <div  ng-controller="ParentController">
-  <form name="userForm" ng-submit="submitForm(userForm)" novalidate>
-    <div ng-class="{ 'success':userForm.name.$valid, 'danger': userForm.name.$invalid }"  >
+  <form name="userForm" ng-submit="submitForm(userForm)" novalidate action="/article/headline/add">
+    <div ng-class="{ 'success':userForm.$valid, 'danger': userForm.$invalid }"  >
     	{{userForm}}
     </div>
+    <div ng-class="{ 'success':userForm.name.$valid, 'danger': userForm.name.$invalid }" >
+    	userForm.name.$invalid 
+    </div>
+    <input  type="file" name="imageListFile" ng-model="imageListFile" id="imageListFile" valid-file  ng-required="true"/>
 	<input type="text" ng-model="ishow2" >
     <input type="checkbox" ng-checked="ishow" ng-model="ishow" >
-    <input ng-model="name" name="name" ng-required="true" />
+    时间<input type="text" ng-model="createdate" ng-required="true" ui-date >
+    <input ng-model="name" name="name" ng-maxlength=5 ng-pattern="/^[a-zA-Z]*$/"   ng-required="true" />
 	<div  ng-controller="ChildController"  id="abcd"  ng-show="ishow">
 			<input ng-model="childname" />
 			<input ng-model="password" id="password"  ng-required="password" />
@@ -82,7 +87,6 @@
 	
 	<input type="submit" value="提交"/>
   </form>
-	
    子页面
    <div class="mainContent" ui-view></div>
 </div>

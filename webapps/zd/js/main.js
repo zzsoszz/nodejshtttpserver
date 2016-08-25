@@ -29,7 +29,20 @@ mainApp.directive('pwCheck', [function () {
       }
     }
 }]);
-
+mainApp.directive('validFile',function(){
+  return {
+    require:'ngModel',
+    link:function(scope,el,attrs,ngModel){
+      //change event is fired when file is selected
+      el.bind('change',function(){
+        scope.$apply(function(){
+          ngModel.$setViewValue(el.val());
+          ngModel.$render();
+        });
+      });
+    }
+  }
+});
 
 var NG_HIDE_CLASS = 'ng-hide';
 var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
@@ -97,6 +110,7 @@ mainApp.controller("ParentController", function ($scope,$rootScope,$location,$ti
     $scope.submitForm=function(flag)
     {
         console.log("submit",flag);
+        return true;
     };
 });
 mainApp.controller("ChildController", function ($scope,$rootScope,$location) {
