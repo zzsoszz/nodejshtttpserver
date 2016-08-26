@@ -369,6 +369,7 @@ a:hover {
 
 
 
+
 .qinputgroup {
   margin:0.10rem 0;
   position: relative;
@@ -1180,47 +1181,6 @@ label{
 
 
 
-
-
-.panel{
-  background:#ffffff;
-}
-.panel > .header{
-  font-size:0.2667rem;
-  padding: 0.20rem;
-}
-.panel > .body{
-  padding: 0.20rem;
-}
-
-.panel.info > .header{
-  background:#ebebeb;
-}
-.panel.info > .body{
-  background:#d5d5d5;
-}
-
-.panel.transparent{
-  background-color:transparent;
-}
-.panel.transparent > .header{
-  background-color:transparent;
-}
-.panel.transparent > .body{
-  background-color:transparent;
-}
-
-.panel.input-panel > .body{
-  padding:0 0 0 0.20rem;
-  border-top:3px solid #d5d5d5;
-  border-bottom:3px solid #d5d5d5;
-}
-.panel.input-panel  > .body .input-group{
-  margin:0;
-}
-.panel.input-panel  > .body .input-group:not(:last-child) {
-  border-bottom:2px  solid #d5d5d5;
-}
 
 .switchtab{
   border:1px solid #d5d5d5;
