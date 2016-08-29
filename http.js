@@ -31,7 +31,9 @@ var server = http.createServer(function (request, response) {
                     var contentType = mine[ext] || "text/plain";
                     response.writeHead(200, {
                         'Content-Type': contentType,
-                        "Access-Control-Allow-Origin":"http://localhost:8888"
+                        "Access-Control-Allow-Origin":"http://localhost:8888",
+                        "Access-Control-Allow-Methods":"POST, GET, OPTIONS",
+                        "Access-Control-Max-Age": "1000"
                     });
                     response.write(file, "binary");
                     response.end();
