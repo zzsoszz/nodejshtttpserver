@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="plugin.css">
+  <script src="jquery-1.10.2.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="plugin.js"></script>
+  <script>
+    var mainApp=angular.module("mainApp",["qui"]);
+    mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+    	
+    });
+</script>
+
+
+<style>
+
+</style>
+</head>
+<body ng-app="mainApp">
+	<div ng-controller="mainController" id="mainController">
+		<input id="name" type="text"  name="mode" ng-model="mode" qgroupselect />
+	</div>
+</body>
+</html>

@@ -79,7 +79,7 @@ mainApp.controller("ParentController", function ($scope,$rootScope,$location,$ti
 		console.log("newval",newval);
 		$scope.ishow2=newval;
 	});
-	
+	$scope.createdate=new Date();
 	$scope.fullname;
 	$scope.firstname;
 	$scope.lastname;

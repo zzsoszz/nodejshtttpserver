@@ -1,0 +1,9 @@
+.qselectgroup{
+
+}
+.ng-invalid{
+	border-color: lightpink;
+}
+.ng-valid{
+	border-color: green;
+}
