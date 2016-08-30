@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="plugin.css">
+  <script src="jquery-1.10.2.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="plugin.js"></script>
+  <script>
+  	
+  	$(document).ready(function(){
+  		 
+  	   $("#username").qdropdownselect({dropDownSelectEle:$(".qdropdownselectTemp")});
+       $("#username").on("qdropdownselect.change",function(event,val){
+           $("#username").val(val);
+       });
+       $("#username").qdropdownselect("setValue","2");
+       $("#username2").qdropdownselect({dropDownSelectEle:$(".qdropdownselectTemp")});
+       $("#username2").on("qdropdownselect.change",function(event,val){
+           $("#username2").val(val);
+       });
+       $("#username2").qdropdownselect("setValue",4);
+       
+
+  	});
+
+  </script>
+
+<style>
+  .active{
+    background:blue;
+  }
+  .qdropdownselect{
+	background:#ffffff;
+	border: 1px solid #ccc;
+	line-height:20px;
+	height:300px;
+	overflow:scroll;
+  }
+  .qdropdownselect .qitem:hover{
+	background:#999999;
+  }
+</style>
+</head>
+<body ng-app="">
+
+
+<input id="username"  autocomplete="off" qdropdownselect />
+<input id="username2"  autocomplete="off" qdropdownselect />
+
+
+<div class="qdropdownselect qdropdownselectTemp"  style="display:none">
+    <div class="qitem"  data-qvalue="1">
+      1
+    </div>
+    <div class="qitem"  data-qvalue="2">
+      2
+    </div>
+    <div class="qitem"  data-qvalue="3">
+      3
+    </div>
+    <div class="qitem"  data-qvalue="4">
+      4
+    </div>
+	<div class="qitem"  data-qvalue="1">
+      1
+    </div>
+    <div class="qitem"  data-qvalue="2">
+      2
+    </div>
+    <div class="qitem"  data-qvalue="3">
+      3
+    </div>
+    <div class="qitem"  data-qvalue="4">
+      4
+    </div>
+	<div class="qitem"  data-qvalue="1">
+      1
+    </div>
+    <div class="qitem"  data-qvalue="2">
+      2
+    </div>
+    <div class="qitem"  data-qvalue="3">
+      3
+    </div>
+    <div class="qitem"  data-qvalue="4">
+      4
+    </div>
+	<div class="qitem"  data-qvalue="1">
+      1
+    </div>
+    <div class="qitem"  data-qvalue="2">
+      2
+    </div>
+    <div class="qitem"  data-qvalue="3">
+      3
+    </div>
+    <div class="qitem"  data-qvalue="4">
+      4
+    </div>
+	<div class="qitem"  data-qvalue="1">
+      1
+    </div>
+    <div class="qitem"  data-qvalue="2">
+      2
+    </div>
+    <div class="qitem"  data-qvalue="3">
+      3
+    </div>
+    <div class="qitem"  data-qvalue="4">
+      4
+    </div>
+	 <div class="qitem"  data-qvalue="1">
+      1
+    </div>
+    <div class="qitem"  data-qvalue="2">
+      2
+    </div>
+    <div class="qitem"  data-qvalue="3">
+      3
+    </div>
+    <div class="qitem"  data-qvalue="4">
+      4
+    </div>
+</div>
+
+
+</body>
+</html>

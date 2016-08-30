@@ -1,0 +1,37 @@
+.qpager {
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.qpager .qpagerui{
+	width:300px;
+	line-height:14px;
+	vertical-align:top;
+}
+.qpager .qpagerui  li {
+    display: inline;
+    float: left;
+    padding-left: 0;
+    margin: 0px 5px;
+    cursor: hand;
+    cursor: pointer;
+}
+.qpager .qpagerui .active {
+    background:#336699;
+}
+.qpager .qpagerui .ellipsis {
+	
+}
+.qpager .qpagerui ul{
+	overflow: hidden;
+	padding:5px 0;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+.qpager .qpagerui ul li{
+	height:14px;
+	line-height:14px;
+}
+.qpager div{
+	float:left;
+}

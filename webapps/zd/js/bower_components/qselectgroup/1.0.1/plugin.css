@@ -1,5 +1,17 @@
 .qselectgroup{
-
+	position:fixed;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+	z-index:3;
+	background:#ffffff;
+	padding:10px;
+	background-color: #cccccc;
+}
+.qselectgroup .qselectgroup-inner{
+	padding:20px;
+	background-color: #ffffff;
 }
 .ng-invalid{
 	border-color: lightpink;
