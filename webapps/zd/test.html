@@ -51,8 +51,6 @@
 <!-- END THEME STYLES -->
 
 
-
-
 </head>
 <body>
 
@@ -115,6 +113,8 @@
 <script type="text/javascript" src="js/bower_components/angular-ui-date/dist/date.js"></script>
 <script type="text/javascript" src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script type="text/javascript" src="js/bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+<script type="text/javascript" src="js/bower_components/qdropdownselect/1.0.2/plugin.js"></script>
+
 
 <script src="js/bower_components/moment/moment.js"></script>
 <script src="js/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -124,6 +124,75 @@
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script src="js/main.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+		
+
+	mainApp.controller("ParentController", function ($scope,$rootScope,$location,$timeout) {
+		$scope.name="i am parent!!";
+	    $scope.ishow=true;
+		$scope.ishow2;
+		$scope.$watch("ishow",function(oldval,newval)
+		{
+			console.log("oldval",oldval);
+			console.log("newval",newval);
+			$scope.ishow2=newval;
+		});
+		$scope.createdate=new Date();
+		$scope.fullname;
+		$scope.firstname;
+		$scope.lastname;
+		$scope.$watch(
+			function (scope){
+				return {firstname:scope.firstname,lastname:scope.lastname};
+			}
+			,function(obj, oldObj)
+			{
+				$timeout(function () {
+					//$timeout used to safely include the asignation inside the angular digest processs
+					console.log(obj);
+					$scope.fullname = obj.firstname + obj.lastname;
+				});
+			}
+			,true
+		);
+		
+	    $scope.datePicker = {startDate: null, endDate: null};
+		$scope.$on('transfername', function(event, data) {  
+	         $scope.name = data;
+	         console.log($scope.name);
+	     });
+	    $scope.$watch("name",function(newValue, oldValue)
+	    {
+	        $scope.$broadcast("transfernameToChild",newValue);
+	    });
+	    $scope.submitForm=function(flag)
+	    {
+	        console.log("submit",flag);
+	        return true;
+	    };
+	});
+	mainApp.controller("ChildController", function ($scope,$rootScope,$location) {
+	    $scope.$watch("childname",function(newValue, oldValue)
+	    {
+	        $scope.$emit("transfername",newValue);
+	    });
+	    $scope.$on('transfernameToChild', function(event, data) {  
+	         $scope.childname = data;
+	     });
+	});
+
+
+
+	/*
+	var debugscript=$("<script>").attr("src","http://192.168.1.213:8080/target/target-script-min.js#anonymous");
+	$("body").css("-webkit-text-size-adjust","100%");
+	$("head").append(debugscript);
+	*/
+
+
+</script>>
+
 <!-- END PAGE LEVEL PLUGINS -->
 
 

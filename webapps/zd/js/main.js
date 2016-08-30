@@ -1,4 +1,4 @@
-var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad",'ui.date','daterangepicker']);
+var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad",'ui.date','daterangepicker','qui']);
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
     $urlRouterProvider.when("","/index");
     $stateProvider.state("index",{
@@ -68,66 +68,4 @@ mainApp.directive('ngShow',['$animate', function($animate) {
     }
   };
 }]);
-
-mainApp.controller("ParentController", function ($scope,$rootScope,$location,$timeout) {
-	$scope.name="i am parent!!";
-    $scope.ishow=true;
-	$scope.ishow2;
-	$scope.$watch("ishow",function(oldval,newval)
-	{
-		console.log("oldval",oldval);
-		console.log("newval",newval);
-		$scope.ishow2=newval;
-	});
-	$scope.createdate=new Date();
-	$scope.fullname;
-	$scope.firstname;
-	$scope.lastname;
-	$scope.$watch(
-		function (scope){
-			return {firstname:scope.firstname,lastname:scope.lastname};
-		}
-		,function(obj, oldObj)
-		{
-			$timeout(function () {
-				//$timeout used to safely include the asignation inside the angular digest processs
-				console.log(obj);
-				$scope.fullname = obj.firstname + obj.lastname;
-			});
-		}
-		,true
-	);
-	
-    $scope.datePicker = {startDate: null, endDate: null};
-	$scope.$on('transfername', function(event, data) {  
-         $scope.name = data;
-         console.log($scope.name);
-     });
-    $scope.$watch("name",function(newValue, oldValue)
-    {
-        $scope.$broadcast("transfernameToChild",newValue);
-    });
-    $scope.submitForm=function(flag)
-    {
-        console.log("submit",flag);
-        return true;
-    };
-});
-mainApp.controller("ChildController", function ($scope,$rootScope,$location) {
-    $scope.$watch("childname",function(newValue, oldValue)
-    {
-        $scope.$emit("transfername",newValue);
-    });
-    $scope.$on('transfernameToChild', function(event, data) {  
-         $scope.childname = data;
-     });
-});
-
-
-
-/*
-var debugscript=$("<script>").attr("src","http://192.168.1.213:8080/target/target-script-min.js#anonymous");
-$("body").css("-webkit-text-size-adjust","100%");
-$("head").append(debugscript);
-*/
 
