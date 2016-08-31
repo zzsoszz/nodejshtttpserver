@@ -6,15 +6,19 @@
 			<input type="text" ng-model="data.startTime"    />
 			<input type="text" ng-model="data.typeId"    />
 			<input type="submit" value="搜索" >
-			<table>
+		</form>
+		<table>
 				<tr ng-repeat='item in reponsedata'>
 					<td>{{item.name}}</td>
 					<td>{{item.typeName}}</td>
 					<td><input type="button" value="选择" ng-click="addToSelected(item)"></td>
 				</tr>
-			</table>
-		</form>
+		</table>
+		<div qpager ng-model="qpageroptions">
+    	</div>
 	</div>
 </div>
+<!--
 <div id="shade" style="opacity: 0.5; height: 1113px; width: 100%; position: absolute; z-index: 2; top: 0px; background-color: rgb(0, 0, 0);">
 </div>
+-->

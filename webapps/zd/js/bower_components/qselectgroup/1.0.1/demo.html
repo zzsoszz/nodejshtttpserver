@@ -19,11 +19,19 @@
   <link  rel="stylesheet" href="../../../bower_components/qdropdownselect/1.0.2/plugin.css">
   <script src="../../../bower_components/qdropdownselect/1.0.2/plugin.js"></script>
   
+  <link  rel="stylesheet" href="../../../bower_components/qpager/1.0.1/plugin.css">
+  <script src="../../../bower_components/qpager/1.0.1/plugin.js"></script>
+
+
   <script src="plugin.js"></script>
   <script src="../../../main.js"></script>
   <script>
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
-    	
+    	$scope.qpageroptions={
+        totalPage:50,
+        initPage:1,
+        currentPage:1
+      };
     });
   </script>
 
@@ -38,7 +46,12 @@
 	<div ng-controller="mainController" id="mainController">
 		<input id="name" type="text"  name="mode" ng-model="mode" qgroupselect />
     <input id="name2" type="text"  name="mode2" ng-model="mode2" qdropdownselect qdropdownselecttemp="#qdropdownselect1" />
+
+
+  
+
 	</div>
+
 
   <div id="qdropdownselect1" class="qdropdownselect" style="display:none"  >
         <div class="qitem" ng-repeat="item in items" data-qvalue="{{item.name}}"  >
