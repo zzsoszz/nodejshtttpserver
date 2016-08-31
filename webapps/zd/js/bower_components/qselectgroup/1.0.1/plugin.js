@@ -38,14 +38,14 @@ if(angular && angular.module)
 					 	$scope.search();
 					 }
 				  });
-			      
+
 				  $scope.addToSelected=function(item){
 					  console.log("item",item);
 					  $scope.selectedItem=item;
 					  $element.controller("ngModel").$setViewValue(item.id);
 					  $element.controller("ngModel").$render();
 				  };
-
+				  
 				  $scope.search=function(form)
 			      {
 			      		console.log($scope.qgroupselectLayerEle);
@@ -68,6 +68,7 @@ if(angular && angular.module)
 						     }
 						});
 			       };
+			       
 				},
 				link: function(scope, element, attrs) {
 
