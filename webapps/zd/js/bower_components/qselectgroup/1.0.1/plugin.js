@@ -23,12 +23,29 @@ if(angular && angular.module)
 				  	pageNo:1,
 				  	pageSize:5
 				  };
+
+				  $scope.qpageroptions={
+			        totalpage:0,
+			        currentpage:1
+			      };
+
+			      $scope.$watch("qpageroptions.currentpage",function(newval,oldval)
+				  {
+					 console.log("pagechange:",newval);
+					 $scope.data.pageNo=newval;
+					 if($scope.qpageroptions.totalpage!=0)
+					 {
+					 	$scope.search();
+					 }
+				  });
+			      
 				  $scope.addToSelected=function(item){
 					  console.log("item",item);
 					  $scope.selectedItem=item;
 					  $element.controller("ngModel").$setViewValue(item.id);
 					  $element.controller("ngModel").$render();
 				  };
+
 				  $scope.search=function(form)
 			      {
 			      		console.log($scope.qgroupselectLayerEle);
@@ -45,11 +62,11 @@ if(angular && angular.module)
 						     	$scope.$apply(function()
 						     	{
 						     		$scope.reponsedata=data.json.list;
-						     		console.log($scope.reponsedata);
+						     		$scope.qpageroptions.totalpage=Math.ceil(data.json.count/$scope.data.pageSize);
+						     		//console.log($scope.reponsedata);
 						     	});
 						     }
 						});
-
 			       };
 				},
 				link: function(scope, element, attrs) {
@@ -60,12 +77,10 @@ if(angular && angular.module)
 					  var v = angular.element(viewFn).hide();
 					  scope.qgroupselectLayerEle=v;
 					  scope.ele=element;
-
 					  scope.ele.on("click",$.proxy(function(event){
 							event.preventDefault();
 							this.qgroupselectLayerEle.show();
 					  },scope));
-
 					  $(document).on("click",$.proxy(function(event){
 					  		console.log(event.target,$(event.target).closest(".qselectgroup"));
 							if(event.target!=this.ele.get(0) && $(event.target).closest(".qselectgroup").length  < 1) 

@@ -133,40 +133,38 @@
 		{
 			this.pager;
 			this.options;
-			this.prev=function()
+			this.prev=function(event)
 			{
+				event.stopPropagation();
 				this.pager.prev();
 				this.render();
-				
 				//notify change
 				if(this.options.pagechange!=undefined)
 				{
-					this.options.pagechange.call(this,this.pager.curpage);
+					this.options.pagechange.call(this,parseInt(this.pager.curpage));
 				}
 			};
-			this.next=function()
+			this.next=function(event)
 			{
+				event.stopPropagation();
 				this.pager.next();
 				this.render();
-				
 				//notify change
 				if(this.options.pagechange!=undefined)
 				{
-					this.options.pagechange.call(this,this.pager.curpage);
+					this.options.pagechange.call(this,parseInt(this.pager.curpage));
 				}
 			};
-			this.turn=function()
+			this.turn=function(event)
 			{
-				var e = arguments[0] || window.event;
-				var target = e.srcElement ? e.srcElement : e.target;
-				var page=$(target).closest(".qpager").find(".page");
+				event.stopPropagation();
+				var page=$(event.target).closest(".qpager").find(".page");
 				this.pager.go(page.val());
 				this.render();
-				
 				//notify change
 				if(this.options.pagechange!=undefined)
 				{
-					this.options.pagechange.call(this,this.pager.curpage);
+					this.options.pagechange.call(this,parseInt(this.pager.curpage));
 				}
 			};
 			this.render=function()
@@ -192,9 +190,9 @@
 			};
 			this.init=function(initoptions)
 			{
-				this.options=initoptions;
+				this.options=$.extend({},this.options,initoptions);
 				this.pager=new Pager(this.options.totalpage);
-				this.pager.go(this.options.initpage);
+				this.pager.go(this.options.currentpage);
 				this.render();
 				target.find(".prev").off().click($.proxy(this.prev,this));
 				target.find(".next").off().click($.proxy(this.next,this));
@@ -235,12 +233,12 @@ if(angular!=undefined  && angular.module)
 		        	var qpageroptions=scope[attrs["ngModel"]];
 		        	element.qpager(
 						{
-							totalpage:qpageroptions.totalPage,initpage:qpageroptions.initPage,
+							totalpage:qpageroptions.totalpage,initpage:qpageroptions.currentpage,
 							pagechange:function(page)
 							{
 								console.log(page);
 								scope.$apply(function() {
-									qpageroptions.currentPage=page;
+									qpageroptions.currentpage=page;
 								});
 								/*
 								scope.$apply(function() {
@@ -251,11 +249,19 @@ if(angular!=undefined  && angular.module)
 							}
 						}
 					);
+					scope.$watchCollection(attrs["ngModel"],function(newval,oldval)
+					{
+						console.log("qpageroptions:",newval);
+						element.qpager(newval);
+					});
+					/*
 		        	attrs.$observe('ngModel', function(value) {
 				     　　var newval=scope[value];
 				     　　console.log('qpager ngModel:'+value+' has changed value to ', newval);
+				     	 element.qpager(newval);
 				 　 });
 		        	console.log("qpageroptions",qpageroptions);
+		        	*/
 		        }
 		    };
 		}]
