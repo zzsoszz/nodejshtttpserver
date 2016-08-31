@@ -12,7 +12,7 @@ if(angular && angular.module)
 	            restrict: 'A',
 	            priority: 1,
 	            require: '?ngModel',
-	            controller: function($scope,$element) {
+	            controller: function($scope,$element,$attrs) {
 	              $scope.qgroupselectLayerEle;
 				  $scope.reponsedata=[];
 				  $scope.data={
@@ -42,8 +42,11 @@ if(angular && angular.module)
 				  $scope.addToSelected=function(item){
 					  console.log("item",item);
 					  $scope.selectedItem=item;
-					  $element.controller("ngModel").$setViewValue(item.id);
-					  $element.controller("ngModel").$render();
+					  //$element.controller("ngModel").$setViewValue(item.id);
+					  //$element.controller("ngModel").$render();
+					  //$scope.
+					  $scope[$attrs["ngModel"]]=$scope.selectedItem;
+					  console.log("$scope",$scope[$attrs["ngModel"]]);
 				  };
 				  
 				  $scope.search=function(form)
@@ -68,7 +71,7 @@ if(angular && angular.module)
 						     }
 						});
 			       };
-			       
+
 				},
 				link: function(scope, element, attrs) {
 
