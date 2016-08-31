@@ -26,7 +26,6 @@
 				}
 			);
 		}
-		
 		function QPager(target)
 		{
 			this.pager;
@@ -100,12 +99,61 @@
 				target.find(".qpagerui").off().on('click', 'li',
 					function(event)
 					{
-						var page=$(target).closest(".qpager").find(".page");
+						var page=$(event.target).closest(".qpager").find(".page");
 						page.val($(event.target).text());
-						$(target).closest(".qpager").find(".turn").click();
+						$(event.target).closest(".qpager").find(".turn").click();
 					}
 				);
 			};
 		}
 }
 )(jQuery);
+
+
+
+
+if(angular!=undefined  && angular.module)
+{
+	var qui;
+	try{
+		qui=angular.module("qui")
+	}catch(e)
+	{
+		qui=angular.module("qui",[]);
+	}
+	qui.directive('qpager',[function() {
+	    return {
+		        restrict: 'A',
+		        priority: 100,
+		        require: '?ngModel',
+		        templateUrl:'plugin.html',
+		        link: function(scope, element, attrs,ngModelController) {
+		        	var qpageroptions=scope[attrs["ngModel"]];
+		        	element.qpager(
+						{
+							totalpage:qpageroptions.totalPage,initpage:qpageroptions.initPage,
+							pagechange:function(page)
+							{
+								console.log(page);
+								scope.$apply(function() {
+									qpageroptions.currentPage=page;
+								});
+								/*
+								scope.$apply(function() {
+					                   controller.$setViewValue(val);
+					                   controller.$render();
+					            });
+					            */
+							}
+						}
+					);
+		        	attrs.$observe('ngModel', function(value) {
+				     　　var newval=scope[value];
+				     　　console.log('qpager ngModel:'+value+' has changed value to ', newval);
+				 　 });
+		        	console.log("qpageroptions",qpageroptions);
+		        }
+		    };
+		}]
+	);
+}
