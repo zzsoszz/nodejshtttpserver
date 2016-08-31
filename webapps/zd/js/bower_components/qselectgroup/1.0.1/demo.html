@@ -16,6 +16,10 @@
   <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
   <script type="text/javascript" src="../../../bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
 
+  <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../../../bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+  <link rel="stylesheet" href="../../../bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+
   <link  rel="stylesheet" href="../../../bower_components/qdropdownselect/1.0.2/plugin.css">
   <script src="../../../bower_components/qdropdownselect/1.0.2/plugin.js"></script>
   
@@ -39,9 +43,10 @@
 </style>
 </head>
 <body ng-app="mainApp">
+
 	<div ng-controller="mainController" id="mainController">
 		<div id="name" type="text"  name="mode" ng-model="mode" qgroupselect>
-      选择{{mode.id}}
+      选择{{mode.id}}:{{mode.name}}
     </div>
     <input id="name2" type="text"  name="mode2" ng-model="mode2" qdropdownselect qdropdownselecttemp="#qdropdownselect1" />
 	</div>
@@ -51,7 +56,13 @@
         <div class="qitem" ng-repeat="item in items" data-qvalue="{{item.name}}"  >
             {{item.name}}
         </div>
- </div>
+  </div>
+
+  <div id="qdropdownselect2" class="qdropdownselect" style="display:none"  >
+        <div class="qitem" ng-repeat="item in items" data-qvalue="{{item.name}}"  >
+            {{item.name}}
+        </div>
+  </div>
 
 </body>
 </html>

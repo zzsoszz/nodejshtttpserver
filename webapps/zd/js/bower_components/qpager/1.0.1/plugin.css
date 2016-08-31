@@ -2,9 +2,7 @@
     border-radius: 4px;
     display: inline-block;
 }
-
 .qpager .qpagerui{
-	width:300px;
 	line-height:14px;
 	vertical-align:top;
 }

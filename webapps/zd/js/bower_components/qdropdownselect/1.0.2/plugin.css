@@ -4,7 +4,7 @@
     line-height:20px;
     height:300px;
     overflow:scroll;
-    z-index:1;
+    z-index:3;
   }
   .qdropdownselect .active{
     background:blue;
