@@ -126,8 +126,13 @@
 <script src="js/main.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-		
-
+	mainApp.config(function ($stateProvider,$urlRouterProvider) {
+		$urlRouterProvider.when("","/index");
+		$stateProvider.state("index",{
+			url:"/index",
+			templateUrl:"child.html"
+		});
+	});
 	mainApp.controller("ParentController", function ($scope,$rootScope,$location,$timeout) {
 		$scope.name="i am parent!!";
 	    $scope.ishow=true;

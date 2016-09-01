@@ -1,12 +1,4 @@
 var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad",'ui.date','daterangepicker','qui']);
-mainApp.config(function ($stateProvider,$urlRouterProvider) {
-    $urlRouterProvider.when("","/index");
-    $stateProvider.state("index",{
-        url:"/index",
-        templateUrl:"child.html"
-    });
-});
-
 mainApp.config(function($provide){
     $provide.decorator('ngShowDirective', ['$delegate', function($delegate) {
         $delegate.shift();
