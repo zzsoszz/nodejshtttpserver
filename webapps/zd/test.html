@@ -56,7 +56,7 @@
 
 
 <div  ng-controller="ParentController">
-  <form name="userForm" ng-submit="submitForm(userForm)" novalidate action="/article/headline/add">
+  <form name="userForm" ng-submit="submitForm(userForm,$event)" novalidate action="/article/headline/add">
     <div ng-class="{ 'success':userForm.$valid, 'danger': userForm.$invalid }"  >
     	{{userForm}}
     </div>
@@ -166,10 +166,12 @@
 	    {
 	        $scope.$broadcast("transfernameToChild",newValue);
 	    });
-	    $scope.submitForm=function(flag)
+	    $scope.submitForm=function(flag,$event)
 	    {
+	    	$event.preventDefault();
+	    	return false;
 	        console.log("submit",flag);
-	        return true;
+	        return false;
 	    };
 	});
 	mainApp.controller("ChildController", function ($scope,$rootScope,$location) {
