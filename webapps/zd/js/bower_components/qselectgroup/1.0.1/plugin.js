@@ -11,6 +11,7 @@ if(angular && angular.module)
 	        return {
 	            restrict: 'A',
 	            priority: 1,
+	            scope:true,
 	            require: '?ngModel',
 	            controller: function($scope,$element,$attrs) {
 	              $scope.qgroupselectLayerEle;
@@ -56,7 +57,7 @@ if(angular && angular.module)
 				      	console.log("params:",params);
 				      	$.ajax({
 				      	 	 type: "POST",
-						     url: "http://localhost:8888/group/list",
+						     url: "http://localhost:3000/zd/js/bower_components/qselectgroup/1.0.1/test.json",
 						     data:params,
 						     crossDomain:true,
 						     dataType: 'json',
@@ -78,7 +79,7 @@ if(angular && angular.module)
 				  $templateRequest("plugin.html", false).then(
 					function(viewFn) {
 
-					  var v = angular.element(viewFn).hide();
+					  var v = angular.element(viewFn).attr("id","qgroupselectLayerEle_"+$.guid).hide();
 					  scope.qgroupselectLayerEle=v;
 					  scope.ele=element;
 					  scope.ele.on("click",$.proxy(function(event){
