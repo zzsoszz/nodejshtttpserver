@@ -185,7 +185,7 @@
 					}
 					ulele.append(liele);
 				}
-				ulele.addClass("pagination");
+				ulele.addClass("qpagination");
 				target.find(".qpagerui").empty().append(ulele);
 			};
 			this.init=function(initoptions)

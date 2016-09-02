@@ -31,6 +31,7 @@
   <script src="../../../main.js"></script>
   <script>
 	mainApp.config(function ($stateProvider,$urlRouterProvider) {
+    
     $urlRouterProvider.when("","/child");
 		$stateProvider.state("child",{
 			url:"/child",
@@ -39,7 +40,7 @@
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load({
                     name: "child",
-                    files: ["/zd/js/bower_components/qselectgroup/1.0.1/child.js"]
+                    files: ["/zd/js/bower_components/qselectsponsor/1.0.1/child.js"]
                 })
             }]
      } 
@@ -63,7 +64,13 @@
   
   <div ng-controller="mainController" id="mainController">
 		<input id="name2" type="text"  name="mode2" ng-model="mode2" qdropdownselect qdropdownselecttemp="#qdropdownselect1" />
-		<div class="mainContent" ui-view></div>
+   <div id="name2" type="text"  name="mode2" ng-model="mode2" qselectsponsor class="qselectsponsortarget">
+  parent选择{{mode2.id}}:{{mode2.name}}
+  </div>
+
+	<hr/>
+  child	
+  <div class="mainContent" ui-view></div>
   </div>
   
 

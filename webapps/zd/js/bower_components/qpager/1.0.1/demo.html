@@ -14,7 +14,7 @@
 		{
 			$(".qpager").qpager(
 				{
-					totalpage:57,currentpage:1,
+					totalpage:57,initpage:1,
 					pagechange:function(page)
 					{
 						console.log(page);
@@ -24,7 +24,7 @@
 			
 			$(".qpager").qpager(
 				{
-					totalpage:25,currentpage:2,
+					totalpage:25,initpage:2,
 					pagechange:function(page)
 					{
 						console.log(page);
@@ -42,18 +42,15 @@
 
 <body>
 
-	<div class="qpager">
-		<div>
-			<button class="prev">&lt;&lt;</button>
-		</div>
-		<div class="qpagerui">
-		</div>
-		<div>
-			<button class="next">&gt;&gt;</button>
-			<input class="page"   />
-			<button class="turn">跳转</button>
-		</div>
-	</div>
+<div class="qpager">
+    <div class="prev">&lt;</div>
+    <div class="qpagerui">
+    </div>
+    <div class="next">&gt;</div>
+    <input class="page" />
+    <div class="turn">跳</div>
+</div>
+
 	
 </body>
 </html>
