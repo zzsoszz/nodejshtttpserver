@@ -29,36 +29,11 @@
 
     var mainApp=angular.module("mainApp",["qui"]);
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
-      $scope.username="2";
+      $scope.item={
+        value:'北京'
+      };
       $scope.password;
       $scope.items=[{"name":"北京","sub":[{"name":"东城区"},{"name":"西城区"},{"name":"崇文区"}]},{"name":"北京222","sub":[{"name":"东城区222"},{"name":"西城区22"},{"name":"崇文区222"}]}];
-     
-      $scope.your={
-      	province:"",
-      	city:""
-      };
-      $scope.citys;
-      $scope.$watch(function(){
-      	
-      	var v=$($scope.items).filter(function(index)
-      	{
-      		console.log($scope.your);
-      		if(this.name==$scope.your.province)
-      		{
-				return true;
-      		}
-      	}).map(function(){
-      		return this.sub;
-      	});
-      	$scope.citys=v.get();
-	  });
-
-      $scope.addProvice=function()
-      {
-      	var item={"name":"北京","sub":[{"name":"东城区"},{"name":"西城区"},{"name":"崇文区"}]};
-      	$scope.items.push(item);
-      };
-
     });
   </script>
 
@@ -70,33 +45,20 @@
 
 	<div ng-controller="mainController" id="mainController">
 
-    <div  autocomplete="off" qdropdownselect  class="qdropdownselecttarget" ng-model="username"  qdropdownselecttemp="#qdropdownselect3"   >
-        <input    ng-model="username" />
-    </div>
-    
-		<input  autocomplete="off" qdropdownselect   ng-model="your.province"  qdropdownselecttemp="#qdropdownselect1" />
-		<input  autocomplete="off" qdropdownselect   ng-model="your.city" qdropdownselecttemp="#qdropdownselect2"/>
-    
-		<input  type="button" ng-click="addProvice" value="添加"/>
-		<div id="qdropdownselect1" class="qdropdownselect" style="display:none">
-		    <div class="qitem" ng-repeat="item in items" data-qvalue="{{item.name}}"  >
-		        {{item.name}}
-		    </div>
-		</div>
-
-		<div id="qdropdownselect2" class="qdropdownselect" style="display:none">
-		    <div class="qitem" ng-repeat="item in citys" data-qvalue="{{item.name}}"  >
-		        {{item.name}}
-		    </div>
-		</div>
-
     <div id="qdropdownselect3" class="qdropdownselect" style="display:none">
         <div class="qitem" ng-repeat="item in items" data-qvalue="{{item.name}}"  >
-            {{item.name}}
+            {{item.value}}
         </div>
     </div>
 
+
+    <div  autocomplete="off" qdropdownselect  class="qdropdownselecttarget" ng-model="item"  qdropdownselecttemp="#qdropdownselect3"   >
+        <input    ng-model="item.value" />
+    </div>
+    
+
 	</div>
+
 
 </body>
 </html>

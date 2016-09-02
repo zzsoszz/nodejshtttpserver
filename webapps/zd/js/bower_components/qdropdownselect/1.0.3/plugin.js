@@ -190,7 +190,11 @@
 			};
 			this.comfirm=function()
 			{
-				this.ele.trigger("qdropdownselect.change",this.selectedItem.data("qvalue"));
+				var data={
+					value:this.selectedItem.data("qvalue"),
+					name:this.selectedItem.text()?this.selectedItem.text():"",
+				}
+				this.ele.trigger("qdropdownselect.change",data);
 				this.hide();
 			};
 			this.moveDown=function(){
@@ -243,8 +247,8 @@ if(angular && angular.module)
 			         
 			          scope.$apply(function() {
 			          	   //console.log();
-		                   //scope[attrs['ngModel']]=val;
-		                   controller.$setViewValue(val);
+		                   scope[attrs['ngModel']]=val;
+		                   //controller.$setViewValue(val);
 		              });
 
 			        });
@@ -253,9 +257,10 @@ if(angular && angular.module)
 				 　 attrs.$observe('ngModel', function(value) {
 				     　　var newval=scope[value];
 				     　　console.log('ngModel:'+value+' has changed value to ' + newval);
-				     	 element.qdropdownselect("setValue",""+newval);
+				     	 //element.qdropdownselect("setValue",""+newval);
+				     	 element.qdropdownselect("setValue",""+newval.value);
 				 　 });
-				 	
+
 
 		        }
 		    };
