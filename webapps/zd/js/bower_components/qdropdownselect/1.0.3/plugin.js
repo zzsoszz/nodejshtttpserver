@@ -258,7 +258,10 @@ if(angular && angular.module)
 				     　　var newval=scope[value];
 				     　　console.log('ngModel:'+value+' has changed value to ' + newval);
 				     	 //element.qdropdownselect("setValue",""+newval);
-				     	 element.qdropdownselect("setValue",""+newval.value);
+				     	  if(newval!=undefined)
+						  {
+							 element.qdropdownselect("setValue",""+newval.value);
+						  }
 				 　 });
 
 
