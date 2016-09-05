@@ -56,7 +56,11 @@ if(angular && angular.module)
 				          };
 
 				          $(element).on("click",$.proxy(function(event){
-								this.qdropdownselectEle.show();
+								this.qdropdownselectEle.css({
+											'width':element.outerWidth()+'px',
+											'top':element.offset().top+element.outerHeight()+"px",
+											'left':element.offset().left+"px"
+								}).show();
 						  },scope));
 						  
 						  $(document).on("click",$.proxy(function(event){
@@ -72,7 +76,10 @@ if(angular && angular.module)
 								}
 						  },scope));
 
-				          scope.selectVal(scope.bSelectedItem);
+						  if(scope.bSelectedItem)
+						  {
+						  	scope.selectVal(scope.bSelectedItem);
+						  }
 				          angular.element("body").append(v);
 						  $compile(v)(scope);
 
