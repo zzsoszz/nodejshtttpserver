@@ -45,7 +45,12 @@ if(angular && angular.module)
 						  scope.selectVal = function (item) {
 						  		scope.bSelectedItem=item;
 				                //scope.selecteditem=item;
-				                scope.ngModel=item;
+				                if(element.is("input"))
+				                {
+				                	 scope.ngModel=item.id;
+				                }else{
+				               		 scope.ngModel=item;
+				                }
 				                //scope[attrs['ngModel']]=item;
 				                scope.qdropdownselectEle.hide();
 				          };
