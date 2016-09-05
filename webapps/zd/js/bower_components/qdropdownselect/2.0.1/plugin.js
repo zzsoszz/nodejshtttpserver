@@ -51,7 +51,11 @@ if(angular && angular.module)
 						  },scope));
 						  
 						  $(document).on("click",$.proxy(function(event){
-								if(event.target!=this.ele && $(event.target).closest(this.qdropdownselectEle).length  < 1 && $(event.target).closest(".qdropdownselecttarget").length  < 1) 
+						  		console.log(this.ele.attr("id"));
+						  		console.log(this.qdropdownselectEle.attr("id"));
+						  		console.log($(event.target).closest(this.qdropdownselectEle).length);
+						  		console.log($(event.target).closest(".qdropdownselecttarget").length);
+								if(event.target!=this.ele.get(0) && $(event.target).closest(this.qdropdownselectEle).length  < 1 && $(event.target).closest(this.ele).length  < 1) 
 								{
 									  this.qdropdownselectEle.hide();
 								}
