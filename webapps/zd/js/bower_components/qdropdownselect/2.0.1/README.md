@@ -1,2 +1,2 @@
 # 
-支持angular
+angular version qdropselect
