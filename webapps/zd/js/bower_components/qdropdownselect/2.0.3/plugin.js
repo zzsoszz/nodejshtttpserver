@@ -17,7 +17,6 @@ if(angular && angular.module)
 		        scope: {
 		            items:'=dropdowndata',
 		            initdata:'=initdata',
-		            selecteditem:'=selecteditem',
 		            ngModel: '=ngModel'
 		        },
 		        link: function(scope, element, attrs,controller) {
@@ -45,7 +44,7 @@ if(angular && angular.module)
 						  }
 						  scope.selectVal = function (item) {
 						  		scope.bSelectedItem=item;
-				                scope.selecteditem=item;
+				                //scope.selecteditem=item;
 				                scope.ngModel=item;
 				                //scope[attrs['ngModel']]=item;
 				                scope.qdropdownselectEle.hide();

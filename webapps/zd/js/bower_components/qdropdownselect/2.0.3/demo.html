@@ -22,11 +22,11 @@
          });
          $scope.citys;
          console.log($scope.provinces);
-         $scope.$watch("selectitem",function()
+         $scope.$watch("selectprovinceitem",function()
          {
             $scope.selectcity="";
             $($scope.provinces).each(function(){
-                if(this==$scope.selectitem){
+                if(this==$scope.selectprovinceitem){
                     $scope.citys=$(this.sub).map(function(){
                         return {id:this.name,name:this.name,sub:this.sub};
                     });
@@ -46,16 +46,18 @@
 
 	<div ng-controller="mainController" id="mainController">
 
-    <input    ng-model="selectitem3.id"  qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  data-selecteditem="selectitem3"  style="width:200px;"/>
 
-    <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  data-selecteditem="selectitem" ng-model="aaaaa"  style="width:200px;">
-        <input    ng-model="selectitem.id" />
-    </div>
-    
-    <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="citys"  data-selecteditem="selectcity"  style="width:200px;" ng-model="bbbb">
-        <input    ng-model="selectcity.id" />
-    </div>
-    
+	    <input    ng-model="cccccc"  qdropdownselect  data-initdata="initdata"  data-dropdowndata="provinces"    style="width:200px;"/>
+	    
+
+	    <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
+	        <input    ng-model="selectprovinceitem.id" />
+	    </div>
+	    
+	    <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="citys"   style="width:200px;" ng-model="selectcityitem">
+	        <input    ng-model="selectcityitem.id" />
+	    </div>
+	    
 
 
 	</div>
