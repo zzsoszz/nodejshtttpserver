@@ -1,0 +1,2 @@
+# 
+angular version qdropselect
