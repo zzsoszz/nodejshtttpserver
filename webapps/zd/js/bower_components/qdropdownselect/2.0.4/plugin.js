@@ -21,10 +21,11 @@ if(angular && angular.module)
 		        },
 		        link: function(scope, element, attrs,controller) {
 		        	
+		        	console.log(element,".........initialing");
 		        	$templateRequest("plugin.html", false).then(
 						function(viewFn) {
 
-
+						  
 						  var v = angular.element(viewFn).attr("id","qdropdownselectEle_"+$.guid).hide().css({
 									'position':'absolute',
 									'width':element.outerWidth()+'px',
@@ -56,15 +57,9 @@ if(angular && angular.module)
 				                scope.qdropdownselectEle.hide();
 				          };
 
-				          $(element).on("click",$.proxy(function(event){
-								this.qdropdownselectEle.css({
-											'width':element.outerWidth()+'px',
-											'top':element.offset().top+element.outerHeight()+"px",
-											'left':element.offset().left+"px"
-								}).show();
-						  },scope));
-						  
-						  $(document).on("click",$.proxy(function(event){
+				          
+						  var myfn=$.proxy(function(event){
+						  		console.log(event.target,"document click............");
 						  		/*
 						  		console.log(this.ele.attr("id"));
 						  		console.log(this.qdropdownselectEle.attr("id"));
@@ -75,7 +70,19 @@ if(angular && angular.module)
 								{
 									  this.qdropdownselectEle.hide();
 								}
-						  },scope));
+						  },scope);
+						  $(document).on("click",myfn);
+
+						  var myfn2=$.proxy(function(event){
+						  		console.log(element,"------------element click");
+								this.qdropdownselectEle.css({
+											'width':element.outerWidth()+'px',
+											'top':element.offset().top+element.outerHeight()+"px",
+											'left':element.offset().left+"px"
+								}).show();
+						  },scope);
+				          $(element).on("click",myfn2);
+						  
 
 						  if(scope.bSelectedItem)
 						  {
@@ -84,6 +91,11 @@ if(angular && angular.module)
 				          angular.element("body").append(v);
 						  $compile(v)(scope);
 
+						  scope.$on('$destroy', function() {
+								console.log(element,"------------destroying");
+								$(document).off("click",myfn);
+								//$(element).off("click",myfn2);
+						  });
 
 						}
 					);
