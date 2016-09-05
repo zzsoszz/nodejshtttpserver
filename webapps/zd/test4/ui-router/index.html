@@ -83,7 +83,7 @@
     	var app=angular.module("customaApp",['ui.router']);
 		app.config(['$stateProvider', '$urlRouterProvider','$httpProvider',
 	    function($stateProvider, $urlRouterProvider,$httpProvider) {
-	    	$urlRouterProvider.when('/','/home/menu1').otherwise('/home/menu1');
+	    	//$urlRouterProvider.when('/','/home/menu1').otherwise('/home/menu1');
 			$stateProvider.state('index',{
 		    	url: '/',
 		    	views: {
@@ -96,6 +96,7 @@
 		            'footer': {
 		                templateUrl: 'template/footer.html'
 		            },
+		            
 		            
 		        }
 		        }).state('index.home',{
