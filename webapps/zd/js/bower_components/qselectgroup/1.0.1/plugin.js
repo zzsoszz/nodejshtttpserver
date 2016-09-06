@@ -86,13 +86,18 @@ if(angular && angular.module)
 							event.preventDefault();
 							this.qgroupselectLayerEle.show();
 					  },scope));
-					  $(document).on("click",$.proxy(function(event){
+					  var myfn=$.proxy(function(event){
 					  		console.log(event.target,$(event.target).closest(".qselectgroup"));
 							if(event.target!=this.ele.get(0) && $(event.target).closest(".qselectgroup").length  < 1 && $(event.target).closest(".qselectgrouptarget").length  < 1) 
 							{
 								  this.qgroupselectLayerEle.hide();
 							}
-					  },scope));
+					  },scope);
+					  $(document).on("click",myfn);
+					  scope.$on('$destroy', function() {
+								console.log(element,"------------destroying");
+								$(document).off("click",myfn);
+					  });
 					  angular.element("body").append(v);
 					  $compile(v)(scope);
 
