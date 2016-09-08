@@ -2166,6 +2166,15 @@ body >  .header{
 	padding:0.2rem;
 }
 
+.nav-menu{
+  margin-top:2px;
+  margin-bottom:2px;
+  background:#ffffff;
+  padding:0.2rem;
+}
+
+
+
 .detail-box {
   padding: 0.20rem;
   background:#ffffff;
@@ -2248,13 +2257,12 @@ body >  .header{
 
 
 .download-link{
+  display: block;
   background-image:url(images/share/openmind-download.png);
   width:7.5rem;
   height:1.48rem;
   background-size:7.5rem 1.48rem;
 }
-
-
 .vlist{
   padding-left:0.2rem;
   background:#ffffff;

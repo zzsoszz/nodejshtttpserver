@@ -68,6 +68,9 @@
     <input type="checkbox" ng-checked="ishow" ng-model="ishow" >
     日期<input type="text" ng-model="createdate" ng-required="true" ui-date >
     时间<input type="text" ng-model="createtime"  ng-init="createtime=(createdate|date:'hh:mm:ss')" ng-required="true" >
+    时间范围
+    <input  date-range-picker class="form-control date-picker" type="text" ng-model="createtime" min="'2014-02-23'" max="'2015-02-25'"/>
+    正则表达式
     <input ng-model="name" name="name" ng-maxlength=5 ng-pattern="/^[a-zA-Z]*$/"   ng-required="true" />
 	<div  ng-controller="ChildController"  id="abcd"  ng-show="ishow">
 			<input ng-model="childname" />
