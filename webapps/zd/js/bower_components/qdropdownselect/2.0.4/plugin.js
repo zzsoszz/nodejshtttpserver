@@ -38,7 +38,8 @@ if(angular && angular.module)
 						  if(scope.items)
 						  {
 						  	for (var i = 0; i < scope.items.length; i++) {
-					                if (scope.items[i].id === scope.initdata) {
+						  			//.id
+					                if (scope.items[i] === scope.initdata) {
 					                    scope.bSelectedItem = scope.items[i];
 					                    break;
 					                }
