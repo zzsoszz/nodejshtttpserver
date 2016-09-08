@@ -17,23 +17,30 @@
     var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad","qui"]);
     
     mainApp.config(function ($stateProvider,$urlRouterProvider) {
-     // $urlRouterProvider.when("","/child");
+      $urlRouterProvider.when("","");
       $stateProvider.state("child",{
-        url:"/child",
+        url:"/child/{id}/{name}",
         templateUrl:"child.html",
         resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                   return $ocLazyLoad.load({
                       name: "child",
-                      files: ["/zd/js/bower_components/qselectgroup/1.0.1/child.js"]
+                      files: ["/zd/js/bower_components/qdropdownselect/2.0.4/child.js"]
                   })
               }]
        }
       });
-
       $stateProvider.state("second",{
         url:"/second",
-        templateUrl:"second.html"
+        templateUrl:"second.html",
+        resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                  return $ocLazyLoad.load({
+                      name: "child",
+                      files: ["/zd/js/bower_components/qdropdownselect/2.0.4/second.js"]
+                  })
+              }]
+       }
       });
 
     });
@@ -66,19 +73,29 @@
 <body ng-app="mainApp">
 
 	<div ng-controller="mainController" id="mainController">
-  <!---->
 
-    aaaaaaaaaaaaaaaaaaaaaa
-      <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
+<div>
+  主页面
+    <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
         <input    ng-model="selectprovinceitem.id" />
     </div>
      <input    ng-model="selectprovinceitem.id" />
-<br>
-bbbbbbbbbbbbbbbbbbbbbbbb
+    <br/>
+
     <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="citys"  ng-model="selectcityitem"  style="width:200px;" >
         <input    ng-model="selectcityitem.id" />
     </div>
+</div>
 
+    <br/>
+      <a ui-sref="child({id:111,name:222})">
+        child
+      </a>
+      <a ui-sref="second">
+        second
+      </a>
+      <br/>
+      子视图
       <div ui-view>
       </div>
 	</div>
