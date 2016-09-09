@@ -45,6 +45,9 @@ if(angular && angular.module)
 					                }
 					          }
 						  }
+						  scope.$watch("items",function(){
+						  	scope.ngModel=null;
+						  });
 						  scope.selectVal = function (item) {
 						  		scope.bSelectedItem=item;
 				                //scope.selecteditem=item;

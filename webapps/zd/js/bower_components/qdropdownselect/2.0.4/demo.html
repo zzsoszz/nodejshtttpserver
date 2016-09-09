@@ -45,10 +45,13 @@
 
     });
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
-         $scope.provinces =$(provinceCitys).map(function(){
-            return {id:this.name,name:this.name,sub:this.sub};
+         $scope.provinces =provinceCitys.map(function(obj1){
+            obj1.sub=obj1.sub.map(function(obj){
+               return {id:obj.name,name:obj.name};
+            });
+            return {id:obj1.name,name:obj1.name,sub:obj1.sub};
          });
-         $scope.citys;
+         /*
          console.log($scope.provinces);
          $scope.$watch("selectprovinceitem",function()
          {
@@ -61,7 +64,8 @@
                 };
             });
          });
-         $scope.initdata = "四川";
+         */
+         $scope.initdata = $scope.provinces[0];
     });
     
   </script>
@@ -74,18 +78,19 @@
 
 	<div ng-controller="mainController" id="mainController">
 
-<div>
-  主页面
-    <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
-        <input    ng-model="selectprovinceitem.id" />
-    </div>
-     <input    ng-model="selectprovinceitem.id" />
-    <br/>
 
-    <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="citys"  ng-model="selectcityitem"  style="width:200px;" >
-        <input    ng-model="selectcityitem.id" />
-    </div>
-</div>
+   <div>
+    主页面
+      <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
+          <input    ng-model="selectprovinceitem.id" />
+      </div>
+       <input    ng-model="selectprovinceitem.id" />
+      <br/>
+
+      <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="selectprovinceitem.sub"  ng-model="selectcityitem"  style="width:200px;" >
+          <input    ng-model="selectcityitem.id" />
+      </div>
+   </div>
 
     <br/>
       <a ui-sref="child({id:111,name:222})">
