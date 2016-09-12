@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="plugin.css">
+  <script src="jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../../../bower_components/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+  <script src="city.js"></script>
+  <script src="plugin.js"></script>
+  <script>
+  	
+    var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad","qui"]);
+    
+    mainApp.config(function ($stateProvider,$urlRouterProvider) {
+      $urlRouterProvider.when("","");
+      $stateProvider.state("child",{
+        url:"/child/{id}/{name}",
+        templateUrl:"child.html",
+        resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                  return $ocLazyLoad.load({
+                      name: "child",
+                      files: ["/zd/js/bower_components/qdropdownselect/2.0.4/child.js"]
+                  })
+              }]
+       }
+      });
+      $stateProvider.state("second",{
+        url:"/second",
+        templateUrl:"second.html",
+        resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                  return $ocLazyLoad.load({
+                      name: "child",
+                      files: ["/zd/js/bower_components/qdropdownselect/2.0.4/second.js"]
+                  })
+              }]
+       }
+      });
+
+    });
+    mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+         $scope.provinces =provinceCitys.map(function(obj1){
+            obj1.sub=obj1.sub.map(function(obj){
+               return {id:obj.name,name:obj.name};
+            });
+            return {id:obj1.name,name:obj1.name,sub:obj1.sub};
+         });
+         /*
+         console.log($scope.provinces);
+         $scope.$watch("selectprovinceitem",function()
+         {
+            $scope.selectcity="";
+            $($scope.provinces).each(function(){
+                if(this==$scope.selectprovinceitem){
+                    $scope.citys=$(this.sub).map(function(){
+                        return {id:this.name,name:this.name,sub:this.sub};
+                    });
+                };
+            });
+         });
+         */
+         $scope.initdata = $scope.provinces[0];
+    });
+    
+  </script>
+
+<style>
+
+</style>
+</head>
+<body ng-app="mainApp">
+
+	<div ng-controller="mainController" id="mainController">
+
+
+   <div>
+    主页面
+      <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
+          <input    ng-model="selectprovinceitem.id" />
+      </div>
+       <input    ng-model="selectprovinceitem.id" />
+      <br/>
+
+      <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="selectprovinceitem.sub"  ng-model="selectcityitem"  style="width:200px;" >
+          <input    ng-model="selectcityitem.id" />
+      </div>
+   </div>
+
+    <br/>
+      <a ui-sref="child({id:111,name:222})">
+        child
+      </a>
+      <a ui-sref="second">
+        second
+      </a>
+      <br/>
+      子视图
+      <div ui-view>
+      </div>
+	</div>
+
+
+</body>
+</html>

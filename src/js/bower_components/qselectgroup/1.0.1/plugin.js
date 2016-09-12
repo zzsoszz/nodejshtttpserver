@@ -76,7 +76,7 @@ if(angular && angular.module)
 				},
 				link: function(scope, element, attrs) {
 
-				  $templateRequest("plugin.html", false).then(
+				  $templateRequest("js/bower_components/qselectgroup/1.0.1/plugin.html", false).then(
 					function(viewFn) {
 
 					  var v = angular.element(viewFn).attr("id","qgroupselectLayerEle_"+$.guid).hide();

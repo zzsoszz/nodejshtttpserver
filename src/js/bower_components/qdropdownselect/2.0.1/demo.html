@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="plugin.css">
+  <script src="jquery-1.10.2.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="plugin.js"></script>
+  <script>
+  	
+  	$(document).ready(function(){
+  		
+
+  	});
+    var mainApp=angular.module("mainApp",["qui"]);
+    mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+          $scope.statuses = [{
+              id: 1,
+              name: "Low"        
+          }, {
+              id: 2,
+              name: "Normal"        
+          }, {
+              id: 3,
+              name: "High"        
+          }, {
+              id: 4,
+              name: "Urgent"        
+          }, {
+              id: 5,
+              name: "Immediate"        
+          }];
+          $scope.selected_status = 3;
+    });
+
+  </script>
+
+<style>
+
+</style>
+</head>
+<body ng-app="mainApp">
+
+	<div ng-controller="mainController" id="mainController">
+
+    <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="selected_status" data-dropdowndata="statuses"  data-selecteditem="selectitem"  style="width:200px;">
+        <input    ng-model="selectitem.id" />
+    </div>
+    
+    <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="1" data-dropdowndata="statuses"  data-selecteditem="selectitem2"  style="width:200px;">
+        <input    ng-model="selectitem2.id" />
+    </div>
+    
+
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+  .qdropdownselect{
+    background:#cccccc;;
+    border: 1px solid #ccc;
+    line-height:20px;
+    height:300px;
+    overflow:scroll;
+    z-index:3;
+  }
+  .qdropdownselect .active{
+    background:blue;
+  }
+  .qdropdownselect .qitem:hover{
+   background:#999999;
+  }
+
+  div.qdropdownselecttarget{
+    
+  }
