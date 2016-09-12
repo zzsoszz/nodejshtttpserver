@@ -56,6 +56,7 @@
 
     });
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+      $scope.mydate;
       $scope.option={
 	       maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
 	       alwaysShowCalendars:true,
@@ -101,11 +102,13 @@
 
 
 <div ng-controller="mainController" id="mainController">
-    <div>
+
+    <div qdaterangepicker data-option="option"  ng-model="mydate" >
         主页面
-        <input qdaterangepicker data-option="option"  ng-model="datevalue" />
+        <input ng-model="mydate" />
     </div>
 
+    
     <br/>
     <a ui-sref="child({id:111,name:222})">
         child
