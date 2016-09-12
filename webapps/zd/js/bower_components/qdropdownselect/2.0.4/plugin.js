@@ -63,7 +63,7 @@ if(angular && angular.module)
 
 				          
 						  var myfn=$.proxy(function(event){
-						  		console.log(event.target,"document click............");
+						  		//console.log(event.target,"document click............");
 						  		/*
 						  		console.log(this.ele.attr("id"));
 						  		console.log(this.qdropdownselectEle.attr("id"));
@@ -78,7 +78,7 @@ if(angular && angular.module)
 						  $(document).on("click",myfn);
 
 						  var myfn2=$.proxy(function(event){
-						  		console.log(element,"------------element click");
+						  		//console.log(element,"------------element click");
 								this.qdropdownselectEle.css({
 											'width':element.outerWidth()+'px',
 											'top':element.offset().top+element.outerHeight()+"px",
@@ -96,8 +96,9 @@ if(angular && angular.module)
 						  $compile(v)(scope);
 
 						  scope.$on('$destroy', function() {
-								console.log(element,"------------destroying");
+								//console.log(element,"------------destroying");
 								$(document).off("click",myfn);
+								v.remove();
 								//$(element).off("click",myfn2);
 						  });
 
