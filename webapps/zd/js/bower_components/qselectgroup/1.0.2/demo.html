@@ -45,9 +45,16 @@
      } 
 		});
 	});
+  mainApp.factory("qcityservice",function($http) {
+      return {
+          get:function(){
+              return $http.get('http://localhost:3000/zd/js/bower_components/qselectgroup/1.0.1/test.json');
+          }
+      }
+  });
 	mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
     	$scope.mode;
-  });
+    });
 
   </script>
 
