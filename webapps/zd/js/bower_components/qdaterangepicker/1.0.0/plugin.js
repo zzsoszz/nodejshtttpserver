@@ -21,9 +21,9 @@ if(angular && angular.module)
 		        link: function(scope, element, attrs,controller) {
         		    element.daterangepicker(scope.option,function(start, end, label) {
 				         return scope.$apply(function() {
-				              return scope.ngModel = scope.option.singleDatePicker ? start : {
-				                startDate: start,
-				                endDate: end
+				              return scope.ngModel = scope.option.singleDatePicker ? start.format(scope.option.locale.format) : {
+				                startDate: start.format(scope.option.locale.format),
+				                endDate: end.format(scope.option.locale.format)
 				              };
 				         });
 				    }).on("cancel.daterangepicker",function(event){
