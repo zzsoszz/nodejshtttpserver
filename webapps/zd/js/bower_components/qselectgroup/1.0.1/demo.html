@@ -45,11 +45,16 @@
      } 
 		});
 	});
-
-  
+  mainApp.factory("qcityservice",function($http) {
+      return {
+          get:function(){
+              return $http.get('/json/city' );
+          }
+      }
+  });
 	mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
     	$scope.mode;
-    });
+  });
 
   </script>
 

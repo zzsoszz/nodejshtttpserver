@@ -95,14 +95,8 @@
 	       alwaysShowCalendars:true,
 	       autoApply:true,
 	       "ranges": {
-	           '不限时间': ["1900-01-01","2050-01-01"],
-	           '今天': [moment(), moment()],
-	           '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-	           '这周': [moment().startOf('week'), moment()],
-	           '最近7天': [moment().subtract(6, 'days'), moment()],
-	           '最近30天': [moment().subtract(29, 'days'), moment()],
-	           '当月': [moment().startOf('month'), moment().endOf('month')],
-	           '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+	           '不限时间': ["1900-01-01"],
+	           '今天': [moment()]
 	       },
 	       locale : {
 	           format : 'YYYY-MM-DD',
@@ -142,12 +136,12 @@
         主页面
         <input ng-bind="{{mydate1.startDate}}" value="{{mydate1.startDate}}"/>
     </div>
-    
+
     <div qdaterangepicker data-option="option2"  ng-model="mydate2" >
         主页面
         <input ng-model="mydate2" />
     </div>
-    
+
 
     <br/>
     <a ui-sref="child({id:111,name:222})">
