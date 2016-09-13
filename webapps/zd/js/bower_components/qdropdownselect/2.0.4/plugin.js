@@ -45,9 +45,7 @@ if(angular && angular.module)
 					                }
 					          }
 						  }
-						  scope.$watch("items",function(){
-						  	scope.ngModel=null;
-						  });
+						  
 						  scope.selectVal = function (item) {
 						  		scope.bSelectedItem=item;
 				                //scope.selecteditem=item;
@@ -88,10 +86,7 @@ if(angular && angular.module)
 				          $(element).on("click",myfn2);
 						  
 
-						  if(scope.bSelectedItem)
-						  {
-						  	scope.selectVal(scope.bSelectedItem);
-						  }
+						  
 				          angular.element("body").append(v);
 						  $compile(v)(scope);
 
@@ -100,6 +95,20 @@ if(angular && angular.module)
 								$(document).off("click",myfn);
 								v.remove();
 								//$(element).off("click",myfn2);
+						  });
+						  var initializing = true;
+						  if(scope.bSelectedItem)
+						  {
+						  	scope.selectVal(scope.bSelectedItem);
+						  }
+						  scope.$watch("items",function(newitems){
+						  	//scope.ngModel=null;
+						  	scope.ngModel=scope.initdata;
+						  	// if(!initializing)
+						  	// {
+						  	// 	scope.ngModel=null;
+						  	// }
+						  	// initializing=false;
 						  });
 
 						}

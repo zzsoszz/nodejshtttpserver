@@ -228,7 +228,7 @@ if(angular!=undefined  && angular.module)
 		        restrict: 'A',
 		        priority: 100,
 		        require: '?ngModel',
-		        templateUrl:'http://localhost:3000/zd/js/bower_components/qpager/1.0.1/plugin-840dbe2f8d.html',
+		        templateUrl:'http://localhost:3000/zd/js/bower_components/qpager/1.0.1/plugin.html',
 		        link: function(scope, element, attrs,ngModelController) {
 		        	var qpageroptions=scope[attrs["ngModel"]];
 		        	element.qpager(

@@ -51,7 +51,6 @@
             });
             return {id:obj1.name,name:obj1.name,sub:obj1.sub};
          });
-         $scope.initdata = $scope.provinces[0];
          /*
          console.log($scope.provinces);
          $scope.$watch("selectprovinceitem",function()
@@ -82,15 +81,18 @@
 
    <div>
     主页面
-      <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="initdata" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
+      <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="provinces[0]" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
           <input    ng-model="selectprovinceitem.id" />
       </div>
+      <!--
        <input    ng-model="selectprovinceitem.id" />
+       -->
       <br/>
-
-      <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect   data-dropdowndata="selectprovinceitem.sub"  ng-model="selectcityitem"  style="width:200px;" >
+      <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect data-initdata="selectprovinceitem.sub[0]"  data-dropdowndata="selectprovinceitem.sub"  ng-model="selectcityitem"  style="width:200px;" >
           <input    ng-model="selectcityitem.id" />
       </div>
+      
+      
    </div>
 
     <br/>

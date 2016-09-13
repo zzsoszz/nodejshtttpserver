@@ -48,7 +48,7 @@ gulp.task('rev2', function () {
             replaceReved: true,
             dirReplacements: {
                 'css': 'css/',
-                'js/': 'js/',
+                'js/bower_components': 'js/',
                 'cdn/': function(manifest_value) {
                 	console.log(manifest_value);
                     return '//cdn' + (Math.floor(Math.random() * 9) + 1) + '.' + 'exsample.dot' + '/img/' + manifest_value;

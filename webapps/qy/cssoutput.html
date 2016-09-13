@@ -72,6 +72,14 @@ $(document).ready(
 		var attrDiv=$("#attrDiv");
 		attrDiv.append($("<div>").text(navigator.userAgent));
 		attrDiv.append($("<br>"));
+
+		var u = navigator.userAgent; 
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        attrDiv.append($("<br>"));
+        attrDiv.append("iphone:"+isiOS);
+        
+
 		attrDiv.append($("<div>").text("window.width:"+$(window).width()+" window.height:"+$(window).height()));
 		attrDiv.append($("<div>").text("document.width:"+$(document).width()+" document.height:"+$(document).height()));
 		attrDiv.append($("<div>").text("window.devicePixelRatio:"+window.devicePixelRatio));
