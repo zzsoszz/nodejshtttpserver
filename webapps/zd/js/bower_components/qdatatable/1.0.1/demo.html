@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="plugin.css">
+  <link rel="stylesheet" href="commoncss.css">
+  <script>
+    var baseUrl="/zd/";
+  </script>
+  
+
+  <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../../../bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+  <link rel="stylesheet" href="../../../bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+
+  <script src="jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="../../../bower_components/moment/moment.js"></script>
+  <script type="text/javascript" src="../../../bower_components/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-ui-date/dist/date.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+  <script type="text/javascript" src="../../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+
+
+  <link  rel="stylesheet" href="../../../bower_components/qdropdownselect/2.0.4/plugin.css">
+  <script src="../../../bower_components/qdropdownselect/2.0.4/plugin.js"></script>
+  <script src="../../../bower_components/qdropdownselect/2.0.4/city.js"></script>
+
+
+  <link  rel="stylesheet" href="../../../bower_components/qpager/1.0.1/plugin.css">
+  <script src="../../../bower_components/qpager/1.0.1/plugin.js"></script>
+
+  <link  rel="stylesheet" href="../../../bower_components/qdaterangepicker/1.0.0/plugin.css">
+  <script src="../../../bower_components/qdaterangepicker/1.0.0/plugin.js"></script>
+
+
+  <script src="plugin.js"></script>
+  <script src="../../../main.js"></script>
+  <script>
+  
+	mainApp.config(function ($stateProvider,$urlRouterProvider) {
+    $urlRouterProvider.when("","/child");
+		$stateProvider.state("child",{
+			url:"/child",
+			templateUrl:"child.html",
+      resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: "child",
+                    files: ["/zd/js/bower_components/qselectsponsor/1.0.1/child.js"]
+                })
+            }]
+     } 
+		});
+	});
+	
+  mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+     $scope.tableoption=
+     {
+     	 title:"教育经历",
+     	 cols:[
+     	 	{title:'开学',name:"createtime",type:"qdropdownselect"},
+     	 	{title:'学校',name:"school",type:"selectschool"}
+     	 	{title:'开学',name:"createtime",type:"qdropdownselect"}
+     	 	{title:'开学',name:"createtime",type:"qdropdownselect"}
+     	 ];
+     }
+  });
+
+  </script>
+
+  
+
+
+<style>
+
+</style>
+</head>
+<body ng-app="mainApp">
+
+<div ng-controller="mainController">
+  <input value="{{result|json}}">
+
+  <qdatatable ng-model="result">
+  </qdatatable>
+
+  <qdatatable ng-model="result2">
+  </qdatatable>
+  
+</div>
+
+
+</body>
+</html>
