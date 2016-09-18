@@ -64,12 +64,12 @@
      {
      	 title:"教育经历",
      	 cols:[
-     	 	{title:'开学',name:"createtime",type:"qdropdownselect"},
-     	 	{title:'学校',name:"school",type:"selectschool"}
-     	 	{title:'开学',name:"createtime",type:"qdropdownselect"}
-     	 	{title:'开学',name:"createtime",type:"qdropdownselect"}
-     	 ];
-     }
+     	 	{title:'时间',name:"createtime",type:"daterangepicker"},
+     	 	{title:'学校',name:"school",type:"selectprovince"},
+     	 	{title:'开学',name:"createtime",type:"selectschool"},
+        {title:'操作',name:"createtime",type:"action"}
+     	 ]
+     };
   });
 
   </script>
@@ -86,7 +86,7 @@
 <div ng-controller="mainController">
   <input value="{{result|json}}">
 
-  <qdatatable ng-model="result">
+  <qdatatable ng-model="result"  ng-option="tableoption">
   </qdatatable>
 
   <qdatatable ng-model="result2">

@@ -10,9 +10,10 @@ if(angular && angular.module)
 	qui.component('qdatatable', {
 	  transclude: true,
 	  bindings:{
-	    items: '=ngModel'
+	    items: '=ngModel',
+	    option: '=ngOption'
 	  },
-	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.0/plugin.html',
+	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.1/plugin.html',
 	  controller: function() {
 	  	this.$onInit=function()
 	  	{
