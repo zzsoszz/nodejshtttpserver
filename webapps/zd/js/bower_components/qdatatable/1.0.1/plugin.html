@@ -7,12 +7,18 @@
     
                 <div ng-repeat="col in $ctrl.option.cols track by $index" >
                     <div ng-if="col.type=='daterangepicker'">
-                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">起止时间</div>
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0"> {{col.name}}</div>
                         <div style="position: relative;width: 242px">
-                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="option" ng-model="$ctrl.{{col.name}}"/>
+                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="option" ng-model="$ctrl.item[col.name]"/>
                             <div id="calenderImg" style="height: 100%;width: 38px;background: url('calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
                         </div>
-                    </div>      
+                    </div>
+                    <div ng-if="col.type=='text'">
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">{{col.name}}</div>
+                        <div style="position: relative;width: 242px">
+                            <input    class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
+                        </div>
+                    </div>   
                 </div>
                
 

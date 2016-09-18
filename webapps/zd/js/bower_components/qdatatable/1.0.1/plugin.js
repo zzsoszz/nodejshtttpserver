@@ -31,6 +31,7 @@ if(angular && angular.module)
 	  	};
 	  	this.doAdd=function($event,item)
 	  	{
+	  		console.log(item);
 	  		var index =this.items.indexOf(item);
 	  		console.log(index);
 	  		if(index<0)
