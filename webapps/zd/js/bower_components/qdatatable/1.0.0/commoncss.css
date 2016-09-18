@@ -286,3 +286,64 @@ form *:not(input):not(textarea).danger{
 .newline{
     word-break:break-all; word-wrap:break-word;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title{
+        font-size: 14px;color: rgb(35,24,21);margin-right: 31px;
+}
+.part{
+    width: 50%;float: left;font-size: 14px;color: rgb(137,137,137);margin-top: 58px;position: relative;
+}
+.newTb{
+    c;width:100%;margin: 10px 0 30px 0;
+}
+.newTb tr{
+    border-top: 1px solid #cccccc;
+}
+.newTb th{
+    font-size: 14px;color: rgb(89,87,87);background-color:#efeff0 ;height: 40px;font-weight: normal;
+}
+.newTb td{
+    height: 40px;overflow: hidden;
+    /*padding: 0 20px;*/
+}
+.bottomBtn{
+    margin-top: 50px;text-align: left;
+}
+.bottomBtn>input{
+    border: none;height: 38px;width: 140px;line-height: 38px;text-align: center;font-size: 16px;
+}
+.inputBox{
+    width: 220px;color: rgb(137,137,137);height: 38px;c;
+}
+.addBox{
+    margin: 0 auto;width: 50px;height: 40px;cursor: pointer;
+}
+.addBtn{
+    position: relative;height:40px;width:100px ;text-align: center;line-height: 40px;font-size: 14px;border: none;float: right;
+}
+.searchImg{
+    height: 100%;width: 14px;background: url("addwhite.png") center center no-repeat;display: inline-block;float: left;
+}
+#pompWindow1{
+    /*position: fixed;left: 400px;top: 200px;z-index: 11;*/
+    position: absolute;top: 200px;z-index: 11;left: 400px;
+}
+#ulType1>li,#ulSex>li,#ulPosition>li,#ulCareer>li{
+    cursor: pointer;
+}
+#ulType1>li:hover,#ulSex>li:hover,#ulPosition>li:hover,#ulCareer>li:hover{
+    background: #dddddd;
+}

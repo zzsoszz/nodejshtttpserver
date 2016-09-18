@@ -22,7 +22,7 @@ if(angular && angular.module)
 		        link: function(scope, element, attrs,controller) {
 		        	
 		        	console.log(element,".........initialing");
-		        	$templateRequest("plugin.html", false).then(
+		        	$templateRequest(baseUrl+'js/bower_components/qdropdownselect/2.0.4/plugin.html', false).then(
 						function(viewFn) {
 
 						  
@@ -55,6 +55,8 @@ if(angular && angular.module)
 				                }else{
 				               		 scope.ngModel=item;
 				                }
+				                controller.$setViewValue(scope.ngModel);
+					            controller.$render();
 				                //scope[attrs['ngModel']]=item;
 				                scope.qdropdownselectEle.hide();
 				          };
