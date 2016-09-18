@@ -6,33 +6,33 @@
                 <div style="font-size: 20px;color: rgb(70,80,94)">{{title}}</div><div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
                 <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">起止时间</div>
                 <div style="position: relative;width: 242px">
-                    <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="option" ng-model="item.createtime"/>
+                    <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="option" ng-model="$ctrl.item.createtime"/>
                     <div id="calenderImg" style="height: 100%;width: 38px;background: url('calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
                 </div>
                 <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{menu1}}</div>
                     <div style="position: relative" >
                         <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" id="chooseProvince"
                              qdropdownselect  data-initdata="schoolprovinces[0]" data-dropdowndata="$ctrl.schoolprovinces"  ng-model="selectschoolprovinceitem"
-                             ng-change="item.school=selectschoolprovinceitem.name"
+                             ng-change="$ctrl.item.school=selectschoolprovinceitem.name"
                         >
                             <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{selectschoolprovinceitem.name}}</span>
                             <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
                         </div>
                 </div>
-                <input  type="text" id="mayChange1" ng-model="item.school"   >
+                <input  type="text" id="mayChange1" ng-model="$ctrl.item.school"   >
                 <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{menu2}}</div>
                 <div style="position: relative" >
                         <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" id="chooseProvince"
                              qdropdownselect   data-dropdowndata="selectschoolprovinceitem.sub"  ng-model="selectschoolitem"
-                             ng-change="item.major=selectschoolitem.name"
+                             ng-change="$ctrl.item.major=selectschoolitem.name"
                         >
                             <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{selectschoolitem.name}}</span>
                             <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
                         </div>
                 </div>
-                <input   type="text"  id="mayChange2"  ng-model="item.major">
+                <input   type="text"  id="mayChange2"  ng-model="$ctrl.item.major">
                 <div class="bottomBtn" style="font-size: 0;margin-top: 40px">
-                    <input type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doAdd($event,item)" id="popSave" style="float: left">
+                    <input type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doAdd($event,$ctrl.item)" id="popSave" style="float: left">
                     <input type="button" class="cancelBtnChange" value="取消" style="float: right" ng-click="$ctrl.doCancel()">
                 </div>
             </form>
@@ -72,6 +72,7 @@
                     <a ng-click="$ctrl.doDel(item)">删除</a>
                     <a ng-click="$ctrl.moveItem(item,'up')">上移</a>
                     <a ng-click="$ctrl.moveItem(item,'down')">下移</a>
+                    <a ng-click="$ctrl.doEdit(item,'down')">编辑</a>
                 </td>
             </tr>
         </tbody>

@@ -30,8 +30,13 @@ if(angular && angular.module)
 	  	};
 	  	this.doAdd=function($event,item)
 	  	{
-	  		console.log(item);
-	  		this.items.push(item);
+	  		var index =this.items.indexOf(item);
+	  		console.log(index);
+	  		if(index<0)
+	  		{
+	  			this.items.push(item);
+	  		}
+	  		this.isShowPanel=false;
 	  	};
 	  	this.doDel=function(item)
 	  	{
@@ -55,6 +60,26 @@ if(angular && angular.module)
 		      }
 		    }
 		};
+		this.moveItem = function(item, dir) {
+		    var index =this.items.indexOf(item);
+		    console.log(index);
+	    	if (dir === 'up') {
+	    	  if(index!=0)
+	    	  {
+ 				this.items.splice(index - 1, 2, item, this.items[index - 1]);
+	    	  }
+		    } else {
+		      if(index!=this.items.length-1){
+		    	this.items.splice(index, 2, this.items[index + 1], item);
+		      }
+		    }
+		};
+		this.doEdit=function(item)
+		{
+			this.item=item;
+			this.isShowPanel=true;
+		};
+
 	  }
 	});
 }
