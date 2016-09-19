@@ -1,27 +1,55 @@
 <div class="qdatatable">
     {{$ctrl.items}}
-    <div class="poppanel" style="padding: 10px;width: 480px;height: 460px;background-color: #cccccc" ng-show="$ctrl.isShowPanel">
-        <div style="padding: 30px;background-color: #ffffff;height: 100%">
+    <div class="poppanel" style="" ng-show="$ctrl.isShowPanel">
+        <div class="poppanle-inner" >
             <form action="" style="width: 100%" id="addExtraThing">
-                <div style="font-size: 20px;color: rgb(70,80,94)">{{title}}</div><div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
+                <div style="font-size: 20px;color: rgb(70,80,94)">{{option.title}}</div><div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
     
                 <div ng-repeat="col in $ctrl.option.cols track by $index" >
                     <div ng-if="col.type=='daterangepicker'">
-                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0"> {{col.name}}</div>
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0"> {{col.title}}</div>
                         <div style="position: relative;width: 242px">
-                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="option" ng-model="$ctrl.item[col.name]"/>
+                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
                             <div id="calenderImg" style="height: 100%;width: 38px;background: url('calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
                         </div>
                     </div>
                     <div ng-if="col.type=='text'">
-                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">{{col.name}}</div>
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">{{col.title}}</div>
                         <div style="position: relative;width: 242px">
                             <input    class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
                         </div>
+                    </div>
+                    <div ng-if="col.type=='muliplyselect'">
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
+                        <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
+                                     qdropdownselect  data-initdata="schoolprovinces[0]" data-dropdowndata="col.typedata"  ng-model="$ctrl.selectitem[col.name]"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name].name"
+                                >
+                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name]}}</span>
+                                    <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
+                        </div>
                     </div>   
+                    <div ng-if="col.type=='selectschoolprovince'" style="position: relative" >
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
+                        <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
+                                     qdropdownselect  data-initdata="schoolprovinces[0]" data-dropdowndata="$ctrl.schoolprovinces"  ng-model="$ctrl.selectschoolprovinceitem"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectschoolprovinceitem.name"
+                                >
+                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name]}}</span>
+                                    <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
+                        </div>
+                    </div>   
+                    <div ng-if="col.type=='selectschool'"  style="position: relative" >
+                            <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
+                            <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
+                                 qdropdownselect   data-dropdowndata="$ctrl.selectschoolprovinceitem.sub"  ng-model="$ctrl.selectschoolitem"
+                                 ng-change="$ctrl.item[col.name]=$ctrl.selectschoolitem.name"
+                            >
+                                <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name]}}</span>
+                                <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
+                            </div>
+                    </div>
                 </div>
-               
-
                <!--
                 <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{menu1}}</div>
                     <div style="position: relative" >
@@ -47,7 +75,7 @@
                 <input   type="text"  id="mayChange2"  ng-model="$ctrl.item.major">
                 -->
 
-                <div class="bottomBtn" style="font-size: 0;margin-top: 40px">
+                <div class="bottomBtn" >
                     <input type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doAdd($event,$ctrl.item)" id="popSave" style="float: left">
                     <input type="button" class="cancelBtnChange" value="取消" style="float: right" ng-click="$ctrl.doCancel()">
                 </div>
@@ -58,9 +86,9 @@
     <table class="newTb">
         <thead>
             <tr>
-                <th style="padding-left: 46px;text-align: left">教育经历</th>
-                <th></th>
-                <th></th>
+                <th style="padding-left: 46px;text-align: left">{{$ctrl.option.title}}</th>
+                <th ng-repeat-range to="$ctrl.option.cols.length-2">
+                </th>
                 <th>
                     <div class="addBtn confirmBtnChange">
                         <div class="addBox" ng-click="$ctrl.showAdd()">
@@ -73,17 +101,15 @@
         </thead>
         <tbody id="eduBody">
             <tr>
-                <td style="padding-left: 46px;width: 250px;text-align: left">时间</td>
-                <td style="width:250px">学校</td>
-                <td style="width:250px">专业</td>
+                <td ng-repeat="col in $ctrl.option.cols track by $index" >
+                    {{col.title}}
+                </td>
                 <td>操作</td>
             </tr>
             <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
-                <td style="padding-left: 46px;text-align: left" class="time">
-                    {{item.createtime}}
+                <td ng-repeat="col in $ctrl.option.cols track by $index" >
+                    {{item[col.name]}}
                 </td>
-                <td class="school">{{item.school}}</td>
-                <td class="major">{{item.major}}</td>
                 <td>
                     <a ng-click="$ctrl.doDel(item)">删除</a>
                     <a ng-click="$ctrl.moveItem(item,'up')">上移</a>
