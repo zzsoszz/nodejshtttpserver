@@ -79,7 +79,7 @@
 					console.log("move:"+event.pageY+"px  "+event.pageX+"px");
 				},this));
 				target.on("mouseout",$.proxy(function(event){
-					$("img").attr("src",this.qbigimageurl);
+					//$("img").attr("src",this.qbigimageurl);
 					this.plugnamecontainer.hide();;
 					console.log("out:"+event.pageY+"px  "+event.pageX+"px");
 				},this));
