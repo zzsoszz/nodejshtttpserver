@@ -41,7 +41,7 @@ if(angular && angular.module)
 	    option: '=ngOption'
 	  },
 	  scope:true,
-	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.2/plugin.html',
+	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.3/plugin.html',
 	  controller: function() {
 	  	this.$onInit=function()
 	  	{

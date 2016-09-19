@@ -21,10 +21,10 @@
                     <div ng-if="col.type=='muliplyselect'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
                         <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
-                                     qdropdownselect   data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
-                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name].id"
+                                     qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
                                 >
-                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.selectitem[col.name].name}}</span>
+                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
                                     <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>
@@ -62,7 +62,15 @@
             </tr>
             <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
                 <td ng-repeat="col in $ctrl.option.cols track by $index" >
+                    <span ng-if="col.type=='daterangepicker'">
                     {{item[col.name]}}
+                    </span>
+                    <span ng-if="col.type=='text'">
+                    {{item[col.name]}}
+                    </span>
+                    <span ng-if="col.type=='muliplyselect'">
+                    {{item[col.name].name}}
+                    </span>
                 </td>
                 <td>
                     <a ng-click="$ctrl.doDel(item)">删除</a>

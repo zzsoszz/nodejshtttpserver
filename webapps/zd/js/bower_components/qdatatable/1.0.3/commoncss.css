@@ -335,7 +335,7 @@ form *:not(input):not(textarea).danger{
     position: relative;height:40px;width:100px ;text-align: center;line-height: 40px;font-size: 14px;border: none;float: right;
 }
 .searchImg{
-    height: 100%;width: 14px;background: url("image/addwhite.png") center center no-repeat;display: inline-block;float: left;
+    height: 100%;width: 14px;background: url("addwhite.png") center center no-repeat;display: inline-block;float: left;
 }
 #pompWindow1{
     /*position: fixed;left: 400px;top: 200px;z-index: 11;*/
