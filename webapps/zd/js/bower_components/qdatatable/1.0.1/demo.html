@@ -124,11 +124,17 @@
 <body ng-app="mainApp">
 
 <div ng-controller="mainController">
-  <input value="{{result|json}}">
+
+  <div>
+  {{result|json}}
+  </div>
 
   <qdatatable ng-model="result"  ng-option="tableoption">
   </qdatatable>
 
+  <div>
+  {{result2|json}}
+  </div>
   <qdatatable ng-model="result2"  ng-option="tableoption">
   </qdatatable>
   
