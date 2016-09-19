@@ -1,9 +1,9 @@
 <div class="qdatatable">
     <div class="poppanel" style="" ng-show="$ctrl.isShowPanel">
         <div class="poppanle-inner" >
-            <form action="" style="width: 100%" id="addExtraThing">
-                <div style="font-size: 20px;color: rgb(70,80,94)">{{option.title}}</div><div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
-    
+            <form action="" style="width: 100%">
+                <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
+                <div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
                 <div ng-repeat="col in $ctrl.option.cols track by $index" >
                     <div ng-if="col.type=='daterangepicker'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0"> {{col.title}}</div>
