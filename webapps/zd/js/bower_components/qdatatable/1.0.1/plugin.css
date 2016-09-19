@@ -11,8 +11,8 @@
 	padding: 10px;
 /*	min-width: 480px;
 	min-height: 460px;*/
-/*	max-height:80%;
-	max-width: 80px;*/
+	max-height:90%;
+	/*max-width: 80px;*/
 	background-color:#cccccc;
 	overflow: auto;
 }

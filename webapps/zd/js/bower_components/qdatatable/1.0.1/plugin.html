@@ -23,9 +23,9 @@
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
                         <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
                                      qdropdownselect  data-initdata="schoolprovinces[0]" data-dropdowndata="col.typedata"  ng-model="$ctrl.selectitem[col.name]"
-                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name].name"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name].id"
                                 >
-                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name]}}</span>
+                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.selectitem[col.name].name}}</span>
                                     <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>   
@@ -33,9 +33,9 @@
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
                         <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
                                      qdropdownselect  data-initdata="schoolprovinces[0]" data-dropdowndata="$ctrl.schoolprovinces"  ng-model="$ctrl.selectschoolprovinceitem"
-                                     ng-change="$ctrl.item[col.name]=$ctrl.selectschoolprovinceitem.name"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectschoolprovinceitem.id"
                                 >
-                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name]}}</span>
+                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.selectschoolprovinceitem.name}}</span>
                                     <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>   
@@ -43,9 +43,9 @@
                             <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
                             <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
                                  qdropdownselect   data-dropdowndata="$ctrl.selectschoolprovinceitem.sub"  ng-model="$ctrl.selectschoolitem"
-                                 ng-change="$ctrl.item[col.name]=$ctrl.selectschoolitem.name"
+                                 ng-change="$ctrl.item[col.name]=$ctrl.selectschoolitem.id"
                             >
-                                <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name]}}</span>
+                                <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.selectschoolitem.name}}</span>
                                 <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('dropDownBg.png') center center no-repeat"></div>
                             </div>
                     </div>

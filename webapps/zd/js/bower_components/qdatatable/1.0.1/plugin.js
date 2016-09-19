@@ -45,7 +45,7 @@ if(angular && angular.module)
 	  controller: function() {
 	  	this.$onInit=function()
 	  	{
-	  		this.items=[{"createtime":"09/05/2016 - 09/13/2016","school":"天津3","major":"河北区3","province":"天津","desc":"aaa","lessons":"qingtian"}];
+	  		this.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 	  		this.schoolprovinces =provinceCitys.map(function(obj1){
 		            obj1.sub=obj1.sub.map(function(obj){
 		               return {id:obj.name,name:obj.name};

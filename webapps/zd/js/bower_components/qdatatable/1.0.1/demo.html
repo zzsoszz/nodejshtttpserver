@@ -95,6 +95,7 @@
     };
 
   	 var lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
+  	 var genderArray =[{id:'男',name:"男"},{id:'女',name:"女"}];
      $scope.tableoption=
      {
      	 title:"教育经历",
@@ -104,7 +105,8 @@
      	 	{title:'省份',name:"province",type:"selectschoolprovince"},
      	 	{title:'学校',name:"school",type:"selectschool"},
 	        {title:'文字',name:"desc",type:"text"},
-	        {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray}
+	        {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
+	        {title:'性别',name:"gender",type:"muliplyselect",typedata:genderArray}
      	 ]
      };
   });
