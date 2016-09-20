@@ -121,7 +121,9 @@
      };
      $scope.onItemAddBefore=function(aaa)
      {
+        aaa.id="123";
         console.log("onItemAddBefore:",aaa);
+        return aaa;
      };
      $scope.onItemDel=function(aaa)
      {
@@ -148,7 +150,7 @@
   {{result|json}}
   </div>
 
-  <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdate" on-item-add-before="onItemAddBefore"  on-item-del-before="onItemDel(item)">
+  <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdate(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDel(item)">
   </qdatatable>
 
   <div>

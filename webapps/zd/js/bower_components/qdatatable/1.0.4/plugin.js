@@ -46,6 +46,7 @@ if(angular && angular.module)
 	  scope:true,
 	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.4/plugin.html',
 	  controller: function() {
+	  	var ctrl=this;
 	  	this.$onInit=function()
 	  	{
 	  		if(!this.items)
@@ -66,10 +67,11 @@ if(angular && angular.module)
 	  		console.log(index);
 	  		if(index<0)
 	  		{
-	  			this.onItemAddBefore(item);
-	  			this.items.push(item);
+	  			var itemnew=this.onItemAddBefore({"item":item});
+	  			console.log("itemnew:",itemnew);
+	  			this.items.push(itemnew);
 	  		}else{
-	  			this.onItemUpdateBefore(item);
+	  			ctrl.onItemUpdateBefore({"item":item});
 	  		}
 	  		this.isShowPanel=false;
 	  	};
