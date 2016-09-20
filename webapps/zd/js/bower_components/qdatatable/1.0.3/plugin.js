@@ -45,7 +45,10 @@ if(angular && angular.module)
 	  controller: function() {
 	  	this.$onInit=function()
 	  	{
-	  		this.items=[];
+	  		if(!this.items)
+			{
+				this.items=[];
+			}
 	  		//this.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 	  	};
 	  	this.showAdd=function()
