@@ -99,7 +99,7 @@
 		               return {id:obj.name,name:obj.name};
 		            });
 		            return {id:obj1.name,name:obj1.name,sub:obj1.sub};
-	 });
+	  });
   	 var lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
   	 var genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
      $scope.tableoption=
@@ -107,13 +107,25 @@
      	 title:"教育经历",
      	 daterangeoption:$scope.daterangeoption,
      	 cols:[
-       	 	{title:'时间',name:"createtime",type:"daterangepicker"},
-       	 	{title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
-       	 	{title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+       	 	// {title:'时间',name:"createtime",type:"daterangepicker"},
+       	 	// {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
+       	 	// {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
 	        {title:'文字',name:"desc",type:"text"},
-	        {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
+	        // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
 	        {title:'性别',name:"gender",type:"muliplyselect",typedata:genderArray},
      	 ]
+     };
+     $scope.onItemUpdate=function(aaa)
+     {
+        console.log("onItemUpdate:",aaa);
+     };
+     $scope.onItemAddBefore=function(aaa)
+     {
+        console.log("onItemAddBefore:",aaa);
+     };
+     $scope.onItemDel=function(aaa)
+     {
+        console.log("onItemDel:",aaa);
      };
   });
 
@@ -134,7 +146,7 @@
   {{result|json}}
   </div>
 
-  <qdatatable ng-model="result"  ng-option="tableoption">
+  <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdate" on-item-add-before="onItemAddBefore"  on-item-del-before="onItemDel(item)">
   </qdatatable>
 
   <div>
