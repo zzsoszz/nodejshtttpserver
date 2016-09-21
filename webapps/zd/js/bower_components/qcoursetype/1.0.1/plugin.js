@@ -24,9 +24,9 @@ if(angular && angular.module)
 				     {
 				     	 title:"教育经历",
 				     	 deleteEnable:false,
-				     	 editEnable:false,
-				     	 moveUpEnable:true,
-				     	 moveDownEnable:true,
+				     	 editEnable:true,
+				     	 moveUpEnable:false,
+				     	 moveDownEnable:false,
 				     	 daterangeoption:ctrl.daterangeoption,
 				     	 cols:[
 					        {title:'名字',name:"name",type:"text"}
