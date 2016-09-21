@@ -11,7 +11,7 @@ if(angular && angular.module)
 
 	qui.factory("qdatatableService",function($http) {
 	    return {
-	        query:function(url){
+	        search:function(url){
 	            return $http.get(url,{cache:false}).then(function(resp){
 	              if(resp.data.code=='success')
 	              {
@@ -80,10 +80,16 @@ if(angular && angular.module)
 					}
 			  		//this.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 			  	};
-			  	this.showAdd=function()
+			  	this.showPanel=function(mode)
 			  	{
+			  		this.mode=mode;
 			  		this.isShowPanel=!this.isShowPanel;
 			  		this.item={};
+			  	};
+			  	this.doSearch=function(item)
+			  	{
+			  		qdatatableService.search(this.option.searchUrl,item);
+			  		this.isShowPanel=false;
 			  	};
 			  	this.doSave=function($event,item)
 			  	{

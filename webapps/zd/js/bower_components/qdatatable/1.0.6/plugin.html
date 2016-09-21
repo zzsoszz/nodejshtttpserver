@@ -30,7 +30,8 @@
                     </div>
                 </div>
                 <div class="bottomBtn" >
-                    <input type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doSave($event,$ctrl.item)" id="popSave" style="float: left">
+                    <input  ng-if="$ctrl.mode=='search' " type="button" class="confirmBtnChange" value="搜索" ng-click="$ctrl.doSearch($event,$ctrl.item)" id="popSave" style="float: left">
+                    <input  ng-if="$ctrl.mode=='add' " type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doSave($event,$ctrl.item)" id="popSave" style="float: left">
                     <input type="button" class="cancelBtnChange" value="取消" style="float: right" ng-click="$ctrl.doCancel()">
                 </div>
             </form>
@@ -45,9 +46,15 @@
                 </th>
                 <th>
                     <div class="addBtn confirmBtnChange">
-                        <div class="addBox" ng-click="$ctrl.showAdd()">
+                        <div class="addBox" ng-click="$ctrl.showPanel('add')">
                             <div class="searchImg"></div>
                             <span>添加</span>
+                        </div>
+                    </div>
+                    <div class="addBtn confirmBtnChange">
+                    <div class="addBox" ng-click="$ctrl.showPanel('search')">
+                            <div class="searchImg"></div>
+                            <span>搜索</span>
                         </div>
                     </div>
                 </th>
