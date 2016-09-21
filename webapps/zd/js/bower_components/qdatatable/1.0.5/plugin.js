@@ -20,6 +20,10 @@ if(angular && angular.module)
 	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.5/plugin.html',
 	  controller: function() {
 	  	var ctrl=this;
+	  	this.qpageroptions={
+		  		totalpage:5,
+				currentpage:1
+		};
 	  	this.$onInit=function()
 	  	{
 	  		if(!this.items)

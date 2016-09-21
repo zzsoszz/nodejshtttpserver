@@ -27,9 +27,13 @@
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
     	
     	$scope.qpageroptions={
-			        totalpage:20,
-			        currentpage:1
-		};
+  			        totalpage:20,
+  			        currentpage:1
+  		};
+      $scope.qpageroptions2={
+                totalpage:30,
+                currentpage:1
+      };
 
     });
   </script>
@@ -42,8 +46,8 @@
 <body ng-app="mainApp">
 	
 	<div ng-controller="mainController" id="mainController">
-    	<div qpager ng-model="qpageroptions">
-		</div>
+    	<div qpager ng-model="qpageroptions"></div>
+      <div qpager ng-model="qpageroptions2"></div>
 	</div>
 	
 </body>
