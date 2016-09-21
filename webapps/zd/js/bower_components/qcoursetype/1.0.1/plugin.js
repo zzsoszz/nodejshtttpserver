@@ -23,6 +23,10 @@ if(angular && angular.module)
 			    	ctrl.tableoption=
 				     {
 				     	 title:"教育经历",
+				     	 deleteEnable:false,
+				     	 editEnable:false,
+				     	 moveUpEnable:true,
+				     	 moveDownEnable:true,
 				     	 daterangeoption:ctrl.daterangeoption,
 				     	 cols:[
 					        {title:'名字',name:"name",type:"text"}

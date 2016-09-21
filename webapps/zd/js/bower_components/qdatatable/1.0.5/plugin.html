@@ -73,15 +73,14 @@
                     </span>
                 </td>
                 <td>
-                    <a ng-click="$ctrl.doDel(item)">删除</a>
-                    <a ng-click="$ctrl.moveItem(item,'up')">上移</a>
-                    <a ng-click="$ctrl.moveItem(item,'down')">下移</a>
-                    <a ng-click="$ctrl.showEdit(item,'down')">编辑</a>
+                    <a ng-if="$ctrl.option.deleteEnable" ng-click="$ctrl.doDel(item)">删除</a>
+                    <a ng-if="$ctrl.option.editEnable" ng-click="$ctrl.showEdit(item,'down')">编辑</a>
+                    <a ng-if="$ctrl.option.moveUpEnable" ng-click="$ctrl.moveItem(item,'up')">上移</a>
+                    <a ng-if="$ctrl.option.moveDownEnable" ng-click="$ctrl.moveItem(item,'down')">下移</a>
                 </td>
             </tr>
         </tbody>
     </table>
-    
-
-
+    <div  ng-if="$ctrl.option.pageEnable" qpager ng-model="$ctrl.qpageroptions">
+	</div>
 </div>
