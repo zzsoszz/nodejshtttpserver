@@ -73,10 +73,10 @@
                     </span>
                 </td>
                 <td>
-                    <a ng-if="$ctrl.option.deleteEnable" ng-click="$ctrl.doDel(item)">删除</a>
-                    <a ng-if="$ctrl.option.editEnable" ng-click="$ctrl.showEdit(item,'down')">编辑</a>
-                    <a ng-if="$ctrl.option.moveUpEnable" ng-click="$ctrl.moveItem(item,'up')">上移</a>
-                    <a ng-if="$ctrl.option.moveDownEnable" ng-click="$ctrl.moveItem(item,'down')">下移</a>
+                    <a ng-if="$ctrl.option.moveUpEnable" class="moveup"  ng-click="$ctrl.moveItem(item,'up')"></a>
+                    <a ng-if="$ctrl.option.moveDownEnable" class="movedown" ng-click="$ctrl.moveItem(item,'down')"></a>
+                    <a ng-if="$ctrl.option.editEnable" class="update" ng-click="$ctrl.showEdit(item,'down')"></a>
+                    <a ng-if="$ctrl.option.deleteEnable"  class="delete"  ng-click="$ctrl.doDel(item)"></a>
                 </td>
             </tr>
         </tbody>
