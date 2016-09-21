@@ -93,7 +93,7 @@
         startDate:'1980-01-01',
         endDate:'2050-01-01',
         showDropdowns : true
-    };
+     };
      var schoolprovinces =provinceCitys.map(function(obj1){
 		            obj1.sub=obj1.sub.map(function(obj){
 		               return {id:obj.name,name:obj.name};
@@ -110,27 +110,26 @@
        	 	// {title:'时间',name:"createtime",type:"daterangepicker"},
        	 	// {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
        	 	// {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+          {title:'编号',name:"id",type:"text"},
 	        {title:'文字',name:"desc",type:"text"},
 	        // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
 	        {title:'性别',name:"gender",type:"muliplyselect",typedata:genderArray},
      	 ]
      };
-     $scope.onItemUpdate=function(aaa)
+     $scope.onItemUpdateBefore=function(item)
      {
-        console.log("onItemUpdate:",aaa);
+        console.log("onItemUpdateBefore:",item);
      };
-     $scope.onItemAddBefore=function(aaa)
+     $scope.onItemAddBefore=function(item)
      {
-        aaa.id="123";
-        console.log("onItemAddBefore:",aaa);
-        return aaa;
+        item.id=$.guid;
+        console.log("onItemAddBefore:",item);
+        return item;
      };
-     $scope.onItemDel=function(aaa)
+     $scope.onItemDelBefore=function(item)
      {
-        console.log("onItemDel:",aaa);
+        console.log("onItemDelBefore:",item);
      };
-
-     
   });
 
   </script>
@@ -150,7 +149,7 @@
   {{result|json}}
   </div>
 
-  <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdate(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDel(item)">
+  <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdateBefore(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDelBefore(item)">
   </qdatatable>
 
   <div>
