@@ -44,21 +44,7 @@
   <script src="../../../main.js"></script>
   <script>
   
-	mainApp.config(function ($stateProvider,$urlRouterProvider) {
-    $urlRouterProvider.when("","/child");
-		$stateProvider.state("child",{
-			url:"/child",
-			templateUrl:"child.html",
-      resolve: {
-            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load({
-                    name: "child",
-                    files: ["/zd/js/bower_components/qselectsponsor/1.0.1/child.js"]
-                })
-            }]
-     } 
-		});
-	});
+
 	
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
 

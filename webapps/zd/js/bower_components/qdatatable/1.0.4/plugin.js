@@ -77,7 +77,8 @@ if(angular && angular.module)
 	  	};
 	  	this.doDel=function(item)
 	  	{
-	  		this.onItemDelBefore(item);
+	  		this.onItemDelBefore({"item":item});
+	  		console.log("aaa");
 	  		this.items.splice(this.items.indexOf(item),1);
 	  	};
 	  	this.doCancel=function()
