@@ -1,28 +1,30 @@
 <div class="qdatatable">
+{{qdatatableForm}}
     <div class="poppanel" style="" ng-show="$ctrl.isShowPanel">
         <div class="poppanle-inner" >
-            <form action="" style="width: 100%">
+            <form name="qdatatableForm" action="" style="width: 100%" ng-submit="$ctrl.doSubmit($event,qdatatableForm)">
                 <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
                 <div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
                 <div ng-repeat="col in $ctrl.option.cols track by $index" >
                     <div ng-if="col.type=='daterangepicker'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0"> {{col.title}}</div>
                         <div style="position: relative;width: 242px">
-                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
+                            <input  ng-required="col.require && $ctrl.mode!='search' " qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
                             <div id="calenderImg" style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
                         </div>
                     </div>
                     <div ng-if="col.type=='text'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">{{col.title}}</div>
                         <div style="position: relative;width: 242px">
-                            <input    class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
+                            <input   ng-required="col.require && $ctrl.mode!='search' "  class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
                         </div>
                     </div>
                     <div ng-if="col.type=='muliplyselect'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
-                        <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position: relative" 
+                        <div style="display: inline-block;height: 36px;width: 300px;c;vertical-align: middle;position:relative" 
                                      qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
                                      ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
+                                     ng-required="col.require  && $ctrl.mode!='search' "
                                 >
                                     <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
                                     <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
@@ -30,13 +32,14 @@
                     </div>
                 </div>
                 <div class="bottomBtn" >
-                    <input  ng-if="$ctrl.mode=='search' " type="button" class="confirmBtnChange" value="搜索" ng-click="$ctrl.doSearch($event,$ctrl.item)" id="popSave" style="float: left">
-                    <input  ng-if="$ctrl.mode=='add' " type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doSave($event,$ctrl.item)" id="popSave" style="float: left">
-                    <input type="button" class="cancelBtnChange" value="取消" style="float: right" ng-click="$ctrl.doCancel()">
+                    <input  ng-if="$ctrl.mode=='search' "  type="submit" class="confirmBtnChange" value="搜索"  style="float: left">
+                    <input  ng-if="$ctrl.mode=='add' "  type="submit" class="confirmBtnChange" value="保存"  style="float: left">
+                    <input   type="button" class="cancelBtnChange" value="取消" style="float: right" ng-click="$ctrl.doCancel()">
                 </div>
             </form>
         </div>
     </div>
+    
 
     <table class="newTb">
         <thead>

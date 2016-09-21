@@ -1,0 +1,82 @@
+{
+  "name": "rasterizehtml",
+  "title": "rasterizeHTML.js",
+  "version": "1.2.2",
+  "description": "Renders HTML into the browser's canvas.",
+  "keywords": [
+    "canvas",
+    "HTML"
+  ],
+  "homepage": "http://www.github.com/cburgmer/rasterizeHTML.js",
+  "bugs": {
+    "url": "https://github.com/cburgmer/rasterizeHTML.js/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Christoph Burgmer",
+    "email": "christoph.burgmer@gmail.com"
+  },
+  "directories": {
+    "lib": "./src/",
+    "example": "./examples/"
+  },
+  "browser": "dist/rasterizeHTML.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cburgmer/rasterizeHTML.js.git"
+  },
+  "dependencies": {
+    "ayepromise": "~1.1.1",
+    "css-mediaquery": "~0.1.2",
+    "inlineresources": "~0.1.7",
+    "url": "~0.10.1",
+    "xmlserializer": "~0.3.1",
+    "sane-domparser-error": "~0.2.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~2.0.7",
+    "grunt-cli": "~0.1",
+    "grunt-contrib-clean": "~1.0.0",
+    "grunt-contrib-concat": "~1.0.0",
+    "grunt-contrib-jasmine": "~1.0.0",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-uglify": "~0.11.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-regex-check": "~0.1.9",
+    "grunt-umd": "~2.3.0",
+    "imagediff": "git://github.com/cburgmer/js-imagediff.git#v1.1merged",
+    "jasmine-core": "~2.4.0",
+    "jquery": "~2.2.0",
+    "slimerjs": "~0.9.6"
+  },
+  "scripts": {
+    "test": "bash go --verbose"
+  },
+  "gitHead": "d900463082f7a67b680d6fd48b5ae7c48e56bd80",
+  "_id": "rasterizehtml@1.2.2",
+  "_shasum": "df77105661ec66964d2226234ea8e96502e61740",
+  "_from": "rasterizehtml@latest",
+  "_npmVersion": "3.3.12",
+  "_nodeVersion": "5.1.1",
+  "_npmUser": {
+    "name": "cburgmer",
+    "email": "christoph.burgmer@gmail.com"
+  },
+  "dist": {
+    "shasum": "df77105661ec66964d2226234ea8e96502e61740",
+    "tarball": "https://registry.npmjs.org/rasterizehtml/-/rasterizehtml-1.2.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "cburgmer",
+      "email": "christoph.burgmer@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/rasterizehtml-1.2.2.tgz_1456236873737_0.4491470803041011"
+  },
+  "_resolved": "https://registry.npmjs.org/rasterizehtml/-/rasterizehtml-1.2.2.tgz",
+  "readme": "ERROR: No README data found!"
+}

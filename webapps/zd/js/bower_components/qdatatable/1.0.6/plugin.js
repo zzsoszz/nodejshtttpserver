@@ -11,8 +11,9 @@ if(angular && angular.module)
 
 	qui.factory("qdatatableService",function($http) {
 	    return {
-	        search:function(url){
-	            return $http.get(url,{cache:false}).then(function(resp){
+	        search:function(url,item){
+	        	var param=$.param(item);
+	            return $http.get(url+"?"+param,{cache:false}).then(function(resp){
 	              if(resp.data.code=='success')
 	              {
 	                  return resp.data.json.datas;
@@ -32,6 +33,7 @@ if(angular && angular.module)
 	        },
 	        delete:function(url,item)
 	        {
+	           var param=$.param(item);
 	           return $http.get(url+"?"+param).then(function (resp){
 	              if(resp.data.code=='success')
 	              {
@@ -86,12 +88,27 @@ if(angular && angular.module)
 			  		this.isShowPanel=!this.isShowPanel;
 			  		this.item={};
 			  	};
+			  	this.doSubmit=function($event,qdatatableForm)
+			  	{
+			  		$event.preventDefault();
+			  		if(qdatatableForm.$valid)
+			  		{
+			  			if(this.mode=='search')
+				  		{
+				  			this.doSearch(this.item);
+				  		}else{
+				  			this.doSave(this.item);
+				  		}
+			  		}
+			  	};
 			  	this.doSearch=function(item)
 			  	{
-			  		qdatatableService.search(this.option.searchUrl,item);
-			  		this.isShowPanel=false;
+					qdatatableService.search(this.option.searchUrl,item).then(function(data){
+						this.items=data;
+					});
+					this.isShowPanel=false;
 			  	};
-			  	this.doSave=function($event,item)
+			  	this.doSave=function(item)
 			  	{
 			  		console.log(item);
 			  		var index =this.items.indexOf(item);

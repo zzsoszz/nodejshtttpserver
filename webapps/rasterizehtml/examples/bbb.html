@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>rasterizeHTML.js example</title>
+    <script type="text/javascript" src="../dist/rasterizeHTML.allinone.js"></script>
+    <style>
+        canvas, textarea {
+            display: block;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+        textarea, canvas {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <textarea id="input"></textarea>
+
+    <script type="text/template" id="template">
+       <img src="aaa.jpg" style="width: 400px; height: 300px;" alt="Tiger"/>
+    </script>
+    
+    
+    <script type="text/javascript">
+        var input = document.getElementById("input"),
+            canvas = document.getElementById("canvas"),
+            template = document.getElementById("template"),
+            oldText = input.value;
+
+        var backingScale = function () {
+            if (window.devicePixelRatio && window.devicePixelRatio > 1) {
+                return window.devicePixelRatio;
+            }
+            return 1;
+        };
+        var parsePixelValue = function (value) {
+            return parseInt(value, 10);
+        };
+        var scaleCanvasForRetina = function (canvas) {
+            var scaleFactor = backingScale(),
+                canvasStyle = window.getComputedStyle(canvas);
+            canvas.width = parsePixelValue(canvasStyle.width) * scaleFactor;
+            canvas.height = parsePixelValue(canvasStyle.height) * scaleFactor;
+        };
+
+        var drawHTML = function () {
+            var scaleFactor = backingScale();
+            rasterizeHTML.drawHTML(input.value, canvas, {
+                zoom: scaleFactor
+            });
+        };
+
+        scaleCanvasForRetina(canvas);
+        
+        if (!input.value) {
+            input.value = template.innerHTML.replace(/^ {8}/gm, "").replace(/^\n/g, "").replace(/\n +$/g, "\n");
+        }
+        drawHTML();
+    </script>
+</body>
+</html>

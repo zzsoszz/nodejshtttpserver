@@ -1,0 +1,37 @@
+<style>
+canvas {
+    position: absolute;
+    top: 0;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor
+}
+</style>
+<!-- 通过 img 标签引入图片，以便绘制到 canvas 中 -->  
+<img src="aaa.jpg" alt="" width="400" height="300">
+<!-- canvas -->  
+<canvas width="400" height="300"></canvas>
+<script>  
+  function init() {  
+	  var canvas = document.querySelector('canvas');
+	  var ctx = canvas.getContext('2d');
+	  // polyfill 提供了这个方法用来获取设备的 pixel ratio
+	  var getPixelRatio = function(context) {
+	    var backingStore = context.backingStorePixelRatio ||
+	      context.webkitBackingStorePixelRatio ||
+	      context.mozBackingStorePixelRatio ||
+	      context.msBackingStorePixelRatio ||
+	      context.oBackingStorePixelRatio ||
+	      context.backingStorePixelRatio || 1;
+	    return (window.devicePixelRatio || 1) / backingStore;
+	  };
+	  var ratio = getPixelRatio(ctx);
+	  // 注意，这里的 width 和 height 变成了 width * ratio 和 height * ratio
+	  ctx.imageSmoothingEnabled = false;
+	  ctx.mozImageSmoothingEnabled = false;
+	  ctx.drawImage(document.querySelector('img'), 0, 0, 400 * ratio, 300 * ratio);
+  }
+  window.onload = init;
+</script>  
