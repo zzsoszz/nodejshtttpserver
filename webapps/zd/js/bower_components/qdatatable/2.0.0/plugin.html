@@ -50,9 +50,9 @@
                 <div ng-if="col.type=='daterangepicker'"  class="qsearchoption">
                     <span> {{col.title}}</span>
                     <div>
-                        <div class="inputbox">
-                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
-                            <div  style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
+                        <div class="qinputgroup2">
+                            <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
+                            <div  class="addson" style="background: url('image/calender1.png') center center no-repeat;"></div>
                         </div>
                     </div>
                 </div>
@@ -65,12 +65,12 @@
                 <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
                     <span>{{col.title}}</span>
                     <div>
-                        <div class="inputbox" 
+                        <div class="qinputgroup2"
                                      qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
                                      ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
                                 >
-                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
-                                    <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
+                                    <span  class="qinputitem2" >{{$ctrl.item[col.name].name}}</span>
+                                    <div  class="addson" style="background: url('image/dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>
                 </div>
