@@ -66,15 +66,20 @@
 	float: left;
     display: inline-block;
 }
-.qdatatable .qsearchbox .qsearchoption div>input {
+.qdatatable .qsearchbox .qsearchoption  > div > .inputbox {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	position:relative
     font-size: 14px;
     color: rgb(137,137,137);
-    width: 85%;
-    height: 38px;
-    margin-top: 10px;
+    width: 240px;
+    margin:20px 10px 20px 0px;
     border: 1px solid #cccccc;
 }
-
+.qdatatable .qsearchbox .qsearchoption  > div > .inputbox .inputaddon {
+	float:right;
+}
 .actionbtn{
 	background-color: #49aad2;
     color: #fff;
@@ -85,3 +90,5 @@
     text-align: center;
     font-size: 16px;
 }
+/*
+style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"*/

@@ -48,40 +48,45 @@
         <form name="searchForm" action="" style="width: 100%" ng-submit="$event.preventDefault();$ctrl.doSearch($ctrl.item)">
             <ng-repeat ng-repeat="col in $ctrl.option.cols track by $index" >
                 <div ng-if="col.type=='daterangepicker'"  class="qsearchoption">
-                    <div> {{col.title}}</div>
-                    <div >
-                        <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
-                        <div id="calenderImg" style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
+                    <span> {{col.title}}</span>
+                    <div>
+                        <div class="inputbox">
+                            <input   qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
+                            <div  style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"></div>
+                        </div>
                     </div>
                 </div>
                 <div ng-if="col.type=='text'"  class="qsearchoption">
                     <span>{{col.title}}</span>
-                    <div>
-                        <input   class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
+                    <div class="inputbox">
+                         <input   type="text" ng-model="$ctrl.item[col.name]"/>
                     </div>
                 </div>
                 <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
                     <span>{{col.title}}</span>
-                    <div  qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
-                                 ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
-                                
-                            >
-                                <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
-                                <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
+                    <div>
+                        <div class="inputbox" 
+                                     qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
+                                >
+                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
+                                    <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
+                        </div>
                     </div>
                 </div>
-                 <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
-                        <span>{{col.title}}</span>
-                        <div  qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
+            </ng-repeat>
+            <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
+                    <span>{{col.title}}</span>
+                    <div>
+                        <div class="inputbox"    qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
                                      ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
                                     
                                 >
                                     <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
                                     <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
                         </div>
-                </div>
-            </ng-repeat>
-           
+                    </div>
+            </div>
             <div style="clear:both;padding-top:20px;text-align:center;">
                 <input   type="submit" class="actionbtn" value="搜索" >
             </div>

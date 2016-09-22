@@ -429,6 +429,26 @@ a:hover {
 
 
 
+.qinputgroup2{
+  width:200px;
+  display: inline-block;
+  position: relative;
+}
+.qinputgroup2 .qinputitem2{
+  border: 1px solid #cccccc;
+  width:100%;
+  height: 38px;
+}
+.qinputgroup2 .addson{
+  position: absolute;
+  right:0px;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+
+
+
 .justifyline{
   font-size:0.21rem;
   display:table;
