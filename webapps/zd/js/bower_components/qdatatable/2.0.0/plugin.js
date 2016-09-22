@@ -120,20 +120,29 @@ if(angular && angular.module)
 			  		console.log(index);
 			  		if(index<0)
 			  		{
-			  			var itemnew=ctrl.onItemAddBefore({"item":item});
-			  			qdatatableService.add(ctrl.option.addUrl,item);
-			  			console.log("itemnew:",itemnew);
-			  			ctrl.items.push(itemnew);
+			  			ctrl.onItemAddBefore({"item":item});
+			  			qdatatableService.add(ctrl.option.addUrl,item).then(function(data){
+							var item=data;
+							ctrl.items.push(item);
+							ctrl.doSearch({});
+						});
 			  		}else{
-			  			qdatatableService.update(ctrl.option.updateUrl,item);
 			  			ctrl.onItemUpdateBefore({"item":item});
+			  			qdatatableService.update(ctrl.option.updateUrl,item).then(function(data){
+							var item=data;
+							ctrl.item=item;
+							ctrl.doSearch({});
+						});
 			  		}
 			  		ctrl.isShowPanel=false;
 			  	};
 			  	ctrl.doDel=function(item)
 			  	{
 			  		ctrl.onItemDelBefore({"item":item});
-			  		qdatatableService.add(ctrl.option.deleteUrl,item);
+			  		qdatatableService.delete(ctrl.option.deleteUrl,item).then(function(data){
+							var item=data;
+							ctrl.doSearch({});
+					});
 			  		ctrl.items.splice(ctrl.items.indexOf(item),1);
 			  	};
 			  	ctrl.doCancel=function()

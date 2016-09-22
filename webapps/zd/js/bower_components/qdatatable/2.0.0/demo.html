@@ -104,12 +104,12 @@
        addUrl:serviceApiUrl+'/web/course/type/add',
        pageSize:3,
      	 cols:[
-       	 	// {title:'时间',name:"createtime",type:"daterangepicker"},
-       	 	// {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
-       	 	// {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+       	 	{title:'时间',name:"createtime",type:"daterangepicker"},
+       	 	{title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
+       	 	{title:'学校',name:"school",type:"muliplyselect",parent:"province"},
           {title:'编号',name:"id",type:"text",require:true},
 	        {title:'文字',name:"name",type:"text",require:true},
-	        // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
+	        {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
      	 ]
      };
      $scope.onItemUpdateBefore=function(item)
@@ -118,7 +118,6 @@
      };
      $scope.onItemAddBefore=function(item)
      {
-        item.id=$.guid;
         console.log("onItemAddBefore:",item);
         return item;
      };

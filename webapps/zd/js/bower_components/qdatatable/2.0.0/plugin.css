@@ -54,3 +54,34 @@
 .qdatatable   .movedown{
 
 }
+
+
+
+
+.qdatatable .qsearchbox{
+	 display: block;
+	 overflow: hidden;
+}
+.qdatatable .qsearchbox .qsearchoption{
+	float: left;
+    display: inline-block;
+}
+.qdatatable .qsearchbox .qsearchoption div>input {
+    font-size: 14px;
+    color: rgb(137,137,137);
+    width: 85%;
+    height: 38px;
+    margin-top: 10px;
+    border: 1px solid #cccccc;
+}
+
+.actionbtn{
+	background-color: #49aad2;
+    color: #fff;
+    border: none;
+    height: 38px;
+    width: 140px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+}
