@@ -58,8 +58,10 @@
                 </div>
                 <div ng-if="col.type=='text'"  class="qsearchoption">
                     <span>{{col.title}}</span>
-                    <div class="inputbox">
-                         <input   type="text" ng-model="$ctrl.item[col.name]"/>
+                    <div>
+                    <div class="qinputgroup2">
+                         <input  class="qinputitem2"  type="text" ng-model="$ctrl.item[col.name]"/>
+                    </div>
                     </div>
                 </div>
                 <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
@@ -69,7 +71,7 @@
                                      qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
                                      ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
                                 >
-                                    <span  class="qinputitem2" >{{$ctrl.item[col.name].name}}</span>
+                                    <span  class="qinputitem2" >啊啊{{$ctrl.item[col.name].name}}</span>
                                     <div  class="addson" style="background: url('image/dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>
