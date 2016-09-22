@@ -39,23 +39,26 @@ if(angular && angular.module)
 	  	};
 	  	this.doSave=function($event,item)
 	  	{
-	  		console.log(item);
 	  		var index =this.items.indexOf(item);
-	  		console.log(index);
 	  		if(index<0)
 	  		{
-	  			var itemnew=this.onItemAddBefore({"item":item});
-	  			console.log("itemnew:",itemnew);
-	  			this.items.push(itemnew);
+	  			if(this.option.enableEvent){
+	  				item=this.onItemAddBefore({"item":item});
+	  			}
+	  			this.items.push(item);
 	  		}else{
-	  			ctrl.onItemUpdateBefore({"item":item});
+	  			if(this.option.enableEvent)
+	  			{
+	  				item=ctrl.onItemUpdateBefore({"item":item});
+	  			}
 	  		}
 	  		this.isShowPanel=false;
 	  	};
 	  	this.doDel=function(item)
 	  	{
-	  		this.onItemDelBefore({"item":item});
-	  		console.log("aaa");
+	  		if(this.option.enableEvent){
+	  			item=this.onItemDelBefore({"item":item});
+	  		}
 	  		this.items.splice(this.items.indexOf(item),1);
 	  	};
 	  	this.doCancel=function()
@@ -64,7 +67,6 @@ if(angular && angular.module)
 	  	};
 		this.moveItem = function(item, dir) {
 		    var index =this.items.indexOf(item);
-		    console.log(index);
 	    	if (dir === 'up') {
 	    	  if(index!=0)
 	    	  {
@@ -78,7 +80,6 @@ if(angular && angular.module)
 		};
 		this.moveItem = function(item, dir) {
 		    var index =this.items.indexOf(item);
-		    console.log(index);
 	    	if (dir === 'up') {
 	    	  if(index!=0)
 	    	  {
