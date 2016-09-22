@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="plugin.css">
   <script>
     var baseUrl="/zd/";
-    var serviceApiUrl="http://localhost:8888";
   </script>
   
 
@@ -45,7 +44,6 @@
   <script src="../../../main.js"></script>
   <script>
   
-
 	
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
 
@@ -98,18 +96,20 @@
        moveUpEnable:true,
        moveDownEnable:true,
        pageEnable:true,
-       searchUrl:serviceApiUrl+'/web/course/type/list',
-       updateUrl:serviceApiUrl+'/web/course/type/update',
-       deleteUrl:serviceApiUrl+'/web/course/type/delete',
-       addUrl:serviceApiUrl+'/web/course/type/add',
-       pageSize:3,
+       enableEvent:true,
+       enableDefaultAction:true,
+       pageOption:{
+          pageSize:5
+       },
      	 cols:[
-       	 	{title:'时间',name:"createtime",type:"daterangepicker"},
-       	 	{title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
-       	 	{title:'学校',name:"school",type:"muliplyselect",parent:"province"},
-         //  {title:'编号',name:"id",type:"text",require:true},
-	        // {title:'文字',name:"name",type:"text",require:true},
+       	 	// {title:'时间',name:"createtime",type:"daterangepicker"},
+       	 	// {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
+       	 	// {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+          {title:'编号',name:"id",type:"text"},
+	        {title:'文字',name:"desc",type:"text"},
 	        // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
+	        {title:'性别',name:"gender",type:"muliplyselect",typedata:genderArray},
+          {title:'自定义操作',name:"action",type:"html"},
      	 ]
      };
      $scope.onItemUpdateBefore=function(item)
@@ -118,6 +118,7 @@
      };
      $scope.onItemAddBefore=function(item)
      {
+        item.id=$.guid;
         console.log("onItemAddBefore:",item);
         return item;
      };
@@ -125,6 +126,7 @@
      {
         console.log("onItemDelBefore:",item);
      };
+     $scope.result=[ { "desc": "dd", "gender": "2", "gender_desc": "女", "action": "dd", "id": 234 }, { "desc": "fff", "gender": "1", "gender_desc": "男", "action": "dddd", "id": 242 } ] ;
   });
 
   </script>

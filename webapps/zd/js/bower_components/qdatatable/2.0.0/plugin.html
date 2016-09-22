@@ -71,24 +71,12 @@
                                      qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
                                      ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
                                 >
-                                    <span  class="qinputitem2" >啊啊{{$ctrl.item[col.name].name}}</span>
+                                    <span  class="qinputitem2" >{{$ctrl.item[col.name].name}}</span>
                                     <div  class="addson" style="background: url('image/dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>
                 </div>
             </ng-repeat>
-            <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
-                    <span>{{col.title}}</span>
-                    <div>
-                        <div class="inputbox"    qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
-                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name]"
-                                    
-                                >
-                                    <span class="realProvince" style="line-height: 36px;font-size: 14px" >{{$ctrl.item[col.name].name}}</span>
-                                    <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
-                        </div>
-                    </div>
-            </div>
             <div style="clear:both;padding-top:20px;text-align:center;">
                 <input   type="submit" class="actionbtn" value="搜索" >
             </div>
