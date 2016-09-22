@@ -17,6 +17,14 @@ if(angular && angular.module)
 	              }
 	            });
 	        },
+	        search:function(){
+	            return $http.get(serviceApiUrl+'/web/course/type/list',{cache:false}).then(function(resp){
+	              if(resp.data.code=='success')
+	              {
+	                  return resp.data.json.datas;
+	              }
+	            });
+	        },
 	        add:function(item)
 	        {
 	           return $http.get(serviceApiUrl+'/web/course/type/add?name='+item.name).then(function (resp){

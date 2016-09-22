@@ -12,7 +12,7 @@ if(angular && angular.module)
 	qui.factory("qdatatableService",function($http) {
 	    return {
 	        search:function(url,item){
-	        	var param=$.param(item);
+	        	var param=$.param(item?item:"");
 	            return $http.get(url+"?"+param,{cache:false}).then(function(resp){
 	              if(resp.data.code=='success')
 	              {
@@ -42,7 +42,7 @@ if(angular && angular.module)
 	              return null;
 	           });
 	        },
-	        update:function(item)
+	        update:function(url,item)
 	        {
 	           var param=$.param(item);
 	           return $http.get(url+"?"+param).then(function (resp){
@@ -80,6 +80,7 @@ if(angular && angular.module)
 					{
 						this.items=[];
 					}
+					this.doSearch(this.item);
 			  		//this.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 			  	};
 			  	this.showPanel=function(mode)
@@ -104,7 +105,7 @@ if(angular && angular.module)
 			  	this.doSearch=function(item)
 			  	{
 					qdatatableService.search(this.option.searchUrl,item).then(function(data){
-						this.items=data;
+						ctrl.items=data;
 					});
 					this.isShowPanel=false;
 			  	};
@@ -165,6 +166,7 @@ if(angular && angular.module)
 				};
 				this.showEdit=function(item)
 				{
+					this.mode='edit';
 					this.item=item;
 					this.isShowPanel=true;
 				};
