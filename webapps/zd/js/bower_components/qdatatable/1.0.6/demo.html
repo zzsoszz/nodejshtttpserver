@@ -97,7 +97,7 @@
        moveDownEnable:true,
        pageEnable:true,
        enableEvent:true,
-       enableDefaultAction:false,
+       enableDefaultAction:true,
        pageOption:{
           pageSize:5
        },
@@ -109,7 +109,7 @@
 	        {title:'文字',name:"desc",type:"text"},
 	        // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
 	        {title:'性别',name:"gender",type:"muliplyselect",typedata:genderArray},
-          {title:'操作',name:"action",type:"html"},
+          {title:'自定义操作',name:"action",type:"html"},
      	 ]
      };
      $scope.onItemUpdateBefore=function(item)
