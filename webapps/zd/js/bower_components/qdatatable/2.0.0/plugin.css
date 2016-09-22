@@ -68,6 +68,9 @@
      margin:0 10px;
      height: 80px;
 }
+.qdatatable .qsearchbox .qsearchoption > div{
+	 margin-top: 10px;
+}
 .actionbtn{
 	background-color: #49aad2;
     color: #fff;
