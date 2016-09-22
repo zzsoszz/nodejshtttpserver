@@ -66,10 +66,10 @@ if(angular && angular.module)
 			    	ctrl.tableoption=
 				     {
 				     	 title:"教育经历",
-				     	 deleteEnable:false,
+				     	 deleteEnable:true,
 				     	 editEnable:true,
-				     	 moveUpEnable:false,
-				     	 moveDownEnable:false,
+				     	 moveUpEnable:true,
+				     	 moveDownEnable:true,
 				     	 enableEvent:true,
 				     	 enableDefaultAction:false,
 				     	 daterangeoption:ctrl.daterangeoption,
