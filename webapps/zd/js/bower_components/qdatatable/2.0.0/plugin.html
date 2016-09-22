@@ -49,14 +49,14 @@
                 <th ng-repeat="item in $ctrl.option.cols | limitTo: $ctrl.option.cols.length-1">
                 </th>
                 <th>
-                    <div class="addBtn confirmBtnChange">
-                        <div class="addBox" ng-click="$ctrl.showPanel('add')">
+                    <div class="addBtn confirmBtnChange" ng-click="$ctrl.showPanel('add')">
+                        <div class="addBox" >
                             <div class="searchImg"></div>
                             <span>添加</span>
                         </div>
                     </div>
-                    <div class="addBtn confirmBtnChange">
-                    <div class="addBox" ng-click="$ctrl.showPanel('search')">
+                    <div class="addBtn confirmBtnChange" ng-click="$ctrl.showPanel('search')">
+                    <div class="addBox">
                             <div class="searchImg"></div>
                             <span>搜索</span>
                         </div>
