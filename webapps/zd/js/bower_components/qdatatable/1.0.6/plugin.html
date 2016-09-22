@@ -28,6 +28,13 @@
                                     <div style="width: 38px;height: 100%;float: right;margin-right: -1px;;background: url('image/dropDownBg.png') center center no-repeat"></div>
                         </div>
                     </div>
+                    <div ng-if="col.type=='html'">
+                        <div style="font-size: 14px;color: rgb(0,0,0);margin:20px 0 10px 0">{{col.title}}</div>
+                        <div style="position: relative;width: 242px">
+                            <textarea    class="form-control"  type="text" ng-model="$ctrl.item[col.name]">
+                            </textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="bottomBtn" >
                     <input type="button" class="confirmBtnChange" value="保存" ng-click="$ctrl.doSave($event,$ctrl.item)" id="popSave" style="float: left">
@@ -40,16 +47,16 @@
     <table class="newTb">
         <thead>
             <tr>
-                <th style="padding-left: 46px;text-align: left">{{$ctrl.option.title}}</th>
-                <th ng-repeat="item in $ctrl.option.cols | limitTo: $ctrl.option.enableDefaultAction ? ($ctrl.option.cols.length-1): ($ctrl.option.cols.length-2)">
-                </th>
-                <th>
-                    <div class="addBtn confirmBtnChange">
-                        <div class="addBox" ng-click="$ctrl.showAdd()">
-                            <div class="searchImg"></div>
-                            <span>添加</span>
+                <th colspan="{{$ctrl.option.enableDefaultAction?($ctrl.option.cols.length+1):($ctrl.option.cols.length)}}" >
+                        <div style="float:left;height:40px;line-height:40px;padding-left: 46px;text-align: left;">
+                            {{$ctrl.option.title}}
                         </div>
-                    </div>
+                         <div  class="addBtn confirmBtnChange" ng-click="$ctrl.showAdd()">
+                            <div class="addBox">
+                                <div class="searchImg"></div>
+                                <span>添加</span>
+                            </div>
+                        </div>
                 </th>
             </tr>
         </thead>
@@ -70,6 +77,10 @@
                     </span>
                     <span ng-if="col.type=='muliplyselect'">
                     {{item[col.name].name}}
+                    </span>
+                    <span ng-if="col.type=='html'">
+                         <div ng-bind-html="item[col.name]|to_trusted">
+                         </div>
                     </span>
                 </td>
                 <td ng-if="$ctrl.option.enableDefaultAction">

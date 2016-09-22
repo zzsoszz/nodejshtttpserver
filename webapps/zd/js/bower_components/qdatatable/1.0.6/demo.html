@@ -44,7 +44,6 @@
   <script src="../../../main.js"></script>
   <script>
   
-
 	
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
 
@@ -98,7 +97,7 @@
        moveDownEnable:true,
        pageEnable:true,
        enableEvent:true,
-       enableDefaultAction:true,
+       enableDefaultAction:false,
        pageOption:{
           pageSize:5
        },
@@ -110,6 +109,7 @@
 	        {title:'文字',name:"desc",type:"text"},
 	        // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
 	        {title:'性别',name:"gender",type:"muliplyselect",typedata:genderArray},
+          {title:'操作',name:"action",type:"html"},
      	 ]
      };
      $scope.onItemUpdateBefore=function(item)
@@ -126,6 +126,9 @@
      {
         console.log("onItemDelBefore:",item);
      };
+     $scope.result=[ { "action": "<a>aaaa</a>", "id": 140 }, { "action": "<a href=\"#aaa\">aaa</a>\n<a href=\"#aaa\">bbb</a>\n<a href=\"#aaa\">ccc</a>", "id": 150, "desc": "aaa", "gender": { "id": "1", "name": "男" } } ];
+
+     
   });
 
   </script>
