@@ -27,6 +27,8 @@ if(angular && angular.module)
 				     	 editEnable:true,
 				     	 moveUpEnable:false,
 				     	 moveDownEnable:false,
+				     	 enableEvent:true,
+				     	 enableDefaultAction:false,
 				     	 daterangeoption:ctrl.daterangeoption,
 				     	 cols:[
 					        {title:'名字',name:"name",type:"text"}
