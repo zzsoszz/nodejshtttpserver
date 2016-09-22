@@ -360,6 +360,7 @@ form *:not(input):not(textarea).danger{
   border: 1px solid #cccccc;
   width:100%;
   height: 38px;
+  line-height:1.4em;
 }
 .qinputgroup2 .addson{
   position: absolute;
