@@ -68,107 +68,111 @@ if(angular && angular.module)
 		  },
 		  scope:true,
 		  templateUrl:baseUrl+'js/bower_components/qdatatable/2.0.0/plugin.html',
-		  controller: ["qdatatableService",function(qdatatableService) {
+		  controller: ["qdatatableService","$scope",function(qdatatableService,$scope) {
 			  	var ctrl=this;
-			  	this.qpageroptions={
-				  		totalpage:5,
+			  	ctrl.qpageroptions={
 						currentpage:1
 				};
-			  	this.$onInit=function()
+				$scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
+					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:currentpage});
+					ctrl.doSearch(item);
+				});
+			  	ctrl.$onInit=function()
 			  	{
-			  		if(!this.items)
+			  		if(!ctrl.items)
 					{
-						this.items=[];
+						ctrl.items=[];
 					}
-					this.doSearch(this.item);
-			  		//this.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
+					ctrl.doSearch(ctrl.item);
+			  		//ctrl.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 			  	};
-			  	this.showPanel=function(mode)
+			  	ctrl.showPanel=function(mode)
 			  	{
-			  		this.mode=mode;
-			  		this.isShowPanel=!this.isShowPanel;
-			  		this.item={};
+			  		ctrl.mode=mode;
+			  		ctrl.isShowPanel=!ctrl.isShowPanel;
+			  		ctrl.item={};
 			  	};
-			  	this.doSubmit=function($event,qdatatableForm)
+			  	ctrl.doSubmit=function($event,qdatatableForm)
 			  	{
 			  		$event.preventDefault();
 			  		if(qdatatableForm.$valid)
 			  		{
-			  			if(this.mode=='search')
+			  			if(ctrl.mode=='search')
 				  		{
-				  			this.doSearch(this.item);
+				  			ctrl.doSearch(ctrl.item);
 				  		}else{
-				  			this.doSave(this.item);
+				  			ctrl.doSave(ctrl.item);
 				  		}
 			  		}
 			  	};
-			  	this.doSearch=function(item)
+			  	ctrl.doSearch=function(item)
 			  	{
-					qdatatableService.search(this.option.searchUrl,item).then(function(data){
+					qdatatableService.search(ctrl.option.searchUrl,item).then(function(data){
 						ctrl.items=data;
+						ctrl.qpageroptions.totalpage=Math.ceil(ctrl.items.length/ctrl.option.pageSize);
 					});
-					this.isShowPanel=false;
+					ctrl.isShowPanel=false;
 			  	};
-			  	this.doSave=function(item)
+			  	ctrl.doSave=function(item)
 			  	{
 			  		console.log(item);
-			  		var index =this.items.indexOf(item);
+			  		var index =ctrl.items.indexOf(item);
 			  		console.log(index);
 			  		if(index<0)
 			  		{
-			  			var itemnew=this.onItemAddBefore({"item":item});
-			  			qdatatableService.add(this.option.addUrl,item);
+			  			var itemnew=ctrl.onItemAddBefore({"item":item});
+			  			qdatatableService.add(ctrl.option.addUrl,item);
 			  			console.log("itemnew:",itemnew);
-			  			this.items.push(itemnew);
+			  			ctrl.items.push(itemnew);
 			  		}else{
-			  			qdatatableService.update(this.option.updateUrl,item);
+			  			qdatatableService.update(ctrl.option.updateUrl,item);
 			  			ctrl.onItemUpdateBefore({"item":item});
 			  		}
-			  		this.isShowPanel=false;
+			  		ctrl.isShowPanel=false;
 			  	};
-			  	this.doDel=function(item)
+			  	ctrl.doDel=function(item)
 			  	{
-			  		this.onItemDelBefore({"item":item});
-			  		qdatatableService.add(this.option.deleteUrl,item);
-			  		this.items.splice(this.items.indexOf(item),1);
+			  		ctrl.onItemDelBefore({"item":item});
+			  		qdatatableService.add(ctrl.option.deleteUrl,item);
+			  		ctrl.items.splice(ctrl.items.indexOf(item),1);
 			  	};
-			  	this.doCancel=function()
+			  	ctrl.doCancel=function()
 			  	{
-			  		this.isShowPanel=false;
+			  		ctrl.isShowPanel=false;
 			  	};
-				this.moveItem = function(item, dir) {
-				    var index =this.items.indexOf(item);
+				ctrl.moveItem = function(item, dir) {
+				    var index =ctrl.items.indexOf(item);
 				    console.log(index);
 			    	if (dir === 'up') {
 			    	  if(index!=0)
 			    	  {
-		 				this.items.splice(index - 1, 2, item, this.items[index - 1]);
+		 				ctrl.items.splice(index - 1, 2, item, ctrl.items[index - 1]);
 			    	  }
 				    } else {
-				      if(index!=this.items.length-1){
-				    	this.items.splice(index, 2, this.items[index + 1], item);
+				      if(index!=ctrl.items.length-1){
+				    	ctrl.items.splice(index, 2, ctrl.items[index + 1], item);
 				      }
 				    }
 				};
-				this.moveItem = function(item, dir) {
-				    var index =this.items.indexOf(item);
+				ctrl.moveItem = function(item, dir) {
+				    var index =ctrl.items.indexOf(item);
 				    console.log(index);
 			    	if (dir === 'up') {
 			    	  if(index!=0)
 			    	  {
-		 				this.items.splice(index - 1, 2, item, this.items[index - 1]);
+		 				ctrl.items.splice(index - 1, 2, item, ctrl.items[index - 1]);
 			    	  }
 				    } else {
-				      if(index!=this.items.length-1){
-				    	this.items.splice(index, 2, this.items[index + 1], item);
+				      if(index!=ctrl.items.length-1){
+				    	ctrl.items.splice(index, 2, ctrl.items[index + 1], item);
 				      }
 				    }
 				};
-				this.showEdit=function(item)
+				ctrl.showEdit=function(item)
 				{
-					this.mode='edit';
-					this.item=item;
-					this.isShowPanel=true;
+					ctrl.mode='edit';
+					ctrl.item=item;
+					ctrl.isShowPanel=true;
 				};
 
 		 }]
