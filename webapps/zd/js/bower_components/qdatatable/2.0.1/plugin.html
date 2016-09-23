@@ -47,7 +47,7 @@
             </form>
         </div>
     </div>
-
+  
 
     <div class="qsearchbox" >
         <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
@@ -86,39 +86,22 @@
             </ng-repeat>
             <div style="clear:both;padding-top:20px;text-align:center;">
                 <input   type="submit" class="actionbtn" value="搜索" >
+                <input   type="button" ng-click="$ctrl.showPanel('add')" class="actionbtn" value="添加" >
             </div>
         </form>
     </div>
-        
+<input qdaterangepicker ng-model='aaaa' />
+    
     <table class="newTb">
         <thead>
             <tr>
-                <th style="padding-left: 46px;text-align: left">{{$ctrl.option.title}}</th>
-                <th ng-repeat="item in $ctrl.option.cols | limitTo: $ctrl.option.cols.length-1">
+                <th ng-repeat="col in $ctrl.option.cols track by $index" >
+                    {{col.title}}
                 </th>
-                <th>
-                    <div class="addBtn confirmBtnChange" ng-click="$ctrl.showPanel('add')">
-                        <div class="addBox" >
-                            <div class="searchImg"></div>
-                            <span>添加</span>
-                        </div>
-                    </div>
-                    <div class="addBtn confirmBtnChange" ng-click="$ctrl.showPanel('search')">
-                    <div class="addBox">
-                            <div class="searchImg"></div>
-                            <span>搜索</span>
-                        </div>
-                    </div>
-                </th>
+                <th ng-if="$ctrl.option.enableDefaultAction">操作</th>
             </tr>
         </thead>
         <tbody id="eduBody">
-            <tr>
-                <td ng-repeat="col in $ctrl.option.cols track by $index" >
-                    {{col.title}}
-                </td>
-                <td>操作</td>
-            </tr>
             <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
                 <td ng-repeat="col in $ctrl.option.cols track by $index" >
                     <span ng-if="col.type=='daterangepicker'">
@@ -131,11 +114,11 @@
                     {{item[col.name].name}}
                     </span>
                     <span ng-if="col.type=='html'">
-                         <div ng-bind-html="item[col.name]|to_trusted">
+                         <div ng-html-compile="item[col.name]">
                          </div>
                     </span>
                 </td>
-                <td>
+                <td ng-if="$ctrl.option.enableDefaultAction">
                     <a ng-if="$ctrl.option.moveUpEnable" class="moveup"  ng-click="$ctrl.moveItem(item,'up')"></a>
                     <a ng-if="$ctrl.option.moveDownEnable" class="movedown" ng-click="$ctrl.moveItem(item,'down')"></a>
                     <a ng-if="$ctrl.option.editEnable" class="update" ng-click="$ctrl.showEdit(item)"></a>
