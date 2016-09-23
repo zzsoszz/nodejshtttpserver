@@ -44,11 +44,11 @@
   <script src="plugin.js"></script>
   <script src="../../../main.js"></script>
 
-
+  
   <script>
   mainApp.config(function ($stateProvider,$urlRouterProvider) {
-    $urlRouterProvider.when("","index");
-    $stateProvider.state("index",{
+    $urlRouterProvider.when("","module");
+    $stateProvider.state("module",{
         url:"/{type}",
         // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
         templateUrl: function ($stateParams){
@@ -82,6 +82,7 @@
 
 </style>
 </head>
+
 <body ng-app="mainApp">
 
   <div ng-controller="mainController">
