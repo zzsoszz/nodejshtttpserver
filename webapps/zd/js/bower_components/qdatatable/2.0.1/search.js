@@ -1,4 +1,4 @@
-angular.module('search',[]).controller("searchController", function ($rootScope,$http,$location,$scope) {
+angular.module('qdatatable',[]).controller("searchController", function ($rootScope,$http,$location,$scope) {
   	$scope.daterangeoption={
         maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
         alwaysShowCalendars:true,
