@@ -64,7 +64,7 @@
         },
         resolve: {
             loadMyCtrl: ['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
-                var controllerjs=baseUrl+'/js/app/' +$stateParams.module+"/"+ $stateParams.type+'.js';
+                var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
                 console.log(controllerjs);
                 return $ocLazyLoad.load({
                     files: [controllerjs]
@@ -87,8 +87,10 @@
 <body ng-app="mainApp">
 
   <div ng-controller="mainController">
+
     <div ui-view>
     </div>
+
   </div>
 
 </body>

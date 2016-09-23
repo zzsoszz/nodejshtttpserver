@@ -13,8 +13,8 @@ angular.module('app', ['ngComponentRouter', 'heroes', 'crisis-center'])
     '  <a ng-link="[\'Heroes\']">Heroes</a>\n' +
     '</nav>\n' +
     '<ng-outlet></ng-outlet>\n',
-  $routeConfig: [
-    {path: '/crisis-center/...', name: 'CrisisCenter', component: 'crisisCenter', useAsDefault: true},
-    {path: '/heroes/...', name: 'Heroes', component: 'heroes' }
-  ]
+    $routeConfig: [
+      {path: '/crisis-center/...', name: 'CrisisCenter', component: 'crisisCenter', useAsDefault: true},
+      {path: '/heroes/...', name: 'Heroes', component: 'heroes' }
+    ]
 });

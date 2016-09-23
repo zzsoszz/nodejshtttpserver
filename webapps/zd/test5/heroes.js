@@ -35,59 +35,57 @@ angular.module('heroes', [])
   });
 
 
-function HeroService($q) {
-  var heroesPromise = $q.when([
-    { id: 11, name: 'Mr. Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' }
-  ]);
+  function HeroService($q) {
+    var heroesPromise = $q.when([
+      { id: 11, name: 'Mr. Nice' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+      { id: 15, name: 'Magneta' },
+      { id: 16, name: 'RubberMan' }
+    ]);
 
-  this.getHeroes = function() {
-    return heroesPromise;
-  };
+    this.getHeroes = function() {
+      return heroesPromise;
+    };
 
-  this.getHero = function(id) {
-    return heroesPromise.then(function(heroes) {
-      for (var i = 0; i < heroes.length; i++) {
-        if (heroes[i].id === id) return heroes[i];
-      }
-    });
-  };
-}
+    this.getHero = function(id) {
+      return heroesPromise.then(function(heroes) {
+        for (var i = 0; i < heroes.length; i++) {
+          if (heroes[i].id === id) return heroes[i];
+        }
+      });
+    };
+  }
 
-function HeroListComponent(heroService) {
-  var selectedId = null;
-  var $ctrl = this;
+  function HeroListComponent(heroService) {
+    var selectedId = null;
+    var $ctrl = this;
 
-  this.$routerOnActivate = function(next) {
-    // Load up the heroes for this view
-    heroService.getHeroes().then(function(heroes) {
-      $ctrl.heroes = heroes;
-      selectedId = next.params.id;
-    });
-  };
+    this.$routerOnActivate = function(next) {
+      // Load up the heroes for this view
+      heroService.getHeroes().then(function(heroes) {
+        $ctrl.heroes = heroes;
+        selectedId = next.params.id;
+      });
+    };
 
-  this.isSelected = function(hero) {
-    return (hero.id === selectedId);
-  };
-}
+    this.isSelected = function(hero) {
+      return (hero.id === selectedId);
+    };
+  }
 
-function HeroDetailComponent(heroService) {
-  var $ctrl = this;
-
-  this.$routerOnActivate = function(next) {
-    // Get the hero identified by the route parameter
-    var id = next.params.id;
-    heroService.getHero(id).then(function(hero) {
-      $ctrl.hero = hero;
-    });
-  };
-
-  this.gotoHeroes = function() {
-    var heroId = this.hero && this.hero.id;
-    this.$router.navigate(['HeroList', {id: heroId}]);
-  };
-}
+  function HeroDetailComponent(heroService) {
+    var $ctrl = this;
+    this.$routerOnActivate = function(next) {
+      // Get the hero identified by the route parameter
+      var id = next.params.id;
+      heroService.getHero(id).then(function(hero) {
+        $ctrl.hero = hero;
+      });
+    };
+    this.gotoHeroes = function() {
+      var heroId = this.hero && this.hero.id;
+      this.$router.navigate(['HeroList', {id: heroId}]);
+    };
+  }
