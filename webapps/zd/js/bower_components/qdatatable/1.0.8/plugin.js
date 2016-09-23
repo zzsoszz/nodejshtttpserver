@@ -36,7 +36,6 @@ if(angular && angular.module)
 	  		if(!this.items)
 			{
 				this.items=[];
-				[ { "desc": "dd", "gender": "2", "gender_desc": "女", "action": "dd", "id": 234 }, { "desc": "fff", "gender": "1", "gender_desc": "男", "action": "dddd", "id": 242 } ] ;
 			}
 	  	};
 	  	this.showAdd=function()
