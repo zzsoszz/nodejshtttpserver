@@ -418,14 +418,26 @@ a:hover {
   padding:0.2rem;
   background-color:#ffffff;
 }
-
-
-
-
 /**/
 .qinputgroup.normal{
   border:1px solid #cccccc;
 }
+
+
+
+.qinputgroup2{
+  display: inline-block;
+}
+.qinputgroup2 .qinputitem2{
+  border: 1px solid #cccccc;
+  width:100%;
+  height: 100%;
+}
+.qinputgroup2 .qinputitem2 > .addon{
+  
+}
+
+
 
 
 

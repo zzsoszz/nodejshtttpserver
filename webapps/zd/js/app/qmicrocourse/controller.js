@@ -1,4 +1,10 @@
-var qmicrocourse=angular.module('qmicrocourse',[]).controller("searchController", function ($rootScope,$http,$location,$scope) {
+var qmicrocourse=angular.module('qmicrocourse',[])
+
+qmicrocourse.service("qmicrocourseService",function(){
+  
+});
+qmicrocourse.controller("searchController", function ($rootScope,$http,$location,$scope) {
+
 	$scope.daterangeoption={
       maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
       alwaysShowCalendars:true,
@@ -78,17 +84,19 @@ var qmicrocourse=angular.module('qmicrocourse',[]).controller("searchController"
    {
       console.log("onItemDelBefore:",item);
    };
- 
-})
-;
+
+});
 
 qmicrocourse.controller("editController", function ($rootScope,$http,$location,$scope) {
   $scope.username="aaaaa";
 });
+
 
 qmicrocourse.controller("addController", function ($rootScope,$http,$location,$scope) {
   $scope.username="aaaaa";
 });
-qmicrocourse.controller("editController", function ($rootScope,$http,$location,$scope) {
+
+
+qmicrocourse.controller("detailController", function ($rootScope,$http,$location,$scope) {
   $scope.username="aaaaa";
 });
