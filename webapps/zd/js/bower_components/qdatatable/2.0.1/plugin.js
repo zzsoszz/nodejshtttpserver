@@ -55,8 +55,27 @@ if(angular && angular.module)
 	        }
 	    }
 	});
-
-
+/*
+<input   qdaterangepicker class="form-control date-picker"  type="text"  ng-model="aaaa"/>
+*/
+	qui.filter(  
+	    'to_trusted', ['$sce', function ($sce) {  
+	        return function (text) {  
+	            return $sce.trustAsHtml(text);  
+	        }  
+	    }]  
+	);
+    qui.directive('ngHtmlCompile', function($compile) {
+		return {
+		    restrict: 'A',
+		    link: function(scope, element, attrs) {
+				scope.$watch(attrs.ngHtmlCompile, function(newValue, oldValue) {
+				    element.html(newValue);
+				    $compile(element.contents())(scope);
+				});
+		    }
+		}
+    });
 	qui.component('qdatatable', {
 		  transclude: true,
 		  bindings:{
@@ -75,7 +94,7 @@ if(angular && angular.module)
 				};
 				$scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
 					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:currentpage});
-					ctrl.doSearch(item);
+					//ctrl.doSearch(item);
 				});
 			  	ctrl.$onInit=function()
 			  	{
@@ -83,7 +102,8 @@ if(angular && angular.module)
 					{
 						ctrl.items=[];
 					}
-					ctrl.doSearch(ctrl.item);
+					ctrl.items=[ { "name": "123456", "actions": '<a  ui-sref="edit({id:item.name})">添加<a>' } ];
+					//ctrl.doSearch(ctrl.item);
 			  		//ctrl.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 			  	};
 			  	ctrl.showPanel=function(mode)

@@ -91,7 +91,7 @@
   	 var genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
      $scope.tableoption=
      {
-     	 title:"教育经历",
+     	 title:"课程类型",
      	 daterangeoption:$scope.daterangeoption,
        deleteEnable:true,
        editEnable:true,
@@ -114,6 +114,33 @@
 	       // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
      	 ]
      };
+
+    $scope.tableoption=
+     {
+       title:"微课堂",
+       daterangeoption:$scope.daterangeoption,
+       deleteEnable:true,
+       editEnable:true,
+       moveUpEnable:true,
+       moveDownEnable:true,
+       pageEnable:true,
+       enableDefaultAction:true,
+       searchUrl:serviceApiUrl+'/web/course/type/list',
+       updateUrl:serviceApiUrl+'/web/course/type/update',
+       deleteUrl:serviceApiUrl+'/web/course/type/delete',
+       addUrl:serviceApiUrl+'/web/course/type/add',
+       pageSize:3,
+       cols:[
+        {title:'名称',name:"name",type:"text"},
+         // {title:'时间',name:"createtime",type:"daterangepicker"},
+         // {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
+         //{title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+         //  {title:'编号',name:"id",type:"text",require:true},
+         // {title:'文字',name:"name",type:"text",require:true},
+         // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
+         {title:'html格式',name:"actions",type:"html"},
+       ]
+     };
      $scope.onItemUpdateBefore=function(item)
      {
         console.log("onItemUpdateBefore:",item);
@@ -127,6 +154,7 @@
      {
         console.log("onItemDelBefore:",item);
      };
+   
   });
 
   </script>
@@ -149,12 +177,19 @@
   <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdateBefore(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDelBefore(item)">
   </qdatatable>
 
+
+  <div ui-view>
+  </div>
+
+
+
   <div>
   {{result2|json}}
   </div>
   <qdatatable ng-model="result2"  ng-option="tableoption">
   </qdatatable>
   
+
 </div>
 
 

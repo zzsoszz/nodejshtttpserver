@@ -47,7 +47,7 @@
             </form>
         </div>
     </div>
-
+  
 
     <div class="qsearchbox" >
         <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
@@ -90,7 +90,7 @@
             </div>
         </form>
     </div>
-
+<input qdaterangepicker ng-model='aaaa' />
     
     <table class="newTb">
         <thead>
@@ -114,7 +114,7 @@
                     {{item[col.name].name}}
                     </span>
                     <span ng-if="col.type=='html'">
-                         <div ng-bind-html="item[col.name]|to_trusted">
+                         <div ng-html-compile="item[col.name]">
                          </div>
                     </span>
                 </td>
