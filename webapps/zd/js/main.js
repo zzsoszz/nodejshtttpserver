@@ -64,7 +64,7 @@ mainApp.directive('ngShow',['$animate', function($animate) {
 }]);
 
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
-      $urlRouterProvider.when("","basic");
+      $urlRouterProvider.when("","").otherwise("");
       $stateProvider.state("basic",{
           url:"/{module}/{controller}",
           // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",

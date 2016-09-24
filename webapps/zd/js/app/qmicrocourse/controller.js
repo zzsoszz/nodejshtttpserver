@@ -55,7 +55,7 @@ qmicrocourse.controller("searchController", function ($rootScope,$http,$location
      moveUpEnable:true,
      moveDownEnable:true,
      pageEnable:true,
-     enableDefaultAction:true,
+     enableDefaultAction:false,
      searchUrl:serviceApiUrl+'/web/course/type/list',
      updateUrl:serviceApiUrl+'/web/course/type/update',
      deleteUrl:serviceApiUrl+'/web/course/type/delete',
