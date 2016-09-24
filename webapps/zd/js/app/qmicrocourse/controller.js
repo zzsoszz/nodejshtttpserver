@@ -1,36 +1,8 @@
 var qmicrocourse=angular.module('qmicrocourse',[])
-qmicrocourse.config(function ($stateProvider,$urlRouterProvider) {
-  $stateProvider.state("qmicrocourse",{
-      url:"/qmicrocourse/{method}/{id}",
-      // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
-      templateUrl: function ($stateParams){
-        var tempurl=baseUrl+'/js/app/qmicrocourse/'+ $stateParams.method+ '.html';
-        console.log(tempurl);
-        return tempurl;
-      },
-      controllerProvider: function($stateParams) {
-          var ctrlName =$stateParams.method+"Controller";
-          console.log(ctrlName);
-          return ctrlName;
-      }
-      // ,
-      // resolve: {
-      //     loadMyCtrl: ['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
-      //         var controllerjs=baseUrl+'/js/app/qmicrocourse/' +$stateParams.method+'.js';
-      //         console.log(controllerjs);
-      //         return $ocLazyLoad.load({
-      //             files: [controllerjs]
-      //         })
-      //     }]
-      // }
-  });
-});
+
 qmicrocourse.service("qmicrocourseService",function(){
   
 });
-
-
-
 
 qmicrocourse.controller("searchController", function ($rootScope,$http,$location,$scope) {
 
@@ -83,7 +55,7 @@ qmicrocourse.controller("searchController", function ($rootScope,$http,$location
      moveUpEnable:true,
      moveDownEnable:true,
      pageEnable:true,
-     enableDefaultAction:true,
+     enableDefaultAction:false,
      searchUrl:serviceApiUrl+'/web/course/type/list',
      updateUrl:serviceApiUrl+'/web/course/type/update',
      deleteUrl:serviceApiUrl+'/web/course/type/delete',
@@ -125,9 +97,8 @@ qmicrocourse.controller("editController", function ($rootScope,$http,$location,$
   $scope.$on("$init",function(){
     console.log("edit-init",$scope);
   })
-
+  
 });
-
 
 qmicrocourse.controller("addController", function ($rootScope,$http,$location,$scope,$stateParams) {
   $scope.username="add-"+$stateParams.id;
