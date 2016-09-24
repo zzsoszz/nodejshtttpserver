@@ -83,55 +83,69 @@
     	var app=angular.module("customaApp",['ui.router']);
 		app.config(['$stateProvider', '$urlRouterProvider','$httpProvider',
 	    function($stateProvider, $urlRouterProvider,$httpProvider) {
-	    	//$urlRouterProvider.when('/','/home/menu1').otherwise('/home/menu1');
+	    	$urlRouterProvider.when('','/home/menu1').otherwise('/home/menu1');
 			$stateProvider.state('index',{
-		    	url: '/',
-		    	views: {
-		            'head': {
-	                	templateUrl: 'template/head.html'
-		            },
-		            'vcon': {
-		                templateUrl: 'template/cont.html'
-		            },
-		            'footer': {
-		                templateUrl: 'template/footer.html'
-		            },
-		            
-		            
-		        }
+			    	url: '',
+			    	views: {
+			            'head': {
+		                	templateUrl: 'template/head.html'
+			            },
+			            'vcon': {
+			                templateUrl: 'template/cont.html'
+			            },
+			            'footer': {
+			                templateUrl: 'template/footer.html'
+			            },
+			            
+			            
+			        }
 		        }).state('index.home',{
-		    	url: 'home',
-		    	views: {
-		            'menu': {
-		                templateUrl: 'template/menu.html'
-		            },
-		            
-		        }
+			    	url: '/home',
+			    	views: {
+			            'menu': {
+			                templateUrl: 'template/menu.html'
+			            },
+			        }
 		        })
 		        .state('index.home.menu1',{
-		    	url: '/menu1',
-		    	views: {
-		            'info@index': {//'@'后是一个状态名，总结下其实就是名称为'info'的这个视图所在的模板在哪个状态下被引入就是哪个状态名，多做实验体会下。
-		                templateUrl: 'template/menu1.html'
-		            },
-		            
-		        }
+			    	url: '/menu1',
+			    	views: {
+			            'info@index': {//'@'后是一个状态名，总结下其实就是名称为'info'的这个视图所在的模板在哪个状态下被引入就是哪个状态名，多做实验体会下。
+			                templateUrl: 'template/menu1.html'
+			            },
+			            'footer@index': {//'@'后是一个状态名，总结下其实就是名称为'info'的这个视图所在的模板在哪个状态下被引入就是哪个状态名，多做实验体会下。
+			                templateUrl: 'template/menu1.html'
+			            },
+			        }
+		        })
+		        .state('index.home.menu1.aaa',{
+			    	url: '/aaa',
+			    	views: {
+			            'info@index': {//'@'后是一个状态名，总结下其实就是名称为'info'的这个视图所在的模板在哪个状态下被引入就是哪个状态名，多做实验体会下。
+			                template: '<div>aaaaaaaaaaa</div>'
+			            },
+			            'footer@index': {//'@'后是一个状态名，总结下其实就是名称为'info'的这个视图所在的模板在哪个状态下被引入就是哪个状态名，多做实验体会下。
+			                template: '<div>vvvvvvvv</div>'
+			            },
+			        }
 		        }).state('index.home.menu2',{
-		    	url: '/menu2',
-		    	views: {
-		            'info@index': {
-		                templateUrl: 'template/menu2.html'
-		            },
-		            
-		        }
+			    	url: '/menu2',
+			    	views: {
+			            'info@index': {
+			                templateUrl: 'template/menu2.html'
+			            },
+			            'footer@index': {//'@'后是一个状态名，总结下其实就是名称为'info'的这个视图所在的模板在哪个状态下被引入就是哪个状态名，多做实验体会下。
+			                templateUrl: 'template/menu2.html'
+			            },
+			        }
 		        }).state('index.home.menu3',{
-		    	url: '/menu3',
-		    	views: {
-		            'info@index': {
-		                templateUrl: 'template/menu3.html'
-		            },
-		            
-		        }
+			    	url: '/menu3',
+			    	views: {
+			            'info@index': {
+			                templateUrl: 'template/menu3.html'
+			            },
+			            
+			        }
 		        });
 			}]);
     </script>

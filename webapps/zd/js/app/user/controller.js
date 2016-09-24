@@ -1,36 +1,4 @@
 var qmicrocourse=angular.module('qmicrocourse',[])
-qmicrocourse.config(function ($stateProvider,$urlRouterProvider) {
-  $stateProvider.state("qmicrocourse",{
-      url:"/qmicrocourse/{method}/{id}",
-      // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
-      templateUrl: function ($stateParams){
-        var tempurl=baseUrl+'/js/app/qmicrocourse/'+ $stateParams.method+ '.html';
-        console.log(tempurl);
-        return tempurl;
-      },
-      controllerProvider: function($stateParams) {
-          var ctrlName =$stateParams.method+"Controller";
-          console.log(ctrlName);
-          return ctrlName;
-      }
-      // ,
-      // resolve: {
-      //     loadMyCtrl: ['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
-      //         var controllerjs=baseUrl+'/js/app/qmicrocourse/' +$stateParams.method+'.js';
-      //         console.log(controllerjs);
-      //         return $ocLazyLoad.load({
-      //             files: [controllerjs]
-      //         })
-      //     }]
-      // }
-  });
-});
-qmicrocourse.service("qmicrocourseService",function(){
-  
-});
-
-
-
 
 qmicrocourse.controller("searchController", function ($rootScope,$http,$location,$scope) {
 
@@ -117,35 +85,17 @@ qmicrocourse.controller("searchController", function ($rootScope,$http,$location
 });
 
 qmicrocourse.controller("editController", function ($rootScope,$http,$location,$scope,$stateParams) {
-  
+  console.log($stateParams.id);
   $scope.username="edit-"+$stateParams.id;
-  $scope.$on("$destroy",function(){
-    console.log("edit-destroy",$scope);
-  })
-  $scope.$on("$init",function(){
-    console.log("edit-init",$scope);
-  })
-
 });
 
 
 qmicrocourse.controller("addController", function ($rootScope,$http,$location,$scope,$stateParams) {
   $scope.username="add-"+$stateParams.id;
-  $scope.$on("$destroy",function(){
-    console.log("add-destroy",$scope);
-  })
-  $scope.$on("$init",function(){
-    console.log("add-init",$scope);
-  })
 });
 
 
 qmicrocourse.controller("detailController", function ($rootScope,$http,$location,$scope,$stateParams) {
+  console.log($stateParams.id);
   $scope.username="detail-"+$stateParams.id;
-  $scope.$on("$destroy",function(){
-    console.log("detail-destroy",$scope);
-  })
-  $scope.$on("$init",function(){
-    console.log("detail-init",$scope);
-  })
 });

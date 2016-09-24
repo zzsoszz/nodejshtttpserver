@@ -47,18 +47,45 @@
   
   <script>
   
-  mainApp.config(function ($stateProvider,$urlRouterProvider) {
-    $urlRouterProvider.when("","module");
-    $stateProvider.state("module",{
-        url:"/{module}/{type}",
+  // mainApp.config(function ($stateProvider,$urlRouterProvider) {
+  //   $urlRouterProvider.when("","module");
+  //   $stateProvider.state("module",{
+  //       url:"/{module}/{type}",
+  //       // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
+  //       templateUrl: function ($stateParams){
+  //         var tempurl=baseUrl+'/js/app/' +$stateParams.module+"/"+ $stateParams.type+ '.html';
+  //         console.log(tempurl);
+  //         return tempurl;
+  //       },
+  //       controllerProvider: function($stateParams) {
+  //           var ctrlName = $stateParams.type + "Controller";
+  //           console.log(ctrlName);
+  //           return ctrlName;
+  //       },
+  //       resolve: {
+  //           loadMyCtrl: ['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
+  //               var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
+  //               console.log(controllerjs);
+  //               return $ocLazyLoad.load({
+  //                   files: [controllerjs]
+  //               })
+  //           }]
+  //       }
+  //   });
+  // });
+
+    mainApp.config(function ($stateProvider,$urlRouterProvider) {
+    $urlRouterProvider.when("","basic");
+    $stateProvider.state("basic",{
+        url:"/{module}/{controller}",
         // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
         templateUrl: function ($stateParams){
-          var tempurl=baseUrl+'/js/app/' +$stateParams.module+"/"+ $stateParams.type+ '.html';
+          var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
           console.log(tempurl);
           return tempurl;
         },
         controllerProvider: function($stateParams) {
-            var ctrlName = $stateParams.type + "Controller";
+            var ctrlName =  $stateParams.controller+"Controller";
             console.log(ctrlName);
             return ctrlName;
         },
@@ -72,7 +99,61 @@
             }]
         }
     });
+    
+    $stateProvider.state("detail",{
+        url:"/{module}/{controller}/{id}",
+        // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
+        templateUrl: function ($stateParams){
+          var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
+          console.log(tempurl);
+          return tempurl;
+        },
+        controllerProvider: function($stateParams) {
+            var ctrlName =  $stateParams.controller+"Controller";
+            console.log(ctrlName);
+            return ctrlName;
+        },
+        resolve: {
+            loadMyCtrl: ['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
+                var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
+                console.log(controllerjs);
+                return $ocLazyLoad.load({
+                    files: [controllerjs]
+                })
+            }]
+        }
+    });
+
+
   });
+
+  // mainApp.config(function ($stateProvider,$urlRouterProvider) {
+  //   $stateProvider.state("qmicrocourse",{
+  //       url:"/qmicrocourse/{method}/{id}",
+  //       // templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
+  //       templateUrl: function ($stateParams){
+  //         var tempurl=baseUrl+'/js/app/qmicrocourse/'+ $stateParams.method+ '.html';
+  //         console.log(tempurl);
+  //         return tempurl;
+  //       },
+  //       controllerProvider: function($stateParams) {
+  //           var ctrlName =$stateParams.method+"Controller";
+  //           console.log(ctrlName);
+  //           return ctrlName;
+  //       },
+  //       resolve: {
+  //           loadMyCtrl: ['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
+  //               var controllerjs=baseUrl+'/js/app/qmicrocourse/controller.js';
+  //               console.log(controllerjs);
+  //               return $ocLazyLoad.load({
+  //                   files: [controllerjs]
+  //               })
+  //           }]
+  //       }
+  //   });
+  // });
+
+
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
       
   });
