@@ -93,11 +93,12 @@ if(angular && angular.module)
 		  controller: ["qdatatableService","$scope",function(qdatatableService,$scope) {
 			  	var ctrl=this;
 			  	ctrl.qpageroptions={
-						currentpage:1
+						currentpage:1,
+						totalpage:0
 				};
 				$scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
 					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:currentpage});
-					ctrl.doSearch(item);
+					//ctrl.doSearch(item);
 				});
 			  	ctrl.$onInit=function()
 			  	{
@@ -133,6 +134,8 @@ if(angular && angular.module)
 					qdatatableService.search(ctrl.option.searchUrl,item).then(function(data){
 						ctrl.items=data;
 						ctrl.qpageroptions.totalpage=Math.ceil(ctrl.items.length/ctrl.option.pageSize);
+						// $scope.$apply(function(){
+						// });
 					});
 					ctrl.isShowPanel=false;
 			  	};

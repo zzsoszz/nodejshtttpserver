@@ -252,11 +252,23 @@ if(angular!=undefined  && angular.module)
 							}
 						}
 					);
-					scope.$watchCollection(attrs["ngModel"],function(newval,oldval)
+		        	scope.$watchCollection("ngModel",function(newval,oldval)
 					{
 						console.log("qpageroptions:",newval);
 						element.qpager(newval);
 					});
+					// scope.$watchCollection(scope.ngModel,function(newval,oldval)
+					// {
+					// 	console.log("qpageroptions:",newval);
+					// 	element.qpager(newval);
+					// });
+
+					// scope.$watchCollection(attrs["ngModel"],function(newval,oldval)
+					// {
+					// 	console.log("qpageroptions:",newval);
+					// 	element.qpager(newval);
+					// });
+
 					/*
 		        	attrs.$observe('ngModel', function(value) {
 				     　　var newval=scope[value];

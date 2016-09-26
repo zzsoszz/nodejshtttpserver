@@ -83,7 +83,7 @@ if(angular && angular.module)
 					{
 						ctrl.items=[];
 					}
-					ctrl.doSearch(ctrl.item);
+					//ctrl.doSearch(ctrl.item);
 			  		//ctrl.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
 			  	};
 			  	ctrl.showPanel=function(mode)
@@ -109,7 +109,7 @@ if(angular && angular.module)
 			  	{
 					qdatatableService.search(ctrl.option.searchUrl,item).then(function(data){
 						ctrl.items=data;
-						ctrl.qpageroptions.totalpage=Math.ceil(ctrl.items.length/ctrl.option.pageSize);
+						ctrl.qpageroptions.totalpage=$.guid;//Math.ceil(ctrl.items.length/ctrl.option.pageSize);
 					});
 					ctrl.isShowPanel=false;
 			  	};
