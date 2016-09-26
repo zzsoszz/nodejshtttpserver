@@ -411,3 +411,15 @@ form *:not(input):not(textarea).danger{
 .qdatatable   .movedown{
     background: url(images/movedown.png) center center no-repeat;
 }
+.actionbtn{
+    padding: 1px 6px; 
+    display:inline-block;
+    background-color: #49aad2;
+    color: #fff;
+    border: none;
+    height: 38px;
+    width: 140px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+}
