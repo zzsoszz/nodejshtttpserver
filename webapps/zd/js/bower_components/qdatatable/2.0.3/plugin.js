@@ -97,10 +97,8 @@ if(angular && angular.module)
 				};
 				$scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
 					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:currentpage});
-					//ctrl.doSearch(item);
+					ctrl.doSearch(item);
 				});
-
-
 			  	ctrl.$onInit=function()
 			  	{
 			  		if(!ctrl.items)

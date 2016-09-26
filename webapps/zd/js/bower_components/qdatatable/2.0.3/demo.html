@@ -90,6 +90,7 @@
        editEnable:true,
        moveUpEnable:true,
        moveDownEnable:true,
+       detailEnable:true,
        pageEnable:true,
        enableDefaultAction:true,
        searchUrl:serviceApiUrl+'/web/course/type/list',
@@ -99,13 +100,13 @@
        pageSize:3,
        cols:[
         {title:'名称',name:"name",type:"text"},
-         {title:'时间',name:"createtime",type:"daterangepicker"},
-         {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
-         {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+         // {title:'时间',name:"createtime",type:"daterangepicker"},
+         // {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
+         // {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
          //  {title:'编号',name:"id",type:"text",require:true},
          // {title:'文字',name:"name",type:"text",require:true},
          // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
-         {title:'html格式',name:"actions",type:"html"},
+         //{title:'html格式',name:"actions",type:"html"},
        ]
      };
      $scope.onItemUpdateBefore=function(item)

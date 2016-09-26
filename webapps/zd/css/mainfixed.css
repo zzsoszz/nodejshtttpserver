@@ -406,8 +406,8 @@ form *:not(input):not(textarea).danger{
     background: url(images/detail.png) center center no-repeat;
 }
 .qdatatable  .moveup{
-
+    background: url(images/moveup.png) center center no-repeat;
 }
 .qdatatable   .movedown{
-
+    background: url(images/movedown.png) center center no-repeat;
 }

@@ -118,6 +118,7 @@
                 <td ng-if="$ctrl.option.enableDefaultAction">
                     <a ng-if="$ctrl.option.moveUpEnable" class="moveup"  ng-click="$ctrl.moveItem(item,'up')"></a>
                     <a ng-if="$ctrl.option.moveDownEnable" class="movedown" ng-click="$ctrl.moveItem(item,'down')"></a>
+                    <a ng-if="$ctrl.option.detailEnable"  class="detail"  ng-click="$ctrl.showEdit(item)"></a>
                     <a ng-if="$ctrl.option.editEnable" class="update" ng-click="$ctrl.showEdit(item)"></a>
                     <a ng-if="$ctrl.option.deleteEnable"  class="delete"  ng-click="$ctrl.doDel(item)"></a>
                 </td>
