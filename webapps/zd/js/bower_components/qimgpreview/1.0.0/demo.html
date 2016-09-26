@@ -12,13 +12,10 @@
   <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
   <script src="plugin.js"></script>
   <script>
-  	
     var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad","qui"]);
-    
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
         
     });
-    
   </script>
 
 <style>
@@ -28,7 +25,11 @@
 <body ng-app="mainApp">
 
 	<div ng-controller="mainController" id="mainController">
-      
+    
+      <div qimgpreview ng="model">
+
+      </div>
+
   </div>
 
 </body>
