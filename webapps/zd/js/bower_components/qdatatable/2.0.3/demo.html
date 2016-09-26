@@ -99,7 +99,8 @@
        addUrl:serviceApiUrl+'/web/course/type/add',
        pageSize:3,
        cols:[
-        {title:'名称',name:"name",type:"text"},
+       	 {title:'编号',name:"id",type:"text"},
+         {title:'名称',name:"name",type:"text"},
          {title:'时间',name:"createtime",type:"daterangepicker"},
          {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
          {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
@@ -122,7 +123,11 @@
      {
         console.log("onItemDelBefore:",item);
      };
-     $scope.result=[ { "name": "123456", "actions": '<a ng-if="item.name==123456" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加<a>' }];
+     $scope.result=[ {
+     	"id": "1", 
+        "name": "123456", 
+     	"actions": '<a ng-if="item.name==123456" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加<a>   <a ng-if="item.name==123456" ui-sref=\'detail({module:"qmicrocourse",controller:"edit",id:item.id})\'>编辑<a>'
+      }];
   });
   </script>
 
