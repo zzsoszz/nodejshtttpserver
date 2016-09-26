@@ -27,19 +27,26 @@ if(angular && angular.module)
 	}
 	qui.directive('qimgpreview',['$templateRequest','$compile',function($templateRequest,$compile) {
 	    return {
-		        restrict: 'A',
-		        priority: 100,
+		        restrict: 'EA',
+		        // priority: 100,
 		        require: '?ngModel',
 		        scope: {
-		            items:'=dropdowndata',
-		            initdata:'=initdata',
-		            ngModel: '=ngModel'
+		            ngModel:'='
 		        },
 		        link: function(scope, element, attrs,controller) {
-		        	var fileinput=$('<input type="file">');
-		        	var img=$("<img>");
-		        	element.append(fileinput).click(function(){
-		        		fileimput.
+		        	var imgEle=$('<img width="100%"  height="100%" >');
+		        	var fileEle=$('<input type="file" >').hide();//multiple
+		        	fileEle.on("change",function(){
+		        		preImg(fileEle.get(0),imgEle.get(0));
+		        		scope.ngModel=fileEle.val();
+		        		controller.$setViewValue(scope.ngModel);
+					    controller.$render();
+		        	}).on("click",function(event){
+		        		event.stopPropagation();
+		        	});
+		        	element.append(fileEle).append(imgEle);
+		        	element.click(function(){
+		        		fileEle.trigger("click");
 		        	});
 		        }
 		    };

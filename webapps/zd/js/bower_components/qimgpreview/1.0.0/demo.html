@@ -14,7 +14,7 @@
   <script>
     var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad","qui"]);
     mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
-        
+        $scope.aaaaa="c:\\aaa.png";
     });
   </script>
 
@@ -25,11 +25,11 @@
 <body ng-app="mainApp">
 
 	<div ng-controller="mainController" id="mainController">
-
-      <div qimgpreview ng="model">
-          
+      <div>
+      {{aaaaa}}
       </div>
-
+      <div qimgpreview ng-model="aaaaa" style="width:100px;height:100px">
+      </div>
   </div>
 
 </body>
