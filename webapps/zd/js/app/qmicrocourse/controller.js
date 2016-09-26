@@ -177,8 +177,8 @@ qmicrocourse.controller("editController", function ($rootScope,$http,$location,$
   
 });
 
-qmicrocourse.controller("addController", function ($rootScope,$http,$location,$scope,$stateParams) {
-  
+qmicrocourse.controller("addController", function ($rootScope,$http,$location,$scope,$stateParams,qmicrocourseService) {
+   
    $scope.$on("$destroy",function(){
       console.log("add-destroy",$scope);
    })
@@ -225,20 +225,16 @@ qmicrocourse.controller("addController", function ($rootScope,$http,$location,$s
     });
     var lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
     var genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
-
-    
-    $scope.model=[
-       {title:'编号',name:"id",type:"text"},
-       {title:'名称',name:"name",type:"text"},
-       {title:'时间',name:"createtime",type:"daterangepicker"},
-       {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
-       {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
-       {title:'编号',name:"id",type:"text",require:true},
-       {title:'文字',name:"name",type:"text",require:true},
-       {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
-       {title:'html格式',name:"actions",type:"html"},
-    ];
-    
+    $scope.doAdd=function(form)
+    {
+       if(form.$valid)
+       {
+         qmicrocourseService.add($scope.item);
+       }else{
+          alert("数据有错！");
+       }
+       
+    }
 });
 
 

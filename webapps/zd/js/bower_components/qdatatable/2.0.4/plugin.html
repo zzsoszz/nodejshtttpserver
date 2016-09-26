@@ -2,9 +2,9 @@
 <!-- {{qdatatableForm}} -->
     <div class="poppanel" style="" ng-show="$ctrl.isShowPanel">
         <div class="poppanle-inner" >
-            <form name="qdatatableForm" action="" style="width: 100%" ng-submit="$ctrl.doSubmit($event,qdatatableForm)">
-                <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
-                <div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
+            <form name="qdatatableForm"   ng-submit="$ctrl.doSubmit($event,qdatatableForm)">
+                <div class="title">{{$ctrl.option.title}}</div>
+                <div class="hline"></div>
                 <div ng-repeat="col in $ctrl.option.cols track by $index" >
                     <div ng-if="col.type=='daterangepicker' && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable)   ) ">
                         <span> {{col.title}}</span>
@@ -49,9 +49,9 @@
 
 
     <div class="qsearchbox" ng-if="$ctrl.option.enableDefaultAction" >
-        <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
-        <div style="width: 100%;height: 1px;background-color: #efeff0;margin:10px 0 30px 0"></div>
-        <form name="searchForm" action="" style="width: 100%" ng-submit="$event.preventDefault();$ctrl.doSearch($ctrl.item)">
+        <div class="title">{{$ctrl.option.title}}</div>
+        <div class="hline"></div>
+        <form name="searchForm" action="" ng-submit="$event.preventDefault();$ctrl.doSearch($ctrl.item)">
             <ng-repeat ng-repeat="col in $ctrl.option.cols track by $index" >
                 <div ng-if="col.type=='daterangepicker' && col.searchEnable  "  class="qsearchoption">
                     <span> {{col.title}}</span>

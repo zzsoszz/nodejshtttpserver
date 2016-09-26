@@ -1,7 +1,21 @@
 <div ng-controller="addController">
 <div>
 	<form name="addForm" ng-submit="doSubmit(addForm)">
+		<div class="title">对象名</div>
+        <div class="hline"></div>
+        <div>
+
 			
+	        <div>	
+		        <span>{{col.title}}</span>
+		        <div class="qinputgroup2" >
+		            <input  ng-required="col.require" qdaterangepicker class="form-control date-picker"  type="text" data-option="daterangeoption" ng-model="item.mainTitle"/>
+		            <div class="addson calendar-bg"></div>
+		        </div>
+	       </div>
+			
+
+       </div>
 	</form>
 </div>
 </div>
