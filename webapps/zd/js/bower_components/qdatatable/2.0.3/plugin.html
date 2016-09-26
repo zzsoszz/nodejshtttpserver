@@ -125,6 +125,6 @@
             </tr>
         </tbody>
     </table>
-    <div  ng-if="$ctrl.option.enableDefaultAction"  ng-if="$ctrl.option.pageEnable" qpager ng-model="$ctrl.qpageroptions">
+    <div  ng-if="$ctrl.option.enableDefaultAction"  ng-if="$ctrl.option.pageEnable" qpager ng-model="$ctrl.qpageroptions" onpagechange="pagechange(page)">
 	</div>
 </div>

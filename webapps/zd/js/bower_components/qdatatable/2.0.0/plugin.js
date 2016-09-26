@@ -109,7 +109,7 @@ if(angular && angular.module)
 			  	{
 					qdatatableService.search(ctrl.option.searchUrl,item).then(function(data){
 						ctrl.items=data;
-						ctrl.qpageroptions.totalpage=$.guid;//Math.ceil(ctrl.items.length/ctrl.option.pageSize);
+						ctrl.qpageroptions.totalpage=Math.ceil(ctrl.items.length/ctrl.option.pageSize);
 					});
 					ctrl.isShowPanel=false;
 			  	};

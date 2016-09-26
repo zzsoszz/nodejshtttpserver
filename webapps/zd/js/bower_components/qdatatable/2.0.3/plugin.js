@@ -92,20 +92,23 @@ if(angular && angular.module)
 		  templateUrl:baseUrl+'js/bower_components/qdatatable/2.0.3/plugin.html',
 		  controller: ["qdatatableService","$scope",function(qdatatableService,$scope) {
 			  	var ctrl=this;
+			  	// $scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
+				// });
 			  	ctrl.qpageroptions={
 						currentpage:1,
 						totalpage:0
 				};
-				$scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
-					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:currentpage});
-					//ctrl.doSearch(item);
-				});
+				ctrl.pagechange=function(page){
+					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:page});
+					
+				}
 			  	ctrl.$onInit=function()
 			  	{
 			  		if(!ctrl.items)
 					{
 						ctrl.items=[];
 					}
+					ctrl.doSearch({});
 					//ctrl.items=[ { "name": "123456", "actions": '<a  ui-sref=\'module({type:'+'"edit"'+'})\'>添加<a>' } ];
 					//ctrl.doSearch(ctrl.item);
 			  		//ctrl.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
