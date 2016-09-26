@@ -37,7 +37,10 @@ if(angular && angular.module)
 		        },
 		        link: function(scope, element, attrs,controller) {
 		        	var fileinput=$('<input type="file">');
-		        	element.append();
+		        	var img=$("<img>");
+		        	element.append(fileinput).click(function(){
+		        		fileimput
+		        	});
 		        }
 		    };
 		}]
