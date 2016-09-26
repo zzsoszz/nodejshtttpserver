@@ -10,6 +10,7 @@ if(angular && angular.module)
 
 
 	qui.factory("qdatatableService",function($http) {
+
 	    return {
 	        search:function(url,item){
 	        	var param=$.param(item?item:"");
@@ -54,6 +55,8 @@ if(angular && angular.module)
 	           });
 	        }
 	    }
+
+	    
 	});
 /*
 <input   qdaterangepicker class="form-control date-picker"  type="text"  ng-model="aaaa"/>
@@ -96,6 +99,8 @@ if(angular && angular.module)
 					var item=$.extend(ctrl.item?ctrl.item:{},{pagesize:ctrl.option.pageSize,currentpage:currentpage});
 					//ctrl.doSearch(item);
 				});
+
+
 			  	ctrl.$onInit=function()
 			  	{
 			  		if(!ctrl.items)
@@ -203,6 +208,8 @@ if(angular && angular.module)
 					ctrl.item=item;
 					ctrl.isShowPanel=true;
 				};
+
+
 
 		 }]
 		

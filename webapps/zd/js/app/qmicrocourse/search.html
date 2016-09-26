@@ -1,7 +1,87 @@
 <div ng-controller="searchController">
-	<div>
-	{{result|json}}
-	</div>
-	<qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdateBefore(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDelBefore(item)">
-	</qdatatable>
+
+		<div class="qsearchbox" ng-if="tableoption.enableDefaultAction" >
+		    <div style="font-size: 20px;color: rgb(70,80,94)">{{tableoption.title}}</div>
+		    <div style="width: 100%;height: 1px;background-color: #efeff0;margin:10px 0 30px 0"></div>
+		    <form name="searchForm" action="" style="width: 100%" ng-submit="$event.preventDefault();doSearch(item)">
+		        <ng-repeat ng-repeat="col in tableoption.cols track by $index" >
+		            <div ng-if="col.type=='daterangepicker'"  class="qsearchoption">
+		                <span> {{col.title}}</span>
+		                <div>
+		                    <div class="qinputgroup2">
+		                        <input  class="qinputitem2" qdaterangepicker   type="text" data-option="tableoption.daterangeoption" ng-model="item[col.name]"/>
+		                        <div  class="addson calendar-bg" ></div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div ng-if="col.type=='text'"  class="qsearchoption">
+		                <span>{{col.title}}</span>
+		                <div>
+		                <div class="qinputgroup2">
+		                     <input  class="qinputitem2"  type="text" ng-model="item[col.name]"/>
+		                </div>
+		                </div>
+		            </div>
+		            <div ng-if="col.type=='muliplyselect'"  class="qsearchoption">
+		                <span>{{col.title}}</span>
+		                <span>{{col.parent?selectitem[col.parent].sub:col.typedata}}</span>
+		                <div>
+		                    <div class="qinputgroup2"
+		                                 qdropdownselect data-initdata="item[col.name]"  data-dropdowndata="col.parent?selectitem[col.parent].sub:col.typedata"  ng-model="selectitem[col.name]"
+		                                 ng-change="item[col.name]=selectitem[col.name].id;item[col.name+'_desc']=selectitem[col.name].name"
+		                            >
+		                                <span  class="qinputitem2" >{{item[col.name+'_desc']}}</span>
+		                                <div  class="addson" style=""></div>
+		                    </div>
+		                </div>
+		            </div>
+		        </ng-repeat>
+		        <div style="clear:both;padding-top:20px;text-align:center;">
+		            <input   type="submit" class="actionbtn" value="搜索" >
+		            <input   type="button" href="showPanel('add')" class="actionbtn" value="添加" >
+		        </div>
+		    </form>
+		</div>
+
+
+		<div>
+			 <table class="newTb">
+		        <thead>
+		            <tr>
+		                <th ng-repeat="col in tableoption.cols track by $index" >
+		                    {{col.title}}
+		                </th>
+		                <th ng-if="tableoption.enableDefaultAction">操作</th>
+		            </tr>
+		        </thead>
+		        <tbody id="eduBody">
+		            <tr ng-repeat="item in items track by $index"  class="newTr newEducationTr">
+		                <td ng-repeat="col in tableoption.cols track by $index" >
+		                    <span ng-if="col.type=='daterangepicker'">
+		                    {{item[col.name]}}
+		                    </span>
+		                    <span ng-if="col.type=='text'">
+		                    {{item[col.name]}}
+		                    </span>
+		                    <span ng-if="col.type=='muliplyselect'">
+		                    {{item[col.name+'_desc']}}
+		                    </span>
+		                    <span ng-if="col.type=='html'">
+		                         <div ng-html-compile="item[col.name]">
+		                         </div>
+		                    </span>
+		                </td>
+		                <td ng-if="tableoption.enableDefaultAction">
+		                    <a ng-if="tableoption.moveUpEnable" class="moveup"  ng-click="moveItem(item,'up')"></a>
+		                    <a ng-if="tableoption.moveDownEnable" class="movedown" ng-click="moveItem(item,'down')"></a>
+		                    <a ng-if="tableoption.editEnable" class="update" ng-click="showEdit(item)"></a>
+		                    <a ng-if="tableoption.deleteEnable"  class="delete"  ng-click="doDel(item)"></a>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		    <div  ng-if="tableoption.enableDefaultAction"  ng-if="tableoption.pageEnable" qpager ng-model="qpageroptions">
+			</div>
+		</div>
+
 </div>

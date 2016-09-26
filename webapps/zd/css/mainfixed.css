@@ -380,3 +380,34 @@ form *:not(input):not(textarea).danger{
     height: 38px;
     background: url('images/dropDownBg.png') center center no-repeat;
 }
+
+.qdatatable   .update,
+.qdatatable   .add,
+.qdatatable   .delete,
+.qdatatable   .detail,
+.qdatatable   .moveup,
+.qdatatable   .movedown
+{
+    display: inline-block;
+    height: 100%;
+    width: 26px;
+    cursor: pointer;
+}
+.qdatatable   .update{
+    background: url(images/update.png) center center no-repeat;
+}
+.qdatatable   .add{
+    background: url(images/add.png) center center no-repeat;
+}
+.qdatatable  .delete{
+    background: url(images/delete.png) center center no-repeat;
+}
+.qdatatable  .detail{
+    background: url(images/detail.png) center center no-repeat;
+}
+.qdatatable  .moveup{
+
+}
+.qdatatable   .movedown{
+
+}
