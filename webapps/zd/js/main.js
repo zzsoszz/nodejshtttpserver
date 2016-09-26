@@ -115,19 +115,19 @@ mainApp.directive('ngShow',['$animate', function($animate) {
 // });
 
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
-      $urlRouterProvider.when("","").otherwise("");
-      $stateProvider.state("basic",{
+      $urlRouterProvider.when("","go").otherwise("go");
+      $stateProvider.state("go",{
             url:"/{module}/{controller}",
             templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
             templateUrl: function ($stateParams){
               var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
-              //console.log(tempurl);
+              console.log(tempurl);
               return tempurl;
             }
             ,
             controllerProvider: function($stateParams) {
                 var ctrlName =  $stateParams.controller+"Controller";
-                //console.log(ctrlName);
+                console.log(ctrlName);
                 return ctrlName;
             },
             // component:'hello'

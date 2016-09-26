@@ -100,13 +100,13 @@
        pageSize:3,
        cols:[
         {title:'名称',name:"name",type:"text"},
-         // {title:'时间',name:"createtime",type:"daterangepicker"},
-         // {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
-         // {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
-         //  {title:'编号',name:"id",type:"text",require:true},
-         // {title:'文字',name:"name",type:"text",require:true},
-         // {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
-         //{title:'html格式',name:"actions",type:"html"},
+         {title:'时间',name:"createtime",type:"daterangepicker"},
+         {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces},
+         {title:'学校',name:"school",type:"muliplyselect",parent:"province"},
+         {title:'编号',name:"id",type:"text",require:true},
+         {title:'文字',name:"name",type:"text",require:true},
+         {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray},
+         {title:'html格式',name:"actions",type:"html"},
        ]
      };
      $scope.onItemUpdateBefore=function(item)
@@ -122,6 +122,7 @@
      {
         console.log("onItemDelBefore:",item);
      };
+     $scope.result=[ { "name": "123456", "actions": '<a ng-if="item.name==123456" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加<a>' }];
   });
   </script>
 
@@ -131,8 +132,11 @@
 </head>
 
 <body ng-app="mainApp">
-
+  
   <div ng-controller="mainController">
+      <div ui-view>
+      </div>
+
       <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdateBefore(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDelBefore(item)">
       </qdatatable>
   </div>

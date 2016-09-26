@@ -108,10 +108,10 @@ if(angular && angular.module)
 					{
 						ctrl.items=[];
 					}
-					ctrl.doSearch({});
+					//ctrl.doSearch({});
 					//ctrl.items=[ { "name": "123456", "actions": '<a  ui-sref=\'module({type:'+'"edit"'+'})\'>添加<a>' } ];
 					//ctrl.doSearch(ctrl.item);
-			  		//ctrl.items=[{"createtime":"1980-01-01 - 1980-01-10","school":"天津3","major":"河北区3","province":"北京","desc":"aaa","lessons":1,"gender":"女"}];
+			  		
 			  	};
 			  	ctrl.showPanel=function(mode)
 			  	{
