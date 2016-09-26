@@ -1,0 +1,140 @@
+<div class="qdatatable">
+<!-- {{qdatatableForm}} -->
+    <div class="poppanel" style="" ng-show="$ctrl.isShowPanel">
+        <div class="poppanle-inner" >
+            <form name="qdatatableForm" action="" style="width: 100%" ng-submit="$ctrl.doSubmit($event,qdatatableForm)">
+                <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
+                <div style="width: 100%;height: 1px;background-color: #efeff0;margin-top: 5px"></div>
+                <div ng-repeat="col in $ctrl.option.cols track by $index" >
+                    <div ng-if="col.type=='daterangepicker' && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable)   ) ">
+                        <span> {{col.title}}</span>
+                        <div class="qinputgroup2" >
+                            <input  ng-required="col.require && $ctrl.mode!='search' " qdaterangepicker class="form-control date-picker"  type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
+                            <div class="addson calendar-bg"></div>
+                        </div>
+                    </div>
+                    <div ng-if="col.type=='text'  && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable) ) ">
+                        <span >{{col.title}}</span>
+                        <div class="qinputgroup2"  >
+                            <input class="qinputitem2"  ng-required="col.require && $ctrl.mode!='search' "  class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
+                        </div>
+                    </div>
+                    <div ng-if="col.type=='muliplyselect'  && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable) ) ">
+                        <span>{{col.title}}</span>
+                        <div class="qinputgroup2"      qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name].id;$ctrl.item[col.name+'_desc']=$ctrl.selectitem[col.name].name"
+                                     ng-required="col.require  && $ctrl.mode!='search' "
+                                >
+                                    <span class="qinputitem2">{{$ctrl.item[col.name+'_desc']}}</span>
+                                    <div class="addson dropdown-bg"></div>
+                        </div>
+                    </div>
+                    <div ng-if="col.type=='html'  && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable) ) ">
+                        <span>{{col.title}}</span>
+                        <div>
+                                <textarea    class="qinputitem2"  type="text" ng-model="$ctrl.item[col.name]">
+                                </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomBtn" >
+                    <input  ng-if="$ctrl.mode=='search' "  type="submit" class="confirmBtnChange" value="搜索"  style="float: left">
+                    <input  ng-if="$ctrl.mode=='add' "  type="submit" class="confirmBtnChange" value="添加"  style="float: left">
+                    <input  ng-if="$ctrl.mode=='edit' "  type="submit" class="confirmBtnChange" value="更新"  style="float: left">
+                    <input   type="button" class="cancelBtnChange" value="取消" style="float: right" ng-click="$ctrl.doCancel()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="qsearchbox" ng-if="$ctrl.option.enableDefaultAction" >
+        <div style="font-size: 20px;color: rgb(70,80,94)">{{$ctrl.option.title}}</div>
+        <div style="width: 100%;height: 1px;background-color: #efeff0;margin:10px 0 30px 0"></div>
+        <form name="searchForm" action="" style="width: 100%" ng-submit="$event.preventDefault();$ctrl.doSearch($ctrl.item)">
+            <ng-repeat ng-repeat="col in $ctrl.option.cols track by $index" >
+                <div ng-if="col.type=='daterangepicker' && col.searchEnable  "  class="qsearchoption">
+                    <span> {{col.title}}</span>
+                    <div>
+                        <div class="qinputgroup2">
+                            <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.option.daterangeoption" ng-model="$ctrl.item[col.name]"/>
+                            <div  class="addson  calendar-bg" ></div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="col.type=='text'  && col.searchEnable"  class="qsearchoption">
+                    <span>{{col.title}}</span>
+                    <div>
+                    <div class="qinputgroup2">
+                         <input  class="qinputitem2"  type="text" ng-model="$ctrl.item[col.name]"/>
+                    </div>
+                    </div>
+                </div>
+                <div ng-if="col.type=='muliplyselect'  && col.searchEnable"  class="qsearchoption">
+                    <span>{{col.title}}</span>
+                    <div>
+                        <div class="qinputgroup2"
+                                     qdropdownselect data-initdata="$ctrl.item[col.name]"  data-dropdowndata="col.parent?$ctrl.selectitem[col.parent].sub:col.typedata"  ng-model="$ctrl.selectitem[col.name]"
+                                     ng-change="$ctrl.item[col.name]=$ctrl.selectitem[col.name].id;$ctrl.item[col.name+'_desc']=$ctrl.selectitem[col.name].name"
+                                >
+                                    <span  class="qinputitem2" >{{$ctrl.item[col.name+'_desc']}}</span>
+                                    <div  class="addson dropdown-bg" style=""></div>
+                        </div>
+                    </div>
+                </div>
+            </ng-repeat>
+            <div style="clear:both;padding-top:20px;text-align:center;">
+                <input  type="submit" class="actionbtn" value="搜索" >
+                <input  ng-if="$ctrl.option.addEnable" type="button" ng-click="$ctrl.showPanel('add')" class="actionbtn" value="通用添加" >
+                <ng-html-compile   ng-html-compile="$ctrl.option.addlink" >
+                </ng-html-compile>
+            </div>
+        </form>
+    </div>
+    
+
+    <table class="newTb">
+        <thead>
+            <tr>
+                <th ng-repeat="col in $ctrl.option.cols track by $index" >
+                  <span ng-if="col.listEnable">  
+                    {{col.title}}
+                  </span>
+                </th>
+                <th ng-if="$ctrl.option.enableDefaultAction">操作</th>
+            </tr>
+        </thead>
+        <tbody id="eduBody">
+            <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
+                <td ng-repeat="col in $ctrl.option.cols track by $index" >
+                    <span ng-if="col.type=='daterangepicker' && col.listEnable">
+                    {{item[col.name]}}
+                    </span>
+                    <span ng-if="col.type=='text' && col.listEnable">
+                    {{item[col.name]}}
+                    </span>
+                    <span ng-if="col.type=='muliplyselect' && col.listEnable">
+                    {{item[col.name+'_desc']}}
+                    </span>
+                    <span ng-if="col.type=='html' && col.listEnable">
+                         <div ng-html-compile="item[col.name]">
+                         </div>
+                    </span>
+                </td>
+                <td ng-if="$ctrl.option.enableDefaultAction">
+               		<a ng-if="$ctrl.option.moveUpEnable" class="moveup"  ng-click="$ctrl.moveItem(item,'up')"></a>
+                    <a ng-if="$ctrl.option.moveDownEnable" class="movedown" ng-click="$ctrl.moveItem(item,'down')"></a>
+                    <a ng-if="$ctrl.option.deleteEnable"  class="delete"  ng-click="$ctrl.doDel(item)"></a>
+                    <a ng-if="$ctrl.option.detailEnable"  class="detail"  ng-click="$ctrl.showEdit(item)"></a>
+                    <a ng-if="$ctrl.option.editEnable" class="update" ng-click="$ctrl.showEdit(item)"></a>
+                    <ng-html-compile   ng-html-compile="$ctrl.option.editlink" >
+              		</ng-html-compile>
+              		<ng-html-compile   ng-html-compile="$ctrl.option.detaillink" >
+              		</ng-html-compile>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div  ng-if="$ctrl.option.enableDefaultAction"  ng-if="$ctrl.option.pageEnable" qpager ng-model="$ctrl.qpageroptions" onpagechange="$ctrl.pagechange(page)">
+	</div>
+</div>

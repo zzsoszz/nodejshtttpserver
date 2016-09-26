@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="./../../../../css/mainfixed.css">
+  <link rel="stylesheet" href="plugin.css">
+  <script>
+    var baseUrl="/zd/";
+    var serviceApiUrl="http://localhost:8888";
+  </script>
+  <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../../../bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+  <link rel="stylesheet" href="../../../bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+
+  <script src="jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="../../../bower_components/moment/moment.js"></script>
+  <script type="text/javascript" src="../../../bower_components/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-ui-date/dist/date.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+  <script type="text/javascript" src="../../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+
+
+  <link  rel="stylesheet" href="../../../bower_components/qdropdownselect/2.0.4/plugin.css">
+  <script src="../../../bower_components/qdropdownselect/2.0.4/plugin.js"></script>
+  <script src="../../../bower_components/qdropdownselect/2.0.4/city.js"></script>
+
+
+  <link  rel="stylesheet" href="../../../bower_components/qpager/1.0.2/plugin.css">
+  <script src="../../../bower_components/qpager/1.0.2/plugin.js"></script>
+
+  <link  rel="stylesheet" href="../../../bower_components/qdaterangepicker/1.0.0/plugin.css">
+  <script src="../../../bower_components/qdaterangepicker/1.0.0/plugin.js"></script>
+
+
+  <script src="plugin.js"></script>
+  <script src="../../../main.js"></script>
+  <script>
+  mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+    $scope.daterangeoption={
+        maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
+        alwaysShowCalendars:true,
+        autoApply:true,
+        "ranges": {
+            '不限时间': ["1900-01-01","2050-01-01"],
+            '今天': [moment(), moment()],
+            '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            '这周': [moment().startOf('week'), moment()],
+            '最近7天': [moment().subtract(6, 'days'), moment()],
+            '最近30天': [moment().subtract(29, 'days'), moment()],
+            '当月': [moment().startOf('month'), moment().endOf('month')],
+            '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        locale : {
+            format : 'YYYY-MM-DD',
+            applyLabel : '确定',
+            cancelLabel : '取消',
+            fromLabel : '起始时间',
+            toLabel : '结束时间',
+            customRangeLabel : '自定义',
+            daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+            monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+            firstDay : 1
+        },
+        autoUpdateInput:true,
+        singleDatePicker:false,
+        startDate:'1980-01-01',
+        endDate:'2050-01-01',
+        showDropdowns : true
+    };
+    var schoolprovinces =provinceCitys.map(function(obj1){
+                obj1.sub=obj1.sub.map(function(obj){
+                   return {id:obj.name,name:obj.name};
+                });
+                return {id:obj1.name,name:obj1.name,sub:obj1.sub};
+    });
+    var lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
+    var genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
+    $scope.tableoption=
+     {
+       title:"微课堂",
+       daterangeoption:$scope.daterangeoption,
+       deleteEnable:true,
+       editEnable:true,
+       moveUpEnable:true,
+       addEnable:false,
+       moveDownEnable:true,
+       detailEnable:true,
+       pageEnable:true,
+       enableDefaultAction:true,
+       searchUrl:serviceApiUrl+'/web/course/type/list',
+       updateUrl:serviceApiUrl+'/web/course/type/update',
+       deleteUrl:serviceApiUrl+'/web/course/type/delete',
+       addUrl:serviceApiUrl+'/web/course/type/add',
+       addlink:'<a  class="actionbtn" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加</a>',
+       editlink:'<a class="update" ng-if="item.name==123456" ui-sref=\'detail({module:"qmicrocourse",controller:"edit",id:item.id})\'></a>',
+       detaillink:'<a class="detail" ng-if="item.name==123456" ui-sref=\'detail({module:"qmicrocourse",controller:"detail",id:item.id})\'></a>',
+       pageSize:3,
+       cols:[
+       	 {title:'编号',name:"id",type:"text",addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'名称',name:"name",type:"text",,addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'时间',name:"createtime",type:"daterangepicker",addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'省份',name:"province",type:"muliplyselect",typedata:schoolprovinces,addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'学校',name:"school",type:"muliplyselect",parent:"province",addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'编号',name:"id",type:"text",require:true,addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'文字',name:"name",type:"text",require:true,addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'多选',name:"lessons",type:"muliplyselect",typedata:lessonArray,addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+         {title:'html格式',name:"actions",type:"html",addEnable:true,searchEnable:true,updateEnable:true,detailEnable:true},
+       ]
+     };
+     $scope.onItemUpdateBefore=function(item)
+     {
+        console.log("onItemUpdateBefore:",item);
+     };
+     $scope.onItemAddBefore=function(item)
+     {
+        console.log("onItemAddBefore:",item);
+        return item;
+     };
+     $scope.onItemDelBefore=function(item)
+     {
+        console.log("onItemDelBefore:",item);
+     };
+     $scope.result=[ {
+     	"id": "1", 
+        "name": "123456", 
+     	  "actions": '<a ng-if="item.name==123456" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加<a> <a ng-if="item.name==123456" ui-sref=\'detail({module:"qmicrocourse",controller:"edit",id:item.id})\'>编辑<a> '
+      }];
+  });
+  </script>
+
+<style>
+
+</style>
+</head>
+
+<body ng-app="mainApp">
+  
+  <div ng-controller="mainController">
+      <div ui-view>
+      </div>
+
+      <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdateBefore(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDelBefore(item)">
+      </qdatatable>
+  </div>
+
+</body>
+</html>

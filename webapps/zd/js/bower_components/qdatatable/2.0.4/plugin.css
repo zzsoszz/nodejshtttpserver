@@ -1,0 +1,42 @@
+.qdatatable{
+	
+}
+.qdatatable .poppanel{
+	position: fixed;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+
+	padding: 10px;
+/*	min-width: 480px;
+	min-height: 460px;*/
+	max-height:80%;
+	/*max-width: 80px;*/
+	background-color:#cccccc;
+	overflow: auto;
+	z-index: 2;
+}
+.qdatatable .poppanel .poppanle-inner{
+	padding: 30px;
+	background-color: #ffffff;
+	height: 100%;
+	overflow: hidden;
+}
+
+.qdatatable .qsearchbox{
+	 display: block;
+	 overflow: hidden;
+}
+.qdatatable .qsearchbox .qsearchoption{
+	 float: left;
+	 display: block;
+     margin:0 10px;
+     height: 80px;
+}
+.qdatatable .qsearchbox .qsearchoption > div{
+	 margin-top: 10px;
+}
+
+/*
+style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"*/
