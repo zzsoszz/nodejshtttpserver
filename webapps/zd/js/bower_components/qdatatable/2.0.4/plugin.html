@@ -16,7 +16,7 @@
                     <div ng-if="col.type=='text'  && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable) ) ">
                         <span >{{col.title}}</span>
                         <div class="qinputgroup2"  >
-                            <input class="qinputitem2"  ng-required="col.require && $ctrl.mode!='search' "  class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
+                            <input class="qinputitem2"  ng-required="col.require && $ctrl.mode!='search' "  class="qinputitem2"  type="text" ng-model="$ctrl.item[col.name]"/>
                         </div>
                     </div>
                     <div ng-if="col.type=='muliplyselect'  && ( ($ctrl.mode=='add' && col.addEnable) || ($ctrl.mode=='edit' && col.editEnable) ) ">

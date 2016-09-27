@@ -5,10 +5,10 @@ qmicrocourse.service("qmicrocourseService",function($http){
           search:function(url,item){
             var param=$.param(item?item:"");
               return $http.get(url+"?"+param,{cache:false}).then(function(resp){
-                if(resp.data.code=='success')
-                {
-                    return resp.data.json.datas;
-                }
+                  if(resp.data.code=='success')
+	              {
+	                  return {rows:resp.data.json.rows,items:resp.data.json.datas};
+	              }
               });
           },
           add:function(url,item)
@@ -76,46 +76,7 @@ qmicrocourse.component('people', {
             '</ul>'
 });
 qmicrocourse.controller("searchController", function ($rootScope,$http,$location,$scope,qmicrocourseService) {
-   $scope.daterangeoption={
-        maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
-        alwaysShowCalendars:true,
-        autoApply:true,
-        "ranges": {
-            '不限时间': ["1900-01-01","2050-01-01"],
-            '今天': [moment(), moment()],
-            '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            '这周': [moment().startOf('week'), moment()],
-            '最近7天': [moment().subtract(6, 'days'), moment()],
-            '最近30天': [moment().subtract(29, 'days'), moment()],
-            '当月': [moment().startOf('month'), moment().endOf('month')],
-            '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        locale : {
-            format : 'YYYY-MM-DD',
-            applyLabel : '确定',
-            cancelLabel : '取消',
-            fromLabel : '起始时间',
-            toLabel : '结束时间',
-            customRangeLabel : '自定义',
-            daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
-            monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
-                '七月', '八月', '九月', '十月', '十一月', '十二月' ],
-            firstDay : 1
-        },
-        autoUpdateInput:true,
-        singleDatePicker:false,
-        startDate:'1980-01-01',
-        endDate:'2050-01-01',
-        showDropdowns : true
-    };
-    var schoolprovinces =provinceCitys.map(function(obj1){
-                obj1.sub=obj1.sub.map(function(obj){
-                   return {id:obj.name,name:obj.name};
-                });
-                return {id:obj1.name,name:obj1.name,sub:obj1.sub};
-    });
-    var lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
-    var genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
+
     $scope.tableoption=
      {
        title:"微课堂",
@@ -165,8 +126,7 @@ qmicrocourse.controller("searchController", function ($rootScope,$http,$location
      //  }];
 });
 
-qmicrocourse.controller("editController", function ($rootScope,$http,$location,$scope,$stateParams) {
-  
+qmicrocourse.controller("editController", function ($rootScope,$http,$location,$scope,$stateParams,qmicrocourseService) {
   $scope.username="edit-"+$stateParams.id;
   $scope.$on("$destroy",function(){
     console.log("edit-destroy",$scope);
@@ -174,66 +134,40 @@ qmicrocourse.controller("editController", function ($rootScope,$http,$location,$
   $scope.$on("$init",function(){
     console.log("edit-init",$scope);
   })
-  
+  $scope.init=function(){
+  	var item={};
+  	item.id=$stateParams.id;
+  	qmicrocourseService.search(serviceApiUrl+'/course/micro/list',item).then(function(data){
+		$scope.item=data.items[0];
+	});
+  };
+  $scope.init();
+  $scope.doUpdate=function(form)
+  {
+       if(form.$valid)
+       {
+         qmicrocourseService.update(serviceApiUrl+'/course/micro/add',$scope.item);
+       }else{
+          alert("数据有错！");
+       }
+  }
 });
 
 qmicrocourse.controller("addController", function ($rootScope,$http,$location,$scope,$stateParams,qmicrocourseService) {
-   
-   $scope.$on("$destroy",function(){
+    $scope.$on("$destroy",function(){
       console.log("add-destroy",$scope);
-   })
-   $scope.$on("$init",function(){
+    })
+    $scope.$on("$init",function(){
       console.log("add-init",$scope);
-   })
-   $scope.daterangeoption={
-        maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
-        alwaysShowCalendars:true,
-        autoApply:true,
-        "ranges": {
-            '不限时间': ["1900-01-01","2050-01-01"],
-            '今天': [moment(), moment()],
-            '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            '这周': [moment().startOf('week'), moment()],
-            '最近7天': [moment().subtract(6, 'days'), moment()],
-            '最近30天': [moment().subtract(29, 'days'), moment()],
-            '当月': [moment().startOf('month'), moment().endOf('month')],
-            '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        locale : {
-            format : 'YYYY-MM-DD',
-            applyLabel : '确定',
-            cancelLabel : '取消',
-            fromLabel : '起始时间',
-            toLabel : '结束时间',
-            customRangeLabel : '自定义',
-            daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
-            monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
-                '七月', '八月', '九月', '十月', '十一月', '十二月' ],
-            firstDay : 1
-        },
-        autoUpdateInput:true,
-        singleDatePicker:false,
-        startDate:'1980-01-01',
-        endDate:'2050-01-01',
-        showDropdowns : true
-    };
-    var schoolprovinces =provinceCitys.map(function(obj1){
-                obj1.sub=obj1.sub.map(function(obj){
-                   return {id:obj.name,name:obj.name};
-                });
-                return {id:obj1.name,name:obj1.name,sub:obj1.sub};
-    });
-    var lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
-    var genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
+    })
     $scope.doAdd=function(form)
     {
        if(form.$valid)
        {
-         qmicrocourseService.add($scope.item);
+         qmicrocourseService.add(serviceApiUrl+'/course/micro/add',$scope.item);
        }else{
           alert("数据有错！");
        }
-       
     }
 });
 
