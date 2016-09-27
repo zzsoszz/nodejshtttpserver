@@ -11,6 +11,8 @@
   <script type="text/javascript" src="../../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
   <script src="city.js"></script>
+
+  <script src="../../../main.js"></script>
   <script src="plugin.js"></script>
   <script>
   	
@@ -65,7 +67,7 @@
             });
          });
          */
-        
+        $scope.aaa="四川";
     });
     
   </script>
@@ -81,18 +83,20 @@
 
    <div>
     主页面
-      <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="provinces[0]" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
+<!--       <div  id="aaaa"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="provinces[0]" data-dropdowndata="provinces"  ng-model="selectprovinceitem"  style="width:200px;">
           <input    ng-model="selectprovinceitem.id" />
       </div>
-      <!--
-       <input    ng-model="selectprovinceitem.id" />
-       -->
+
       <br/>
       <div  id="bbbb" autocomplete="off" class="qdropdownselecttarget" qdropdownselect data-initdata="selectprovinceitem.sub[0]"  data-dropdowndata="selectprovinceitem.sub"  ng-model="selectcityitem"  style="width:200px;" >
           <input    ng-model="selectcityitem.id" />
       </div>
+       -->
       
-      
+      <div  id="ccccc"  autocomplete="off" class="qdropdownselecttarget" qdropdownselect  data-initdata="aaa" data-dropdowndata="provinces"  ng-model="selectprovinceitem2"  style="width:200px;">
+          <input    ng-model="selectprovinceitem2.name" />
+      </div>
+
    </div>
 
     <br/>

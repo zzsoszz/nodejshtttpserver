@@ -62,6 +62,21 @@ mainApp.directive('ngShow',['$animate', function($animate) {
     }
   };
 }]);
+
+
+var is ={
+ types : ["Array", "Boolean", "Date", "Number", "Object", "RegExp", "String", "Window", "HTMLDocument"]
+};
+for(var i = 0, c; c = is.types[i ++ ]; ){
+    is[c] = (function(type){
+        return function(obj){
+           return Object.prototype.toString.call(obj) == "[object " + type + "]";
+        }
+    })(c);
+}
+// alert(is.Array([])); // true
+// alert(is.Date(new Date)); // true
+// alert(is.RegExp(/reg/ig)); // true
 // mainApp.config(function ($stateProvider,$urlRouterProvider) {
 //       $urlRouterProvider.when("","").otherwise("");
 //       $stateProvider.state("basic",{
@@ -224,6 +239,7 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         endDate:'2050-01-01',
         showDropdowns : true
     };
+
     $rootScope.provinceArray =provinceCitys.map(function(obj1){
                 obj1.sub=obj1.sub.map(function(obj){
                    return {id:obj.name,name:obj.name};
@@ -232,5 +248,5 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
     });
     $rootScope.lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
     $rootScope.genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
-    $rootScope.courseTypeArray =[{id:'1',name:"付费"},{id:'2',name:"免费"}];
+    $rootScope.freeArray =[{id:'1',name:"付费"},{id:'2',name:"免费"}];
 });

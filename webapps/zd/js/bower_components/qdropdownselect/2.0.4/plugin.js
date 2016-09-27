@@ -24,8 +24,8 @@ if(angular && angular.module)
 		        	console.log(element,".........initialing");
 		        	$templateRequest(baseUrl+'js/bower_components/qdropdownselect/2.0.4/plugin.html', false).then(
 						function(viewFn) {
-
-						  
+						  console.log(scope.initdata);
+						  console.log(is.Object(scope.initdata));
 						  var v = angular.element(viewFn).attr("id","qdropdownselectEle_"+$.guid).hide().css({
 									'position':'absolute',
 									'width':element.outerWidth()+'px',
@@ -35,14 +35,26 @@ if(angular && angular.module)
 						  });
 						  scope.qdropdownselectEle=v;
 						  scope.ele=element;
+						  var initSelectedItem;
 						  if(scope.items)
 						  {
-						  	for (var i = 0; i < scope.items.length; i++) {
-						  			//.id
-					                if (scope.items[i] === scope.initdata) {
-					                    scope.bSelectedItem = scope.items[i];
-					                    break;
-					                }
+						  	if(scope.initdata)
+						  	{
+							  	for (var i = 0; i < scope.items.length; i++) 
+							  	{
+							  				if(is.Object(scope.initdata))
+							                {
+							                	if (scope.items[i] === scope.initdata) {
+								                    initSelectedItem = scope.items[i];
+								                    break;
+								                }
+							                }else{
+							                	if (scope.items[i].id === scope.initdata) {
+								                    initSelectedItem = scope.items[i];
+								                    break;
+								                }
+							                }
+						          }
 					          }
 						  }
 						  
@@ -99,13 +111,13 @@ if(angular && angular.module)
 								//$(element).off("click",myfn2);
 						  });
 						  var initializing = true;
-						  if(scope.bSelectedItem)
+						  if(initSelectedItem)
 						  {
-						  	scope.selectVal(scope.bSelectedItem);
+						  	scope.selectVal(initSelectedItem);
 						  }
 						  scope.$watch("items",function(newitems){
 						  	//scope.ngModel=null;
-						  	scope.ngModel=scope.initdata;
+						  	scope.ngModel=initSelectedItem;
 						  	// if(!initializing)
 						  	// {
 						  	// 	scope.ngModel=null;

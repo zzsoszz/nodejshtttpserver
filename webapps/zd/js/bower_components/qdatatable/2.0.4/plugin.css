@@ -23,16 +23,7 @@
 	height: 100%;
 	overflow: hidden;
 }
-.qdatatable .title{
-	font-size: 20px;
-	color: rgb(70,80,94)
-}
-.qdatatable .hline{
-	width: 100%;
-	height: 1px;
-	background-color: #efeff0;
-	margin-top: 5px
-}
+
 .qdatatable .qsearchbox{
 	 display: block;
 	 overflow: hidden;
@@ -47,5 +38,15 @@
 	 margin-top: 10px;
 }
 
+.title{
+	font-size: 20px;
+	color: rgb(70,80,94)
+}
+.hline{
+	width: 100%;
+	height: 1px;
+	background-color: #efeff0;
+	margin-top: 5px
+}
 /*
 style="height: 100%;width: 38px;background: url('image/calender1.png') center center no-repeat;position:absolute;left: 204px;top: 0"*/

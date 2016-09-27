@@ -7,23 +7,15 @@
         	
 		   
 		        <div>
-			        <span>关键词</span>
-			        <div class="qinputgroup2"  >
-                            <input class="qinputitem2"   ng-required='true'  class="qinputitem2"  type="text" ng-model="item.keyword"/>
-                    </div>
-		        </div>
-		        
-		   
-		        <div>
 			        <span>编号</span>
 			        <div class="qinputgroup2"  >
-                            <input class="qinputitem2"   ng-required='true'  class="qinputitem2"  type="text" ng-model="item.id"/>
+                            <input class="qinputitem2"    class="qinputitem2"  type="text" ng-model="item.id"/>
                     </div>
 		        </div>
 		        
-		   
+		   		
 		        <div>
-			        <span>主标题</span>
+			        <span>课程标题</span>
 			        <div class="qinputgroup2"  >
                             <input class="qinputitem2"   ng-required='true'  class="qinputitem2"  type="text" ng-model="item.mainTitle"/>
                     </div>
@@ -31,17 +23,15 @@
 		        
 		   
 		        <div>
-			        <span>内容</span>
-			        <div class="qinputgroup2"  >
-                            <input class="qinputitem2"   ng-required='true'  class="qinputitem2"  type="text" ng-model="item.content"/>
-                    </div>
-		        </div>
-		        
-		   
-		        <div>
-			        <span>封面</span>
-			        <div class="qinputgroup2"  >
-                            <input class="qinputitem2"   ng-required='true'  class="qinputitem2"  type="text" ng-model="item.courseCover"/>
+			        <span>是否付费</span>
+			        <div>
+                        <div class="qinputgroup2"   
+                                     qdropdownselect data-initdata="item.free"  data-dropdowndata="freeArray"  ng-model='selectitem.free'
+                                     ng-change="item.free=selectitem.free.id;item['free_desc']=selectitem.free.name"
+                                >
+                                    <span  class="qinputitem2" >{{item['free_desc']}}</span>
+                                    <div  class="addson dropdown-bg" style=""></div>
+                        </div>
                     </div>
 		        </div>
 		        
@@ -50,58 +40,26 @@
 			        <span>课程类型</span>
 			        <div>
                         <div class="qinputgroup2"   ng-required='true' 
-                                     qdropdownselect data-initdata="item.courseType"  data-dropdowndata="courseTypeArray"  ng-model='selectitem.courseType'
-                                     ng-change="item.courseType=selectitem.courseType.id;item['courseType_desc']=selectitem.courseType.name"
+                                     qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
+                                     ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
                                 >
-                                    <span  class="qinputitem2" >{{item['courseType_desc']}}</span>
+                                    <span  class="qinputitem2" >{{item['courseTypeId_desc']}}</span>
                                     <div  class="addson dropdown-bg" style=""></div>
                         </div>
                     </div>
 		        </div>
 		        
-		   
 		        <div>
-			        <span>省份</span>
+			        <span>课程内容</span>
 			        <div>
-                        <div class="qinputgroup2"   ng-required='true' 
-                                     qdropdownselect data-initdata="item.province"  data-dropdowndata="provinceArray"  ng-model='selectitem.province'
-                                     ng-change="item.province=selectitem.province.id;item['province_desc']=selectitem.province.name"
-                                >
-                                    <span  class="qinputitem2" >{{item['province_desc']}}</span>
-                                    <div  class="addson dropdown-bg" style=""></div>
-                        </div>
+                         <div class="ueditor" ng-model="item.content"  style="height:600px" >
+                         </div>
                     </div>
 		        </div>
-		        
-		   
-		        <div>
-			        <span>城市</span>
-			        <div>
-                        <div class="qinputgroup2"
-                                     qdropdownselect data-initdata="item.city"  data-dropdowndata="selectitem.province.sub"  ng-model='selectitem.city'
-                                     ng-change="item.city=selectitem.city.id;item['city_desc']=selectitem.city.name"
-                                >
-                                    <span  class="qinputitem2" >{{item['city_desc']}}</span>
-                                    <div  class="addson dropdown-bg" style=""></div>
-                        </div>
-                    </div>
-		        </div>
-		        
-		   
-		        <div>
-			        <span>时间</span>
-			        <div class="qinputgroup2" >
-			            <input   ng-required='true' qdaterangepicker class="form-control date-picker"  type="text" data-option="daterangeoption" ng-model="item.createtime"/>
-			            <div class="addson calendar-bg"></div>
-			        </div>
-		        </div>
-		        
-		   
-		        
-		   
-		    <div style="clear:both;padding-top:20px;text-align:center;">
-                <input  type="submit" class="actionbtn" value="���" >
-            </div>
+		   		
+			    <div style="clear:both;padding-top:20px;text-align:center;">
+	                <input  type="submit" class="actionbtn" value="添加" >
+	            </div>
        </div>
 	</form>
 </div>

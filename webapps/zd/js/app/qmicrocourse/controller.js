@@ -17,7 +17,18 @@ qmicrocourse.service("qmicrocourseService",function($http){
              return $http.get(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
                 {
-                    return item;
+                    return resp.data.json;
+                }
+                return null;
+             });
+          },
+          get:function(url,item)
+          {
+             var param=$.param(item);
+             return $http.get(url+"?"+param).then(function (resp){
+                if(resp.data.code=='success')
+                {
+                    return resp.data.json;
                 }
                 return null;
              });
@@ -35,14 +46,16 @@ qmicrocourse.service("qmicrocourseService",function($http){
           },
           update:function(url,item)
           {
+
              var param=$.param(item);
-             return $http.get(url+"?"+param).then(function (resp){
+             return $http.post(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
                 {
-                    return item;
+                    return item.data.json;
                 }
                 return null;
              });
+
           }
   };
 });
@@ -64,48 +77,107 @@ qmicrocourse.directive('ngHtmlCompile', function($compile) {
       }
   }
 });
-qmicrocourse.component('people', {
-  bindings: { people: '<' },
-  template: '<h3>Some people:</h3>' +
-            '<ul>' +
-            '  <li ng-repeat="person in $$scope.people">' +
-            '    <a ui-sref="person({ personId: person.id })">' +
-            '      {{person.name}}' +
-            '    </a>' +
-            '  </li>' +
-            '</ul>'
-});
-qmicrocourse.controller("searchController", function ($rootScope,$http,$location,$scope,qmicrocourseService) {
+qmicrocourse.controller("searchController", function ($rootScope,$http,$location,$scope,qmicrocourseService,$q) {
+    $scope.init=function(){
+      var task1=qmicrocourseService.search(serviceApiUrl+'/web/course/type/list').then(function(data){
+          $scope.courseTypeIdArray=data.items;
+      });
+      $q.all([task1]).then(function(){
+       
+       $scope.tableoption=
+       {
+           title:"微课堂",
+           daterangeoption:$rootScope.daterangeoption,
+           deleteEnable:true,
+           editEnable:true,
+           moveUpEnable:true,
+           addEnable:true,
+           moveDownEnable:true,
+           detailEnable:true,
+           pageEnable:true,
+           enableDefaultAction:true,
+           searchUrl:serviceApiUrl+'/course/micro/list',
+           updateUrl:serviceApiUrl+'/course/micro/update',
+           deleteUrl:serviceApiUrl+'/course/micro/delete',
+           addUrl:serviceApiUrl+'/course/micro/add',
+           addlink:'<a  class="actionbtn" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加</a>',
+           editlink:'<a class="update" ng-if="item.name==item.name" ui-sref=\'detail({module:"qmicrocourse",controller:"edit",id:item.id})\'></a>',
+           detaillink:'<a class="detail" ng-if="item.name==item.name" ui-sref=\'detail({module:"qmicrocourse",controller:"detail",id:item.id})\'></a>',
+           pageSize:10,
+           cols:[
+                    {
+               title:'编号',
+               name:"id",type:"text",
+               
+               
+               addEnable:false,
+               searchEnable:false,
+               editEnable:false,
+               detailEnable:false,
+               listEnable:false,
+             },
+             {
+               title:'课程标题',
+               name:"mainTitle",type:"text",
+               
+               
+               addEnable:true,
+               searchEnable:true,
+               editEnable:true,
+               detailEnable:true,
+               listEnable:true,
+             },
+             {
+               title:'是否付费',
+               name:"free",type:"muliplyselect",
+               typedata:$rootScope.freeArray,
+               
+               addEnable:false,
+               searchEnable:false,
+               editEnable:false,
+               detailEnable:false,
+               listEnable:true,
+             },
+             {
+               title:'课程类型',
+               name:"courseTypeId",type:"muliplyselect",
+               typedata:$scope.courseTypeIdArray,
+               
+               addEnable:true,
+               searchEnable:true,
+               editEnable:true,
+               detailEnable:true,
+               listEnable:true,
+             },
+             {
+               title:'课程内容',
+               name:"content",type:"richtext",
+               
+               
+               addEnable:true,
+               searchEnable:true,
+               editEnable:true,
+               detailEnable:true,
+               listEnable:true,
+             },
+             {
+               title:'封面',
+               name:"courseCover",type:"img",
+               
+               
+               addEnable:true,
+               searchEnable:true,
+               editEnable:true,
+               detailEnable:true,
+               listEnable:true,
+             },
+           ]
+         };
 
-    $scope.tableoption=
-     {
-       title:"微课堂",
-       daterangeoption:$scope.daterangeoption,
-       deleteEnable:true,
-       editEnable:true,
-       moveUpEnable:true,
-       addEnable:true,
-       moveDownEnable:true,
-       detailEnable:true,
-       pageEnable:true,
-       enableDefaultAction:true,
-       searchUrl:serviceApiUrl+'/course/micro/list',
-       updateUrl:serviceApiUrl+'/course/micro/update',
-       deleteUrl:serviceApiUrl+'/course/micro/delete',
-       addUrl:serviceApiUrl+'/course/micro/add',
-       addlink:'<a  class="actionbtn" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加</a>',
-       editlink:'<a class="update" ng-if="item.name==item.name" ui-sref=\'detail({module:"qmicrocourse",controller:"edit",id:item.id})\'></a>',
-       detaillink:'<a class="detail" ng-if="item.name==item.name" ui-sref=\'detail({module:"qmicrocourse",controller:"detail",id:item.id})\'></a>',
-       pageSize:10,
-       cols:[
-         {title:'关键词',name:"word",type:"text",addEnable:true,searchEnable:true,editEnable:true,detailEnable:true,listEnable:false},
-         {title:'编号',name:"id",type:"text",addEnable:false,searchEnable:false,editEnable:false,detailEnable:false,listEnable:false},
-         {title:'名称',name:"mainTitle",type:"text",addEnable:true,searchEnable:true,editEnable:true,detailEnable:true,listEnable:true},
-         {title:'内容',name:"content",type:"text",addEnable:true,searchEnable:true,editEnable:true,detailEnable:true,listEnable:true},
-         {title:'封面',name:"courseCover",type:"text",addEnable:true,searchEnable:true,editEnable:true,detailEnable:true,listEnable:true},
-         {title:'课程类型',name:"province",type:"muliplyselect",typedata:schoolprovinces,addEnable:true,searchEnable:true,editEnable:true,detailEnable:true,listEnable:true},
-       ]
-     };
+      });
+     
+     }
+     $scope.init();
      $scope.onItemUpdateBefore=function(item)
      {
         console.log("onItemUpdateBefore:",item);
@@ -119,34 +191,47 @@ qmicrocourse.controller("searchController", function ($rootScope,$http,$location
      {
         console.log("onItemDelBefore:",item);
      };
-     // $scope.result=[ {
-     //  "id": "1", 
-     //    "name": "123456", 
-     //    "actions": '<a ng-if="item.name==123456" ui-sref=\'go({module:"qmicrocourse",controller:"add"})\'>添加<a> <a ng-if="item.name==123456" ui-sref=\'detail({module:"qmicrocourse",controller:"edit",id:item.id})\'>编辑<a> '
-     //  }];
 });
 
 qmicrocourse.controller("editController", function ($rootScope,$http,$location,$scope,$stateParams,qmicrocourseService) {
   $scope.username="edit-"+$stateParams.id;
   $scope.$on("$destroy",function(){
     console.log("edit-destroy",$scope);
-  })
+  });
   $scope.$on("$init",function(){
     console.log("edit-init",$scope);
-  })
+  });
   $scope.init=function(){
-  	var item={};
-  	item.id=$stateParams.id;
-  	qmicrocourseService.search(serviceApiUrl+'/course/micro/list',item).then(function(data){
-		$scope.item=data.items[0];
-	});
+    	var item={};
+    	item.id=$stateParams.id;
+    	qmicrocourseService.get(serviceApiUrl+'/course/info',item).then(function(data){
+  		    $scope.item=data;
+  	  });
+      var task1=qmicrocourseService.search(serviceApiUrl+'/web/course/type/list').then(function(data){
+          $scope.courseTypeIdArray=data.items;
+      });
   };
   $scope.init();
   $scope.doUpdate=function(form)
   {
        if(form.$valid)
        {
-         qmicrocourseService.update(serviceApiUrl+'/course/micro/add',$scope.item);
+         var options={
+            dataType:'json',
+            success: function (data) {
+                void 0;
+                if(data.code=='success'){
+                    $scope.$apply(function () {
+                        alert("添加成功");
+                    })
+                }else{
+                    alert("添加失败");
+                }
+            }
+         };
+         $('#addForm').attr("action",serviceApiUrl+'/course/micro/add');
+         $('#addForm').ajaxForm(options).ajaxSubmit(options);
+         //qmicrocourseService.update(serviceApiUrl+'/course/micro/add',$scope.item);
        }else{
           alert("数据有错！");
        }
@@ -165,12 +250,13 @@ qmicrocourse.controller("addController", function ($rootScope,$http,$location,$s
        if(form.$valid)
        {
          qmicrocourseService.add(serviceApiUrl+'/course/micro/add',$scope.item);
-       }else{
+       }
+       else
+       {
           alert("数据有错！");
        }
     }
 });
-
 
 qmicrocourse.controller("detailController", function ($rootScope,$http,$location,$scope,$stateParams) {
   $scope.username="detail-"+$stateParams.id;
