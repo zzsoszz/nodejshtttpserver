@@ -1,4 +1,143 @@
-<div ng-controller="searchController">
-	  <qdatatable ng-model="result"  ng-option="tableoption"  on-item-update-before="onItemUpdateBefore(item)" on-item-add-before="onItemAddBefore(item)"  on-item-del-before="onItemDelBefore(item)">
-	  </qdatatable>
+<div ng-controller="searchController" class="qdatatable">
+
+	  <div class="qsearchbox">
+	        <div class="title">微课程</div>
+	        <div class="hline"></div>
+	        <form name="searchForm" action="" ng-submit="$event.preventDefault();doSearch(item)">
+	        		<div class="fieldbox inline">
+				        <span>关键词</span>
+				        <div>
+					        <div class="qinputgroup2" style="width:100%" >
+		                            <input class="qinputitem2"     class="qinputitem2"  type="text" ng-model="item.word"/>
+		                    </div>
+	                    </div>
+			        </div>
+	                <div class="fieldbox inline">
+	                    <span>开始时间</span>
+	                    <div>
+	                        <div class="qinputgroup2">
+	                            <input  class="qinputitem2" qdaterangepicker   type="text" data-option="singledateoption" ng-model="item.startTime"/>
+	                            <div  class="addson  calendar-bg" ></div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="fieldbox inline">
+	                    <span>结束时间</span>
+	                    <div>
+	                        <div class="qinputgroup2">
+	                            <input  class="qinputitem2" qdaterangepicker   type="text" data-option="singledateoption" ng-model="item.endTime"/>
+	                            <div  class="addson  calendar-bg" ></div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="fieldbox inline">
+				        <span>课程类型</span>
+				        <div>
+	                        <div class="qinputgroup2"    style="width:100%" 
+	                                     qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
+	                                     ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
+	                                >
+	                                    <span  class="qinputitem2" >{{item['courseTypeId']}}  {{item['courseTypeId_desc']}}</span>
+	                                    <div  class="addson dropdown-bg" style=""></div>
+	                        </div>
+	                    </div>
+			        </div>
+			        <div class="fieldbox inline">
+				        <span>微课类型</span>
+				        <div>
+	                        <div class="qinputgroup2"    style="width:100%" 
+	                                     qdropdownselect data-initdata="item.type"  data-dropdowndata="typeArray"  ng-model='selectitem.type'
+	                                     ng-change="item.type=selectitem.type.id;item.type_desc=selectitem.type.name"
+	                                >
+	                                    <span  class="qinputitem2" >{{item.type}}  {{item.type_desc}}</span>
+	                                    <div  class="addson dropdown-bg" style=""></div>
+	                        </div>
+	                    </div>
+			        </div>
+		            <div style="clear:both;padding-top:20px;text-align:center;">
+		                <input  type="submit" class="actionbtn" value="搜索" >
+		                <input  ng-click="showAdd()" class="actionbtn" value="添加" >
+		            </div>
+	        </form>
+	    </div>
+
+	    <table class="newTb">
+	        <thead>
+	            <tr>
+	                <th>
+	                  <span>  
+	                    课程封面
+	                  </span>
+	                </th>
+	                <th>
+	                  <span>  
+	                    序号
+	                  </span>
+	                </th>
+	                <th>
+	                  <span>  
+	                   课程标题
+	                  </span>
+	                </th>
+	                <th>
+	                  <span>  
+	                   课程类型
+	                  </span>
+	                </th>
+	                <th>
+	                  <span>  
+	                   微课类型
+	                  </span>
+	                </th>
+	                 <th>
+	                  <span>  
+	                   创建时间
+	                  </span>
+	                </th>
+	                <th>操作</th>
+	            </tr>
+	        </thead>
+	        <tbody id="eduBody">
+	            <tr ng-repeat="item in items track by $index"  class="newTr newEducationTr">
+	                <td>
+	                    <img ng-src="item.imageUrl">
+	                </td>
+	              	 <td>
+	                    <span>
+	                   	 {{item.id}}
+	                    </span>
+	                </td>
+	              	 <td>
+	                    <span>
+	                   	 {{item.mainTitle}}
+	                    </span>
+	                </td>
+	              	 <td>
+	                    <span>
+	                   	 {{item.courseTypeName}}
+	                    </span>
+	                </td>
+	              	 <td>
+	                    <span>
+	                   	 {{item.typeName}}
+	                    </span>
+	                </td>
+	                 <td>
+	                    <span>
+	                   	 {{item.createTime}}
+	                    </span>
+	                </td>
+	                <td>
+	               		<a ng-if="true" class="moveup"   ng-click="moveUp(item)"></a>
+	                    <a ng-if="true" class="movedown" ng-click="moveDown(item)"></a>
+	                    <a ng-if="true"  class="delete"  ng-click="doDel(item)"></a>
+<!-- 	                    <a ng-if="true"  class="detail"  ng-click="showDetail(item)"></a> -->
+	                    <a ng-if="item.type==2" class="update"   ng-click="showEdit(item)"></a>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	    <div  qpager ng-model="qpageroptions" onpagechange="pagechange(page)">
+		</div>
+
 </div>

@@ -1,60 +1,211 @@
-<div ng-controller="addController" style="padding:20px">
-	<form id="addForm" name="addForm" ng-submit="doAdd(addForm)">
-
-		<input type="text" name="courseTypeId" value="{{item.courseTypeId}}">
-		<input type="text" name="content" value="{{item.content}}">
-		<input type="text" name="mainTitle" value="{{item.mainTitle}}">
-		<input type="text" name="type" value="2">
-		<div class="title">微课堂</div>
-        <div class="hline"></div>
-        <div style="width:69.0%;float:left;">
-		   		
-		        <div class="fieldbox">
-			        <span>课程标题</span>
-			        <div>
-				        <div class="qinputgroup2" style="width:100%" >
-	                            <input class="qinputitem2"    ng-required='true'  class="qinputitem2"  type="text" ng-model="item.mainTitle"/>
+<div ng-controller="addController" style="padding:20px" class="qdatatable">
+	<div class="nav">
+		<span ng-click="type=1">课程</span>
+		<span ng-click="type=2">文章</span>
+	</div>
+	<div ng-if="type==2">
+		<form id="addForm" name="addForm" ng-submit="doAdd(addForm)">
+			<input type="text" name="courseTypeId" value="{{item.courseTypeId}}">
+			<input type="text" name="content" value="{{item.content}}">
+			<input type="text" name="mainTitle" value="{{item.mainTitle}}">
+			<input type="text" name="type" value="2">
+			<div class="title">微课堂</div>
+	        <div class="hline"></div>
+	        <div style="width:69.0%;float:left;">
+			   		
+			        <div class="fieldbox">
+				        <span>课程标题</span>
+				        <div>
+					        <div class="qinputgroup2" style="width:100%" >
+		                            <input class="qinputitem2"    ng-required='true'  class="qinputitem2"  type="text" ng-model="item.mainTitle"/>
+		                    </div>
 	                    </div>
-                    </div>
-		        </div>
-		        
-		        <div class="fieldbox">
-			        <span>课程类型</span>
-			        <div>
-                        <div class="qinputgroup2"   ng-required='true' style="width:100%" 
-                                     qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
-                                     ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
-                                >
-                                    <span  class="qinputitem2" >{{item['courseTypeId']}}  {{item['courseTypeId_desc']}}</span>
-                                    <div  class="addson dropdown-bg" style=""></div>
-                        </div>
-                    </div>
-		        </div>
-		        
-		        <div class="fieldbox">
-			        <span>课程内容</span>
-			        <div>
-                         <textarea class="ueditor" ng-model="item.content"   style="height:300px;width: 100%" >
-                         </textarea>
-                    </div>
-		        </div>
-		        
-		   
-			    <div style="clear:both;padding-top:20px;text-align:center;">
-	                <input  type="submit" class="actionbtn" value="保存" >
-	            </div>
-       </div>
+			        </div>
+			        
+			        <div class="fieldbox">
+				        <span>课程类型</span>
+				        <div>
+	                        <div class="qinputgroup2"   ng-required='true' style="width:100%" 
+	                                     qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
+	                                     ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
+	                                >
+	                                    <span  class="qinputitem2" >{{item['courseTypeId']}}  {{item['courseTypeId_desc']}}</span>
+	                                    <div  class="addson dropdown-bg" style=""></div>
+	                        </div>
+	                    </div>
+			        </div>
+			        
+			        <div class="fieldbox">
+				        <span>课程内容</span>
+				        <div>
+	                         <textarea class="ueditor" ng-model="item.content"   style="height:300px;width: 100%" >
+	                         </textarea>
+	                    </div>
+			        </div>
+			        
+			   
+				    <div style="clear:both;padding-top:20px;text-align:center;">
+		                <input  type="submit" class="actionbtn" value="保存" >
+		            </div>
+	       </div>
 
 
-       <div style="width:30.0%;float:right;">
-   			<div class="fieldbox">
-		        <span>圖片封面</span>
-		        <div>
-                     <div qimgpreview  style="width:220px;height:130px;" ng-model="item.courseCover"  ng-name='"courseCover"'  ng-default='"css/images/uploadMerFile.png"'  >
-                     </div>
-                </div>
-	        </div>
-	   </div>
-	</form>
+	       <div style="width:30.0%;float:right;">
+	   			<div class="fieldbox">
+			        <span>圖片封面</span>
+			        <div>
+	                     <div qimgpreview  style="width:220px;height:130px;" ng-model="item.courseCover"  ng-name='"courseCover"'  ng-default='"css/images/uploadMerFile.png"'  >
+	                     </div>
+	                </div>
+		        </div>
+		   </div>
+		</form>
+	</div>
+
+
+
+	<div ng-if="type==1">
+
+			 <div class="qsearchbox">
+		        <div class="title">微课程</div>
+		        <div class="hline"></div>
+		        <form name="searchForm" ng-submit="$event.preventDefault();doSearch(item)">
+		        		<div class="fieldbox inline">
+					        <span>关键词</span>
+					        <div>
+						        <div class="qinputgroup2" style="width:100%" >
+			                            <input class="qinputitem2"     class="qinputitem2"  type="text" ng-model="item.word"/>
+			                    </div>
+		                    </div>
+				        </div>
+		                <div class="fieldbox inline">
+		                    <span>开始时间</span>
+		                    <div>
+		                        <div class="qinputgroup2">
+		                            <input  class="qinputitem2" qdaterangepicker   type="text" data-option="singledateoption" ng-model="item.startTime"/>
+		                            <div  class="addson  calendar-bg" ></div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="fieldbox inline">
+		                    <span>结束时间</span>
+		                    <div>
+		                        <div class="qinputgroup2">
+		                            <input  class="qinputitem2" qdaterangepicker   type="text" data-option="singledateoption" ng-model="item.endTime"/>
+		                            <div  class="addson  calendar-bg" ></div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="fieldbox inline">
+					        <span>课程类型</span>
+					        <div>
+		                        <div class="qinputgroup2"    style="width:100%" 
+		                                     qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
+		                                     ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
+		                                >
+		                                    <span  class="qinputitem2" >{{item['courseTypeId']}}  {{item['courseTypeId_desc']}}</span>
+		                                    <div  class="addson dropdown-bg" style=""></div>
+		                        </div>
+		                    </div>
+				        </div>
+				        <div class="fieldbox inline">
+					        <span>微课类型</span>
+					        <div>
+		                        <div class="qinputgroup2"    style="width:100%" 
+		                                     qdropdownselect data-initdata="item.type"  data-dropdowndata="typeArray"  ng-model='selectitem.type'
+		                                     ng-change="item.type=selectitem.type.id;item.type_desc=selectitem.type.name"
+		                                >
+		                                    <span  class="qinputitem2" >{{item.type}}  {{item.type_desc}}</span>
+		                                    <div  class="addson dropdown-bg" style=""></div>
+		                        </div>
+		                    </div>
+				        </div>
+			            <div style="clear:both;padding-top:20px;text-align:center;">
+			                <input  type="submit" class="actionbtn" value="搜索" >
+			            </div>
+		        </form>
+		    </div>
+		    <table class="newTb">
+		        <thead>
+		            <tr>
+		                <th>
+		                  <span>  
+		                    课程封面
+		                  </span>
+		                </th>
+		                <th>
+		                  <span>  
+		                    序号
+		                  </span>
+		                </th>
+		                <th>
+		                  <span>  
+		                   课程标题
+		                  </span>
+		                </th>
+		                <th>
+		                  <span>  
+		                   课程类型
+		                  </span>
+		                </th>
+		                <th>
+		                  <span>  
+		                   微课类型
+		                  </span>
+		                </th>
+		                 <th>
+		                  <span>  
+		                   创建时间
+		                  </span>
+		                </th>
+		                <th>操作</th>
+		            </tr>
+		        </thead>
+		        <tbody id="eduBody">
+		            <tr ng-repeat="item in items track by $index"  class="newTr newEducationTr"  ng-click="item.micro=!item.micro">
+		                <td>
+		                    <img ng-src="item.imageUrl">
+		                </td>
+		              	 <td>
+		                    <span>
+		                   	 {{item.id}}
+		                    </span>
+		                </td>
+		              	 <td>
+		                    <span>
+		                   	 {{item.mainTitle}}
+		                    </span>
+		                </td>
+		              	 <td>
+		                    <span>
+		                   	 {{item.courseTypeName}}
+		                    </span>
+		                </td>
+		              	 <td>
+		                    <span>
+		                   	 {{item.typeName}}
+		                    </span>
+		                </td>
+		                 <td>
+		                    <span>
+		                   	 {{item.createTime}}
+		                    </span>
+		                </td>
+		                <td>
+		               		<input type="checkbox" ng-checked="item.micro" />
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		    <div  qpager ng-model="qpageroptions" onpagechange="pagechange(page)">
+			</div>
+			<div style="clear:both;padding-top:20px;text-align:center;">
+				<form id="addForm2" name="addForm2" ng-submit="doAddVideo(addForm2)">
+						 <input type="text" name="type" id="type"  value="1" style="display: none">
+						 <input type="text" name="courseIds" id="courseIds"  value="{{videoIds}}" style="display: none">
+				         <input  type="submit" class="actionbtn" value="确认" >
+				</form>
+			</div>
+	</div>
 </div>
 

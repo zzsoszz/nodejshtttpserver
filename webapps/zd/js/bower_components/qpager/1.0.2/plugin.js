@@ -244,6 +244,7 @@ if(angular!=undefined  && angular.module)
 								scope.$apply(function() {
 									qpageroptions.currentpage=page;
 								});
+								scope.onpagechange({page:page});
 								/*
 								scope.$apply(function() {
 					                   controller.$setViewValue(val);
@@ -254,11 +255,17 @@ if(angular!=undefined  && angular.module)
 						}
 					);
 		        	scope.$watchCollection("ngModel",function(newval,oldval)
-					{
-						console.log("qpageroptions:",newval);
-						element.qpager(newval);
-						scope.onpagechange({page:newval.currentpage});
-					});
+						{
+							console.log("qpageroptions:",newval);
+							element.qpager(newval);
+						}
+					);
+					// scope.$watchCollection("ngModel",function(newval,oldval)
+					// {
+					// 	console.log("qpageroptions:",newval);
+					// 	element.qpager(newval);
+					// 	scope.onpagechange({page:newval.currentpage});
+					// });
 					// scope.$watchCollection(scope.ngModel,function(newval,oldval)
 					// {
 					// 	console.log("qpageroptions:",newval);

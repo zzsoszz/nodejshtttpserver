@@ -17,7 +17,9 @@ if(angular && angular.module)
 	            return $http.get(url+"?"+param,{cache:false}).then(function(resp){
 	              if(resp.data.code=='success')
 	              {
-	                  return {rows:resp.data.json.rows,items:resp.data.json.datas};
+	              	  var items=resp.data.json.datas||resp.json.list;
+	              	  var rows=resp.data.json.rows||resp.json.count;
+	                  return {rows:rows,items:items};
 	              }
 	            });
 	        },
@@ -94,6 +96,8 @@ if(angular && angular.module)
 			  	var ctrl=this;
 			  	// $scope.$watch("$ctrl.qpageroptions.currentpage",function(currentpage,old){
 				// });
+
+
 			  	ctrl.qpageroptions={
 						currentpage:1,
 						totalpage:0

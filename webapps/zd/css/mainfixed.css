@@ -428,9 +428,18 @@ form *:not(input):not(textarea).danger{
 .fieldbox {
     margin-top:10px;
 }
+.fieldbox.inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    width: 250px;
+    height:60px;
+}
 .fieldbox span{
 
 }
 .fieldbox > div{
     margin-top: 5px;
 }
+
+

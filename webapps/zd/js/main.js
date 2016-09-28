@@ -240,6 +240,29 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         showDropdowns : true
     };
 
+     $rootScope.singledateoption={
+       /* maxDate: moment().add(90,'days'),*/
+        alwaysShowCalendars:true,
+        autoApply:true,
+        locale : {
+            format : 'YYYY-MM-DD',
+            applyLabel : '确定',
+            cancelLabel : '取消',
+            fromLabel : '起始时间',
+            toLabel : '结束时间',
+            customRangeLabel : '自定义',
+            daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+            monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+            firstDay : 1
+        },
+        autoUpdateInput:true,
+        singleDatePicker:true,
+        startDate:moment(),
+        endDate:'2050-01-01',
+        showDropdowns : true
+    };
+
     $rootScope.provinceArray =provinceCitys.map(function(obj1){
                 obj1.sub=obj1.sub.map(function(obj){
                    return {id:obj.name,name:obj.name};
@@ -249,4 +272,5 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
     $rootScope.lessonArray =[{id:1,name:"qingtian"},{id:2,name:"qingtian1"}];
     $rootScope.genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
     $rootScope.freeArray =[{id:'1',name:"付费"},{id:'2',name:"免费"}];
+    $rootScope.typeArray =[{id:'1',name:"文章"},{id:'2',name:"视频"}];
 });
