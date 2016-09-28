@@ -1,8 +1,11 @@
 <div ng-controller="editController" style="padding:20px">
-	<form id="addForm" name="addForm" ng-submit="doUpdate(addForm)">
+	<form id="editForm" name="editForm" ng-submit="doUpdate(editForm)">
 
-		<input type="text" ng-bind="item.courseTypeId">
-		<input type="text" ng-bind="item.content">
+		<input type="text" name="courseTypeId" value="{{item.courseTypeId}}">
+		<input type="text" name="content" value="{{item.content}}">
+		<input type="text" name="mainTitle" value="{{item.mainTitle}}">
+		<input type="text" name="id" value="{{item.id}}">
+		<input type="text" name="type" value="2">
 
 		<div class="title">微课堂</div>
         <div class="hline"></div>
@@ -29,7 +32,7 @@
 		        <div class="fieldbox">
 			        <span>课程类型</span>
 			        <div>
-                        <div class="qinputgroup2"   ng-required='true' style="width:100%" 
+                        <div class="qinputgroup2"    style="width:100%" 
                                      qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
                                      ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
                                 >
@@ -42,12 +45,11 @@
 		        <div class="fieldbox">
 			        <span>课程内容</span>
 			        <div>
-                         <textarea class="ueditor" ng-model="item.content"   style="height:600px" >
+                         <textarea class="ueditor" ng-model="item.content"   style="height:300px;width: 100%" >
                          </textarea>
                     </div>
 		        </div>
 		        
-		   
 			    <div style="clear:both;padding-top:20px;text-align:center;">
 	                <input  type="submit" class="actionbtn" value="保存" >
 	            </div>
@@ -58,7 +60,7 @@
    			<div class="fieldbox">
 		        <span>圖片封面</span>
 		        <div>
-                     <div qimgpreview  style="width:260px;height:130px;" ng-model="item.courseCover" >
+                     <div qimgpreview  style="width:220px;height:130px;" ng-name='"courseCover"' ng-model="item.courseCover" ng-default='item.imageUrl' >
                      </div>
                 </div>
 	        </div>

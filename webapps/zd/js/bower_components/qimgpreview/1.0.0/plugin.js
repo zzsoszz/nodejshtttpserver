@@ -31,11 +31,14 @@ if(angular && angular.module)
 		        // priority: 100,
 		        require: '?ngModel',
 		        scope: {
-		            ngModel:'='
+		            ngModel:'=',
+		            ngName:'=',
+		            ngDefault:'='
 		        },
 		        link: function(scope, element, attrs,controller) {
+		        	console.log("aaa",scope.ngModel);
 		        	var imgEle=$('<img width="100%"  height="100%" >');
-		        	var fileEle=$('<input type="file" >').hide();//multiple
+		        	var fileEle=$('<input type="file" >').attr("name",scope.ngName).hide();//multiple
 		        	fileEle.on("change",function(){
 		        		preImg(fileEle.get(0),imgEle.get(0));
 		        		scope.ngModel=fileEle.val();
@@ -43,6 +46,9 @@ if(angular && angular.module)
 					    controller.$render();
 		        	}).on("click",function(event){
 		        		event.stopPropagation();
+		        	});
+		        	scope.$watch("ngDefault",function(newval,oldval){
+		        		imgEle.attr("src",newval);
 		        	});
 		        	element.append(fileEle).append(imgEle);
 		        	element.click(function(){

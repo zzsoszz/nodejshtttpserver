@@ -1,0 +1,65 @@
+Content-Type:application/json;charset=UTF-8
+Date:Wed, 28 Sep 2016 02:39:03 GMT
+Server:Apache-Coyote/1.1
+Transfer-Encoding:chunked
+Request Headers
+view source
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.8
+Cache-Control:no-cache
+Connection:keep-alive
+Content-Length:738
+Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Cookie:_ga=GA1.1.1080112844.1466055761; CNZZDATA1259094575=1903752075-1463375550-%7C1466647694; Webstorm-df1b66bd=cf9b10a4-06c5-45b6-a8b6-ab39b531133f; Webstorm-46fc939c=5ed15660-a8e5-4980-af35-22ce862cb605; vbossID=vbossID_A8C8D732E83BFA4C6C0B14E4E67002F9; BOSSAPP=BOSSAPP_BB64B3D4C34F9F9C6D938FED406584A7; JSESSIONID=D7993188527256E5F98351FB0565CA9A
+Host:localhost:8888
+Origin:http://localhost:8888
+Pragma:no-cache
+Referer:http://localhost:8888/index.html
+User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36
+X-Requested-With:XMLHttpRequest
+Request Payload
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="userId"
+
+
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="groupId"
+
+
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="name"
+
+aa
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="title"
+
+aaa
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="introduction"
+
+aa
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="id"
+
+
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw
+Content-Disposition: form-data; name="avatar"
+
+7a4f21967e7048dfabea87380cd2f45d.png
+------WebKitFormBoundaryvXVAsxO2pazzO2Bw--
+Name	
+7a4f21967e7048dfabea87380cd2f45d.png	
+add	
+index.html	
+list	
+orientations	
+dropDownBg.png	
+search.png	
+info	
+bcc5b87293fc4cfab79b8f3679b4d980.jpg	
+031e4c5d830840c9b7fc1779d2f38e38.jpg	
+50ef7ab656864b11b90bfab65d3d5bc3.jpg	
+30481c577e394d159c4c954f6c26e515.jpg	
+cac27e5e1d834a31aff70c0b67554f45.jpg	
+90a6cc10eb7b4d89bfe925912bdd44e4.jpg	

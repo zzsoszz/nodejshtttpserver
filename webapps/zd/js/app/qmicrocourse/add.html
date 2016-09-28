@@ -1,66 +1,60 @@
-<div ng-controller="addController">
-<div>
-	<form name="addForm" ng-submit="doAdd(addForm)">
+<div ng-controller="addController" style="padding:20px">
+	<form id="addForm" name="addForm" ng-submit="doAdd(addForm)">
+
+		<input type="text" name="courseTypeId" value="{{item.courseTypeId}}">
+		<input type="text" name="content" value="{{item.content}}">
+		<input type="text" name="mainTitle" value="{{item.mainTitle}}">
+		<input type="text" name="type" value="2">
 		<div class="title">微课堂</div>
         <div class="hline"></div>
-        <div>
-        	
-		   
-		        <div>
-			        <span>编号</span>
-			        <div class="qinputgroup2"  >
-                            <input class="qinputitem2"    class="qinputitem2"  type="text" ng-model="item.id"/>
-                    </div>
-		        </div>
-		        
+        <div style="width:69.0%;float:left;">
 		   		
-		        <div>
+		        <div class="fieldbox">
 			        <span>课程标题</span>
-			        <div class="qinputgroup2"  >
-                            <input class="qinputitem2"   ng-required='true'  class="qinputitem2"  type="text" ng-model="item.mainTitle"/>
-                    </div>
-		        </div>
-		        
-		   
-		        <div>
-			        <span>是否付费</span>
 			        <div>
-                        <div class="qinputgroup2"   
-                                     qdropdownselect data-initdata="item.free"  data-dropdowndata="freeArray"  ng-model='selectitem.free'
-                                     ng-change="item.free=selectitem.free.id;item['free_desc']=selectitem.free.name"
-                                >
-                                    <span  class="qinputitem2" >{{item['free_desc']}}</span>
-                                    <div  class="addson dropdown-bg" style=""></div>
-                        </div>
+				        <div class="qinputgroup2" style="width:100%" >
+	                            <input class="qinputitem2"    ng-required='true'  class="qinputitem2"  type="text" ng-model="item.mainTitle"/>
+	                    </div>
                     </div>
 		        </div>
 		        
-		   
-		        <div>
+		        <div class="fieldbox">
 			        <span>课程类型</span>
 			        <div>
-                        <div class="qinputgroup2"   ng-required='true' 
+                        <div class="qinputgroup2"   ng-required='true' style="width:100%" 
                                      qdropdownselect data-initdata="item.courseTypeId"  data-dropdowndata="courseTypeIdArray"  ng-model='selectitem.courseTypeId'
                                      ng-change="item.courseTypeId=selectitem.courseTypeId.id;item['courseTypeId_desc']=selectitem.courseTypeId.name"
                                 >
-                                    <span  class="qinputitem2" >{{item['courseTypeId_desc']}}</span>
+                                    <span  class="qinputitem2" >{{item['courseTypeId']}}  {{item['courseTypeId_desc']}}</span>
                                     <div  class="addson dropdown-bg" style=""></div>
                         </div>
                     </div>
 		        </div>
 		        
-		        <div>
+		        <div class="fieldbox">
 			        <span>课程内容</span>
 			        <div>
-                         <div class="ueditor" ng-model="item.content"  style="height:600px" >
-                         </div>
+                         <textarea class="ueditor" ng-model="item.content"   style="height:300px;width: 100%" >
+                         </textarea>
                     </div>
 		        </div>
-		   		
+		        
+		   
 			    <div style="clear:both;padding-top:20px;text-align:center;">
-	                <input  type="submit" class="actionbtn" value="添加" >
+	                <input  type="submit" class="actionbtn" value="保存" >
 	            </div>
        </div>
+
+
+       <div style="width:30.0%;float:right;">
+   			<div class="fieldbox">
+		        <span>圖片封面</span>
+		        <div>
+                     <div qimgpreview  style="width:220px;height:130px;" ng-model="item.courseCover"  ng-name='"courseCover"'  ng-default='"css/images/uploadMerFile.png"'  >
+                     </div>
+                </div>
+	        </div>
+	   </div>
 	</form>
 </div>
-</div>
+

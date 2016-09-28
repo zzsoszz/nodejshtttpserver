@@ -206,10 +206,13 @@ qmicrocourse.controller("editController", function ($rootScope,$http,$location,$
     	item.id=$stateParams.id;
     	qmicrocourseService.get(serviceApiUrl+'/course/info',item).then(function(data){
   		    $scope.item=data;
+          $scope.item.courseTypeId_desc=data.courseTypeName;
+          $scope.item.imageUrl=$scope.item.imageUrl||"css/images/uploadMerFile.png";
   	  });
       var task1=qmicrocourseService.search(serviceApiUrl+'/web/course/type/list').then(function(data){
           $scope.courseTypeIdArray=data.items;
       });
+
   };
   $scope.init();
   $scope.doUpdate=function(form)
@@ -217,20 +220,22 @@ qmicrocourse.controller("editController", function ($rootScope,$http,$location,$
        if(form.$valid)
        {
          var options={
+            type:'POST',
             dataType:'json',
             success: function (data) {
                 void 0;
                 if(data.code=='success'){
                     $scope.$apply(function () {
-                        alert("添加成功");
+                        alert("操作成功");
                     })
                 }else{
-                    alert("添加失败");
+                    alert("操作失败");
                 }
             }
          };
-         $('#addForm').attr("action",serviceApiUrl+'/course/micro/add');
-         $('#addForm').ajaxForm(options).ajaxSubmit(options);
+         $('#editForm').attr("action",serviceApiUrl+'/course/micro/update');
+         //$('#editForm').submit();//
+         $('#editForm').ajaxForm(options).ajaxSubmit(options);
          //qmicrocourseService.update(serviceApiUrl+'/course/micro/add',$scope.item);
        }else{
           alert("数据有错！");
@@ -245,11 +250,33 @@ qmicrocourse.controller("addController", function ($rootScope,$http,$location,$s
     $scope.$on("$init",function(){
       console.log("add-init",$scope);
     })
+    $scope.init=function(){
+        var task1=qmicrocourseService.search(serviceApiUrl+'/web/course/type/list').then(function(data){
+            $scope.courseTypeIdArray=data.items;
+        });
+
+    };
+    $scope.init();
     $scope.doAdd=function(form)
     {
        if(form.$valid)
        {
-         qmicrocourseService.add(serviceApiUrl+'/course/micro/add',$scope.item);
+          var options={
+            type:'POST',
+            dataType:'json',
+            success: function (data) {
+                void 0;
+                if(data.code=='success'){
+                    $scope.$apply(function () {
+                        alert("操作成功");
+                    })
+                }else{
+                    alert("操作失败");
+                }
+            }
+         };
+         $('#addForm').attr("action",serviceApiUrl+'/course/micro/add');
+         $('#addForm').ajaxForm(options).ajaxSubmit(options);
        }
        else
        {
