@@ -64,16 +64,7 @@ mainApp.directive('ngShow',['$animate', function($animate) {
 }]);
 
 
-var is ={
- types : ["Array", "Boolean", "Date", "Number", "Object", "RegExp", "String", "Window", "HTMLDocument"]
-};
-for(var i = 0, c; c = is.types[i ++ ]; ){
-    is[c] = (function(type){
-        return function(obj){
-           return Object.prototype.toString.call(obj) == "[object " + type + "]";
-        }
-    })(c);
-}
+
 // alert(is.Array([])); // true
 // alert(is.Date(new Date)); // true
 // alert(is.RegExp(/reg/ig)); // true
@@ -127,11 +118,36 @@ for(var i = 0, c; c = is.types[i ++ ]; ){
 //           }
 //       });
 // });
+
+
+
+
+
+mainApp.service("qmicrocourseService",function(){
+  this.haha=function(){
+  };
+});
+mainApp.run(function($injector){
+ // console.log($injector.get("qmicrocourseService"));
+});
+
+//http://localhost:8888/index.html#/qmicrocourse/search
+
+
+var is ={
+ types : ["Array", "Boolean", "Date", "Number", "Object", "RegExp", "String", "Window", "HTMLDocument"]
+};
+for(var i = 0, c; c = is.types[i ++ ]; ){
+    is[c] = (function(type){
+        return function(obj){
+           return Object.prototype.toString.call(obj) == "[object " + type + "]";
+        }
+    })(c);
+}
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
       $urlRouterProvider.when("","").otherwise("go");
       $stateProvider.state("go",{
             url:"/{module}/{controller}",
-            templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
             templateUrl: function ($stateParams){
               var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
               console.log(tempurl);
@@ -143,8 +159,6 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
                 console.log(ctrlName);
                 return ctrlName;
             },
-            // component:'hello'
-            // ,
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
                     //console.log($injector);
@@ -162,7 +176,6 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
       });
       $stateProvider.state("detail",{
             url:"/{module}/{controller}/{id}",
-            templateUrl:baseUrl+"/js/bower_components/qdatatable/2.0.1/search.html",
             templateUrl: function ($stateParams){
               var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
               console.log(tempurl);
@@ -174,35 +187,17 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
                 console.log(ctrlName);
                 return ctrlName;
             },
-            // component:'hello'
-            // ,
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
-                    //console.log($injector);
                     var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
-                   // console.log(controllerjs);
                     return $ocLazyLoad.load({
                         files: [controllerjs]
                     }).then(function(data) {
-                      // var module= angular.module(data)
-                      // var com=module.controller("searchController");
-                      // var service = $injector.get("qmicrocourseService");
                     });
                 }]
             }
         });
 
-});
-
-
-
-
-mainApp.service("qmicrocourseService",function(){
-  this.haha=function(){
-  };
-});
-mainApp.run(function($injector){
- // console.log($injector.get("qmicrocourseService"));
 });
 
 
@@ -239,9 +234,7 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         endDate:'2050-01-01',
         showDropdowns : true
     };
-
-     $rootScope.singledateoption={
-       /* maxDate: moment().add(90,'days'),*/
+    $rootScope.singledateoption={
         alwaysShowCalendars:true,
         autoApply:true,
         locale : {
@@ -262,7 +255,28 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         endDate:'2050-01-01',
         showDropdowns : true
     };
-
+    $rootScope.timepickeroption={
+        //maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
+        alwaysShowCalendars:true,
+        autoApply:true,
+        locale : {
+            format : 'YYYY-MM-DD HH:mm:ss',
+            applyLabel : '确定',
+            cancelLabel : '取消',
+            fromLabel : '起始时间',
+            toLabel : '结束时间',
+            customRangeLabel : '自定义',
+            daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+            monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+            firstDay : 1
+        },
+        timePicker:true,
+        timePicker24Hour:true,
+        autoUpdateInput:true,
+        singleDatePicker:true,
+        showDropdowns : true
+    };
     $rootScope.provinceArray =provinceCitys.map(function(obj1){
                 obj1.sub=obj1.sub.map(function(obj){
                    return {id:obj.name,name:obj.name};
@@ -273,4 +287,7 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
     $rootScope.genderArray =[{id:'1',name:"男"},{id:'2',name:"女"}];
     $rootScope.freeArray =[{id:'1',name:"付费"},{id:'2',name:"免费"}];
     $rootScope.typeArray =[{id:'1',name:"文章"},{id:'2',name:"视频"}];
+
+
+
 });

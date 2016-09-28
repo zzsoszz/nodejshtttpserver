@@ -315,7 +315,6 @@ form *:not(input):not(textarea).danger{
 }
 .newTb td{
     height: 40px;overflow: hidden;
-    /*padding: 0 20px;*/
 }
 .bottomBtn{
     margin-top: 50px;text-align: left;
