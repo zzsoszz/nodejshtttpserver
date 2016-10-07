@@ -15,7 +15,7 @@
                     <div ng-if="col.type=='text'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">{{col.title}}</div>
                         <div style="position: relative;width: 242px">
-                            <input    class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
+                            <input    class="form-control date-picker" maxlength="5"  minlength="1"  type="text" ng-model="$ctrl.item[col.name]"/>
                         </div>
                     </div>
                     <div ng-if="col.type=='muliplyselect'">

@@ -24,7 +24,7 @@ if(angular && angular.module)
 	    onItemDelBefore:'&'
 	  },
 	  scope:true,
-	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.7/plugin.html',
+	  templateUrl:baseUrl+'js/bower_components/qdatatable/1.0.8/plugin.html',
 	  controller: function() {
 	  	var ctrl=this;
 	  	this.qpageroptions={
