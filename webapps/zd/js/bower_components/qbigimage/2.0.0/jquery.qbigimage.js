@@ -53,6 +53,8 @@
 			this.plugnamecontainer;
 			this.init=function()
 			{
+
+				
 				this.qbigimageurl=target.data("qbigimageurl");
 				target.on("click",$.proxy(function(event){
 					if(!this.plugnamecontainer)
@@ -64,10 +66,11 @@
 							'top':"50%",
 							'left':"50%",
 							'transform':'translate(-50%,-50%)',
-							'overflow':'hidden'
-						}).show().on("dblclick",function(){
+							'overflow':'hidden',
+							'text-align':'center'
+						}).show().on("dblclick",$.proxy(function(){
 							this.plugnamecontainer.hide(); 
-						});
+						},this));
 						var img=$("<img>").attr("src",this.qbigimageurl);
 						this.plugnamecontainer.append(img);
 						$("body").append(this.plugnamecontainer);
@@ -83,6 +86,9 @@
 						}
 					}
 				},this));
+
+
+
 			}
 		}
 })(jQuery);

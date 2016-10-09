@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+
+<head>
+    <meta name="description" content="延时提示2">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="plugin.css" />
+    <script src="jquery-1.10.2.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="jquery.qbigimage.js"></script>
+    <script src="plugin.js"></script>
+    <script>
+    var mainApp=angular.module("mainApp",["qui"]);
+    mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+        $scope.big="big.png";
+        $scope.small="small.png";
+     });
+   </script>
+</head>
+
+<body ng-controller="mainController">
+  
+  <img qbigimage data-qbigimageurl="big" src="small" />
+
+</body>
+</html>
