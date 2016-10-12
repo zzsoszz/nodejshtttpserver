@@ -1,0 +1,77 @@
+<table class="newTb">
+    <thead>
+        <tr>
+            <th>
+              <span>  
+                课程封面
+              </span>
+            </th>
+            <th>
+              <span>  
+                序号
+              </span>
+            </th>
+            <th>
+              <span>  
+               课程标题
+              </span>
+            </th>
+            <th>
+              <span>  
+               课程类型
+              </span>
+            </th>
+            <th>
+              <span>  
+               微课类型
+              </span>
+            </th>
+             <th>
+              <span>  
+               创建时间
+              </span>
+            </th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="eduBody">
+        <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
+            <td>
+                <img width="120px" height="60px;" src='/images/{{item.imageUrl}}'>
+            </td>
+          	 <td>
+                <span>
+               	 {{item.id}}
+                </span>
+            </td>
+          	 <td>
+                <span>
+               	 {{item.mainTitle}}
+                </span>
+            </td>
+          	 <td>
+                <span>
+               	 {{item.courseTypeName}}
+                </span>
+            </td>
+          	 <td>
+                <span>
+               	 {{item.typeName}}
+                </span>
+            </td>
+             <td>
+                <span>
+               	 {{item.createTime}}
+                </span>
+            </td>
+            <td>
+           		<a ng-if="true" class="moveup"   ng-click="moveUp(item)"></a>
+                <a ng-if="true" class="movedown" ng-click="moveDown(item)"></a>
+                <a ng-if="true"  class="delete"  ng-click="doDel(item)"></a>
+                <a ng-if="item.type==2" class="update"   ng-click="showEdit(item)"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div  qpager ng-model="$ctrl.qpageroptions" onpagechange="pagechange(page)">
+</div>
