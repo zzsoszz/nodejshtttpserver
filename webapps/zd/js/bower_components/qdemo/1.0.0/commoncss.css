@@ -347,3 +347,52 @@ form *:not(input):not(textarea).danger{
 #ulType1>li:hover,#ulSex>li:hover,#ulPosition>li:hover,#ulCareer>li:hover{
     background: #dddddd;
 }
+
+
+
+
+
+
+.fieldbox {
+    margin-top:10px;
+}
+.fieldbox.inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    width: 250px;
+    height:60px;
+}
+.fieldbox span{
+
+}
+.fieldbox > div{
+    margin-top: 5px;
+}
+
+
+
+
+.qinputgroup2{
+    width:250px;
+    display: inline-block;
+    position: relative;
+    border:none;
+}
+.qinputgroup2 .qinputitem2{
+    padding-left:15px;
+    border: 1px solid #cccccc;
+    width:100%;
+    height:2.5em;
+    line-height:2.5em;
+    display: block;
+}
+.qinputgroup2 .addson{
+    position: absolute;
+    right:0px;
+    top:50%;
+    transform:translate(0%,-50%);
+    height:100%;
+    width:38px;
+}
+

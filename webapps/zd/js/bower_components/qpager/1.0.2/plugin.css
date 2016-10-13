@@ -57,6 +57,7 @@
 }
 .qpager .qpagerui .qpagination  li.active{
     background-color: rgb(70, 80, 94);
+    color:#efefef;
 }
 .qpager .qpagerui .qpagination  li:hover{
     background-color: rgb(70, 80, 94);

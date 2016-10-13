@@ -3,7 +3,7 @@ qdemoModule.service("qdemoService",function($http){
  return {
           search:function(url,item){
             var param=$.param(item?item:"");
-              return $http.get(url+"?"+param,{cache:false}).then(function(resp){
+              return $http.post(url+"?"+param).then(function(resp){
                   if(resp.data.code=='success')
 	              {
                     var items=resp.data.json.list||resp.data.json.datas;
@@ -14,14 +14,32 @@ qdemoModule.service("qdemoService",function($http){
           },
           add:function(url,item)
           {
-             var param=$.param(item);
-             return $http.get(url+"?"+param).then(function (resp){
-                if(resp.data.code=='success')
-                {
-                    return resp.data.json;
-                }
-                return null;
-             });
+             var formdata = new FormData();
+			 for ( var key in item ) {
+			     formdata.append(key, item[key]);
+			 }
+             // return $http({url:url,method:"post",data:form_data,processData : false,contentType : false}).then(function (resp){
+             //    if(resp.data.code=='success')
+             //    {
+             //        return resp.data.json;
+             //    }
+             //    return null;
+             // });
+            return $.ajax({
+		           type : 'post',
+		           url :url,
+		           data : formdata,
+		           cache : false,
+		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+		           contentType : false, // 不设置Content-type请求头
+		           success : function(data){
+		           		return data;
+		           },
+		           error : function(error){
+		           		console.log(error);
+		           		return null;
+		           }
+			});
           },
           get:function(url,item)
           {
@@ -47,14 +65,33 @@ qdemoModule.service("qdemoService",function($http){
           },
           update:function(url,item)
           {
-             var param=$.param(item);
-             return $http.post(url+"?"+param).then(function (resp){
-                if(resp.data.code=='success')
-                {
-                    return item;
-                }
-                return null;
-             });
+             // var param=$.param(item);
+             // return $http.post(url+"?"+param).then(function (resp){
+             //    if(resp.data.code=='success')
+             //    {
+             //        return item;
+             //    }
+             //    return null;
+             // });
+             var formdata = new FormData();
+			 for ( var key in item ) {
+			     formdata.append(key, item[key]);
+			 }
+             return $.ajax({
+		           type : 'post',
+		           url :url,
+		           data : formdata,
+		           cache : false,
+		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+		           contentType : false, // 不设置Content-type请求头
+		           success : function(data){
+		           		return data;
+		           },
+		           error : function(error){
+		           		console.log(error);
+		           		return null;
+		           }
+			});
           }
   };
 });
@@ -64,36 +101,23 @@ qdemoModule.component('qdemo', {
 	  templateUrl:baseUrl+'js/bower_components/qdemo/1.0.0/plugin.html',
 			  controller: ["qdemoService",function(service) {
 			  		 
-			  	     var ctrl=this;
-			  	     ctrl.qpageroptions = {
+			  	    var ctrl=this;
+			  	    ctrl.qpageroptions = {
 				         currentpage: 1,
 				         totalpage: 0
-				     };
-				     ctrl.option={};
-				     ctrl.option.pageSize=10;
+				    };
+				    ctrl.option={};
+				    ctrl.option.pageSize=10;
 
-				     ctrl.$onInit=function(){
-					    	ctrl.tableoption=
-						     {
-						     	 title:"教育经历",
-						     	 deleteEnable:false,
-						     	 editEnable:true,
-						     	 moveUpEnable:false,
-						     	 moveDownEnable:false,
-						     	 enableEvent:true,
-						     	 enableDefaultAction:false,
-						     	 daterangeoption:ctrl.daterangeoption,
-						     	 cols:[
-							        {title:'名字',name:"name",type:"text"}
-						     	 ]
-						    };
+				    ctrl.$onInit=function(){
+					    	ctrl.pagechange(1);
 					};
                     ctrl.pagechange = function(page) {
 					     var item = $.extend(ctrl.item ? ctrl.item : {}, { pageSize: ctrl.option.pageSize, pageNo: page });
 					     ctrl.doSearch(item);
       				};
       				ctrl.doSearch = function(item) {
-					     service.search(serviceApiUrl + '/course/micro/list', item).then(function(data) {
+					     service.search(serviceApiUrl + '/guest/list', item).then(function(data) {
 					         ctrl.items = data.items;
 					         ctrl.qpageroptions.totalpage = Math.ceil(data.rows / ctrl.option.pageSize);
 					     });
@@ -103,7 +127,7 @@ qdemoModule.component('qdemo', {
 					        id:item.id,
 					        order:1
 					     };
-					     service.update(serviceApiUrl + '/course/micro/order', itemnew).then(function(data) {
+					     service.update(serviceApiUrl + '/guest/order', itemnew).then(function(data) {
 					        ctrl.doSearch({});
 					     });
 					 }
@@ -112,7 +136,7 @@ qdemoModule.component('qdemo', {
 					        id:item.id,
 					        order:2
 					     };
-					     service.update(serviceApiUrl + '/course/micro/order', itemnew).then(function(data) {
+					     service.update(serviceApiUrl + '/guest/order', itemnew).then(function(data) {
 					        ctrl.doSearch({});
 					     });
 					 }
@@ -120,18 +144,46 @@ qdemoModule.component('qdemo', {
 					     var itemnew={
 					        id:item.id
 					     };
-				         service.update(serviceApiUrl + '/course/micro/delete', itemnew).then(function(data) {
+				         service.update(serviceApiUrl + '/guest/delete', itemnew).then(function(data) {
 				             ctrl.doSearch({});
 				         });
 					 }
 					 ctrl.showEdit = function(item) {
+					 	 ctrl.mode='edit';
+					 	 ctrl.isShowPanel=true;
+					 	 ctrl.item=item;
 					     //$state.go("qmicrocourse/edit",{id:item.id});
 					 }
-					 ctrl.showAdd=function()
+					 ctrl.showAdd=function(item)
 					 {
+					 	 ctrl.mode='add';
+					 	 ctrl.isShowPanel=true;
+					 	 ctrl.item=item;
 					     //$state.go("qmicrocourse/add");
 					 }
-
+					 ctrl.doCancel=function(){
+					 	ctrl.isShowPanel=false;
+					 }
+					 ctrl.doSave=function(form)
+					 {
+					 	var itemnew={};
+					 	itemnew=ctrl.item;
+					 	if(ctrl.mode=='add')
+					 	{
+							service.add(serviceApiUrl + '/guest/add', itemnew).then(function(data) {
+						        ctrl.doSearch({});
+						        ctrl.isShowPanel=false;
+						     });
+					 	}else if(ctrl.mode=='edit')
+					 	{
+					 		delete itemnew.createTime;
+					 		delete itemnew.updateTime;
+							service.update(serviceApiUrl + '/guest/modify', itemnew).then(function(data) {
+						        ctrl.doSearch({});
+						        ctrl.isShowPanel=false;
+						     });
+					 	}
+					 };
 
 			}]
 
