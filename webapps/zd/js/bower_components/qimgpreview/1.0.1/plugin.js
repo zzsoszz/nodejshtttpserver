@@ -41,7 +41,14 @@ if(angular && angular.module)
 		        	var imgEle=$('<img width="100%"  height="100%" >');
 		        	var fileEle=$('<input type="file" >').attr("name",scope.ngName).hide();//multiple
 		        	fileEle.on("change",function(e){
-		        		if(scope.ngOption!=null && scope.ngOption.remote && e.target.files[0])
+		        		if(scope.ngOption!=null && scope.ngOption.local )
+		        		{
+		        				preImg(fileEle.get(0),imgEle.get(0));
+				        		scope.ngModel=fileEle.val();
+				        		controller.$setViewValue(scope.ngModel);
+						   		controller.$render();
+		        		}
+		        		else if(e.target.files[0])
 		        		{
 		        			var formdata=new FormData(); 
 							formdata.append("upfile" ,e.target.files[0]);
@@ -64,13 +71,6 @@ if(angular && angular.module)
 					           		console.log(error);
 					           }
 					        });
-		        		}
-		        		else
-		        		{
-	        			  		preImg(fileEle.get(0),imgEle.get(0));
-				        		scope.ngModel=fileEle.val();
-				        		controller.$setViewValue(scope.ngModel);
-						   		controller.$render();
 		        		}
 		        	}).on("click",function(event){
 		        		event.stopPropagation();
