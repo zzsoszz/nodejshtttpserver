@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="plugin.css">
+  <script>
+    var baseUrl="/zd/";
+    var serviceApiUrl="http://localhost:8888";
+  </script>
+  <script src="jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../../../bower_components/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="../../../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+  <script src="plugin.js"></script>
+  <script>
+    var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad","qui"]);
+    mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+        $scope.aaaaa="c:\\aaa.png";
+        $scope.option={
+          remote:true
+        };
+    });
+  </script>
+
+<style>
+
+</style>
+</head>
+<body ng-app="mainApp">
+
+	<div ng-controller="mainController" id="mainController">
+      <div>
+      {{aaaaa}}
+      </div>
+      <div qimgpreview ng-model="aaaaa" style="width:100px;height:100px" ng-name='"courseCover"' ng-option="option" ng-image='"uploadMerFile.png"' >
+      </div>
+  </div>
+
+</body>
+</html>
