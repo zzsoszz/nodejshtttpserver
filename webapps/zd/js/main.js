@@ -1,6 +1,6 @@
 var baseUrl="/zd/";
 
-var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad",'ui.date','daterangepicker','qui']);
+var mainApp=angular.module("mainApp",["ui.router","oc.lazyLoad",'ui.date','daterangepicker','qui','qdemoModule']);
 mainApp.config(function($provide){
     $provide.decorator('ngShowDirective', ['$delegate', function($delegate) {
         $delegate.shift();
@@ -123,13 +123,13 @@ mainApp.directive('ngShow',['$animate', function($animate) {
 
 
 
-mainApp.service("qmicrocourseService",function(){
-  this.haha=function(){
-  };
-});
-mainApp.run(function($injector){
- // console.log($injector.get("qmicrocourseService"));
-});
+// mainApp.service("qmicrocourseService",function(){
+//   this.haha=function(){
+//   };
+// });
+// mainApp.run(function($injector){
+//  // console.log($injector.get("qmicrocourseService"));
+// });
 
 //http://localhost:8888/index.html#/qmicrocourse/search
 
@@ -145,15 +145,14 @@ for(var i = 0, c; c = is.types[i ++ ]; ){
     })(c);
 }
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
-      $urlRouterProvider.when("","").otherwise("go");
+      $urlRouterProvider.when("","").otherwise("");
       $stateProvider.state("go",{
             url:"/{module}/{controller}",
             templateUrl: function ($stateParams){
               var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
               console.log(tempurl);
               return tempurl;
-            }
-            ,
+            },
             controllerProvider: function($stateParams) {
                 var ctrlName =  $stateParams.controller+"Controller";
                 console.log(ctrlName);
