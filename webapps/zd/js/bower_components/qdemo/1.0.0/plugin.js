@@ -113,7 +113,7 @@ qdemoModule.component('qdemo', {
 					    	ctrl.pagechange(1);
 					};
                     ctrl.pagechange = function(page) {
-					     var item = $.extend( {}, { pageSize: ctrl.option.pageSize, pageNo: page });
+					     var item = $.extend({},{ pageSize: ctrl.option.pageSize, pageNo: page });
 					     ctrl.doSearch(item);
       				};
       				ctrl.doSearch = function(item) {
@@ -134,7 +134,7 @@ qdemoModule.component('qdemo', {
 					        order:1
 					     };
 					     service.update(serviceApiUrl + '/guest/order', itemnew).then(function(data) {
-					        ctrl.doSearch({});
+					        ctrl.doSearch({pageSize: ctrl.option.pageSize, pageNo: ctrl.qpageroptions.currentpage});
 					     });
 					 }
 					 ctrl.moveDown = function(item) {
@@ -143,7 +143,7 @@ qdemoModule.component('qdemo', {
 					        order:2
 					     };
 					     service.update(serviceApiUrl + '/guest/order', itemnew).then(function(data) {
-					        ctrl.doSearch({});
+					        ctrl.doSearch({pageSize: ctrl.option.pageSize, pageNo: ctrl.qpageroptions.currentpage});
 					     });
 					 }
 					 ctrl.doDel = function(item) {
@@ -151,7 +151,7 @@ qdemoModule.component('qdemo', {
 					        id:item.id
 					     };
 				         service.delete(serviceApiUrl + '/guest/remove', itemnew).then(function(data) {
-				             ctrl.doSearch({});
+				             ctrl.doSearch({pageSize: ctrl.option.pageSize, pageNo: ctrl.qpageroptions.currentpage});
 				         });
 					 }
 					 ctrl.showEdit = function(item) {
@@ -177,7 +177,7 @@ qdemoModule.component('qdemo', {
 					 	if(ctrl.mode=='add')
 					 	{
 							service.add(serviceApiUrl + '/guest/add', itemnew).then(function(data) {
-						        ctrl.doSearch({});
+						        ctrl.doSearch({pageSize: ctrl.option.pageSize, pageNo: ctrl.qpageroptions.currentpage});
 						        ctrl.isShowPanel=false;
 						     });
 					 	}else if(ctrl.mode=='edit')
@@ -185,7 +185,7 @@ qdemoModule.component('qdemo', {
 					 		delete itemnew.createTime;
 					 		delete itemnew.updateTime;
 							service.update(serviceApiUrl + '/guest/modify', itemnew).then(function(data) {
-						        ctrl.doSearch({});
+						        ctrl.doSearch({pageSize: ctrl.option.pageSize, pageNo: ctrl.qpageroptions.currentpage});
 						        ctrl.isShowPanel=false;
 						     });
 					 	}
