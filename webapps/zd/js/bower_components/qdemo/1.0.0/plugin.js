@@ -55,7 +55,7 @@ qdemoModule.service("qdemoService",function($http){
           delete:function(url,item)
           {
              var param=$.param(item);
-             return $http.get(url+"?"+param).then(function (resp){
+             return $http.post(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
                 {
                     return item;
@@ -113,7 +113,7 @@ qdemoModule.component('qdemo', {
 					    	ctrl.pagechange(1);
 					};
                     ctrl.pagechange = function(page) {
-					     var item = $.extend(ctrl.item ? ctrl.item : {}, { pageSize: ctrl.option.pageSize, pageNo: page });
+					     var item = $.extend( {}, { pageSize: ctrl.option.pageSize, pageNo: page });
 					     ctrl.doSearch(item);
       				};
       				ctrl.doSearch = function(item) {
