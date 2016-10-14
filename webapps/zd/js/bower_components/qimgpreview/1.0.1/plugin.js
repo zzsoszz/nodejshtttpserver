@@ -34,7 +34,6 @@ if(angular && angular.module)
 		            ngModel:'=',
 		            ngName:'=',
 		            ngOption:'=',
-		            ngDefault:'='
 		        },
 		        link: function(scope, element, attrs,controller) {
 
@@ -75,7 +74,7 @@ if(angular && angular.module)
 		        	}).on("click",function(event){
 		        		event.stopPropagation();
 		        	});
-		        	scope.$watch("ngDefault",function(newval,oldval){
+		        	scope.$watch("ngModel",function(newval,oldval){
 		        		imgEle.attr("src",newval);
 		        	});
 		        	element.append(fileEle).append(imgEle);
