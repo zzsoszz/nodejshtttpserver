@@ -1,0 +1,115 @@
+<div class="qdatatable">
+   
+   <div class="poppanel" style="" ng-show="$ctrl.isShowPanel">
+        <div class="poppanle-inner" >
+            <form name="qdatatableForm"   ng-submit="event.preventDefault();$ctrl.doSave(qdatatableForm)">
+                <div class="title">添加或者修改嘉宾</div>
+                <div class="hline"></div>
+                <div>
+                    <div style="overflow: hidden;">
+                      <div style="width:70%;float:left;">
+                          <div class="fieldbox">
+                              <span >嘉宾姓名</span>
+                              <div class="qinputgroup2"  >
+                                  <input class="qinputitem2"    class="qinputitem2"  type="text" ng-model="$ctrl.item.name"/>
+                              </div>
+                          </div>
+                          <div  class="fieldbox">
+                              <span >嘉宾职称</span>
+                              <div class="qinputgroup2"  >
+                                  <input class="qinputitem2"   class="qinputitem2"  type="text" ng-model="$ctrl.item.title"/>
+                              </div>
+                          </div>
+                      </div>
+                      <div style="width:29%;float:left;">
+                            <div class="fieldbox">
+                              <span>嘉宾头像</span>
+                              <div>
+                                 {{$ctrl.item.avatar}}
+                                 <div qimgpreview  style="width:120px;height:120px;" ng-model="$ctrl.item.avatar"  ng-name='"avatar"' ng-init='$ctrl.item.avatar="/image/uploadMerFile.png"''  >
+                                 </div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="fieldbox">
+                        <span>嘉宾介绍</span>
+                        <div>
+                                <textarea    class="qinputitem2"  style="width:700px;height:300px;" type="text" ng-model="$ctrl.item.introduction">
+                                </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;" >
+                    <input  ng-if="$ctrl.mode=='add' "  type="submit" class="actionbtn" value="添加"  style="float: left">
+                    <input  ng-if="$ctrl.mode=='edit' "  type="submit" class="actionbtn" value="更新"  style="float: left">
+                    <input  type="button" class="actionbtn gray" value="取消" ng-click="$ctrl.doCancel()" style="margin-left: 10px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="action-box">
+      <div  class="actionbtn" ng-click="$ctrl.showAdd()">
+        添加
+      </div>
+    </div>
+    <table class="newTb">
+        <thead>
+            <tr>
+                <th>
+                  <span>  
+                    序号
+                  </span>
+                </th>
+                <th>
+                  <span>  
+                    嘉宾头像
+                  </span>
+                </th>
+                <th>
+                  <span>  
+                   嘉宾姓名
+                  </span>
+                </th>
+                <th>
+                  <span>  
+                   嘉宾职称
+                  </span>
+                </th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="eduBody">
+            <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
+               
+              	<td>
+                    <span>
+                   	 {{item.id}}
+                    </span>
+                </td>
+                <td>
+                    <img width="120px" height="60px;" src='/images/{{item.avatar}}'>
+                </td>
+              	<td>
+                    <span>
+                   	 {{item.name}}
+                    </span>
+                </td>
+              	<td>
+                    <span>
+                   	 {{item.title}}
+                    </span>
+                </td>
+                <td>
+               	  	<a ng-if="true" class="moveup"   ng-click="$ctrl.moveUp(item)"></a>
+                    <a ng-if="true" class="movedown" ng-click="$ctrl.moveDown(item)"></a>
+                    <a ng-if="true"  class="delete"  ng-click="$ctrl.doDel(item)"></a>
+                    <a ng-if="true" class="update"   ng-click="$ctrl.showEdit(item)"></a>
+                    <!-- ng-if="item.type==2" -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div  qpager ng-model="$ctrl.qpageroptions" onpagechange="$ctrl.pagechange(page)">
+    </div>
+</div>
