@@ -1,5 +1,5 @@
-var qguestModule=angular.module('qguestModule',[])
-qguestModule.service("qguestService",function($http){
+var qguestModule=angular.module('qguestModule',["Ajax"])
+qguestModule.service("qguestService",function($http,$ajax){
  return {
           search:function(item){
           	var url=serviceApiUrl + '/guest/list';
@@ -19,24 +19,34 @@ qguestModule.service("qguestService",function($http){
 			 for ( var key in item ) {
 			     formdata.append(key, item[key]);
 			 }
-             return $.ajax({
-		           type : 'post',
-		           url :serviceApiUrl + '/guest/add',
-		           data : formdata,
-		           cache : false,
-		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
-		           contentType : false, // 不设置Content-type请求头
-		           // success : function(data){
-		           // 		return data.json;
-		           // },
-		           // error : function(error){
-		           // 		console.log(error);
-		           // 		return null;
-		           // }
-			}).then(function(data)
-			{
-				return data.json;
-			});
+			 //var  aaa={id:111,name:3333};
+			 return $ajax({type:'post',url:serviceApiUrl + '/guest/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
+                if(resp.code=='success')
+                {
+                    return resp.json;
+                }
+                return null;
+             });
+  		 //           return $.ajax({
+		 //           type : 'post',
+		 //           url :serviceApiUrl + '/guest/add',
+		 //           data : formdata,
+		 //           cache : false,
+		 //           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+		 //           contentType : false, // 不设置Content-type请求头
+		 //           // success : function(data){
+		 //           // 		return data.json;
+		 //           // },
+		 //           // error : function(error){
+		 //           // 		console.log(error);
+		 //           // 		return null;
+		 //           // }
+			// }).then(function(data)
+			// {
+			// 	return data.json;
+			// });
+
+
           },
           get:function(item)
           {
@@ -202,11 +212,11 @@ qguestModule.component('qguest', {
 							service.add(itemnew).then(function(item) {
 								if(item)
 								{
-									 $scope.$apply(function(){
+									 // $scope.$apply(function(){
 									 	ctrl.items.push(item);
 									 	ctrl.ngModel.push(item.id);
 						       			ctrl.isShowPanel=false;
-									 });
+									 // });
 								}
 						     });
 					 	}else if(ctrl.mode=='edit')
