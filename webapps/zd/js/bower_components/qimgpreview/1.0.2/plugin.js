@@ -36,7 +36,7 @@ if(angular && angular.module)
 		            ngOption:'=',
 		        },
 		        link: function(scope, element, attrs,controller) {
-		        	
+		        	var imageBase="/images/";
 		        	var imgEle=$('<img width="100%"  height="100%" >');
 		        	var fileEle=$('<input type="file" >').attr("name",scope.ngName).hide();//multiple
 		        	fileEle.on("change",function(e){
@@ -60,11 +60,12 @@ if(angular && angular.module)
 					           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
 					           contentType : false, // 不设置Content-type请求头
 					           success : function(data){
-					           		var finalurl=serviceApiUrl+data.url;
+					           		//var finalurl=serviceApiUrl+data.url.substring(data.url.indexOf("/images/"));
+					           		var finalurl=data.url.substring(8);
 					           		scope.ngModel=finalurl;
 		        					controller.$setViewValue(scope.ngModel);
 			   						controller.$render();
-			   						imgEle.get(0).src=finalurl;
+			   						imgEle.get(0).src=imageBase+finalurl;
 					           },
 					           error : function(error){
 					           		console.log(error);
@@ -75,7 +76,7 @@ if(angular && angular.module)
 		        		event.stopPropagation();
 		        	});
 		        	scope.$watch("ngModel",function(newval,oldval){
-		        		imgEle.attr("src",newval);
+		        		imgEle.attr("src",imageBase+newval);
 		        	});
 		        	element.append(fileEle).append(imgEle);
 		        	element.click(function(){
