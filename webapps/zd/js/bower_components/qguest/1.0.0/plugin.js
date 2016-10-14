@@ -46,7 +46,6 @@ qguestModule.service("qguestService",function($http,$ajax){
 			// 	return data.json;
 			// });
 
-
           },
           get:function(item)
           {
@@ -78,7 +77,7 @@ qguestModule.service("qguestService",function($http,$ajax){
 			 for ( var key in item ) {
 			     formdata.append(key, item[key]);
 			 }
-             return $.ajax({
+             return $ajax({
 		           type : 'post',
 		           url :serviceApiUrl + '/guest/modify',
 		           data : formdata,
