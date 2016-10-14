@@ -36,6 +36,11 @@ if(angular && angular.module)
 		            ngOption:'=',
 		        },
 		        link: function(scope, element, attrs,controller) {
+
+		        	function createFile()
+		        	{
+
+		        	}
 		        	var imageBase="/images/";
 		        	var imgEle=$('<img width="100%"  height="100%" >');
 		        	var fileEle=$('<input type="file" >').attr("name",scope.ngName).hide();//multiple
@@ -75,8 +80,23 @@ if(angular && angular.module)
 		        	}).on("click",function(event){
 		        		event.stopPropagation();
 		        	});
+		        	function clearInputFile(f){  
+					    if(f.value){  
+					        try{  
+					            f.value = ''; //for IE11, latest Chrome/Firefox/Opera...  
+					        }catch(err){  
+					        }  
+					        if(f.value){ //for IE5 ~ IE10  
+					            var form = document.createElement('form'), ref = f.nextSibling, p = f.parentNode;  
+					            form.appendChild(f);  
+					            form.reset();  
+					            p.insertBefore(f,ref);  
+					        }  
+					    }  
+					}  
 		        	scope.$watch("ngModel",function(newval,oldval){
 		        		imgEle.attr("src",imageBase+newval);
+		        		clearInputFile(fileEle.get(0));
 		        	});
 		        	element.append(fileEle).append(imgEle);
 		        	element.click(function(){

@@ -172,7 +172,8 @@ qguestModule.component('qguest', {
 					        id:item.id
 					     };
 				         service.delete(itemnew).then(function(data) {
-				         	ctrl.items.splice(ctrl.items.indexOf(item),1);
+				         	ctrl.ngModel.splice(ctrl.ngModel.indexOf(data.id),1);
+				         	ctrl.items.splice(ctrl.items.indexOf(data),1);
 				             //ctrl.doSearch({pageSize: ctrl.option.pageSize, pageNo: ctrl.qpageroptions.currentpage});
 				         });
 					 }
@@ -203,6 +204,7 @@ qguestModule.component('qguest', {
 								{
 									 $scope.$apply(function(){
 									 	ctrl.items.push(item);
+									 	ctrl.ngModel.push(item.id);
 						       			ctrl.isShowPanel=false;
 									 });
 								}
