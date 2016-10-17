@@ -1,8 +1,9 @@
-var module=angular.module('qcoursegroup',["Ajax"])
-module.service("qcoursegroupService",function($http,$ajax){
+var  moduleName="qarticle";
+var module=angular.module(moduleName,["Ajax"])
+module.service(moduleName+"Service",function($http,$ajax){
  return {
           search:function(item){
-          	var url=serviceApiUrl + '/businesscourse/list';
+          	var url=serviceApiUrl + '/guest/list';
             var param=$.param(item?item:"");
               return $http.post(url+"?"+param).then(function(resp){
                   if(resp.data.code=='success')
@@ -19,7 +20,7 @@ module.service("qcoursegroupService",function($http,$ajax){
 			 for ( var key in item ) {
 			     formdata.append(key, item[key]);
 			 }
-			 return $ajax({type:'post',url:serviceApiUrl + '/businesscourse/schedule/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
+			 return $ajax({type:'post',url:serviceApiUrl + '/businesscourse/article/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
                 if(resp.code=='success')
                 {
                     return resp.json;
@@ -97,92 +98,49 @@ module.service("qcoursegroupService",function($http,$ajax){
           }
   };
 });
-module.component('qcoursegroup', {
+module.component("addQarticle", {
+	  transclude: true,
+	  scope:true,
+	  bindings: {
+		  ngModel: '=',
+		  onAdd: '&',
+	  },
+	  templateUrl:baseUrl+'js/bower_components/'+moduleName+'/1.0.0/add-'+moduleName+'.html',
+	  controller: [moduleName+"Service",'$scope',function(service, $scope) {
+	  		var ctrl=this;
+	  		ctrl.show=false;
+	  		ctrl.doSave=function(form)
+			{
+			 	var itemnew={};
+			 	itemnew=ctrl.item;
+		 		delete itemnew.createTime;
+		 		delete itemnew.updateTime;
+				service.add(itemnew).then(function(item) {
+					if(item)
+					{
+		       			ctrl.show=false;
+		       			ctrl.onAdd({"item":item});
+					}
+			     });
+			};
+	  		$scope.$on('add-article', function(event,data) {
+				ctrl.show=true;
+			});
+			ctrl.doCancel=function(){
+			 	ctrl.show=false;
+			};
+	  }]
+});
+module.component("listQarticle", {
 	  transclude: true,
 	  scope:true,
 	  bindings: {
 		  ngModel: '=',
 	  },
-	  templateUrl:baseUrl+'js/bower_components/qcoursegroup/1.0.0/plugin.html',
-			  controller: ["qcoursegroupService",'$scope',function(service, $scope) {
-			  		var aaa=$scope;
-			  	    var ctrl=this;
-			  	    ctrl.qpageroptions = {
-				         currentpage: 1,
-				         totalpage: 0
-				    };
-				    ctrl.option={};
-				    ctrl.option.pageSize=10;
-				    ctrl.$onInit=function(){
-					    	//ctrl.pagechange(1);
-					    	ctrl.items=[];
-					    	$(ctrl.ngModel).each(function(index){
-					    		service.get({id:this}).then(function(item){
-					    			if(item)
-					    			{
-					    				ctrl.items.push(item);
-					    			}
-					    		});
-					    	});;
-					    	console.log(ctrl.ngModel);
-					};
-                    ctrl.pagechange = function(page) {
-					     var item = $.extend({},{ pageSize: ctrl.option.pageSize, pageNo: page });
-					     ctrl.doSearch(item);
-      				};
-      				ctrl.doSearch = function(item) {
-					     service.search( item).then(function(data) {
-					     	 if(data && data.items.length>0){
-					     	 	 ctrl.items = data.items;
-					         	 ctrl.qpageroptions.totalpage = Math.ceil(data.rows / ctrl.option.pageSize);
-					     	 }
-					     });
-					};
-					ctrl.moveUp = function(item) {
-					     var itemnew={
-					        id:item.id,
-					        order:1
-					     };
-					     service.sort(itemnew).then(function(data) {
+	  templateUrl:baseUrl+'js/bower_components/'+moduleName+'/1.0.0/plugin.html',
+	  controller: [moduleName+"Service",'$scope',function(service, $scope) {
+	  		var ctrl=this;
+	  		
+	  }]
+});
 
-					     });
-					}
-					ctrl.moveDown = function(item) {
-					     var itemnew={
-					        id:item.id,
-					        order:2
-					     };
-					     service.update(itemnew).then(function(data) {
-					     	
-					     });
-					 }
-					 ctrl.doDel = function(item) {
-					     var itemnew={
-					        id:item.id
-					     };
-				         service.delete(itemnew).then(function(data) {
-				         	ctrl.ngModel.splice(ctrl.ngModel.indexOf(data.id),1);
-				         	ctrl.items.splice(ctrl.items.indexOf(data),1);
-				         });
-					 }
-					 ctrl.doCancel=function(){
-					 	ctrl.isShowPanel=false;
-					 };
-					 ctrl.showAddArticle=function(){
-					 	 $scope.$broadcast('add-article', 'child');
-					 };
-					 ctrl.addArticle=function(item){
-					 	var itemnew={};
-					 	itemnew=ctrl.item;
-					 	ctrl.items.push(item);
-					 	service.add(itemnew).then(function(item) {
-							if(item)
-							{
-								 	ctrl.items.push(item);
-								 	ctrl.ngModel.push(item.id);
-							}
-						 });
-					 };
-			}]
-
-	});

@@ -3,7 +3,8 @@ var baseUrl="/zd/";
 var mainApp=angular.module("mainApp",
   ["ui.router","oc.lazyLoad",'ui.date','daterangepicker','qui',
   // 'qguestModule',
-  'qcoursegroupModule'
+  'qcoursegroup',
+  'qarticle'
   ]
 );
 
