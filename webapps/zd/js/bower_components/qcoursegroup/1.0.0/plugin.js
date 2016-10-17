@@ -173,7 +173,7 @@ module.component('qcoursegroup', {
 					 ctrl.addArticle=function(item){
 
 					 	var scheduleitem={};
-						scheduleitem.type="1";//文章
+						scheduleitem.itemType="1";//文章
 						scheduleitem.itemId=item.id;
 						scheduleitem.stageType=1;
 					 	service.add(scheduleitem).then(function(scheduleitemresult) {
