@@ -29,17 +29,19 @@
         </thead>
         <tbody id="eduBody">
             <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
-              	<td>
+                <td>
                     <span>
-                   	 {{item.id}}
+                     {{item.itemType}}
                     </span>
                 </td>
-                <td>
-                    <img width="120px" height="60px;" src='/images/{{item.avatar}}'>
+              	<td>
+                    <span>
+                   	 {{item.title}}
+                    </span>
                 </td>
               	<td>
                     <span>
-                   	 {{item.name}}
+                   	 {{item.subTitle}}
                     </span>
                 </td>
                 <td>

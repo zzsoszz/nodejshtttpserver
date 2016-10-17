@@ -114,7 +114,6 @@ module.component('qcoursegroup', {
 				    ctrl.option={};
 				    ctrl.option.pageSize=10;
 				    ctrl.$onInit=function(){
-					    	//ctrl.pagechange(1);
 					    	ctrl.items=[];
 					    	$(ctrl.ngModel).each(function(index){
 					    		service.get({id:this}).then(function(item){
@@ -172,16 +171,19 @@ module.component('qcoursegroup', {
 					 	 $scope.$broadcast('add-article', 'child');
 					 };
 					 ctrl.addArticle=function(item){
-					 	var itemnew={};
-					 	itemnew=ctrl.item;
-					 	ctrl.items.push(item);
-					 	service.add(itemnew).then(function(item) {
-							if(item)
+
+					 	var scheduleitem={};
+						scheduleitem.type="1";//文章
+						scheduleitem.itemId=item.id;
+						scheduleitem.stageType=1;
+					 	service.add(scheduleitem).then(function(scheduleitemresult) {
+							if(scheduleitemresult)
 							{
-								 	ctrl.items.push(item);
-								 	ctrl.ngModel.push(item.id);
+								 	ctrl.items.push(scheduleitemresult);
+								 	ctrl.ngModel.push(scheduleitemresult.id);
 							}
-						 });
+						});
+
 					 };
 			}]
 
