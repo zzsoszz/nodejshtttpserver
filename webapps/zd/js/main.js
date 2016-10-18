@@ -1,10 +1,12 @@
 var baseUrl="/zd/";
 
 var mainApp=angular.module("mainApp",
-  ["ui.router","oc.lazyLoad",'ui.date','daterangepicker','qui',
+  ["ui.router","oc.lazyLoad",'ui.date','daterangepicker',
+  'qui',
   // 'qguestModule',
-  'qcoursegroup',
-  'qarticle'
+  // 'qcoursegroup',
+  // 'qarticle'
+   'qselectthought'
   ]
 );
 
@@ -129,6 +131,40 @@ mainApp.directive('ngShow',['$animate', function($animate) {
 
 
 
+
+mainApp.constant("Modules_Config",[
+    {
+        name:"qmicrocourse",
+        module:true,
+        files:[
+            baseUrl+"js/app/qmicrocourse/controller.js"
+        ]
+    },
+    {
+        name:"qselectcourse",
+        module:true,
+        files:[
+            baseUrl+"js/bower_components/qselectcourse/1.0.0/plugin.js"
+        ]
+    }
+]).config(["$ocLazyLoadProvider","Modules_Config",routeFn]);
+function routeFn($ocLazyLoadProvider,Modules_Config){
+    $ocLazyLoadProvider.config({
+        debug:false,
+        events:false,
+        modules:Modules_Config
+    });
+};
+
+// mainApp.config(['$ocLazyLoadProvider',function($ocLazyLoadProvider){
+//     $ocLazyLoadProvider.config({
+//         loadedModules: ['monitorApp'],//主模块名,和ng.bootstrap(document, ['monitorApp'])相同
+//         jsLoader: requirejs, //使用requirejs去加载文件
+//         files: ['modules/summary','modules/appEngine','modules/alarm','modules/database'], //主模块需要的资源，这里主要子模块的声明文件
+//         debug: true
+//     });
+// }]);
+
 // alert(is.Array([])); // true
 // alert(is.Date(new Date)); // true
 // alert(is.RegExp(/reg/ig)); // true
@@ -209,7 +245,19 @@ for(var i = 0, c; c = is.types[i ++ ]; ){
     })(c);
 }
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
-      $urlRouterProvider.when("","").otherwise("");
+
+      $urlRouterProvider.when("","index").otherwise("index");
+
+      // $stateProvider.state("index",{
+      //       url:"/index",
+      //       component:"",
+      //       resolve: {
+      //           deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
+      //               return $ocLazyLoad.load("qselectcourse");
+      //           }]
+      //       }
+      // });
+
       $stateProvider.state("go",{
             url:"/{module}/{controller}",
             templateUrl: function ($stateParams){
@@ -223,17 +271,18 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
                 return ctrlName;
             },
             resolve: {
-                loadMyCtrl: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
+                deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
                     //console.log($injector);
-                    var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
-                   // console.log(controllerjs);
-                    return $ocLazyLoad.load({
-                        files: [controllerjs]
-                    }).then(function(data) {
-                      // var module= angular.module(data)
-                      // var com=module.controller("searchController");
-                      // var service = $injector.get("qmicrocourseService");
-                    });
+                    //var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
+                    return $ocLazyLoad.load($stateParams.module);
+                   // // console.log(controllerjs);
+                   //  return $ocLazyLoad.load({
+                   //      files: [controllerjs]
+                   //  }).then(function(data) {
+                   //    // var module= angular.module(data)
+                   //    // var com=module.controller("searchController");
+                   //    // var service = $injector.get("qmicrocourseService");
+                   //  });
                 }]
             }
       });
@@ -243,20 +292,21 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
               var tempurl=baseUrl+'/js/app/' +$stateParams.module+'/'+$stateParams.controller+'.html';
               console.log(tempurl);
               return tempurl;
-            }
-            ,
+            },
             controllerProvider: function($stateParams) {
                 var ctrlName =  $stateParams.controller+"Controller";
                 console.log(ctrlName);
                 return ctrlName;
             },
             resolve: {
-                loadMyCtrl: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
-                    var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
-                    return $ocLazyLoad.load({
-                        files: [controllerjs]
-                    }).then(function(data) {
-                    });
+                deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
+                    return $ocLazyLoad.load($stateParams.module);
+                    // var controllerjs=baseUrl+'/js/app/' +$stateParams.module+'/controller.js';
+                    // return $ocLazyLoad.load({
+                    //     files: [controllerjs]
+                    // }).then(function(data) {
+
+                    // });
                 }]
             }
         });
