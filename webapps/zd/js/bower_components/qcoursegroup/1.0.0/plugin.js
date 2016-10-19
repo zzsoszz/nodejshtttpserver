@@ -104,7 +104,7 @@ module.component('qcoursegroup', {
 		  ngModel: '=',
 	  },
 	  templateUrl:baseUrl+'js/bower_components/qcoursegroup/1.0.0/plugin.html',
-			  controller: ["qcoursegroupService",'$scope',function(service, $scope) {
+	  controller: ["qcoursegroupService",'$scope','$ocLazyLoad',function(service, $scope,$ocLazyLoad) {
 			  		var aaa=$scope;
 			  	    var ctrl=this;
 			  	    ctrl.qpageroptions = {
@@ -124,6 +124,9 @@ module.component('qcoursegroup', {
 					    		});
 					    	});;
 					    	console.log(ctrl.ngModel);
+					    	$ocLazyLoad.load(["qselectcourse","qarticle","qselectthought"]).then(function(){
+					    		console.log("module loaded");
+					    	});
 					};
                     ctrl.pagechange = function(page) {
 					     var item = $.extend({},{ pageSize: ctrl.option.pageSize, pageNo: page });

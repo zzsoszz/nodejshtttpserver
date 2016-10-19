@@ -3,11 +3,11 @@ var baseUrl="/zd/";
 var mainApp=angular.module("mainApp",
   ["ui.router","oc.lazyLoad",'ui.date','daterangepicker',
   'qui',
-  // 'qguestModule',
-  // 'qcoursegroup',
-  // 'qarticle'
+    // 'qguestModule',
+    // 'qcoursegroup',
+   // 'qarticle',
    // 'qselectcourse',
-   'qselectthought'
+   // 'qselectthought'
   ]
 );
 mainApp.constant("Modules_Config",[
@@ -22,21 +22,39 @@ mainApp.constant("Modules_Config",[
         name:"qselectcourse",
         module:true,
         files:[
-            baseUrl+"js/bower_components/qselectcourse/1.0.0/plugin.js"
+            baseUrl+"js/bower_components/qselectcourse/1.0.0/plugin.js",
+            baseUrl+"js/bower_components/qselectcourse/1.0.0/plugin.css",
         ]
     },
     {
         name:"qselectthought",
         module:true,
         files:[
-            baseUrl+"js/bower_components/qselectthought/1.0.0/plugin.js"
+            baseUrl+"js/bower_components/qselectthought/1.0.0/plugin.js",
+            baseUrl+"js/bower_components/qselectthought/1.0.0/plugin.css",
+        ]
+    },
+    {
+        name:"qarticle",
+        module:true,
+        files:[
+            baseUrl+"js/bower_components/qarticle/1.0.0/plugin.js",
+            baseUrl+"js/bower_components/qarticle/1.0.0/plugin.css",
+        ]
+    },
+    {
+        name:"qcoursegroup",
+        module:true,
+        files:[
+            baseUrl+"js/bower_components/qcoursegroup/1.0.0/plugin.js",
+            baseUrl+"js/bower_components/qcoursegroup/1.0.0/plugin.css",
         ]
     }
 ]).config(["$ocLazyLoadProvider","Modules_Config",routeFn]);
 function routeFn($ocLazyLoadProvider,Modules_Config){
     $ocLazyLoadProvider.config({
-        debug:false,
-        events:false,
+        debug:true,
+        events:true,
         modules:Modules_Config
     });
 };
@@ -258,15 +276,15 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
 
       $urlRouterProvider.when("","index").otherwise("index");
 
-      // $stateProvider.state("index",{
-      //       url:"/index",
-      //       component:"",
-      //       resolve: {
-      //           deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
-      //               return $ocLazyLoad.load("qselectcourse");
-      //           }]
-      //       }
-      // });
+      $stateProvider.state("index",{
+            url:"/index",
+            component:"qcoursegroup",
+            resolve: {
+                deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
+                    return $ocLazyLoad.load("qcoursegroup");
+                }]
+            }
+      });
 
       $stateProvider.state("go",{
             url:"/{module}/{controller}",
