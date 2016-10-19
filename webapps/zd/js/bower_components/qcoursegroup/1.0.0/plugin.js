@@ -191,3 +191,17 @@ module.component('qcoursegroup', {
 			}]
 
 	});
+
+module.directive('qcoursegroupdirective',[function() {
+	    return {
+		        restrict: 'A',
+		        priority: 100,
+		        require: '?ngModel',
+		        scope:{},
+		        templateUrl:baseUrl+'js/bower_components/qpager/1.0.2/plugin.html',
+		        link: function(scope, element, attrs,ngModelController) {
+		        	console.log("init qcoursegroupdirective");
+		        }
+		    };
+		}
+]);
