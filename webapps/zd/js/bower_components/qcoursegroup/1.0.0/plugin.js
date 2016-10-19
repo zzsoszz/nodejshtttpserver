@@ -194,7 +194,7 @@ module.component('qcoursegroup', {
 
 module.directive('qcoursegroupdirective',[function() {
 	    return {
-		        restrict: 'A',
+		        restrict: 'E',
 		        priority: 100,
 		        require: '?ngModel',
 		        scope:{},

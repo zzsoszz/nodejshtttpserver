@@ -281,7 +281,7 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
             component:"qcoursegroup",
             resolve: {
                 deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
-                    return $ocLazyLoad.load("qcoursegroup");
+                    //return $ocLazyLoad.load("qcoursegroup");
                 }]
             }
       });

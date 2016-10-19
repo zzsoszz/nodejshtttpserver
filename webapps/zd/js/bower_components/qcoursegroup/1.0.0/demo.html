@@ -43,20 +43,28 @@
 
 <!--   <script src="../../../bower_components/qarticle/1.0.0/plugin.js"></script>
    -->
-<!--   <script src="plugin.js"></script> -->
+  <script src="plugin.js"></script>
   <script src="../../../main.js"></script>
   
 
   <script>
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope,$ocLazyLoad,$compile) {
 
-      // $scope.idarray=[658,660,661,662,663];
       $ocLazyLoad.load("qcoursegroup").then(function() {
         //$compile(angular.element('qcoursegroup'))($scope);
             // var qcoursegroupdirective= $compile('<qcoursegroupdirective></qcoursegroupdirective>')($scope);
             // $("body").append(qcoursegroupdirective);
-            $compile(angular.element('body'))($scope);
+            //$compile(angular.element('qcoursegroupdirective'))($scope);
+             $compile(angular.element('qcoursegroup'))($scope);
       });
+      
+      // $scope.idarray=[658,660,661,662,663];
+      // $ocLazyLoad.load("qcoursegroup").then(function() {
+      //   //$compile(angular.element('qcoursegroup'))($scope);
+      //       // var qcoursegroupdirective= $compile('<qcoursegroupdirective></qcoursegroupdirective>')($scope);
+      //       // $("body").append(qcoursegroupdirective);
+      //       //$compile(angular.element('body'))($scope);
+      // });
       // $scope.$on('ocLazyLoad.moduleLoaded', function(e, module) {
       //   console.log('moduleLoaded', module);
       // });
@@ -83,8 +91,21 @@
 
 <div ng-controller="mainController">
   {{idarray}}
-<!--   <qcoursegroupdirective  ng-model="idarray"  >
-  </qcoursegroupdirective> -->
+<!-- 	  <div oc-lazy-load="{name: 'TestModule', files: ['http://localhost:3000/zd/js/bower_components/qcoursegroup/1.0.0/plugin.js']}"> 
+		  <qcoursegroupdirective  ng-model="idarray"  >
+		  </qcoursegroupdirective>
+	  </div> -->
+
+	 <!--  <div oc-lazy-load="qcoursegroup"> 
+		  <qcoursegroupdirective  ng-model="idarray"  >
+		  </qcoursegroupdirective>
+	  </div>
+	   -->
+<!-- 	  <qcoursegroupdirective  ng-model="idarray"  >
+	  </qcoursegroupdirective>
+ -->
+	  <qcoursegroup  ng-model="idarray"  >
+	  </qcoursegroup>
 </div>
 </body>
 </html>
