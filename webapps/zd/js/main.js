@@ -6,9 +6,41 @@ var mainApp=angular.module("mainApp",
   // 'qguestModule',
   // 'qcoursegroup',
   // 'qarticle'
+   // 'qselectcourse',
    'qselectthought'
   ]
 );
+mainApp.constant("Modules_Config",[
+    {
+        name:"qmicrocourse",
+        module:true,
+        files:[
+            baseUrl+"js/app/qmicrocourse/controller.js"
+        ]
+    },
+    {
+        name:"qselectcourse",
+        module:true,
+        files:[
+            baseUrl+"js/bower_components/qselectcourse/1.0.0/plugin.js"
+        ]
+    },
+    {
+        name:"qselectthought",
+        module:true,
+        files:[
+            baseUrl+"js/bower_components/qselectthought/1.0.0/plugin.js"
+        ]
+    }
+]).config(["$ocLazyLoadProvider","Modules_Config",routeFn]);
+function routeFn($ocLazyLoadProvider,Modules_Config){
+    $ocLazyLoadProvider.config({
+        debug:false,
+        events:false,
+        modules:Modules_Config
+    });
+};
+
 
 
 (function($) {
@@ -132,29 +164,7 @@ mainApp.directive('ngShow',['$animate', function($animate) {
 
 
 
-mainApp.constant("Modules_Config",[
-    {
-        name:"qmicrocourse",
-        module:true,
-        files:[
-            baseUrl+"js/app/qmicrocourse/controller.js"
-        ]
-    },
-    {
-        name:"qselectcourse",
-        module:true,
-        files:[
-            baseUrl+"js/bower_components/qselectcourse/1.0.0/plugin.js"
-        ]
-    }
-]).config(["$ocLazyLoadProvider","Modules_Config",routeFn]);
-function routeFn($ocLazyLoadProvider,Modules_Config){
-    $ocLazyLoadProvider.config({
-        debug:false,
-        events:false,
-        modules:Modules_Config
-    });
-};
+
 
 // mainApp.config(['$ocLazyLoadProvider',function($ocLazyLoadProvider){
 //     $ocLazyLoadProvider.config({
@@ -314,8 +324,7 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
 });
 
 
-mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
-   $rootScope.daterangeoption={
+var daterangeoption={
         maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
         alwaysShowCalendars:true,
         autoApply:true,
@@ -346,7 +355,9 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         startDate:'1980-01-01',
         endDate:'2050-01-01',
         showDropdowns : true
-    };
+};
+mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+   $rootScope.daterangeoption=window.daterangeoption;
     $rootScope.singledateoption={
         alwaysShowCalendars:true,
         autoApply:true,

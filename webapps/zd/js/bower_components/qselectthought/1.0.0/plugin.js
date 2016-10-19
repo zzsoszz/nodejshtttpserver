@@ -106,15 +106,17 @@ qguestModule.component('qselectthought', {
 	  scope:true,
 	  bindings: {
 		  ngModel: '=',
-		  onSelect:'&'
+		  onSelect:'&',
+		  daterangeoption:'='
 	  },
 	  templateUrl:baseUrl+'js/bower_components/qselectthought/1.0.0/plugin.html',
-			  controller: ["qselectthoughtService",'$scope','$ocLazyLoad','$injector',function(service, $scope,$ocLazyLoad,$injector) {
+			  controller: ["qselectthoughtService",'$scope','$rootScope','$ocLazyLoad','$injector',function(service, $scope,$rootScope,$ocLazyLoad,$injector) {
 			  	    var ctrl=this;
 			  	    ctrl.qpageroptions = {
 				         currentpage: 1,
 				         totalpage: 0
 				    };
+				    ctrl.daterangeoption=window.daterangeoption;
 				    ctrl.item={};
 				    ctrl.option={};
 				    ctrl.option.pageSize=5;

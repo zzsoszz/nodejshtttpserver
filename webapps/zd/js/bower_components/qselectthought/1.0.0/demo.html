@@ -42,12 +42,12 @@
   <script src="../../../bower_components/qimgpreview/1.0.2/plugin.js"></script>
 
 
-
-  <script src="plugin.js"></script>
   <script src="../../../main.js"></script>
+  <script src="plugin.js"></script>
   
   <script>
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+      console.log($rootScope.daterangeoption);
       $scope.onSelect=function(item)
       {
           console.log("selected qselectcourse",item);
@@ -55,6 +55,7 @@
       $scope.showQselectcourse=function(){
          $scope.$broadcast('showselect-qselectthought', 'child');
       };
+
   });
   </script>
   
@@ -67,9 +68,9 @@
 <body ng-app="mainApp">
 
 <div ng-controller="mainController">
-    {{selectcourse}}
+    {{selectthought}}
     <a ng-click="showQselectcourse()">选择</a>
-    <qselectthought  ng-model="selectthought"  on-select="onSelect(item)"  >
+    <qselectthought  ng-model="selectthought"   on-select="onSelect(item)"  >
     </qselectthought>
 </div>
 </body>
