@@ -1,3 +1,67 @@
+JSON.flatten = function(data) {
+    var result = {};
+    function recurse (cur, prop) {
+        if (Object(cur) !== cur) {
+            result[prop] = cur;
+        } else if (Array.isArray(cur)) {
+             for(var i=0, l=cur.length; i<l; i++)
+                 recurse(cur[i], prop + "[" + i + "]");//
+            if (l == 0)
+                result[prop] = [];
+        } else {
+            var isEmpty = true;
+            for (var p in cur) {
+                isEmpty = false;
+                recurse(cur[p], prop ? prop+"."+p : p);
+            }
+            if (isEmpty && prop)
+                result[prop] = {};
+        }
+    }
+    recurse(data, "");
+    return result;
+}
+// var data = {
+//     article: "article",
+//     gender: "gender",
+//     brand: "brand",
+//     connection: [{
+//         type: 0,
+//         connected: false
+//     }],
+//     acceleration: {
+//         x: 0,
+//         y: 0,
+//         z: 0,
+//         watchId: 0,
+//         hasError: false
+//     }
+// };
+// $(document).ready(function() {
+//     console.log("aa",JSON.flatten(data));
+// });
+// var data = {
+//     article: "article",
+//     gender: "gender",
+//     brand: "brand",
+//     connection: {
+//         type: 0,
+//         connected: false
+//     },
+//     acceleration: {
+//         x: 0,
+//         y: 0,
+//         z: 0,
+//         watchId: 0,
+//         hasError: false
+//     }
+// };
+// $(document).ready(function() {
+//     console.log(flatten(data));
+//     $("body").text(flatten(data));
+// });
+
+
 var qquestion=angular.module('qquestion',["Ajax"])
 qquestion.service("qquestionService",function($http,$ajax){
  return {
@@ -16,7 +80,9 @@ qquestion.service("qquestionService",function($http,$ajax){
           add:function(item)
           {
              var formdata = new FormData();
+             item=JSON.flatten(item);
 			 for ( var key in item ) {
+			 	 console.log(key,item[key]);
 			     formdata.append(key, item[key]);
 			 }
 			 return $ajax({type:'post',url:serviceApiUrl + '/businesscourse/lesson/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
@@ -115,6 +181,7 @@ qquestion.component('qquestion', {
 				    ctrl.daterangeoption=window.daterangeoption;
 				    ctrl.timepickeroption=window.timepickeroption;
 				    ctrl.item={};
+				    
 				    ctrl.option={};
 				    ctrl.option.pageSize=5;
 				    ctrl.$onInit=function(){
@@ -245,6 +312,8 @@ qquestion.component("addQquestion", {
 	  		ctrl.daterangeoption=window.daterangeoption;
 			ctrl.timepickeroption=window.timepickeroption;
 	  		ctrl.show=false;
+	  		ctrl.item={};
+	  		ctrl.item.signins=[];
 	  		ctrl.doSave=function(form)
 			{
 			 	var itemnew={};

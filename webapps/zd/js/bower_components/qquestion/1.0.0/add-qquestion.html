@@ -1,6 +1,6 @@
 <div class="poppanel" ng-show="$ctrl.show">
     <div class="poppanle-inner" >
-        <form name="addform"   ng-submit="event.preventDefault();$ctrl.doSave(addform)">
+        <form name="addform"  action="http://localhost:8888/businesscourse/lesson/add" >  <!--  ng-submit="event.preventDefault();$ctrl.doSave(addform)" -->
             <div class="title">添加/修改文章</div>
             <div class="hline"></div>
             <div>
@@ -12,11 +12,13 @@
                               <input class="qinputitem2"    class="qinputitem2"  type="text" ng-model="$ctrl.item.title"/>
                           </div>
                       </div>
+                      <input type="text" ng-model="$ctrl.item.lat" value="{{$ctrl.item.lat=geo.lat}}">
+                      <input type="text" ng-model="$ctrl.item.lon" value="{{$ctrl.item.lon=geo.lng}}">
                       <div  class="fieldbox">
                           <span >课程地址</span>
                           <div class="qinputgroup2"  >
                               <input class="qinputitem2"   class="qinputitem2"  type="text" ng-model="$ctrl.item.subInfo"/>
-                              <div  class="addson" ng-click="$ctrl.showMap()">地图搜索</div>
+                              <div  class="addson" ng-click="$ctrl.showMap()">搜索</div>
                               <qbmap ng-model="geo">
                               </qbmap>
                           </div>
@@ -27,11 +29,11 @@
                       <div class="fieldbox">
                             <span>开始时间</span>
                             <div class="qinputgroup2">
-                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="item.beginTime"/>
+                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.beginTime"/>
                                 <div  class="addson  calendar-bg" ></div>
                             </div>
                             <div class="qinputgroup2">
-                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="item.endTime"/>
+                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.endTime"/>
                                 <div  class="addson  calendar-bg" ></div>
                             </div>
                       </div>
@@ -40,11 +42,11 @@
                       <div class="fieldbox">
                             <span>签到时间</span>
                             <div class="qinputgroup2">
-                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="item.signins[0].startTime"/>
+                                <input  class="qinputitem2" qdaterangepicker  name="signins[0].beginTime"   type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.signins[0].beginTime"/>
                                 <div  class="addson  calendar-bg" ></div>
                             </div>
                             <div class="qinputgroup2">
-                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="item.signins[0].startTime"/>
+                                <input  class="qinputitem2" qdaterangepicker  name="signins[0].endTime"  type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.signins[0].endTime"/>
                                 <div  class="addson  calendar-bg" ></div>
                             </div>
                       </div>
