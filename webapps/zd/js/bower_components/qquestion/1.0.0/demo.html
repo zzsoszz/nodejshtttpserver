@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>.
   <link rel="stylesheet" href="commoncss.css">
-<!--   <link rel="stylesheet" href="plugin.css"> -->
+  <link rel="stylesheet" href="plugin.css">
   <script>
     var baseUrl="/zd/";
     var serviceApiUrl="http://localhost:8888";
@@ -41,43 +41,21 @@
   <link  rel="stylesheet" href="../../../bower_components/qimgpreview/1.0.2/plugin.css">
   <script src="../../../bower_components/qimgpreview/1.0.2/plugin.js"></script>
 
-<!--   <script src="../../../bower_components/qarticle/1.0.0/plugin.js"></script>
-   -->
-  <script src="plugin.js"></script>
+
   <script src="../../../main.js"></script>
+  <script src="plugin.js"></script>
   
-
   <script>
-  mainApp.controller("mainController", function ($rootScope,$http,$location,$scope,$ocLazyLoad,$compile) {
+  mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+      console.log($rootScope.daterangeoption);
+      $scope.onSelect=function(item)
+      {
+          console.log("selected qselectcourse",item);
+      }
+      $scope.showQselectcourse=function(){
+         $scope.$broadcast('showselect-qselectthought', 'child');
+      };
 
-      $ocLazyLoad.load("qcoursegroup").then(function() {
-        //$compile(angular.element('qcoursegroup'))($scope);
-            // var qcoursegroupdirective= $compile('<qcoursegroupdirective></qcoursegroupdirective>')($scope);
-            // $("body").append(qcoursegroupdirective);
-            //$compile(angular.element('qcoursegroupdirective'))($scope);
-             $compile(angular.element('qcoursegroup'))($scope);
-      });
-      
-      $scope.idarray=[658,660,661,662,663];
-      // $ocLazyLoad.load("qcoursegroup").then(function() {
-      //   //$compile(angular.element('qcoursegroup'))($scope);
-      //       // var qcoursegroupdirective= $compile('<qcoursegroupdirective></qcoursegroupdirective>')($scope);
-      //       // $("body").append(qcoursegroupdirective);
-      //       //$compile(angular.element('body'))($scope);
-      // });
-      // $scope.$on('ocLazyLoad.moduleLoaded', function(e, module) {
-      //   console.log('moduleLoaded', module);
-      // });
-      // $scope.$on('ocLazyLoad.moduleReloaded', function(e, module) {
-      //       console.log('moduleReloaded ', module);
-      // });
-      // $scope.$on('ocLazyLoad.componentLoaded', function(e, module) {
-      //       console.log('componentLoaded', module);
-      // });
-      // $scope.$on('ocLazyLoad.fileLoaded', function(e, module) {
-      //       console.log('fileLoaded', module);
-      // });
-      
   });
   </script>
   
@@ -90,22 +68,10 @@
 <body ng-app="mainApp">
 
 <div ng-controller="mainController">
-  {{idarray}}
-<!-- 	  <div oc-lazy-load="{name: 'TestModule', files: ['http://localhost:3000/zd/js/bower_components/qcoursegroup/1.0.0/plugin.js']}"> 
-		  <qcoursegroupdirective  ng-model="idarray"  >
-		  </qcoursegroupdirective>
-	  </div> -->
-
-	 <!--  <div oc-lazy-load="qcoursegroup"> 
-		  <qcoursegroupdirective  ng-model="idarray"  >
-		  </qcoursegroupdirective>
-	  </div>
-	   -->
-<!-- 	  <qcoursegroupdirective  ng-model="idarray"  >
-	  </qcoursegroupdirective>
- -->
-	  <qcoursegroup  ng-model="idarray"  >
-	  </qcoursegroup>
+    {{selectthought}}
+    <a ng-click="showQselectcourse()">选择</a>
+    <qselectthought  ng-model="selectthought"   on-select="onSelect(item)"  >
+    </qselectthought>
 </div>
 </body>
 </html>

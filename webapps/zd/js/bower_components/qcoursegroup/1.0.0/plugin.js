@@ -173,7 +173,16 @@ module.component('qcoursegroup', {
 					 	ctrl.isShowPanel=false;
 					 };
 					 ctrl.showAddArticle=function(){
-					 	 $scope.$broadcast('add-article', 'child');
+					 	 $scope.$broadcast('add-article', '');
+					 };
+					 ctrl.showSelectCourse=function(){
+					 	 $scope.$broadcast('showselect-qselectcourse', '');
+					 };
+					 ctrl.showSelectCourseReview=function(){
+					 	 $scope.$broadcast('showselect-qselectcourse', 'review');
+					 };
+					 ctrl.showSelectThough=function(){
+					 	 $scope.$broadcast('showselect-qselectthought', '');
 					 };
 					 ctrl.addArticle=function(item){
 
@@ -189,6 +198,35 @@ module.component('qcoursegroup', {
 							}
 						});
 
+					 };
+					 ctrl.addCourse=function(item)
+					 {
+					 	var scheduleitem={};
+						scheduleitem.itemType="1";//文章
+						scheduleitem.itemId=item.id;
+						scheduleitem.stageType=1;
+					 	service.add(scheduleitem).then(function(scheduleitemresult) {
+							if(scheduleitemresult)
+							{
+								 	ctrl.items.push(scheduleitemresult);
+								 	ctrl.ngModel.push(scheduleitemresult.id);
+							}
+						});
+					 };
+					 ctrl.addThought=function(item){
+					 	
+						var scheduleitem={};
+						scheduleitem.itemType="1";//文章
+						scheduleitem.itemId=item.id;
+						scheduleitem.stageType=1;
+					 	service.add(scheduleitem).then(function(scheduleitemresult) {
+							if(scheduleitemresult)
+							{
+								 	ctrl.items.push(scheduleitemresult);
+								 	ctrl.ngModel.push(scheduleitemresult.id);
+							}
+						});
+					 	
 					 };
 			}]
 

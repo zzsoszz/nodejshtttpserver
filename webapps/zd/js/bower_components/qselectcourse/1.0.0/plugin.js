@@ -194,7 +194,9 @@ qguestModule.component('qselectcourse', {
 					 ctrl.doSelect=function(item)
 					 {
 					 	 ctrl.haveselectitem=item;
-					 	 ctrl.ngModel=item;
+					 	 if(ctrl.ngModel){
+					 	 	ctrl.ngModel=item;
+					 	 }
 					 	 ctrl.onSelect({"item":item});
 					 	 ctrl.show=false;
 					 }

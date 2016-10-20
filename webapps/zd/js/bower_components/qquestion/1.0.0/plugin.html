@@ -1,34 +1,18 @@
 <div class="poppanel" ng-show="$ctrl.show">
   <div  style="overflow: hidden;background:#ffffff;height: 100%;width:900px;padding: 20px;">
         <div class="qsearchbox">
-            <div class="title">选择课程</div>
+            <div class="title">添加课题</div>
             <div class="hline"></div>
             <form name="searchForm" action="" ng-submit="$event.preventDefault();$ctrl.doSubmit(form)">
-                
                 <div class="fieldbox inline">
-                  <span>课程类型</span>
-                  <div>
-                            <div class="qinputgroup2"    style="width:100%" 
-                                         qdropdownselect data-initdata="$ctrl.item.courseTypeId"  data-dropdowndata="$ctrl.courseTypeIdArray"  ng-model='$ctrl.selectitem.courseTypeId'
-                                         ng-change="$ctrl.item.courseTypeId=$ctrl.selectitem.courseTypeId.id;$ctrl.item['courseTypeId_desc']=$ctrl.selectitem.courseTypeId.name"
-                                    >
-                                        <span  class="qinputitem2" >{{$ctrl.item['courseTypeId']}}  {{$ctrl.item['courseTypeId_desc']}}</span>
-                                        <div  class="addson dropdown-bg" style=""></div>
-                            </div>
-                        </div>
-                </div>
-                <div class="fieldbox inline">
-                  <span>是否付费</span>
-                  <div>
-                            <div class="qinputgroup2"    style="width:100%" 
-                                         qdropdownselect data-initdata="$ctrl.item.free"  data-dropdowndata="freeArray"  ng-model='$ctrl.selectitem.free'
-                                         ng-change="$ctrl.item.free=selectitem.free.id;$ctrl.item.type_desc=$ctrl.selectitem.free.name"
-                                    >
-                                        <span  class="qinputitem2" >{{$ctrl.item.free}}  {{$ctrl.item.free_desc}}</span>
-                                        <div  class="addson dropdown-bg" style=""></div>
-                            </div>
+                      <span>开始时间</span>
+                      <div>
+                          <div class="qinputgroup2">
+                              <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.daterangeoption" ng-model="item.startTime"/>
+                              <div  class="addson  calendar-bg" ></div>
+                          </div>
+                      </div>
                   </div>
-                </div>
                 <div class="fieldbox inline">
                   <span>关键词</span>
                   <div>
@@ -42,7 +26,7 @@
                 </div>
             </form>
       </div>
-
+      
       <table class="newTb">
           <thead>
               <tr>
@@ -53,17 +37,12 @@
                   </th>
                   <th>
                     <span>  
-                      课程标题
+                      思想汇标题
                     </span>
                   </th>
                   <th>
                     <span>  
-                     课程类型
-                    </span>
-                  </th>
-                  <th>
-                    <span>  
-                     是否付费
+                     上架时间
                     </span>
                   </th>
                   <th>操作</th>
@@ -78,17 +57,12 @@
                   </td>
                   <td>
                       <span>
-                       {{item.mainTitle}}
+                       {{item.title}}
                       </span>
                   </td>
                   <td>
                       <span>
-                       {{item.typeName}}
-                      </span>
-                  </td>
-                  <td>
-                      <span>
-                       {{item.free}}
+                       {{item.pubTime|date:'yyyy-MM-dd hh:mm:ss'}}
                       </span>
                   </td>
                   <td>

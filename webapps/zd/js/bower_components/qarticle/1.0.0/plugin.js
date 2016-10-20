@@ -30,7 +30,7 @@ module.service(moduleName+"Service",function($http,$ajax){
           },
           get:function(item)
           {
-          	 var url=serviceApiUrl + '/guest/info';
+          	 var url=serviceApiUrl + '/businesscourse/lesson/'+item.id;
              var param=$.param(item);
              return $http.get(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
@@ -42,9 +42,8 @@ module.service(moduleName+"Service",function($http,$ajax){
           },
           delete:function(item)
           {
-          	 var url=serviceApiUrl + '/guest/remove';
-             var param=$.param(item);
-             return $http.post(url+"?"+param).then(function (resp){
+          	 var url=serviceApiUrl + '/businesscourse/lesson/del?id='+item.id;
+             return $http.post(url).then(function (resp){
                 if(resp.data.code=='success')
                 {
                     return item;
@@ -60,7 +59,7 @@ module.service(moduleName+"Service",function($http,$ajax){
 			 }
              return $ajax({
 		           type : 'post',
-		           url :serviceApiUrl + '/guest/modify',
+		           url :serviceApiUrl + '/businesscourse/lesson/modify',
 		           data : formdata,
 		           cache : false,
 		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
@@ -82,7 +81,7 @@ module.service(moduleName+"Service",function($http,$ajax){
 			 }
              return $ajax({
 		           type : 'post',
-		           url :serviceApiUrl + '/guest/order',
+		           url :serviceApiUrl + '/',
 		           data : formdata,
 		           cache : false,
 		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理

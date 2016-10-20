@@ -1,5 +1,5 @@
-var qguestModule=angular.module('qselectthought',["Ajax"])
-qguestModule.service("qselectthoughtService",function($http,$ajax){
+var qguestModule=angular.module('qquestion',["Ajax"])
+qguestModule.service("qquestionService",function($http,$ajax){
  return {
           search:function(item){
           	var url=serviceApiUrl + '/web/thought/list';
@@ -19,7 +19,7 @@ qguestModule.service("qselectthoughtService",function($http,$ajax){
 			 for ( var key in item ) {
 			     formdata.append(key, item[key]);
 			 }
-			 return $ajax({type:'post',url:serviceApiUrl + '/course/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
+			 return $ajax({type:'post',url:serviceApiUrl + '/businesscourse/lesson/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
                 if(resp.code=='success')
                 {
                     return resp.json;
@@ -29,7 +29,7 @@ qguestModule.service("qselectthoughtService",function($http,$ajax){
           },
           get:function(item)
           {
-          	 var url=serviceApiUrl + '/course/info';
+          	 var url=serviceApiUrl + '/businesscourse/lesson/'+item.id;
              var param=$.param(item);
              return $http.get(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
@@ -41,9 +41,8 @@ qguestModule.service("qselectthoughtService",function($http,$ajax){
           },
           delete:function(item)
           {
-          	 var url=serviceApiUrl + '/course/remove';
-             var param=$.param(item);
-             return $http.post(url+"?"+param).then(function (resp){
+          	 var url=serviceApiUrl + '/businesscourse/lesson/del?id='+item.id;
+             return $http.post(url).then(function (resp){
                 if(resp.data.code=='success')
                 {
                     return item;
@@ -59,7 +58,7 @@ qguestModule.service("qselectthoughtService",function($http,$ajax){
 			 }
              return $ajax({
 		           type : 'post',
-		           url :serviceApiUrl + '/course/modify',
+		           url :serviceApiUrl + '/businesscourse/lesson/modify',
 		           data : formdata,
 		           cache : false,
 		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
@@ -100,16 +99,16 @@ qguestModule.service("qselectthoughtService",function($http,$ajax){
 
 
 
-
-qguestModule.component('qselectthought', {
+qguestModule.component('qquestion', {
 	  transclude: true,
 	  scope:true,
 	  bindings: {
 		  ngModel: '=',
-		  onSelect:'&'
+		  onSelect:'&',
+		  daterangeoption:'='
 	  },
-	  templateUrl:baseUrl+'js/bower_components/qselectthought/1.0.0/plugin.html',
-			  controller: ["qselectthoughtService",'$scope','$rootScope','$ocLazyLoad','$injector',function(service, $scope,$rootScope,$ocLazyLoad,$injector) {
+	  templateUrl:baseUrl+'js/bower_components/qquestion/1.0.0/plugin.html',
+			  controller: ["qquestionService",'$scope','$rootScope','$ocLazyLoad','$injector',function(service, $scope,$rootScope,$ocLazyLoad,$injector) {
 			  	    var ctrl=this;
 			  	    ctrl.qpageroptions = {
 				         currentpage: 1,
@@ -232,4 +231,38 @@ qguestModule.component('qselectthought', {
 
 			}]
 
-	});
+});
+
+module.component("addQuestion", {
+	  transclude: true,
+	  scope:true,
+	  bindings: {
+		  ngModel: '=',
+		  onAdd: '&',
+	  },
+	  templateUrl:baseUrl+'js/bower_components/qquestion/1.0.0/add-qquestion.html',
+	  controller: [moduleName+"Service",'$scope',function(service, $scope) {
+	  		var ctrl=this;
+	  		ctrl.show=false;
+	  		ctrl.doSave=function(form)
+			{
+			 	var itemnew={};
+			 	itemnew=ctrl.item;
+		 		delete itemnew.createTime;
+		 		delete itemnew.updateTime;
+				service.add(itemnew).then(function(item) {
+					if(item)
+					{
+		       			ctrl.show=false;
+		       			ctrl.onAdd({"item":item});
+					}
+			     });
+			};
+	  		$scope.$on('add-question', function(event,data) {
+				ctrl.show=true;
+			});
+			ctrl.doCancel=function(){
+			 	ctrl.show=false;
+			};
+	  }]
+});

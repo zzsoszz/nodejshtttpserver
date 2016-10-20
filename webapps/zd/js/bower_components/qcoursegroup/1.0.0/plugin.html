@@ -1,11 +1,29 @@
 <div class="qdatatable">
+<!--
     <add-qarticle on-add="$ctrl.addArticle(item)">
     </add-qarticle>
+
+    <qselectcourse on-select="$ctrl.addCourse(item)">
+    </qselectcourse>
+    -->
+    <qselectthought on-select="$ctrl.addThought(item)">
+    </qselectthought>
+
     <div class="action-box">
       <div  class="actionbtn" ng-click="$ctrl.showAddArticle()">
-        添加
+        添加文章
+      </div>
+       <div  class="actionbtn" ng-click="$ctrl.showSelectCourse()">
+        添加课程
+      </div>
+      <div  class="actionbtn" ng-click="$ctrl.showSelectCourseReview()">
+        添加课程回顾
+      </div>
+      <div  class="actionbtn" ng-click="$ctrl.showSelectThough()">
+        添加思想汇
       </div>
     </div>
+
     <table class="newTb">
         <thead>
             <tr>
