@@ -1,0 +1,20 @@
+#l-map{height:300px;width:100%;}
+#r-result{width:100%; font-size: 14px; line-height: 20px;}
+.poppanel{
+    position: fixed;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    padding: 10px;
+    min-height: 460px;*/
+    max-height:90%;
+    background-color:#cccccc;
+    overflow: auto;
+}
+.poppanel .poppanle-inner{
+    padding: 30px;
+    background-color: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}

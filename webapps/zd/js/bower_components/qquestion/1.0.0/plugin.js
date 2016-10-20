@@ -1,5 +1,5 @@
-var qguestModule=angular.module('qquestion',["Ajax"])
-qguestModule.service("qquestionService",function($http,$ajax){
+var qquestion=angular.module('qquestion',["Ajax"])
+qquestion.service("qquestionService",function($http,$ajax){
  return {
           search:function(item){
           	var url=serviceApiUrl + '/web/thought/list';
@@ -98,8 +98,7 @@ qguestModule.service("qquestionService",function($http,$ajax){
 });
 
 
-
-qguestModule.component('qquestion', {
+qquestion.component('qquestion', {
 	  transclude: true,
 	  scope:true,
 	  bindings: {
@@ -233,7 +232,7 @@ qguestModule.component('qquestion', {
 
 });
 
-module.component("addQuestion", {
+qquestion.component("addQquestion", {
 	  transclude: true,
 	  scope:true,
 	  bindings: {
@@ -241,7 +240,7 @@ module.component("addQuestion", {
 		  onAdd: '&',
 	  },
 	  templateUrl:baseUrl+'js/bower_components/qquestion/1.0.0/add-qquestion.html',
-	  controller: [moduleName+"Service",'$scope',function(service, $scope) {
+	  controller: ["qquestionService",'$scope',function(service, $scope) {
 	  		var ctrl=this;
 	  		ctrl.show=false;
 	  		ctrl.doSave=function(form)
@@ -258,7 +257,7 @@ module.component("addQuestion", {
 					}
 			     });
 			};
-	  		$scope.$on('add-question', function(event,data) {
+	  		$scope.$on('showadd-qquestion', function(event,data) {
 				ctrl.show=true;
 			});
 			ctrl.doCancel=function(){

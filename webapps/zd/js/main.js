@@ -8,6 +8,7 @@ var mainApp=angular.module("mainApp",
    // 'qarticle',
    // 'qselectcourse',
    // 'qselectthought'
+   'qquestion'
   ]
 );
 mainApp.constant("Modules_Config",[

@@ -48,12 +48,16 @@
   <script>
   mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
       console.log($rootScope.daterangeoption);
+      
       $scope.onSelect=function(item)
       {
           console.log("selected qselectcourse",item);
       }
-      $scope.showQselectcourse=function(){
-         $scope.$broadcast('showselect-qselectthought', 'child');
+      $scope.showSelect=function(){
+         $scope.$broadcast('showselect-qquestion', 'child');
+      };
+      $scope.showAdd=function(item){
+         $scope.$broadcast('showadd-qquestion', '');
       };
 
   });
@@ -68,10 +72,13 @@
 <body ng-app="mainApp">
 
 <div ng-controller="mainController">
-    {{selectthought}}
-    <a ng-click="showQselectcourse()">选择</a>
-    <qselectthought  ng-model="selectthought"   on-select="onSelect(item)"  >
-    </qselectthought>
+<!--     {{selectthought}}
+    <a ng-click="showSelect()">选择</a> -->
+    <a ng-click="showAdd()">选择</a>
+    {{qquestion}}
+    <add-qquestion  ng-model="qquestion"   on-add="doAddQuestion(item)"  >
+    </add-qquestion>
+
 </div>
 </body>
 </html>
