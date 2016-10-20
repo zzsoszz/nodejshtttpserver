@@ -11,6 +11,7 @@
     max-height:90%;
     background-color:#cccccc;
     overflow: auto;
+    z-index: 11;
 }
 .poppanel .poppanle-inner{
     padding: 30px;

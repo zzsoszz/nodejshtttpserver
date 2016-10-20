@@ -97,7 +97,6 @@ qquestion.service("qquestionService",function($http,$ajax){
   };
 });
 
-
 qquestion.component('qquestion', {
 	  transclude: true,
 	  scope:true,
@@ -114,6 +113,7 @@ qquestion.component('qquestion', {
 				         totalpage: 0
 				    };
 				    ctrl.daterangeoption=window.daterangeoption;
+				    ctrl.timepickeroption=window.timepickeroption;
 				    ctrl.item={};
 				    ctrl.option={};
 				    ctrl.option.pageSize=5;
@@ -242,6 +242,8 @@ qquestion.component("addQquestion", {
 	  templateUrl:baseUrl+'js/bower_components/qquestion/1.0.0/add-qquestion.html',
 	  controller: ["qquestionService",'$scope',function(service, $scope) {
 	  		var ctrl=this;
+	  		ctrl.daterangeoption=window.daterangeoption;
+			ctrl.timepickeroption=window.timepickeroption;
 	  		ctrl.show=false;
 	  		ctrl.doSave=function(form)
 			{
@@ -260,6 +262,10 @@ qquestion.component("addQquestion", {
 	  		$scope.$on('showadd-qquestion', function(event,data) {
 				ctrl.show=true;
 			});
+			ctrl.showMap=function()
+		    {
+		          $scope.$broadcast('showselect-qbmap', '公园');
+		    }
 			ctrl.doCancel=function(){
 			 	ctrl.show=false;
 			};

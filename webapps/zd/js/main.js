@@ -8,7 +8,7 @@ var mainApp=angular.module("mainApp",
    // 'qarticle',
    // 'qselectcourse',
    // 'qselectthought'
-   'qquestion'
+   'qquestion',
   ]
 );
 mainApp.constant("Modules_Config",[
@@ -374,9 +374,7 @@ var daterangeoption={
         endDate:'2050-01-01',
         showDropdowns : true
 };
-mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
-   $rootScope.daterangeoption=window.daterangeoption;
-    $rootScope.singledateoption={
+var singledateoption={
         alwaysShowCalendars:true,
         autoApply:true,
         locale : {
@@ -395,9 +393,8 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         singleDatePicker:true,
         startDate:moment(),
         endDate:'2050-01-01',
-        showDropdowns : true
-    };
-    $rootScope.timepickeroption={
+};
+var timepickeroption={
         //maxDate:new Date(new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+(new Date().getDate()+1)),
         alwaysShowCalendars:true,
         autoApply:true,
@@ -418,7 +415,11 @@ mainApp.controller("mainController", function ($rootScope,$http,$location,$scope
         autoUpdateInput:true,
         singleDatePicker:true,
         showDropdowns : true
-    };
+};
+mainApp.controller("mainController", function ($rootScope,$http,$location,$scope) {
+    $rootScope.daterangeoption=window.daterangeoption;
+    $rootScope.singledateoption=singledateoption;
+    $rootScope.timepickeroption=timepickeroption;
     $rootScope.provinceArray =provinceCitys.map(function(obj1){
                 obj1.sub=obj1.sub.map(function(obj){
                    return {id:obj.name,name:obj.name};
