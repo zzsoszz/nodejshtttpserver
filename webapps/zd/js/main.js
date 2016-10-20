@@ -285,7 +285,6 @@ mainApp.config(function ($stateProvider,$urlRouterProvider) {
                 }]
             }
       });
-
       $stateProvider.state("go",{
             url:"/{module}/{controller}",
             templateUrl: function ($stateParams){

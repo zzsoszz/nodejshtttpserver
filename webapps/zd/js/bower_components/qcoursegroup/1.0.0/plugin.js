@@ -1,4 +1,4 @@
-var module=angular.module('qcoursegroup',["Ajax"])
+var module=angular.module('qcoursegroup',["Ajax","qselectcourse","qarticle","qselectthought"])
 module.service("qcoursegroupService",function($http,$ajax){
  return {
           search:function(item){
@@ -124,9 +124,11 @@ module.component('qcoursegroup', {
 					    		});
 					    	});;
 					    	console.log(ctrl.ngModel);
+					    	/*
 					    	$ocLazyLoad.load(["qselectcourse","qarticle","qselectthought"]).then(function(){
 					    		console.log("module loaded");
 					    	});
+					    	*/
 					};
                     ctrl.pagechange = function(page) {
 					     var item = $.extend({},{ pageSize: ctrl.option.pageSize, pageNo: page });
