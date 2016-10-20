@@ -1,6 +1,6 @@
 #l-map{height:300px;width:100%;}
 #r-result{width:100%; font-size: 14px; line-height: 20px;}
-.poppanel{
+.qbmap .poppanel{
     position: fixed;
     left:50%;
     top:50%;
@@ -13,7 +13,7 @@
     overflow: auto;
     z-index: 11;
 }
-.poppanel .poppanle-inner{
+.qbmap .poppanel .poppanle-inner{
     padding: 30px;
     background-color: #ffffff;
     height: 100%;

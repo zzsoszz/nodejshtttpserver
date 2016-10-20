@@ -16,11 +16,11 @@ if(angular!=undefined  && angular.module)
 			  daterangeoption:'='
 		  },
 		  templateUrl:baseUrl+'js/bower_components/qbmap/1.0.0/plugin.html',
-		  controller: ['$scope','$rootScope','$ocLazyLoad','$injector',function($scope,$rootScope,$ocLazyLoad,$injector) {
+		  controller: ['$scope','$rootScope','$ocLazyLoad','$injector','$element',function($scope,$rootScope,$ocLazyLoad,$injector,$element) {
 		  	    var ctrl=this;
 		  	    var local;
-
-
+		  	    console.log($element);
+		  	    $element.appendTo($("body"));
 			    ctrl.$onInit=function(){
 				    var map = new BMap.Map("l-map");
 				    var geoc = new BMap.Geocoder();   
