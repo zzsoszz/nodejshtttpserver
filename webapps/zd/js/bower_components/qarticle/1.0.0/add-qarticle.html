@@ -1,6 +1,6 @@
 <div class="poppanel" ng-show="$ctrl.show">
     <div class="poppanle-inner" >
-        <form name="addform"   ng-submit="event.preventDefault();$ctrl.doSave(addform)">
+        <ng-form name="addform"   ng-submit="$ctrl.doSave(addform)">
             <div class="title">添加/修改文章</div>
             <div class="hline"></div>
             <div>
@@ -33,6 +33,6 @@
               <!--   <input  ng-if="$ctrl.mode=='edit' "  type="submit" class="actionbtn" value="更新"  style="float: left"> -->
                 <input  type="button" class="actionbtn gray" value="取消" ng-click="$ctrl.doCancel()" style="margin-left: 10px;">
             </div>
-        </form>
+        </ng-form>
     </div>
 </div>

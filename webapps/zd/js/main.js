@@ -8,7 +8,9 @@ var mainApp=angular.module("mainApp",
    // 'qarticle',
    // 'qselectcourse',
    // 'qselectthought'
-   'qquestion',
+   // 'qquestion',
+   //'quser',
+   // 'qbusinessschool'
   ]
 );
 mainApp.constant("Modules_Config",[
@@ -52,13 +54,14 @@ mainApp.constant("Modules_Config",[
         ]
     }
 ]).config(["$ocLazyLoadProvider","Modules_Config",routeFn]);
-function routeFn($ocLazyLoadProvider,Modules_Config){
+  function routeFn($ocLazyLoadProvider,Modules_Config){
     $ocLazyLoadProvider.config({
         debug:true,
         events:true,
         modules:Modules_Config
     });
 };
+
 
 
 
