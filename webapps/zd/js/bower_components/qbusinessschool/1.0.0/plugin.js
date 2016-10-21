@@ -1,72 +1,8 @@
-JSON.flatten = function(data) {
-    var result = {};
-    function recurse (cur, prop) {
-        if (Object(cur) !== cur) {
-            result[prop] = cur;
-        } else if (Array.isArray(cur)) {
-             for(var i=0, l=cur.length; i<l; i++)
-                 recurse(cur[i], prop + "[" + i + "]");//
-            if (l == 0)
-                result[prop] = [];
-        } else {
-            var isEmpty = true;
-            for (var p in cur) {
-                isEmpty = false;
-                recurse(cur[p], prop ? prop+"."+p : p);
-            }
-            if (isEmpty && prop)
-                result[prop] = {};
-        }
-    }
-    recurse(data, "");
-    return result;
-}
-// var data = {
-//     article: "article",
-//     gender: "gender",
-//     brand: "brand",
-//     connection: [{
-//         type: 0,
-//         connected: false
-//     }],
-//     acceleration: {
-//         x: 0,
-//         y: 0,
-//         z: 0,
-//         watchId: 0,
-//         hasError: false
-//     }
-// };
-// $(document).ready(function() {
-//     console.log("aa",JSON.flatten(data));
-// });
-// var data = {
-//     article: "article",
-//     gender: "gender",
-//     brand: "brand",
-//     connection: {
-//         type: 0,
-//         connected: false
-//     },
-//     acceleration: {
-//         x: 0,
-//         y: 0,
-//         z: 0,
-//         watchId: 0,
-//         hasError: false
-//     }
-// };
-// $(document).ready(function() {
-//     console.log(flatten(data));
-//     $("body").text(flatten(data));
-// });
-
-
-var qquestion=angular.module('qquestion',["Ajax"])
-qquestion.service("qquestionService",function($http,$ajax){
+var qbusinessschool=angular.module('qbusinessschool',["Ajax"])
+qbusinessschool.service("qbusinessschoolService",function($http,$ajax){
  return {
           search:function(item){
-          	var url=serviceApiUrl + '/web/thought/list';
+          	var url=serviceApiUrl + '/user/search';
             var param=$.param(item?item:"");
               return $http.post(url+"?"+param).then(function(resp){
                   if(resp.data.code=='success')
@@ -80,12 +16,10 @@ qquestion.service("qquestionService",function($http,$ajax){
           add:function(item)
           {
              var formdata = new FormData();
-             item=JSON.flatten(item);
 			 for ( var key in item ) {
-			 	 console.log(key,item[key]);
 			     formdata.append(key, item[key]);
 			 }
-			 return $ajax({type:'post',url:serviceApiUrl + '/businesscourse/lesson/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
+			 return $ajax({type:'post',url:serviceApiUrl + '/user/add',method:"post",data:formdata,processData : false,contentType:false}).then(function (resp){
                 if(resp.code=='success')
                 {
                     return resp.json;
@@ -95,7 +29,7 @@ qquestion.service("qquestionService",function($http,$ajax){
           },
           get:function(item)
           {
-          	 var url=serviceApiUrl + '/businesscourse/lesson/'+item.id;
+          	 var url=serviceApiUrl + '/user/detail';
              var param=$.param(item);
              return $http.get(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
@@ -107,8 +41,9 @@ qquestion.service("qquestionService",function($http,$ajax){
           },
           delete:function(item)
           {
-          	 var url=serviceApiUrl + '/businesscourse/lesson/del?id='+item.id;
-             return $http.post(url).then(function (resp){
+          	 var url=serviceApiUrl + '/course/remove';
+             var param=$.param(item);
+             return $http.post(url+"?"+param).then(function (resp){
                 if(resp.data.code=='success')
                 {
                     return item;
@@ -124,7 +59,7 @@ qquestion.service("qquestionService",function($http,$ajax){
 			 }
              return $ajax({
 		           type : 'post',
-		           url :serviceApiUrl + '/businesscourse/lesson/modify',
+		           url :serviceApiUrl + '/user/update',
 		           data : formdata,
 		           cache : false,
 		           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
@@ -163,25 +98,22 @@ qquestion.service("qquestionService",function($http,$ajax){
   };
 });
 
-qquestion.component('qquestion', {
+
+qbusinessschool.component('addQbusinessschool', {
 	  transclude: true,
 	  scope:true,
 	  bindings: {
 		  ngModel: '=',
-		  onSelect:'&',
-		  daterangeoption:'='
+		  onSelect:'&'
 	  },
-	  templateUrl:baseUrl+'js/bower_components/qquestion/1.0.0/plugin.html',
-			  controller: ["qquestionService",'$scope','$rootScope','$ocLazyLoad','$injector',function(service, $scope,$rootScope,$ocLazyLoad,$injector) {
+	  templateUrl:baseUrl+'js/bower_components/qbusinessschool/1.0.0/add.html',
+	  controller: ["quserService",'$scope','$ocLazyLoad','$injector',function(service, $scope,$ocLazyLoad,$injector) {
 			  	    var ctrl=this;
 			  	    ctrl.qpageroptions = {
 				         currentpage: 1,
 				         totalpage: 0
 				    };
-				    ctrl.daterangeoption=window.daterangeoption;
-				    ctrl.timepickeroption=window.timepickeroption;
 				    ctrl.item={};
-				    
 				    ctrl.option={};
 				    ctrl.option.pageSize=5;
 				    ctrl.$onInit=function(){
@@ -194,7 +126,13 @@ qquestion.component('qquestion', {
 					    			}
 					    		});
 					    	});
-					    	console.log(ctrl.ngModel);
+					    	//console.log(ctrl.ngModel);
+					    	// $ocLazyLoad.load("qmicrocourse").then(function() {
+						    //     var $serviceTest = $injector.get("qmicrocourseService");
+						    //     var task1 = $serviceTest.search(serviceApiUrl + '/web/course/type/list').then(function(data) {
+							   //       ctrl.courseTypeIdArray = data.items;
+							   //  });
+						    // });
 					};
                     ctrl.pagechange = function(page) {
 					     var item = $.extend(ctrl.item,{ pageSize: ctrl.option.pageSize, pageNo: page });
@@ -291,52 +229,8 @@ qquestion.component('qquestion', {
 						    });
 					 	}
 					 };
-					 $scope.$on('showselect-qselectthought', function(event,data) {
-							ctrl.show=true;
-					 });
-
+					 // $scope.$on('showselect-quser', function(event,data) {
+						// 	ctrl.show=true;
+					 // });
 			}]
-
-});
-
-qquestion.component("addQquestion", {
-	  transclude: true,
-	  scope:true,
-	  bindings: {
-		  ngModel: '=',
-		  onAdd: '&',
-	  },
-	  templateUrl:baseUrl+'js/bower_components/qquestion/1.0.0/add-qquestion.html',
-	  controller: ["qquestionService",'$scope',function(service, $scope) {
-	  		var ctrl=this;
-	  		ctrl.daterangeoption=window.daterangeoption;
-			ctrl.timepickeroption=window.timepickeroption;
-	  		ctrl.show=false;
-	  		ctrl.item={};
-	  		ctrl.item.signins=[];
-	  		ctrl.doSave=function(form)
-			{
-			 	var itemnew={};
-			 	itemnew=ctrl.item;
-		 		delete itemnew.createTime;
-		 		delete itemnew.updateTime;
-				service.add(itemnew).then(function(item) {
-					if(item)
-					{
-		       			ctrl.show=false;
-		       			ctrl.onAdd({"item":item});
-					}
-			     });
-			};
-	  		$scope.$on('showadd-qquestion', function(event,data) {
-				ctrl.show=true;
-			});
-			ctrl.showMap=function()
-		    {
-		          $scope.$broadcast('showselect-qbmap', '公园');
-		    }
-			ctrl.doCancel=function(){
-			 	ctrl.show=false;
-			};
-	  }]
 });

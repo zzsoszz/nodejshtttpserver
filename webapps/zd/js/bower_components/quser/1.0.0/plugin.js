@@ -134,7 +134,7 @@ quser.component('selectQuser', {
 						    });
 					};
                     ctrl.pagechange = function(page) {
-					     var item = $.extend({},{ pageSize: ctrl.option.pageSize, pageNo: page });
+					     var item = $.extend(ctrl.item,{ pageSize: ctrl.option.pageSize, pageNo: page });
 					     ctrl.doSearch(item);
       				};
       				ctrl.doSubmit=function(form)

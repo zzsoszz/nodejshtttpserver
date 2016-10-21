@@ -112,6 +112,7 @@ module.component('qcoursegroup', {
 				         totalpage: 0
 				    };
 				    ctrl.option={};
+				    ctrl.item={};
 				    ctrl.option.pageSize=10;
 				    ctrl.$onInit=function(){
 					    	ctrl.items=[];
@@ -131,7 +132,7 @@ module.component('qcoursegroup', {
 					    	*/
 					};
                     ctrl.pagechange = function(page) {
-					     var item = $.extend({},{ pageSize: ctrl.option.pageSize, pageNo: page });
+					     var item = $.extend(ctrl.item,{ pageSize: ctrl.option.pageSize, pageNo: page });
 					     ctrl.doSearch(item);
       				};
       				ctrl.doSearch = function(item) {

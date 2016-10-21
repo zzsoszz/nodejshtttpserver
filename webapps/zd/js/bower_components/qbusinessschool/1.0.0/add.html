@@ -1,0 +1,35 @@
+<div>
+        <form name="addform"   ng-submit="event.preventDefault();$ctrl.doSave(addform)">
+            <div class="title">添加/修改商学院</div>
+            <div class="hline"></div>
+            <div>
+                <div style="overflow: hidden;">
+                  <div>
+                      <div class="fieldbox">
+                          <span >主标题</span>
+                          <div class="qinputgroup2"  >
+                              <input class="qinputitem2"    class="qinputitem2"  type="text" ng-model="$ctrl.item.title"/>
+                          </div>
+                      </div>
+                      <div  class="fieldbox">
+                          <span >副标题</span>
+                          <div class="qinputgroup2"  >
+                              <input class="qinputitem2"   class="qinputitem2"  type="text" ng-model="$ctrl.item.subInfo"/>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="fieldbox">
+                    <span>内容</span>
+                    <div>
+                            <textarea    class="qinputitem2"  style="width:700px;height:300px;" type="text" ng-model="$ctrl.item.introduction">
+                            </textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 10px;" >
+                <input    type="submit" class="actionbtn" value="添加"  style="float: left">
+                <input  type="button" class="actionbtn gray" value="取消" ng-click="$ctrl.doCancel()" style="margin-left: 10px;">
+            </div>
+        </form>
+</div>
