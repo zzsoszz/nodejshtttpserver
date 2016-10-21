@@ -1,6 +1,6 @@
 <div class="poppanel" ng-show="$ctrl.show">
     <div class="poppanle-inner" >
-        <form name="addform"  action="http://localhost:8888/businesscourse/lesson/add" >  <!--  ng-submit="event.preventDefault();$ctrl.doSave(addform)" -->
+        <form name="addform"  ng-submit="event.preventDefault();$ctrl.doSave(addform)"> 
             <div class="title">添加/修改文章</div>
             <div class="hline"></div>
             <div>
@@ -42,11 +42,11 @@
                       <div class="fieldbox">
                             <span>签到时间</span>
                             <div class="qinputgroup2">
-                                <input  class="qinputitem2" qdaterangepicker  name="signins[0].beginTime"   type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.signins[0].beginTime"/>
+                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.signins[0].beginTime"/>
                                 <div  class="addson  calendar-bg" ></div>
                             </div>
                             <div class="qinputgroup2">
-                                <input  class="qinputitem2" qdaterangepicker  name="signins[0].endTime"  type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.signins[0].endTime"/>
+                                <input  class="qinputitem2" qdaterangepicker   type="text" data-option="$ctrl.timepickeroption" ng-model="$ctrl.item.signins[0].endTime"/>
                                 <div  class="addson  calendar-bg" ></div>
                             </div>
                       </div>
