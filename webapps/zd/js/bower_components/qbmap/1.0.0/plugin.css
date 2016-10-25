@@ -1,5 +1,5 @@
-#l-map{height:500px;width:100%;}
-#r-result{width:100%; font-size: 14px; line-height: 20px;}
+.qbmap .bmap{height:500px;width:100%;}
+.qbmap .result{width:100%; font-size: 14px; line-height: 20px;}
 .qbmap .poppanel{
     position: fixed;
     left:50%;

@@ -19,17 +19,18 @@ if(angular!=undefined  && angular.module)
 		  controller: ['$scope','$rootScope','$ocLazyLoad','$injector','$element',function($scope,$rootScope,$ocLazyLoad,$injector,$element) {
 		  	    var ctrl=this;
 		  	    var local;
-		  	    console.log($element);
 		  	    $element.appendTo($("body"));
+		  	    var bmapEle=$element.find(".bmap").get(0);
+		  	    //console.log(bmapEle);
+		  	    var resultEle=$element.find(".result").get(0);
+		  	    //console.log(resultEle);
 			    ctrl.$onInit=function(){
-				    var map = new BMap.Map("l-map");
+				    var map = new BMap.Map(bmapEle);
 				    var geoc = new BMap.Geocoder();   
 					//map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
 					map.enableScrollWheelZoom(true);
 					map.setCenter("成都市");
 					map.setCurrentCity("成都市"); 
-
-
 					//  // 设置标注
 					var marker = new BMap.Marker(new BMap.Point(116.331398,39.897445));
 					marker.enableDragging();
@@ -53,7 +54,7 @@ if(angular!=undefined  && angular.module)
 								for (var i = 0; i < results.getCurrentNumPois(); i ++){
 									s.push(results.getPoi(i).title + ", " + results.getPoi(i).address);
 								}
-								document.getElementById("r-result").innerHTML = s.join("<br/>");
+								resultEle.innerHTML = s.join("<br/>");
 							}
 						}
 					};

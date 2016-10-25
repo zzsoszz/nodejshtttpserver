@@ -7,6 +7,8 @@ var mainApp=angular.module("mainApp",
     // 'qcoursegroup',
    // 'qarticle',
    // 'qselectcourse',
+  // 'qguest',
+  "qquestion",
    // 'qselectthought'
    // 'qquestion',
    //'quser',
@@ -277,18 +279,18 @@ for(var i = 0, c; c = is.types[i ++ ]; ){
     })(c);
 }
 mainApp.config(function ($stateProvider,$urlRouterProvider) {
+      $urlRouterProvider.when("","").otherwise("");
+      // $urlRouterProvider.when("","index").otherwise("index");
+      // $stateProvider.state("index",{
+      //       url:"/index",
+      //       component:"qcoursegroup",
+      //       resolve: {
+      //           deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
+      //               //return $ocLazyLoad.load("qcoursegroup");
+      //           }]
+      //       }
+      // });
 
-      $urlRouterProvider.when("","index").otherwise("index");
-
-      $stateProvider.state("index",{
-            url:"/index",
-            component:"qcoursegroup",
-            resolve: {
-                deps: ['$ocLazyLoad','$stateParams','$injector', function ($ocLazyLoad,$stateParams,$injector) {
-                    //return $ocLazyLoad.load("qcoursegroup");
-                }]
-            }
-      });
       $stateProvider.state("go",{
             url:"/{module}/{controller}",
             templateUrl: function ($stateParams){

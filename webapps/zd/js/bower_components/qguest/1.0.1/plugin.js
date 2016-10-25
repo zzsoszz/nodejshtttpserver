@@ -1,4 +1,4 @@
-var qguestModule=angular.module('qguestModule',["Ajax"])
+var qguestModule=angular.module('qguest',["Ajax"])
 qguestModule.service("qguestService",function($http,$ajax){
  return {
           search:function(item){

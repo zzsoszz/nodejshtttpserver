@@ -3,7 +3,7 @@
         <div class="qsearchbox">
             <div class="title">选择课程</div>
             <div class="hline"></div>
-            <form name="searchForm" action="" ng-submit="$event.preventDefault();$ctrl.doSubmit(form)">
+            <ng-form name="searchForm" action="" ng-submit="$event.preventDefault();$ctrl.doSubmit(form)">
                 
                 <div class="fieldbox inline">
                   <span>课程类型</span>
@@ -40,9 +40,9 @@
                 <div style="clear:both;padding-top:20px;text-align:center;">
                       <input  type="submit" class="actionbtn" value="搜索" >
                 </div>
-            </form>
+            </ng-form>
       </div>
-
+      
       <table class="newTb">
           <thead>
               <tr>
@@ -100,5 +100,9 @@
       <div  qpager ng-model="$ctrl.qpageroptions" onpagechange="$ctrl.pagechange(page)">
       </div>
 
+      <div style="clear:both;padding-top:20px;text-align:center;">
+              <input  type="submit" class="actionbtn" value="确认" >
+              <input  type="submit" class="actionbtn" value="取消" >
+      </div>
   </div>
 </div>
