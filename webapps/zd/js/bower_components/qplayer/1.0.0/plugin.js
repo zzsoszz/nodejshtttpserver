@@ -76,6 +76,7 @@
 			{
 				this.playtargetEle=this.ele.find("video");
 				
+				
 				this.playtargetEle.on("abort",$.proxy(function(){
 					console.log("abort");
 				},this));
@@ -145,8 +146,9 @@
 				this.playtargetEle.on("waiting",$.proxy(function(){
 					console.log("waiting");
 				},this));
-				
-				
+
+
+
 				this.qquickcontrolEle=this.ele.find(".qquickcontrol");
 				this.qplaycontrolEle=this.ele.find(".qcontrolbar");
 				this.playEles=this.qquickcontrolEle.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
