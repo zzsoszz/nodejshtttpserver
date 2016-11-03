@@ -1,0 +1,107 @@
+{
+  "code": "success",
+  "message": "创建记录成功",
+  "json": {
+    "id": 7,
+    "title": "505",
+    "coverImage": "3af4af5db0f44118a8b7d0e8af168f92.png",
+    "beginTime": "2016-10-01 00:00:00",
+    "endTime": "2016-10-01 00:00:00",
+    "province": "北京",
+    "city": "东城区",
+    "sponsorId": 587,
+    "selseatBeginTime": "1899-12-31 23:54:17",
+    "selseatEndTime": "2016-10-25 23:59:59",
+    "seatRows": 2,
+    "seatCols": 2,
+    "lecturerIds": "744,745",
+    "guestIds": "746,747",
+    "introPics": "a5a4103bd5a34bf7b7316746cb53ec60.png,886a5813c6b145d996c5a8ba7209a4fe.png",
+    "servantPhone": "505",
+    "createTime": "2016-10-24 16:50:45",
+    "showOrder": null,
+    "address": null,
+    "introduction": "505",
+    "seatCount": 0,
+    "lecturers": null,
+    "guests": null,
+    "companyName": null,
+    "acourseSchedules": null,
+    "icourseSchedules": null,
+    "bcourseSchedules": null
+  },
+  "qrKey": null
+}
+
+
+
+curl "http://localhost:8888/businesscourse/add" -H "Pragma: no-cache" -H "Origin: http://localhost:8888" -H "Accept-Encoding: gzip, deflate" -H "Accept-Language: zh-CN,zh;q=0.8" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36" -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryMEvaeXggTXEAr2sS" -H "Accept: */*" -H "Cache-Control: no-cache" -H "X-Requested-With: XMLHttpRequest" -H "Cookie: _ga=GA1.1.1080112844.1466055761; CNZZDATA1259094575=1903752075-1463375550-"%"7C1466647694; Webstorm-df1b66bd=cf9b10a4-06c5-45b6-a8b6-ab39b531133f; Webstorm-46fc939c=5ed15660-a8e5-4980-af35-22ce862cb605; JSESSIONID=EAE2DA7F21E3D3D7F8AD10064AA7ACF1; vbossID=vbossID_123B43785A975F3587D6FFB706E7073B; BOSSAPP=BOSSAPP_372905833B21A346B699D22375B90CBF" -H "Connection: keep-alive" -H "Referer: http://localhost:8888/index.html" --data-binary "------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""guestIds"""^
+
+"746,747"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""introPics"""^
+
+"a5a4103bd5a34bf7b7316746cb53ec60.png,886a5813c6b145d996c5a8ba7209a4fe.png"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""sponsorId"""^
+
+"587"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""title"""^
+
+"505"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""beginTime"""^
+
+"2016-10-01 00:00:00"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""endTime"""^
+
+"2016-10-01 00:00:00"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""servantPhone"""^
+
+"505"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""seatRows"""^
+
+"2"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""seatCols"""^
+
+"2"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""introduction"""^
+
+"505"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""coverImage"""^
+
+"3af4af5db0f44118a8b7d0e8af168f92.png"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""bcsIds"""^
+
+"137,138,139,140;127,129,126,128,130,131,134,133,132,135,136;123,124,122,125"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""lecturerIds"""^
+
+"744,745"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""selseatBeginTime"""^
+
+"1900-01-01 00:00:00"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""selseatEndTime"""^
+
+"2016-10-25 23:59:59"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""province"""^
+
+"北京"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS"^
+"Content-Disposition: form-data; name=""city"""^
+
+"东城区"^
+"------WebKitFormBoundaryMEvaeXggTXEAr2sS--"^
+"" --compressed

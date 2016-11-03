@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<link rel="stylesheet" href="../../../../css/main.css"   media="all"    type="text/css" />
+<link rel="stylesheet" href="plugin.css"   media="all"    type="text/css" />
+<script type="text/javascript"  src="jquery-1.10.2.js" ></script>
+<script type="text/javascript"  src="../../../../js/rem.js" ></script>
+<script type="text/javascript"  src="plugin.js" ></script>
+
+
+<script>
+	$(document).ready(
+		function()
+		{
+			$(".qplayer").qplayer();
+		}
+	);
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="qplayer video-box" style="position: relative">
+        <video class="lessonImg"  style="width: 100%;" src="http://200006916.vod.myqcloud.com/200006916_3bdb5006266111e68d04f780259f0928.f0.mov" ></video>
+        <!--
+        <div class="qcontrolbar action-box" style="position: absolute;top:50%;text-align: center;width:100%;transform:translate(0%,-50%);">
+         	<div class="qplayprogressbar">
+         		<div class="currentprogresss">
+        	</div>
+        	<div class="qloadprogressbar">
+        		<div class="currentprogresss">
+        	</div> 
+            <span class="qplay iconfont icon-arrow-right" style="font-size:0.7rem;"></span>
+        </div>
+        -->
+        <div class="qquickcontrol" style="position: absolute;top:50%;text-align: center;width:100%;transform:translate(0%,-50%);">
+            <span class="qplay iconfont icon-arrow-right" style="font-size:0.7rem;"></span>
+        </div>
+</div>
+
+
+</body>
+</html>
