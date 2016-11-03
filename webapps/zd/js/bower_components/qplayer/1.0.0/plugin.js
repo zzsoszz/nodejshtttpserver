@@ -64,6 +64,7 @@
 				this.playtargetEle.get(0).pause();
 			};
 			this.onplay=function(){
+				this.qquickcontrolEle.hide();
 				$(this.playEles).addClass("pause");
 			};
 			this.onstop=function()
@@ -82,7 +83,7 @@
 					this.onstop();
 				},this));
 				
-				
+
 				this.qquickcontrolEle=this.ele.find(".qquickcontrol");
 				this.qplaycontrolEle=this.ele.find(".qcontrolbar");
 				this.playEles=this.qquickcontrolEle.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
