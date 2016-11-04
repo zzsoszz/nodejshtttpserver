@@ -53,6 +53,7 @@
 			this.ele=target;
 			this.playtargetEle;
 			this.qplaycontrolEle;
+			this.video;
 			this.stopEle;
 			this.playEles;
 			this.play=function()
@@ -64,104 +65,172 @@
 				this.playtargetEle.get(0).pause();
 			};
 			this.onplay=function(){
-				this.qquickcontrolEle.hide();
+				this.qstatusbox.hide();
 				$(this.playEles).addClass("pause");
 			};
 			this.onstop=function()
 			{
-				this.qquickcontrolEle.show();
+				this.qstatusbox.show();
 				$(this.playEles).removeClass("pause");
+			};
+			this.log=function(){
+				// var video=this.playtargetEle.get(0);
+				// console.log("video.buffered:",video.buffered);
+				// console.log("video.currentTime:",video.currentTime);
+				// console.log("video.duration:",video.duration);
+				// console.log("video.ended:",video.ended);
+				// console.log("video.readyState:",video.readyState);
+				// console.log("video.seeking:",video.seeking);
+				// console.log("video.startDate:",video.startDate);
+				// console.log("video.buffered:",video.buffered);
+				// console.log("video.paused:",video.paused);
+				// for(var i=0;i<video.buffered.length;i++)
+				// {
+				// 		console.log("buffer-start-"+i,video.buffered.start(i));
+				// 		console.log("buffer-end-"+i,video.buffered.end(i));
+				// }
+				// console.log("video.seekable:",video.seekable);
+				// for(var i=0;i<video.seekable.length;i++)
+				// {
+				// 		console.log("seek-start-"+i,video.seekable.start(i));
+				// 		console.log("seek-end-"+i,video.seekable.end(i));
+				// }
 			};
 			this.init=function(optionsnew)
 			{
 				this.playtargetEle=this.ele.find("video");
-				
-				
-				this.playtargetEle.on("abort",$.proxy(function(){
-					console.log("abort");
-				},this));
-				this.playtargetEle.on("canplay",$.proxy(function(){
-					console.log("canplay");
-				},this));
-				this.playtargetEle.on("canplaythrough",$.proxy(function(){
-					console.log("canplaythrough");
-				},this));
-				this.playtargetEle.on("durationchange",$.proxy(function(){
-					console.log("durationchange");
-				},this));
-				this.playtargetEle.on("emptied",$.proxy(function(){
-					console.log("emptied");
-				},this));
-				this.playtargetEle.on("ended",$.proxy(function(){
-					console.log("ended");
-				},this));
-				this.playtargetEle.on("error",$.proxy(function(){
-					console.log("error");
-				},this));
-				this.playtargetEle.on("loadeddata",$.proxy(function(){
-					console.log("loadeddata");
-				},this));
-				this.playtargetEle.on("loadedmetadata",$.proxy(function(){
-					console.log("loadedmetadata");
-				},this));
-				this.playtargetEle.on("loadstart",$.proxy(function(){
-					console.log("loadstart");
-				},this));
-				this.playtargetEle.on("pause",$.proxy(function(){
-					console.log("pause");
-				},this));
-				this.playtargetEle.on("play",$.proxy(function(){
-					console.log("play");
-				},this));
-				this.playtargetEle.on("playing",$.proxy(function(){
-					console.log("playing");
-				},this));
-				this.playtargetEle.on("progress",$.proxy(function(){
-					console.log("progress");
-				},this));
-				this.playtargetEle.on("ratechange",$.proxy(function(){
-					console.log("ratechange");
-				},this));
-				this.playtargetEle.on("readystatechange",$.proxy(function(){
-					console.log("readystatechange");
-				},this));
-				this.playtargetEle.on("seeked",$.proxy(function(){
-					console.log("seeked");
-				},this));
-				this.playtargetEle.on("seeking",$.proxy(function(){
-					console.log("seeking");
-				},this));
-				this.playtargetEle.on("stalled",$.proxy(function(){
-					console.log("stalled");
-				},this));
-				this.playtargetEle.on("suspend",$.proxy(function(){
-					console.log("suspend");
-				},this));
-				this.playtargetEle.on("timeupdate",$.proxy(function(){
-					console.log("timeupdate");
-				},this));
-				this.playtargetEle.on("volumechange",$.proxy(function(){
-					console.log("volumechange");
-				},this));
-				this.playtargetEle.on("waiting",$.proxy(function(){
-					console.log("waiting");
-				},this));
+				this.video=this.playtargetEle.get(0);
+				this.qstatusbox=this.ele.find(".qstatusbox");
+				this.qloadprogress=this.ele.find(".qloadprogress");
+				this.qplayprogresss=this.ele.find(".qplayprogresss");
 
-
-
-				this.qquickcontrolEle=this.ele.find(".qquickcontrol");
-				this.qplaycontrolEle=this.ele.find(".qcontrolbar");
-				this.playEles=this.qquickcontrolEle.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
-				this.playEles.on("click",$.proxy(function(e){
-					if(!$(e.target).hasClass("pause"))
+				// this.qstatusbox=this.ele.find(".qquickcontrol");
+				// this.qplaycontrolEle=this.ele.find(".qcontrolbar");
+				// this.playEles=this.qstatusbox.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
+				// this.playEles.on("click",$.proxy(function(e){
+				// 	if(!$(e.target).hasClass("pause"))
+				// 	{
+				// 		this.play();
+				// 	}
+				// 	else
+				// 	{
+				// 		this.pause();
+				// 	}
+				// },this));
+				this.ele.on("click",$.proxy(function(){
+					if(this.video.paused)
 					{
-						this.play();
+						this.video.play();
 					}
 					else
 					{
-						this.pause();
+						this.video.pause();
 					}
 				},this));
+				this.playtargetEle.on("abort",$.proxy(function(){
+					console.log("abort");
+					this.log();
+				},this));
+				this.playtargetEle.on("canplay",$.proxy(function(){
+					console.log("canplay");
+					this.log();
+				},this));
+				this.playtargetEle.on("canplaythrough",$.proxy(function(){
+					console.log("canplaythrough");
+					this.log();
+				},this));
+				this.playtargetEle.on("durationchange",$.proxy(function(){
+					console.log("durationchange");
+					this.log();
+				},this));
+				this.playtargetEle.on("emptied",$.proxy(function(){
+					console.log("emptied");
+					this.log();
+				},this));
+				this.playtargetEle.on("ended",$.proxy(function(){
+					console.log("ended");
+					this.log();
+				},this));
+				this.playtargetEle.on("error",$.proxy(function(){
+					console.log("error");
+					this.log();
+				},this));
+				this.playtargetEle.on("loadeddata",$.proxy(function(){
+					console.log("loadeddata");
+					this.log();
+				},this));
+				this.playtargetEle.on("loadedmetadata",$.proxy(function(){
+					console.log("loadedmetadata");
+					this.log();
+				},this));
+				this.playtargetEle.on("loadstart",$.proxy(function(){
+					console.log("loadstart");
+					this.log();
+				},this));
+				this.playtargetEle.on("pause",$.proxy(function(){
+					console.log("pause");
+					this.qstatusbox.show();
+					this.log();
+				},this));
+				this.playtargetEle.on("play",$.proxy(function(){
+					console.log("play");
+					this.qstatusbox.hide();
+					this.log();
+				},this));
+				this.playtargetEle.on("playing",$.proxy(function(){
+					console.log("playing");
+					this.log();
+				},this));
+				this.playtargetEle.on("progress",$.proxy(function(){
+					console.log("progress");
+					this.log();
+					if(this.video.buffered.length>0)
+					{
+						var percent=(this.video.buffered.end(0)/this.video.duration)*100;
+						this.qloadprogress.css({width:percent+"%"});
+					}
+				},this));
+				this.playtargetEle.on("ratechange",$.proxy(function(){
+					console.log("ratechange");
+					this.log();
+				},this));
+				this.playtargetEle.on("readystatechange",$.proxy(function(){
+					console.log("readystatechange");
+					this.log();
+				},this));
+				this.playtargetEle.on("seeked",$.proxy(function(){
+					console.log("seeked");
+					this.log();
+				},this));
+				this.playtargetEle.on("seeking",$.proxy(function(){
+					console.log("seeking");
+					this.log();
+				},this));
+				this.playtargetEle.on("stalled",$.proxy(function(){
+					console.log("stalled");
+					this.log();
+				},this));
+				this.playtargetEle.on("suspend",$.proxy(function(){
+					console.log("suspend");
+					this.log();
+				},this));
+				this.playtargetEle.on("timeupdate",$.proxy(function(){
+					var percent=(this.video.currentTime/this.video.duration)*100;
+					this.qplayprogresss.css({width:percent+"%"});
+					console.log("timeupdate");
+					this.log();
+				},this));
+				this.playtargetEle.on("volumechange",$.proxy(function(){
+					console.log("volumechange");
+					this.log();
+				},this));
+				this.playtargetEle.on("waiting",$.proxy(function(){
+					console.log("waiting");
+					this.log();
+				},this));
+
+
+
 
 
 			};
