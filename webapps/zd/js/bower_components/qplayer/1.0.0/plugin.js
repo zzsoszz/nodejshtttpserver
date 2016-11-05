@@ -135,7 +135,8 @@
 					 // if($(e.target).hasClass("qloadprogress"))
 					 // {
 						console.log(e.target.className);
-						var percent=e.offsetX/$(e.target).width();
+						//var percent=e.offsetX/$(e.target).width();
+						var percent=(e.pageX-this.qprogressbar.offset().left)/this.qprogressbar.width();
 						console.log("percent:",percent);
 						this.willsetcurrenttime=Math.floor(percent*this.video.duration);
 						console.log("widthpercent:",this.willsetcurrenttime);
