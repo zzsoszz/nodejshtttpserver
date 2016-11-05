@@ -106,19 +106,6 @@
 				this.qprogressbar=this.ele.find(".qprogressbar");
 				this.qloadprogress=this.ele.find(".qloadprogress");
 				this.qplayprogresss=this.ele.find(".qplayprogresss");
-				// this.qstatusbox=this.ele.find(".qquickcontrol");
-				// this.qplaycontrolEle=this.ele.find(".qcontrolbar");
-				// this.playEles=this.qstatusbox.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
-				// this.playEles.on("click",$.proxy(function(e){
-				// 	if(!$(e.target).hasClass("pause"))
-				// 	{
-				// 		this.play();
-				// 	}
-				// 	else
-				// 	{
-				// 		this.pause();
-				// 	}
-				// },this));
 				this.ele.on("click",$.proxy(function(){
 					if(this.video.paused)
 					{
@@ -130,20 +117,10 @@
 					}
 				},this));
 				this.qprogressbar.on("mousemove",$.proxy(function(e){
-					//e.preventDefault();
-					e.stopPropagation();
-					 // if($(e.target).hasClass("qloadprogress"))
-					 // {
-						console.log(e.target.className);
-						//var percent=e.offsetX/$(e.target).width();
 						var percent=(e.pageX-this.qprogressbar.offset().left)/this.qprogressbar.width();
-						console.log("percent:",percent);
 						this.willsetcurrenttime=Math.floor(percent*this.video.duration);
-						console.log("widthpercent:",this.willsetcurrenttime);
-					// }
-					
 				},this));
-
+				
 
 				this.qprogressbar.on("click",$.proxy(function(e){
 					e.stopPropagation();
@@ -251,9 +228,6 @@
 					console.log("waiting");
 					this.log();
 				},this));
-
-
-
 
 
 			};
