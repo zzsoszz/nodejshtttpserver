@@ -56,6 +56,8 @@
 			this.video;
 			this.stopEle;
 			this.playEles;
+			this.qprogressbar;
+			this.willsetcurrenttime;
 			this.play=function()
 			{
 				this.playtargetEle.get(0).play();
@@ -101,9 +103,9 @@
 				this.playtargetEle=this.ele.find("video");
 				this.video=this.playtargetEle.get(0);
 				this.qstatusbox=this.ele.find(".qstatusbox");
+				this.qprogressbar=this.ele.find(".qprogressbar");
 				this.qloadprogress=this.ele.find(".qloadprogress");
 				this.qplayprogresss=this.ele.find(".qplayprogresss");
-
 				// this.qstatusbox=this.ele.find(".qquickcontrol");
 				// this.qplaycontrolEle=this.ele.find(".qcontrolbar");
 				// this.playEles=this.qstatusbox.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
@@ -126,6 +128,26 @@
 					{
 						this.video.pause();
 					}
+				},this));
+				this.qprogressbar.on("mousemove",$.proxy(function(e){
+					//e.preventDefault();
+					e.stopPropagation();
+					 // if($(e.target).hasClass("qloadprogress"))
+					 // {
+						console.log(e.target.className);
+						var percent=e.offsetX/$(e.target).width();
+						console.log("percent:",percent);
+						this.willsetcurrenttime=Math.floor(percent*this.video.duration);
+						console.log("widthpercent:",this.willsetcurrenttime);
+					// }
+					
+				},this));
+
+
+				this.qprogressbar.on("click",$.proxy(function(e){
+					e.stopPropagation();
+					console.log("now set currenttime",this.willsetcurrenttime);
+					this.video.currentTime=this.willsetcurrenttime;
 				},this));
 				this.playtargetEle.on("abort",$.proxy(function(){
 					console.log("abort");
