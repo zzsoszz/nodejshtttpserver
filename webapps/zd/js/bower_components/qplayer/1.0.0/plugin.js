@@ -100,6 +100,16 @@
 			};
 			this.init=function(optionsnew)
 			{
+
+				this.ele.on("dblclick",function(e){
+					if(!fullScreenApi.isFullScreen())
+					{
+						$(e.target).requestFullScreen();
+					}else{
+						fullScreenApi.cancelFullScreen();
+					}
+				});
+
 				this.playtargetEle=this.ele.find("video");
 				this.video=this.playtargetEle.get(0);
 				this.qstatusbox=this.ele.find(".qstatusbox");
