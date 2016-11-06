@@ -69,6 +69,7 @@
 			this.qcurrenttime;
 			this.qduration;
 			this.qfullscreen;
+			this.qplay;
 			this.play=function()
 			{
 				this.playtargetEle.get(0).play();
@@ -125,6 +126,8 @@
 				this.qcurrenttime=this.operatebar.find(".qcurrenttime");
 				this.qduration=this.operatebar.find(".qduration");
 				this.qfullscreen=this.operatebar.find(".qfullscreen");
+				this.qplay=this.operatebar.find(".qplay");
+
 
 				this.ele.on("dblclick",$.proxy(function(e){
 					if(!fullScreenApi.isFullScreen())
@@ -135,7 +138,12 @@
 					}
 				},this));
 
-				
+
+				this.operatebar.on("click",$.proxy(function(e){
+					e.stopPropagation();
+				},this));
+
+
 				this.qfullscreen.on("click",$.proxy(function(e){
 					e.stopPropagation();
 					if(!fullScreenApi.isFullScreen())
@@ -146,7 +154,7 @@
 					}
 				},this));
 
-				this.ele.on("click",$.proxy(function(){
+				this.ele.add(this.qplay).on("click",$.proxy(function(){
 					if(this.video.paused)
 					{
 						this.video.play();
