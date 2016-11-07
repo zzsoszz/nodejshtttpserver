@@ -219,12 +219,15 @@
 				},this));
 				this.playtargetEle.on("pause",$.proxy(function(){
 					console.log("pause");
+					this.qplay.removeClass("pause");
+					
 					this.qstatusbox.show();
 					this.log();
 				},this));
 				this.playtargetEle.on("play",$.proxy(function(){
 					console.log("play");
 					this.qstatusbox.hide();
+					this.qplay.addClass("pause");
 					this.log();
 				},this));
 				this.playtargetEle.on("playing",$.proxy(function(){

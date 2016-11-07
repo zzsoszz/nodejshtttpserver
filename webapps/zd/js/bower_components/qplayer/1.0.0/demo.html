@@ -43,6 +43,12 @@ body{
     height:100%;
     width:100%;
 }
+.qplayer  .qplay.pause .playstatus{
+  display: none;
+}
+.qplayer  .qplay.pause .pausestatus{
+  display: inline-block;
+}
 </style>
 </head>
 
@@ -69,10 +75,15 @@ body{
                    </svg>
                </a> -->
                <a class="qplay" style="color:rgb(238, 238, 238);opacity:0.9;height:100%;display:inline-block;width: 36px;-moz-transition: opacity .1s cubic-bezier(0.4,0.0,1,1);-webkit-transition: opacity .1s cubic-bezier(0.4,0.0,1,1);transition: opacity .1s cubic-bezier(0.4,0.0,1,1);overflow: hidden;">
-                    
-                   <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use ></use>
+                   <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%" class="playstatus">
+                        <use></use>
                         <path  d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z" id="ytp-svg-41"></path>
-                    </svg>
+                   </svg>
+                   <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%" class="pausestatus">
+                      <use  xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+                      <path  d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z">
+                      </path>
+                   </svg>
                </a>
 <!--                <a style="color:rgb(238, 238, 238);opacity:0.9;height:100%;display:inline-block;width: 36px;-moz-transition: opacity .1s cubic-bezier(0.4,0.0,1,1);-webkit-transition: opacity .1s cubic-bezier(0.4,0.0,1,1);transition: opacity .1s cubic-bezier(0.4,0.0,1,1);overflow: hidden;" title="下一个">
                    <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
