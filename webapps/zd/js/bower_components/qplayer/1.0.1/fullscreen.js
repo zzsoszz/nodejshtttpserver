@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
  var fullScreenApi = {
   supportsFullScreen : false,
   isFullScreen : function () {
@@ -48,9 +48,8 @@
     }
  }
 
- // jQuery plugin
- if (typeof jQuery != 'undefined') {
-    jQuery.fn.requestFullScreen = function () {
+ if (typeof $ != 'undefined') {
+    $.fn.requestFullScreen = function () {
      return this.each(function () {
       if (fullScreenApi.supportsFullScreen) {
        fullScreenApi.requestFullScreen(this);
@@ -61,4 +60,4 @@
 
  // export api
  window.fullScreenApi = fullScreenApi;
-})();
+})(window.jQuery||window.Zepto);
