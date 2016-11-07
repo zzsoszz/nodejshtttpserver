@@ -48,6 +48,14 @@
 			};
 		}
 		
+		function convertSecondToTimeString(totalseconds)
+		{
+				var seconds=parseInt(totalseconds%60);
+				var minutes=parseInt(totalseconds/60%60);
+				var hours=parseInt(totalseconds/3600%24);
+				return hours+":"+minutes+":"+seconds;
+		};
+
 		function PluginObject(target)
 		{
 			this.ele=target;
@@ -56,6 +64,12 @@
 			this.video;
 			this.stopEle;
 			this.playEles;
+			this.qprogressbar;
+			this.willsetcurrenttime;
+			this.qcurrenttime;
+			this.qduration;
+			this.qfullscreen;
+			this.qplay;
 			this.play=function()
 			{
 				this.playtargetEle.get(0).play();
@@ -98,26 +112,49 @@
 			};
 			this.init=function(optionsnew)
 			{
+
+
 				this.playtargetEle=this.ele.find("video");
 				this.video=this.playtargetEle.get(0);
 				this.qstatusbox=this.ele.find(".qstatusbox");
+				this.qprogressbar=this.ele.find(".qprogressbar");
+				this.operatebar=this.ele.find(".operatebar");
+				
 				this.qloadprogress=this.ele.find(".qloadprogress");
 				this.qplayprogresss=this.ele.find(".qplayprogresss");
 
-				// this.qstatusbox=this.ele.find(".qquickcontrol");
-				// this.qplaycontrolEle=this.ele.find(".qcontrolbar");
-				// this.playEles=this.qstatusbox.find(".qplay").add(this.qplaycontrolEle.find(".qplay"));
-				// this.playEles.on("click",$.proxy(function(e){
-				// 	if(!$(e.target).hasClass("pause"))
-				// 	{
-				// 		this.play();
-				// 	}
-				// 	else
-				// 	{
-				// 		this.pause();
-				// 	}
-				// },this));
-				this.ele.on("click",$.proxy(function(){
+				this.qcurrenttime=this.operatebar.find(".qcurrenttime");
+				this.qduration=this.operatebar.find(".qduration");
+				this.qfullscreen=this.operatebar.find(".qfullscreen");
+				this.qplay=this.operatebar.find(".qplay");
+
+
+				this.ele.on("dblclick",$.proxy(function(e){
+					if(!fullScreenApi.isFullScreen())
+					{
+						$(this.ele).requestFullScreen();
+					}else{
+						fullScreenApi.cancelFullScreen();
+					}
+				},this));
+
+
+				this.operatebar.on("click",$.proxy(function(e){
+					e.stopPropagation();
+				},this));
+
+
+				this.qfullscreen.on("click",$.proxy(function(e){
+					e.stopPropagation();
+					if(!fullScreenApi.isFullScreen())
+					{
+						$(this.ele).requestFullScreen();
+					}else{
+						fullScreenApi.cancelFullScreen();
+					}
+				},this));
+
+				this.ele.add(this.qplay).on("click",$.proxy(function(){
 					if(this.video.paused)
 					{
 						this.video.play();
@@ -126,6 +163,18 @@
 					{
 						this.video.pause();
 					}
+				},this));
+				this.qprogressbar.on("mousemove",$.proxy(function(e){
+						var percent=(e.pageX-this.qprogressbar.offset().left)/this.qprogressbar.width();
+						this.willsetcurrenttime=Math.floor(percent*this.video.duration);
+				},this));
+				
+
+
+				this.qprogressbar.on("click",$.proxy(function(e){
+					e.stopPropagation();
+					console.log("now set currenttime",this.willsetcurrenttime);
+					this.video.currentTime=this.willsetcurrenttime;
 				},this));
 				this.playtargetEle.on("abort",$.proxy(function(){
 					console.log("abort");
@@ -161,6 +210,7 @@
 				},this));
 				this.playtargetEle.on("loadedmetadata",$.proxy(function(){
 					console.log("loadedmetadata");
+					this.qduration.text(convertSecondToTimeString(this.video.duration));
 					this.log();
 				},this));
 				this.playtargetEle.on("loadstart",$.proxy(function(){
@@ -217,6 +267,7 @@
 				this.playtargetEle.on("timeupdate",$.proxy(function(){
 					var percent=(this.video.currentTime/this.video.duration)*100;
 					this.qplayprogresss.css({width:percent+"%"});
+					this.qcurrenttime.text(convertSecondToTimeString(this.video.currentTime));
 					console.log("timeupdate");
 					this.log();
 				},this));
@@ -228,9 +279,6 @@
 					console.log("waiting");
 					this.log();
 				},this));
-
-
-
 
 
 			};
@@ -255,3 +303,20 @@
 // 	);
 	
 // }
+// function formatDate(){
+// 			var milliseconds=2698169*1000;//秒变微秒
+// 			var dat = new Date(milliseconds);//生成日期
+// 			var year = dat.getFullYear();//取得年
+//      	var month = dat.getMonth()+1;    //取得月,js从0开始取,所以+1
+//      	var date1 = dat.getDate(); //取得天
+//      	var hour = dat.getHours();//取得小时
+//      	var minutes = dat.getMinutes();//取得分钟
+//      	var second = dat.getSeconds();//取得秒
+//      	alert(dat+"  |  "+year+"年"+month+"月"+date1+"日"+hour+"时"+minutes +"分"+second+"秒" );
+// 		}
+// 		
+
+// var seconds=time%60;
+// var minutes=parseInt(time/60%60);
+// var hours=parseInt(time/3600%24);
+// var days=parseInt(time/86400);
