@@ -442,3 +442,102 @@ form *:not(input):not(textarea).danger{
 }
 
 
+
+
+
+
+
+.newTb tr th,.newTb tr td{
+    text-align: left;
+}
+.newTb th:first-child,.newTb td:first-child{
+    text-align: center;
+}
+.table-condensed>tbody>tr>td, 
+.table-condensed>tbody>tr>th, 
+.table-condensed>tfoot>tr>td, 
+.table-condensed>tfoot>tr>th, 
+.table-condensed>thead>tr>td, 
+.table-condensed>thead>tr>th{
+    padding: 2px;
+}
+.newTb tr th,.newTb tr td{
+    text-align: left;
+}
+.newTb th:first-child,.newTb td:first-child{
+    text-align: center;
+}
+.newTb{
+    width:100%;margin: 10px 0 30px 0;
+}
+.newTb tr{
+    border-top: 1px solid #cccccc;
+}
+.newTb th{
+    font-size: 14px;color: rgb(89,87,87);background-color:#efeff0 ;height: 40px;font-weight: normal;
+}
+.newTb td{
+    height: 40px;
+    overflow: hidden;
+}
+
+
+
+
+.qdatatable{
+    padding: 20px;
+    width: 100%;
+}
+  .update,
+  .add,
+  .delete,
+  .detail,
+  .moveup,
+  .movedown,
+  .childnode
+{
+    display: inline-block;
+    height: 100%;
+    width: 26px;
+    cursor: pointer;
+}
+  .update{
+    background: url(/image/update.png) center center no-repeat;
+}
+  .add{
+    background: url(/image/add.png) center center no-repeat;
+}
+ .delete{
+    background: url(/image/delete.png) center center no-repeat;
+}
+ .detail{
+    background: url(/image/detail.png) center center no-repeat;
+}
+ .moveup{
+    background: url(/image/moveup.png) center center no-repeat;
+}
+.movedown{
+    background: url(/image/movedown.png) center center no-repeat;
+}
+.childnode{
+    background: url(/image/child.png) center center no-repeat;
+}
+.poppanel{
+    position: fixed;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    min-height: 460px;
+    max-height:90%;
+    background-color:#cccccc;
+    overflow: auto;
+    z-index: 11;
+}
+.poppanel .poppanle-inner{
+    padding: 30px;
+    background-color: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}

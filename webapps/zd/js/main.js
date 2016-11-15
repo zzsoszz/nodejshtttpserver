@@ -8,7 +8,7 @@ var mainApp=angular.module("mainApp",
    // 'qarticle',
    // 'qselectcourse',
   // 'qguest',
-  "qquestion",
+  // "qquestion",
    // 'qselectthought'
    // 'qquestion',
    //'quser',
