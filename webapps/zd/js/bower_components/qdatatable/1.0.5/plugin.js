@@ -65,19 +65,19 @@ if(angular && angular.module)
 	  	{
 	  		this.isShowPanel=false;
 	  	};
-		this.moveItem = function(item, dir) {
-		    var index =this.items.indexOf(item);
-	    	if (dir === 'up') {
-	    	  if(index!=0)
-	    	  {
- 				this.items.splice(index - 1, 2, item, this.items[index - 1]);
-	    	  }
-		    } else {
-		      if(index!=this.items.length-1){
-		    	this.items.splice(index, 2, this.items[index + 1], item);
-		      }
-		    }
-		};
+		//this.moveItem = function(item, dir) {
+		//    var index =this.items.indexOf(item);
+	    	//if (dir === 'up') {
+	    	//  if(index!=0)
+	    	//  {
+ 		//		this.items.splice(index - 1, 2, item, this.items[index - 1]);
+	    	//  }
+		//    } else {
+		//      if(index!=this.items.length-1){
+		//    	this.items.splice(index, 2, this.items[index + 1], item);
+		//      }
+		//    }
+		//};
 		this.moveItem = function(item, dir) {
 		    var index =this.items.indexOf(item);
 	    	if (dir === 'up') {

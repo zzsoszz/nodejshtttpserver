@@ -15,7 +15,7 @@
                     <div ng-if="col.type=='text'">
                         <div style="font-size: 14px;color: rgb(0,0,0);margin:30px 0 10px 0">{{col.title}}</div>
                         <div style="position: relative;width: 242px">
-                            <input    class="form-control date-picker" maxlength="5"  minlength="1"  type="text" ng-model="$ctrl.item[col.name]"/>
+                            <input    class="form-control date-picker"  type="text" ng-model="$ctrl.item[col.name]"/>
                         </div>
                     </div>
                     <div ng-if="col.type=='muliplyselect'">
@@ -37,11 +37,12 @@
         </div>
     </div>
 
+
     <table class="newTb">
         <thead>
             <tr>
                 <th style="padding-left: 46px;text-align: left">{{$ctrl.option.title}}</th>
-                <th ng-repeat="item in $ctrl.option.cols | limitTo: $ctrl.option.enableDefaultAction ? ($ctrl.option.cols.length-1): ($ctrl.option.cols.length-2)">
+                <th ng-repeat="item in $ctrl.option.cols | limitTo: $ctrl.option.cols.length-1">
                 </th>
                 <th>
                     <div class="addBtn confirmBtnChange">
@@ -58,7 +59,7 @@
                 <td ng-repeat="col in $ctrl.option.cols track by $index" >
                     {{col.title}}
                 </td>
-                <td ng-if="$ctrl.option.enableDefaultAction">操作</td>
+                <td>操作</td>
             </tr>
             <tr ng-repeat="item in $ctrl.items track by $index"  class="newTr newEducationTr">
                 <td ng-repeat="col in $ctrl.option.cols track by $index" >
@@ -71,8 +72,11 @@
                     <span ng-if="col.type=='muliplyselect'">
                     {{item[col.name].name}}
                     </span>
+                    <span ng-if="col.type=='html'">
+                         <div ng-html="item[col.name].name">
+                    </span>
                 </td>
-                <td ng-if="$ctrl.option.enableDefaultAction">
+                <td>
                     <a ng-if="$ctrl.option.moveUpEnable" class="moveup"  ng-click="$ctrl.moveItem(item,'up')"></a>
                     <a ng-if="$ctrl.option.moveDownEnable" class="movedown" ng-click="$ctrl.moveItem(item,'down')"></a>
                     <a ng-if="$ctrl.option.editEnable" class="update" ng-click="$ctrl.showEdit(item,'down')"></a>
@@ -83,4 +87,7 @@
     </table>
     <div  ng-if="$ctrl.option.pageEnable" qpager ng-model="$ctrl.qpageroptions">
 	</div>
+
+
+
 </div>
