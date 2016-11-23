@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>qingtian</title>
+<body>  
+<div>  
+    <img id="myimage" src="small.png" alt="my image" />  
+    <script type="text/javascript">  
+
+
+        //添加鼠标滚轮事件处理代码  
+        var myimage = document.getElementById("myimage");  
+        if (myimage.addEventListener) {
+            // IE9, Chrome, Safari, Opera  
+            myimage.addEventListener("mousewheel", MouseWheelHandler, false);  
+            // Firefox  
+            myimage.addEventListener("DOMMouseScroll", MouseWheelHandler, false);  
+        }
+        // IE 6/7/8  
+        else myimage.attachEvent("onmousewheel", MouseWheelHandler);  
+        //为了让不同浏览器都能支持的处理做法,我们将对Firefox的detail值取反然后返回1或者-1的其中一个  
+        function MouseWheelHandler(e) {  
+            // cross-browser wheel delta  
+            var e = window.event || e; // old IE support  
+            var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));  
+            //现在我们直接决定图片的大小范围。以下代码将图片的宽度范围设置在50-800个像素之间  
+            myimage.style.width = Math.max(50, Math.min(800, myimage.width + (30 * delta))) + "px";  
+            // 最后一点，我们在方法中返回false是为了终止标准的鼠标滚轮事件处理，以防它上下滑动网页  
+            return false;  
+        }
+
+
+        
+    </script>  
+</div>  
+</body>  

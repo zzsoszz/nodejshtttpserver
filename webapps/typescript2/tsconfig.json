@@ -1,0 +1,17 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "module":"amd"
+    //,
+    // "typeRoots":["../node_modules/@types/"],
+    // "types": [
+    //    "jquery",
+    //    "lodash"
+    //  ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
