@@ -1,0 +1,23 @@
+<!-- index.html -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <script  type="text/javascript" src="require.js"></script>
+  <script>
+	  require.config({
+	    baseUrl: ".",
+	    paths: {
+	        "main": "main",
+	        "jquery": "node_modules/jquery/dist/jquery",
+	    },
+	    waitSeconds: 15
+	  });
+	  require(["main"],function(){
+	  	
+	  });
+  </script>
+</head>
+<body>
+  <input type="button" id="btn" value="点击">
+</body>
+</html>
