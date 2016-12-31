@@ -1973,8 +1973,10 @@ body >  .header .fixiedarea{
   border-color:#e7313d;
   background:#e7313d;
   height:0.80rem;
+  line-height: 0.80rem;
   width:100%;
   margin-top:2px;
+  text-align: center;
 }
 .actionbtn.notimportant{
   border-radius:0.10rem;
@@ -2540,7 +2542,7 @@ hr{
 
 
 
-.login{
+.login .content{
    background-image:url("../images/global/background.png");
    background-size: cover;
 }
