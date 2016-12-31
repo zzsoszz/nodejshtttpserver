@@ -5,11 +5,11 @@
 			var clientWidth = docEl.clientWidth;
 			if (!clientWidth) return;
 			if(clientWidth>=640){
-				docEl.style.fontSize = '1px';
+				docEl.style.fontSize = '100px';
 			}else{
-				docEl.style.fontSize = 1 * (clientWidth / 640) + 'px';
+				docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
 			}
-			//alert(docEl.style.fontSize );
+			
 		};
 	if (!doc.addEventListener) return;
 	win.addEventListener(resizeEvt, recalc, false);
