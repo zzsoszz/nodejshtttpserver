@@ -962,6 +962,22 @@ label{
   content:"\e61e";
 }
 
+
+.listgroup2{
+  font-size:0.24rem;
+  position:relative;
+  background-color:#ffffff;
+  position: relative;
+}
+.listgroup2 .listrow2{
+  padding:0.3rem;
+  border-bottom:2px solid #d5d5d5;
+}
+.listgroup2 .listrow2:last-child{
+  border-bottom:none;
+}
+
+
 /*
  *
  *
@@ -1799,6 +1815,10 @@ body >  .header .fixiedarea{
 {
   justify-content:center;
 }
+.qflexbox.space-between
+{
+  justify-content: space-between;
+}
 .qflexbox > .fixiedarea{
   display:block;
   -webkit-box-flex:none;
@@ -1850,7 +1870,7 @@ body >  .header .fixiedarea{
   position:fixed;
   bottom:0rem;
   z-index:2;
-  height:0.86rem;
+  height:1rem;
   width:6.4rem;
   border-top:2px solid #d5d5d5;
   background:#fefefe;
@@ -1969,12 +1989,8 @@ body >  .header .fixiedarea{
 .actionbtn{
   color:#ffffff;
   font-size:0.24rem;
-  border-radius:0.10rem;
   border-color:#e7313d;
   background:#e7313d;
-  height:0.80rem;
-  line-height: 0.80rem;
-  width:100%;
   margin-top:2px;
   text-align: center;
 }
@@ -1984,6 +2000,38 @@ body >  .header .fixiedarea{
   background:#f1f1f1;
   color:#333;
 }
+.actionbtn.large{
+  border-radius:0.40rem;
+  height:0.80rem;
+  line-height: 0.80rem;
+}
+
+
+.actionbtn-mid{
+  font-size:0.3rem;
+  border-radius:0.05rem;
+  background:#e7313d;
+  height:0.7rem;
+  line-height:0.7rem;
+  color:#ffffff;
+  padding:0 0.2rem;
+}
+.actionbtn-2{
+  font-size:0.2rem;
+  font-weight:600;
+  border-radius:0.05rem;
+  background:white;
+  height:0.45rem;
+  line-height:0.45rem;
+  color:#e7313d;
+  border:2px solid #e7313d; 
+  padding:0 0.2rem;
+  width:1rem;
+  text-align: center;
+}
+
+
+
 .refreshing{
   animation: 3s linear 0s normal none infinite rotate;
   -webkit-animation:9.5s linear 0s normal none infinite rotate;
@@ -2545,4 +2593,23 @@ hr{
 .login .content{
    background-image:url("../images/global/background.png");
    background-size: cover;
+}
+
+.me .content .header{
+   background-image:url("../images/global/hd.png");
+   background-size: cover;
+   height:4.30rem;
+   position: relative;
+}
+.me .content .header > *{
+    margin:0 auto;
+}
+
+
+.avatar{
+  background:url("../images/global/avatar.png");
+  background-size:1.6rem 1.6rem;
+  border-radius:1.6rem;
+  height:1.6rem;
+  width:1.6rem;
 }
