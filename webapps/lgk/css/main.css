@@ -2299,6 +2299,14 @@ hr{
   bottom:0rem;
   background:transparent;
 }
+.popbox .popcontent .popinner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 5rem;
+    background: #ffffff;
+}
 
 
 
@@ -2422,9 +2430,12 @@ hr{
   -webkit-transform:translate(-50%,-50%);
            transform:translate(-50%,-50%);
 }
+
+
+
+/**/
 .multiselectbox {
-  position:absolute;
-  bottom:0;
+  position:relative;
   width:100%;
   background:#ebebeb;
 }
@@ -2454,21 +2465,16 @@ hr{
   background-clip:content-box;
   line-height:0.65rem;
   text-align:center;
-  width:1.9rem;
+  width:1rem;
 }
 .multiselectbox .conditionbox .valuebox .valueitem.active{
   background:#f97817;
   background-clip:content-box;
   color:#ffffff;
+  padding:0.05rem 0.05rem;
+  width:1rem;
 }
-.multiselectbox .conditionbox.price .valuebox .valueitem{
-  padding:0.05rem 2px;
-  width:1.4rem;
-}
-.multiselectbox .conditionbox.price .valuebox .valueitem.active{
-  padding:0.05rem 2px;
-  width:1.4rem;
-}
+
 
 
 
@@ -2586,3 +2592,28 @@ hr{
 }
 
 
+
+.listbox{
+    width: 4.6rem;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: justify;
+    display: block;
+}
+.listbox .item{
+    width: 1.2rem;
+    display: inline-block;
+    padding: 0.2rem;
+    text-align: center;
+    vertical-align: top;
+    border:2px solid #000000;
+    color:#000000;
+    border-radius:0.1rem;
+    margin-bottom:0.1rem;
+}
+.listbox .item.active{
+  background:#ffffff;
+  color:#e73e00;
+  border-radius:0.1rem;
+  border:2px solid #e73e00;
+}

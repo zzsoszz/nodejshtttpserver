@@ -1,0 +1,156 @@
+multiselectbox2
+
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-justify-content: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-align-items: center;
+       -ms-flex-align: center;
+           align-items: center;
+
+             -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+
+    
+    display:-webkit-box;
+    -webkit-box-pack:justify;
+
+
+
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    list-style: none;
+    background-color: #eee;
+
+
+
+     display:-webkit-box;
+   -webkit-box-pack:justify;
+
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+   -webkit-align-items: center;
+       -ms-flex-align: center;
+           align-items: center;
+
+   -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+
+  flex-wrap: wrap;
+  flex-direction: row;
+
+
+   -webkit-justify-content: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-align-items: center;
+       -ms-flex-align: center;
+           align-items: center;
+
+
+               display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    list-style: none;
+    background-color: #eee;
+
+
+    width: 0.8rem;
+    height:0.8rem;
+    line-height:0.8rem;
+    text-align: center;
+    background: #000; 
+    margin: 0 1% 24px; 
+
+
+
+
+<!--
+						<div class="conditionbox  price">
+							<p class="name">星级</p>
+							<div class="valuebox clearfix" >
+								<span class="valueitem active">
+									S
+								</span>
+								<span class="valueitem">
+									M
+								</span>
+								<span class="valueitem">
+									L
+								</span>
+								<span class="valueitem active">
+									XL
+								</span>
+								<span class="valueitem">
+									XXL
+								</span>
+							</div>
+						</div>
+-->
+
+
+/*
+.multiselectbox2 {
+  position:relative;
+  background:#ebebeb;
+}
+.multiselectbox2 > .title{
+  text-align:center;
+  font-size:0.32rem;
+  line-height:0.90rem;
+  word-wrap : break-word ;
+  border-bottom:2px solid #d5d5d5;
+}
+.multiselectbox2 .conditionbox{
+  padding-top:0.05rem;
+  padding-bottom:0.05em;
+  padding-right:0.20rem;
+  padding-left:0.20rem;
+
+}
+.multiselectbox2 .conditionbox .valuebox{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    background-color: #eee;
+} 
+.multiselectbox2 .conditionbox .valuebox .valueitem{
+    width: 33.3333%; 
+    height: 1rem; 
+    background: #000; 
+}
+.multiselectbox2 .conditionbox .valuebox .valueitem.active{
+  background:#f97817;
+  background-clip:content-box;
+  color:#ffffff;
+}
+*/
+
