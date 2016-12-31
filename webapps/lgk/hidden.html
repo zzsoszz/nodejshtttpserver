@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/rem.js?curversion=6" type="text/javascript"></script>
+	<style>
+		
+	</style>
+	<script>
+		$(document).ready(function()
+			{
+				var span= $(".timespan");
+				$(".timespan").click(function()
+				{
+					var dateinput=$("<input type='date'>");
+					span.append(dateinput);
+					dateinput.focus();
+				});
+			}
+		);
+	</script>
+</head>
+<body>
+	<span class="timespan">
+	11111
+	</span>
+	<input type="hidden" ></input>
+</body>
+</html>

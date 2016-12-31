@@ -1,0 +1,41 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:0774a43cf125d2ab1671313ba29170a0:0c5ef1269b71ab4b350a60bf60582aaf:6ece462e3258a4cb3b05e2d3a085cec7$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(all.png);}
+
+.denglu_01 {width:34px; height:34px; background-position: -231px -93px}
+.denglu_02 {width:34px; height:34px; background-position: -267px -93px}
+.denglu_03 {width:35px; height:35px; background-position: -157px -93px}
+.denglu_04 {width:35px; height:35px; background-position: -194px -93px}
+.personal_01 {width:112px; height:112px; background-position: -1px -135px}
+.personal_02 {width:132px; height:132px; background-position: -1px -1px}
+.personal_03 {width:20px; height:36px; background-position: -135px -93px}
+.personal_04 {width:90px; height:90px; background-position: -115px -135px}
+.personal_05 {width:90px; height:90px; background-position: -135px -1px}
+.personal_06 {width:90px; height:90px; background-position: -227px -1px}
+.personal_07 {width:90px; height:90px; background-position: -207px -130px}
+.personal_08 {width:28px; height:28px; background-position: -303px -93px}
+.personal_09 {width:28px; height:28px; background-position: -333px -93px}
+.personal_10 {width:28px; height:28px; background-position: -363px -93px}
+.personal_11 {width:28px; height:28px; background-position: -391px -185px}
+.personal_12 {width:11px; height:20px; background-position: -115px -227px}
+.personal_13 {width:90px; height:90px; background-position: -299px -129px}
+.personal_14 {width:35px; height:25px; background-position: -207px -222px}
+.personal_15 {width:90px; height:90px; background-position: -319px -1px}
+.personal_16 {width:90px; height:90px; background-position: -411px -1px}
+.personal_17 {width:90px; height:90px; background-position: -393px -93px}
+.personal_18 {width:22px; height:22px; background-position: -244px -222px}
+.personal_19 {width:22px; height:22px; background-position: -268px -222px}
+.personal_20 {width:28px; height:28px; background-position: -391px -215px}
+.personal_21 {width:28px; height:28px; background-position: -421px -185px}
+.personal_22 {width:28px; height:28px; background-position: -421px -215px}
+.personal_23 {width:28px; height:28px; background-position: -451px -185px}
