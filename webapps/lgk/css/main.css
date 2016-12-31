@@ -2537,3 +2537,10 @@ hr{
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
+
+
+
+.login{
+   background-image:url("../images/global/background.png");
+   background-size: cover;
+}
