@@ -20,13 +20,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--
 
 <link rel="shortcut icon" href="favicon.ico"/>
 
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<!--
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 -->
+
 
 
 <link href="css/main.css?v=154" rel="stylesheet" type="text/css"/>
@@ -47,38 +48,66 @@
 </head>
 
 
-<body>
+<body class="product-detail">
 
 
-<a  href="#" class="qcarrousel .clearfix">
-			<ul class="imglist .clearfix">
-				<li>
-					<img src="images/index/banner.png" style="width:100%">
-				</li>
-				<li>
-					<img src="images/index/banner2.png" style="width:100%">
-				</li>
-				<li>
-					<img src="images/index/banner3.png" style="width:100%">
-				</li>
-			</ul>
-			<div class="dotsbox">
-				<div class="dotslist">
-					<div class="dot">
-					
+	<div class="content">
+
+			<div  style="background:#ffffff;padding:0.2rem 0.2rem">
+				<div class="qcarrousel" >
+				    <div class="itembox">
+				        <a class="item" href="#">
+				          <img src="http://pic4.40017.cn/index/slide/2016/06/14/19/Ue12tW.jpg" width="100%" height="100%">
+				        </a>
+				        <a class="item" href="#">
+				          <img src="http://pic4.40017.cn/index/slide/2016/06/20/17/1VGMhy.jpg" width="100%" height="100%">
+				        </a>
+				        <a class="item" href="#">
+				          <img src="http://pic4.40017.cn/index/slide/2016/06/22/17/HHfeNz.jpg" width="100%" height="100%">
+				        </a>
+				    </div>
+				    <div class="dotsbox">
+				        <div class="dotslist">
+				            <div class="dot">
+				            </div>
+				            <div class="dot active">
+				            </div>
+				            <div class="dot">
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div>
+					<div style="font-size: 0.25rem;font-weight:600">
+						灵感库
 					</div>
-					<div class="dot active">
-						
-					</div>
-					<div class="dot">
-						
+					<div style="color:#e7313d;">
+						￥449
 					</div>
 				</div>
 			</div>
-</a>
-
-
-
+			
+			<div  style="margin-top: 0.3rem">
+				<div class="qflexbox" style="background:#ffffff;height:0.9rem;padding:0 0.3rem;">
+					<span class="dynamicarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">选择商品</span>
+					<span class="fixiedarea iconfont icon-arrow-down" style="font-size: 0.3rem;">
+					</span>
+				</div>
+				<div class="qflexbox" style="background:#ffffff;margin-top:0.05rem;height:0.9rem;padding:0 0.3rem;">
+					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">收件人&emsp;</span>
+					<input class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入收件人姓名"   />
+				</div>
+				<div class="qflexbox" style="background:#ffffff;margin-top:0.05rem;height:0.9rem;padding:0 0.3rem;">
+					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">手机号&emsp;</span>
+					<input class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入手机号"   />
+				</div>
+				<div class="qflexbox" style="background:#ffffff;margin-top:0.05rem;height:0.9rem;padding:0 0.3rem;">
+					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">收货地址</span>
+					<input class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入真实地址"   />
+				</div>
+			</div>
+			
+	</div>
 
 
 
@@ -92,22 +121,16 @@
 <script src="js/rem.js?curversion=5" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 
-
-
-
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<!-- END PAGE LEVEL PLUGINS -->
-
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<script src="js/plugin/qcarrousel/1.0.0/plugin.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGIN STYLES -->
 
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-	
+	$(".qcarrousel").qcarrousel({});
 });
-function test(){
-	alert("test");
-}
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 

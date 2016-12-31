@@ -1046,29 +1046,8 @@ label{
       -ms-flex:0 0 auto;/*相当于none*/
           flex:0 0 auto;/*相当于none*/
 }
-.input-group  .input-group-addons > * {
-  
-}
-.input-group  .input-group-addons > *:nth-child(1):nth-last-child(1){
-   line-height:0.86rem;
-}
-.input-group  .input-group-addons > *:nth-child(1):nth-last-child(2){
-   line-height:0.56rem;
-}
-.input-group  .input-group-addons > *:nth-child(2):nth-last-child(1){
-   line-height:0.30rem;
-   font-size:0.17rem;
-}
-.input-group  .textmsg{
-   line-height:0.86rem;
-   height:0.86rem;
-   vertical-align: middle;
-  display:block;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
+
+
 
 
 
@@ -1897,65 +1876,54 @@ body >  .header .fixiedarea{
 }
 
 
-.qcarrousel{
-  display:block;
-  position:relative;
-  width:100%;
-  height:2.64rem;
-  margin-bottom:0.10rem;
-  overflow: hidden;
+
+
+.qcarrousel {
+    position: relative;
+    background: green;
+    height:2.30rem;
+    position: relative;
+    margin-bottom:0.10rem;
 }
-.qcarrousel .imglist{
-  display: block;
-  width:300%;
-  height:100%;
-  list-style: none;
+.qcarrousel .itembox{
+
 }
-.qcarrousel .imglist li{
-  float:left;
-  width:6.4rem;
-  height:100%;
+.qcarrousel .itembox .item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
-.qcarrousel .imglist li{
-  float:left;
-  width:6.4rem;
-  height:100%;
+.qcarrousel .dotsbox {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
 }
-/*
-.qcarrousel .imglist{
-  margin-left:-200%;
+.qcarrousel .dotsbox .dotslist {
+    display: inline-block;
 }
-*/
-.qcarrousel .dotsbox{
-  position:absolute;
-  bottom:10%;
-  width:100%;
-  text-align:center;
+.qcarrousel .dotsbox .dotslist .dot {
+    float: left;
+    margin: 0.05rem;
+    background-size:0.14rem 0.14rem;
+    background-color: #999999;
+    border-radius: 0.07rem;
+    height: 0.14rem;
+    width: 0.14rem;
 }
-.qcarrousel .dotslist{
-  display:inline-block;
+.qcarrousel .dotsbox .dotslist .dot.active {
+    background-color: #ffffff;
 }
-.qcarrousel .dotslist .dot{
-  float:left;
-  margin:0.05rem;
-  background-size:0.13rem 0.13rem;
-  background-repeat: no-repeat;;
-  background-image:url("../images/index/circle-hiden.png");
-  height:0.13rem;
-  width:0.13rem;
+
+.qcarrousel .myactions
+{
+    position:absolute;
+    top:20%;
+    transform: translate(0,-50%);
 }
-.qcarrousel .dotslist .dot.active{
-  background-image:url("../images/index/circle-visiable.png");
-}
-.qcarrousel  .myactions{
-  position:absolute;
-  top:0rem;
-  padding:0.10rem;
-}
-.qcarrousel  .myactions .arrow-left{
-  font-size:0.46rem;
-  color:#ffffff;
-}
+
+
 
 
 .qdate{
@@ -2590,6 +2558,18 @@ hr{
 
 
 
+/*
+  page 
+*/
+.avatar{
+  background:url("../images/global/avatar.png");
+  background-size:1.6rem 1.6rem;
+  border-radius:1.6rem;
+  height:1.6rem;
+  width:1.6rem;
+}
+
+
 .login .content{
    background-image:url("../images/global/background.png");
    background-size: cover;
@@ -2606,10 +2586,3 @@ hr{
 }
 
 
-.avatar{
-  background:url("../images/global/avatar.png");
-  background-size:1.6rem 1.6rem;
-  border-radius:1.6rem;
-  height:1.6rem;
-  width:1.6rem;
-}
