@@ -2306,6 +2306,8 @@ hr{
     transform: translate(-50%,-50%);
     width: 5rem;
     background: #ffffff;
+    border-radius:0.1rem;
+    border:0.1rem solid #ffffff;
 }
 
 
@@ -2433,7 +2435,7 @@ hr{
 
 
 
-/**/
+/*
 .multiselectbox {
   position:relative;
   width:100%;
@@ -2474,9 +2476,7 @@ hr{
   padding:0.05rem 0.05rem;
   width:1rem;
 }
-
-
-
+*/
 
 
 
@@ -2616,4 +2616,37 @@ hr{
   color:#e73e00;
   border-radius:0.1rem;
   border:2px solid #e73e00;
+}
+
+
+
+
+.listcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  background-color: #ffffff;
+}
+.listcontainer:after {
+    content: "";
+    flex: auto;
+}
+.listcontainer .wrapitem{
+    text-align: center;
+    width: 33.333%;
+    padding:0.1rem 0.2rem;
+    box-sizing: border-box;
+}
+.listcontainer  .wrapitem .item{
+    color:#e73e00;
+    border:1px solid #000000;
+    border-radius:0.05rem;
+    width: 100%;
+    padding:0.05rem;
+    display: inline-block;
+}
+.listcontainer  .wrapitem .item.active{
+    color:#e73e00;
+    border:1px solid #e73e00;
+    border-radius:0.05rem;
 }
