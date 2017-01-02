@@ -1766,6 +1766,7 @@ body >  .header .fixiedarea{
  *align-items: center;交叉轴
  *
 */
+
 .qflexbox
 {
   display: -webkit-box;
@@ -1776,6 +1777,10 @@ body >  .header .fixiedarea{
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.qflexbox.verticaltop
+{
+          align-items: flex-start;
 }
 .qflexbox.stretch
 {
@@ -1797,6 +1802,10 @@ body >  .header .fixiedarea{
 .qflexbox.space-between
 {
   justify-content: space-between;
+}
+.qflexbox.space-around
+{
+  justify-content: space-around;
 }
 .qflexbox > .fixiedarea{
   display:block;
@@ -1955,6 +1964,7 @@ body >  .header .fixiedarea{
   margin-bottom:0.20rem;
 }
 .actionbtn{
+
   color:#ffffff;
   font-size:0.24rem;
   border-color:#e7313d;
@@ -1970,6 +1980,11 @@ body >  .header .fixiedarea{
 }
 .actionbtn.large{
   border-radius:0.40rem;
+  height:0.80rem;
+  line-height: 0.80rem;
+}
+.actionbtn.mid{
+  border-radius:0.10rem;
   height:0.80rem;
   line-height: 0.80rem;
 }
@@ -2307,7 +2322,9 @@ hr{
     width: 5rem;
     background: #ffffff;
     border-radius:0.1rem;
+    /*
     border:0.1rem solid #ffffff;
+    */
 }
 
 

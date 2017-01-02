@@ -1795,6 +1795,13 @@ body >  .header .fixiedarea{
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.qflexbox.top
+{
+    -webkit-box-align: top;
+  -webkit-align-items: top;
+      -ms-flex-align: top;
+          align-items: top;
+}
 .qflexbox.center
 {
   justify-content:center;
