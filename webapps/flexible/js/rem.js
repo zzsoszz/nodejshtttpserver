@@ -4,6 +4,8 @@ function getDpr()
 	console.log("dpr",dpr);
 	return dpr;
 }
+
+
 /*
   取得缩放后的rem
 */
@@ -25,19 +27,19 @@ function getHtmlFontSize()
 
 
 
-(function (doc, win) {
-	var docEl = doc.documentElement;
-	var  scale = parseFloat((1 / getDpr()).toFixed(2)); 
-	//scale = parseFloat((1 / dpr).toFixed(2));  
-	console.log("scale:",scale);
-	var metaEl;
-	if (!metaEl) {
-        metaEl = doc.createElement('meta');
-        metaEl.setAttribute('name', 'viewport');
-        metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=yes');
-        doc.getElementsByTagName("head")[0].appendChild(metaEl);
-	 }
-})(document, window);
+// (function (doc, win) {
+// 	var docEl = doc.documentElement;
+// 	var  scale = parseFloat((1 / getDpr()).toFixed(2)); 
+// 	//scale = parseFloat((1 / dpr).toFixed(2));  
+// 	console.log("scale:",scale);
+// 	var metaEl;
+// 	if (!metaEl) {
+//         metaEl = doc.createElement('meta');
+//         metaEl.setAttribute('name', 'viewport');
+//         metaEl.setAttribute('content', 'width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=yes');
+//         doc.getElementsByTagName("head")[0].appendChild(metaEl);
+// 	 }
+// })(document, window);
 
 
 
