@@ -13,8 +13,8 @@
 
 
 
-<meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, user-scalable=yes">
-
+<!-- <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, user-scalable=yes">
+ -->
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -90,8 +90,9 @@ $(document).ready(
 		attrDiv.append($("<div>").text(("deviceWidth",deviceWidth)));
 		attrDiv.append($("<div>").text(("deviceWidth2",deviceWidth2)));
 		attrDiv.append($("<div>").text(("deviceWidth3",deviceWidth3)));
-
-
+		console.log("screen.width",screen.width);
+		
+		
 		attrDiv.append($("<br>"));
 		var div = document.createElement('div')
 		for( prop in div.style )
@@ -136,45 +137,17 @@ $(document).ready(
 	      -ms-text-size-adjust: 100%;
 	  overflow:hidden;
 	}
-
+	
 	body{
-		
 		margin: 0 auto;
-		/*
-		font-size:0.16rem;
-		*/
 		padding:0px;
 		overflow:hidden;
 	}
 
-	/*
-	*/
-	
-	#div320{
+	#div640{
 		background:green;
 		border:2px solid yellow;
-		width:320px;
-		height:50px;
-		padding:5px;
-	}
-	#div360{
-		background:green;
-		border:2px solid yellow;
-		width:360px;
-		height:50px;
-		padding:5px;
-	}
-	#div414{
-		background:green;
-		border:2px solid yellow;
-		width:414px;
-		height:50px;
-		padding:5px;
-	}
-	#div1254{
-		background:green;
-		border:2px solid yellow;
-		width:1254px;
+		width:6.4rem;
 		height:50px;
 		padding:5px;
 	}
@@ -182,20 +155,11 @@ $(document).ready(
 </head>
 
 <body>
-<div id="div320">
-	320px
+<div id="div640">
+	640px
 </div>
-<div id="div360">
-	360px
-</div>
-<div id="div414">
-	414px
-</div>
-<div id="div1254">
-	div1254
-</div>
-<div id="attrDiv">
 
+<div id="attrDiv">
 </div>
 
 </body>
