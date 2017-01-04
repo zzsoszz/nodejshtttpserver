@@ -34,6 +34,7 @@ function getHtmlFontSize()
 	var docEl = doc.documentElement;
 	var  scale = parseFloat((1 / getDpr()).toFixed(2)); 
 	//scale = parseFloat((1 / dpr).toFixed(2));  
+	docEl.setAttribute('data-dpr', getDpr());
 	console.log("scale:",scale);
 	var metaEl;
 	if (!metaEl) {
