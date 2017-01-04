@@ -1,2 +1,0 @@
-# qdropdownselect
-qdropdownselect  jquery plugin
