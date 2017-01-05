@@ -1988,8 +1988,10 @@ body >  .header .fixiedarea{
   height:0.80rem;
   line-height: 0.80rem;
 }
-
-
+.actionbtn.grey{
+  background:#999999;
+  color:#ffffff;
+}
 .actionbtn-mid{
   font-size:0.3rem;
   border-radius:0.05rem;
