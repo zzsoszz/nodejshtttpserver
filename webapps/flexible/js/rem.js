@@ -5,18 +5,6 @@ function getDpr()
 	return dpr;
 }
 
-/*
-  取得缩放后的rem
-  	// var deviceWidth=document.documentElement.getBoundingClientRect().width;
-	// var deviceWidth2=document.documentElement.clientWidth;//window.innerWidth;
-	// var deviceWidth3=window.innerWidth;
-	// console.log("deviceWidth",deviceWidth);
-	// console.log("deviceWidth2",deviceWidth2);
-	// console.log("deviceWidth3",deviceWidth3);
-	// if(window.innerWidth>designWidth){
-	// 		//deviceWidth=designWidth;
-	// }
-*/
 function getHtmlFontSize()
 {
 	var designWidth=640;
@@ -27,7 +15,6 @@ function getHtmlFontSize()
 	var  htmlFontSize=100 * (deviceWidth/ designWidth) * getDpr()+ 'px';
 	return htmlFontSize;
 }
-
 
 
 (function (doc, win) {
@@ -43,7 +30,6 @@ function getHtmlFontSize()
         doc.getElementsByTagName("head")[0].appendChild(metaEl);
 	 }
 })(document, window);
-
 
 
 (function (doc, win) {
