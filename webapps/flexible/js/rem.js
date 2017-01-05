@@ -21,8 +21,8 @@ function getHtmlFontSize()
 {
 	var designWidth=640;
 	var deviceWidth=screen.width;
-	if(window.innerWidth>designWidth){
-			//deviceWidth=designWidth;
+	if(deviceWidth>designWidth){
+			deviceWidth=designWidth;
 	}
 	var  htmlFontSize=100 * (deviceWidth/ designWidth) * getDpr()+ 'px';
 	return htmlFontSize;
@@ -33,7 +33,6 @@ function getHtmlFontSize()
 (function (doc, win) {
 	var docEl = doc.documentElement;
 	var  scale = parseFloat((1 / getDpr()).toFixed(2)); 
-	//scale = parseFloat((1 / dpr).toFixed(2));  
 	docEl.setAttribute('data-dpr', getDpr());
 	console.log("scale:",scale);
 	var metaEl;
