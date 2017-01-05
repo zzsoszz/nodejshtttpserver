@@ -2587,11 +2587,15 @@ hr{
   page 
 */
 .avatar{
-  background:url("../images/global/avatar.png");
   background-size:1.6rem 1.6rem;
   border-radius:1.6rem;
   height:1.6rem;
   width:1.6rem;
+}
+.qrcode{
+  background-size:3rem 3rem;
+  height:3rem;
+  width:3rem;
 }
 
 
