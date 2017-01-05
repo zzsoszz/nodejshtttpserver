@@ -87,9 +87,9 @@ $(document).ready(
 		var deviceWidth=document.documentElement.getBoundingClientRect().width;
 		var deviceWidth2=document.documentElement.clientWidth;//window.innerWidth;
 		var deviceWidth3=window.innerWidth;
-		attrDiv.append($("<div>").text(("deviceWidth:"+deviceWidth)));
-		attrDiv.append($("<div>").text(("deviceWidth2:"+deviceWidth2)));
-		attrDiv.append($("<div>").text(("deviceWidth3:"+deviceWidth3)));
+		attrDiv.append($("<div>").text(("getBoundingClientRect().width:"+deviceWidth)));
+		attrDiv.append($("<div>").text(("docElement.clientWidth:"+deviceWidth2)));
+		attrDiv.append($("<div>").text(("window.innerWidth:"+deviceWidth3)));
 		attrDiv.append($("<div>").text(("screen.width:"+screen.width)));
 		console.log("screen.width",screen.width);
 		
@@ -137,10 +137,11 @@ $(document).ready(
 	  -webkit-text-size-adjust: 100%;
 	      -ms-text-size-adjust: 100%;
 	  overflow:hidden;
+	  	margin:0px;
+		padding:0px;
 	}
-
 	body{
-		margin: 0 auto;
+		margin:0px;
 		padding:0px;
 		overflow:hidden;
 		font-size: 16px;
