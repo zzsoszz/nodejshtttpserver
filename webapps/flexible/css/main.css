@@ -1706,7 +1706,7 @@ th {
 
 body{
   font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size:0.16rem;
+  font-size:16px;
   line-height: 1.42857143;
   background:#ebebeb;
   color:#333;
@@ -1716,6 +1716,13 @@ body{
   height:100%;
   */
 }
+[data-dpr="2"] body {
+	    font-size: 32px;
+}
+[data-dpr="3"] body {
+    font-size: 48px;
+}
+
 
 
 /*
