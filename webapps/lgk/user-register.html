@@ -20,6 +20,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <!--
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -44,24 +47,45 @@
 </head>
 
 
-<body>
+<body class="login">
 
+	<div class="popbox">
+		<div class="popmask">
+		</div>
+		<div class="popcontent">
+				<div class="popinner" style="border: 0.1rem solid #ffffff;padding:0.3rem;width:3rem;height:3rem;">
+					<center>
+						<img style="width:1.5rem;height:1.5rem;" src="images/global/ic_success.png">
+						</img>
+						<p style="color:#e7313d;margin-top:0.3rem;">
+							注册成功
+						</p>
+					</center>
+				</div>
 
-<div class="footer">
-	<div class="qflexbox" style="height:1rem;padding:0.1rem 0.25rem">
-		<span class="dynamicarea">
-			<span style="font-size:0.25rem;">金额:</span>
-			<span style="color:#e7313d;font-size:0.3rem;">￥681.0</span>
-			<span style="font-size:0.25rem;">/条</span>
-		</span>
-		<a class="fixiedarea actionbtn-mid" >
-			立即购买
-		</a>
+		</div>
 	</div>
-</div>
 
-<div class="content" style="padding:2rem 0.3rem">
-</div>
+	<div class="content" style="padding: 4rem 0.3rem 0.3rem 0.3rem;height:10rem">
+		<div style="background:#ffffff;margin-top:0.25rem;border-radius: 0.20rem;">
+			<div class="qflexbox" style="height: 0.9rem;border-bottom:1px solid #efefef;">
+				<input class="dynamicarea" placeholder="学员姓名" type="text" style="width: 100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;" />
+				<span class="fixiedarea" style="padding:0 0.2rem">
+					<i class=" iconfont font32"></i>
+				</span>
+			</div>
+			<div class="qflexbox" style="height: 0.9rem;width:100%">
+				<input class="dynamicarea" placeholder="学员电话" type="text" style=" width: 100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;" />
+				<span  class="fixiedarea" style="padding:0.05rem 0.2rem;margin: 0 0.2rem;font-size:0.28rem;color:#4FB7E2;border:1px solid #cccccc">获取验证码</span>
+			</div>
+		</div>
+		<div  style="margin-top:0.30rem;">
+			<div class="actionbtn large" >
+				注册
+			</div>
+		</div>
+	</div>
+
 
 
 <!-- BEGIN CORE PLUGINS -->
