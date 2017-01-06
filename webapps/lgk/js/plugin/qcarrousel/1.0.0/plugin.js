@@ -125,7 +125,7 @@
 		    {
 		    	clearInterval(iterval);
 		    };
-		    self.init = function() {
+		    self.init = function(options) {
 		      self.items = target.find(".item");
 		      self.dots = target.find(".dot");
 		      self.dots.on("mouseenter",function(event)
@@ -136,12 +136,16 @@
 		      	self.startAutoRun();
 		      });
 		      self.showIndex(0);
-		      self.startAutoRun();
-
+		      if(options.autoRun){
+				self.startAutoRun();
+		      }
 			  target.on('touchstart', function (ev) {
 				    startX = ev.originalEvent.touches[0].pageX;
 				    startY = ev.originalEvent.touches[0].pageY;   
-				    self.stopAutoRun();
+
+				    if(options.autoRun){
+				   	 self.stopAutoRun();
+					}
 			  });
 			  target.on('touchend', function (ev) {
 				    var endX, endY;
@@ -166,9 +170,10 @@
 				            //alert("向右");
 				            break;
 				        default:            
-				    }  
-
-				    self.startAutoRun(); 
+				    }
+				    if(options.autoRun){
+				    	self.startAutoRun(); 
+					}
 			  });
 
 		    }
