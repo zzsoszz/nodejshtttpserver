@@ -968,6 +968,8 @@ label{
   position:relative;
   background-color:#ffffff;
   position: relative;
+  max-height:5rem;
+  overflow: auto;
 }
 .listgroup2 .listrow2{
   padding:0.3rem;
@@ -975,6 +977,9 @@ label{
 }
 .listgroup2 .listrow2:last-child{
   border-bottom:none;
+}
+.listgroup2 .listrow2.active{
+ color:#e7313d;
 }
 
 
@@ -1706,12 +1711,13 @@ th {
 
 body{
   font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size:0.16rem;
+  font-size:0.26rem;
   line-height: 1.42857143;
   background:#ebebeb;
   color:#333;
   margin: 0 auto;
   width:6.4rem;
+  min-height:100vh;
   /*
   height:100%;
   */
@@ -2605,10 +2611,14 @@ hr{
 }
 
 .me .content .header{
+	background: #ffffff;
+}
+.me .content .header .banner{
    background-image:url("../images/global/hd.png");
-   background-size: cover;
-   height:4.30rem;
-   position: relative;
+   background-size:6.4rem 2.2rem;
+   background-repeat: no-repeat;
+   width:6.4rem;
+   height:2.2rem;
 }
 .me .content .header > *{
     margin:0 auto;
