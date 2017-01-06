@@ -968,7 +968,7 @@ label{
   position:relative;
   background-color:#ffffff;
   position: relative;
-  max-height:5rem;
+/*  max-height:5rem;*/
   overflow: auto;
 }
 .listgroup2 .listrow2{
