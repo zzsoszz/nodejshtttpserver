@@ -2683,3 +2683,20 @@ hr{
     border:1px solid #e73e00;
     border-radius:0.05rem;
 }
+
+
+  .justify-v2{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient:vertical;
+      -webkit-box-direction:normal;
+          -ms-flex-direction:column;
+              flex-direction:column;
+      -webkit-box-pack:justify;
+          -ms-flex-pack:justify;
+              justify-content:space-between;
+  }
+  .justify-v2 > *{
+
+  }
