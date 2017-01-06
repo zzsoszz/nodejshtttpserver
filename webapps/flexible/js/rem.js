@@ -26,7 +26,7 @@ function getHtmlFontSize()
 	if (!metaEl) {
         metaEl = doc.createElement('meta');
         metaEl.setAttribute('name', 'viewport');
-        metaEl.setAttribute('content', 'width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=yes');
+        metaEl.setAttribute('content', 'width=device-width,initial-scale=' + scale + ', maximum-scale=3, minimum-scale=' + scale + ', user-scalable=yes');
         doc.getElementsByTagName("head")[0].appendChild(metaEl);
 	 }
 })(document, window);
