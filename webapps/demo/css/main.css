@@ -1984,10 +1984,13 @@ body >  .header .fixiedarea{
   margin-top:2px;
 }
 .actionbtn.notimportant{
-  border-radius:0.10rem;
   border-color:#d5d5d5;
   background:#f1f1f1;
   color:#333;
+}
+.actionbtn.grey{
+  background:#999999;
+  color:#ffffff;
 }
 .refreshing{
   animation: 3s linear 0s normal none infinite rotate;
