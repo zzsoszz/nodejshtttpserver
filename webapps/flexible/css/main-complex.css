@@ -76,18 +76,6 @@ a:hover {
   from{-webkit-transform:rotate(0deg)}
   to{-webkit-transform:rotate(360deg)}
 }
-@-moz-keyframes rotate{
-  from{-moz-transform:rotate(0deg)}
-  to{-moz-transform:rotate(360deg)}
-}
-@-ms-keyframes rotate{
-  from{-ms-transform:rotate(0deg)}
-  to{-ms-transform:rotate(360deg)}
-}
-@-o-keyframes rotate{
-  from{-o-transform:rotate(0deg)}
-  to{-o-transform:rotate(360deg)}
-}
 
 .font17
 {
@@ -397,20 +385,19 @@ label{
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(50%, -50%);
             transform: translate(-50%,-50%);
 }
 
 
 .block-vhcenter2-container{
-   display: -webkit-flex;
    display: -ms-flexbox;
+   display: -webkit-box;
    display: flex;
-   -webkit-justify-content: center;
-       -ms-flex-pack: center;
+   -ms-flex-pack: center;
+       -webkit-box-pack: center;
            justify-content: center;
-   -webkit-align-items: center;
-       -ms-flex-align: center;
+   -ms-flex-align: center;
+       -webkit-box-align: center;
            align-items: center;
 }
 
@@ -515,9 +502,16 @@ label{
 }
 
 .inline-vhcenter4-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 4rem;
 }
 
@@ -535,14 +529,15 @@ label{
 
 
 .inline-vcenter2-container{
-  display: -webkit-flex;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
+  -ms-flex-pack: center;
+      -webkit-box-pack: center;
           justify-content: center;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
+  -ms-flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
           flex-direction: column;
 }
 .inline-vcenter2-container > .item{
@@ -587,12 +582,10 @@ label{
   两端对齐
 */
 .justify-box{
-  display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
-  -webkit-justify-content:space-between;
-      -ms-flex-pack:justify;
-          justify-content:space-between;
+  -ms-flex-pack:justify;
+      justify-content:space-between;
 
     
     display:-webkit-box;
@@ -607,21 +600,18 @@ label{
 
 
 .justify-box-v{
-  display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
-  
-  -webkit-justify-content:space-between;
-      -ms-flex-pack:justify;
-          justify-content:space-between;
+  -ms-flex-pack:justify;
+      justify-content:space-between;
    
 
     display:-webkit-box;
     -webkit-box-pack:justify;
     box-orient:vertical;
     -webkit-box-orient:vertical;
-    -moz-box-orient:vertical;
-    flex-direction:column;
+    -ms-flex-direction:column;
+        flex-direction:column;
 }
 .justify-box-v > .justify-item{
   display:block;
@@ -832,11 +822,9 @@ label{
 .fieldrow
 {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   padding:0.30rem;
@@ -846,15 +834,13 @@ label{
 .fieldrow.stretch
 {
   -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
 .fieldrow .fixedfield
 {
   display:block;
-  -webkit-box-flex:none;
-  -webkit-flex:none;/*相当于none*/
+  -webkit-box-flex:none;/*相当于none*/
       -ms-flex:none;/*相当于none*/
           flex:none;/*相当于none*/
 }
@@ -862,7 +848,6 @@ label{
 {
    display:block;
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
@@ -1018,11 +1003,9 @@ label{
   position: relative;
   font-size:0.24rem;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -1041,9 +1024,9 @@ label{
   text-align:center;
   padding:0 0.20rem;
   color:#666666;
-  display:block;
-  -webkit-flex:0 0 auto;/*相当于none*/
-      -ms-flex:0 0 auto;/*相当于none*/
+  display:block;/*相当于none*/
+  -ms-flex:0 0 auto;/*相当于none*/
+      -webkit-box-flex:0;
           flex:0 0 auto;/*相当于none*/
 }
 
@@ -1059,21 +1042,20 @@ label{
   padding:0.20rem;
   display:block;
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 .formcontrol.fixeddate{
   width:10em;
-  display:block;
-  -webkit-flex:0 0 auto;/*相当于none*/
-      -ms-flex:0 0 auto;/*相当于none*/
+  display:block;/*相当于none*/
+  -ms-flex:0 0 auto;/*相当于none*/
+      -webkit-box-flex:0;
           flex:0 0 auto;/*相当于none*/
 }
 .formcontrol.fixeddatetime{
-  display:block;
-  -webkit-flex:0 0 auto;/*相当于none*/
-      -ms-flex:0 0 auto;/*相当于none*/
+  display:block;/*相当于none*/
+  -ms-flex:0 0 auto;/*相当于none*/
+      -webkit-box-flex:0;
           flex:0 0 auto;/*相当于none*/
 }
 * + .formcontrol{
@@ -1717,7 +1699,7 @@ body{
   */
 }
 [data-dpr="2"] body {
-	    font-size: 32px;
+      font-size: 32px;
 }
 [data-dpr="3"] body {
     font-size: 48px;
@@ -1777,74 +1759,73 @@ body >  .header .fixiedarea{
 .qflexbox
 {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
 .qflexbox.verticaltop
 {
-          align-items: flex-start;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
 }
 .qflexbox.stretch
 {
   -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
 .qflexbox.vertical
 {
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
+  -ms-flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
           flex-direction: column;
 }
 .qflexbox.center
 {
-  justify-content:center;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
 }
 .qflexbox.space-between
 {
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .qflexbox.space-around
 {
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .qflexbox > .fixiedarea{
   display:block;
-  -webkit-box-flex:none;
-  -webkit-flex:none;/*相当于none*/
+  -webkit-box-flex:none;/*相当于none*/
       -ms-flex:none;/*相当于none*/
           flex:none;/*相当于none*/
 }
 .qflexbox > .fixiedarea.qflexbox{
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
 .qflexbox > .dynamicarea{
    display:block;
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 .qflexbox > .dynamicarea.qflexbox{
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -1936,7 +1917,8 @@ body >  .header .fixiedarea{
 {
     position:absolute;
     top:20%;
-    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+            transform: translate(0,-50%);
 }
 
 
@@ -2325,7 +2307,8 @@ hr{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     width: 5rem;
     background: #ffffff;
     border-radius:0.1rem;
@@ -2646,14 +2629,21 @@ hr{
 
 
 .listcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; 
   background-color: #ffffff;
 }
 .listcontainer:after {
     content: "";
-    flex: auto;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
 }
 .listcontainer .wrapitem{
     text-align: center;
