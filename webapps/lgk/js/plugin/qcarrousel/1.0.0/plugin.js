@@ -86,7 +86,6 @@
 		    var iterval;
 		    self.showIndex=function(index)
 		    {
-
 		      var oldele=$(self.items.get(self.preindex)); 
 			  var olddotele=$(self.dots.get(self.preindex));
 			  olddotele.removeClass("active");
@@ -130,12 +129,16 @@
 		      self.dots = target.find(".dot");
 		      self.dots.on("mouseenter",function(event)
 		      {
-		     	self.stopAutoRun();
-		      	self.showIndex(self.dots.get().indexOf(event.target));
+		      	 if(options.autoRun){
+		     	  self.stopAutoRun();
+		     	 }
+		      	 self.showIndex(self.dots.get().indexOf(event.target));
 		      }).on("mouseleave",function(){
-		      	self.startAutoRun();
+		      	 if(options.autoRun){
+		      		self.startAutoRun();
+		      	  }
 		      });
-		      self.showIndex(0);
+		      //self.showIndex(0);
 		      if(options.autoRun){
 				self.startAutoRun();
 		      }

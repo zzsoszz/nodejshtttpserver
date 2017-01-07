@@ -1898,13 +1898,13 @@ body >  .header .fixiedarea{
 
 .qcarrousel {
     position: relative;
-    background: green;
-    height:2.30rem;
+    background: #ffffff;
+    min-height:3.30rem;
     position: relative;
     margin-bottom:0.10rem;
 }
 .qcarrousel .itembox{
-
+   
 }
 .qcarrousel .itembox .item {
     position: absolute;
@@ -1914,7 +1914,7 @@ body >  .header .fixiedarea{
 }
 .qcarrousel .dotsbox {
     position: absolute;
-    bottom: 10%;
+    bottom: 0.1rem;
     width: 100%;
     text-align: center;
 }
@@ -1925,13 +1925,13 @@ body >  .header .fixiedarea{
     float: left;
     margin: 0.05rem;
     background-size:0.14rem 0.14rem;
-    background-color: #999999;
+    background-color:#999999;
     border-radius: 0.07rem;
     height: 0.14rem;
     width: 0.14rem;
 }
 .qcarrousel .dotsbox .dotslist .dot.active {
-    background-color: #ffffff;
+    background-color: #333333;
 }
 
 .qcarrousel .myactions
