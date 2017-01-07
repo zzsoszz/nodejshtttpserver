@@ -49,6 +49,27 @@
 
 <body class="user" style="background:#ffffff;" >
 
+   <div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;display: none">
+		<div class="qflexbox space-around" style="padding:0.3rem;">
+			<a>
+				<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
+				<p style="text-align: center;">
+				微信
+				</p>
+			</a>
+			<a>
+				<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
+				<p style="text-align: center;">
+				朋友圈
+				</p>
+			</a>
+		</div>
+		<hr />
+		<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
+			取消
+		</div>
+	</div>
+
 	<div class="content" >
 		<center>
 			<img class="avatar" style="margin-top: 0.3rem;" src="images/global/avatar.png">
@@ -66,6 +87,7 @@
 	</div>
 
 
+	
 
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
@@ -85,6 +107,13 @@
 <script>
 jQuery(document).ready(function() {
 	$(".qcarrousel").qcarrousel({});
+
+	$(".actionbtn-2").click(function(){
+		$(".sharebox").show();
+	});
+	$(".sharebox").find(".cancelbtn").click(function(){
+		$(".sharebox").hide();
+	});
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
