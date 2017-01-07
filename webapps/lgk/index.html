@@ -47,7 +47,6 @@
 <body>
 
 <div class="content">
-
 	<img src="images/global/bg_top_home.png" style="width:6.4rem;" /> 
 	<div style="background:#ffffff">
 		<img src="images/global/bg_lady_home.png" style="width:6rem;margin:0.2rem;" />
@@ -56,9 +55,30 @@
 	</div>
 </div>
 
-<div class="footer">
+<div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;display: none;z-index:3">
+	<div class="qflexbox space-around" style="padding:0.3rem;">
+		<a>
+			<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
+			<p style="text-align: center;">
+			微信
+			</p>
+		</a>
+		<a>
+			<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
+			<p style="text-align: center;">
+			朋友圈
+			</p>
+		</a>
+	</div>
+	<hr />
+	<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
+		取消
+	</div>
+</div>
+
+<div class="footer" style="z-index:1">
 	<div class="qflexbox" style="height:1rem;padding:0.1rem 0.25rem">
-		<img src="images/global/ic_share.png" style="width:0.7rem;height:0.7rem;"></img>
+		<img class="sharebtn" src="images/global/ic_share.png" style="width:0.7rem;height:0.7rem;"></img>
 		<span class="dynamicarea" style="margin-left:0.2rem;">
 			<span style="font-size:0.25rem;">金额:</span>
 			<span style="color:#e7313d;font-size:0.3rem;">￥681.0</span>
@@ -94,7 +114,12 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-	
+	$(".sharebtn").click(function(){
+		$(".sharebox").show();
+	});
+	$(".sharebox").find(".cancelbtn").click(function(){
+		$(".sharebox").hide();
+	});
 });
 function test(){
 	alert("test");
