@@ -1807,11 +1807,14 @@ body >  .header .fixiedarea{
 }
 .qflexbox.space-between
 {
-  justify-content: space-between;
+    -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .qflexbox.space-around
 {
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 .qflexbox > .fixiedarea{
   display:block;
@@ -1970,9 +1973,8 @@ body >  .header .fixiedarea{
   margin-bottom:0.20rem;
 }
 .actionbtn{
-
   color:#ffffff;
-  font-size:0.24rem;
+  font-size:0.28rem;
   border-color:#e7313d;
   background:#e7313d;
   margin-top:2px;
