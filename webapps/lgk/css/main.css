@@ -2702,3 +2702,17 @@ hr{
   .justify-v2 > *{
 
   }
+
+
+.checkradio{
+  background-image:url("../images/my/personal_18.png");
+  background-position:center;
+  background-repeat:no-repeat;
+  width: 0.6rem;
+  height: 0.6rem;
+  display: inline-block;
+}
+.checkradio.active {
+  background-image:url("../images/my/personal_19.png");
+}
+
