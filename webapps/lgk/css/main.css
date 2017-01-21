@@ -2000,6 +2000,10 @@ body >  .header .fixiedarea{
   background:#999999;
   color:#ffffff;
 }
+.actionbtn.blue{
+  background:#1b68b0;
+  color:#ffffff;
+}
 .actionbtn-mid{
   font-size:0.3rem;
   border-radius:0.05rem;
