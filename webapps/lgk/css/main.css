@@ -2716,3 +2716,16 @@ hr{
   background-image:url("../images/my/personal_19.png");
 }
 
+
+.plus{
+  background-image:url("../images/my/plus.png");
+  background-size: 0.59rem 0.42rem;
+  width: 0.59rem;
+  height: 0.42rem;
+}
+.minus{
+  background-image:url("../images/my/minus.png");
+  background-size: 0.59rem 0.42rem;
+  width: 0.59rem;
+  height: 0.42rem;
+}
