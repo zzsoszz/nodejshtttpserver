@@ -52,7 +52,7 @@
 
 
 
-<div class="popbox">
+<div class="popbox hide">
 		<div class="popmask">
 		</div>
 		<div class="popcontent">
@@ -63,6 +63,9 @@
 </div>
 
 
+<div class="content">
+	<input type="button" id="loadbtn" value="加载" />
+</div>
 
 
 
@@ -83,7 +86,9 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-	$(".qcarrousel").qcarrousel({});
+	$("#loadbtn").click(function(){
+		$(".popbox").show();
+	});
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
