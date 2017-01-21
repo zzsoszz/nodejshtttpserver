@@ -2600,6 +2600,12 @@ hr{
   height:1.6rem;
   width:1.6rem;
 }
+.avatar.small{
+  background-size:1.6rem 1.6rem;
+  border-radius:0.8rem;
+  height:0.8rem;
+  width:0.8rem;
+}
 .qrcode{
   background-size:3rem 3rem;
   height:3rem;
