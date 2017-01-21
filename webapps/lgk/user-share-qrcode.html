@@ -49,42 +49,53 @@
 
 <body class="user" style="background:#ffffff;" >
 
-   <div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;display: none">
-		<div class="qflexbox space-around" style="padding:0.3rem;">
-			<a>
-				<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
-				<p style="text-align: center;">
-				微信
-				</p>
-			</a>
-			<a>
-				<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
-				<p style="text-align: center;">
-				朋友圈
-				</p>
-			</a>
-		</div>
-		<hr />
-		<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
-			取消
-		</div>
-	</div>
 
-	<div class="content" >
-		<center>
-			<img class="avatar" style="margin-top: 0.3rem;" src="images/global/avatar.png">
-			</img>
-		</center>
-		<center>
-			<img class="qrcode" style="margin-top: 0.3rem;" src="images/global/qrcode.png">
-			</img>
-		</center>
-		<center>
-			<div class="actionbtn-2 sharebtn" style="margin-top: 0.3rem;" >
-				分享
-			</div>
-		<center>
+
+<div class="popbox hide"> <!-- 隐藏添加 hide  -->
+	<div class="popmask">
 	</div>
+	<div class="popcontent">
+
+				<div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;z-index:3">
+					<div class="qflexbox space-around" style="padding:0.3rem;">
+						<a>
+							<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
+							<p style="text-align: center;">
+							微信
+							</p>
+						</a>
+						<a>
+							<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
+							<p style="text-align: center;">
+							朋友圈
+							</p>
+						</a>
+					</div>
+					<hr />
+					<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
+						取消
+					</div>
+				</div>
+
+	</div>
+</div>
+
+
+<div class="content" >
+	<center>
+		<img class="avatar" style="margin-top: 0.3rem;" src="images/global/avatar.png">
+		</img>
+	</center>
+	<center>
+		<img class="qrcode" style="margin-top: 0.3rem;" src="images/global/qrcode.png">
+		</img>
+	</center>
+	<center>
+		<div class="actionbtn-2 sharebtn" style="margin-top: 0.3rem;" >
+			分享
+		</div>
+	<center>
+</div>
 
 
 	
@@ -109,10 +120,10 @@ jQuery(document).ready(function() {
 	$(".qcarrousel").qcarrousel({});
 
 	$(".sharebtn").click(function(){
-		$(".sharebox").show();
+		$(".popbox").show();
 	});
 	$(".sharebox").find(".cancelbtn").click(function(){
-		$(".sharebox").hide();
+		$(".popbox").hide();
 	});
 });
 </script>
