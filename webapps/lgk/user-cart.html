@@ -54,8 +54,10 @@
 
 	<div  style="margin-top:0.3rem;">
 
+
 		<div class="item qflexbox" style="background:#ffffff;padding:0.2rem 0.3rem;margin-top:1px;">
 			<div class="checkradio active small fixiedarea" src="images/global/avatar.png">
+				<input type="hidden" value="1">
 			</div>
 			<div class="dynamicarea" style="margin-left:0.2rem;text-overflow:ellipsis;">
 				<div>
@@ -74,8 +76,10 @@
 			</div>
 		</div>
 
+
 		<div class="item qflexbox" style="background:#ffffff;padding:0.2rem 0.3rem;margin-top:1px;">
-			<div class="checkradio  small fixiedarea" src="images/global/avatar.png">
+			<div class="checkradio active  small fixiedarea" src="images/global/avatar.png">
+				<input type="hidden" value="2">
 			</div>
 			<div class="dynamicarea" style="margin-left:0.2rem;text-overflow:ellipsis;">
 				<div>
@@ -93,6 +97,8 @@
 				<span>1</span>
 			</div>
 		</div>
+
+
 		<div style="margin-top:0.2rem;padding:0 0.2rem;">
 			<div style="text-align: right;line-height:1.5em;">
 				优惠金额：<span style="color:#e7313d">￥100.00</span>
@@ -137,6 +143,13 @@
 <script>
 jQuery(document).ready(function() {
 	$(".qcarrousel").qcarrousel({});
+	$(".item").on("click",function(e){
+		$(e.currentTarget).find(".checkradio").toggleClass("active");
+	});
+	var values=$(".item > .active > input").get().map(function(obj){
+		return $(obj).val();
+	});
+	alert(values);
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
