@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+
+
+<head>
+<meta charset="utf-8"/>
+<title>Metronic | Dashboard</title>
+
+
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+-->
+
+
+<link href="css/main.css?v=154" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<!-- END PAGE LEVEL PLUGIN STYLES -->
+
+
+
+<!-- BEGIN THEME STYLES -->
+<!-- END THEME STYLES -->
+
+
+
+</head>
+
+
+<body>
+
+<div class="content">
+	<img src="images/global/bg_top_home.png" style="width:6.4rem;" /> 
+	<div style="background:#ffffff">
+		<a href="#">
+			<img src="images/global/bg_lady_home.png" style="width:6rem;margin:0.2rem;" />
+		</a>
+		<a href="#">
+		<img src="images/global/bg_lady_home.png" style="width:6rem;margin:0.2rem;" />
+		</a>
+		<a href="#">
+		<img src="images/global/bg_lady_home.png" style="width:6rem;margin:0.2rem;" />
+		</a>
+	</div>
+</div>
+
+<div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;display: none;z-index:3">
+	<div class="qflexbox space-around" style="padding:0.3rem;">
+		<a>
+			<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
+			<p style="text-align: center;">
+			微信
+			</p>
+		</a>
+		<a>
+			<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
+			<p style="text-align: center;">
+			朋友圈
+			</p>
+		</a>
+	</div>
+	<hr />
+	<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
+		取消
+	</div>
+</div>
+
+<div class="footer" style="z-index:1">
+	<div class="qflexbox" style="height:1rem;padding:0.1rem 0.25rem">
+		<img class="sharebtn" src="images/global/ic_share.png" style="width:0.7rem;height:0.7rem;"></img>
+		<span class="dynamicarea" style="margin-left:0.2rem;">
+			<span style="font-size:0.25rem;">金额:</span>
+			<span style="color:#e7313d;font-size:0.3rem;">￥681.0</span>
+			<span style="font-size:0.25rem;">/条</span>
+		</span>
+		<a class="fixiedarea actionbtn-mid" >
+			立即购买
+		</a>
+	</div>
+</div>
+
+<div class="content" style="padding:2rem 0.3rem">
+</div>
+
+
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/excanvas.min.js"></script> 
+<![endif]-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/rem.js?curversion=5" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+
+
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+	$(".sharebtn").click(function(){
+		$(".sharebox").show();
+	});
+	$(".sharebox").find(".cancelbtn").click(function(){
+		$(".sharebox").hide();
+	});
+});
+function test(){
+	alert("test");
+}
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+</body>
+</html>
