@@ -1716,7 +1716,7 @@ body{
   background:#ebebeb;
   color:#333;
   margin: 0 auto;
-  width:6.4rem;
+  width:7.5rem;
   min-height:100vh;
   /*
   height:100%;
@@ -1742,7 +1742,7 @@ body >  .header{
   top:0rem;
   z-index:2;
   background:#ffffff;
-  width:6.4rem;
+  width:7.5rem;
   height:0.96rem;
   border-bottom:2px solid #ebebeb;
 }
@@ -1868,7 +1868,7 @@ body >  .header .fixiedarea{
   bottom:0rem;
   z-index:2;
   height:1rem;
-  width:6.4rem;
+  width:7.5rem;
   border-top:2px solid #d5d5d5;
   background:#fefefe;
 }
@@ -2254,7 +2254,7 @@ body >  .header .fixiedarea{
 
 .filterbox{
   position:fixed;
-  width:6.4rem;
+  width:7.5rem;
 }
 .filterbox.show{
   height:100%;
@@ -2298,7 +2298,7 @@ hr{
   bottom:0rem;
   z-index:3;
   height:auto;
-  width:6.4rem;
+  width:7.5rem;
 }
 .popbox.show{
   display:block;
@@ -2310,7 +2310,7 @@ hr{
   position:absolute;
   bottom:0rem;
   top:0rem;
-  width:6.4rem;
+  width:7.5rem;
   background:#000000;
   opacity:0.4;
 }
@@ -2617,9 +2617,9 @@ hr{
 }
 .me .content .header .banner{
    background-image:url("../images/global/hd.png");
-   background-size:6.4rem 2.2rem;
+   background-size:7.5rem 2.2rem;
    background-repeat: no-repeat;
-   width:6.4rem;
+   width:7.5rem;
    height:2.2rem;
 }
 .me .content .header > *{
