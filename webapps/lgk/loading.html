@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+
+
+<head>
+<meta charset="utf-8"/>
+<title>加载页面</title>
+
+
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+-->
+
+
+
+<link href="css/main.css?v=154" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+
+
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<!-- END PAGE LEVEL PLUGIN STYLES -->
+
+
+
+<!-- BEGIN THEME STYLES -->
+<!-- END THEME STYLES -->
+
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="popbox hide">
+		<div class="popmask">
+		</div>
+		<div class="popcontent">
+				<div class="popinner" style="width:5.9rem">
+					<div class="loading"></div>
+				</div>
+		</div>
+</div>
+
+
+<div class="content">
+	<input type="button" id="loadbtn" value="加载" />
+</div>
+
+
+
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/excanvas.min.js"></script> 
+<![endif]-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/rem.js?curversion=5" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<script src="js/plugin/qcarrousel/1.0.0/plugin.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGIN STYLES -->
+
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+	$("#loadbtn").click(function(){
+		$(".popbox").show();
+	});
+});
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+</body>
+</html>

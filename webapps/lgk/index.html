@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Dashboard</title>
+<title>首页</title>
 
 
 <!--
@@ -46,6 +46,51 @@
 
 <body>
 
+
+<div class="popbox hide"> <!-- 隐藏添加 hide  -->
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+
+				<div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;z-index:3">
+					<div class="qflexbox space-around" style="padding:0.3rem;">
+						<a>
+							<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
+							<p style="text-align: center;">
+							微信
+							</p>
+						</a>
+						<a>
+							<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
+							<p style="text-align: center;">
+							朋友圈
+							</p>
+						</a>
+					</div>
+					<hr />
+					<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
+						取消
+					</div>
+				</div>
+
+	</div>
+</div>
+
+
+
+<footer class="footer" style="z-index:1">
+	<div class="qflexbox" style="height:1rem;padding:0.1rem 0.25rem">
+		<img class="sharebtn" src="images/global/ic_share.png" style="width:0.7rem;height:0.7rem;"></img>
+		<span class="dynamicarea" style="margin-left:0.2rem;">
+			<span style="font-size:0.25rem;">金额:</span>
+			<span style="color:#e7313d;font-size:0.3rem;">￥681.0</span>
+			<span style="font-size:0.25rem;">/条</span>
+		</span>
+		<a class="fixiedarea actionbtn-mid" >
+			立即购买
+		</a>
+	</div>
+</footer>
 <div class="content">
 	<img src="images/global/bg_top_home.png" style="width:6.4rem;" /> 
 	<div style="background:#ffffff">
@@ -59,45 +104,49 @@
 		<img src="images/global/bg_lady_home.png" style="width:6rem;margin:0.2rem;" />
 		</a>
 	</div>
+
+	<h6 style="padding:0.1rem 0.4rem;font-size: 0.26rem;color:#939393">
+	购买评论
+	</h6>
+	
+	<div>
+		<div class="item qflexbox" style="background:#ffffff;padding:0.3rem;margin-top:1px;">
+			<img class="avatar small fixiedarea" src="images/global/avatar.png">
+			<div class="dynamicarea" style="margin-left:0.2rem;text-overflow:ellipsis;">
+				<div class="qflexbox space-between">
+					<div class="fixiedarea">
+						137306666347
+					</div>
+					<div class="fixiedarea" style="margin-left:0.2rem;max-width:4rem;color:#939393">
+						12:00
+					</div>
+				</div>
+				<div style="font-size:0.24rem;color:#939393;margin-top:0.05rem;">
+						大小合适，很输入，很好的小裤子，很好的小裤子，很好的小裤子，很好的小裤子
+				</div>
+			</div>
+		</div>
+
+		<div class="item qflexbox" style="background:#ffffff;padding:0.3rem;margin-top:1px;">
+			<img class="avatar small fixiedarea" src="images/global/avatar.png">
+			<div class="dynamicarea" style="margin-left:0.2rem;text-overflow:ellipsis;">
+				<div class="qflexbox space-between">
+					<div class="fixiedarea">
+						137306666347
+					</div>
+					<div class="fixiedarea" style="margin-left:0.2rem;max-width:4rem;color:#939393">
+						12:00
+					</div>
+				</div>
+				<div style="font-size:0.24rem;color:#939393;margin-top:0.05rem;">
+						大小合适，很输入，很好的小裤子，很好的小裤子，很好的小裤子，很好的小裤子
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="sharebox" style="position:fixed;bottom:0;width:6.4rem;background-color: #ffffff;display: none;z-index:3">
-	<div class="qflexbox space-around" style="padding:0.3rem;">
-		<a>
-			<img src="images/global/ic_weixin.png" style="width:1rem;height:1rem;"></img>
-			<p style="text-align: center;">
-			微信
-			</p>
-		</a>
-		<a>
-			<img src="images/global/ic_pyquan.png" style="width:1rem;height:1rem;"></img>
-			<p style="text-align: center;">
-			朋友圈
-			</p>
-		</a>
-	</div>
-	<hr />
-	<div class="cancelbtn"  style="line-height:0.9rem;height:0.9rem;;text-align:center;color:#e7313d;">
-		取消
-	</div>
-</div>
 
-<div class="footer" style="z-index:1">
-	<div class="qflexbox" style="height:1rem;padding:0.1rem 0.25rem">
-		<img class="sharebtn" src="images/global/ic_share.png" style="width:0.7rem;height:0.7rem;"></img>
-		<span class="dynamicarea" style="margin-left:0.2rem;">
-			<span style="font-size:0.25rem;">金额:</span>
-			<span style="color:#e7313d;font-size:0.3rem;">￥681.0</span>
-			<span style="font-size:0.25rem;">/条</span>
-		</span>
-		<a class="fixiedarea actionbtn-mid" >
-			立即购买
-		</a>
-	</div>
-</div>
-
-<div class="content" style="padding:2rem 0.3rem">
-</div>
 
 
 <!-- BEGIN CORE PLUGINS -->
@@ -121,15 +170,12 @@
 <script>
 jQuery(document).ready(function() {
 	$(".sharebtn").click(function(){
-		$(".sharebox").show();
+		$(".popbox").show();
 	});
 	$(".sharebox").find(".cancelbtn").click(function(){
-		$(".sharebox").hide();
+		$(".popbox").hide();
 	});
 });
-function test(){
-	alert("test");
-}
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 

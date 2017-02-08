@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Dashboard</title>
+<title>用户注册</title>
 
 
 <!--
@@ -49,13 +49,17 @@
 
 <body class="login">
 
+
+<!--
+
 	<div class="popbox">
 		<div class="popmask">
 		</div>
 		<div class="popcontent">
 
 				<div class="popinner" style="border: 0.1rem solid #ffffff;padding:0.3rem;width:3rem;height:3rem;">
-				<!--注册失败
+					
+
 					<center class="ic_success">
 						<img style="width:1.5rem;height:1.5rem;" src="images/global/ic_success.png">
 						</img>
@@ -63,7 +67,7 @@
 							注册成功
 						</p>
 					</center>
--->
+
 					<center>
 						<img style="width:1.5rem;height:1.5rem;" src="images/global/ic_error.png">
 						</img>
@@ -80,7 +84,7 @@
 		</div>
 	</div>
 
-
+-->
 
 
 	<div class="content" style="padding: 4rem 0.3rem 0.3rem 0.3rem;height:10rem">
@@ -93,7 +97,8 @@
 			</div>
 			<div class="qflexbox" style="height: 0.9rem;width:100%">
 				<input class="dynamicarea" placeholder="学员电话" type="text" style=" width: 100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;" />
-				<span  class="fixiedarea" style="padding:0.05rem 0.2rem;margin: 0 0.2rem;font-size:0.28rem;color:#4FB7E2;border:1px solid #cccccc">获取验证码</span>
+				<span  id="sendyzm" class="fixiedarea" style="padding:0.05rem 0.2rem;margin: 0 0.2rem;font-size:0.28rem;color:#4FB7E2;border:1px solid #cccccc">获取验证码</span>
+				<span  id="countdown" style="padding:0.05rem 0.2rem;margin: 0 0.2rem;font-size:0.28rem;color:#4FB7E2;border:1px solid #cccccc"></span>
 			</div>
 		</div>
 		<div  style="margin-top:0.30rem;">
@@ -112,6 +117,7 @@
 <![endif]-->
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/rem.js?curversion=5" type="text/javascript"></script>
+<script src="js/jquery.countdown3.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 
 
@@ -124,12 +130,19 @@
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {
-	
-});
-function test(){
-	alert("test");
+
+function timeend(){
+	$("#sendyzm").show();
+	$("#countdown").hide();
 }
+jQuery(document).ready(function() {
+	$("#countdown").hide();
+	$("#sendyzm").click(function(){
+		$("#sendyzm").hide();
+		$("#countdown").show();
+		$("#countdown").countdown(timeend, 5, "秒后重新发送");
+	});
+});
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 

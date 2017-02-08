@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Dashboard</title>
+<title>订单确认</title>
 
 
 <!--
@@ -52,34 +52,54 @@
 
 	<div class="content">
 
+
 			<div  style="margin-top: 0.3rem">
-				<div class="qflexbox" style="background:#ffffff;">
-					<img class="fixiedarea" style="margin:0.2rem;border: 1px solid #cccccc;border-radius: 0.1rem;font-size:0.28rem;font-weight:600;color:#333333;"  src="images/global/choth.png" />
-					<div class="fixiedarea" style="font-size: 0.3rem;padding: 0.2rem;">
-						<span>女士L</span>
-						<p style="font-size:0.24rem;color:#999999;margin-top:0.1rem;">白色</p>
-						<div style="color:#e7313d;margin-top:0.1rem;">￥449.00</div>
-					</div>
+				<div class="qflexbox" style="background:#ffffff;margin-top:0.2rem;">
+						<div class="dynamicarea" style="padding: 0.2rem;">
+							<span style="font-size:0.28rem;font-weight:600;color:#333333;">女士L</span>
+							<p style="font-size:0.24rem;font-weight:600;color:#999999;margin-top:0.05rem;margin-left:0.05rem;">白色</p>
+							<div style="margin-top:0.05rem;">
+								<span style="color:#e7313d;font-weight:600;">￥449.00</span>
+							</div>
+						</div>
+						<div class="fixiedarea" style="font-weight:600;color:#999999;font-size: 0.3rem;padding: 0.2rem;">
+							<span style="font-size:0.22rem;">X</span> 
+							<span>1</span>
+						</div>
 				</div>
-				<div class="qflexbox" style="background:#ffffff;margin-top:0.05rem;height:0.9rem;padding:0 0.3rem;">
+				<div  style="padding:0.2rem;background:#ffffff;margin-top:0.2rem;">
+						<div style="margin-top:0.05rem;">
+							优惠金额 ：<span style="color:#e7313d;font-weight:600;">￥449.00</span>
+						</div>
+						<div style="margin-top:0.05rem;">
+							订单金额 ：<span style="color:#e7313d;font-weight:600;">￥449.00</span>
+						</div>
+				</div>
+				
+
+
+				<div class="qflexbox" style="background:#ffffff;margin-top:0.2rem;height:0.9rem;padding:0 0.3rem;">
 					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">收件人&emsp;</span>
-					<span class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"   >
-					 王麻子
-					</span>
+					<input class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入收件人姓名"   />
 				</div>
 				<div class="qflexbox" style="background:#ffffff;margin-top:0.05rem;height:0.9rem;padding:0 0.3rem;">
 					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">手机号&emsp;</span>
-					<span class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"     >
-					13730666345
-					</span>
+					<input class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入手机号"   />
 				</div>
-				<div class="qflexbox" style="background:#ffffff;margin-top:0.05rem;padding:0.1rem 0.3rem;">
-					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding:0 0.1rem;">	收货地址
+				<div class="qflexbox verticaltop" style="background:#ffffff;margin-top:0.05rem;padding:0.1rem 0.3rem;">
+					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding: 0.10rem 0.1rem;">	收货地址
 					</span>
-					<span class="dynamicarea" style="font-size:0.28rem;padding:0 0.1rem;" >
-					成都市青羊区双轻重了成都市青羊区双轻重了成都市青羊区双轻重了成都市青羊区双轻重了
-					</span>
+					<textarea class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入收货地址"   /></textarea>
 				</div>
+				<div class="qflexbox verticaltop" style="background:#ffffff;margin-top:0.05rem;padding:0.1rem 0.3rem;">
+					<span class="fixiedarea" style="font-size:0.28rem;font-weight:600;color:#333333;padding: 0.10rem 0.1rem;">	备注&emsp;&emsp;
+					</span>
+					<textarea class="dynamicarea" style="width:100%;font-size:0.28rem;padding: 0.10rem 0.2rem;border:none;"  placeholder="请输入备注"   /></textarea>
+				</div>
+
+
+
+				
 				<div class="actionbox" style="margin-top:0.30rem;">
 					<div class="actionbtn large" >
 						确认并微信支付
@@ -87,6 +107,7 @@
 				</div>
 			</div>
 			
+
 
 	</div>
 
