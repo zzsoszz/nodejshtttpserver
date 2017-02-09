@@ -1,0 +1,85 @@
+* {
+  margin:0rem;
+  padding:0rem;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:0.26rem;
+  line-height: 1.42857143;
+  background:#ebebeb;
+  color:#333;
+  margin: 0 auto;
+  width:7.5rem;
+  min-height:100vh;
+}
+body >  .header{
+  position:fixed;
+  top:0rem;
+  z-index:2;
+  background:#ffffff;
+  width:7.5rem;
+  height:0.96rem;
+  border-bottom:2px solid #ebebeb;
+}
+body >  .header .input-group{
+  padding:0.15rem;
+  background-color:#cac9cf;
+  margin:0;
+}
+body >  .header .formcontrol{
+  background-color:#ffffff;
+}
+body >  .header .input-group{
+  height:0.96rem;
+}
+body >  .header .input-group-addons{
+  background-color:#ffffff;
+}
+body >  .header .fixiedarea{
+  padding:0 0.15rem;
+  font-size:0.46rem;
+}
+.content{
+  padding-bottom:0.3rem;
+}
+.header ~ .content {
+  margin-top:0.96rem;
+}
+.footer ~ .content {
+  margin-bottom:0.96rem;
+}
+.footer{
+  position:fixed;
+  bottom:0rem;
+  z-index:2;
+  height:1rem;
+  width:7.5rem;
+  border-top:2px solid #d5d5d5;
+  background:#fefefe;
+}
+.footer .global-toolbar{
+  margin-top:auto;
+  margin-bottom:auto;
+  width:100%;
+  margin:0rem;
+  padding:0rem;
+  list-style:none;
+}
+.footer .global-toolbar li{
+  display:block;
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.footer .global-toolbar .iconfont{
+  font-size:0.46rem;
+}
+.footer ~ .popbox{
+  bottom:0.86rem;
+}
