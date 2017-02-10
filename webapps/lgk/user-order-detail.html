@@ -51,29 +51,29 @@
 <body class="order">
 
 
-<div class="popbox hide">
+<div class="popbox ">
 		<div class="popmask">
 		</div>
 		<div class="popcontent">
 			
 					<div class="bottombox" style="position: fixed; bottom: 0px; width:6.4rem; background-color: rgb(255, 255, 255); z-index: 3;">
-						<div class="qflexbox space-around" style="padding:0.1rem;">
-							<div >
-								<div class="checkradio active" style="display: inline-block;vertical-align: middle;">
+						<div class="qcheckbox qflexbox space-around" style="padding:0.1rem;">
+							<div class="qcheckradio">
+								<div class="checkradio active" data-qvalue="1" style="display: inline-block;vertical-align: middle;">
 								</div>
 								<div style="display: inline-block;vertical-align: middle;" >
 								好评
 								</div>
 							</div>
-							<div>
-								<div class="checkradio" style="display: inline-block;vertical-align: middle;">
+							<div class="qcheckradio">
+								<div class="checkradio"  data-qvalue="2" style="display: inline-block;vertical-align: middle;">
 								</div>
 								<div style="display: inline-block;vertical-align: middle;" >
 								中评
 								</div>
 							</div>
-							<div>
-								<div class="checkradio" style="display: inline-block;vertical-align: middle;">
+							<div class="qcheckradio">
+								<div class="checkradio" data-qvalue="3" style="display: inline-block;vertical-align: middle;">
 								</div>
 								<div style="display: inline-block;vertical-align: middle;" >
 								差评
@@ -81,7 +81,7 @@
 							</div>
 						</div>
 						<div contenteditable="true" style="padding:0.1rem;width:100%;height:2rem;background:#ededed;text-align:center;overflow-y:scroll;"></div>
-						<div class="cancelbtn" style="line-height:0.9rem;height:0.9rem;text-align:center;color:#e7313d;">
+						<div class="confirmbtn" style="line-height:0.9rem;height:0.9rem;text-align:center;color:#e7313d;">
 							提交
 						</div>
 					</div>
@@ -256,11 +256,17 @@
 <script>
 jQuery(document).ready(function() {
 	$(".qcarrousel").qcarrousel({});
- 	$(".checkradio").click(function(e){
- 		var checkradio=$(e.target).closest(".checkradio");
- 		$(e.target).toggleClass("active");
+ 	
+ 	$(".qcheckradio").click(function(e){
+ 		$(e.currentTarget).closest(".qcheckbox").find(".checkradio").removeClass("active");
+ 		$(e.currentTarget).find(".checkradio").addClass("active");
  	});
-});
+ 	$(".confirmbtn").click(function(){
+ 		var val=$(".qcheckradio .active").data("qvalue");
+ 		alert(val);
+ 	});
+ 	
+ });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
