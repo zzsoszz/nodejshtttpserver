@@ -2,7 +2,7 @@
   font-weight:500;
 }
 .round {
-  border-radius:100%/150%;
+  border-radius:100%/200%;
 }
 .round.small {
   border-radius:10%;
@@ -10,6 +10,11 @@
 .round.mid {
   border-radius:30%;
 }
+.circle {
+  border-radius:50%;
+}
+
+
 .qflexbox
 {
   display: -webkit-box;

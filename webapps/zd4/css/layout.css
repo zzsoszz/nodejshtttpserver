@@ -45,9 +45,22 @@ body >  .header .fixiedarea{
   padding:0 0.15rem;
   font-size:0.46rem;
 }
+
+
+
+
 .content{
   padding-bottom:0.3rem;
 }
+.content > .head{
+  background:#ffffff;
+}
+.content > .head .headbg{
+  background-image:url("../images/global/bg.png");
+  background-repeat:repeat-y;
+  height:2.60rem;
+}
+
 .header ~ .content {
   margin-top:0.96rem;
 }
