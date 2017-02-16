@@ -117,3 +117,19 @@
 .color4{
   color:#d5d5d5;
 }
+.qrcode{
+  background-image:url("../images/global/qrcode@3x.png");
+  background-position:center;
+  background-size:0.36rem 0.36rem;
+  background-repeat:no-repeat;
+  width:0.36rem;
+  height:0.36rem;
+}
+.qrcode.small{
+  background-image:url("../images/global/qrcode@2x.png");
+  background-position:center;
+  background-size:0.24rem 0.24rem;
+  background-repeat:no-repeat;
+  width:0.24rem;
+  height:0.24rem;
+}

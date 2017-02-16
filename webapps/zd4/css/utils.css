@@ -1,11 +1,17 @@
 .bold{
   font-weight:500;
 }
+/*
+http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
+*/
 .round {
-  border-radius:100%/200%;
+  border-radius:0.1rem;
+}
+.round.verysmall {
+  border-radius:5%;
 }
 .round.small {
-  border-radius:10%;
+  border-radius:10%/10%;
 }
 .round.mid {
   border-radius:30%;
