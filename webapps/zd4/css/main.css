@@ -133,3 +133,83 @@
   width:0.24rem;
   height:0.24rem;
 }
+
+.time{
+  background-image:url("../images/global/time@3x.png");
+  background-position:center;
+  background-size:0.36rem 0.36rem;
+  background-repeat:no-repeat;
+  width:0.36rem;
+  height:0.36rem;
+}
+.time.small{
+  background-image:url("../images/global/time@2x.png");
+  background-position:center;
+  background-size:0.24rem 0.24rem;
+  background-repeat:no-repeat;
+  width:0.24rem;
+  height:0.24rem;
+}
+
+
+.heart{
+  background-image:url("../images/global/heart@3x.png");
+  background-position:center;
+  background-size:0.48rem 0.46rem;
+  background-repeat:no-repeat;
+  width:0.48rem;
+  height:0.46rem;
+}
+.heart.small{
+  background-image:url("../images/global/heart@2x.png");
+  background-position:center;
+  background-size:0.32rem 0.31rem;
+  background-repeat:no-repeat;
+  width:0.32rem;
+  height:0.31rem;
+}
+
+.message{
+  background-image:url("../images/global/message@3x.png");
+  background-position:center;
+  background-size:0.48rem 0.46rem;
+  background-repeat:no-repeat;
+  width:0.48rem;
+  height:0.46rem;
+}
+.message.small{
+  background-image:url("../images/global/message@2x.png");
+  background-position:center;
+  background-size:0.32rem 0.31rem;
+  background-repeat:no-repeat;
+  width:0.32rem;
+  height:0.31rem;
+}
+
+
+.share{
+  background-image:url("../images/global/share@3x.png");
+  background-position:center;
+  background-size:0.48rem 0.46rem;
+  background-repeat:no-repeat;
+  width:0.48rem;
+  height:0.46rem;
+}
+.share.small{
+  background-image:url("../images/global/share@2x.png");
+  background-position:center;
+  background-size:0.32rem 0.31rem;
+  background-repeat:no-repeat;
+  width:0.32rem;
+  height:0.31rem;
+}
+
+.link{
+  color:#4FB7E2;
+  font-size: 0.28rem;
+}
+.link.more{
+  color:#4FB7E2;
+  font-size: 0.28rem;
+}
+

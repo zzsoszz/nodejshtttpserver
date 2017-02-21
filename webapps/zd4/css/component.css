@@ -151,6 +151,31 @@
 }
 
 
+/*
+ * 多行纯图片盒子
+*/
+.pureimagecontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  background-color: #ffffff;
+}
+.pureimagecontainer:after {
+    content: "";
+    flex: auto;
+}
+.pureimagecontainer .wrapitem{
+    text-align: center;
+    width: 33%;
+    padding:0.1rem 0.1rem;
+    box-sizing: border-box;
+}
+.pureimagecontainer  .wrapitem .item{
+    width: 100%;
+    display: inline-block;
+}
+
+
 
 .qdate{
   text-align: center;
@@ -687,11 +712,15 @@
   background-repeat:no-repeat;
 }
 
-
-.listbox.withindent{
-  padding-left:0.2rem;
+.listbox{
   border-top:1px solid #efefef;
   border-bottom:1px solid #efefef;
+}
+.listbox.withindent{
+  padding-left:0.2rem;
+}
+.listbox.withbothsideindent{
+  padding:0 0.2rem;
 }
 .listbox .item:not(:last-child){
   border-bottom:1px solid #efefef;

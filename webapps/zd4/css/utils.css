@@ -49,6 +49,10 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.qflexbox.right
+{
+  justify-content:flex-end;
+}
 .qflexbox.center
 {
   justify-content:center;
