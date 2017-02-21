@@ -204,6 +204,25 @@
   height:0.31rem;
 }
 
+
+.radio{
+  background-image:url("../images/global/radio@3x.png");
+  background-position:center;
+  background-size:0.27rem 0.27rem;
+  background-repeat:no-repeat;
+  width:0.27rem;
+  height:0.27rem;
+}
+.radio.small{
+  background-image:url("../images/global/radio@2x.png");
+  background-position:center;
+  background-size:0.18rem 0.18rem;
+  background-repeat:no-repeat;
+  width:0.18rem;
+  height:0.18rem;
+}
+
+
 .link{
   color:#4FB7E2;
   font-size: 0.28rem;
