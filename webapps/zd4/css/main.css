@@ -222,6 +222,23 @@
   height:0.18rem;
 }
 
+.today{
+  background-image:url("../images/global/today@3x.png");
+  background-position:center;
+  background-size:1.20rem 1.16rem;
+  background-repeat:no-repeat;
+  width:1.20rem;
+  height:1.16rem;
+}
+.today.small{
+  background-image:url("../images/global/today@2x.png");
+  background-position:center;
+  background-size:0.18rem 0.18rem;
+  background-repeat:no-repeat;
+  width:0.18rem;
+  height:0.18rem;
+}
+
 
 .link{
   color:#4FB7E2;
