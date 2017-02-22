@@ -87,6 +87,10 @@
   border:2px solid #c9c9c9; 
   cursor: pointer;
 }
+.btn.verylarge{
+  line-height:3em;
+  height:3em;
+}
 .btn.large{
   line-height:2.5em;
   height:2.5em;
@@ -175,6 +179,13 @@
     display: inline-block;
 }
 
+.scrollimagecontainer{
+  white-space:nowrap;
+  overflow-x:scroll;
+}
+.scrollimagecontainer .item{
+  display:inline-block;
+}
 
 
 .qdate{
