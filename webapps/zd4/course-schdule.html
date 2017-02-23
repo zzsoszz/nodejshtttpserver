@@ -116,24 +116,23 @@
 					<img src="images/course/middle-banner.png" width="100%">
 					
 					<div class="schdule" style="width:100%;top:1rem;color:#dedde2;background:#ffffff;border-radius:0.2rem;">
-						<div class="qflexbox qsigleselect sigleselect" style="line-height:3em;">
-							<div class="dynamicarea  qitem item active"   data-qvalue="1"  style="border-top-left-radius:0.2rem">
+						<div id="yearSelect" class="qflexbox qsigleselect sigleselect" style="line-height:3em;">
+							<div class="dynamicarea  qitem qstatus item active"   data-qvalue="1"  style="border-top-left-radius:0.2rem">
 							上半年课表
 							</div>
-							<div  class="dynamicarea qitem item" data-qvalue="2" style="border-top-right-radius:0.2rem">
+							<div  class="dynamicarea qitem qstatus item" data-qvalue="2" style="border-top-right-radius:0.2rem">
 							全年课程表
 							</div>
 						</div>
 						<div style="padding:0.2rem;">
-								<div class="puretextcontainer qsigleselect">
-									<div class="wrapitem">
-									   	<div  class="item qitem" data-qvalue="1">
-												<div>
+								<div id="citySelect"  class="puretextcontainer qsigleselect">
+									<div style="display:none" class="qitem wrapitem">
+									   	<div  class="item qstatus" data-qvalue="5">
+												<div class="qdesc">
 													陈圆
-												</div>					   		
+												</div>
 									   	</div>
 									</div>
-									
 								</div>
 								<div style="margin-top:0.3rem;">
 									<img src="images/course/courseimage.png" width="100%">
@@ -144,7 +143,7 @@
 					<div style="margin-top:0.3rem;">
 						学员资格
 					</div>
-
+					
 					<div class="contant" style="background:#19181b;">
 							<a href="#" style="margin-top:0.3rem;display:block;line-height:0" >
 								<img  src="images/course/becomestudent.png" width="100%">
@@ -235,12 +234,12 @@ function SingleSelect(target){
 	*/
 	self.renderDataToView=function(){
 		$(self.data.items).each(function(){
-			$(this).removeClass("active");
+			$(this).add($(this).find(".qstatus")).removeClass("active");
 		})
 		if(self.data.selectedItem)
 		{
-			$(self.data.selectedItem).addClass("active");
-		}
+			$(self.data.selectedItem).add($(self.data.selectedItem).find(".qstatus")).addClass("active");
+		};
 	};
 	/*
 	 *取值不做不更新UI
@@ -280,12 +279,30 @@ function SingleSelect(target){
 
 
 jQuery.extend(SingleSelect.prototype, jQuery.eventEmitter);
+
+
+
+
+
+
+function loadData(year,city){
+	$.get("http://localhost:8080/bossappweb/webclasstable/data",function(data){
+
+	});
+}
 jQuery(document).ready(function() {
-	
-	$(".qsigleselect").each(function(){
-		new SingleSelect($(this)).on("change",function(e,data){
-				alert(data);
-		});
+	// $(".qsigleselect").each(function(){
+	// 	new SingleSelect($(this)).on("change",function(e,data){
+	// 			alert(data);
+	// 	});
+	// });
+	var yearSelect=new SingleSelect($("#yearSelect"));
+	yearSelect.on("change",function(e,data){
+			console.log(yearSelect.val()+"  "+citySelect.val());
+	});
+	var citySelect=new SingleSelect($("#citySelect"));
+	citySelect.on("change",function(e,data){
+			console.log(yearSelect.val()+"  "+citySelect.val());
 	});
 
 });
