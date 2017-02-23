@@ -249,3 +249,10 @@
   font-size: 0.28rem;
 }
 
+
+#yearSelect  .sigleselect  .item:(.first-child){
+  border-top-left-radius:0.2rem;
+}
+#yearSelect  .sigleselect  .item:(.last-child){
+  border-top-right-radius:0.2rem;
+}
