@@ -53,7 +53,6 @@
 
 <div class="content">
 
-
 	<img src="images/course/banner.png" width="100%">
 	<center style="margin:0.3rem;">
 					<div class="btn verylarge primary" style="width:80%;border-radius:0.5rem;">
@@ -71,13 +70,13 @@
 						BOSS商学院
 						BOSS商学院
 					</div>
-					<div style="margin-top:0.3rem">
+					<div style="margin-top:0.5rem">
 						部分曾经授课导师
 					</div>
 					<div style="margin-top:0.1rem;color:#adacae;">
 						左滑查看更多导师
 					</div>
-					<div  class="scrollimagecontainer" style="width:100%;height:1.3rem;">
+					<div   style="margin-top:0.3rem" class="scrollimagecontainer" style="width:100%;">
 						<div  class="item">
 							<img class="circle" src="images/global/avatar.png"  style="margin:0 0.2rem;width:0.85rem;height:0.85rem;">
 							</img>
@@ -114,6 +113,59 @@
 							<div>王珊</div>
 						</div>
 					</div>
+					<img src="images/course/middle-banner.png" width="100%">
+					
+					<div class="schdule" style="width:100%;top:1rem;color:#dedde2;background:#ffffff;border-radius:0.2rem;">
+						<div class="qflexbox qsigleselect sigleselect" style="line-height:3em;">
+							<div class="dynamicarea  qitem item active"   data-qvalue="1"  style="border-top-left-radius:0.2rem">
+							上半年课表
+							</div>
+							<div  class="dynamicarea qitem item" data-qvalue="2" style="border-top-right-radius:0.2rem">
+							全年课程表
+							</div>
+						</div>
+						<div style="padding:0.2rem;">
+								<div class="puretextcontainer qsigleselect">
+									<div class="wrapitem">
+									   	<div  class="item qitem" data-qvalue="1">
+												<div>
+													陈圆
+												</div>					   		
+									   	</div>
+									</div>
+									
+								</div>
+								<div style="margin-top:0.3rem;">
+									<img src="images/course/courseimage.png" width="100%">
+								</div>
+						</div>
+					</div>
+					
+					<div style="margin-top:0.3rem;">
+						学员资格
+					</div>
+
+					<div class="contant" style="background:#19181b;">
+							<a href="#" style="margin-top:0.3rem;display:block;line-height:0" >
+								<img  src="images/course/becomestudent.png" width="100%">
+							</a>
+							<img  src="images/course/bottom.png" width="100%">
+							<div style="line-height:2em;padding-bottom:0.3rem;">
+								<div>
+									<span>运营总部:</span><span style="color:#33d1ff;margin-left:0.1rem;">400-028-8383</span>
+								</div>
+								<div>
+									<span>运营总部:</span><span style="color:#33d1ff;margin-left:0.1rem;">400-028-8383</span>
+								</div>
+								<div>
+									<span>运营总部:</span><span style="color:#33d1ff;margin-left:0.1rem;">400-028-8383</span>
+								</div>
+								<div>
+									<span>运营总部:</span><span style="color:#33d1ff;margin-left:0.1rem;">400-028-8383</span>
+								</div>
+							</div>
+					</div>
+
 	</center>
 	
 	
@@ -138,9 +190,107 @@
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
+
+(function(jQuery) {
+  jQuery.eventEmitter = {
+    _JQInit: function() {
+      this._JQ = jQuery(this);
+    },
+    emit: function(evt, data) {
+      !this._JQ && this._JQInit();
+      this._JQ.trigger(evt, data);
+    },
+    once: function(evt, handler) {
+      !this._JQ && this._JQInit();
+      this._JQ.one(evt, handler);
+    },
+    on: function(evt, handler) {
+      !this._JQ && this._JQInit();
+      this._JQ.bind(evt, handler);
+    },
+    off: function(evt, handler) {
+      !this._JQ && this._JQInit();
+      this._JQ.unbind(evt, handler);
+    }
+  };
+}(jQuery));
+
+
+function SingleSelect(target){
+	var self=this;
+	self.qsigleselect=target;
+	self.data={
+		items:[],
+		selectedItem:null
+	};
+	self.selectedItem=null;
+	/*
+     *子元素更新后触发数据更新
+	*/
+	self.loadDataFromView=function(){
+		self.data.items=self.qsigleselect.find(".item").get();
+	};
+	/*
+     *根据数据更新UI
+	*/
+	self.renderDataToView=function(){
+		$(self.data.items).each(function(){
+			$(this).removeClass("active");
+		})
+		if(self.data.selectedItem)
+		{
+			$(self.data.selectedItem).addClass("active");
+		}
+	};
+	/*
+	 *取值不做不更新UI
+     *数据更新之后更新UI
+	*/
+	self.val=function(val){
+		if(val){
+			var willSelectedItem=$(self.data.items).filter(function(obj){
+				if(obj.data("qvalue")==val){
+					return true;
+				}
+			});
+			self.data.selectedItem=willSelectedItem;
+			self.renderDataToView();
+			self.emit('change',val);
+		}else
+		{
+			return $(self.data.selectedItem).data("qvalue");
+		}
+	};
+	/*
+     *UI事件触发数据更新,数据更新后更新UI
+	*/
+	self.init=function(){
+		self.qsigleselect.on("click",".item",function(e){
+			if(e.currentTarget!=self.selectedItem){
+				self.data.selectedItem=e.currentTarget;
+				self.emit('change',self.val());
+				self.renderDataToView();
+			};
+		});
+		self.loadDataFromView();
+	};
+	self.init();
+
+};
+
+
+jQuery.extend(SingleSelect.prototype, jQuery.eventEmitter);
 jQuery(document).ready(function() {
+	
+	$(".qsigleselect").each(function(){
+		new SingleSelect($(this)).on("change",function(e,data){
+				alert(data);
+		});
+	});
 
 });
+
+
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
