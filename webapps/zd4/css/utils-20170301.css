@@ -24,42 +24,38 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 .qflexbox
 {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
 .qflexbox.verticaltop
 {
-          -webkit-box-align: start;
-              -ms-flex-align: start;
-                  align-items: flex-start;
+          align-items: flex-start;
 }
 .qflexbox.stretch
 {
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
 .qflexbox.vertical
 {
-  -ms-flex-direction: column;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
           flex-direction: column;
 }
 .qflexbox.right
 {
-  -webkit-box-pack:end;
-      -ms-flex-pack:end;
-          justify-content:flex-end;
+  justify-content:flex-end;
 }
 .qflexbox.center
 {
-  -webkit-box-pack:center;
-      -ms-flex-pack:center;
-          justify-content:center;
+  justify-content:center;
 }
 .qflexbox.space-between
 {
@@ -74,29 +70,35 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 }
 .qflexbox > .fixiedarea{
   display:block;
-  -webkit-box-flex:none;/*相当于none*/
+  -webkit-box-flex:none;
+  -webkit-flex:none;/*相当于none*/
       -ms-flex:none;/*相当于none*/
           flex:none;/*相当于none*/
 }
 .qflexbox > .fixiedarea.qflexbox{
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
 .qflexbox > .dynamicarea{
    display:block;
   -webkit-box-flex: 1;
+  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 .qflexbox > .dynamicarea.qflexbox{
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -357,19 +359,20 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(50%, -50%);
             transform: translate(-50%,-50%);
 }
 
 
 .block-vhcenter2-container{
+   display: -webkit-flex;
    display: -ms-flexbox;
-   display: -webkit-box;
    display: flex;
-   -ms-flex-pack: center;
-       -webkit-box-pack: center;
+   -webkit-justify-content: center;
+       -ms-flex-pack: center;
            justify-content: center;
-   -ms-flex-align: center;
-       -webkit-box-align: center;
+   -webkit-align-items: center;
+       -ms-flex-align: center;
            align-items: center;
 }
 
@@ -474,16 +477,9 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 }
 
 .inline-vhcenter4-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   height: 4rem;
 }
 
@@ -501,15 +497,14 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 
 
 .inline-vcenter2-container{
+  display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
-  -ms-flex-pack: center;
-      -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-direction: column;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
           flex-direction: column;
 }
 .inline-vcenter2-container > .item{
@@ -554,10 +549,12 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
   两端对齐
 */
 .justify-box{
+  display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
-  -ms-flex-pack:justify;
-      justify-content:space-between;
+  -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
 
     
     display:-webkit-box;
@@ -572,18 +569,21 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 
 
 .justify-box-v{
+  display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
-  -ms-flex-pack:justify;
-      justify-content:space-between;
+  
+  -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
    
 
     display:-webkit-box;
     -webkit-box-pack:justify;
     box-orient:vertical;
     -webkit-box-orient:vertical;
-    -ms-flex-direction:column;
-        flex-direction:column;
+    -moz-box-orient:vertical;
+    flex-direction:column;
 }
 .justify-box-v > .justify-item{
   display:block;
@@ -661,6 +661,18 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 @-webkit-keyframes rotate{
   from{-webkit-transform:rotate(0deg)}
   to{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes rotate{
+  from{-moz-transform:rotate(0deg)}
+  to{-moz-transform:rotate(360deg)}
+}
+@-ms-keyframes rotate{
+  from{-ms-transform:rotate(0deg)}
+  to{-ms-transform:rotate(360deg)}
+}
+@-o-keyframes rotate{
+  from{-o-transform:rotate(0deg)}
+  to{-o-transform:rotate(360deg)}
 }
 .refreshing{
   animation: 3s linear 0s normal none infinite rotate;
