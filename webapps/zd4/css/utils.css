@@ -23,6 +23,7 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 
 .qflexbox
 {
+  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,12 +107,11 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
  *
  *grid 
 */
-
 .row {
-  /* */
+  /* 
   margin-right: -0.05rem;
   margin-left: -0.05rem;
- 
+  */
 }
 .clearfix:before,.clearfix:after,
 .row:before,
