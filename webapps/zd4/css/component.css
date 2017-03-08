@@ -209,7 +209,9 @@
     font-size:0.22rem;
     border-radius:0.1rem;
     width: 100%;
+    /*
     padding:0.1rem;
+    */
     display: inline-block;
     color:#aeacb3;
 }

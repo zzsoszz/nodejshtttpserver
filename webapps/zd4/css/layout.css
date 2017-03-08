@@ -11,7 +11,7 @@
 body{
   font-family: MicrosoftYaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:0.26rem;
-  line-height: 1.42857143;
+  line-height: 1.5em;/*line-height: 1.42857143;*/
   background:#ebebeb;
   color:#333;
   margin: 0 auto;
