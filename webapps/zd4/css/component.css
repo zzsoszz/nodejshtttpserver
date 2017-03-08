@@ -165,7 +165,6 @@
 
 /*
  * 多行纯图片盒子
-*/
 .pureimagecontainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,6 +192,32 @@
     width: 100%;
     display: inline-block;
 }
+*/
+
+.pureimagecontainer {
+    display:block;
+    overflow:hidden;
+}
+.pureimagecontainer .wrapitem{
+    float: left;
+    font-size: 0;
+    text-align: center;
+    width: 33.3%;
+    padding:0.05rem;
+}
+.pureimagecontainer  .wrapitem .item{
+    font-size:0.22rem;
+    border-radius:0.1rem;
+    width: 100%;
+    padding:0.1rem;
+    display: inline-block;
+    color:#aeacb3;
+}
+.pureimagecontainer  .wrapitem .item.active{
+    background:#33d1ff;
+    color:#ffffff;
+}
+
 
 
 
@@ -854,7 +879,7 @@
   padding:0 0.2rem;
 }
 .listbox .item:not(:last-child){
-  border-bottom:1px solid #efefef;
+  border-bottom:1px solid #E4E4E4;/*E4E4E4 efefef*/
 }
 
 

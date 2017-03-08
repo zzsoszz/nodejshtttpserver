@@ -117,6 +117,13 @@
 .color4{
   color:#d5d5d5;
 }
+
+.tagfont{
+  color:#999999;
+  font-size:0.22rem;
+}
+
+
 .qrcode{
   background-image:url("../images/global/qrcode@3x.png");
   background-position:center;
@@ -203,6 +210,24 @@
   width:0.32rem;
   height:0.31rem;
 }
+
+.refer{
+  background-image:url("../images/global/link@3x.png");
+  background-position:center;
+  background-size:0.39rem 0.39rem;
+  background-repeat:no-repeat;
+  width:0.39rem;
+  height:0.39rem;
+}
+.refer.small{
+  background-image:url("../images/global/link@2x.png");
+  background-position:center;
+  background-size:0.26rem 0.26rem;
+  background-repeat:no-repeat;
+  width:0.26rem;
+  height:0.26rem;
+}
+
 
 
 .radio{

@@ -27,15 +27,21 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
+     -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+         align-items: center;
 }
 .qflexbox.verticaltop
 {
           -webkit-box-align: start;
               -ms-flex-align: start;
                   align-items: flex-start;
+}
+.qflexbox.verticalcenter
+{
+   -webkit-box-align: center;
+      -ms-flex-align: center;
+         align-items: center;
 }
 .qflexbox.stretch
 {
@@ -97,10 +103,9 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
+
+
 
 
 /*
