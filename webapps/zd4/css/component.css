@@ -884,6 +884,23 @@
   border-bottom:1px solid #E4E4E4;/*E4E4E4 efefef*/
 }
 
+/*
+ *
+*/
+.listboxbgmodel{
+
+}
+.listboxbgmodel.withindent{
+  padding-left:0.2rem;
+}
+.listboxbgmodel.withbothsideindent{
+  padding:0 0.2rem;
+}
+.listboxbgmodel .item:nth-child(even){
+  background:#FBFBFB;/*E4E4E4 efefef*/
+}
+
+
 
 
 .imageandtextbox:not(:last-child) .text{

@@ -98,6 +98,7 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+          width: 0%;
 }
 .qflexbox > .dynamicarea.qflexbox{
   display: -webkit-box;
