@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>测试页</title>
+
+<!--    <link href="Scripts/jquery-ui-1.9.2.custom/development-bundle/themes/base/jquery.ui.all.css"
+        rel="stylesheet" type="text/css" />
+	<script src="Scripts/jquery-ui-1.9.2.custom/js/jquery-1.8.3.js"></script>
+	<script src="Scripts/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"></script>
+   -->
+ 
+    <link href="Scripts/jquery-easyui-1.5/themes/bootstrap/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/jquery-easyui-1.5/themes/mobile.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-easyui-1.5/jquery.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-easyui-1.5/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-easyui-1.5/jquery.easyui.mobile.js" type="text/javascript"></script>
+    
+    <script src="Scripts/EasyScrollBox.js" type="text/javascript"></script> 
+	<style>
+	html,body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		height:100%;
+		width:100%;
+	}
+
+	#dialog-link,#dialog-link1 {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#dialog-link1 span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	
+#cover_top_EasyScrollBox{ 
+background: -ms-linear-gradient(top, #000000,  #ccc);        /* IE 10 */
+background:-moz-linear-gradient(top,#000000,#ccc);/*火狐*/ 
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#000000), to(#ccc));/*谷歌*/ 
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), to(#ccc));      /* Safari 4-5, Chrome 1-9*/
+background: -webkit-linear-gradient(top, #000000, #ccc);   /*Safari5.1 Chrome 10+*/
+background: -o-linear-gradient(top, #000000, #ccc);  /*Opera 11.10+*/
+} 
+#cover_bottom_EasyScrollBox{ 
+background: -ms-linear-gradient(top, #ccc,  #000000);        /* IE 10 */
+background:-moz-linear-gradient(top,#ccc,#0000ff);/*火狐*/ 
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#ccc), to(#000000));/*谷歌*/ 
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#000000));      /* Safari 4-5, Chrome 1-9*/
+background: -webkit-linear-gradient(top, #ccc, #000000);   /*Safari5.1 Chrome 10+*/
+background: -o-linear-gradient(top, #ccc, #000000);  /*Opera 11.10+*/
+} 
+	</style>
+</head>
+<body>
+    
+    <input id="Text1" type="text" />
+<p><a href="#" id="dialog-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>打开弹窗并赋值</a></p>
+<p>-----------------------</p>
+<p><a href="#" id="dialog-link1" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>打开弹窗</a></p>
+
+<!-- ui-dialog -->
+
+<div id="dialog" class="easyui-dialog" style="padding:20px 6px;width:80%;" data-options="inline:true,modal:true,closed:true,title:'设置数值'">
+	<div id="scrollbox"></div>
+    <div class="dialog-button">
+				<a href="javascript:void(0)" class="easyui-linkbutton" style="width:100%;height:35px" onclick="$('#dialog').dialog('close')">确 定</a>
+	</div>
+</div>
+
+  <script type="text/javascript">
+      console.log("ss");
+      $(function () {
+         //对象型数据
+          var data = [];
+          for (var i = 0; i < 100; i++) {
+              var m = {};
+              m.id = i;
+              m.txt = "数据" + i;
+              data.push(m);
+          }
+          //字符串数据
+          var data1 = [];
+          for (var i = 0; i < 100; i++) {
+              data1.push(i);
+          }
+ 
+          $("#dialog").dialog();
+          // Link to open the dialog
+          $("#dialog-link").click(function (event) {
+              $("#dialog").dialog("open").dialog('center');
+              //重新赋值
+              $("#scrollbox").EasyScrollBox({
+                  fontSize: 32,
+                  fontFamily: '',
+                  color: '#000',
+                  width: 150,
+                  height: 150,
+                  lineHeight: 1.5,
+                  spaceRows: 2,
+                  value: '4',
+                  data: data,
+                  textFiled: 'txt',
+                  valueFiled: 'id',
+                  onSelected: function (index, value) {
+                      $("#Text1").val(value.id);
+                  }
+              });
+
+              event.preventDefault();
+          });
+          $("#dialog-link1").click(function (event) {
+              $("#dialog").dialog("open").dialog('center');
+
+              event.preventDefault();
+          });
+
+          $("#scrollbox").EasyScrollBox({
+              fontSize: 32,
+              fontFamily: '',
+              color: '#000',
+              width: 150,
+              height: 150,
+              lineHeight: 1.5,
+              spaceRows: 2,
+              value: '4',
+              data: data1,
+              textFiled: 'txt',
+              valueFiled: 'id',
+              onSelected: function (index, value) {
+                  $("#Text1").val(value);
+              }
+          });
+
+      });
+  </script> 
+
+</body>
+</html>
