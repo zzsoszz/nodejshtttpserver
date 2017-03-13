@@ -19,8 +19,13 @@
 	</div>
 	<a class="action">Action</a>
  -->
-	
+	<svg width="300" height="200" class="example"> 
+			<g>
+				<rect width="100%" height="100%" fill="green" />
+			</g> 
+	</svg>
 	<div class="chart">
+
 	</div>
 	
 
@@ -172,6 +177,9 @@
 
 	//10 lession
 	
+
+
+
 	var svg=d3.select(".chart")
 			   .append("svg");
 	// 数据
@@ -184,6 +192,8 @@
 	    .scale(linear)      // 指定比例尺
 	    .ticks(7);          // 指定刻度的数量
     svg.append("g").call(axis);
+
+
 
 
 </script>
