@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="d3.v4.min.js"></script>
+	<style>
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+
+<!-- 	<div class="title">
+		<a href="#">About</a>
+		<a href="#">Product</a>
+		<a href="#">Contanct</a>
+	</div>
+	<a class="action">Action</a>
+ -->
+	
+	<div class="chart">
+	</div>
+	
+
+</body>
+
+
+<script>
+
+
+	// document.body.innerHTML=d3.version;
+	// var linnerScale=d3.scaleLinear()
+	// 	.domain([0,100])
+	// 	.range([0,1])
+	// 	.clamp(true)
+	// 	;
+	// console.log(linnerScale(0));
+	// console.log(linnerScale(50));
+	// console.log(linnerScale(150));
+
+
+	// var timeScale=d3.scaleTime()
+	// 	.domain([new Date(2016,0,1),new Date()]) //输入值
+	// 	.range([0,100]);//输出值
+	// console.log(timeScale(new Date(2016,10,1)));
+	// console.log(timeScale(new Date(2016,10,1)));
+	// console.log(timeScale(new Date()));
+	// console.log(timeScale.invert(50) );
+
+
+	// var quantizeScale=d3.scaleQuantize()
+	// 	.domain([0,100])
+	// 	.range(["red","green","black"]);
+	// console.log(quantizeScale(34));
+	// console.log(quantizeScale.invertExtent('green'));
+
+
+	// var ordinalScale=d3.scaleOrdinal()
+	// 	.domain(["poor","good","great"])
+	// 	.range(["red","green","black"]);
+	// console.log(ordinalScale("poor"));
+
+	// d3.json("data.json",function(data){
+	// 	//console.log(data);
+
+	// 	// var min =d3.min(data,function(d){
+	// 	// 	return d.age;
+	// 	// });
+	// 	// console.log(min);
+
+	// 	var extent =d3.extent(data,function(d){
+	// 		return d.age;
+	// 	});
+	// 	console.log(extent);
+
+	// 	var scale=d3.scaleLinear()
+	// 		.domain(extent)
+	// 		.range([0,100])
+	// 		;
+
+	// 	console.log(scale("18"));
+
+	// 	var ages=d3.set(data,function(d){
+	// 		return d.age;
+	// 	});
+	// 	console.log(ages.values());
+
+
+
+
+
+	// });
+	
+
+
+
+	// var div=d3.selectAll("div");
+	// console.log(div.nodes());
+
+	// var divLinks=d3.selectAll("a");
+	// console.log(divLinks.nodes());
+
+	// var secondLinks=d3.selectAll(".action");
+	// secondLinks.attr("href","http://wwww.baidu.com");
+	// //secondLinks.style("color","red");
+	// secondLinks.classed("red",false);
+	// secondLinks.text("Invertory");
+	// secondLinks.html("<b>Sale</b>");
+	// console.log(secondLinks.nodes());
+	// console.log(secondLinks.size());
+
+
+	// d3.select(".title")
+	// 	//.append("button")
+	// 	.insert("button","a:nth-child(2)")
+	// 	.html("Invertory");
+
+	// d3.select(".action").remove();
+
+
+	// var scores=[
+	// 	{
+	// 		name:"Alice",score:96
+	// 	}
+	// 	,
+	// 	{
+	// 		name:"Qing",score:17
+	// 	}
+	// 	,
+	// 	{
+	// 		name:"Zhang",score:96
+	// 	}
+	// 	,
+	// 	{
+	// 		name:"Lucy",score:11
+	// 	}
+	// 	,
+	// 	{
+	// 		name:"Lily",score:33
+	// 	}
+	// 	,
+	// 	{
+	// 		name:"Grace",score:55
+	// 	}
+	// ];
+	
+	// var update=d3.select(".chart")
+	// 	.selectAll("div")
+	// 	.data(scores)
+	// ;
+
+	//update.exit().remove();
+
+	// update.text(function(d){
+	// 		return d.name;	
+	// });
+
+
+	// update.enter()
+	// 	.append("div")
+	// 	.text(function(d){
+	// 		return d.name;	
+	// 	});
+
+	// update.enter()
+	// .append("div")
+	// .text(function(d){
+	// 	return "append:"+d.name;	
+	// });
+
+	//10 lession
+	
+	var svg=d3.select(".chart")
+			   .append("svg");
+	// 数据
+	var dataset = [2.5, 2.1, 1.7, 1.3, 0.9];
+	// 定义比例尺
+	var linear = d3.scaleLinear()
+	    .domain([0, d3.max(dataset)])
+	    .range([0, 250]);
+	var axis = d3.axisBottom()
+	    .scale(linear)      // 指定比例尺
+	    .ticks(7);          // 指定刻度的数量
+    svg.append("g").call(axis);
+
+
+</script>
+</html>
