@@ -116,14 +116,17 @@
  background:#4fb7e2;
  color:#ffffff;
 }
+.btn.twosideround{
+  border-radius:1em;
+}
 .circle-btn{
   border-radius:50%;
   border-color:#e7313d;
   border-width:0.10rem;
   border-style: solid;
   background:white;
-  width:2rem;
-  height:2rem;
+  width:2em;
+  height:2em;
 }
 
 
