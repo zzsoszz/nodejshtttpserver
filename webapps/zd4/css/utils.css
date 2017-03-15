@@ -1,6 +1,3 @@
-.bold{
-  font-weight:500;
-}
 /*
 http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 */
@@ -23,6 +20,7 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
 
 .qflexbox
 {
+  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -672,6 +670,11 @@ http://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/
   -webkit-animation:9.5s linear 0s normal none infinite rotate;
 }
 
+.longtext{
+  word-break:break-word;
+  overflow: hidden; 
+  height: 2em;
+}
 
 .flex-center-vertically {
   display: -webkit-box;

@@ -8,7 +8,7 @@
 }
 .iconfont {
   font-family:"iconfont" !important;
-  font-size:0.16rem;
+  font-size:0.28rem;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
@@ -139,6 +139,8 @@
 }
 
 .time{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/time@3x.png");
   background-position:center;
   background-size:0.36rem 0.36rem;
@@ -147,6 +149,8 @@
   height:0.36rem;
 }
 .time.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/time@2x.png");
   background-position:center;
   background-size:0.24rem 0.24rem;
@@ -157,6 +161,8 @@
 
 
 .heart{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/heart@3x.png");
   background-position:center;
   background-size:0.48rem 0.46rem;
@@ -165,6 +171,8 @@
   height:0.46rem;
 }
 .heart.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/heart@2x.png");
   background-position:center;
   background-size:0.32rem 0.31rem;
@@ -174,6 +182,8 @@
 }
 
 .message{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/message@3x.png");
   background-position:center;
   background-size:0.48rem 0.46rem;
@@ -182,6 +192,8 @@
   height:0.46rem;
 }
 .message.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/message@2x.png");
   background-position:center;
   background-size:0.32rem 0.31rem;
@@ -192,6 +204,8 @@
 
 
 .share{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/share@3x.png");
   background-position:center;
   background-size:0.48rem 0.46rem;
@@ -200,6 +214,8 @@
   height:0.46rem;
 }
 .share.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/share@2x.png");
   background-position:center;
   background-size:0.32rem 0.31rem;
@@ -209,6 +225,8 @@
 }
 
 .refer{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/link@3x.png");
   background-position:center;
   background-size:0.39rem 0.39rem;
@@ -217,6 +235,8 @@
   height:0.39rem;
 }
 .refer.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/link@2x.png");
   background-position:center;
   background-size:0.26rem 0.26rem;
@@ -228,6 +248,8 @@
 
 
 .radio{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/radio@3x.png");
   background-position:center;
   background-size:0.27rem 0.27rem;
@@ -236,6 +258,8 @@
   height:0.27rem;
 }
 .radio.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/radio@2x.png");
   background-position:center;
   background-size:0.18rem 0.18rem;
@@ -245,6 +269,8 @@
 }
 
 .today{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/today@3x.png");
   background-position:center;
   background-size:1.20rem 1.16rem;
@@ -253,6 +279,8 @@
   height:1.16rem;
 }
 .today.small{
+  display: inline-block;
+  vertical-align: middle;
   background-image:url("../images/global/today@2x.png");
   background-position:center;
   background-size:0.18rem 0.18rem;
