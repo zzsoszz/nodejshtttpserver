@@ -118,10 +118,7 @@
   color:#d5d5d5;
 }
 
-.tagfont{
-  color:#999999;
-  font-size:0.22rem;
-}
+
 
 
 .qrcode{
@@ -350,4 +347,25 @@
 }
 #yearSelect  .sigleselect  .item:(.last-child){
   border-top-right-radius:0.2rem;
+}
+/*
+h1{
+  line-height:1.5em;
+}
+h1,h2,h3,h4,h5{
+  font-weight:700;
+}
+*/
+.bold{
+  font-weight:700;
+}
+.medium{
+  font-weight:400;
+}
+.thin{
+  font-weight:300;
+}
+.tagfont{
+  color:#999999;
+  font-size:0.22rem;
 }

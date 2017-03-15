@@ -76,9 +76,7 @@
 /*
  *按钮 
  */
-.bold{
-  font-weight:500;
-}
+
 .btn{
   text-align:center;
   display:inline-block;
@@ -129,8 +127,23 @@
   height:2em;
 }
 
-
-
+.vipicon{
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+.vipicon:after{
+  display: inline-block;
+  content:"";
+  position: absolute;
+  right:0px;
+  bottom:0px;
+  background-image:url("../images/global/vipicon@2x.png");
+  background-size:0.44rem 0.44rem;
+  background-repeat: no-repeat;
+  width: 0.44rem;
+  height: 0.44rem;
+}
 
 
 /*

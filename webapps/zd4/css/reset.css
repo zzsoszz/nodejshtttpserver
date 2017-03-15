@@ -203,3 +203,6 @@ a:hover {
 *{
   letter-spacing:2px;
 }
+img{
+  max-width:100%;
+}
