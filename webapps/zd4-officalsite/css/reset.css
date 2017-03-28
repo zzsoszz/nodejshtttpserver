@@ -202,6 +202,7 @@ a:hover {
 
 *{
   letter-spacing:2px;
+  box-sizing: border-box;
 }
 img{
   max-width:100%;
