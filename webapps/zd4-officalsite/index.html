@@ -2,170 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>eqcss demo</title>
+	<title>bossapp</title>
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<script type="text/javascript" src="js/EQCSS.min.js"></script>
 	<style type="text/css">
 		@element '.nav'{
-			html{
-				opacity: 1;
-			}
-			body{
-				margin:0;
-			}
-			$this * {
-				box-sizing: border-box;
-				text-rendering: optimizeLegibility;
-				-webkit-font-smoothing: antialiased;
-    			-moz-osx-font-smoothing: grayscale;
-    			font-kerning: auto;
-    			outline: none;
-			}
-			$this {
-				background:#333;
-			}
-			$this .brand{
-				display: block;
-				color: #fff;
-				font-weight: 600;
-				text-decoration:none;
-				padding:0.5em;
-				font-size:140%;
-				position:relative;
-			}
-			$this input{
-				display:none;
-			}
-			$this label{
-				display:block;
-				position: relative;
-			}
-			$this label span,
-			$this label > div a{
-				display: block;
-				padding:1em;
-				color: #fff;
-				font-size:100%;
-				font-size:400;
-				text-decoration:none;
-				user-select:none;
-				cursor:pointer;
-				z-index:3;
-				position: relative;
-			}
-			$this label span:hover,
-			$this label span:focus,
-			$this a:hover,
-			$this a:focus{
-				color:#f0c;
-				background:#eee;
-			}
-			$this label>div a{
-				padding:1em 1em 0 1em;
-			}
-			$this label > div a:last-child{
-				padding-bottom:1em;
-			}
-			$this input + label > div{
-				display: none;
-				background:#333;
-				position:relative;
-				width: 100%;
-				z-index:3;
-			}
-			$this input:checked + label{
-				background:#333;
-			}
-			$this input:checked + label span{
-				color:#cf0;
-				z-index:1;
-			}
-			$this input:checked + label > div {
-				display:block;
-				z-index:3;
-			}
+			
 		}
 		@element '.nav' and (max-width:499px){
-			$this{
-				text-align: center;
-			}
-			$this label[for="menu"]{
-				display: inline-block;
-				width:auto;
-				position: absolute;
-				top:0;
-				right:0;
-			}
-			$this input#menu:checked + label span{
-				color:#cf0;
-			}
-			$this  input[type='radio'] + label{
-				display:none;
-			}
-			$this input#menu:checked ~ input[type='radio'] +label{
-				display: block;
-			}
+			
 		}
 		@element '.nav' and (min-width:500px)
 		{
-			$this{
-				text-align:right;
-				max-height:auto !important;
-				overflow: visible;
-			}
-			$this .brand{
-				display: inline-block;
-				float:left;
-			}
-			$this label[for='menu']{
-				display: none;
-			}
-			$this input + label > div{
-				display: none;
-				position: absolute;
-				right:0;
-				width:auto;
-				word-break:normal;
-				min-width:200px;
-				text-align: left;
-			}
-			$this label{
-				display: inline-block;
-			}
+			
 		}
 	</style>
 </head>
 <body>
-
-
 	<div class="nav">
-		<a href="#" class="brand">responsive nav</a>
-		<input type="checkbox" id="menu">
-		<label for="menu"><span>≡</span></label>
 
-		<input type="radio" name="navradio" id="one" value="one" >
-		<label for="one">
-			<span>One</span>
-			<div>
-				<a href="#">link a</a>
-		        <a href="#">link b</a>
-		        <a href="#">link c</a>
-			</div>
-		</label>
-		
-		<input type="radio" name="navradio" id="two" value="two" >
-		<label for="two">
-			<span>two</span>
-			<div>
-				<a href="#">link a</a>
-		        <a href="#">link b</a>
-		        <a href="#">link c</a>
-			</div>
-		</label>
-
-		
 	</div>
-
-
 </body>
 </html>
