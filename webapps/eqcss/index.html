@@ -59,6 +59,7 @@
 			$this a:hover,
 			$this a:focus{
 				color:#f0c;
+				background:#eee;
 			}
 			$this label>div a{
 				padding:1em 1em 0 1em;
@@ -107,9 +108,39 @@
 				display: block;
 			}
 		}
+
+		@element '.nav' and (min-width:500px)
+		{
+			$this{
+				text-align:right;
+				max-height:auto !important;
+				overflow: visible;
+			}
+			$this .brand{
+				display: inline-block;
+				float:left;
+			}
+			$this label[for='menu']{
+				display: none;
+			}
+			$this input + label > div{
+				display: none;
+				position: absolute;
+				right:0;
+				width:auto;
+				word-break:normal;
+				min-width:200px;
+				text-align: left;
+			}
+			$this label{
+				display: inline-block;
+			}
+		}
 	</style>
 </head>
 <body>
+
+
 	<div class="nav">
 		<a href="#" class="brand">responsive nav</a>
 		<input type="checkbox" id="menu">
@@ -135,6 +166,9 @@
 			</div>
 		</label>
 
+		
 	</div>
+
+
 </body>
 </html>
