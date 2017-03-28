@@ -1,2 +1,0 @@
-# qalert
-jquery plugin

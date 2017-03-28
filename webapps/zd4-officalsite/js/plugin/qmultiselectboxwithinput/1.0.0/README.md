@@ -1,2 +1,0 @@
-# qmultiplyfilter
-jquery plugin

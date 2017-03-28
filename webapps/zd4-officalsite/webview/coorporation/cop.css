@@ -1,0 +1,114 @@
+body{
+    background-color: #ffffff;
+    font-family: "Microsoft YaHei UI";
+}
+.header{
+    height: 95px;width: 100%;
+}
+.icons{
+    width: 62.7%;margin: 0 auto;height: 100%;
+}
+.logo{
+    width: 200px;height: 100%;
+    background: url("../image/logo.png") center center no-repeat;
+    background-size: 200px 60px;
+    display: inline-block;
+    float: left;
+}
+.word{
+    width: 50px;text-align: center;line-height: 95px;font-size: 16px;color: #333333;display: inline-block;height: 100%;cursor: pointer;
+}
+.topBg{
+    width: 100%;height: 674px;
+    background: url("../image/bg1.jpg") center center no-repeat;
+    background-size: cover;
+}
+.bottomBg{
+    width: 100%;height: 488px;
+    background: url("../image/bg2.jpg") center center no-repeat;
+    background-size: cover;
+}
+.slogan,.slogan1{
+    padding-left: 20px;margin-top: 70px;
+}
+.slogan li{
+    font-size: 18px;color: #ffffff;margin-top: 35px;
+    list-style-image: url("../image/whitecircle.png");
+}
+.slogan1 li{
+    font-size: 18px;color: #333333;margin-top: 35px;
+    list-style-image: url("../image/bluecircle.png");
+}
+.midBg{
+    width: 255px;display: inline-block;
+}
+.midWord{
+    width: 100%;text-align: center;font-size: 16px;
+    color: #666666;margin-top: 32px;
+}
+.midBg1,.midBg2,.midBg3,.midBg4{
+    width: 255px;height: 337px;text-align: center;margin: 0 auto;
+}
+.midBg1{
+    background: url("../image/msg.png") center center no-repeat;
+    background-size: cover;
+}
+.midBg2{
+    background: url("../image/income.png") center center no-repeat;
+    background-size: cover;
+}
+.midBg3{
+    background: url("../image/BOSS.png") center center no-repeat;
+    background-size: cover;
+}
+.midBg4{
+    background: url("../image/lowpay.png") center center no-repeat;
+    background-size: cover;
+}
+.copContent{
+    width: 155px;display: inline-block;text-align: center;
+}
+.copBg1,.copBg2,.copBg3,.copBg4,.copBg5{
+    width: 155px;height: 155px;text-align: center;margin: 0 auto;
+}
+.copWord{
+    font-size: 16px;color: #ffffff;margin-top: 30px;
+}
+.copBg1{
+    background: url("../image/acout.png") center center no-repeat;
+    background-size: cover;
+}
+.copBg2{
+    background: url("../image/advout.png") center center no-repeat;
+    background-size: cover;
+}
+.copBg3{
+    background: url("../image/merout.png") center center no-repeat;
+    background-size: cover;
+}
+.copBg4{
+    background: url("../image/lsout.png") center center no-repeat;
+    background-size: cover;
+}
+.copBg5{
+    background: url("../image/articleout.png") center center no-repeat;
+    background-size: cover;
+}
+.guideBg{
+    width: 100%;height: 595px;
+    background: url("../image/bg3.jpg") center center no-repeat;
+    background-size: cover;
+}
+.italic{
+    font-size: 20px;
+    color: #333333;
+}
+.footer{
+    background-color: #333333;width: 100%;height: 261px;
+}
+.footerUl{
+    padding: 0;
+}
+.footerUl li{
+    list-style: none;height: 30px;line-height: 30px;
+}
