@@ -46,39 +46,40 @@
 
 
 
-
 .hmenu {
-    
+  margin:auto;
+    position: relative;
+    width:fit-content;
 }
 .hmenu .hlistbox{
-    width:2000px;
     overflow: hidden;
 }
 .hmenu .hlistbox .item{
     float:left;
     padding:20px;
 }
-.hmenu .next{
-  width:0.35rem;
-  height:0.60rem;
-  position:absolute;
-  top:50%;
-  right:0;
-  transform: translate(0, -50%);
-  background-image:url("../images/next.png");
-  background-position:center;
-  background-size:0.35rem 0.60rem;
-  background-repeat:no-repeat;
-}
 .hmenu .prev{
-  width:0.35rem;
-  height:0.60rem;
+  width:35px;
+  height:60px;
   position:absolute;
   top:50%;
   left:0;
-  transform: translate(0, -50%);
-  background-image:url("../images/prev.png");
+  transform: translate(-100%, -50%);
+  background-image:url("images/prev.png");
   background-position:center;
-  background-size:0.35rem 0.60rem;
+  background-size:35px 60px;
+  background-repeat:no-repeat;
+  max-width:100%;
+}
+.hmenu .next{
+  width:35px;
+  height:60px;
+  position:absolute;
+  top:50%;
+  right:0;
+  transform: translate(100%, -50%);
+  background-image:url("images/next.png");
+  background-position:center;
+  background-size:35px 60px;
   background-repeat:no-repeat;
 }
