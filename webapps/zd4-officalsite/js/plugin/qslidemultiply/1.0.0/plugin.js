@@ -134,18 +134,22 @@
 			self.prevEle;
 			self.speed=1;
 			self.pager;
+			self.infinite;
 			self.timeline = new TimelineMax({paused:true});
 			self.freshUI=function(){
-				if(self.pager.isHead())
+				if(!self.infinite)
 				{
-					self.prevEle.addClass("disable");
-				}else{
-					self.prevEle.removeClass("disable");
-				}
-				if(self.pager.isEnd()){
-					self.nextEle.addClass("disable");
-				}else{
-					self.nextEle.removeClass("disable");
+					if(self.pager.isHead())
+					{
+						self.prevEle.addClass("disable");
+					}else{
+						self.prevEle.removeClass("disable");
+					}
+					if(self.pager.isEnd()){
+						self.nextEle.addClass("disable");
+					}else{
+						self.nextEle.removeClass("disable");
+					}
 				}
 			};
 			self.turnPrev=function(){
@@ -153,7 +157,9 @@
 					self.timeline.kill().clear();
 					//当前页面的往右移动
 				    var  curPageData=self.pager.getCurrentPageData();
+
 				    var  prevPageData=self.pager.prev().getCurrentPageData();
+				    
 				    for(var i=0;i<curPageData.length;i++){
 				    	self.timeline.add(TweenLite.to(curPageData[i],self.speed, {
 					            x:self.pager.pagesize+"00%"
@@ -161,7 +167,9 @@
 				    };
 				    //前一页的移动到可视区域
 				    for(var i=0;i<prevPageData.length;i++){
-				    	$(prevPageData[i]).css("transform","translateX(-100%)");
+				    	TweenLite.set(prevPageData[i],{
+					            x:"-100%"
+					    });
 				    	self.timeline.add(TweenLite.to(prevPageData[i],self.speed, {
 					            x:i+"00%"
 					    }), "0");
@@ -173,14 +181,18 @@
 				if(!self.timeline.isActive()){
 					self.timeline.kill().clear();
 				    var  curPageData=self.pager.getCurrentPageData();
+				    console.log(self.pager.currentPage);
 				    var  nextPageData=self.pager.next().getCurrentPageData();
+				    console.log(self.pager.currentPage);
 				    for(var i=0;i<curPageData.length;i++){
 				    	self.timeline.add(TweenLite.to(curPageData[i],self.speed, {
 					            x: "-100%"
 					    }), "0");
 				    };
 				    for(var i=0;i<nextPageData.length;i++){
-				    	$(nextPageData[i]).css("transform","translateX("+(nextPageData.length*100)+"%)");
+				    	TweenLite.set(nextPageData[i],{
+					            x:self.pager.pagesize+"00%"
+					    });
 				    	self.timeline.add(TweenLite.to(nextPageData[i],self.speed, {
 					            x:i+"00%"
 					    }), "0");
@@ -193,6 +205,7 @@
 		  		var qslideviewboxEle=target.find(".qslideviewbox");
 		  		self.prevEle=target.find(".prev");
 		  		self.nextEle=target.find(".next");
+		  		self.infinite=options.infinite;
 		  		var items=qslideviewboxEle.find(".item");
 		  		items.css("transform","translateX(-100%)");
 		  		

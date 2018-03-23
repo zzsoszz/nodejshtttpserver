@@ -1,9 +1,7 @@
-.qcarrousel {
+/*.qcarrousel {
     width:100%;
     position: relative;
     background: #ffffff;
-    height:1000px;
-    position: relative;
     margin-bottom:10px;
 }
 .qcarrousel .itembox{
@@ -17,7 +15,6 @@
 }
 .qcarrousel .itembox .item > img {
     width: 100%;
-    height:1000px;
 }
 .qcarrousel .itembox .item.active {
     display: block;
@@ -42,7 +39,7 @@
 }
 .qcarrousel .dotsbox .dotslist .dot.active {
     border-top:2px solid #fff;
-}
+}*/
 
 
 
@@ -101,7 +98,7 @@
     width: 100%;
     display: inline-block;
     color:#aeacb3;
-    padding:30px 10px;
+    padding-top: 30px;
     border:1px solid #4c4c4c;
     position:relative;
 }
@@ -122,3 +119,125 @@
     background:#33d1ff;
     color:#ffffff;
 }
+
+.pureimagecontainer  .wrapitem .item img{
+    width:50%;
+}
+
+.imagewithpopupbox{
+  position: relative;
+}
+.imagewithpopupbox .popup{
+  position: absolute;
+  bottom:0;
+}
+.imagewithpopupbox .popup{
+  position: absolute;
+  bottom:0;
+}
+
+.commonbox{
+  display: block;
+}
+.commonbox:before,
+.commonbox:after{
+  display: table;
+  content: " ";
+}
+.commonbox:after {
+  clear: both;
+}
+.commonbox .item{
+  float:left;
+  width:25%;
+}
+
+.floatpureimagecontainer{
+  display:block;
+  overflow:hidden;
+}
+.floatpureimagecontainer .item{
+ float: left;
+ text-align: center;
+ padding:10px;
+}
+
+
+.timelinebox{
+  overflow:hidden;
+  padding:300px 0;
+}
+.timelinebox .timeitem{
+  height:5px;
+  background:#4fb7e2;
+  position: relative;
+}
+.timelinebox .timeitem .top{
+  position:absolute;
+}
+.timelinebox .timeitem .dot{
+  position:absolute;
+  background:#4fb7e2;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  top:50%;
+  left:10%;
+  transform: translate(-50%,-50%);
+}
+.timelinebox .timeitem .dot .verticalline{
+  position:absolute;
+  background:#4fb7e2;
+  width:2px;
+  height:50px;
+  left:50%;
+  bottom:0;
+  transform: translate(-50%);
+}
+.timelinebox .timeitem .dot .verticalline .time{
+  position:absolute;
+  left:-10px;
+  top:0;
+  transform:translate(0,-100%);
+  background:#4fb7e2;
+  color:#fff;
+  width:10em;
+  height:2em;
+  line-height:2em;
+  text-align: center;
+  border-radius:0.2em;
+  font-size:20px;
+}
+.timelinebox .timeitem .dot .top{
+  color:#fff;
+  position:absolute;
+  top:-150px;
+  width: 250px;
+  width: max-content;
+  font-size:25px;
+  font-weight:700;
+}
+.timelinebox .timeitem .dot .bottom{
+  position:absolute;
+  left:-10px;
+  top:50px;
+  width: max-content;
+}
+.timelinebox .timeitem .dot .bottom img{
+  padding:5px;
+}
+#timelinebox1.qslidemultiply .qslideviewbox .item{
+    position: absolute;
+    width: 400px;
+    max-height:height: 605px;
+    height: fit-content;
+    padding:0px;
+}
+#timelinebox1.qslidemultiply .prev{
+  transform: translate(-150%, -50%);
+}
+#timelinebox1.qslidemultiply .next{
+  transform: translate(150%, -50%);
+}
+
+

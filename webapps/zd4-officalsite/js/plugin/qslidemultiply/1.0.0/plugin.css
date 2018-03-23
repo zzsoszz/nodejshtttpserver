@@ -1,6 +1,7 @@
 .qslidemultiply {
-	  margin:auto;
+	margin:auto;
     position: relative;
+    width: 800px;
     width:fit-content;
     position: relative;
 }
@@ -12,7 +13,7 @@
     padding:20px;
     position: absolute;
     width: 270px;
-    height: 370px;
+    height: 350px;
 }
 .qslidemultiply .prev{
   width:79px;

@@ -31,14 +31,7 @@ body{
 .focus li{
     list-style: none;float: left;height: 100%;
 }
-.weixin{
-    width: 27px;height: 100%;display: block;
-    background: url("../image/weixin.png") center center no-repeat;
-}
-.weibo{
-    width: 27px;height: 100%;display: inline-block;
-    background: url("../image/weibo.png") center center no-repeat;
-}
+
 .bigFont{
     color: #333333;font-size: 46px;
 }
@@ -79,13 +72,13 @@ body{
 }
 .phone1{
     width: 329px;height: 663px;
-    background: url("../image/iPhone6-1.png") center center no-repeat;
+    background: url("../images/download/onlinecourse.png") center center no-repeat;
     background-size: cover;
     position: absolute;top: -250px;left: 0;
 }
 .phone2{
     width: 329px;height: 663px;
-    background: url("../image/iPhone6-2.png") center center no-repeat;
+    background: url("../images/download/businesscourse.png") center center no-repeat;
     background-size: cover;
     position: absolute;top: -250px;right: 0;
 }
@@ -158,13 +151,87 @@ body{
         opacity: 1;
     }
 }
+
 :before,:after{
     box-sizing: border-box
 }
 #circle1,#circle2,#circle3{
     opacity: 0;
 }
+
+/*
+.weixin{
+    width: 27px;height: 100%;display: block;
+    background: url("../image/weixin.png") center center no-repeat;
+}
+.weibo{
+    width: 27px;height: 100%;display: inline-block;
+    background: url("../image/weibo.png") center center no-repeat;
+}
 .weixin:hover::before{
     content: url("../image/qrcode.png");
     position: absolute;top: 70px;left:-90px;z-index: 1000
+}*/
+
+
+*{
+    box-sizing:border-box;
 }
+
+.nav {
+  padding:0 200px;
+  display:block;
+  height:5em;
+  width:100%;
+  background-color: rgba(40,40,40,0.5);
+  position: fixed;
+  top:0;
+  z-index:2;
+}
+.nav .brand{
+  display: inline-block;
+    float: left;
+    height:100%;
+    width: 200px;
+    background: url("../images/logo.png") center center no-repeat;
+}
+.nav .menu{
+  height:100%;
+  display: inline-block;
+  float: right;
+}
+.nav .menu .item{
+  vertical-align: middle;
+  display: inline-block;
+  height:100%;
+  line-height:5em;
+  position: relative;
+}
+.nav .menu .item > label{
+  margin:0 1em;
+  font-size:120%;
+  color:#fff;
+}
+.nav .menu .item > .popdown{
+  display:none;
+}
+.nav .menu .item:hover > .popdown{
+  display:block;
+  position:absolute;
+  top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav .menu .weixin{
+    width: 38px;
+    height: 100%;
+    display: inline-block;
+    background: url("../images/weixin.png") center center no-repeat;
+}
+.nav .menu .sina {
+    width: 38px;
+    height: 100%;
+    display: inline-block;
+    background: url("../images/sina.png") center center no-repeat;
+}
+

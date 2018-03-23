@@ -1,0 +1,29 @@
+{
+  "name": "zd4-officalsite",
+  "version": "1.0.0",
+  "description": "zd4-officalsite",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "zd4-officalsite",
+    "start":"http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzsoszz/zd4-officalsite.git"
+  },
+  "keywords": [
+    "zd4-officalsite"
+  ],
+  "author": "qingtian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzsoszz/zd4-officalsite/issues"
+  },
+  "homepage": "https://github.com/zzsoszz/zd4-officalsite#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
