@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.qslidemultiply {
+    margin: 0 5%;
+    position: relative;
+    height: 370px;
+}
+
+.qslidemultiply .qslideviewbox {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.qslidemultiply .qslideviewbox .item {
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+}
+
+.qslidemultiply .prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 79px;
+    height: 140px;
+    transform: translate(-100%, -50%);
+    background-image: url("images/prev.png");
+    background-position: center;
+    background-size: 79px 140px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.qslidemultiply .disable {
+    display: none;
+}
+
+.qslidemultiply .next {
+    width: 79px;
+    height: 140px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+    background-image: url("images/next.png");
+    background-position: center;
+    background-size: 79px 140px;
+    background-repeat: no-repeat;
+}
+
+.qslidemultiply .dotsbox {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    transform: translate(0,100%);
+}
+
+.qslidemultiply .dotslist {
+    display: inline-block;
+}
+
+.qslidemultiply .dotslist .dot {
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    background-size: 14px 14px;
+    background-color: #999999;
+    border-radius: 7px;
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
+
+.qslidemultiply .dotslist .dot.active {
+    background-color: #ffffff;
+}
+
+.qslidemultiply .dotslist .dot:hover::before {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.qslidemultiply .dotslist .dot::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+}

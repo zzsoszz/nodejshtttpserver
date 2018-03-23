@@ -1,0 +1,157 @@
+<#include "./public.ftl">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<#include "./meta.ftl">
+	<#include "./styles.ftl">	
+	<#include "./js.ftl">
+</head>
+
+<body style="background:#fff;">
+	
+	<#include "./header.ftl">
+
+	
+	<div class="toparea" style="background:#282828;padding:5%;position: relative;">
+		<div style="color:#bdbdbd;font-size:20px;line-height:2em;">
+			<p style="font-size:30px">
+			创始人说
+			</p>
+			<p>
+			教育是一份高尚的事业<br/>
+			它有师恩如山里的高尚尊严<br/>
+			也在亦师亦友中间成人达己<br/>
+			</p>
+			<p>
+			商学教育是当代教育中最富成果的一种<br/>
+			它掌握商业资源入口，服务社会核心人群<br/>
+			它实现企业持续发展，托起创新创业梦想<br/>
+			</p>
+			<p>
+			机遇这样的认识和信仰，我们已坚守10年。备受鼓舞的是，<br/>
+			10年积累+互联网升级而成并领军全国的“波士商学”，已经倍受市场的追捧。<br/>
+			这就是我们选择并忠诚的事业，让我们一起严守“说真话、办实事、出成绩”的价值观，<br/>
+			务实本分的做好产品服务。
+			</p>
+		</div>
+		<img   style="position:absolute;right: 0;top:0" src="${ctx}/images/about/hat.png" alt="">
+		<div>
+			<img  style="display: inline-block;vertical-align: middle;"  src="${ctx}/images/about/luokuan.png" alt="">
+			<img  style="display: inline-block;vertical-align: middle;margin-left:2em;"  src="${ctx}/images/about/sign.png" alt="">
+		</div>
+	</div>
+	
+	
+	<div style="width:90%;margin:auto;">
+
+				<div style="margin-top:5em;background:#ffffff;padding:5%;box-shadow:2px 2px 20px #aaaaaa;line-height:1.6em;">
+					<h1 class="title">
+					公司介绍
+					</h1>
+					<p>
+					北京波士商学教育科技（前期为主动教育集团），创业于2007年初，运营总部设在天府之国成都。集团先后成立了10家直属公司
+					以及一家投资公司，员工也由最初6人发展到现在的500余人。致力于中国企业事业单位高层管理者教育的领军企业，立志成为中国
+					最富成就的教育平台。
+
+					<p>
+					北京波士商学教育科技（简称BOSS商学院）致力于高端培训、人文价值研究、教育培训研究等领域，以“经世济民，孜孜以求”的理念，
+					与时俱进，以国际化视野，培育有梦想，有担当的新商业领袖。
+					</p>
+
+					<p>
+					在线教育作为一种新的学习模式，已经被广泛认同和接受。2015年9月，集团决定增加在线教育产品，经过三个月的调查和分析，
+					在2015年12月开始组建BOSS商学院研发及系统运营团队。经过一年来的发展，已经成功开发上线BossApp产品，招收全国各类企业
+					高管及管理人员2000余人，以BOSS商学院为集团核心运营理念已初具规模。
+					</p>
+
+					<h1 class="title">
+					已经开设
+					</h1>
+					<div class="row">
+						<#list teaching as one >
+						<div class="col-lg-1 col-sm-6 col-md-4" style="text-align: center;">
+							<img src="${imgpath}/${one.schImg}">
+							<p>${one.schName}</p>
+						</div>
+						</#list>
+					</div>
+					
+					<h1 class="title">
+					正在筹建
+					</h1>
+					<div class="row">
+						<#list building as one >
+						<div class="col-lg-1 col-sm-6 col-md-4" style="text-align: center;">
+							<img src="${imgpath}/${one.schImg}">
+							<p>${one.schName}</p>
+						</div>
+						</#list>
+					</div>
+					
+					<h1 class="title">
+					服务特色
+					</h1>
+					<div class="row" style="line-height:1.6em;">
+						<div class="col-lg-3 col-sm-12 col-md-6">
+							<div style="padding:10px 20px;margin:10px;border:1px solid #e4e4e4;">
+								<p style="font-size:24px;">
+								 管理培训实力
+								</p>
+								<p  style="font-size:16px;color:#999999">
+								通过长期不间断的向企业家和高端人群传递国内外最新管理理念,培养了一批具有把握国际市场脉搏和领导一流企业能力的本土化商界精英，在一定程度上起到了推动地区经济发展的作用。
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-12 col-md-6">
+							<div style="padding:10px 20px;margin:10px;border:1px solid #e4e4e4;">
+								<p style="font-size:24px;">
+								 精英财富圈
+								</p>
+								<p  style="font-size:16px;color:#999999">
+								 通过与全国知名高校的合作，累计招收各种培训班次数百个，学员近万名，为各地企业家建起一个名流汇聚的联谊平台，形成了一个”精英圈“，最大程度的实现了资源整合
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-12 col-md-6">
+							<div style="padding:10px 20px;margin:10px;border:1px solid #e4e4e4;">
+								<p style="font-size:24px;">
+								 行业专业度
+								</p>
+								<p  style="font-size:16px;color:#999999">
+								通过长期持续、不遗余力的投入，打造了一支从事市场调研、课程设计、师资整合、渠道开拓等多元化的专业团队。集合了一大批熟悉高端教育、了解市场需求的高素质教育人才。
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-12 col-md-6">
+							<div style="padding:10px 20px;margin:10px;border:1px solid #e4e4e4;">
+								<p style="font-size:24px;">
+								 师资优势力
+								</p>
+								<p  style="font-size:16px;color:#999999">
+								 师资团队由国内外一流专家教授组成，学院派与实战派强强联合，打造既具理论高度又富于实操价值的课程，为学员企业的持续发展提供强有力的指导，深受广大学员的推崇。
+								</p>
+							</div>
+						</div>
+
+						
+					</div>
+					
+				</div>
+
+	</div>
+
+	<#include "./footer.ftl">
+	
+</body>
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+
+});
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+</html>

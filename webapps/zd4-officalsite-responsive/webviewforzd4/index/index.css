@@ -1,0 +1,237 @@
+body{
+    font-family: "Microsoft YaHei UI Light";
+}
+.header{
+    width: 100%;height: 95px;
+    /*background-color: #e6eaeb;*/
+    position: absolute;top: 0;left: 0;
+    z-index: 900;
+    background-color:rgba(0,0,0,0.08)
+}
+.wrapper{
+    width: 63%;max-width: 1210px;min-width: 980px;margin: 0 auto;height: 95px;
+}
+.logo{
+    display: inline-block;float: left;height: 100%;width: 200px;
+    background: url("../image/LOGObig.png") center center no-repeat;
+}
+.bigBg1{
+    /*position: absolute;top: 0;left: 0;*/
+    width: 100%;height: 1080px;
+    background-image: url("../image/teacher1.png");
+    /*background-attachment:fixed;*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.focus{
+    color: #ffffff;font-size: 16px;padding: 0;float: right;height: 95px;margin: 0;
+}
+.focus li{
+    list-style: none;float: left;height: 100%;
+}
+
+.bigFont{
+    color: #333333;font-size: 46px;
+}
+.fadeFont{
+    font-size: 18px;color: #999999;
+}
+/*.qrcode{*/
+    /*background: url("../image/qrcode.png") center center no-repeat;*/
+    /*background-size: 230px 230px;*/
+/*}*/
+.bigBg2{
+    width: 100%;height: 1080px;
+    background-image: url("../image/bigbg2.png");
+    background-attachment:fixed;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bigBg3{
+    width: 100%;height: 1080px;
+    background-image: url("../image/bigBg3.png");
+    background-attachment:fixed;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bigBg4{
+    width: 100%;height: 1080px;
+    background-image: url("../image/bigBg4.png");
+    background-attachment:fixed;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.white1{
+    width: 100%;height: 500px;background-color: #ffffff;position: relative;
+    /*position: absolute;top: 0;left: 0;z-index: 1000;*/
+}
+.phone1{
+    width: 329px;height: 663px;
+    background: url("../images/download/onlinecourse.png") center center no-repeat;
+    background-size: cover;
+    position: absolute;top: -250px;left: 0;
+}
+.phone2{
+    width: 329px;height: 663px;
+    background: url("../images/download/businesscourse.png") center center no-repeat;
+    background-size: cover;
+    position: absolute;top: -250px;right: 0;
+}
+.phone3{
+    width: 381px;height: 663px;
+    background: url("../image/iPhone6-3.png") center center no-repeat;
+    background-size: cover;
+    position: absolute;top: -250px;left: 0;
+}
+.iconDiv{
+    text-align: center;font-size: 14px;color: #999999;
+}
+.iconDiv span{
+    margin-top: 18px;display: block;
+}
+.iconUl li{
+    list-style: none;float: left;
+}
+.iconImg{
+    width: 80px;height: 71px;display: block;
+}
+.copBtn{
+    width: 150px;height: 50px;color: #ffffff;background-color: #4fb7e2;line-height: 50px;text-align: center;
+    font-size: 16px;display: block;border-radius: 14px;text-decoration: none;
+}
+.footerUl{
+    padding: 0;
+}
+.footerUl li{
+    list-style: none;height: 30px;line-height: 30px;font-family: "Microsoft YaHei UI";
+}
+.links{
+    padding: 0;width: 96px;margin: 0 auto;
+}
+.links li{
+    font-size: 14px;color: #999999;list-style: none;height: 36px;
+}
+.links li a{
+    text-decoration: none;color: #999999;font-family: "Microsoft YaHei UI";
+}
+.circleTransition{
+    animation: circle1 .2s forwards;
+    -webkit-animation: circle1 .2s forwards;
+    -moz-animation: circle1 .2s forwards;
+    -o-animation: circle1 .2s forwards;
+}
+@keyframes circle1{
+    0%{
+        transform: scale(0.1,0.1);
+        opacity: 0;
+    }
+    20%{
+        transform: scale(.2,.2);
+        opacity: 0.2;
+    }
+    40%{
+        transform: scale(.4,.4);
+        opacity: 0.4;
+    }
+    60%{
+        transform: scale(.6,.6);
+        opacity: 0.6;
+    }
+    80%{
+        transform: scale(.8,.8);
+        opacity: 0.8;
+    }
+    100%{
+        transform: scale(1,1);
+        opacity: 1;
+    }
+}
+
+:before,:after{
+    box-sizing: border-box
+}
+#circle1,#circle2,#circle3{
+    opacity: 0;
+}
+
+/*
+.weixin{
+    width: 27px;height: 100%;display: block;
+    background: url("../image/weixin.png") center center no-repeat;
+}
+.weibo{
+    width: 27px;height: 100%;display: inline-block;
+    background: url("../image/weibo.png") center center no-repeat;
+}
+.weixin:hover::before{
+    content: url("../image/qrcode.png");
+    position: absolute;top: 70px;left:-90px;z-index: 1000
+}*/
+
+
+*{
+    box-sizing:border-box;
+}
+
+.nav {
+  padding:0 200px;
+  display:block;
+  height:5em;
+  width:100%;
+  background-color: rgba(40,40,40,0.5);
+  position: fixed;
+  top:0;
+  z-index:2;
+}
+.nav .brand{
+  display: inline-block;
+    float: left;
+    height:100%;
+    width: 200px;
+    background: url("../images/logo.png") center center no-repeat;
+}
+.nav .menu{
+  height:100%;
+  display: inline-block;
+  float: right;
+}
+.nav .menu .item{
+  vertical-align: middle;
+  display: inline-block;
+  height:100%;
+  line-height:5em;
+  position: relative;
+}
+.nav .menu .item > label{
+  margin:0 1em;
+  font-size:120%;
+  color:#fff;
+}
+.nav .menu .item > .popdown{
+  display:none;
+}
+.nav .menu .item:hover > .popdown{
+  display:block;
+  position:absolute;
+  top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav .menu .weixin{
+    width: 38px;
+    height: 100%;
+    display: inline-block;
+    background: url("../images/weixin.png") center center no-repeat;
+}
+.nav .menu .sina {
+    width: 38px;
+    height: 100%;
+    display: inline-block;
+    background: url("../images/sina.png") center center no-repeat;
+}
+

@@ -1,0 +1,252 @@
+<#include "./public.ftl">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<#include "./meta.ftl">
+	<#include "./styles.ftl">	
+	<#include "./js.ftl">
+</head>
+<body class="index" style="background:#ffffff">
+
+	<#include "./header.ftl">
+
+	<div id="bannerWraper">
+		<div id="banner" class="qslidemultiply">
+			<div class="qslideviewbox">
+				<#list officerImages as one >
+					<div class="item" style="display:block;">
+						 <img   src="${imgpath}/${one.imgPath}">
+					</div>
+				</#list>
+			</div>
+			<div class="next">
+			</div>
+			<div class="prev">
+			</div>
+			<div class="dotsbox">
+		        <div class="dotslist">
+		            <div class="dot">
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+
+	
+	<div>
+		<div style="margin:auto;position: relative;text-align: center;padding:5% 0">
+			<img src="${ctx}/images/bg4.png" style="width:90%;" alt="">
+		</div>
+	</div>
+	
+	<div style="background:#282828;overflow: hidden;">
+		<h1 style="color:#fff;text-align: center;">导师介绍</h1>
+		<div style="margin:3em auto 3em auto;">
+			<div id="teachers" class="qslidemultiply">
+				<div class="qslideviewbox">
+					<#list model as one>
+					<div class="item" style="display:block;">
+						<div class="teacherbox" style="">
+							<img src="${imgpath}/${one.teacherHeader}" style="max-width:100%;max-width:100%;" >
+							<div class="popup" >
+								<div style="font-size:120%;font-weight:700;line-height:2em;;">${one.teacherName}</div>
+								<div style="font-size:90%">${one.teacherDes}</div>
+								<div class="exinfo">					
+									<div style="font-size:120%;font-weight:700;line-height:2em;">擅长领域</div>
+									<div style="font-size:90%">${one.teacherSpecialty}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</#list>
+				</div>
+				<div class="next">
+				</div>
+				<div class="prev">
+				</div>
+				<div class="dotsbox">
+			        <div class="dotslist">
+			            <div class="dot">
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div style="position:relative;padding-bottom:10%;background:url(/${ctx}/images/whychooseus.png);background-position:center bottom;background-repeat:no-repeat;">
+		<h1 style="text-align:center;line-height:5em;font-size:38px;">为什么选择我们</h1>
+		<div class="row" style="width:80%;margin:auto;">
+			<div class="col-lg-6 col-md-6  col-sm-12" style="margin-top:1em;">
+				<div style="padding:2em;border: 1px solid #cdcdcd;" >
+					<div style="font-size:250%;color:#cdcdcd">
+						<i class="fa fa-clock-o"></i><span style="margin-left:0.5em;">随时</span>
+					</div>
+					<div style="margin-top:1em;font-size:150%;line-height:1.6">
+					利用互联网+搭建适合企业家学习习惯的全新互动学习系统，汇聚全球顶尖商学院名师，让每次学习都明确的指向“有用”
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6  col-sm-12" style="margin-top:1em;">
+				<div style="padding:2em;border: 1px solid #cdcdcd;">
+					<div style="font-size:250%;color:#cdcdcd">
+						<i class="fa fa-map-marker"></i><span style="margin-left:0.5em;">随时</span>
+					</div>
+					<div style="margin-top:1em;font-size:150%;line-height:1.6;">
+					运用互联网思维创新打造教学场景，创建企业家集体学习氛围，一战报名，全国学习，打造商学教育“课程+基地”全覆盖
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<div style="width:80%;margin: auto;margin-top:10%;">
+			<div class="video-wraper">
+				<object data="https://imgcache.qq.com/open/qcloud/video/flash/video_player.swf &#10;&#9;&#9;&#9;" id="copy_from_console_qcloud_com_object"  align="middle" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab#version=9,0,0,0">
+				    <param name="flashVars" value="auto_play=0&amp;version=1&amp;refer=qzonestyle.gtimg.cn&amp;jscbid=copy_from_console_qcloud_com&amp;disable_full_screen=0&amp;file_id=${video.videoTencentId}&amp;app_id=1251970533">
+				    <param name="src" value="https://imgcache.qq.com/open/qcloud/video/flash/video_player.swf &#10;&#9;&#9;&#9;">
+				    <param name="wmode" value="window">
+				    <param name="quality" value="High">
+				    <param name="allowScriptAccess" value="always">
+				    <param name="allowNetworking" value="all">
+				    <param name="allowFullScreen" value="true">
+				    <embed style="background-color:#000000;" id="copy_from_console_qcloud_com_embed"  flashvars="auto_play=0&amp;version=1&amp;refer=qzonestyle.gtimg.cn&amp;jscbid=copy_from_console_qcloud_com&amp;disable_full_screen=0&amp;file_id=9031868222899594699&amp;app_id=1251970533" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" allowfullscreen="true" bgcolor="#000000" quality="high" src="https://imgcache.qq.com/open/qcloud/video/flash/video_player.swf" wmode="window" invokeurls="false" allownetworking="all" allowscriptaccess="always">
+				</object>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div  style="background:#414141;padding:5% 0;">
+		<h1 style="color:#fff;text-align: center;">分院就近报名</h1>
+		<div style="width:80%;margin:auto;">
+			<div data-grid id="schools">
+				<#list teaching as one >
+				<div class="item large-split-6 medium-split-3 small-split-2">
+					<div class="popupwrap">
+						<img  src="${imgpath}/${one.schImg}"  alt="" />
+						<p style="line-height:3em;">${one.schName}</p>
+						<div class="popup" style="font-size:80%;line-height:1.4">
+							<div>
+								电话：<br/> ${one.schMoblie}
+							</div>
+							<br/>
+							<div>
+								地址：<br/>${one.schAddress}
+							</div>
+						</div>
+					</div>
+				</div>
+				</#list>
+				<div class="item large-split-6 medium-split-3 small-split-2">
+					<div class="popupwrap">
+						<img src="${ctx}/images/more.png"  alt="" />
+						<p style="line-height:3em;">正在筹建</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<#include "./footer.ftl">
+
+	
+</body>
+
+<script type="text/javascript" src="${ctx}/js/qevent.js"></script>
+<script type="text/javascript" src="${ctx}/js/greensock/TweenMax.js?v=${curversion}"></script>
+<script type="text/javascript" src="${ctx}/js/greensock/TimelineMax.js?v=${curversion}"></script>
+
+<link rel="stylesheet" href="${ctx}/js/plugin/qcarrousel/1.0.2/plugin.css">
+<script src="${ctx}/js/plugin/qcarrousel/1.0.2/plugin.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="${ctx}/js/plugin/qslidemultiply/4.0.2/plugin.css">
+<script src="${ctx}/js/plugin/qslidemultiply/4.0.2/plugin.js" type="text/javascript"></script>
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function(){
+	//$(".qcarrousel").qcarrousel({autoRun:false});
+	/**/
+	$("#banner").qslidemultiply({
+		pagesize:4,
+		speed:1,
+		// infinite:true,
+		// autorun:true,
+		responsive:[
+				{
+		        	breakpoint:{
+		        		min:0
+		        	},
+		            items:1,
+		            nav:true,
+		            loop:true
+		        }
+	    ]
+	});
+	
+
+	$("#teachers").qslidemultiply({
+		pagesize:4,
+		speed:0.5,
+		// infinite:true,
+		// autorun:true,
+		responsive:[
+				{
+		        	breakpoint:{
+		        		min:0,
+		        		max:600
+		        	},
+		            items:1,
+		            nav:true,
+		            loop:true
+		        },
+		        {
+		        	breakpoint:{
+		        		min:600
+		        	},
+		            items:2,
+		            nav:false
+		        },
+		        {
+		        	breakpoint:{
+		        		min:900
+		        	},
+		            items:3,
+		            nav:false
+		        },
+		        {
+		        	breakpoint:{
+		        		min:1200
+		        	},
+		            items:4,
+		            nav:true,
+		            loop:false
+		        },
+		        {
+		        	breakpoint:{
+		        		min:1500
+		        	},
+		            items:5,
+		            nav:true,
+		            loop:false
+		        },
+		        {
+		        	breakpoint:{
+		        		min:1800
+		        	},
+		            items:6,
+		            nav:true,
+		            loop:false
+		        }
+	    ]
+	});
+	
+
+});
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+</html>

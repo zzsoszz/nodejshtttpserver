@@ -1,0 +1,94 @@
+* {
+	box-sizing: border-box;
+}
+@element .qslidemultiply and (max-width:640px) {
+	$this {
+		margin:auto;
+    	position: relative;
+	}
+	$this .qslideviewbox{
+	    overflow: hidden;
+	    position: relative;
+	}
+	$this .qslideviewbox .item{
+	    padding:20px;
+	    position: absolute;
+	    width: 270px;
+	    height: 370px;
+	}
+	$this .prev{
+	  width:79px;
+	  height:140px;
+	  position:absolute;
+	  top:50%;
+	  left:0;
+	  transform: translate(-100%, -50%);
+	  background-image:url("images/prev.png");
+	  background-position:center;
+	  background-size:79px 140px;
+	  background-repeat:no-repeat;
+	  max-width:100%;
+	}
+	$this .disable{
+	  display:none;
+	}
+	$this .next{
+	  width:79px;
+	  height:140px;
+	  position:absolute;
+	  top:50%;
+	  right:0;
+	  transform: translate(100%, -50%);
+	  background-image:url("images/next.png");
+	  background-position:center;
+	  background-size:79px 140px;
+	  background-repeat:no-repeat;
+	}
+}
+
+@element .qslidemultiply and (min-width:640px) {
+	$this {
+		margin:auto;
+		height:'eval(   "console.log("aaa", $($it.children[0].children[0]).outerHeight() )"    )';
+    	position: relative;
+	}
+	$this .qslideviewbox{
+	    overflow: hidden;
+	    position: relative;
+	    height:'eval("console.log("bbb",$it.children[0].children[0].clientHeight)")';
+	}
+	$this .qslideviewbox .item{
+	    padding:20px;
+	    position: absolute;
+	    width: 270px;
+	    height: 370px;
+	}
+	$this .prev{
+	  width:79px;
+	  height:140px;
+	  position:absolute;
+	  top:50%;
+	  left:0;
+	  transform: translate(-100%, -50%);
+	  background-image:url("images/prev.png");
+	  background-position:center;
+	  background-size:79px 140px;
+	  background-repeat:no-repeat;
+	  max-width:100%;
+	}
+	$this .disable{
+	  display:none;
+	}
+	$this .next{
+	  width:79px;
+	  height:140px;
+	  position:absolute;
+	  top:50%;
+	  right:0;
+	  transform: translate(100%, -50%);
+	  background-image:url("images/next.png");
+	  background-position:center;
+	  background-size:79px 140px;
+	  background-repeat:no-repeat;
+	}
+}

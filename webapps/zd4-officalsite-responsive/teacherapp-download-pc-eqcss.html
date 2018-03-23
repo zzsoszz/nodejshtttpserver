@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>班主任APP下载</title>
+	<meta name=viewport content="width=device-width, initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/component.css">
+	<link rel="stylesheet" href="css/utils.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/EQCSS.min.js"></script>
+	<script src="js/EQCSS-polyfills.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	
+	<style>
+		body{
+			min-width:1280px;
+		}
+		img{
+			max-height:100%;
+			max-width: 100%;
+		}
+		@element '.banner' {
+		  $this {
+		    position:relative;
+		    padding-bottom:33%;
+		  }
+		  $this .bg{
+		  	display:block;
+		  	position:absolute;
+		  	max-height:100%;
+		  	height:100%;
+		  }
+		  $this .logo{
+		  	position:absolute;
+		  	top:6%;
+		  	z-index:2;
+		  	max-width:10%;
+		  }
+		}
+	</style>
+</head>
+<body>
+
+
+
+<div class="nav" id="nav">
+	<a class="brand" href="#">
+	</a>
+	<label for="menustatus"><span>≡</span></label>
+	<input type="checkbox" id="menustatus">
+	<div class="menu">
+		<a class="item" href="/index.html">
+			<label>首页</label>
+			<div class="popdown">
+			</div>
+		</a>
+		<a class="item" href="/coursecenter.html">
+			<label>课程中心</label>
+			<div class="popdown">
+			</div>
+		</a>
+		<a class="item" href="/downloadindex.html">
+			<label>下载APP</label>
+			<div class="popdown">
+			</div>
+		</a>
+		<a class="item" href="/about.html">
+			<label>关注我们</label>
+			<div class="popdown">
+			</div>
+		</a>
+		<div class="item">
+			<label>
+				<a href="#" class="weixin"></a>
+			</label>
+			<div class="popdown" style="width:226px;">
+					<img  src="images/weixinqrcode.png" style="width:226px;height:232px;background:cover;background-repeat: no-repeat;" >
+			</div>
+		</div>
+		<div class="item" href="">
+			<label>
+				<a href="http://weibo.com/vbossapp?is_all=1" class="sina" ></a>
+			</label>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="banner">
+	
+	<img class="bg" src="images/teacherapp-pc/bg@3x.png" 
+	 />
+	<!--
+	<div class="logo" >
+		<img style="margin-left:30px;display: inline-block;" src="images/teacherapp-pc/logo@3x.png" alt="">
+	</div>
+	 -->
+	<div style="position:absolute;top:30%;text-align:center;z-index:2;width:100%;">
+		<img style="display: inline-block;width:200px;height:200px;" src="images/teacherapp-pc/qrcode.png" alt="">
+		<div style="font-size:26px;color:#ffffff;">扫描二维码下载</div>
+	</div>
+</div>
+
+
+<div style="position: relative;">
+	<div class="bgs" style="">
+		<div style="position:relative;padding-bottom:43%;">
+			<img  style="position:absolute;top:10%;left:10%;display:block;position:absolute;max-height:100%;" src="images/teacherapp-pc/student@3x.png">
+		</div>
+		<div style="position:relative;padding-bottom:43%;">
+			<img  style="position:absolute;top:10%;right:10%;display:block;position:absolute;max-height:100%;" src="images/teacherapp-pc/newstudentmanger@3x.png" alt="">
+		</div>
+	</div>
+	<div style="position: absolute;width:100%;top:0;">
+		<div style="position:relative;padding-bottom:43%;background:transparent;overflow: hidden;">
+			<div style="position:absolute;left:67%;top:10%;">
+				<div style="line-height:2em;font-size:60px;">学员管理</div>
+				<div style="font-size:26px;">
+					随时随地跟踪学员学习轨迹，及时方便沟通
+				</div>
+			</div>
+		</div>
+		<div style="position:relative;padding-bottom:43%;background:rgba(0,0,0,0.1);color:#000000;overflow: hidden;">
+			<div style="position:absolute;left:13%;top:10%;">
+				<div style="line-height:2em;font-size:60px;">新学员管理</div>
+				<div style="font-size:26px;">
+					新用户注册一目了然，意向客户一键录入
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="footer" >
+	<div style="width: 80%;margin:auto;">
+		<div class="row  bottom-lg" style="">
+			<div class="col-lg-8 col-md-8 col-sm-12" >
+				<div  class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12" id="links">
+						<a style="display:block;color:#c7c7c7" href="${ctx}/">首页</a>
+						<a style="display:block;color:#c7c7c7" href="${ctx}/coursecenter">课程中心</a>
+						<a style="display:block;color:#c7c7c7" href="${ctx}/downloadindex">下载APP</a>
+						<a style="display:block;color:#c7c7c7" href="${ctx}/about">关于我们</a>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-12" id="addresses">
+						<div style="font-weight:700">运营总部</div>
+						<div>电话：400-028-8383<span style="color:#717171;font-size:80%;margin-left:1em;">(工作日:09:30-18:00)</span></div>
+						<div>邮箱：service@BossApp.cn</div>
+						<div>地址：北京市海淀区中关村东路18号１号楼13层Ｃ-1603-044号</div>
+					</div>
+				</div>
+			</div>
+			<div  class="col-lg-4 col-md-4 col-sm-12" style="margin-top:1em;"  >
+				<img src="images/bossqrcode.png" style="width:10em;height:10em;">
+				<div style="margin-top:1em;">波士商学院微信公众号</div>
+			</div>
+		</div>
+		<div  style="margin-top:2em;margin-bottom:5em;font-size:80%;color:#fff;opacity:0.5">
+				<span>北京波士商学院教育科技有限公司</span> 
+				<span style="margin-left:2em;">www.bossapp.cn</span> 
+				<span style="margin-left:1em;">2015-2016</span> 
+				<span style="margin-left:1em;">@All Rights Teserved</span> 
+				<span style="margin-left:1em;">所有权保留</span> 
+				<span style="margin-left:1em;">京ICP备16016793号</span> 
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
